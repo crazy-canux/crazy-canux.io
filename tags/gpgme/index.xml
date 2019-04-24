@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GPGME on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/gpgme/</link>
+    <description>Recent content in GPGME on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Mar 2017 17:11:58 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/gpgme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cryptographic</title>
+      <link>http://canuxcheng.com/post/cryptographic/</link>
+      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/cryptographic/</guid>
+      <description>PGP PGP: Pretty Good Privacy, 是一款收费的加密软件． OpenPGP OpenPGP是一种加密的标准． http://openpgp.org/ GPG GPG: GnuPG, 是一款开源免费的加密软件． GPGME GPGME: GPG Made Easy, 是一个让应用程序使用GPG更容</description>
+    </item>
+    
+  </channel>
+</rss>

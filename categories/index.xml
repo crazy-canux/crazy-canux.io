@@ -6,9 +6,118 @@
     <description>Recent content in Categories on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Tue, 23 Apr 2019 21:47:16 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Beego</title>
+      <link>http://canuxcheng.com/categories/beego/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/beego/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BigData</title>
+      <link>http://canuxcheng.com/categories/bigdata/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/bigdata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CloudComputing</title>
+      <link>http://canuxcheng.com/categories/cloudcomputing/</link>
+      <pubDate>Tue, 05 Apr 2016 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/cloudcomputing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/categories/devops/</link>
+      <pubDate>Thu, 12 Jan 2017 21:05:48 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>http://canuxcheng.com/categories/golang/</link>
+      <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://canuxcheng.com/categories/linux/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://canuxcheng.com/categories/network/</link>
+      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>http://canuxcheng.com/categories/security/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>http://canuxcheng.com/categories/shell/</link>
+      <pubDate>Wed, 14 Dec 2016 00:55:37 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>http://canuxcheng.com/categories/storage/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travel</title>
+      <link>http://canuxcheng.com/categories/travel/</link>
+      <pubDate>Sun, 08 May 2016 16:41:50 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://canuxcheng.com/categories/web/</link>
+      <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/web/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GSL_string - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="strings 实现了用于操作字符的函数. functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 func EqualFold(s, t string) bool func HasPrefix(s, prefix string) bool func HasSuffix(s, suffix string)" /><meta name="keywords" content="strings, strconv, unicode, regexp, bytes, index" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/gsl_string/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GSL_string" />
+<meta property="og:description" content="strings 实现了用于操作字符的函数. functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 func EqualFold(s, t string) bool func HasPrefix(s, prefix string) bool func HasSuffix(s, suffix string)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/gsl_string/" />
+<meta property="article:published_time" content="2018-01-01T10:49:21&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-01T10:49:21&#43;00:00"/>
+
+<meta itemprop="name" content="GSL_string">
+<meta itemprop="description" content="strings 实现了用于操作字符的函数. functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 func EqualFold(s, t string) bool func HasPrefix(s, prefix string) bool func HasSuffix(s, suffix string)">
+
+
+<meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="wordCount" content="667">
+
+
+
+<meta itemprop="keywords" content="golang,string," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GSL_string"/>
+<meta name="twitter:description" content="strings 实现了用于操作字符的函数. functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 func EqualFold(s, t string) bool func HasPrefix(s, prefix string) bool func HasSuffix(s, suffix string)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GSL_string</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+          <span class="more-meta"> 667 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#strings">strings</a>
+<ul>
+<li><a href="#functions">functions</a></li>
+<li><a href="#reader">Reader</a></li>
+<li><a href="#replacer">Replacer</a></li>
+</ul></li>
+<li><a href="#bytes">bytes</a>
+<ul>
+<li><a href="#constants">constants</a></li>
+<li><a href="#variables">variables</a></li>
+<li><a href="#functions-1">functions</a></li>
+<li><a href="#reader-1">Reader</a></li>
+<li><a href="#buffer">Buffer</a></li>
+</ul></li>
+<li><a href="#strconv">strconv</a>
+<ul>
+<li><a href="#constants-1">constants</a></li>
+<li><a href="#variables-1">Variables</a></li>
+<li><a href="#functions-2">functions</a></li>
+<li><a href="#numerror">NumError</a></li>
+</ul></li>
+<li><a href="#unicode">unicode</a></li>
+<li><a href="#regexp">regexp</a>
+<ul>
+<li><a href="#functions-3">functions</a></li>
+<li><a href="#regexp-1">Regexp</a></li>
+</ul></li>
+<li><a href="#regexp-syntax">regexp/syntax</a></li>
+<li><a href="#index-suffixarray">index/suffixarray</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-01T10:49:21" title="January 1, 2018">January 1, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="strings">strings</h1>
+
+<p>实现了用于操作字符的函数.</p>
+
+<h2 id="functions">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func EqualFold(s, t string) bool
+
+func HasPrefix(s, prefix string) bool
+func HasSuffix(s, suffix string) bool
+
+func Count(s, sep string) int
+
+func Contains(s, substr string) bool
+...
+
+func Index(s, sep string) int
+...
+
+func LastIndex(s, sep string) int
+...
+
+func title(s string) string
+
+func ToLower(s string) string
+...
+
+// 返回count个string
+func Repeat(s string, count int) string
+
+func Replace(s, old, new string, n int) string
+
+func Map(mapping func(rune) rune, s string) string
+
+func Trim(s string, cutset string) string
+...
+
+// 返回将字符串按照空白分割的多个字符串
+func Fields(s string) []string
+// 按照f作为分隔符来分割字符串，返回切片
+func FieldsFunc(s string, f func(rune) bool) []string
+
+func Split(s, sep string) []string
+...
+
+// 将一系列字符串连接为一个字符串，之间用sep来分割.
+func Join(a []string, sep string) string</pre></td></tr></table>
+</div>
+</div>
+<h2 id="reader">Reader</h2>
+
+<h2 id="replacer">Replacer</h2>
+
+<hr />
+
+<h1 id="bytes">bytes</h1>
+
+<p>实现了操作[]bytes的常用函数.</p>
+
+<h2 id="constants">constants</h2>
+
+<h2 id="variables">variables</h2>
+
+<h2 id="functions-1">functions</h2>
+
+<h2 id="reader-1">Reader</h2>
+
+<h2 id="buffer">Buffer</h2>
+
+<p>Buffer是一个实现了读写方法的可变大小的字节缓冲.</p>
+
+<p>零值是一个空的可用于读写的缓冲.</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Buffer struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func NewBuffer(buf []byte) *Buffer
+func NewBufferString(s string) *Buffer</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (b *Buffer) String() string
+
+func (b *Buffer) Read(p []byte) (n int, err error)
+func (b *Buffer) Write(p []byte) (n int, err error)</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="strconv">strconv</h1>
+
+<p>实现了基本数据类型和字符串的相互转换.</p>
+
+<h2 id="constants-1">constants</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const InitSize = intSize</pre></td></tr></table>
+</div>
+</div>
+<h2 id="variables-1">Variables</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var ErrRange = errors.New(&#34;value out of range&#34;)
+var ErrSyntax = errors.New(&#34;invalid syntax&#34;)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions-2">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回一个字符是否是可打印的
+func IsPrint(r rune) bool
+
+// 返回字符串s是否可以不被修改的表示为一个反引号字符串
+func CanBackquote(s string) bool
+
+func Quote(s string) string
+...
+
+func Unquote(s string) (t string, err error)
+...
+
+func AppendInt(dst []byte, i int64, base int) []byte
+...
+
+// 字符串转换成其他类型
+func ParseInt(s string, base int, bitSize int) (i int64, err error)
+...
+
+// 其他类型转换为字符串
+func FormatInt(i int64, base int) string
+...
+
+// ParseInt(s, 10, 0)的简写, string -&gt; int
+func Atoi(s string) (i int, err error)
+// FormatInt(i, 10)的简写, int -&gt; string
+func Itoa(i int) string</pre></td></tr></table>
+</div>
+</div>
+<h2 id="numerror">NumError</h2>
+
+<p>表示一次失败的转换</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type NumError struct {
+    Func string
+    Num string
+    Err error
+}</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (e *NumError) Error() string</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="unicode">unicode</h1>
+
+<hr />
+
+<h1 id="regexp">regexp</h1>
+
+<p>实现了正则表达式搜索</p>
+
+<h2 id="functions-3">functions</h2>
+
+<h2 id="regexp-1">Regexp</h2>
+
+<p>Regexp代表一个编译好的正则表达式．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Regexp struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func Compile(expr string) (*Regexp, error)
+
+func CompilePOSIX(expr string) (*Regexp, error)
+
+func MustCompile(str string) *Regexp
+
+func MustCompilePOSIX(str string) *Regexp</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+
+<hr />
+
+<h1 id="regexp-syntax">regexp/syntax</h1>
+
+<hr />
+
+<h1 id="index-suffixarray">index/suffixarray</h1>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux CHENG</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">golang</a>
+          <a href="/tags/string/">string</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/gsl_oop/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GSL_oop</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/gsl_system/">
+            <span class="next-text nav-default">GSL_system</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-01-01 10:49:21 \x2b0000 UTC',
+        title: 'GSL_string',
+        link: decodeURI(location.href),
+        desc: 'strings 实现了用于操作字符的函数. functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 func EqualFold(s, t string) bool func HasPrefix(s, prefix string) bool func HasSuffix(s, suffix string)',
+        owner: 'crazy-canux',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

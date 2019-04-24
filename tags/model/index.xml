@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>model on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/model/</link>
+    <description>Recent content in model on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Apr 2019 21:47:16 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/model/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beego_Model</title>
+      <link>http://canuxcheng.com/post/beego_model/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_model/</guid>
+      <description> Model </description>
+    </item>
+    
+  </channel>
+</rss>

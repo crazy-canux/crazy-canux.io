@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GSL_data - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="time constants const: 1 2 3 4 5 6 const ( ANSIC = &amp;#34;Mon Jan _2 15:04:05 2006&amp;#34; Unixdate = &amp;#34;Mon Jan _2 15:04:05 MST 2006&amp;#34; RFC3339 = &amp;#34;2006-01-02T15:04:05Z07:00&amp;#34; ... ) functions 1 2 3 4 5 6 // 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) &amp;lt;- chan Time func Tick(d Duration) &amp;lt;- chan Time Time 代表一" /><meta name="keywords" content="time, container, archive, compress" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/gsl_data/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GSL_data" />
+<meta property="og:description" content="time constants const: 1 2 3 4 5 6 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; Unixdate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; ... ) functions 1 2 3 4 5 6 // 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) &lt;- chan Time func Tick(d Duration) &lt;- chan Time Time 代表一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/gsl_data/" />
+<meta property="article:published_time" content="2018-01-01T10:49:21&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-01T10:49:21&#43;00:00"/>
+
+<meta itemprop="name" content="GSL_data">
+<meta itemprop="description" content="time constants const: 1 2 3 4 5 6 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; Unixdate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; ... ) functions 1 2 3 4 5 6 // 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) &lt;- chan Time func Tick(d Duration) &lt;- chan Time Time 代表一">
+
+
+<meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="wordCount" content="840">
+
+
+
+<meta itemprop="keywords" content="golang,data," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GSL_data"/>
+<meta name="twitter:description" content="time constants const: 1 2 3 4 5 6 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; Unixdate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; ... ) functions 1 2 3 4 5 6 // 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) &lt;- chan Time func Tick(d Duration) &lt;- chan Time Time 代表一"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GSL_data</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+          <span class="more-meta"> 840 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#time">time</a>
+<ul>
+<li><a href="#constants">constants</a></li>
+<li><a href="#functions">functions</a></li>
+<li><a href="#time-1">Time</a></li>
+<li><a href="#weekday">Weekday</a></li>
+<li><a href="#month">Month</a></li>
+<li><a href="#location">Location</a></li>
+<li><a href="#duration">Duration</a></li>
+<li><a href="#timer">Timer</a></li>
+<li><a href="#ticker">Ticker</a></li>
+</ul></li>
+<li><a href="#container-heap">container/heap</a></li>
+<li><a href="#container-list">container/list</a></li>
+<li><a href="#container-ring">container/ring</a></li>
+<li><a href="#compress-bzip2">compress/bzip2</a></li>
+<li><a href="#compress-flate">compress/flate</a></li>
+<li><a href="#compress-gzip">compress/gzip</a></li>
+<li><a href="#compress-lzw">compress/lzw</a></li>
+<li><a href="#compress-zlib">compress/zlib</a></li>
+<li><a href="#archive">archive</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-01T10:49:21" title="January 1, 2018">January 1, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="time">time</h1>
+
+<h2 id="constants">constants</h2>
+
+<p>const:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const (
+    ANSIC       = &#34;Mon Jan _2 15:04:05 2006&#34;
+    Unixdate    = &#34;Mon Jan _2 15:04:05 MST 2006&#34;
+    RFC3339     = &#34;2006-01-02T15:04:05Z07:00&#34;
+    ...
+)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 阻塞go程d代表的时间段
+func Sleep(d Duration)
+
+func After(d Duration) &lt;- chan Time
+
+func Tick(d Duration) &lt;- chan Time</pre></td></tr></table>
+</div>
+</div>
+<h2 id="time-1">Time</h2>
+
+<p>代表一个纳秒精度的时间点.</p>
+
+<p>零值是January 1, year 1, 00:00:00.000000000 UTC.</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type  Time struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 格式化一个时间, eg:　2009-11-10 15:00:00 -0800 PST
+func date(year int, month Month, day, hour, min, sec, nsec int, loc *Location) Time
+
+// 返回当前本地时间, eg: 2018-03-18 12:16:55.842029 +0800 CST m=+0.001962301
+func Now() Time
+
+func Parse(layout, value s tring) (Time, error)
+
+func ParseInLocation(layout, value string, loc *Location) (Time, error)
+
+func Unix(sec int64, nsec int64) Time</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回T的地点和时区信息
+func (t Time) Location() *Location
+
+// 返回t的时区规范名和相对于UTC的偏移量
+func (t Time) Zone() (name string, offset int)
+
+func (t Time) IsZero() bool
+
+func (t Time) Local() Time
+
+func (t Time) UTC() Time
+
+func (t Time) In(loc *Location) Time
+
+func (t Time) Unix() int64
+
+func (t Time) UnixNano() int64
+
+// 比较两个时间
+func (t Time) Equal(u Time) bool
+
+// t &gt; u 返回true
+func (t Time) Before(u Time) bool
+
+// t &lt; u 返回true
+func (t Time) After(u Time) bool
+
+// 返回t的年月日.
+func (t Time) date() (year int, month Month, day int)
+
+// 返回t对应的时分秒
+func (t Time) Clock() (hour, min, sec int)
+
+// 返回t对应的年
+func (t Time) Year() int
+
+// 返回t对应的月
+func (t Time) Month() Month
+
+func (t Time) ISOWeek() (year, week int)
+
+// 返回t对应的当年的第几天
+func (t Time) YearDay() int
+
+// 返回t对应的当月的第几天
+func (t Time) Day() int
+
+// 返回t对应的星期几
+func (t Time) Weekday() Weekday
+
+// 返回t对应的第几小时
+func (t Time) Hour() int
+
+// 返回t对应的分钟
+func (t Time) Minute() int
+
+// 返回t对应的秒
+func (t Time) Second() int
+
+// 返回t对应的纳秒偏移量
+func (t Time) Nanosecond() int
+
+func (t Time) Add(d Duration) Time
+
+func (t Time) Adddate(years int, months int, days int) Time
+
+func (t Time) Sub(u Time) Duration
+
+func (t Time) Round(d duration) Time
+
+func (t Time) Truncate(d Duration) Time
+
+func (t Time) Format(layout string) string
+
+func (t Time) String(layout string) string</pre></td></tr></table>
+</div>
+</div>
+<h2 id="weekday">Weekday</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Weekday int
+
+const (
+    Sunday Weekday = iota
+    Monday
+    Tuesday
+    Wednesday
+    Thursday
+    Friday
+    Saturday
+)</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回d对应的英文名
+func (d Weekday) String() string</pre></td></tr></table>
+</div>
+</div>
+<h2 id="month">Month</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Month int
+
+const (
+    January Month = 1 + iota
+    February
+    March
+    April
+    May
+    June
+    July
+    August
+    September
+    October
+    November
+    December
+)</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回m对应的英文名
+func (m Month) String() string</pre></td></tr></table>
+</div>
+</div>
+<h2 id="location">Location</h2>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Location struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回使用给定名字创建的Location
+// name == &#34;&#34; 或　name == &#34;UTC&#34;, 返回UTC
+// name == &#34;Local&#34;, fanhui1Local
+// 其它时间数据库的值
+func LoadLocation(name string) (*Location, error)
+
+// 使用给定的名称和偏移量创建一个Location
+func FixedZone(name string, offset int) *Location</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回对时区信息的描述
+func (l *Location) String() string</pre></td></tr></table>
+</div>
+</div>
+<h2 id="duration">Duration</h2>
+
+<h2 id="timer">Timer</h2>
+
+<h2 id="ticker">Ticker</h2>
+
+<hr />
+
+<h1 id="container-heap">container/heap</h1>
+
+<hr />
+
+<h1 id="container-list">container/list</h1>
+
+<hr />
+
+<h1 id="container-ring">container/ring</h1>
+
+<hr />
+
+<h1 id="compress-bzip2">compress/bzip2</h1>
+
+<hr />
+
+<h1 id="compress-flate">compress/flate</h1>
+
+<hr />
+
+<h1 id="compress-gzip">compress/gzip</h1>
+
+<hr />
+
+<h1 id="compress-lzw">compress/lzw</h1>
+
+<hr />
+
+<h1 id="compress-zlib">compress/zlib</h1>
+
+<hr />
+
+<h1 id="archive">archive</h1>
+
+<hr />
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux CHENG</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">golang</a>
+          <a href="/tags/data/">data</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/gsl_cryptographic/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GSL_cryptographic</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/gsl_database/">
+            <span class="next-text nav-default">GSL_database</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-01-01 10:49:21 \x2b0000 UTC',
+        title: 'GSL_data',
+        link: decodeURI(location.href),
+        desc: 'time constants const: 1 2 3 4 5 6 const ( ANSIC = \x26#34;Mon Jan _2 15:04:05 2006\x26#34; Unixdate = \x26#34;Mon Jan _2 15:04:05 MST 2006\x26#34; RFC3339 = \x26#34;2006-01-02T15:04:05Z07:00\x26#34; ... ) functions 1 2 3 4 5 6 \/\/ 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) \x26lt;- chan Time func Tick(d Duration) \x26lt;- chan Time Time 代表一',
+        owner: 'crazy-canux',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

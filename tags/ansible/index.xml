@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ansible on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/ansible/</link>
+    <description>Recent content in ansible on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 Jan 2017 21:05:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible</title>
+      <link>http://canuxcheng.com/post/ansible/</link>
+      <pubDate>Thu, 12 Jan 2017 21:05:48 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ansible/</guid>
+      <description>Ansible https://github.com/ansible/ansible http://www.ansible.com.cn/index.html ansible通过SSH来远程管理Linux/Unix机器． ansible通过winrm+powershell来远程管理Windows</description>
+    </item>
+    
+  </channel>
+</rss>

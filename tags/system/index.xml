@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>system on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/system/</link>
+    <description>Recent content in system on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_system</title>
+      <link>http://canuxcheng.com/post/gsl_system/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_system/</guid>
+      <description>os 提供了操作系统的不依赖平台的接口 1 import &amp;#34;os&amp;#34; constants 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE</description>
+    </item>
+    
+  </channel>
+</rss>

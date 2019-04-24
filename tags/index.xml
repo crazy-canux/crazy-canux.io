@@ -6,9 +6,514 @@
     <description>Recent content in Tags on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 27 Mar 2017 17:11:58 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GPG</title>
+      <link>http://canuxcheng.com/tags/gpg/</link>
+      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPGME</title>
+      <link>http://canuxcheng.com/tags/gpgme/</link>
+      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/gpgme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenPGP</title>
+      <link>http://canuxcheng.com/tags/openpgp/</link>
+      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/openpgp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PGP</title>
+      <link>http://canuxcheng.com/tags/pgp/</link>
+      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/pgp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>agile</title>
+      <link>http://canuxcheng.com/tags/agile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amqp</title>
+      <link>http://canuxcheng.com/tags/amqp/</link>
+      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/amqp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>http://canuxcheng.com/tags/ansible/</link>
+      <pubDate>Thu, 12 Jan 2017 21:05:48 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache</title>
+      <link>http://canuxcheng.com/tags/apache/</link>
+      <pubDate>Tue, 27 Sep 2016 03:25:26 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>awk</title>
+      <link>http://canuxcheng.com/tags/awk/</link>
+      <pubDate>Wed, 14 Dec 2016 00:55:37 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/awk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beego</title>
+      <link>http://canuxcheng.com/tags/beego/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/beego/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bigdata</title>
+      <link>http://canuxcheng.com/tags/bigdata/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/bigdata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bootstrap</title>
+      <link>http://canuxcheng.com/tags/bootstrap/</link>
+      <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/bootstrap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>builtin</title>
+      <link>http://canuxcheng.com/tags/builtin/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/builtin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>capture</title>
+      <link>http://canuxcheng.com/tags/capture/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/capture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cfssl</title>
+      <link>http://canuxcheng.com/tags/cfssl/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/cfssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud</title>
+      <link>http://canuxcheng.com/tags/cloud/</link>
+      <pubDate>Tue, 05 Apr 2016 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>concurrency</title>
+      <link>http://canuxcheng.com/tags/concurrency/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>controller</title>
+      <link>http://canuxcheng.com/tags/controller/</link>
+      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/controller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cryptographic</title>
+      <link>http://canuxcheng.com/tags/cryptographic/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/cryptographic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csrf</title>
+      <link>http://canuxcheng.com/tags/csrf/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/csrf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>http://canuxcheng.com/tags/css/</link>
+      <pubDate>Thu, 23 Jun 2016 09:40:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>http://canuxcheng.com/tags/data/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>http://canuxcheng.com/tags/database/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>http://canuxcheng.com/tags/debug/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deploy</title>
+      <link>http://canuxcheng.com/tags/deploy/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/deploy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>http://canuxcheng.com/tags/development/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>http://canuxcheng.com/tags/devops/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>document</title>
+      <link>http://canuxcheng.com/tags/document/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/document/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>file</title>
+      <link>http://canuxcheng.com/tags/file/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/file/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>find</title>
+      <link>http://canuxcheng.com/tags/find/</link>
+      <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/find/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>france</title>
+      <link>http://canuxcheng.com/tags/france/</link>
+      <pubDate>Sun, 10 Apr 2016 17:49:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/france/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gearmany</title>
+      <link>http://canuxcheng.com/tags/gearmany/</link>
+      <pubDate>Sun, 08 May 2016 16:41:50 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/gearmany/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>http://canuxcheng.com/tags/git/</link>
+      <pubDate>Sat, 02 Apr 2016 21:11:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>http://canuxcheng.com/tags/github/</link>
+      <pubDate>Sat, 02 Apr 2016 21:11:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitlab</title>
+      <link>http://canuxcheng.com/tags/gitlab/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>http://canuxcheng.com/tags/golang/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grep</title>
+      <link>http://canuxcheng.com/tags/grep/</link>
+      <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/grep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grub</title>
+      <link>http://canuxcheng.com/tags/grub/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/grub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>httpd</title>
+      <link>http://canuxcheng.com/tags/httpd/</link>
+      <pubDate>Tue, 27 Sep 2016 03:25:26 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/httpd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://canuxcheng.com/tags/linux/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>http://canuxcheng.com/tags/math/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>model</title>
+      <link>http://canuxcheng.com/tags/model/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/model/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multimedia</title>
+      <link>http://canuxcheng.com/tags/multimedia/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/multimedia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>http://canuxcheng.com/tags/network/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oop</title>
+      <link>http://canuxcheng.com/tags/oop/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>package</title>
+      <link>http://canuxcheng.com/tags/package/</link>
+      <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>restructuretext</title>
+      <link>http://canuxcheng.com/tags/restructuretext/</link>
+      <pubDate>Mon, 08 Aug 2016 13:39:38 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/restructuretext/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>http://canuxcheng.com/tags/sed/</link>
+      <pubDate>Sat, 02 Apr 2016 11:15:57 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/sed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>http://canuxcheng.com/tags/storage/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>string</title>
+      <link>http://canuxcheng.com/tags/string/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/string/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system</title>
+      <link>http://canuxcheng.com/tags/system/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>template</title>
+      <link>http://canuxcheng.com/tags/template/</link>
+      <pubDate>Thu, 27 Sep 2018 01:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>http://canuxcheng.com/tags/test/</link>
+      <pubDate>Tue, 23 Apr 2019 20:50:22 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>view</title>
+      <link>http://canuxcheng.com/tags/view/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>http://canuxcheng.com/tags/web/</link>
+      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>http://canuxcheng.com/tags/windows/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/windows/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

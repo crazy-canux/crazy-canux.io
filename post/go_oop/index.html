@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go_Oop - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Go面向对象 golang通过方法和接口实现面向对象. 方法/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参" /><meta name="keywords" content="golang" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/go_oop/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Go_Oop" />
+<meta property="og:description" content="Go面向对象 golang通过方法和接口实现面向对象. 方法/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/go_oop/" />
+<meta property="article:published_time" content="2018-01-01T10:49:21&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-01T10:49:21&#43;00:00"/>
+
+<meta itemprop="name" content="Go_Oop">
+<meta itemprop="description" content="Go面向对象 golang通过方法和接口实现面向对象. 方法/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参">
+
+
+<meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="wordCount" content="1989">
+
+
+
+<meta itemprop="keywords" content="golang,oop," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go_Oop"/>
+<meta name="twitter:description" content="Go面向对象 golang通过方法和接口实现面向对象. 方法/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Go_Oop</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+          <span class="more-meta"> 1989 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#go面向对象">Go面向对象</a></li>
+<li><a href="#方法-method">方法/method</a></li>
+<li><a href="#接口-interface">接口/Interface</a>
+<ul>
+<li><a href="#封装">封装</a></li>
+<li><a href="#多态">多态</a></li>
+<li><a href="#继承">继承</a></li>
+</ul></li>
+<li><a href="#反射-reflact">反射/reflact</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-01T10:49:21" title="January 1, 2018">January 1, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="go面向对象">Go面向对象</h1>
+
+<p>golang通过方法和接口实现面向对象.</p>
+
+<hr />
+
+<h1 id="方法-method">方法/method</h1>
+
+<p>go中没有类，但是可以为结构体定义方法．</p>
+
+<p>方法就是一类带有特殊的　接收者参数　的函数．</p>
+
+<p>只能为同一包内定义的类型的接收者申明方法，不能为其它包内定义的类型的接收者申明方法．</p>
+
+<p>除了结构体还可以为非结构体申明方法，但是不能为内建类型申明方法．</p>
+
+<p>方法有两种接收者,值接收者和指针接收者.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Vertex struct {
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>值接收者:</p>
+
+<p>值接收者操作的是值的副本.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (v Vertex) MethodName() rType {
+    ...
+}
+
+var v Vertex
+v.MethodName() // 操作值的副本
+
+# 使用指针接收者来调用值接收者的方法，编译器会自动做类型转换
+vp := new(Vertex)
+vp.MethodName() // 指针被解引用为值,(*vp).MethodName(),操作的是指针指向的值的副本.</pre></td></tr></table>
+</div>
+</div>
+<p>指针接收者：</p>
+
+<p>指针接收者，调用方法的时候操作的是该指针指向的值.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 指针接收者的方法可以修改接收者指向的值
+func (v *Vertex) MethodName() rType {
+    ...
+}
+
+vp := new(Vertex)
+vp.MethodName() // 操作实际的值
+
+# 使用值接收者来调用指针接收者的方法，编译器会自动做类型转换.
+var v Vertex
+v.MethodName() // (&amp;v).MethodName() , 操作的是实际的值</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="接口-interface">接口/Interface</h1>
+
+<p>接口是引用类型.</p>
+
+<p>接口类型是由一组方法签名定义的集合．</p>
+
+<p>接口类型的值可以保存任何实现了这些方法的值．</p>
+
+<p>某个类型实现了该接口的所有方法签名，就算实现了该接口,无需显示申明实现了哪个接口.</p>
+
+<p>接口可以匿名嵌入其它接口，或嵌入到结构中．</p>
+
+<p>一般只有一个方法的接口命名为MethodName + &lsquo;er&rsquo;.</p>
+
+<p>接口存储两个数据接口：</p>
+
+<ul>
+<li>iTable, 包含存储值的类型信息以及和该值关联的方法.</li>
+<li>指向存储的值的指针.</li>
+</ul>
+
+<p>定义接口：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type IName interface {
+    MethodName()
+    ...
+}
+
+type SName struct {
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>值接收者方法:</p>
+
+<p>接口类型的值为值或指针都可以调用该方法.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (s SName) MethodName() {}</pre></td></tr></table>
+</div>
+</div>
+<p>指针接收者方法:</p>
+
+<p>接口类型的值必须为指针才能调用该方法.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (s *SName) MethodName() {
+    ...
+}
+
+s := &amp;SName{...}
+// i = &amp;SName{...} //接口变量能保存实现了该接口的任意类型的对象
+i = s
+i.MethodName()
+
+# 接口类型为值时，调用失败
+var s SName
+i = s
+i.MethodName() // 调用失败</pre></td></tr></table>
+</div>
+</div>
+<p>底层值为nil的接口值:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var i IName
+var s SName
+i = s    # 接口值为nil</pre></td></tr></table>
+</div>
+</div>
+<p>空接口：</p>
+
+<p>所有类型都实现了空接口.</p>
+
+<p>指定了零个方法的接口值被称为空接口,一般用来处理未知类型的值.</p>
+
+<p>当接口储存的类型和对象都为nil，接口才为nil</p>
+
+<p>以空接口为参数的函数可以接收任意类型的值作为参数.</p>
+
+<p>如果一个函数返回空接口就可以返回任意类型的值.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 空接口可以保存任何类型的值
+var i interface{}
+# 空接口作为形参
+func FuncName(i interface{}) {}</pre></td></tr></table>
+</div>
+</div>
+<p>指针的类型断言/comma-ok断言：</p>
+
+<p>断言接口值i保存了具体类型Type, 并将底层类型为Type的值赋予变量t.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">只返回一个值，断言失败会触发panic.
+t := i.(Type)
+
+返回两个值，断言成功返回true, 失败返回false.
+t, ok := i.(Type)</pre></td></tr></table>
+</div>
+</div>
+<p>指针的类型选择/switch测试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// i.(type) 是固定写法
+switch TypeValue := i.(type) {
+case Type1:
+    ...
+case Type2:
+    ...
+...
+default:
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>嵌入接口:</p>
+
+<p>接口中可以嵌入其它接口，这样实现了该接口的对象就隐式包含嵌入接口的所有方法.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Interface interface {}</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h2 id="封装">封装</h2>
+
+<p>小写字母开头的标识符（类型/属性/方法&hellip;)是未公开的，只能在当前包引用，不能在其它包引用。</p>
+
+<p>可以通过创建工厂函数对外暴露未公开的标识符:</p>
+
+<ul>
+<li>标识符才有公开或未公开属性，值没有</li>
+<li>短变量声明操作符，有能力捕获引用的类型，并创建一个未公开的类型的变量；显示声明的变量不能引用未公开类型。</li>
+</ul>
+
+<p>通过工厂函数返回未公开类型的值:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># packageA
+type privateType  Type
+func New(args) privateType {
+    return privateType(args)
+}
+# packageB
+import packageA
+func main() {
+    b := packageA.New(args) // 返回一个值，而不是标识符
+}</pre></td></tr></table>
+</div>
+</div>
+<p>公开类型的未公开属性:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># packageA
+type Public struct {
+    private Type
+}
+
+# packageB
+import packageA
+func main() {
+    b := packageA.Public{
+        private: value, // panic, 公开类型的未公开属性不能通过字面量直接赋值
+    }
+}</pre></td></tr></table>
+</div>
+</div>
+<p>类型嵌套中的未公开类型的公开属性会提升到外部类型:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># packageA
+type inner struct { // inner private
+    In Type  // In public
+}
+type Outer struct {
+    inner
+    Out Type
+}
+
+# packageB
+import packageA
+func main() {
+    b := packageA.Outer{
+        Out: value, // 外部类型中的未公开内部类型不能通过字面量直接赋值
+    }
+    b.In = value // 内部类型的公开属性提升到外部类型。
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="多态">多态</h2>
+
+<p>形式参数是接口的函数，叫做多态函数.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func FuncName(iVar IName) {}</pre></td></tr></table>
+</div>
+</div>
+<p>所有实现了接口的方法的实体类型，就可以作为参数传给多态函数.</p>
+
+<h2 id="继承">继承</h2>
+
+<p>通过类型嵌套实现继承，外部类型可以访问内部类型的属性和方法</p>
+
+<p>如果外部类型实现同名的属性或方法，就会覆盖内部类型的属性或方法（不过内部类型的属性和方法还在，可以通过内部类型访问）</p>
+
+<p>内部类型实现的接口，也会自动提升到外部类型。只要内部类型实现了某接口，外部类型相当于也实现了该接口。</p>
+
+<p>如果匿名字段实现了一个方法，那么包含这个匿名字段的结构也可以调用该方法.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Inner struct {
+    in Type
+}
+
+func (i *Inner) InnerMethod() {}
+
+type Outer struct {
+    Inner    // 只需要类型名称，不需要声明变量
+    out Type
+    ...
+}
+
+outer := Outer{}
+
+outer.Inner.InnerMethod() //始终可以访问内部类型的方法，即使外部类型实现同名方法
+outer.Inner.in // 同上
+
+outer.InnerMethod() //如果外部类型没有实现同名方法，就是内部类型方法，否则是外部类型方法
+outer.in // 同上</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="反射-reflact">反射/reflact</h1>
+
+<p>反射就是检查程序在运行时的状态.</p>
+
+<p>使用反射一般使用标准库reflect.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux CHENG</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">golang</a>
+          <a href="/tags/oop/">oop</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/go_document/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Go_Document</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/amqp/">
+            <span class="next-text nav-default">Amqp</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-01-01 10:49:21 \x2b0000 UTC',
+        title: 'Go_Oop',
+        link: decodeURI(location.href),
+        desc: 'Go面向对象 golang通过方法和接口实现面向对象. 方法\/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参',
+        owner: 'crazy-canux',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

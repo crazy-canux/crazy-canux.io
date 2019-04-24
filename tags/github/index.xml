@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/github/</link>
+    <description>Recent content in github on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Apr 2016 21:11:33 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git</title>
+      <link>http://canuxcheng.com/post/git/</link>
+      <pubDate>Sat, 02 Apr 2016 21:11:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/git/</guid>
+      <description>Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2</description>
+    </item>
+    
+  </channel>
+</rss>

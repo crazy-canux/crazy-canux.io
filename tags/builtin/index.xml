@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>builtin on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/builtin/</link>
+    <description>Recent content in builtin on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/builtin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_builtin</title>
+      <link>http://canuxcheng.com/post/gsl_builtin/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_builtin/</guid>
+      <description>builtin go的builtin package. constants 1 2 3 true false iota variables pointer, slice, map, channel, func, interface的零值： 1 nil functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 分配并初始化各种类型的对象</description>
+    </item>
+    
+  </channel>
+</rss>

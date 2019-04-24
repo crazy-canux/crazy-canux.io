@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>beego on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/beego/</link>
+    <description>Recent content in beego on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Apr 2019 21:47:16 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/beego/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beego_Deploy</title>
+      <link>http://canuxcheng.com/post/beego_deploy/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_deploy/</guid>
+      <description>发布beego项目</description>
+    </item>
+    
+    <item>
+      <title>Beego_Model</title>
+      <link>http://canuxcheng.com/post/beego_model/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_model/</guid>
+      <description> Model </description>
+    </item>
+    
+    <item>
+      <title>Beego_View</title>
+      <link>http://canuxcheng.com/post/beego_view/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_view/</guid>
+      <description>View beego的view支持html和tpl两种格式．</description>
+    </item>
+    
+    <item>
+      <title>Beego_Template</title>
+      <link>http://canuxcheng.com/post/beego_template/</link>
+      <pubDate>Thu, 27 Sep 2018 01:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_template/</guid>
+      <description>Golang 模板 beego的模板和text/template, html/template差不多． 注释 1 {{/* comment /*}} 变量 变量定义和使用 1 2 3 4 5 申明变量不会产</description>
+    </item>
+    
+    <item>
+      <title>Beego</title>
+      <link>http://canuxcheng.com/post/beego/</link>
+      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego/</guid>
+      <description>Beego Beego是golang的web框架. beego 是基于八大独立的模块构建的，是一个高度解耦的框架。 bee 工具是一个为了协助快速开发 beego 项目而创建的项目，</description>
+    </item>
+    
+    <item>
+      <title>Beego_Controller</title>
+      <link>http://canuxcheng.com/post/beego_controller/</link>
+      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_controller/</guid>
+      <description> Controller </description>
+    </item>
+    
+  </channel>
+</rss>

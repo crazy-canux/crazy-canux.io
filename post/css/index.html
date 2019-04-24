@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Css - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元" /><meta name="keywords" content="css" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/css/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Css" />
+<meta property="og:description" content="CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/css/" />
+<meta property="article:published_time" content="2016-06-23T09:40:45&#43;00:00"/>
+<meta property="article:modified_time" content="2016-06-23T09:40:45&#43;00:00"/>
+
+<meta itemprop="name" content="Css">
+<meta itemprop="description" content="CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元">
+
+
+<meta itemprop="datePublished" content="2016-06-23T09:40:45&#43;00:00" />
+<meta itemprop="dateModified" content="2016-06-23T09:40:45&#43;00:00" />
+<meta itemprop="wordCount" content="1411">
+
+
+
+<meta itemprop="keywords" content="css," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Css"/>
+<meta name="twitter:description" content="CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Css</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-23 </span>
+        <div class="post-category">
+            <a href="/categories/web/"> Web </a>
+            </div>
+          <span class="more-meta"> 1411 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#css"><strong>CSS</strong></a></li>
+<li><a href="#css3">CSS3</a></li>
+<li><a href="#css创建">CSS创建</a></li>
+<li><a href="#css基本语法"><strong>CSS基本语法</strong></a></li>
+<li><a href="#css选择器"><strong>CSS选择器</strong></a>
+<ul>
+<li><a href="#选择器分组">选择器分组</a></li>
+<li><a href="#id选择器">id选择器</a></li>
+<li><a href="#类选择器">类选择器</a></li>
+<li><a href="#属性选择器">属性选择器</a></li>
+<li><a href="#后代选择器">后代选择器</a></li>
+<li><a href="#子元素选择器">子元素选择器</a></li>
+<li><a href="#相邻兄弟选择器">相邻兄弟选择器</a></li>
+</ul></li>
+<li><a href="#css样式"><strong>CSS样式</strong></a>
+<ul>
+<li><a href="#background样式">background样式</a></li>
+<li><a href="#文本样式">文本样式</a></li>
+<li><a href="#字体样式">字体样式</a></li>
+<li><a href="#链接样式">链接样式</a></li>
+<li><a href="#列表样式">列表样式</a></li>
+<li><a href="#表格样式">表格样式</a></li>
+<li><a href="#轮廓样式">轮廓样式</a></li>
+<li><a href="#尺寸属性">尺寸属性</a></li>
+</ul></li>
+<li><a href="#css模型框"><strong>CSS模型框</strong></a>
+<ul>
+<li><a href="#内边距属性">内边距属性</a></li>
+<li><a href="#边框属性">边框属性</a></li>
+<li><a href="#外边距属性">外边距属性</a></li>
+</ul></li>
+<li><a href="#css定位"><strong>CSS定位</strong></a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-06-23T09:40:45" title="June 23, 2016">June 23, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="css"><strong>CSS</strong></h1>
+
+<p>CSS是叠层样式表</p>
+
+<h1 id="css3">CSS3</h1>
+
+<p>CSS3是最新的CSS标准</p>
+
+<h1 id="css创建">CSS创建</h1>
+
+<p>优先级从上往下。</p>
+
+<ol>
+<li>内联样式， 在html中通过style属性定义，仅用于一个html元素。</li>
+<li>内部样式表，在html中通过style标签在头部定义,针对单个页面。</li>
+<li>外部样式表，在html中通过link标签在文档头部定义，方便将样式用于多个页面。</li>
+<li>浏览器的默认值。</li>
+</ol>
+
+<hr />
+
+<h1 id="css基本语法"><strong>CSS基本语法</strong></h1>
+
+<p>CSS由两部分组成，选择器和声明，选择器是html元素，声明由属性和值组成。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">selector {
+  property1: value1;
+  property2: value2;
+  ...;
+}</pre></td></tr></table>
+</div>
+</div>
+<p>多个声明用分号隔开，属性的值有空格要用引号。</p>
+
+<p>CSS对大小写不敏感。</p>
+
+<p>CSS注释:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/* comment */</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="css选择器"><strong>CSS选择器</strong></h1>
+
+<p>最常见的选择器是元素选择器,html元素是最基本的选择器。</p>
+
+<h2 id="选择器分组">选择器分组</h2>
+
+<p>同组的选择器使用相同的声明。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">h1,h2,h3,h4,h5,h6 {
+  color: green;
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="id选择器">id选择器</h2>
+
+<p>id选择器可以为标有特定id的html元素指定特定样式。</p>
+
+<p>id选择器用#开头定义。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#red {color: red;}
+#green {color: green;}
+
+&lt;p id=&#34;red&#34;&gt;This is red.&lt;/p&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>id选择器常常用来建立派生选择器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#sidebar p {
+  font-style: italic;
+  text-align: right;
+  margin-top: 0.5em;
+}
+
+&lt;div id=&#34;sidebar&#34;&gt;...&lt;/div&gt;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="类选择器">类选择器</h2>
+
+<p>和id选择器功能类似，类选择器以.开头。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.center {text-align: center}
+
+&lt;h1 class=&#34;center&#34;&gt;...&lt;/h1&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>类选择器用于建立派生选择器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.fancy td {
+  color: #f60;
+  background: #666;
+}
+
+&lt;td class=&#34;fancy&#34;&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>也可以用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">td.fancy {
+  color: #f60;
+  background: #666;
+}
+
+&lt;td class=&#34;fancy&#34;&gt;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="属性选择器">属性选择器</h2>
+
+<p>为拥有指定属性的html元素设置样式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[title]
+{
+  color: red;
+}
+
+&lt;a title=&#34;title is red&#34;&gt;...&lt;/a&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>属性和值选择器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[title=w3c]
+{
+  border: 5px solid blue;
+}
+
+&lt;img title=&#34;w3c&#34; src=&#34;/images/w3c.gif&#34;&gt;
+
+# 属性和值选择器的操作符：
+=
+~=
+|=
+^=
+$=
+*=</pre></td></tr></table>
+</div>
+</div>
+<h2 id="后代选择器">后代选择器</h2>
+
+<h2 id="子元素选择器">子元素选择器</h2>
+
+<h2 id="相邻兄弟选择器">相邻兄弟选择器</h2>
+
+<hr />
+
+<h1 id="css样式"><strong>CSS样式</strong></h1>
+
+<p>内联样式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;p style=&#34;background: #ff0000 url(/i/eg_bg_03.gif) no-repeat fixed center&#34;&gt;...&lt;/h1&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>样式表：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">p {
+  background: #ff0000 url(/i/eg_bg_03.gif) no-repeat fixed center;
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="background样式">background样式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">background: # 可以定义所有背景的值
+background-color: gray # 背景颜色
+background-image: url(/images/test.gif) # 背景图片,默认水平和垂直都平铺
+background-repeat: repeat-x # 水平方向平铺
+background-repeat: repeat-y # 垂直方向平铺
+background-repeat: no-repeat # 不平铺
+background-position: center/top/buttom/left/right # 图像在背景中的位置
+background-attachment: fixed # 图像相对于可视区是固定的
+background-size
+background-origin
+background-clip</pre></td></tr></table>
+</div>
+</div>
+<h2 id="文本样式">文本样式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">color: red # 设置文本颜色
+line-height # 设置行高
+letter-spacing # 设置字符间距
+word-spacing # 设置字间距
+text-indent # 缩进元素中文本首行
+direction: ltr/rtl # 设置文本方向
+text-align: left/right/center/justify # 对齐元素中的文本
+text-decoration: none/underline/overline/line-through/blink # 向文本添加修饰
+text-transform: none/capitalize/uppercase/lowercase # 控制元素的字母
+white-space: normal/pre/nowrap/pre-wrap/pre-line # 设置元素中空白的处理方式</pre></td></tr></table>
+</div>
+</div>
+<h2 id="字体样式">字体样式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">font: # 定义所有和字体有关的属性
+font-family: # 设置字体系列
+font-size:  # 设置字体尺寸
+font-style: normal/italic/oblique # 设置字体风格
+font-variant: normal/small-caps # 设置字体变体
+font-weight: normal/bold/bolder/lighter/... # 设置字体粗细</pre></td></tr></table>
+</div>
+</div>
+<h2 id="链接样式">链接样式</h2>
+
+<p>链接可以设置background，color，font等样式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">a:link {background: red} # 普通的未被访问的链接
+a:visited {color: blue} # 用户已访问的链接
+a:hover {font: } # 鼠标指针位于链接的上方
+a:active {font: } # 链接被点击的时刻</pre></td></tr></table>
+</div>
+</div>
+<h2 id="列表样式">列表样式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">list-style: # 定义所有和列表相关的属性
+list-style-image: # 把图像设置为列表项标志
+list-style-position: inside/outside # 设置列表项标志的位置
+list-style-type: # 设置列表项标志的位置</pre></td></tr></table>
+</div>
+</div>
+<h2 id="表格样式">表格样式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">border-collapse: separate/collapse # 设置是否把表格边框合并为单一的边框
+border-spacing: # 设置分割单元边框距离
+caption-side: top/bottom # 规定表格标题设置方式
+empty-cells: hide/show # 设置是否现实表格中的空单元格
+table-layout: automatic/fixed # 设置现实单元，行和列的算法</pre></td></tr></table>
+</div>
+</div>
+<h2 id="轮廓样式">轮廓样式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">outline: # 设置所有和轮廓相关的属性
+outline-color: # 设置轮廓颜色
+outline-style: none/dotted/dashed/solid/double/groove/ridge/inset/outset # 设置轮廓风格
+outline-width: # 设置轮廓宽度</pre></td></tr></table>
+</div>
+</div>
+<h2 id="尺寸属性">尺寸属性</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">height
+width
+max-height
+max-width
+min-height
+min-width</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="css模型框"><strong>CSS模型框</strong></h1>
+
+<h2 id="内边距属性">内边距属性</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">padding
+padding-top
+padding-rigit
+padding-bottom
+padding-left</pre></td></tr></table>
+</div>
+</div>
+<h2 id="边框属性">边框属性</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">border
+border-style
+border-width
+border-color
+border-buttom
+border-buttom-color/style/width
+border-left
+border-left-color/style/width
+border-right
+border-right-color/style/width
+border-top
+border-top-color/style/width</pre></td></tr></table>
+</div>
+</div>
+<h2 id="外边距属性">外边距属性</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">margin # 依次为上，右，下，左．
+margin-right
+margin-top
+margin-bottom
+margin-left</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="css定位"><strong>CSS定位</strong></h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">position # 规定元素的定位
+top
+right
+bottom
+left
+overflow # 内容益处元素框时，visible/hidden/scroll/auto/inderit
+clip
+vertical-align
+z-index
+display # 规定元素应该生成的框的类型, inline/none/block/...
+float # none/left/right/inderit, 规定框是否应该浮动</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux CHENG</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-06-23
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css/">css</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/restructuredtext/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ReStructuredText</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/germany/">
+            <span class="next-text nav-default">Germany</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2016-06-23 09:40:45 \x2b0000 UTC',
+        title: 'Css',
+        link: decodeURI(location.href),
+        desc: 'CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元',
+        owner: 'crazy-canux',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

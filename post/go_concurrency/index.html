@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go_Concurrency - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="并发/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c" /><meta name="keywords" content="golang, concurrency" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/go_concurrency/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Go_Concurrency" />
+<meta property="og:description" content="并发/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/go_concurrency/" />
+<meta property="article:published_time" content="2018-01-01T10:49:21&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-01T10:49:21&#43;00:00"/>
+
+<meta itemprop="name" content="Go_Concurrency">
+<meta itemprop="description" content="并发/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c">
+
+
+<meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="wordCount" content="1494">
+
+
+
+<meta itemprop="keywords" content="golang,concurrency," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go_Concurrency"/>
+<meta name="twitter:description" content="并发/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Go_Concurrency</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+          <span class="more-meta"> 1494 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#并发-concurrency">并发/concurrency</a></li>
+<li><a href="#goroutines">goroutines</a></li>
+<li><a href="#竟态">竟态</a></li>
+<li><a href="#同步">同步</a></li>
+<li><a href="#消息传递">消息传递</a>
+<ul>
+<li><a href="#select">select</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-01T10:49:21" title="January 1, 2018">January 1, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="并发-concurrency">并发/concurrency</h1>
+
+<p>go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是channel.</p>
+
+<p>concurrency:并发,同时管理很多事情，可以执行到一半就暂停去做其他事情.有同时执行的能力，但不一定要同时执行.</p>
+
+<p>所以如果是单个cpu，每次只能运行一个goroutine,如果是多cpu,就是并行,每个cpu都可以跑goroutine.</p>
+
+<p>parallelism: 并行,让不同的代码在不同的物理处理器上同时执行.</p>
+
+<p>process: 进程, 是系统资源和调度的基本单位，包括内存，句柄，线程等。</p>
+
+<p>thread: 线程,是cpu调度和分配的基本单位,每个进程至少包含一个线程，初始线程就是主线程，每个线程绑定到一个逻辑cpu上运行。</p>
+
+<p>coroutines: 协程</p>
+
+<p>goroutines: go语言的协程，是并行的，通过channel来通信.</p>
+
+<p>CSP: communicating sequential processes, 顺序通信进程</p>
+
+<p>MPM: message pussing model, 消息传递模型</p>
+
+<h1 id="goroutines">goroutines</h1>
+
+<p>go关键字会启动一个新的goroutine并执行.</p>
+
+<p>每个goroutine会绑定到一个逻辑处理器上运行，每个逻辑处理器会绑定到单个操作系统线程。</p>
+
+<p>当goroutine阻塞，就会把goroutine和线程从逻辑处理器上分离，然后创建一个新的线程绑定到该逻辑处理器，并继续运行队列中的其它goroutine.</p>
+
+<p>当阻塞的goroutine恢复，会再次进入队列，和该goroutine绑定的线程也会保存下来.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go FuncName(...)</pre></td></tr></table>
+</div>
+</div>
+<p>主进程main结束了，goroutine也结束．</p>
+
+<hr />
+
+<h1 id="竟态">竟态</h1>
+
+<p>race condition: 竞争状态，多个goroutine同时操作同一资源.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 检测竞争状态
+$ go build -race</pre></td></tr></table>
+</div>
+</div>
+<p>所以要解决goroutine间的消息传递和同步的问题.</p>
+
+<h1 id="同步">同步</h1>
+
+<p>通过对资源上锁来保持同步.</p>
+
+<p>golang的同步通过sync和sync/atomic两个包实现.</p>
+
+<h1 id="消息传递">消息传递</h1>
+
+<p>goroutine通过channel来传递消息.</p>
+
+<p>channels是引用类型.</p>
+
+<p>channel可以共享内置类型，命名类型，结构类型，引用类型的值或指针.</p>
+
+<p>chan通过make来创建，通过close来关闭．</p>
+
+<p>chan是先进先出的.</p>
+
+<p>如果chan指定了容量(有缓存), 就是异步，非阻塞模式．</p>
+
+<p>默认是无缓存的，同步的,　阻塞模式.</p>
+
+<p>申明一个变量:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var ChanName chan Type</pre></td></tr></table>
+</div>
+</div>
+<p>定义一个chan:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var ch = make(chan Type, cap)
+ch := make(chan Type, cap)</pre></td></tr></table>
+</div>
+</div>
+<p>操作chan:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ch &lt;- v    # 发送值到ch
+
+&lt;- ch    # 从ch接收值
+v := &lt;- ch    # 从ch接收值并赋予Type类型变量v
+
+v, ok = &lt;- ch # 从ch接收值，如果ch关闭或没有数据，ok就为false.</pre></td></tr></table>
+</div>
+</div>
+<p>无缓冲的chan:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ch := make(chan Type)</pre></td></tr></table>
+</div>
+</div>
+<p>无缓冲的chan生产者会阻塞unbuffered，直到消费者接收数据, 也就是说是同步的synchronous.</p>
+
+<p>只有消费者或者只有生产者的chan会导致死锁，产生panic.</p>
+
+<p>带缓冲的chan:</p>
+
+<p>带缓冲的chan，在缓冲区满之前，都不会阻塞buffered，是异步的asynchronous.</p>
+
+<p>只有通道中没有要接收的值，接收动作才会阻塞.</p>
+
+<p>只有在通道没有可用缓冲区容纳被发送的值，发送动作才会阻塞．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ch := make(chan Type, cap)
+
+// 带缓冲的chan可以通过range遍历
+for i := range ch {...}</pre></td></tr></table>
+</div>
+</div>
+<p>chan的方向：</p>
+
+<p>默认chan都是双向的，但是也可以指定方向</p>
+
+<p>只接收的chan无法关闭</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var recv_only chan&lt;- Type</pre></td></tr></table>
+</div>
+</div>
+<p>只发送的chan</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var send_only &lt;-chan Type</pre></td></tr></table>
+</div>
+</div>
+<p>显示关闭chan:</p>
+
+<p>通道关闭后，不能再向通道发送值，但是已经发送的值可以被接收.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 一般在生产者(发送动作)关闭chan
+close(ch)
+
+// 如果chan关闭ok=false, v为零值.
+v, ok := &lt;-ch</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h2 id="select">select</h2>
+
+<p>监听chan的数据流，类似于switch-case, 处理多个chan的情况</p>
+
+<p>select默认是阻塞的，只有监听的chan中有数据才执行.</p>
+
+<p>select类似switch, default是监听的chan都没有准备好的时候默认执行的．</p>
+
+<hr />
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux CHENG</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">golang</a>
+          <a href="/tags/concurrency/">concurrency</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/go/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Go</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go_debug/">
+            <span class="next-text nav-default">Go_Debug</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-01-01 10:49:21 \x2b0000 UTC',
+        title: 'Go_Concurrency',
+        link: decodeURI(location.href),
+        desc: '并发\/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c',
+        owner: 'crazy-canux',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/math/</link>
+    <description>Recent content in math on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_math</title>
+      <link>http://canuxcheng.com/post/gsl_math/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_math/</guid>
+      <description>math constants variables functions math/big math/cmplx math/rand sort functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 func Ints(a []int) func IntAreSorted(a []int) bool func SearchInts(a []int, x int) int func Float64s(a []float64) func Float64sArerSorted(a []float64) bool func SearchFloat64s(a []float64, x float64) int func Strings(a []string) func StringsAreSorted(a []string) bool func SearchStrings(a []string, x string) int func Sort(data Interface) func</description>
+    </item>
+    
+  </channel>
+</rss>

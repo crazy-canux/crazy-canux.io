@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>template on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/template/</link>
+    <description>Recent content in template on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Sep 2018 01:33:42 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/template/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beego_Template</title>
+      <link>http://canuxcheng.com/post/beego_template/</link>
+      <pubDate>Thu, 27 Sep 2018 01:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_template/</guid>
+      <description>Golang 模板 beego的模板和text/template, html/template差不多． 注释 1 {{/* comment /*}} 变量 变量定义和使用 1 2 3 4 5 申明变量不会产</description>
+    </item>
+    
+  </channel>
+</rss>

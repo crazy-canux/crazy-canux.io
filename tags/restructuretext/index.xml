@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>restructuretext on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/restructuretext/</link>
+    <description>Recent content in restructuretext on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Aug 2016 13:39:38 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/restructuretext/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ReStructuredText</title>
+      <link>http://canuxcheng.com/post/restructuredtext/</link>
+      <pubDate>Mon, 08 Aug 2016 13:39:38 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/restructuredtext/</guid>
+      <description>reStructuredText http://docutils.sourceforge.net/rst.html reST是易读所见即所得的文本标记语言，格式类似markdown。 python的reST参考pep12和pep287: https://www.python.org/dev/peps/pep-0012/ https://www.python.org/dev/peps/pep-0287/ 主标题： 1 2 3</description>
+    </item>
+    
+  </channel>
+</rss>

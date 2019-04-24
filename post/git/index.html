@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Git - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2" /><meta name="keywords" content="git" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/git/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Git" />
+<meta property="og:description" content="Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/git/" />
+<meta property="article:published_time" content="2016-04-02T21:11:33&#43;00:00"/>
+<meta property="article:modified_time" content="2016-04-02T21:11:33&#43;00:00"/>
+
+<meta itemprop="name" content="Git">
+<meta itemprop="description" content="Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2">
+
+
+<meta itemprop="datePublished" content="2016-04-02T21:11:33&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-02T21:11:33&#43;00:00" />
+<meta itemprop="wordCount" content="2459">
+
+
+
+<meta itemprop="keywords" content="git,gitlab,github," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git"/>
+<meta name="twitter:description" content="Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Git</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-04-02 </span>
+        <div class="post-category">
+            <a href="/categories/devops/"> DevOps </a>
+            </div>
+          <span class="more-meta"> 2459 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#git">Git</a></li>
+<li><a href="#git-config-git配置">git config (Git配置)</a></li>
+<li><a href="#git-remote-git-协议">git remote (git 协议)</a></li>
+<li><a href="#github">github</a>
+<ul>
+<li><a href="#projcet-gitignore">projcet/.gitignore</a></li>
+<li><a href="#project-gitattributes">project/.gitattributes</a></li>
+</ul></li>
+<li><a href="#git相关项目">git相关项目</a>
+<ul>
+<li><a href="#gui">GUI</a></li>
+<li><a href="#git-for-windows">git-for-windows</a></li>
+<li><a href="#post-git">post-git</a></li>
+<li><a href="#git-extras">git-extras</a></li>
+<li><a href="#git-sweep">git-sweep</a></li>
+<li><a href="#git-imerge">git-imerge</a></li>
+<li><a href="#git-standup">git-standup</a></li>
+<li><a href="#git-lfs">git-lfs</a></li>
+<li><a href="#gerrit">Gerrit</a></li>
+</ul></li>
+<li><a href="#搭建私有git服务器">搭建私有git服务器</a>
+<ul>
+<li><a href="#gitolite">gitolite</a></li>
+<li><a href="#gitosis">gitosis</a></li>
+</ul></li>
+<li><a href="#git命令">Git命令</a>
+<ul>
+<li><a href="#init">init</a></li>
+<li><a href="#add">add</a></li>
+<li><a href="#commit">commit</a></li>
+<li><a href="#bisect">bisect</a></li>
+<li><a href="#branch">branch</a></li>
+<li><a href="#blame">blame</a></li>
+<li><a href="#checkout">checkout</a></li>
+<li><a href="#clone">clone</a></li>
+<li><a href="#diff">diff</a></li>
+<li><a href="#fetch">fetch</a></li>
+<li><a href="#grep">grep</a></li>
+<li><a href="#log">log</a></li>
+<li><a href="#merge">merge</a></li>
+<li><a href="#mv">mv</a></li>
+<li><a href="#pull">pull</a></li>
+<li><a href="#push">push</a></li>
+<li><a href="#rebase">rebase</a></li>
+<li><a href="#reset">reset</a></li>
+<li><a href="#rm">rm</a></li>
+<li><a href="#revert">revert</a></li>
+<li><a href="#reflog">reflog</a></li>
+<li><a href="#show">show</a></li>
+<li><a href="#status">status</a></li>
+<li><a href="#stash">stash</a></li>
+<li><a href="#tag">tag</a></li>
+<li><a href="#submodule">submodule</a></li>
+<li><a href="#mergetool">mergetool</a></li>
+</ul></li>
+<li><a href="#best-prictise">Best Prictise</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-04-02T21:11:33" title="April 2, 2016">April 2, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="git">Git</h1>
+
+<p>GIT: 分布式版本控制系统。</p>
+
+<p>SVN: subversion并发式版本控制系统。</p>
+
+<p>Mercurial: hg分布式版本控制。</p>
+
+<p>和git相关的产品：
+1. github
+2. bitbucket
+3. sourceForge
+4. gitlab</p>
+
+<p>Git安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install git
+$ yum install git</pre></td></tr></table>
+</div>
+</div>
+<h1 id="git-config-git配置">git config (Git配置)</h1>
+
+<p><a href="https://git-scm.com/book/zh/v2">https://git-scm.com/book/zh/v2</a></p>
+
+<p>git配置文件：</p>
+
+<ol>
+<li>/etc/gitconfig 系统级的配置文件，通过git config &ndash;system设置</li>
+<li>~/.gitconfig 用户级的配置文件，通过git config &ndash;global设置</li>
+<li>.git/config 仓库级的配置文件，通过git config &ndash;local设置</li>
+</ol>
+
+<p>git配置：</p>
+
+<p>使用git config &ndash;global命令配置,或者直接修改~/.gitconfig文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 查看帮助
+git help config
+man git-config
+git config --help
+git config -l/--list # 查看所有配置
+git config --system
+git config --global
+git config --local
+git config --global user.name &#34;your_name&#34;
+git config --global user.email &#34;your_email&#34;
+git config --global core.editor vim</pre></td></tr></table>
+</div>
+</div>
+<p>多配置文件：</p>
+
+<p>在~/.gitconfig添加include可以调用其它配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[include]
+    path = ~/myCode/pydeveloper/etc/git/gitcofig</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="git-remote-git-协议">git remote (git 协议)</h1>
+
+<p><a href="https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE">https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE</a></p>
+
+<p>git有四个协议：</p>
+
+<ol>
+<li><p>本地协议file</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">file:///path/to/project.git</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>SSH协议</p>
+
+<p>拷贝ssh的公钥后不需要输入用户名和密码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ssh://git@github.com/&lt;username&gt;/&lt;project&gt;.git
+git@github.com:&lt;username&gt;/&lt;project&gt;.git</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>http协议</p>
+
+<p>默认需要手动输入远程仓库的用户名和密码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">https://github.com/&lt;username&gt;/&lt;project&gt;.git
+# 不用手动输入密码
+https://&lt;username&gt;:&lt;password&gt;@github.com/&lt;username&gt;/&lt;project&gt;.git</pre></td></tr></table>
+</div>
+</div>
+<p>设置http代理：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git config --global http.proxy &#34;http://&lt;proxy&gt;:&lt;port&gt;&#34;
+git config --global http.proxy &#34;http://&lt;username&gt;:&lt;password&gt;@&lt;proxy&gt;:&lt;port&gt;&#34;
+# In gitconfig file
+[http]
+    proxy = http://&lt;proxy&gt;:&lt;port&gt;</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>Git协议</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git://git@github.com/&lt;username&gt;/&lt;project&gt;.git</pre></td></tr></table>
+</div>
+</div>
+<p>设置git代理：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git config --global core.gitproxy ...</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<p>设置git协议：</p>
+
+<p>如果公司的22端口被封，不能SSH到外网，用set-url将协议改成http即可。</p>
+
+<p>如果使用代理，配置http.proxy即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 查看帮助
+git remote --help
+git help remote
+man git-remote
+git remote -v # 查看远程仓库的详细信息
+git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=&lt;fetch|push&gt;] &lt;name&gt; &lt;url&gt;
+git remote add origin &lt;url&gt; # 给远程仓库origin添加url, 一个仓库可以添加多个url。
+git remote rename &lt;oldname&gt; &lt;newname&gt; # 重命名远程仓库
+git remote remove/rm &lt;name&gt; # 删除和远程仓库相关的所有信息
+git remote set-head
+git remote set-branches
+git remote [-v | --verbose] show [-n] &lt;name&gt;...
+git remote -v show origin # 查看远程仓库origin详细信息
+git remote prune
+git remote update
+git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]
+git remote set-url origin &lt;newurl&gt; # 修改远程仓库origin的url
+git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;
+git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="github">github</h1>
+
+<p>github的windows版本包含windows的git和对powershell的支持</p>
+
+<p><a href="https://desktop.github.com/">https://desktop.github.com/</a></p>
+
+<ol>
+<li><p>注册github帐号</p></li>
+
+<li><p>本地创建sshkey</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ssh-keygen -t rsa -b 4096 -C &#34;your-email&#34;
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>复制key</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install xclip
+xclip -sel clip &lt; ~/.ssh/id_rsa.pub</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>添加public-key到github的settings的SSH keys。</p></li>
+
+<li><p>测试SSH的无密码连接</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ssh -T git@github.com</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<h2 id="projcet-gitignore">projcet/.gitignore</h2>
+
+<p>忽略文件</p>
+
+<p><a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+
+<h2 id="project-gitattributes">project/.gitattributes</h2>
+
+<p>github显示编程语言</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">* linguist-language=Python</pre></td></tr></table>
+</div>
+</div>
+<p><a href="https://github.com/github/linguist">https://github.com/github/linguist</a></p>
+
+<hr />
+
+<h1 id="git相关项目">git相关项目</h1>
+
+<h2 id="gui">GUI</h2>
+
+<p>Linux：</p>
+
+<p>git-gui gitk</p>
+
+<p><a href="http://repo.or.cz/w/git-gui.git/">http://repo.or.cz/w/git-gui.git/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install gitk</pre></td></tr></table>
+</div>
+</div>
+<p>windows:</p>
+
+<p><a href="https://git-scm.com/downloads/guis">https://git-scm.com/downloads/guis</a></p>
+
+<h2 id="git-for-windows">git-for-windows</h2>
+
+<p>windows的git</p>
+
+<p><a href="https://github.com/git-for-windows/git">https://github.com/git-for-windows/git</a></p>
+
+<h2 id="post-git">post-git</h2>
+
+<p>powershell的git</p>
+
+<p><a href="https://github.com/dahlbyk/posh-git">https://github.com/dahlbyk/posh-git</a></p>
+
+<h2 id="git-extras">git-extras</h2>
+
+<p>GIT utilities &ndash; repo summary, repl, changelog population, author commit percentages and more</p>
+
+<p><a href="https://github.com/tj/git-extras">https://github.com/tj/git-extras</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$sudo apt-get install git-extras</pre></td></tr></table>
+</div>
+</div>
+<h2 id="git-sweep">git-sweep</h2>
+
+<p>A command-line tool that helps you clean up Git branches that have been merged into master.</p>
+
+<p><a href="https://github.com/arc90/git-sweep">https://github.com/arc90/git-sweep</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$sudo -E pip install git-sweep
+$cd git-repo
+$git-sweep preview # 查看哪些远程的branch已经merge到master.
+$git-sweep cleanup # 删除远程已经merge到master的branch.
+$git-sweep cleanup --skip integration, sandbox</pre></td></tr></table>
+</div>
+</div>
+<h2 id="git-imerge">git-imerge</h2>
+
+<p><a href="https://github.com/mhagger/git-imerge">https://github.com/mhagger/git-imerge</a></p>
+
+<h2 id="git-standup">git-standup</h2>
+
+<p>Recall what you did on the last working day. Psst! or be nosy and find what someone else in your team did ;</p>
+
+<p><a href="https://github.com/kamranahmedse/git-standup">https://github.com/kamranahmedse/git-standup</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$npm install -g git-standup</pre></td></tr></table>
+</div>
+</div>
+<h2 id="git-lfs">git-lfs</h2>
+
+<p>git的大文件管理</p>
+
+<p><a href="https://github.com/git-lfs/git-lfs">https://github.com/git-lfs/git-lfs</a></p>
+
+<h2 id="gerrit">Gerrit</h2>
+
+<p>Gerrit is a code review and project management tool for Git based projects.</p>
+
+<p><a href="https://github.com/gerrit-review/gerrit">https://github.com/gerrit-review/gerrit</a></p>
+
+<hr />
+
+<h1 id="搭建私有git服务器">搭建私有git服务器</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo groupadd git
+$ sudo adduser git -g git
+$ cd /home/git
+$ mkdir src
+$ git init --bare src
+$ sudo chown -R git:git src</pre></td></tr></table>
+</div>
+</div>
+<h2 id="gitolite">gitolite</h2>
+
+<p><a href="https://github.com/sitaramc/gitolite">https://github.com/sitaramc/gitolite</a></p>
+
+<h2 id="gitosis">gitosis</h2>
+
+<p><a href="https://github.com/res0nat0r/gitosis">https://github.com/res0nat0r/gitosis</a></p>
+
+<hr />
+
+<h1 id="git命令">Git命令</h1>
+
+<p>git的结构：</p>
+
+<ol>
+<li>working directory(工作目录),通过git init初始化</li>
+<li>staging area(暂存区),通过git add添加index到暂存区</li>
+
+<li><p>repository(仓库),通过git commit提交到repository</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git help &lt;verb&gt;
+git &lt;verb&gt; --help
+man git-&lt;verb&gt;
+
+git help -a
+git help -g</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<h2 id="init">init</h2>
+
+<p>Create an empty Git repository or reinitialize an existing one</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git init # 创建一个空repository</pre></td></tr></table>
+</div>
+</div>
+<h2 id="add">add</h2>
+
+<p>Add file contents to the index</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git add .  # 不包括删除的文件
+git add -u # 不包括新建的文件
+git add -A # 添加working tree下的所有文件到index</pre></td></tr></table>
+</div>
+</div>
+<h2 id="commit">commit</h2>
+
+<p>Record changes to the repository</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git commit -m &#34;[1.0.0.0]init repository.&#34;
+git commit --amend</pre></td></tr></table>
+</div>
+</div>
+<h2 id="bisect">bisect</h2>
+
+<p>Find by binary search the change that introduced a bug</p>
+
+<h2 id="branch">branch</h2>
+
+<p>List, create, or delete branches</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git branch [branch-name]
+git branch -d [branch-name] # 删除已经merge到master的分支
+git branch -D [branch-name] # 强制删除分支
+git branch -m [old-name] [new-name] # 重命名
+git branch -M [old-name] [new-name] # 强制重命名</pre></td></tr></table>
+</div>
+</div>
+<h2 id="blame">blame</h2>
+
+<p>Show what revision and author last modified each line of a file</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git blame filename # 查看文件的历史记录</pre></td></tr></table>
+</div>
+</div>
+<h2 id="checkout">checkout</h2>
+
+<p>Checkout a branch or paths to the working tree</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git checkout [branch-name]
+git checkout -b [branch-name] [start-point] # 创建并切换到分支
+git checkout -B [branch-name] [start-point] # 强制执行
+git checkout -- file/path # 撤销工作目录中文件的修改
+git checkout [branch-name] -- file/path # 获取远程仓库的文件到当前工作目录</pre></td></tr></table>
+</div>
+</div>
+<h2 id="clone">clone</h2>
+
+<p>Clone a repository into a new directory</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git clone [url]</pre></td></tr></table>
+</div>
+</div>
+<h2 id="diff">diff</h2>
+
+<p>Show changes between commits, commit and working tree, etc</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git diff # 查看工作目录变化
+git diff --staged # 查看暂存区变化</pre></td></tr></table>
+</div>
+</div>
+<h2 id="fetch">fetch</h2>
+
+<p>Download objects and refs from another repository</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git fetch
+git fetch -p</pre></td></tr></table>
+</div>
+</div>
+<h2 id="grep">grep</h2>
+
+<p>Print lines matching a pattern reinitialize an existing one</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git grep [&lt;pathspec&gt;...]</pre></td></tr></table>
+</div>
+</div>
+<h2 id="log">log</h2>
+
+<p>Show commit logs</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git log # 显示commit的log</pre></td></tr></table>
+</div>
+</div>
+<h2 id="merge">merge</h2>
+
+<p>Join two or more development histories together</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git merge [branch-name]
+git merge --ff # fast-forward,默认直接两个分支合并，不会产生新的commit,看不到开发分支的分叉．
+git merge --no-ff # no fast-forward,每次合并会创建新的commit.可以看到开发分支的分叉
+git merge --ff-only</pre></td></tr></table>
+</div>
+</div>
+<h2 id="mv">mv</h2>
+
+<p>Move or rename a file, a directory, or a symlink</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git mv [old] [new] # 重命名暂存区文件</pre></td></tr></table>
+</div>
+</div>
+<h2 id="pull">pull</h2>
+
+<p>Fetch from and integrate with another repository or a local branch</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git pull</pre></td></tr></table>
+</div>
+</div>
+<h2 id="push">push</h2>
+
+<p>Update remote refs along with associated objects</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git config --global push.default simple
+
+git push origin --delete &lt;branch&gt;
+git push origin :&lt;branch&gt;
+
+git push origin --tags -f # push所有tag
+git push origin [tagname] # push单个tag
+git push origin --delete tag [tagname]
+git push origin :refs/tags/[tagname]</pre></td></tr></table>
+</div>
+</div>
+<h2 id="rebase">rebase</h2>
+
+<p>Forward-port local commits to the updated upstream head</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git rebase -i [commit] # 修改提交的信息
+# r commit-id [branch]comment.
+git rebase --continue
+git rebase --abort
+git rebase --skip
+git rebase --edit-todo</pre></td></tr></table>
+</div>
+</div>
+<h2 id="reset">reset</h2>
+
+<p>Reset current HEAD to the specified state</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git reset --hard [commit] # 全部回退
+git reset --soft [commit]
+git reset --mixed [commit]
+git reset --merge [commit]
+git reset --keep [commit]</pre></td></tr></table>
+</div>
+</div>
+<h2 id="rm">rm</h2>
+
+<p>Remove files from the working tree and from the index</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git rm &lt;file&gt; # 删除工作目录和暂存区的文件
+git rm --cached &lt;file&gt; # 不删除工作目录的文件,　只删除暂存区.
+git rm -r --cached &lt;file&gt;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="revert">revert</h2>
+
+<p>Revert some existing commits</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git revert [commit] # 撤销一次merge</pre></td></tr></table>
+</div>
+</div>
+<h2 id="reflog">reflog</h2>
+
+<p>Manage reflog information</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git reflog show # 查看所有git操作日
+git reflog expire
+git reflog delete</pre></td></tr></table>
+</div>
+</div>
+<h2 id="show">show</h2>
+
+<p>Show various types of objects</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git show</pre></td></tr></table>
+</div>
+</div>
+<h2 id="status">status</h2>
+
+<p>Show the working tree status tag Create, list, delete or verify a</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git status
+git status -s # 显示状态的简介信息, 默认是--long</pre></td></tr></table>
+</div>
+</div>
+<h2 id="stash">stash</h2>
+
+<p>Stash the changes in a dirty working directory away</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git stash # 暂存当前工作目录
+git stash list # 查看暂存列表
+git stash show [stash]
+git stash pop --index stash@{N} # 恢复暂存区N和工作目录
+git stash apply --index stash@{N} # 同上</pre></td></tr></table>
+</div>
+</div>
+<h2 id="tag">tag</h2>
+
+<p>Create, list, delete or verify a tag object signed with GPG</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git tag -l # 查看所有本地tag
+git tag -d v1.0.0 # 删除本地tag
+git tag -a v1.0.0 -m &#34;release 1.0.0.&#34; -f</pre></td></tr></table>
+</div>
+</div>
+<h2 id="submodule">submodule</h2>
+
+<p>Initialize, update or inspect submodules</p>
+
+<p>会在项目产生.gitmodules文件，而且不被.gitignore忽略，所以不要在URL添加用户名和密码．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git submodule add &lt;repository&gt; [&lt;path&gt;]
+git submodule update --init --recursive</pre></td></tr></table>
+</div>
+</div>
+<h2 id="mergetool">mergetool</h2>
+
+<p>Run merge conflict resolution tools to resolve merge conflicts.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git mergetool --tool=meld</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="best-prictise">Best Prictise</h1>
+
+<p>merge远程tag</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git checkout -b influxdata-1.5.2 master
+git pull https://github.com/influxdata/influxdb.git v1.5.2</pre></td></tr></table>
+</div>
+</div>
+<p>gitignore忽略文件和目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">path/to/file
+path/
+# 如果已经push：
+git rm -r --cached path/to/file</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux CHENG</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-04-02
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/git/">git</a>
+          <a href="/tags/gitlab/">gitlab</a>
+          <a href="/tags/github/">github</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/cloudcomputing/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">CloudComputing</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/sed/">
+            <span class="next-text nav-default">Sed</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2016-04-02 21:11:33 \x2b0000 UTC',
+        title: 'Git',
+        link: decodeURI(location.href),
+        desc: 'Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2',
+        owner: 'crazy-canux',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

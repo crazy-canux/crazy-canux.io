@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Storage on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/categories/storage/</link>
+    <description>Recent content in Storage on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Mar 2019 21:51:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/storage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Storage_Command</title>
+      <link>http://canuxcheng.com/post/storage_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_command/</guid>
+      <description>sysstat: 1 2 3 4 5 6 # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat # 查看diskio信息 $ sudo iostat iotop 1 2 3 # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使</description>
+    </item>
+    
+  </channel>
+</rss>

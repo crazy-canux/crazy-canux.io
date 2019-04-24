@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>document on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/document/</link>
+    <description>Recent content in document on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/document/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go_Document</title>
+      <link>http://canuxcheng.com/post/go_document/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_document/</guid>
+      <description>Document go文档相关 https://godoc.org/ go文档的两种方式: go doc godoc go doc 直接在命令行查看文档 1 $ go doc [package/symbol] godoc go自带的文档命令行接口,在浏览器查看文档 1 2 godoc package [name ...] godoc -http=:6060 通过</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Go概述 go语言表达能力强，简洁，清晰，高效． go是一个快速的，静态的，强类型的，编译型语言． go具有高并发和垃圾回收功能. Go基本语法 go" /><meta name="keywords" content="golang" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/go/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Go" />
+<meta property="og:description" content="Go概述 go语言表达能力强，简洁，清晰，高效． go是一个快速的，静态的，强类型的，编译型语言． go具有高并发和垃圾回收功能. Go基本语法 go" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/go/" />
+<meta property="article:published_time" content="2018-01-01T10:49:21&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-01T10:49:21&#43;00:00"/>
+
+<meta itemprop="name" content="Go">
+<meta itemprop="description" content="Go概述 go语言表达能力强，简洁，清晰，高效． go是一个快速的，静态的，强类型的，编译型语言． go具有高并发和垃圾回收功能. Go基本语法 go">
+
+
+<meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="wordCount" content="5816">
+
+
+
+<meta itemprop="keywords" content="golang," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go"/>
+<meta name="twitter:description" content="Go概述 go语言表达能力强，简洁，清晰，高效． go是一个快速的，静态的，强类型的，编译型语言． go具有高并发和垃圾回收功能. Go基本语法 go"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Go</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+          <span class="more-meta"> 5816 words </span>
+          <span class="more-meta"> 12 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#go概述">Go概述</a></li>
+<li><a href="#go基本语法">Go基本语法</a></li>
+<li><a href="#go注释">Go注释</a></li>
+<li><a href="#go关键字">Go关键字</a></li>
+<li><a href="#go运算符和优先级">Go运算符和优先级</a></li>
+<li><a href="#go数据类型">Go数据类型</a>
+<ul>
+<li><a href="#变量">变量</a></li>
+<li><a href="#常量">常量</a></li>
+<li><a href="#bool">bool</a></li>
+<li><a href="#数值类型">数值类型</a></li>
+<li><a href="#string">string</a></li>
+<li><a href="#结构体-struct">结构体/struct</a></li>
+<li><a href="#指针-pointer">指针/pointer</a></li>
+<li><a href="#数组-array">数组/array</a></li>
+<li><a href="#切片-slice">切片/slice</a></li>
+<li><a href="#映射-map">映射/map</a></li>
+<li><a href="#类型转换">类型转换</a></li>
+</ul></li>
+<li><a href="#go控制流">Go控制流</a>
+<ul>
+<li><a href="#for循环">for循环</a></li>
+<li><a href="#if条件语句">if条件语句</a></li>
+<li><a href="#switch条件语句">switch条件语句</a></li>
+<li><a href="#label">label</a></li>
+<li><a href="#break">break</a></li>
+<li><a href="#continue">continue</a></li>
+<li><a href="#goto">goto</a></li>
+</ul></li>
+<li><a href="#go函数">Go函数</a></li>
+<li><a href="#go文件和输入输出">Go文件和输入输出</a>
+<ul>
+<li><a href="#输入">输入</a></li>
+<li><a href="#输出">输出</a></li>
+<li><a href="#文件">文件</a></li>
+</ul></li>
+<li><a href="#go错误和异常">Go错误和异常</a></li>
+<li><a href="#go包">Go包</a></li>
+<li><a href="#go文档">Go文档</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-01T10:49:21" title="January 1, 2018">January 1, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="go概述">Go概述</h1>
+
+<p>go语言表达能力强，简洁，清晰，高效．</p>
+
+<p>go是一个快速的，静态的，强类型的，编译型语言．</p>
+
+<p>go具有高并发和垃圾回收功能.</p>
+
+<hr />
+
+<h1 id="go基本语法">Go基本语法</h1>
+
+<p>go源程序叫*.go</p>
+
+<p>go大小写敏感</p>
+
+<p>go程序都是由包组成，程序的入口是main包中的main函数，每个程序有且只有一个．</p>
+
+<p>go中只有首字母大写的名称才能从包中导出．</p>
+
+<p>go的类型在变量名后面．</p>
+
+<p>go函数外的每个语句都必须以关键字开始.</p>
+
+<p>go标识符(函数名／变量名／常量名／类型名／语句标号／包名)以字母或下划线开头，后面还可以包含数字．</p>
+
+<p>go使用大括号{}表示一个代码块.</p>
+
+<p>go使用分号;表示一个语句结束, 一般一行写多个语句才需要显示添加分号．</p>
+
+<p>go的包名一般是小写的单个单词(文件所在的最后一层目录名).</p>
+
+<p>go一般使用驼峰命名法.</p>
+
+<p>go没有逗号操作符.</p>
+
+<p>go中++/&ndash;是语句不是表达式．</p>
+
+<p>go中大写字母开头的变量或函数是公有的，小写字母开头的是包私有的.</p>
+
+<hr />
+
+<h1 id="go注释">Go注释</h1>
+
+<p>单行注释：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// comment</pre></td></tr></table>
+</div>
+</div>
+<p>多行注释：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/* comment */</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="go关键字">Go关键字</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="kd">var</span> <span class="kd">const</span>
+<span class="k">break</span> <span class="k">continue</span> <span class="k">for</span> <span class="k">if</span> <span class="k">else</span> <span class="k">switch</span> <span class="k">case</span> <span class="k">default</span> <span class="k">goto</span> <span class="k">fallthrough</span>
+<span class="kd">func</span> <span class="k">return</span> <span class="k">defer</span>
+<span class="kn">package</span> <span class="kn">import</span>
+<span class="k">range</span> <span class="kd">type</span> <span class="kd">struct</span> <span class="kd">map</span>
+<span class="kd">interface</span>
+<span class="k">select</span> <span class="k">go</span> <span class="kd">chan</span></pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="go运算符和优先级">Go运算符和优先级</h1>
+
+<p>go中的运算都是从左到右结合．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">^    #
+!    # 逻辑非
+
+*
+/    # 结果取整数
+%
+&lt;&lt;   # 位运算，左移
+&gt;&gt;   # 位运算，右移
+&amp;    # 位运算，　按位与
+&amp;^   #
+
++
+-
+|    # 位运算,按位或
+^    # 位运算,按位异或
+
+==
+!=
+&lt;
+&lt;=
+&gt;
+&gt;=
+
+&lt;- # chan运算符
+
+&amp;&amp;   # 逻辑与
+||   # 逻辑或</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="go数据类型">Go数据类型</h1>
+
+<h2 id="变量">变量</h2>
+
+<p>定义/申明变量:</p>
+
+<p>通过关键字var在包或函数中申明/定义变量</p>
+
+<p>全局变量必须使用var关键字．</p>
+
+<p>没有初始化的变量在申明的时候赋予零值.</p>
+
+<p>已经申明但没有使用的变量在编译时会报错．</p>
+
+<p>通过等号给变量赋值就是定义变量.</p>
+
+<p>大写字母开头的变量是public, 小写字母开头的是private变量.</p>
+
+<p>申明变量:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 一个变量一种类型
+var varname Type
+
+# 多个变量一种类型
+var varname varname1 ... Type</pre></td></tr></table>
+</div>
+</div>
+<p>定义(初始化)变量:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 定义的时候初始化
+var i, j int = 1, 2
+# 初始化使用表达式可以省略类型，从值中获取类型
+var i, j = true, &#34;str&#34;
+
+# 多个变量多种类型
+var (
+    var1 Type1 = val1
+    var2 Type2 = val2
+    # 给类型取别名
+    variable alias Type = value
+    ...
+)</pre></td></tr></table>
+</div>
+</div>
+<p>特殊变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">_  # 下划线是个特殊变量名，用于忽略一个值.</pre></td></tr></table>
+</div>
+</div>
+<h2 id="常量">常量</h2>
+
+<p>定义常量：</p>
+
+<p>通过关键字const在包或函数中定义常量．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 常量可以是bool, string, 数值
+const Pi float = 3.14
+const World = &#34;China&#34;
+const Truth = true
+# 定义多个常量
+const (
+    Pi = 3.14
+    ...
+)</pre></td></tr></table>
+</div>
+</div>
+<p>枚举:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># iota内置常量用来统计枚举中的行数
+const (
+    con = val
+    ...
+)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="bool">bool</h2>
+
+<p>bool类型变量的零值是false.</p>
+
+<p>bool类型是值传递．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">true
+false</pre></td></tr></table>
+</div>
+</div>
+<h2 id="数值类型">数值类型</h2>
+
+<p>数值类型变量的零值是0.</p>
+
+<p>数值类型是值传递.</p>
+
+<p>有符号类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">int int8 int16 int32(rune) int64</pre></td></tr></table>
+</div>
+</div>
+<p>无符号类型:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">uint uint8(byte) uint16 uint32 uint64 uintptr</pre></td></tr></table>
+</div>
+</div>
+<p>int, uint, uintptr 在32位系统是32bit, 在64位系统是64bit</p>
+
+<p>浮点类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">float32
+float64</pre></td></tr></table>
+</div>
+</div>
+<p>复数类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">complex64
+complex128</pre></td></tr></table>
+</div>
+</div>
+<h2 id="string">string</h2>
+
+<p>string类型变量的零值是&rdquo;&ldquo;.</p>
+
+<p>string类型是值传递.</p>
+
+<p>go中的字符串都采用utf-8编码.</p>
+
+<p>go中的字符串用双引号  或者　反引号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 单行字符串
+var str string = &#34;hello&#34;
+# 多行字符串(原样输出)
+var str string = `hello
+                 world`
+
+var str = &#34;hello&#34; // 类型可以通过值确定</pre></td></tr></table>
+</div>
+</div>
+<p>go中的字符串是不可变的, 修改字符串：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 使用类型转换
+var str string = &#34;hello&#34;
+c := []byte(str) # str转换成 []byte 类型
+c[index] = value # 重新赋值
+newString := string(c) # []byte 转换成 string
+
+# 使用索引运算
+s := &#34;hello&#34;
+s = &#34;str&#34; + s[1:]</pre></td></tr></table>
+</div>
+</div>
+<p>字符串运算：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">s1 := &#34;hello&#34;
+s2 := &#34;world&#34;
+s3 := s1 + s2</pre></td></tr></table>
+</div>
+</div>
+<p>遍历字符串：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for index, value := range s {...}
+for index := range s {...}
+for _, value := range s {...}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="结构体-struct">结构体/struct</h2>
+
+<p>结构体就是字段的集合．结构体字段通过点操作符来访问．</p>
+
+<p>结构体是值传递.</p>
+
+<p>申明一个结构体类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type StructName struct {
+    var Type
+    var1 Type1
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>申明多个结构体类型:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type (
+    StructB struct {
+        ...
+    }
+
+    StructB struct {
+    }
+)</pre></td></tr></table>
+</div>
+</div>
+<p>申明一个结构体类型的变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var s StructName</pre></td></tr></table>
+</div>
+</div>
+<p>定义结构体变量:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 列出全部字段
+var s = StructName{val, ...}
+s := StructName{val, ...}
+
+# 使用val: 可以仅列出部分字段, 未列出的字段使用默认值
+var s = StructName{
+    var: val,
+    ...
+}
+s := StructName{
+    var: val,
+    ...
+}
+
+# 给字段赋值
+s.var1 = value</pre></td></tr></table>
+</div>
+</div>
+<p>结构体指针:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type StructName struct {
+    var Type
+    var1 Type1
+}
+
+var s = &amp;StructName{}
+s := &amp;StructName{}
+
+(*s).Var1 = val1
+s.Var1 = val1 // go允许隐士间接引用
+
+s := StructName{val, val1}
+p := &amp;s
+# 原本应该通过(*p).var来访问，go允许隐式间接引用．
+p.var = p.var1</pre></td></tr></table>
+</div>
+</div>
+<h2 id="指针-pointer">指针/pointer</h2>
+
+<p>指针的零值为nil.</p>
+
+<p>go的指针保存了值的内存地址, go没有指针运算．</p>
+
+<p>通过指针实现引用传递.</p>
+
+<p>申明一个指针变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var point *int</pre></td></tr></table>
+</div>
+</div>
+<p>&amp;操作符会生成一个指向其操作数的指针(保存变量的地址)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">point = &amp;variable</pre></td></tr></table>
+</div>
+</div>
+<p>*操作符表示指针指向的数值(读写该地址保存的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">*point = value</pre></td></tr></table>
+</div>
+</div>
+<h2 id="数组-array">数组/array</h2>
+
+<p>数组通过下标来访问．数组不能改变大小（长度）</p>
+
+<p>数组是值传递．</p>
+
+<p>数组的属性有类型和长度,只有长度和类型都相同的才是同类型数组,才能相互赋值.</p>
+
+<p>数组长度和容量相同．</p>
+
+<p>申明数组:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var ArrayName [number]Type</pre></td></tr></table>
+</div>
+</div>
+<p>定义数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var ArrayName = [number]Type{}
+
+ArrayName := [number]Type{val, val1, ...}
+ArrayName := [number]Type{index: value, ...} // 给指定索引赋值,其余为零值
+ArrayName := []Type{val, ...} // 容量也可以由初始化的元素个数决定.
+
+ArrayName := [number]*Type{0: new(int), 1: new(string), ...} // 指针数组</pre></td></tr></table>
+</div>
+</div>
+<p>数组元素赋值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ArrayName[0] = val
+
+*ArrayName[0] = val // 指针数组</pre></td></tr></table>
+</div>
+</div>
+<p>数组赋值（值传递）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 只有类型和长度相同的数组才能赋值
+# 非指针数组赋值，会另外开辟地址空间.
+ # 修改newArray的值，不会改变ArrayName的值
+ newArray = ArrayName
+
+# 指针类型的数组赋值，指向的是相同的地址.</pre></td></tr></table>
+</div>
+</div>
+<p>多维数组(嵌套数组):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">doubleArray := [2][4]int{[4]int{1, 2, 3, 4}, [4]int{5, 6 7, 8}}</pre></td></tr></table>
+</div>
+</div>
+<p>遍历数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for index, value := range a {
+    fmt.Println(&#39;%d, %d\n&#39;, index, value)
+}
+
+# 只要索引, 去掉,value即可
+for index := range a {...}
+# 只要值，用_忽略索引
+for _, value := range a {...}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="切片-slice">切片/slice</h2>
+
+<p>切片的零值是nil, nil切片的长度和容量都是０，且没有底层数组．</p>
+
+<p>切片传递的是地址(引用传递),修改切片的元素值其实就是修改底层数组的对应的元素的值,共享该元素的其它切片的值也相应改变．</p>
+
+<p>切片的属性包括指向底层数组的指针，切片的长度，切片的容量.</p>
+
+<p>切片不存储数据，只是描述数组的一段,因此切片不指定大小（长度）.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 表示切片类型
+[]Type</pre></td></tr></table>
+</div>
+</div>
+<p>申明切片:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var SliceName []Type</pre></td></tr></table>
+</div>
+</div>
+<p>定义切片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 通过字面量定义
+var SliceName = []Type{}
+SliceName := []Type{val, val1, ...}
+
+SliceName := []Type{index: value}   // 索引就表示长度和容量
+
+// 通过make函数创建切片
+var SliceName = make([]type, len, cap)
+SliceName := make([]Type, len, cap)</pre></td></tr></table>
+</div>
+</div>
+<p>通过切片定义新切片:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">切片的操作返回新的切片。
+NewS := SName[i:j]
+cap(SName) = k
+NewS 长度和容量：
+len = j-i
+cap = k-i
+NewS 无法访问指向的底层数组第一个元素之前的元素。
+也不能访问超出长度之后的索引,但是可以通过append增加切片长度之后访问.
+NewS[index] //当index &gt;= j编译器报错 ，超出了NewS 的长度，无法访问。</pre></td></tr></table>
+</div>
+</div>
+<p>三索引操作:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">NewS := SName[i:j:k]
+三索引表示容量， i:j 表示长度， i:k 表示容量.
+容量不能超过可用容量(也就是SName的容量).</pre></td></tr></table>
+</div>
+</div>
+<p>切片操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 半开区间，不包括最后一个下标
+s[low:high]
+s[:high] // low=0, default
+s[low:] // high=max, default
+s[:] // s[0:max], default
+
+s[:0] // 把切片的长度变为０（清空切片)
+s[:4] // 扩展为４
+s[2:] // 扩展为 arrayname[2:4]</pre></td></tr></table>
+</div>
+</div>
+<p>二维切片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[][]Type</pre></td></tr></table>
+</div>
+</div>
+<p>遍历切片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 切片遍历和数组相同
+for index, value := range s {
+    ...
+}
+for index := range s {...}
+for _, value := range s {...}</pre></td></tr></table>
+</div>
+</div>
+<p>slice作为函数参数:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">切片作为函数参数，传递的其实是值,函数会使用和切片相同的底层数组创建一个新的切片来操作.
+所以函数内部修改了切片的值,作为参数的切片的值也被修改了.</pre></td></tr></table>
+</div>
+</div>
+<h2 id="映射-map">映射/map</h2>
+
+<p>映射的零值是nil, 既没有键，也不能添加键．</p>
+
+<p>map是引用传递．是存储键值对的无序集合.</p>
+
+<p>map是无序的，只能通过key索引，没有下标操作.</p>
+
+<p>map的key需要支持==或!= 运算，不能是函数，映射，切片</p>
+
+<p>申明:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 申明值为nil的空映射，不能用于存储键值对.
+var MapName map[keyType]ValueType</pre></td></tr></table>
+</div>
+</div>
+<p>定义映射：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var MapName = map[keyType]ValueType{}
+var MapName = map[keyType]ValueType{
+    key: value,
+    ...
+}
+
+MapName := map[keyType]valueType{}
+MapName := map[KeyType]ValueType{
+    &#34;key&#34;: value,
+    ...
+}
+
+# 通过make定义map
+var MapName = make(map[keyType]ValueType, cap)
+MapName := make(map[keyType]ValueType, cap)</pre></td></tr></table>
+</div>
+</div>
+<p>映射操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">m[key] = value
+
+value = m[key]
+# 若key在m中ok为true, 否则为false, 且value是对应类型的零值
+value, ok := m[key]</pre></td></tr></table>
+</div>
+</div>
+<p>遍历映射：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for key, value := range m {...}
+for key := range m {...}
+for _, value := range m {...}</pre></td></tr></table>
+</div>
+</div>
+<p>map作为函数参数:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">不会创建该映射的副本，该函数对映射的修改就是对原始参数指向的映射的修改.</pre></td></tr></table>
+</div>
+</div>
+<h2 id="类型转换">类型转换</h2>
+
+<p>go中兼容的类型才能转换，而且必须显示转换．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ValueA [:]= TypeA(ValueB)
+
+floatA := float64(uint64Var)</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="go控制流">Go控制流</h1>
+
+<p>go控制流的左大括号不能另起一行．</p>
+
+<h2 id="for循环">for循环</h2>
+
+<p>go只有for可以循环．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for i := 0; i &lt; 10; i++ {
+    sum += i
+}</pre></td></tr></table>
+</div>
+</div>
+<p>for循环有三种模式：</p>
+
+<p>for循环后面没有小括号，代码块必须要大括号．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for init; condition; statement {
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>for循环的初始化语句init和后置语句statement可以省略,相当于while．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for condition {
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>无限循环, 相当于for(;;)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for {
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="if条件语句">if条件语句</h2>
+
+<p>if后面的小括号不要，但是代码块需要大括号．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">if condition {
+    ...
+} else if condition {
+    ...
+} else {
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="switch条件语句">switch条件语句</h2>
+
+<p>go中的switch-case的variable无需为常量，且取值可以不是整数．</p>
+
+<p>go中的只执行匹配的case，相当于默认在每个case后面加了break语句．</p>
+
+<p>case匹配到的语句如果只有一行可以和case语句写在同一行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">switch variable {
+case value1:
+    ...
+case value2: expression
+default:
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>多个条件可以放到一个case:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">switch variable {
+    case value1, value2, ...: expression
+    case valuen: fallthrough
+    defalut:
+        ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>没有条件的switch-case</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">switch {
+case condition:
+    ...
+...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>如果不需要默认的break,需要添加fallthrough:</p>
+
+<p>fallthrough不会判断后面的case的condition,而是直接执行后面所有的case.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">switch variable {
+case val1:
+    ...
+    fallthrough
+...
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="label">label</h2>
+
+<p>golang的label不需要缩进:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">LabelName:</pre></td></tr></table>
+</div>
+</div>
+<h2 id="break">break</h2>
+
+<p>break用于跳出for/switch/select循环.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">break</pre></td></tr></table>
+</div>
+</div>
+<p>break也支持label:</p>
+
+<p>break的label可以跳出外层循环.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">break [tag]
+
+label:
+for i := 0; i &lt; 1000; i++ {
+    for j :=0; j &lt; 1000; j++ {
+        if j &lt; i {
+            break label // 跳出最外层循环.
+        }
+    }
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="continue">continue</h2>
+
+<p>continue语句只能在for循环中使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">continue</pre></td></tr></table>
+</div>
+</div>
+<p>continue也支持label:</p>
+
+<p>continue的label可以从外层循环继续执行.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">continue [tag]
+
+next:
+for outer := 2; outer &lt; 3000; outer++ {
+    for inner :=2; inner &lt; outer; inner++ {
+        if outer%inner == 0 {
+            continue next // 并非继续内存循环，而是从外层循环继续执行.
+        }
+    }
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="goto">goto</h2>
+
+<p>goto跳转语句，跳转到指定标签运行．</p>
+
+<p>标签区分大小写.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Label:
+    expression
+
+...
+goto Label
+continue LABEL
+break LABEL
+...</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="go函数">Go函数</h1>
+
+<p>函数的零值是nil.</p>
+
+<p>函数是引用类型.</p>
+
+<p>大写字母开头的函数是public, 小写字母开头的是private.</p>
+
+<p>创建函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func FuncName(var Type, var1 Type1) rType {
+    ...
+    return ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>多值返回：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func FuncName(var Type) (rType, rType1, ...) {
+    ...
+    return ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>命名返回值(必须用括号)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 一般return后面不带返回值，否则需要返回定义的所有变量
+func FuncName(var Type) (rvar rType, rvar1 rType) {
+    ...
+    rvar = ...
+    rvar1 = ...
+    return
+}</pre></td></tr></table>
+</div>
+</div>
+<p>多个变量类型相同时保留最后一个的类型即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func FuncName(var, var1 Type) (rvar, rvar1 rType) {
+    ...
+    return ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>变量作用域：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">函数内部定义的变量是局部变量
+函数外定义的变量是全局变量．
+局部变量优先使用．</pre></td></tr></table>
+</div>
+</div>
+<p>形式参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">形式参数的作用域范围和函数体中的局部变量一致．</pre></td></tr></table>
+</div>
+</div>
+<p>返回值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">函数返回值的作用域范围和函数体中的局部变量一致．</pre></td></tr></table>
+</div>
+</div>
+<p>实际参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">实际参数可以是值传递，也可以是引用传递．</pre></td></tr></table>
+</div>
+</div>
+<p>指针参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 实参必须是指针才能调用该函数
+func FuncName(v *Type) rType {
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>函数中短变量申明(局部变量):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 在函数内部，明确值的类型的情况下可以用 := 代替var关键字定义变量
+func FuncName() {
+    variable := value
+    var1, var2, ... := val1, val2, ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>重复申明短变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">本次申明与已申明的变量在同一作用域．
+在初始化中与已申明的变量类型相同才能赋值．
+本次申明中至少另有一个变量是新申明的．</pre></td></tr></table>
+</div>
+</div>
+<p>defer关键字：</p>
+
+<p>defer会将函数推迟到外层函数返回之后执行.</p>
+
+<p>推迟调用的函数其参数会立即求值，然后压入defer栈中,外层函数返回后按照后进先出的顺序调用．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func FuncOut() {
+    ...
+    defer FuncName()
+    ...
+}</pre></td></tr></table>
+</div>
+</div>
+<p>函数也是值，也可以传递，可以用作函数的参数或返回值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func FuncName(variable func(Type, ...) rType) rType {
+    ...
+}
+
+FuncName := func(variable Type, ...) rType {
+    ..
+}</pre></td></tr></table>
+</div>
+</div>
+<p>匿名函数:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func(&lt;arguments&gt;) (returns) {}()</pre></td></tr></table>
+</div>
+</div>
+<p>可变参数:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func FuncName(vars ...Type) rType {}
+FuncName(vars..)</pre></td></tr></table>
+</div>
+</div>
+<p>closures/闭包:</p>
+
+<p>init函数:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 每个包中可以有任意个init函数.
+# 这些init函数会在main函数执行之前调用.
+# init函数不能有参数和返回值
+func init() {}</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="go文件和输入输出">Go文件和输入输出</h1>
+
+<p>go的标准库fmt实现了类似于C语言的printf和scanf格式化I/O函数.</p>
+
+<p>还有io和bufio标准库可用</p>
+
+<h2 id="输入">输入</h2>
+
+<p>输入的本质就是从Stdin读取</p>
+
+<p>fmt:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var input string
+fmt.Scan*(&amp;input)</pre></td></tr></table>
+</div>
+</div>
+<p>bufio.Reader:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">inputReader := bufio.NewReader(os.Stdin)
+inputReader.Read*()</pre></td></tr></table>
+</div>
+</div>
+<h2 id="输出">输出</h2>
+
+<p>输出的本质就是往os.Stdout写</p>
+
+<p>fmt:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">fmt.Print*()</pre></td></tr></table>
+</div>
+</div>
+<p>os.File:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">os.Stdout.Write*(&#34;hello&#34;)</pre></td></tr></table>
+</div>
+</div>
+<p>bufio.Writer:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">outputWriter := bufio.NewWriter(os.Stdout)
+outputWriter.Writer*()
+outputWriter.Flush()</pre></td></tr></table>
+</div>
+</div>
+<h2 id="文件">文件</h2>
+
+<p>标准库os.File结构的指针用来表示文件句柄</p>
+
+<p>标准库bufio提供了带缓冲的操作</p>
+
+<p>读文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">readFile, err := os.Open(&#34;filename&#34;)
+readFile.Read*()
+
+inputReader := bufio.NewReader(readFile)
+inputReader.Read*(&#39;\n&#39;)</pre></td></tr></table>
+</div>
+</div>
+<p>写文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">writeFile, err := os.Create(&#34;filename&#34;)
+writeFile.Write*()
+
+outputWriter := bufio.NewWriter(outputFile)
+outputWriter.Write*(&#34;string&#34;)
+outputWriter.Flush()</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="go错误和异常">Go错误和异常</h1>
+
+<p>go的标准库errors实现了用于错误处理的函数.</p>
+
+<p>内置函数panic是断言函数，会触发一个异常，用于终止当前的线程(会在defer执行完之后终止线程)</p>
+
+<p>内置接口定义了error接口类型, error类型都有一个Error方法.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type error interface {
+    Error() string
+}</pre></td></tr></table>
+</div>
+</div>
+<p>定义错误:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var errName error = errors.New(&#34;error message.&#34;)
+
+err := errors.New(&#34;error message.&#34;)
+
+err := fmt.Errorf(format string, a ...interface{})</pre></td></tr></table>
+</div>
+</div>
+<p>panic:</p>
+
+<p>相当于抛出一个异常，在运行完defer之后,返回到调用者继续运行defer，直到最外层的defer执行完毕，终止程序.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">panic(v interface{})
+panic(&#34;ERROR: command not found&#34;)</pre></td></tr></table>
+</div>
+</div>
+<p>recover:</p>
+
+<p>只能用于defer修饰的函数，用于接收panic调用中传递过来的错误值,没有panic返回nil.</p>
+
+<p>当前函数的后面不会被执行，recover捕获异常之后会返回到调用者继续执行.</p>
+
+<p>相当于catch一个异常.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">recover() interface{}
+defer func() {
+    if err := recover(); err != nil {
+        fmt.Println(e)
+        // &#34;ERROR: command not found&#34;
+    }
+}()</pre></td></tr></table>
+</div>
+</div>
+<p>总结：</p>
+
+<ol>
+<li>在包内部，总是应该从panic中recover．</li>
+<li>总是向包的调用者返回错误值，而不是panic.</li>
+</ol>
+
+<hr />
+
+<h1 id="go包">Go包</h1>
+
+<p>创建包：</p>
+
+<p>包名一般和所在路径的最后一层目录一致．一般是小写的单个单词.</p>
+
+<p>同一个目录中的代码文件使用同一个包名．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="kn">package</span> <span class="nx">pkg1</span></pre></td></tr></table>
+</div>
+</div>
+<p>单个导入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import &#34;pkg1&#34;
+import &#34;pkg2&#34;
+# 导入时创建别名
+import alias &#34;pkg&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>组合导入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import (
+    &#34;pkg1&#34;
+    &#34;pkg2&#34;
+    ...
+)</pre></td></tr></table>
+</div>
+</div>
+<p>包内的函数名首字母大些才能被其它包导入，否则就是私有的．</p>
+
+<p>命名导入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import (
+    alias &#34;pkg&#34; # 给包取别名
+)</pre></td></tr></table>
+</div>
+</div>
+<p>导入副作用：</p>
+
+<p>只执行导入包中的init函数并初始化全局变量，不导入其它内容．</p>
+
+<p>编译时不检查该导入是否使用.也不能通过包名调用其中的导出函数.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import _ &#34;path/pkg&#34;
+
+import (
+    _ &#34;path/pkg&#34;
+)</pre></td></tr></table>
+</div>
+</div>
+<p>go包查找顺序:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$GOROOT/src/... # 安装golang的路径里面的标准库
+$GOPATH</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="go文档">Go文档</h1>
+
+<p>通过注释编写文档，godoc会自动识别．对包，函数，类型，全局变量都可以.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// this is documents
+func Fucntion() {}
+
+/*
+    This is documents
+*/
+type St struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>也可以给包写一段文字较多的文档，通过在包内创建doc.go.</p>
+
+<p>这段文档会显示在所有其它文档之前．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="err">#</span> <span class="nx">vim</span> <span class="nx">doc</span><span class="p">.</span><span class="k">go</span>
+<span class="cm">/*
+</span><span class="cm">    This docs for package
+</span><span class="cm">    ...
+</span><span class="cm">*/</span>
+<span class="kn">package</span> <span class="nx">pkg</span> <span class="err">#</span> <span class="nx">使用和包一样的名字</span><span class="p">.</span></pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux CHENG</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">golang</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/gsl_system/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GSL_system</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go_concurrency/">
+            <span class="next-text nav-default">Go_Concurrency</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-01-01 10:49:21 \x2b0000 UTC',
+        title: 'Go',
+        link: decodeURI(location.href),
+        desc: 'Go概述 go语言表达能力强，简洁，清晰，高效． go是一个快速的，静态的，强类型的，编译型语言． go具有高并发和垃圾回收功能. Go基本语法 go',
+        owner: 'crazy-canux',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

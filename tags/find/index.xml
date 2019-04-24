@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>find on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/find/</link>
+    <description>Recent content in find on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Apr 2016 13:55:36 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/find/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Find</title>
+      <link>http://canuxcheng.com/post/find/</link>
+      <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/find/</guid>
+      <description> find </description>
+    </item>
+    
+  </channel>
+</rss>

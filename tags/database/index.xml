@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/database/</link>
+    <description>Recent content in database on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_database</title>
+      <link>http://canuxcheng.com/post/gsl_database/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_database/</guid>
+      <description>database/sql 使用该包，必须提供一个数据库驱动 https://github.com/golang/go/wiki/SQLDrivers mssql driver: https://github.com/denisenkom/go-mssqldb mysql driver: https://github.com/go-sql-driver/mysql postgresql driver: https://github.com/lib/pq https://github.com/jackc/pgx variables 1 2 // QueryRow 没有返回row时，调用返回值的Scan方法会返回该变量 var ErrNoRows = errors.New(&amp;#34;sql: no rows in result set&amp;#34;) functions</description>
+    </item>
+    
+  </channel>
+</rss>

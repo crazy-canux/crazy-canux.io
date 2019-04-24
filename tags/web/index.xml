@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/web/</link>
+    <description>Recent content in web on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Jul 2018 23:14:07 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beego</title>
+      <link>http://canuxcheng.com/post/beego/</link>
+      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego/</guid>
+      <description>Beego Beego是golang的web框架. beego 是基于八大独立的模块构建的，是一个高度解耦的框架。 bee 工具是一个为了协助快速开发 beego 项目而创建的项目，</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap</title>
+      <link>http://canuxcheng.com/post/bootstrap/</link>
+      <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/bootstrap/</guid>
+      <description>Bootstrap HTML,CSS,JavaScript的支持响应式和移动设备的WEB框架.</description>
+    </item>
+    
+  </channel>
+</rss>

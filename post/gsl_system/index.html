@@ -1,0 +1,2308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GSL_system - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="os 提供了操作系统的不依赖平台的接口 1 import &amp;#34;os&amp;#34; constants 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE" /><meta name="keywords" content="os, syscall, log, flag, bufio, io, fmt" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/gsl_system/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GSL_system" />
+<meta property="og:description" content="os 提供了操作系统的不依赖平台的接口 1 import &#34;os&#34; constants 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/gsl_system/" />
+<meta property="article:published_time" content="2018-01-01T10:49:21&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-01T10:49:21&#43;00:00"/>
+
+<meta itemprop="name" content="GSL_system">
+<meta itemprop="description" content="os 提供了操作系统的不依赖平台的接口 1 import &#34;os&#34; constants 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE">
+
+
+<meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="wordCount" content="5232">
+
+
+
+<meta itemprop="keywords" content="golang,system," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GSL_system"/>
+<meta name="twitter:description" content="os 提供了操作系统的不依赖平台的接口 1 import &#34;os&#34; constants 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GSL_system</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+          <span class="more-meta"> 5232 words </span>
+          <span class="more-meta"> 11 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#os">os</a>
+<ul>
+<li><a href="#constants">constants</a></li>
+<li><a href="#variables">variables</a></li>
+<li><a href="#functions">functions</a></li>
+<li><a href="#signal">Signal</a></li>
+<li><a href="#filemode">FileMode</a></li>
+<li><a href="#fileinfo">FileInfo</a></li>
+<li><a href="#file">File</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#processstate">ProcessState</a></li>
+<li><a href="#procattr">ProcAttr</a></li>
+</ul></li>
+<li><a href="#os-exec">os/exec</a>
+<ul>
+<li><a href="#variable">variable</a></li>
+<li><a href="#functions-1">functions</a></li>
+<li><a href="#cmd">Cmd</a></li>
+</ul></li>
+<li><a href="#os-signal">os/signal</a></li>
+<li><a href="#os-user">os/user</a></li>
+<li><a href="#syscall">syscall</a>
+<ul>
+<li><a href="#constants-1">constants</a></li>
+<li><a href="#variables-1">variables</a></li>
+<li><a href="#others">others</a></li>
+</ul></li>
+<li><a href="#io">io</a>
+<ul>
+<li><a href="#variables-2">variables</a></li>
+<li><a href="#functions-2">functions</a></li>
+<li><a href="#reader">Reader</a></li>
+<li><a href="#writer">Writer</a></li>
+<li><a href="#closer">Closer</a></li>
+<li><a href="#seeker">Seeker</a></li>
+</ul></li>
+<li><a href="#io-ioutil">io/ioutil</a>
+<ul>
+<li><a href="#variables-3">variables</a></li>
+<li><a href="#functions-3">functions</a></li>
+</ul></li>
+<li><a href="#bufio">bufio</a>
+<ul>
+<li><a href="#constants-2">constants</a></li>
+<li><a href="#variables-4">variables</a></li>
+<li><a href="#functions-4">functions</a></li>
+<li><a href="#reader-1">Reader</a></li>
+<li><a href="#writer-1">Writer</a></li>
+<li><a href="#readwriter">ReadWriter</a></li>
+<li><a href="#scanner">Scanner</a></li>
+<li><a href="#splitfunc">SplitFunc</a></li>
+</ul></li>
+<li><a href="#fmt">fmt</a>
+<ul>
+<li><a href="#functions-5">functions</a></li>
+<li><a href="#stringer">Stringer</a></li>
+<li><a href="#gostringer">GoStringer</a></li>
+<li><a href="#state">State</a></li>
+<li><a href="#formatter">Formatter</a></li>
+<li><a href="#scanstate">ScanState</a></li>
+<li><a href="#scanner-1">Scanner</a></li>
+</ul></li>
+<li><a href="#log">log</a>
+<ul>
+<li><a href="#constants-3">Constants</a></li>
+<li><a href="#functions-6">functions</a></li>
+<li><a href="#logger">Logger</a></li>
+</ul></li>
+<li><a href="#flag">flag</a>
+<ul>
+<li><a href="#variables-5">variables</a></li>
+<li><a href="#functions-7">functions</a></li>
+<li><a href="#errorhandling">ErrorHandling</a></li>
+<li><a href="#flag-1">Flag</a></li>
+<li><a href="#flagset">FlagSet</a></li>
+<li><a href="#value">Value</a></li>
+<li><a href="#getter">Getter</a></li>
+<li><a href="#log-1">log</a>
+<ul>
+<li><a href="#logrus">logrus</a></li>
+<li><a href="#zap">zap</a></li>
+<li><a href="#zerolog">zerolog</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-01T10:49:21" title="January 1, 2018">January 1, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="os">os</h1>
+
+<p>提供了操作系统的不依赖平台的接口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import &#34;os&#34;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="constants">constants</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># flag 参数
+const (
+    O_RDONLY int = syscall.O_RDONLY
+    O_WRONLY int = syscall.O_WRONLY
+    O_RDWR int = syscall.O_RDWR
+    O_CREATE int = syscall.O_CREATE # 不存在就创建
+    O_APPEND int = syscall.O_APPEND # 追加写入
+    O_TRUNC int = syscall.O_TRUNC # 打开时清空文件
+    O_EXCL int = syscall.O_EXCL
+    O_SYNC int = syscall.O_SYNC
+)
+
+const (
+    SEEK_SET int = 0
+    SEEK_CUR int = 1
+    SEEK_END int = 2
+)
+
+const (
+    // 操作系统指定的路径分隔符
+    PathSeperator = &#39;/&#39;
+    // 操作系统指定的表分隔符
+    PathListSeparator = &#39;:&#39;
+)
+
+// 操作系统空设备的名字
+const DevNull = &#34;/dev/null&#34;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="variables">variables</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var (
+    ErrInvalid = errors.New(&#34;invalid argument&#34;)
+    ...
+)
+
+// 指向标准输入／输出／错误的文件描述符
+var (
+    Stdin = NewFile(uintptr(syscall.Stdin), &#34;/dev/stdin&#34;)
+    Stdout = NewFile(uintptr(syscall.Stdout), &#34;/dev/stdout&#34;)
+    Stderr = NewFile(uintptr(syscall.Stderr), &#34;/dev/stderr&#34;)
+)
+
+// 保存了命令行参数，第一个是程序名
+var Args []string</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回内核提供的主机名
+func Hostname() (name string, err error)
+
+// 当前程序以给出的状态码马上退出，defer不会执行
+func Exit(code int)
+
+// 返回key=value格式的环境变量的字符串的切片拷贝
+func Environ() []string</pre></td></tr></table>
+</div>
+</div>
+<p>文件相关的操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func IsExist(err error) bool // 文件存在返回true
+func IsNotExist(err error) bool // 文件不存在返回true
+
+func IsPathSeparator(c uint8) bool
+...
+func SameFile(fi1, fi2 FileInfo) bool
+func Getwd() (dir string, err error)
+func Chdir(dir string) error
+func Chmod(name string, mode FileMode) error
+func Chown(name string, uid, gid int) error
+...
+func Mkdir(name string, perm FileMode) error // 创建单个目录
+func MkdirAll(path string, perm FileMode) error // 创建多级目录
+func Rename(oldpath, newpath string) error
+func Truncate(name string, size int64) error
+func Remove(name string) error
+func RemoveAll(path string) error
+func Readlink(name string) (string, error)
+func Symlink(oldname, newname string) error // 创建符号连接
+func Link(oldname, newname string) error // 创建硬连接
+func TempDir() string // 返回一个用于保管临时文件的默认目录</pre></td></tr></table>
+</div>
+</div>
+<h2 id="signal">Signal</h2>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Signal interface {
+    String() string
+    Signal()
+}</pre></td></tr></table>
+</div>
+</div>
+<p>variable:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var (
+    Interrupt Signal = syscall.SIGINT
+    Kill Signal = syscall.SIGKILL
+)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="filemode">FileMode</h2>
+
+<p>代表文件模式和权限位．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type FileMode uint32</pre></td></tr></table>
+</div>
+</div>
+<p>constant:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const (
+    ModeDir    FileMode = 1 &lt;&lt; (32 - 1 - iota) // d: 目录
+    ...
+    ModeType = ModeDir | ModeSymlink | ModeNamePipe | ModeSocket | ModeDevice
+    ModePerm FileMode = 0777
+)</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (m FileMode) IsDir() bool
+func (m FileMode) IsRegular() bool</pre></td></tr></table>
+</div>
+</div>
+<h2 id="fileinfo">FileInfo</h2>
+
+<p>用来描述一个文件对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type FileInfo interface {
+    Name() string
+    Size() int64
+    Mode() FileMode
+    ModeTime() time.Time
+    IsDir() bool
+    Sys() interface{}
+}</pre></td></tr></table>
+</div>
+</div>
+<p>function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 获取一个文件对象
+func Stat(name string) (fi FileInfo, err error)
+
+func Lstat(name string) (fi FileInfo, err error)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="file">File</h2>
+
+<p>表示一个打开的文件对象</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type File struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 采用flag=os.O_RDWR和perm=0666模式创建一个名为name的文件, 返回读写文件句柄
+// 文件已存在就截断
+func Create(name string) (file *File, err error)
+
+// 打开指定文件，返回只读文件句柄, flag=os.O_RDONLY
+func Open(name string) (file *File, err error)
+
+// 指定flag和perm创建／打开文件
+func OpenFile(name string, flag int, perm FileMode) (file *File, err error)
+
+// 使用给定的文件描述服和名称创建一个文件.
+func NewFile(fd uintptr, name string) *File
+
+// 返回一对关联的文件对象
+func Pipe() (r *File, w *File, err error)</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 从文件f中最多读取len(b)字节数据写入b, 返回读取的字节数
+// 返回0, io.EOF, 表示读取0个字节,文件终止．
+func (f *File) Read(b []byte) (n int, err error)
+
+func (f *File) ReadAt(b []byte, off int64) (n int, err error)
+
+// 向文件f写入len(b)字节数据b，返回写入字节数
+func (f *File) Write(b []byte) (n int, err error)
+
+func (f *File) WriteAt(b []byte, off int64) (ret int, err error)
+
+func (f *File) WriteString(s string) (ret int, err error)
+
+func (f *File) Close() error</pre></td></tr></table>
+</div>
+</div>
+<h2 id="process">Process</h2>
+
+<p>保存一个被StarProcess创建的进程的信息</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Process struct {
+    Pid int
+}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 启动一个新进程
+func StartProcess(name string, argv []string, attr *ProcAttr) (*Process, error)
+
+// 查找一个运行中的进程
+func FindProcess(pid int) (p *Process, err error)</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 向进程发送信号
+func (p *Process) Signal(sig Signal) error
+
+// 阻塞直到进程退出
+func (p *Process) Wait() (*ProcessState, error)
+
+// 让进程立刻退出
+func (p *Process) Kill() error
+
+// 释放进程绑定的资源
+func (p *Process) Release() error</pre></td></tr></table>
+</div>
+</div>
+<h2 id="processstate">ProcessState</h2>
+
+<p>保管Wait函数报告的某个已退出进程的信息．</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type ProcessState struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回一个已退出的进程的id
+func (p *ProcessState) Pid() int
+
+// 报告进程是否已退出
+func (p *ProcessState) Exited() bool
+
+// 报告进程是否成功退出
+func (p *ProcessState) Success() bool
+
+// 返回已退出进程及其子进程耗费的系统cpu时间
+func (p *ProcessState) SystemTime() time.Duration
+
+// 返回已退出进程及其子进程耗费的用户cpu时间
+func (p *ProcessState) UserTime() time.Duration
+
+func (p *ProcessState) Sys() interface{}
+
+func (p *ProcessState) SysUsage() interface{}
+
+func (p *ProcessState) String() string</pre></td></tr></table>
+</div>
+</div>
+<h2 id="procattr">ProcAttr</h2>
+
+<p>保存被StratProcess启动的新进程的属性</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type ProcAttr struct {
+    Dir string
+    Env []string
+    Files []*File
+    Sys *syscall.SysProcAttr
+}</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="os-exec">os/exec</h1>
+
+<p>执行外部命令，包装了os.StartProcess函数，提供更高级的接口.</p>
+
+<h2 id="variable">variable</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var ErrNotFound = errors.New(&#34;executable file not found in $PATH&#34;)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions-1">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 在环境变量指定的目录中搜索可执行文件file
+func LookPath(file string) (string, error)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="cmd">Cmd</h2>
+
+<p>表示一个准备执行或执行中的外部命令</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Cmd struct {
+    Path string
+    Args []string
+    Env []string
+    Dir string
+    stdin io.Reader
+    Stdout io.Writer
+    Stderr io.Writer
+    ExtraFiles []*os.File
+    SysProcAttr *syscall.SysProcAttr
+    Process *os.Process
+    ProcessState *os.ProcessState
+}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回*Cmd
+func Command(name string, arg ***string) *Cmd</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 同步：执行命令，并阻塞直到完成
+func (c *Cmd) Run() error
+
+// 异步：开始执行命令，不阻塞直接返回，
+func (c *Cmd) Start() error
+// 阻塞通过Start执行的命令直到完成，设置状态码并释放资源．
+func (c *Cmd) Wait() error
+
+func (c *Cmd) StdinPipe() (io.WriteCloser, error)
+func (c *Cmd) StdoutPipe() (io.ReadCloser, error)
+func (c *Cmd) StderrPipe() (io.ReadCloser, error)
+
+// 执行命令并返回stdout的切片
+func (c *Cmd) Output() ([]byte, error)
+// 执行命令并返回stdout和stderr合并后的切片
+func (c *Cmd) CombinedOutput() ([]byte, error)</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="os-signal">os/signal</h1>
+
+<hr />
+
+<h1 id="os-user">os/user</h1>
+
+<hr />
+
+<h1 id="syscall">syscall</h1>
+
+<p>提供了操作系统级别的调用．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import &#34;syscall&#34;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="constants-1">constants</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const (
+    AF_ALG    = 0x26
+    ...
+)
+
+// 定义异常
+const (
+    E2BIG    = Errno(0x70)
+    ...
+)
+
+// 定义信号
+const (
+    SIGABRT    = Signal(0x6)
+    ...
+)
+
+const (
+    SYS_READ    = 0
+    ...
+)
+
+const (
+    SizeofSockaddrInet4    = 0x10
+    ...
+)
+
+const (
+    IFA_UNSPEC    = 0x0
+    ...
+)
+
+const (
+    SizeofSockFilter    = 0x8
+    ...
+)
+
+const (
+    VINTR    = 0x0
+    ...
+)
+
+const ImplementsGetwd = true
+
+const PathMax = 0x1000
+
+const SizeofInotifyEvent = 0x10</pre></td></tr></table>
+</div>
+</div>
+<h2 id="variables-1">variables</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var (
+    Stdin = 0
+    Stdout = 1
+    Stderr = 2
+)
+
+var ForkLock sync.RWMutex
+
+var SocketDisableIPv6 bool</pre></td></tr></table>
+</div>
+</div>
+<h2 id="others">others</h2>
+
+<p>参考文档</p>
+
+<hr />
+
+<h1 id="io">io</h1>
+
+<p>提供了对IO原语的基本接口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import &#34;io&#34;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="variables-2">variables</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 放无法获取更多输入时Read方法返回os.EOF
+var EOF = errors.New(&#34;EOF&#34;)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions-2">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func TeeReader(r Reader, w Writer) Reader
+
+// 返回一个串联的Reader接口,依次读.
+func MultiReader(readers ...Reader) Reader
+
+// 返回一个串联的Writer接口，依次写入．
+func MultiWriter(writers ...Writer) Writer
+
+// 将src数据拷贝到dst, 直到EOF或出错，返回拷贝的字节数
+func Copy(dst Writer, src Reader) (written int64, err error)
+
+// 类似Copy，不过只拷贝n个字节.
+func CopyN(dst Writer, src Reader, n int64) (written int64, err error)
+
+func ReadAtLeast(r Reader, buf []byte, min int) (n int, err error)
+
+func ReadFull(r Reader, buf []byte) (n int, err error)
+
+// 将字符串s写入w
+func WriteString(w Writer, s string) (n int, err error)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="reader">Reader</h2>
+
+<p>用于包装基本的读取方法</p>
+
+<p>os.File(os.Stdout, os.Stdin. os.Stderr), bytes.Buffer 和 bufio.Reader 都是io.Reader接口</p>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Reader interface {
+    Read(p []byte) (n int, err error)
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="writer">Writer</h2>
+
+<p>用于包装基本的写入方法</p>
+
+<p>os.File(os.Stdin, os.Stderr, os.Stdin), bytes.Buffer 和 bufio.Writer, net/http.ResponseWriter 都是io.Writer接口</p>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Writer interface {
+    Write(p []byte) (n int, err error)
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="closer">Closer</h2>
+
+<p>用于包装基本的关闭方法</p>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Closer interface {
+    Close() error
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="seeker">Seeker</h2>
+
+<p>用于包装基本的移位方法</p>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Seeker interface {
+    Seek(offset int64, whence int) (int64, error)
+}</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="io-ioutil">io/ioutil</h1>
+
+<p>实现一些增强的IO接口功能</p>
+
+<h2 id="variables-3">variables</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 一个io.Writer接口，对它所有Write调用都会无实际操作成功返回.
+var Discard io.Writer = devNull(0)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions-3">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func NopCloser(r io.Reader) io.ReadCloser
+
+func ReadAll(r io.Reader) ([]byte, error)
+
+// 从filename指定的文件读取数据并返回, 成功返回文件内容和nil
+func ReadFile(filename string) ([]byte, error)
+
+// 向filename指定文件写入数据，如果文件存在先清空文件，如果不存在创建文件.
+func WriteFile(filename string, data []byte, perm os.FileMode) error
+
+func ReadDir(dirname string) ([]os.FileInfo, error)
+
+func TempDir(dir, prefix string) (name string, err error)
+
+func TempFile(dir, prefix string) (f *os.File, err error)</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="bufio">bufio</h1>
+
+<p>bufio实现了有缓冲的IO</p>
+
+<h2 id="constants-2">constants</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const (
+    // 用于缓冲一个token
+    MaxScanTokenSize = 64 * 1024
+)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="variables-4">variables</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 会被Scanner返回的错误
+var (
+    ErrInvalidUnreadByte = errors.New(&#34;bufio: invalid use of UnreadByte&#34;)
+    ...
+)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions-4">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func ScanBytes(data []byte, atEOF bool) (advance int, token []byte, err error)
+
+func ScanRunes(data []byte, atEOF bool) (advance int, token []byte, err error)
+
+func ScanWords(data []byte, atEOF bool) (advance int, token []byte, err error)
+
+// 将每一行文本去掉末尾的换行标记，然后作为一个token返回
+func ScanLines (data []byte, atEOF bool) (advance int, token []byte, err error)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="reader-1">Reader</h2>
+
+<p>给io.Reader接口对象附加缓冲</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Reader struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func NewReader(rd io.Reader) *Reader
+
+func NewReaderSize(rd io.Reader, size int) *Reader</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (b *Reader) Read(p []byte) (n int, err error)
+// 读取直到第一次遇到delim字节，返回一个包含已读取数据和delim字节的字符串
+// 当且仅当返回的切片不以delim结尾时，返回非nil错误
+func (b *Reader) ReadString(delim byte) (line string, err error)
+func (b *Reader) ReadBytes(delim byte) (line []byte, err error)
+func (b *Reader) ReadSlice(delim byte) (line []byte, err error)
+func (b *Reader) ReadLine() (line []byte, isPrefix bool, err error)
+
+func (b *Reader) ReadByte() (c byte, err error)
+func (b *Reader) ReadRune() (r rune, size int, err error)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="writer-1">Writer</h2>
+
+<p>给io.Writer接口对象提供缓冲</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Writer struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func NewWriter(w io.Writer) *Writer
+
+func NewWriterSize(w io.Writer, size int) *Writer</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (b *Writer) Write(p []byte) (nn int, err error)
+func (b *Writer) WriteString(s string) (int, error)
+func (b *Writer) WriteByte(c byte) error
+func (b *Writer) WriteRune(r rune) (size int, err error)
+
+func (b *Writer) Flush() error</pre></td></tr></table>
+</div>
+</div>
+<h2 id="readwriter">ReadWriter</h2>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type ReadWriter struct {
+    *Reader
+    *Writer
+}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func NewReadWriter(r *Reader, w *Writer) *ReadWriter</pre></td></tr></table>
+</div>
+</div>
+<h2 id="scanner">Scanner</h2>
+
+<p>提供了方便的读取数据接口</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Scanner struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 创建并返回一个从r读取数据的Scanner，默认分割函数是ScanLines
+func NewScanner(r io.Reader) *Scanner</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 设置s的分割函数
+func (s *Scanner) Split(split SplitFunc)
+
+// 获取当前位置的token, 并让Scanner的扫描位置移动到下一个token.
+func (s *Scanner) Scan() bool
+
+// 返回最近一次Scan调用生成的token.
+func (s *Scanner) Bytes() []byte
+
+// 创建一个字符串保存Bytes返回的token,并返回
+func (s *Scanner) Text() string
+
+// 返回Scanner遇到的第一个非EOF错误
+func (s *Scanner) Err() error</pre></td></tr></table>
+</div>
+</div>
+<h2 id="splitfunc">SplitFunc</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type SplitFunc func(data []byte, atEOF bool) (advance int, token []byte, err error)</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="fmt">fmt</h1>
+
+<p>实现了类似于C的printf/scanf的格式化IO.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import &#34;fmt&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>通用占位符:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">%v    相应值的默认格式
+%+v   同时打印结构体的字段名
+%#v   相应值的go语法表示
+%T    相应值的类型的go语法表示
+%%    字面上的百分号</pre></td></tr></table>
+</div>
+</div>
+<p>布尔类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">%t    true/false</pre></td></tr></table>
+</div>
+</div>
+<p>整数类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">%b    二进制表示
+%c    相应的unicode码点所表示的字符
+%d    十进制表示
+%o    八进制表示
+%q    单引号包围的字符字面值
+%x    十六进制(字母小写)
+%X    十六进制(字母大写)
+%U    unicode格式</pre></td></tr></table>
+</div>
+</div>
+<p>浮点数类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">%b    无小数部分的，指数为二的幂的科学计数法．
+%e    科学计数法
+%E    科学计数法
+%f    有小数点，而无指数
+%g    根据情况选择%e 或 %f
+%G    根据情况选择E% 或 %f
+
+%[宽度]Type
+%.[精度]Type
+%[宽度].[精度]Type</pre></td></tr></table>
+</div>
+</div>
+<p>字符串与字节切片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">%s    字符串或切片的字节
+%q    双引号包围的字符串
+%x    十六进制(小写字母)
+%X    十六进制(大写字母)</pre></td></tr></table>
+</div>
+</div>
+<p>指针：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">%p    十六进制表示(0x)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions-5">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回一个包含该格式化字符串的错误
+func Errorf(format string, a ...interface{}) error
+
+// 写入到STDOUT, 返回写入字节数
+// 默认格式化
+func Print(a ...interface{}) (n int, err error)
+// 默认格式化，自动结尾添加换行符
+func Println(a ...interface{}) (n int, err error)
+// 指定格式化
+func Printf(format string, a ...interface{}) (n int, err error)
+
+// 写入到w, 返回写入字节数
+// w: os.File bufio.Writer
+func Fprint(w io.Writer, a ...interface{}) (n int, err error)
+func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
+func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)
+
+// 返回该字符串
+func Sprint(a ...interface{}) string
+func Sprintln(a ...interface{}) string
+func Sprintf(format string, a ...interface{}) string
+
+// 从STDIN扫描文本存入a,返回成功扫描的个数
+// 换行视为空白，获取len(a)个条目才停止扫描
+func Scan(a ...interface{}) (n int, err error)
+// 换行才停止扫描
+func Scanln(a ...interface{}) (n int, err error)
+// 根据空格分割的条目格式化写入指定参数a
+func Scanf(format string, a ...interface{}) (n int, err error)
+
+// 从r扫描文本存入a, 返回成功扫描的条目
+// r: os.File bufio.Reader
+func Fscan(r io.Reader, a ...interface{}) (n int, err error)
+func Fscanln(r io.Reader, a ...interface{}) (n int, err error)
+func Fscanf(r io.Reader, format string, a ...interface{}) (n int, err error)
+
+// 从字符串str扫描文本存入a,  返回扫描成功的条目
+func Sscan(str string, a ...interface{}) (n int, err error)
+func Sscanln(str string, a ...interface{}) (n int, err error)
+func Sscanf(str string, format string, a ...interface{}) (n int, err error)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="stringer">Stringer</h2>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Stringer initerface {
+    String() string
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="gostringer">GoStringer</h2>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type GoStringer interface {
+    GoString() string
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="state">State</h2>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type State interface {
+    Write(b []byte) (ret int, err error)
+    Width() (wid int, ok bool)
+    Precision() (prec int, ok bool)
+    Flag(c int) bool
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="formatter">Formatter</h2>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Formatter interface {
+    Format(f State, c rune)
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="scanstate">ScanState</h2>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type ScanState interface {
+    ReadRune() (r rune, size int, err error)
+    UnreadRune() error
+    SkipSpace()
+    Token(skipSpace bool, f func(rune) bool) (token []byte, err error)
+    Width() (wid int, ok bool)
+    Read(buf []byte) (n int, err error)
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="scanner-1">Scanner</h2>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Scanner interface {
+    Scan(state ScanState, verb rune) error
+}</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="log">log</h1>
+
+<p>实现了简单的日志服务.</p>
+
+<h2 id="constants-3">Constants</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const (
+    Ldate        = 1 &lt;&lt; iota     // 日期
+    Ltime              // 时间
+    Lmicroseconds      // 微秒
+    Llongfile          // 绝对文件名和行好 /path/to/file.go:13
+    Lshortfile         // 文件名和行好, 覆盖上面字段 file.go:13
+    LstdFlags    = Ldate | Ltime      // 标准logger的初始值
+)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions-6">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func Printf(format string, v ...interface{})
+func Print(v ...interface{})
+func Println(v ...interface{})
+
+// 下列函数在Print...函数基础上再调用os.Exit(1)
+func Fatalf(format string, v ...interface{})
+func Fatal(v ...interface{})
+func Fatalln(v ...interface{})
+
+// 下列函数在Print...函数基础上再调用panic(...)
+// panic会执行当前函数的defer, 然后退出当前函数，返回到调用者，
+// 调用函数会执行defer, 直到应用程序退出.最后panic.
+func Panicf(format string, v ...interface{})
+func Panic(v ...interface{})
+func Panicln(v ...interface{})</pre></td></tr></table>
+</div>
+</div>
+<h2 id="logger">Logger</h2>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Logger struct {}</pre></td></tr></table>
+</div>
+</div>
+<p>function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 创建一个Logger.
+func New(out io.Writer, prefix string, flag int) *Logger</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">func (l *Logger) Flags() int</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="flag">flag</h1>
+
+<p>实现了命令行参数解析</p>
+
+<p>第三方包:</p>
+
+<p><a href="https://github.com/alecthomas/kingpin">https://github.com/alecthomas/kingpin</a></p>
+
+<h2 id="variables-5">variables</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var CommandLine = NewFlagSet(os.Args[0], ExitOnError)
+
+//
+var ErrHelp = errors.New(&#34;flag: help requested&#34;)
+
+//
+var Usage = func() {
+    fmt.Fprintf(os.Stderr, &#34;Usage of %s:\n&#34;, os.Args[0])
+    PrintDefaults()
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="functions-7">functions</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回已被设置的flag数量
+func NFlag() int
+// 返回已注册flag的结构体指针
+func Lookup(name string) *Flag
+
+// 非flag参数不能在flag参数前面指定，否则flag参数不会被解析．
+// 返回非flag参数个数
+func NArg() int
+// 返回所有非flag参数
+func Args() []string
+// 返回第i个非flag参数, i=0 就是第一个参数，而不是程序名称
+func Arg(i int) string
+
+// 向Stderr写入所有注册好的flag的默认值
+func PrintDefaults()
+
+// 从os.Args[1:] 中解析注册的flag.
+func Parse()
+// 返回是否Parse是否被调用过
+func Parsed() bool
+
+// 按照字典顺序遍历flag，并对每个flag调用fn, 只针对解析时设置了的flag
+func Visit(fn func(*Flag))
+// 按照字典顺序遍历flag,　并对每个flag调用fn, 针对所有flag.
+func VisitAll(fn func(*Flag))
+
+// 用指定的名称，默认值，帮助信息注册一个bool类型的flag
+// 返回一个保存了该flag的值的指针
+func Bool(name string, value bool, usage string) *bool
+// 用指定的名称，默认值，帮助信息注册一个bool类型的flag
+// 将flag值保存到指针p指向的变量
+func BoolVar(p *bool, name string, value bool, usage string)
+
+func Int
+func IntVar
+func Int64
+func Int64Var
+
+func Uint
+func UintVar
+func Uint64
+func Uint64Var
+
+func Float64
+func Float64Var
+
+func String
+func StringVar
+
+// time.Duration类型
+func Duration
+func DurationVar
+
+// 用指定的名字，帮助信息，注册一个flag，类型由value决定
+func Var(value Value, name string, usage string)
+// 设置已注册的flag的值
+func Set(name, value string) error</pre></td></tr></table>
+</div>
+</div>
+<h2 id="errorhandling">ErrorHandling</h2>
+
+<p>定义如何处理flag解析错误</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type ErrorHandling int
+
+const (
+    ContinueOnError ErrorHandling = iota
+    ExitOnError
+    PanicOnError
+)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="flag-1">Flag</h2>
+
+<p>定义一个flag</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Flag struct {
+    Name     string
+    Usage    string
+    Value    Value
+    DefValue string
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="flagset">FlagSet</h2>
+
+<p>代表一个已注册flag集合.</p>
+
+<p>FlagSet零值没有名字，默认采用ContinueOnError.</p>
+
+<p>struct:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type FlagSet struct {
+    Usage func()
+}</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 创建一个新的FlagSet叫name，采用errorHandling为错误处理策略
+func NewFlagSet(name string, errorHandling ErrorHandling) *FlagSet</pre></td></tr></table>
+</div>
+</div>
+<p>methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 设置f的名字和错误处理策略.
+func (f *FlagSet) Init(name string, errorHandling ErrorHandling)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="value">Value</h2>
+
+<p>用于将动态值保存在flag里.</p>
+
+<p>interface:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">type Value interface {
+    String() string
+    Set(string) error
+}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="getter">Getter</h2>
+
+<hr />
+
+<h2 id="log-1">log</h2>
+
+<p>###glog</p>
+
+<p><a href="https://github.com/golang/glog">https://github.com/golang/glog</a></p>
+
+<h3 id="logrus">logrus</h3>
+
+<p><a href="https://github.com/sirupsen/logrus">https://github.com/sirupsen/logrus</a></p>
+
+<h3 id="zap">zap</h3>
+
+<p><a href="https://github.com/uber-go/zap">https://github.com/uber-go/zap</a></p>
+
+<h3 id="zerolog">zerolog</h3>
+
+<p><a href="https://github.com/rs/zerolog">https://github.com/rs/zerolog</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux CHENG</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">golang</a>
+          <a href="/tags/system/">system</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/gsl_string/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GSL_string</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go/">
+            <span class="next-text nav-default">Go</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2018-01-01 10:49:21 \x2b0000 UTC',
+        title: 'GSL_system',
+        link: decodeURI(location.href),
+        desc: 'os 提供了操作系统的不依赖平台的接口 1 import \x26#34;os\x26#34; constants 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE',
+        owner: 'crazy-canux',
+        repo: '',
+        oauth: {
+          client_id: '',
+          client_secret: ''
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

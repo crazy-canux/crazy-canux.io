@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BigData on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/categories/bigdata/</link>
+    <description>Recent content in BigData on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Apr 2016 22:57:37 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/bigdata/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BigData</title>
+      <link>http://canuxcheng.com/post/bigdata/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/bigdata/</guid>
+      <description>BigData 大数据最流行的框架是hadoop. 大部分工具都属于Apache基金会的项目． MPP Massive Parallel Process 大规模并行处理数据库包括impala, hawq 分布式存储 hadoop hdfs</description>
+    </item>
+    
+  </channel>
+</rss>
