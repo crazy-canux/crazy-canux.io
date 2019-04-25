@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/devops/</link>
+    <description>Recent content in DevOps on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="http://canuxcheng.com/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/agile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/agile/</guid>
+      <description>Title: Agile Date: 2016-04-15 09:41:39 Tags: Agile, Development
+Agile methodologies Agile的具体方法有Scrum, XP和kanban.
+ThoughtWorks公司的Martin Fowler提出的敏捷方法．
+Scrum Scrum方法由Ken Schwaber和Jeff Sutherland 提出.
+scrum是一个用于开发和维护复杂产品的框架，是一个增量的，迭代的开发过程．
+sprint: 一个短的迭代周期．一般２到４周．
+backlog: 按商业价值排序的需求列表．
+scrum框架的三个角色 product owner: 产品负责人
+scrum master
+scrum team
+scrum框架的三个工件 Product backlog: 整个产品待开发需求列表
+sprint backlog: 一次迭代的待开发需求列表
+increment: 产品增量
+scrum框架的五个活动 sprint planning meeting: sprint计划会议
+Daily Scrum Meeting/DSM: 每日站立会议
+sprint review meeting: sprint评审会议
+sprint retrospective meeting: sprint回顾会议
+product backlog refinement: 产品backlog梳理会议
+scrum框架的五个价值观 承诺
+专注
+开放
+尊重
+勇气
+scrum框架的四大支柱 迭代开发</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/ansible/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/ansible/</guid>
+      <description>Title: Ansible Date: 2017-01-12 21:05:48 Tags: DevOps, Ansible
+Ansible https://github.com/ansible/ansible http://www.ansible.com.cn/index.html
+ansible通过SSH来远程管理Linux/Unix机器．
+ansible通过winrm+powershell来远程管理Windows机器．
+安装:
+1 2 3  $ sudo pip install ansible $ sudo apt-get install ansible $ sudo yum install ansible   配置：
+参考Network-SSH实现从controller到所有node的无密码登陆
+配置文件执行顺序:
+1 2 3 4  ANSIBLE_CONFIG ansible.cfg .ansible.cfg /etc/ansible/ansible.cfg   手动配置:
+1 2 3 4  $ sudo vim /etc/ansible/ansible.cfg [defaults] ask_pass = False host_key_checking = False   ansible命令 ansible运行命令的两种方式： 1.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/devops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/devops/</guid>
+      <description>Title: DevOps Date: 2016-04-15 09:41:39 Tags: DevOps, Development, Operations, QA
+DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容．
+DevOps涉及到三个部门：
+ Development Operations Quality Assurance  CI Continuous Integration.
+持续集成包括：
+ 编译代码. 静态代码分析. 自动化测试，例如selenium. 代码覆盖率分析. 构建，例如docker.  CD Continuous Delivery.
+持续交付包括：
+ 将通过测试的代码部署到Staging.  Continuous Release/Deploy 持续部署/发布包括：
+ 将通过评审的交付代码部署到Production.  CI/CD的工具 持续集成和部署
+Jenkins travis CI https://travis-ci.org/
+travis CI是基于github的CI工具, 部署代码然后运行测试代码.
+在github项目添加.travis.yml文件：
+1 2 3 4 5 6 7 8 9 10  language: python python: - &amp;#34;2.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/development/</guid>
+      <description>Title: Development Date: 2016-04-15 09:41:39 Tags: DevOps, Development
+Development 开发相关的工具
+传统的软件开发采用的是瀑布式开发流程．
+现代的软件开发采用的是敏捷开发流程(Agile development).
+Alpha: inner test version.
+Beta: outer test version.
+RC: release candidate. 最终版本之前的最后一个版本．也叫gamma.
+RTM: release to manufacture, 最终版
+GA: generally avaliable. stable/production.
+怎样选择Licenses http://choosealicense.com/licenses/
+https://choosealicense.com/
+semver 语义化版本．
+http://semver.org/lang/zh-CN/
+https://github.com/mojombo/semver
+1 2 3 4 5 6  主版本号.次版本号.修订号 Major.Minor.Patch Major: 做了不兼容的API修改 Minor: 做了向下兼容的功能性新增 Patch: 做了向下兼容的问题修正   文档阅读工具 zeal dash cookiecutter 一个快速建立工程模板的命令行工具．
+https://github.com/audreyr/cookiecutter
+https://github.com/audreyr/cookiecutter-pypackage
+1 2 3 4 5 6 7 8  $sudo -E pip install cookiecutter # 创建python项目 $cookiecutter https://github.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/git/</guid>
+      <description>Title: GIT Date: 2016-04-02 21:11:33 Tags: GIT, github, gitlab
+Git GIT: 分布式版本控制系统。
+SVN: subversion并发式版本控制系统。
+Mercurial: hg分布式版本控制。
+和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab
+Git安装：
+1 2  $ sudo apt-get install git $ yum install git   git config (Git配置) https://git-scm.com/book/zh/v2
+git配置文件：
+ /etc/gitconfig 系统级的配置文件，通过git config &amp;ndash;system设置 ~/.gitconfig 用户级的配置文件，通过git config &amp;ndash;global设置 .git/config 仓库级的配置文件，通过git config &amp;ndash;local设置  git配置：
+使用git config &amp;ndash;global命令配置,或者直接修改~/.gitconfig文件。
+1 2 3 4 5 6 7 8 9 10 11  # 查看帮助 git help config man git-config git config --help git config -l/--list # 查看所有配置 git config --system git config --global git config --local git config --global user.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/gitlab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/gitlab/</guid>
+      <description> Title: Gitlab Date: 2016-04-15 09:41:39 Tags: DevOps, Gitlab
+Gitlab gitlab是开源的有web界面的git服务器．
+https://about.gitlab.com/
+安装gitlab:
+1 2 3 4  sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;#34;http://gitlab.example.com&amp;#34; apt-get install gitlab-ee   配置:
+1  /etc/gitlab/gitlab.rb   CLI 备份：
+1 2  &amp;gt; 修改备份路径：gitlab_rails[&amp;#39;backup_path&amp;#39;] = &amp;#34;/var/opt/gitlab/backups&amp;#34; # gitlab-rake gitlab:backup:create   重新加载配置:
+1  # gitlab-ctl reconfigure  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/jenkins/</guid>
+      <description>Title: Jenkins Date: 2016-04-15 09:41:39 Tags: DevOps, Jenkins
+Jenkins Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks such as building, testing, and deploying software.
+https://github.com/jenkinsci/jenkins
+安装好Jenkins后安装需要的插件．
+安装jenkins:
+1 2 3  # download jenkins.war and install java8. $ java -jar jenkins.war --httpPort=8080 $ firefox http://localhost:8080   设置开机自动启动，不用每次从终端启动:
+1 2 3 4  $ vim /etc/systemd/system/jenkins.service $ systemctl daemon-reload $ systemctl enable jenkins.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/jetbrains/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/jetbrains/</guid>
+      <description>Title: JetBrains Date: 2017-04-02 21:11:26 Tags: PyCharm, IntelliJ
+PyCharm/IntelliJ IntelliJ: Java的IDE, 安装Python的插件也支持python.
+PyCharm: Python的IDE.
+https://github.com/JetBrains/intellij-community
+https://github.com/judasn/IntelliJ-IDEA-Tutorial
+Plugins pycharm https://plugins.jetbrains.com/plugin/631-python
+pycharm plugin for intellij.
+database https://plugins.jetbrains.com/plugin/1800-database-navigator
+https://confluence.jetbrains.com/display/CONTEST/Database+Navigator
+oracle/mysql/postgresql/sqlite plugin.
+vim https://github.com/JetBrains/ideavim
+vim plugin.
+solarized https://github.com/jkaving/intellij-colors-solarized
+solarized plugin.
+settings terminal 默认的是bash和powershell, 使用zsh需要改成/usr/bin/zsh.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/logging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/logging/</guid>
+      <description>Title: Logging Date: 2018-06-08 09:46:47 Tags: Logging
+Logging 日志采集，存储，可视化.
+主要有Elastic stack 和　splunk.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/logging_grok/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/logging_grok/</guid>
+      <description>Title: Logging Grok Date: 2018-06-08 09:46:47 Tags: Logging, Grok
+grok logstash和telegraf都是用grok来解析log
+在线检测
+http://grokdebug.herokuapp.com/
+grok的正则表达式
+https://github.com/kkos/oniguruma/blob/master/doc/RE
+可用的pattern(logstash &amp;amp; telegraf-logparser/tail)
+https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns
+https://github.com/influxdata/telegraf/blob/master/plugins/inputs/logparser/grok/patterns/influx-patterns
+Elastic stack beats/filebeats: 通过filebeats agent获取log．
+logstash: 使用filebeats解析log并写入stash(elasticsearch).
+TICK stack telegraf(agent): 通过logparser/tail插件解析log并写入influxdb.
+pattern:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  # 通过已经定义的变量来定义filter patterns = [&amp;#39;&amp;#39;&amp;#39;${&amp;lt;capture_syntax&amp;gt;[:&amp;lt;semantic_name&amp;gt;][:&amp;lt;modifier&amp;gt;]}&amp;#39;&amp;#39;&amp;#39;] patterns = [&amp;#39;&amp;#39;&amp;#39;%{TIMESTAMP_ISO8601:asctime:string} \[%{DATA:name:string}\] %{LOGLEVEL:levelname:string}: %{GREEDYDATA:message:string}&amp;#39;&amp;#39;&amp;#39;] capture_syntax是已经定义好的pattern.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/make/</guid>
+      <description>Title: Make Date: 2017-01-12 21:18:33 Tags: Make, Makefile
+Make make的作用： * 控制源代码的编译 * 手册页的编写 * 将应用程序安装到目标目录
+make的使用规则： * 如果工程没有编译过，需要编译所有源文件和链接所有目标文件． * 如果工程里某几个目标文件被修改，只需要编译修改的源文件，并链接所有目标文件． * 如果头文件被修改，只需要编译引用了被修改的头文件的源文件，并链接所有目标文件．
+makefile文件查找顺序： * 当前目录找makefile * 当前目录找Makefile * 当前目录找GNUmakefile
+make命令 make命令会执行当前目录的makefile/Makefile/GNUmakefile文件．
+1 2 3 4 5 6 7 8 9  make [options] [target] ... -f FILE, --file=FILE, --makefile=FILE # 指定makefile文件 -n, --just-print, --dry-run, --recon # 只打印，不执行 -k, --keep-going　# 忽略错误继续执行 make make all make install make clean   make的工作顺序： * 读入所有makefile文件 * 读入include的其它makefile文件 * 初始化变量 * 推导隐晦规则，分析所有规则 * 为所有目标文件创建依赖关系链 * 根据依赖关系决定哪些目标需要重新生成 * 执行生成的命令</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring/</guid>
+      <description>Title: Monitoring Date: 2016-06-08 09:46:47 Tags: Monitoring
+Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix.
+Modern monitoring is for service, like Elastic stack for log monitoring.
+Modern monitoring based on TSDB, like TICK stack for metrics monitoring.
+Elastic stack kibana: 数据可视化
+elasticsearch: 搜索，分析，存储数据
+x-pack: 具有监控和报警功能的工具包.
+logstash: 动态数据收集管道，支持可扩展的插件．
+beats(agent): 轻量型数据采集平台，从边缘机器向logstash/elasticsearch发送数据．
+TICK stack influxdb: tsdb.
+kapacitor: alerting.
+chronograf: GUI.
+telegraf(agent): metrics collector.
+Graphing 最流行的监控绘图软件是grafana, 支持influxdb和elasticsearch.
+使用grafana替代chronograf.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_addons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_addons/</guid>
+      <description>Title: Monitoring Addons Date: 2016-06-08 09:46:47 Tags: Addons
+OMD  OMD implements a completely new concept of how to install, maintain and update a monitoring system built on Nagios.
+ http://omdistro.org/
+http://git.mathias-kettner.de/git/?p=omd.git;a=tree
+The Open Monitoring Distribution
+用于快速部署基于nagios的分布式监控，包括：
+ Icinga/Shinken/check_MK
+ Monitoring-Plugins和其它插件
+ mod-gearman/MK Livestatus/thruk/multisite
+ nsca/check_nrpe。
+ NagVis/Pnp4nagios/rrdtool/dokuwiki
+  Gearman  Gearman provides a generic application framework to farm out work to other machines or processes that are better suited to do the work.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_grafana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_grafana/</guid>
+      <description>Title: Monitoring Grafana Date: 2017-01-12 21:05:48 Tags: Monitoring, Graphing, Grafana
+Grafana The tool for beautiful monitoring and metric analytics &amp;amp; dashboards for Graphite, InfluxDB &amp;amp; Prometheus &amp;amp; More.
+https://github.com/grafana/grafana
+支持多种data source:
+graphite/influxdb/opentsdb/premetheus/elasticsearch/mysql/postgresql
+安装配置参考官方文档
+grafana配置文件是grafana.ini.
+HTTP API 1  port = 3000   dashboard create/update dashboard:
+将datasource设置成变量，然后导出的json文件就可以直接导入了．
+dashboard.id=null才能创建新dashboard.
+1 2 3 4 5 6 7 8 9 10  post /api/dashboards/db data = json.dumps({ &amp;#34;dashboard&amp;#34;: { &amp;#34;id&amp;#34;: null, ... }, &amp;#34;folderId&amp;#34;: 0, &amp;#34;overwrite&amp;#34;: True, # True for python, true for go.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_influxdb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_influxdb/</guid>
+      <description>Title: Monitoring Influxdb Date: 2018-01-18 19:23:25 Tags: TICK, Monitoring, Influxdb
+Influxdb https://github.com/influxdata/influxdb
+Scalable datastore for metrics, events, and real-time analytics.
+支持从opentsdb, graphite, collectd等获取数据
+默认数据库_internal 用于存储内部运行数据
+安装配置参考官方文档
+log
+1  $ sudo journalctl -u influxdb.service   config:
+1 2 3  # 开通kapacitor的subscription功能 [[subscriber]] enable = true   数据结构 influxdb每条记录是一个point.
+points包括下面部分：
+1 2 3 4 5 6  measurement: a measurement, like cpu_load, 相当于表名 tags: zero or more tag, key=value, eg: host=ip fields: zero or more field, key=value, eg: value=0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_kapacitor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_kapacitor/</guid>
+      <description>Title: Monitoring Kapacitor Date: 2018-01-18 19:23:25 Tags: TICK, Monitoring, Kapacitor
+Kapacitor https://github.com/influxdata/Kapacitor
+Open source framework for processing, monitoring, and alerting on time series data
+可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor.
+配置:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  hostname = &amp;#34;10.103.1.1&amp;#34; # 如果从influxdb读取数据需要配置该选项． [[influxdb]] enabled = true # 如果从该路径加载tickscript [[load]] enabled = true dir=&amp;#34;/etc/kapacitor/load&amp;#34; # tasks, 放到/etc/kapacitor/load/tasks/*.tick,重启kapacitor会自动加载task,并默认enable. ## 要求，ID和tick文件同名，tickscript开头需要指定dbrp, tickscript里面需要指定batch/stream. # templates... # handlers...   CLI 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  $ kapacitor help # 创建/更新 task, 创建的默认是disable状态.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_nagios/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_nagios/</guid>
+      <description>Title: Monitoring Nagios Date: 2016-03-25 11:15:48 Tags: Monitoring, Nagios
+Nagios  Nagios is the industry standard in IT infrastructure monitoring
+Nagios offers complete monitoring and alerting for servers, switches, applications, and services.
+ Nagios官方宣称nagios是IT基础监控的工业标准。
+Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。
+Nagios是无agent的，nagios的plugin通过协议远程获取信息。
+https://www.nagios.org/
+https://www.nagios.com/
+https://exchange.nagios.org/
+https://github.com/NagiosEnterprises
+https://github.com/nagios-plugins
+Nagios安装配置 Nagios发展 Nagios core 1.0
+Nagios core 2.0
+Nagios core 3.0
+Nagios XI
+Nagios core 4.0
+目前nagios有两大阵营：
+开源解决方案： Nagios core
+商业解决方案： Nagios XI
+Nagios安装配置 安装和配置nagios core,plugins,addons参考
+官方文档:
+https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_plugins/</guid>
+      <description>Title: Monitoring Plugins Date: 2016-04-08 16:17:39 Tags: Plugins
+Monitoring Plugins Nagios/naemon/icinga/shinken/centreon/opsview/sensu
+Office project:
+https://github.com/monitoring-plugins
+https://www.monitoring-plugins.org/
+My plugin project:
+https://github.com/crazy-canux/pymonitoringplugins
+Open source project:
+https://github.com/crazy-canux/awesome-monitoring
+monitoring-plugins negate 设置相反状态
+1 2 3 4  -o 设置ok对应状态 -w -c -u   check_http 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [-f &amp;lt;ok|warning|critcal|follow|sticky|stickyport&amp;gt;] # 跳转 -p PORT # http:80, https:443 -a &amp;#34;USERNAME&amp;#34;:&amp;#34;PASSWORD&amp;#34; -u PATH --ssl=1/-S # https需要ssl -s SEARCH -e SEARCH,SEARCH.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_telegraf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_telegraf/</guid>
+      <description>Title: Monitoring Telegraf Date: 2018-01-18 19:23:25 Tags: TICK, Monitoring, Telegraf
+Telegraf https://github.com/influxdata/telegraf
+The plugin-driven server agent for collecting &amp;amp; reporting metrics.
+Configuartion agent configuration:
+1 2 3 4 5 6  interval 所有inputs的默认运行间隔 round_interval collection_jitter precision ns/us/ms/s flush_interval flush_jitter   input configuration:
+1 2 3 4 5  interval name_override # 默认measurements是插件名,修改默认measurements. name_prefix name_suffix tags   Go API https://godoc.org/github.com/influxdata/telegraf#Input
+测试插件：
+1 2  # 需要配置文件 $ telegraf --input-filter &amp;lt;plugin-name&amp;gt; --test   Build 安装依赖：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_tivoli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_tivoli/</guid>
+      <description>Title: Monitoring Tivoli Date: 2016-04-20 13:57:31 Tags: Monitoring, ITM
+ITM ITM: IBM Tivoli Monitoring
+是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。
+Architecture Overview:
+ITM主要由管理组件和可选组件组成。
+Tivoli Management Services: 1. TEMS 2. TEPS 3. TEP client 4. Historical data collection(warehouse agent) * warehouse proxy * summarization and pruning agent 5. OS agent
+Optional components: 1. Dashboard Application Services Hub * Tivoli Monitoring dashboards(Infrastructure Management Dashboards for Servers) * Tivoli Common Reporting * Tivoli Enterprise Monitoring Automation Server 2.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/monitoring_old/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/monitoring_old/</guid>
+      <description>Title: Monitoring old Date: 2016-05-18 19:23:25 Tags: Monitoring, Nagios ,Naemon ,Icinga ,Shinken ,Centreon, Opsview, Check_mk
+Monitoring My monitoring project on github:
+https://github.com/crazy-canux/awesome-monitoring
+Nagios For more informations, see here:
+http://canuxcheng.com
+Naemon http://www.naemon.org/
+https://github.com/naemon
+Distribution Naemon can use the same addons as nagios to do the distribution monitoring.
+Naemon-core Naemon is 100% Nagios compatible and written in C.
+The next generation of nagios.
+https://github.com/naemon/naemon-core
+Naemon-Livestatus Event broker, fork from MK_livestatus.
+https://github.com/naemon/naemon-livestatus</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/operations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/operations/</guid>
+      <description>Title: Operations Date: 2016-04-15 09:41:39 Tags: DevOps, Operations
+Operations 运维相关的工具．
+批量配置管理 puppet chef salt ansible 密码管理工具 keepass http://keepass.info/
+KeePassX https://www.keepassx.org/
+https://github.com/keepassx/keepassx</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/tmux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/tmux/</guid>
+      <description>Title: TMUX Date: 2016-06-19 11:17:53 Tags: Screen, Tmux
+tmux tmux是终端复用工具，类似于gnu screen。
+tmux三个基本概念：
+ 会话（session）
+ 窗口（window）
+ 面板（pane）
+  tmux使用c/s架构，tmux命令启动tmux服务器，一个tmux服务有多个session， 每个session就是tmux管理下的伪终端集合，一个session有多个window与之关联， 每个window就是一个伪终端，占据整个屏幕，一个window可以被分割成多个pane。
+tmux安装和配置 tmux依赖libevent和ncurses库。
+http://libevent.org/
+1  $ sudo yum install libevent-devel   http://invisible-island.net/ncurses/
+1  $ sudo yum install ncurese-devel   http://tmux.github.io/
+1 2  sudo apt-get install tmux sudo yum install tmux   用户配置文件： ~/.tmux.conf
+系统配置文件： /etc/tmux.conf
+tmux相关项目 TPM Tmux Plugins Manager.
+https://github.com/tmux-plugins/tpm</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/testing/</guid>
+      <description>Title: Testing Date: 2017-03-01 09:41:39 Tags: DevOps, QA, Testing
+QA Quality Assurance
+QA主要就是进行软件测试相关的工作.
+软件测试就是使用人工或自动的手段来运行或测量软件系统的过程，以检验软件系统是否满足规定的要求，并找出与预期结果之间的差异．
+软件测试五个要素：
+ 质量 人员 技术 流程 资源  软件测试两个目标：
+ 测试覆盖率 测试效率  软件测试阶段：
+ 单元测试(Unit Testing) 集成测试(Integration Testing) 系统测试(System Testing) 验收测试(Acceptance Testing)  软件测试的手段：
+ 手动测试/自动化测试 静态测试/动态测试 黑盒测试/白盒测试  软件测试的类型：
+ 性能测试 稳定性测试 安全测试 可用性测试 兼容性测试 文档测试 本地化测试 冒烟测试 功能测试Functional Testing 回归测试Regression Testing 用户界面测试UI Testing 端到端测试End-To-End Testing  软件测试的模型：
+ 传统的瀑布模型 V模型 W模型 X模型 H模型 敏捷测试模型(金字塔模式)  软件测试的模式：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/testing_robotframework/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/testing_robotframework/</guid>
+      <description>Title: Testing RobotFramework Date: 2017-02-25 09:41:39 Tags: Testing, QA, RobotFramework
+Robot Framework https://github.com/robotframework/robotframework
+https://github.com/robotframework/QuickStartGuide
+支持python和java的API.
+Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD).
+Install:
+1  $ pip install robotframework   Modular:
+ Test Data Robot Framework(test data syntax) Test Libraries(test library API) + Test Tools System under Test(system interface)  Use:
+1 2  $ robot --version $ robot [options] data_sources   会生成三个文件：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/testing_selenium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/testing_selenium/</guid>
+      <description>Title: Testing Selenium Date: 2017-02-25 09:41:39 Tags: Testing, QA, Selenium
+Selenium https://github.com/SeleniumHQ/selenium
+用于基于浏览器的web应用的自动化测试工具集．
+1 2 3  selenium1: deprecated. selenium2: 默认支持firefox&amp;lt;=46. 支持python2.6+, python3.2+ selenium3: 支持firefox47+, 所有浏览器都需要安装webdriver.支持python2.6+, python3.3+, 必须重启OS.   支持python, java, javascript等API.
+默认安装selenium3:
+1  $ pip install selenium   selenium3需要安装相应浏览器的driver, 然后重启OS:
+selenium, driver, browser三个版本都需要兼容才能工作．
+1 2  winfows放在C:\Python\Scripts\ linux放在/usr/local/bin/   https://sites.google.com/a/chromium.org/chromedriver/downloads
+https://github.com/mozilla/geckodriver/releases
+[Deprecated] Remote Control: 也就是selenium1.selenium2依然保留了selenium1的API.但是selenium3会彻底删除RC的API.
+[Deprecated] IDE: selenium IDE是一个firefox的插件，用于记录浏览器上的测试步骤，能用于生成测试代码，并且转换成编程语言．但是已经被WebDriver取代．
+WebDriver 也就是selenium2.已经取代了selenium RC和selenium IDE.
+python的API参考python博客．</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/devops/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/devops/vim/</guid>
+      <description>Title: VIM Date: 2016-04-02 21:11:26 Tags: Vi, Vim
+vim http://www.vim.org
+https://github.com/vim/vim
+类似编辑器:
+ emacs Atom(github的开源跨平台编辑器，支持插件。) VSCode(微软的开源跨平台的编辑器，支持插件。)  Vim安装和配置 查看vim版本和编译信息：
+1  vim --version   安装vim：
+1 2  $ sudo apt-get install vim $ yum install vim   源码安装vim：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  $ sudo apt-get build-dep vim $ cd vim/src $ .</description>
+    </item>
+    
+  </channel>
+</rss>

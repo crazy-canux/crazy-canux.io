@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>libvirt on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/libvirt/</link>
+    <description>Recent content in libvirt on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Apr 2017 21:47:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/libvirt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Libvirt</title>
+      <link>http://canuxcheng.com/virtualization/libvirt/</link>
+      <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/virtualization/libvirt/</guid>
+      <description>Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) $ sudo apt-get install libvirt-dev # 库, python/go client依赖该库 $</description>
+    </item>
+    
+  </channel>
+</rss>

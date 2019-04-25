@@ -13,10 +13,10 @@
     
     <item>
       <title>GSL_builtin</title>
-      <link>http://canuxcheng.com/post/gsl_builtin/</link>
+      <link>http://canuxcheng.com/golang/gsl_builtin/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/gsl_builtin/</guid>
+      <guid>http://canuxcheng.com/golang/gsl_builtin/</guid>
       <description>builtin go的builtin package. constants 1 2 3 true false iota variables pointer, slice, map, channel, func, interface的零值： 1 nil functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 分配并初始化各种类型的对象</description>
     </item>
     

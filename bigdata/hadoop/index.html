@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Hadoop Date: 2016-04-11 22:57:37 Tags: Hadoop
+Hadoop https://github.com/apache/hadoop
+apache hadoop是一个框架，允许使用简单的编程模型在大量计算机上对大型数据集进行分布式处理．
+hadoop1只有HDFS和MapReduce两个模块，hadoop2开始分为HDFS, YARN, MapReduce三个模块．
+hadoop的版本:
+ apache hadoop hortonworks hadoop (HDP) cloudera hadoop (CDH) mapr transwarp  安装hadoop hadoop有三种安装模式：
+ 单节点模式 伪分布式模式 分布式模式  参考Linux Admin和Network SSH如何安装多台centos，并且配置局域网，让本地多台机器相互访问．
+下载hadoop的二进制安装包，然后放到/home/hadoop/目录下并解压．
+推荐的cluster node:
+1 2 3 4 5 6 7  NameNode(hdfs) Secondary NameNode(hdfs) DataNode(hdfs) ResourceManager server(yarn) NodeManager server(yarn) WebAppProxy server(yarn) MapReduceJobHistory server(mapreduce)   设置环境变量：
+1 2 3 4 5  $ vim ~/." /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/bigdata/hadoop/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Title: Hadoop Date: 2016-04-11 22:57:37 Tags: Hadoop
+Hadoop https://github.com/apache/hadoop
+apache hadoop是一个框架，允许使用简单的编程模型在大量计算机上对大型数据集进行分布式处理．
+hadoop1只有HDFS和MapReduce两个模块，hadoop2开始分为HDFS, YARN, MapReduce三个模块．
+hadoop的版本:
+ apache hadoop hortonworks hadoop (HDP) cloudera hadoop (CDH) mapr transwarp  安装hadoop hadoop有三种安装模式：
+ 单节点模式 伪分布式模式 分布式模式  参考Linux Admin和Network SSH如何安装多台centos，并且配置局域网，让本地多台机器相互访问．
+下载hadoop的二进制安装包，然后放到/home/hadoop/目录下并解压．
+推荐的cluster node:
+1 2 3 4 5 6 7  NameNode(hdfs) Secondary NameNode(hdfs) DataNode(hdfs) ResourceManager server(yarn) NodeManager server(yarn) WebAppProxy server(yarn) MapReduceJobHistory server(mapreduce)   设置环境变量：
+1 2 3 4 5  $ vim ~/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/bigdata/hadoop/" />
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Title: Hadoop Date: 2016-04-11 22:57:37 Tags: Hadoop
+Hadoop https://github.com/apache/hadoop
+apache hadoop是一个框架，允许使用简单的编程模型在大量计算机上对大型数据集进行分布式处理．
+hadoop1只有HDFS和MapReduce两个模块，hadoop2开始分为HDFS, YARN, MapReduce三个模块．
+hadoop的版本:
+ apache hadoop hortonworks hadoop (HDP) cloudera hadoop (CDH) mapr transwarp  安装hadoop hadoop有三种安装模式：
+ 单节点模式 伪分布式模式 分布式模式  参考Linux Admin和Network SSH如何安装多台centos，并且配置局域网，让本地多台机器相互访问．
+下载hadoop的二进制安装包，然后放到/home/hadoop/目录下并解压．
+推荐的cluster node:
+1 2 3 4 5 6 7  NameNode(hdfs) Secondary NameNode(hdfs) DataNode(hdfs) ResourceManager server(yarn) NodeManager server(yarn) WebAppProxy server(yarn) MapReduceJobHistory server(mapreduce)   设置环境变量：
+1 2 3 4 5  $ vim ~/.">
+
+
+
+<meta itemprop="wordCount" content="412">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Title: Hadoop Date: 2016-04-11 22:57:37 Tags: Hadoop
+Hadoop https://github.com/apache/hadoop
+apache hadoop是一个框架，允许使用简单的编程模型在大量计算机上对大型数据集进行分布式处理．
+hadoop1只有HDFS和MapReduce两个模块，hadoop2开始分为HDFS, YARN, MapReduce三个模块．
+hadoop的版本:
+ apache hadoop hortonworks hadoop (HDP) cloudera hadoop (CDH) mapr transwarp  安装hadoop hadoop有三种安装模式：
+ 单节点模式 伪分布式模式 分布式模式  参考Linux Admin和Network SSH如何安装多台centos，并且配置局域网，让本地多台机器相互访问．
+下载hadoop的二进制安装包，然后放到/home/hadoop/目录下并解压．
+推荐的cluster node:
+1 2 3 4 5 6 7  NameNode(hdfs) Secondary NameNode(hdfs) DataNode(hdfs) ResourceManager server(yarn) NodeManager server(yarn) WebAppProxy server(yarn) MapReduceJobHistory server(mapreduce)   设置环境变量：
+1 2 3 4 5  $ vim ~/."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    
+
+<p>Title: Hadoop
+Date: 2016-04-11 22:57:37
+Tags: Hadoop</p>
+
+<h1 id="hadoop">Hadoop</h1>
+
+<p><a href="https://github.com/apache/hadoop">https://github.com/apache/hadoop</a></p>
+
+<p>apache hadoop是一个框架，允许使用简单的编程模型在大量计算机上对大型数据集进行分布式处理．</p>
+
+<p>hadoop1只有HDFS和MapReduce两个模块，hadoop2开始分为HDFS, YARN, MapReduce三个模块．</p>
+
+<p>hadoop的版本:</p>
+
+<ul>
+<li>apache hadoop</li>
+<li>hortonworks hadoop (HDP)</li>
+<li>cloudera hadoop (CDH)</li>
+<li>mapr</li>
+<li>transwarp</li>
+</ul>
+
+<h1 id="安装hadoop">安装hadoop</h1>
+
+<p>hadoop有三种安装模式：</p>
+
+<ul>
+<li>单节点模式</li>
+<li>伪分布式模式</li>
+<li>分布式模式</li>
+</ul>
+
+<p>参考Linux Admin和Network SSH如何安装多台centos，并且配置局域网，让本地多台机器相互访问．</p>
+
+<p>下载hadoop的二进制安装包，然后放到/home/hadoop/目录下并解压．</p>
+
+<p>推荐的cluster node:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">NameNode(hdfs)
+Secondary NameNode(hdfs)
+DataNode(hdfs)
+ResourceManager server(yarn)
+NodeManager server(yarn)
+WebAppProxy server(yarn)
+MapReduceJobHistory server(mapreduce)</pre></td></tr></table>
+</div>
+</div>
+<p>设置环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vim ~/.bash_profile
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-.../jre
+export HADOOP_HOME=/home/hadoop/hadoop-3.0.0-alpha2
+export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$PATH
+$ source ~/.bash_profile</pre></td></tr></table>
+</div>
+</div>
+<p>修改hadoop的环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ cd hadoop-3.0.0-alpha2/etc/hadoop
+$ vim hadoop-env.sh
+export JAVA_HOME=&#39;/usr/lib/jvm/java-1.8.0-openjdk-.../jre
+
+# 测试java和hadoop的环境是否可用：
+$ hadoop</pre></td></tr></table>
+</div>
+</div>
+<p>分布式环境搭建：</p>
+
+<p><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/ClusterSetup.html">http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/ClusterSetup.html</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vim core-site.xml
+
+$ vim hdfs-site.xml # namenode, datanode
+
+$ vim yarn-site.xml # resourcemanager, nodemanager, webappproxy
+
+$ vim mapred-site.xml # mr application, mr jobhistory
+
+# slaves file
+$ vim workers
+namenode
+secondnamenode
+datanode
+datanode2
+yarnserver
+mjhserver
+
+# hadoop rack awareness
+
+# logging
+$ vim log4j.properties</pre></td></tr></table>
+</div>
+</div>
+<p>CLI for hadoop cluster:</p>
+
+<p>启动一个hadoop　cluster需要同时启动hdfs和yarn, 推荐用单独的用户分别启动这两个组件．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 第一次启动hdfs，需要格式化hdfs
+$ hdfs namenode -format &lt;cluster_name&gt;
+
+# 启动hdfs namenode 和　datanode
+$ hdfs --daemon start namenode
+$ hdfs --daemon start datanode
+# 如果ssh已经实现无密码连接，可以一次启动cluster的所有node
+$ $HADOOP_HOME/sbin/start-dfs.sh
+
+# 启动yarn resourcemanager　和　nodemanager
+$ yarn --daemon start resourcemanager
+$ yarn --daemon start nodemanager
+# 如果配置了slaves file 并且cluster node实现ssh无密码登陆，可以一次启动
+$ $HADOOP_HOME/sbin/start-yarn.sh
+
+# 启动webappproxy server
+$ yarn --daemon start proxyserver
+
+# 启动MapReduce Jobhistory server.
+$ mapred --daemon start historyserver
+
+# stop namenode
+$ hdfs --daemon stop namenode
+# stop datanode
+$ hdfs --daemon stop datanode
+# stop at the same time
+$ $HADOOP_HOME/sbin/stop-dfs.sh
+
+# stop resourcemanager
+$ yarn --daemon stop resourcemanager
+# stop nodemanager
+$ yarn --daemon stop nodemanager
+# stop at the same time
+$ $HADOOP_HOME/sbin/stop-yarn.sh
+
+# stop webappproxy server
+$ yarn stop proxyserver
+
+# stop jobhistory server
+$ mapred --daemon stop historyserver</pre></td></tr></table>
+</div>
+</div>
+<p>GUI for hadoop cluster:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># namenode
+http://nn:9870
+# resource manager
+http:rm:8080
+# mapreduce job history server
+http://jhs:19888</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="hadoop-commands">Hadoop Commands</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"> hadoop [--config confdir] [--loglevel loglevel] [COMMAND] [GENERIC_OPTIONS] [COMMAND_OPTIONS]</pre></td></tr></table>
+</div>
+</div>
+<p>user command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ hadoop archive
+$ hadoop fs
+...</pre></td></tr></table>
+</div>
+</div>
+<p>admin command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ hadoop daemonlog
+...</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="fs-commands">fs commands</h1>
+
+<p>file system command:</p>
+
+<p>支持本地文件系统，hdfs文件系统，还有其它文件系统．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ hadoop fs
+
+$ hadoop fs -cat URI [URI ...]
+...</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+  </div>
+</article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '0001-01-01 00:00:00 \x2b0000 UTC',
+        title: '',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

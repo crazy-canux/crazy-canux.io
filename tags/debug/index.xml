@@ -13,10 +13,10 @@
     
     <item>
       <title>Go_Debug</title>
-      <link>http://canuxcheng.com/post/go_debug/</link>
+      <link>http://canuxcheng.com/golang/go_debug/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/go_debug/</guid>
+      <guid>http://canuxcheng.com/golang/go_debug/</guid>
       <description> gdb delve https://github.com/derekparker/delve
 debug </description>
     </item>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Mysql Date: 2016-05-25 12:14:59 Tags: Database, Mysql
+Mysql 安装mysql服务器
+1 2 3 4 5  $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．   安装mysql客户端
+1 2  $ sudo apt-get install mysql-client $ sudo yum install mysql-community-client   安装开发工具：
+1  $ sudo apt-get install libmysqlclient-dev   CLI工具： mysql
+GUI工具： mysql workbench
+安装完成默认的数据库是 mysql。" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/database/mysql/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Title: Mysql Date: 2016-05-25 12:14:59 Tags: Database, Mysql
+Mysql 安装mysql服务器
+1 2 3 4 5  $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．   安装mysql客户端
+1 2  $ sudo apt-get install mysql-client $ sudo yum install mysql-community-client   安装开发工具：
+1  $ sudo apt-get install libmysqlclient-dev   CLI工具： mysql
+GUI工具： mysql workbench
+安装完成默认的数据库是 mysql。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/database/mysql/" />
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Title: Mysql Date: 2016-05-25 12:14:59 Tags: Database, Mysql
+Mysql 安装mysql服务器
+1 2 3 4 5  $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．   安装mysql客户端
+1 2  $ sudo apt-get install mysql-client $ sudo yum install mysql-community-client   安装开发工具：
+1  $ sudo apt-get install libmysqlclient-dev   CLI工具： mysql
+GUI工具： mysql workbench
+安装完成默认的数据库是 mysql。">
+
+
+
+<meta itemprop="wordCount" content="633">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Title: Mysql Date: 2016-05-25 12:14:59 Tags: Database, Mysql
+Mysql 安装mysql服务器
+1 2 3 4 5  $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．   安装mysql客户端
+1 2  $ sudo apt-get install mysql-client $ sudo yum install mysql-community-client   安装开发工具：
+1  $ sudo apt-get install libmysqlclient-dev   CLI工具： mysql
+GUI工具： mysql workbench
+安装完成默认的数据库是 mysql。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    
+
+<p>Title: Mysql
+Date: 2016-05-25 12:14:59
+Tags: Database, Mysql</p>
+
+<h1 id="mysql">Mysql</h1>
+
+<p>安装mysql服务器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install mysql-server
+$ sudo yum install mysql-community-server
+
+$ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+# 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．</pre></td></tr></table>
+</div>
+</div>
+<p>安装mysql客户端</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install mysql-client
+$ sudo yum install mysql-community-client</pre></td></tr></table>
+</div>
+</div>
+<p>安装开发工具：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install libmysqlclient-dev</pre></td></tr></table>
+</div>
+</div>
+<p>CLI工具： mysql</p>
+
+<p>GUI工具： mysql workbench</p>
+
+<p>安装完成默认的数据库是 mysql。</p>
+
+<p>mysqld的默认端口是3306.</p>
+
+<h1 id="mysql命令">mysql命令</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ mysql [OPTIONS] [database]</pre></td></tr></table>
+</div>
+</div>
+<p>初始化时需要用root用户进入mysql命令行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ mysql -uroot -p
+$ mysql -h&lt;host&gt; -P&lt;port&gt; -uroot -p&lt;password&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>创建用户后用其它用户操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ mysql -u&lt;user&gt; -p</pre></td></tr></table>
+</div>
+</div>
+<p>本地执行sql语句或mysql客户端命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database&gt; -e/--execute &lt;sql query&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>远程执行sql语句或mysql客户端命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ mysql -h&lt;host&gt; -P&lt;port&gt; -u&lt;username&gt; -p&lt;password&gt; &lt;database&gt; -e/--execute &lt;sql query&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>启用&rsquo;load data local&rsquo;命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 交互式
+$ mysql --local-infile=1 -uroot -ppassword
+# 非交互式
+$ mysql --local-infile=1 -uroot -pchengca w3c -e &#34;LOAD DATA LOCAL INFILE &#39;/home/user/customers.txt&#39; INTO TABLE Customers COLUMNS TERMINATED BY &#39;\t&#39; LINES TERMINATED BY &#39;\n&#39;;&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>导出数据命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ mysqldump -u&lt;username&gt; -p&lt;password&gt; &lt;databasename&gt;  &gt;  dump.sql</pre></td></tr></table>
+</div>
+</div>
+<p>mycli:</p>
+
+<p>A command line client for MySQL that can do auto-completion and syntax highlighting.</p>
+
+<p><a href="https://github.com/dbcli/mycli">https://github.com/dbcli/mycli</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ pip install -U mycli</pre></td></tr></table>
+</div>
+</div>
+<h1 id="cli">CLI</h1>
+
+<p>先用mysql命令进入mysql的命令行。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">?         (\?) Synonym for help.
+help      (\h) Display this help.
+
+exit      (\q) Exit mysql. Same as quit.
+quit      (\q) Quit mysql.
+
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+edit      (\e) Edit command with \$EDITOR.
+ego       (\G) Send command to mysql server, display result vertically.
+go        (\g) Send command to mysql server.
+nopager   (\n) Disable pager, print to stdout.
+notee     (\t) Don&#39;t write into outfile.
+pager     (\P) Set PAGER [to_pager]. Print the query results via PAGER.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+rehash    (\#) Rebuild completion hash.
+
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+mysql&gt; source /path/to/dump.sql # 从sql导入数据
+
+status    (\s) Get status information from the server.
+system    (\!) Execute a system shell command.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+
+use       (\u) Use another database. Takes database name as argument.
+mysql&gt; use database # 切换到数据库
+
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don&#39;t show warnings after every statement.</pre></td></tr></table>
+</div>
+</div>
+<p>其它可以在mysql客户端执行的命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 从本地一个文件导入数据，列分隔符为\t,行分隔符为\n
+LOAD DATA LOCAL INFILE &#39;/home/user/customers.txt&#39; INTO TABLE Customers COLUMNS TERMINATED BY &#39;\t&#39; LINES TERMINATED BY &#39;\n&#39;;</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="数据类型">数据类型</h1>
+
+<hr />
+
+<h1 id="函数和运算符">函数和运算符</h1>
+
+<p>date and time：</p>
+
+<p><a href="https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html">https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">NOW() // &#39;2018-11-18 16:00:28&#39;
+UTC_TIMESTAMP() // &#39;2018-11-18 08:01:04&#39;
+CURDATE()  // &#39;2018-11-18&#39;
+UTC_DATE() // &#39;2018-11-18&#39;
+CURTIME()  // &#39;16:02:18&#39;
+UTC_TIME() // &#39;08:03:36&#39;
+
+UNIX_TIMESTAMP() // &#39;1542528051&#39;
+DATE()
+TIME()
+DATEDIFF()</pre></td></tr></table>
+</div>
+</div>
+<p>control flow:：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">CASE
+
+IF()
+IFNULL(column, 0)
+NULLIF()</pre></td></tr></table>
+</div>
+</div>
+<p>comparison:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">COALESCE(column, 0)
+
+ISNULL()
+IS NULL
+
+IN()
+NOT IN()</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="sql">SQL</h1>
+
+<p>注意：hostname 指定能连接的server，%表示任何server．</p>
+
+<p>查看版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">SELECT VERSION();</pre></td></tr></table>
+</div>
+</div>
+<p>查看所有用户：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">SELECT DISTINCT(USER) FROM mysql.user;
+SELECT user,host FROM mysql.user;</pre></td></tr></table>
+</div>
+</div>
+<p>查看当前用户：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">SELECT USER();</pre></td></tr></table>
+</div>
+</div>
+<p>创建/删除用户：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">CREATE USER &#39;username&#39;@&#39;%&#39; IDENTIFIED BY &#39;password&#39;;
+DROP USER &#39;username&#39;@&#39;%&#39;;</pre></td></tr></table>
+</div>
+</div>
+<p>设置和更改密码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">UPDATE mysql.user SET PASSWORD(&#39;password&#39;) WHRER USER=&#39;username&#39; AND HOST=&#39;hostname&#39;;</pre></td></tr></table>
+</div>
+</div>
+<p>查看所有数据库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">show databases;</pre></td></tr></table>
+</div>
+</div>
+<p>查看当前数据库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">SELECT DATABASE();</pre></td></tr></table>
+</div>
+</div>
+<p>创建/删除数据库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">CREATE DATABASE databasename;
+DROP DATABASE databasename;</pre></td></tr></table>
+</div>
+</div>
+<p>使用数据库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">use databasename</pre></td></tr></table>
+</div>
+</div>
+<p>指定数据库对用户授权：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">GRANT ALL PRIVILEGES ON databasename.* TO &#39;username&#39;@&#39;%&#39;;
+FLUSH PRIVILEGES;</pre></td></tr></table>
+</div>
+</div>
+<p>查看权限：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">SHOW GRANTS FOR &#39;username&#39;@&#39;%&#39;;</pre></td></tr></table>
+</div>
+</div>
+<p>查看所有表：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">show tables;</pre></td></tr></table>
+</div>
+</div>
+<p>查看表结构：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">desc tablename;</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="issue">Issue</h1>
+
+<ol>
+<li>mysql8  workbench 连不上的问题 :</li>
+</ol>
+
+<p>issue:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">authentication plugin &#39;caching_sha2_password&#39; cannot be loaded: the specified module could not be found。</pre></td></tr></table>
+</div>
+</div>
+<p>fix：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">alter user &#39;sandbox&#39;@&#39;%&#39; identified with mysql_native_password by &#39;password&#39;;</pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li>max_commection 问题:</li>
+</ol>
+
+<p>issue:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">当连接池连接数量超过最大连接数就无法再建立连接</pre></td></tr></table>
+</div>
+</div>
+<p>fix:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">set global max_connections = 5000;</pre></td></tr></table>
+</div>
+</div>
+  </div>
+</article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '0001-01-01 00:00:00 \x2b0000 UTC',
+        title: '',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

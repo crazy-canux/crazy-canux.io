@@ -13,10 +13,10 @@
     
     <item>
       <title>GSL_file</title>
-      <link>http://canuxcheng.com/post/gsl_file/</link>
+      <link>http://canuxcheng.com/golang/gsl_file/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/gsl_file/</guid>
+      <guid>http://canuxcheng.com/golang/gsl_file/</guid>
       <description>path function 1 2 3 4 5 6 7 8 func IsAbs(path string) bool func Join(elem ...string) string func Split(path string) (dir, file string) func Join(elem ...string) string func Dir(path string) string func Base(path string) string func Ext(path string) string ... path/filepath Constants 1 2 3 4 const ( Separator = os.PathSeparator ListSeparator = os.PathListSeparator ) Variable 1 2 3 var ErrBadPattern = errors.New(&amp;#34;Syntax error in pattern&amp;#34;) var SkipDir =</description>
     </item>
     

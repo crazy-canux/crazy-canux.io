@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BigData on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/bigdata/</link>
+    <description>Recent content in BigData on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="http://canuxcheng.com/bigdata/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/bigdata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/bigdata/</guid>
+      <description> Title: BigData Date: 2016-04-11 22:57:37 Tags: BigData
+BigData 大数据最流行的框架是hadoop.
+大部分工具都属于Apache基金会的项目．
+MPP Massive Parallel Process
+大规模并行处理数据库包括impala, hawq
+分布式存储 hadoop hdfs 资源调度 hadoop yarn 分布式计算框架 hadoop mapreduce Spark 流式计算框架 Storm Flink 部署工具 Ambari 用于配置，管理，监控hadoop集群的web工具．
+Bigtop 对hadoop相关软件打包，分发，测试的工具．
+whirr Cloudera Hue Hortonworks hoya 服务编程 Zookeeper 分布式应用程序的高性能协调服务
+Curator Avro chuckwa 用于监控大型分布式系统的数据收集系统．
+交互式分析框架(Sql On Hadoop) Facebook Presto Hive Hawq(Pivotal) Hortonworks的HDP集成了HAWQ.
+Impala(Cloudera) Cloudera的CHD集成了Impala.
+交互式分析框架(NoSQL On Hadoop) HBase Cassandra 数据管理工具 Sqoop Flume 消息队列 Kafka Pivotal RabbitMQ DSL Pig Workflow and Lifecycle Oozie aurora falcon Security Sentry Data search Solr Nutch Lucene Data Analytics Mahout Kudu(Cloudera) Misc hama giraph crunch hcatalog </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/hawq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/hawq/</guid>
+      <description>Title: HAWQ Date: 2017-04-24 22:57:37 Tags: Hadoop, HAWQ
+HAWQ http://hawq.incubator.apache.org/
+https://github.com/apache/incubator-hawq
+HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来．
+HAWQ也就是Pivotal HDB.
+HAWQ和Pivotal　HDB是一个项目．
+Hortonworks公司的HDP集成了HAWQ.
+HAWQ可以通过HDFS在本机快速，交互查询hadoop数据．
+hawq的交互式命令行接口, 类似于postgresql, 参考postgresql.
+hawq的client: psql (参考postgresql)
+psql 1 2 3 4 5 6  $ psql $ PGPASSWORD=&amp;#39;password&amp;#39;;psql -h &amp;lt;host&amp;gt; -p &amp;lt;port&amp;gt; -U &amp;lt;username&amp;gt; -d [database] -c &amp;#34;[psql command]&amp;#34; $ psql -l # 查看所有database # jdbc $ jdbc:pivotal:greenplum://hdm1:5432;DatabaseName=getstartdb;User=hdbuser;Password=hdbpass   sql AO(append only) table:
+1  &amp;gt; create table {table_name} (var type, var1 type1);   parquet table:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/hadoop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/hadoop/</guid>
+      <description>Title: Hadoop Date: 2016-04-11 22:57:37 Tags: Hadoop
+Hadoop https://github.com/apache/hadoop
+apache hadoop是一个框架，允许使用简单的编程模型在大量计算机上对大型数据集进行分布式处理．
+hadoop1只有HDFS和MapReduce两个模块，hadoop2开始分为HDFS, YARN, MapReduce三个模块．
+hadoop的版本:
+ apache hadoop hortonworks hadoop (HDP) cloudera hadoop (CDH) mapr transwarp  安装hadoop hadoop有三种安装模式：
+ 单节点模式 伪分布式模式 分布式模式  参考Linux Admin和Network SSH如何安装多台centos，并且配置局域网，让本地多台机器相互访问．
+下载hadoop的二进制安装包，然后放到/home/hadoop/目录下并解压．
+推荐的cluster node:
+1 2 3 4 5 6 7  NameNode(hdfs) Secondary NameNode(hdfs) DataNode(hdfs) ResourceManager server(yarn) NodeManager server(yarn) WebAppProxy server(yarn) MapReduceJobHistory server(mapreduce)   设置环境变量：
+1 2 3 4 5  $ vim ~/.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/hadoop_common/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/hadoop_common/</guid>
+      <description> Title: Hadoop Common Date: 2017-04-11 22:57:37 Tags: Hadoop, Common
+Common </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/hadoop_hdfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/hadoop_hdfs/</guid>
+      <description>Title: Hadoop HDFS Date: 2016-04-11 22:57:37 Tags: Hadoop, HDFS
+HDFS Hadoop Distributed File System: hadoop分布式文件系统
+hadoop hdfs分为三部分:
+NameNode -&amp;gt; JobTracker
+secondary NameNode
+DataNode -&amp;gt; TaskTracker
+hdfs commands 1  hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
+1 2 3 4  $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ...   admin commands:
+1 2  $ hdfs balancer ...   debug commands:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/hadoop_mapreduce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/hadoop_mapreduce/</guid>
+      <description> Title: Hadoop MapReduce Date: 2017-05-03 22:57:37 Tags: Hadoop, MapReduce
+Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据．
+mapreduce commands 1  mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
+1 2  $ mapred archive ...   admin commands:
+1 2 3  $ mapred historyserver $ mapred hsadmin   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/hadoop_yarn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/hadoop_yarn/</guid>
+      <description>Title: Hadoop YARN Date: 2016-04-11 22:57:37 Tags: Hadoop, YARN
+YARN 作业调度和集群资源管理的框架．
+yarn的两个组件：
+ resourcemanager nodemanager  yarn commands 1  yarn [--config confdir] COMMAND [--loglevel loglevel] [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
+1 2  $ yarn application ...   admin commands:
+1 2  $ yarn daemonlog ...   resource manager resource manager由两部分组成：
+ scheduler applicationmanager  ResourceManager功能：
+ 处理客户请求 启动／监控applicationmaster 监控nodemanager 资源分配与调度  ApplicationMaster功能：
+ 数据切分 为应用申请资源, 并分配给内部任务 任务监控与容错  node manager node manager功能：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/hive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/hive/</guid>
+      <description>Title: Hive Date: 2017-04-24 22:57:37 Tags: Hadoop, Hive
+Hive https://github.com/apache/hive
+http://hive.apache.org/
+Hive2数据仓库用于读取，写入和管理使用SQL的大型分布式数据集．
+hive2的client: beeline(hive命令的升级版)
+hive/beeline hive
+1  $ hive --help   beeline
+1 2 3 4  $ beeline --silent=true beeline&amp;gt; !connect jdbc:hive2://[ip]:[port]/[database] [username] [password] $ beeline -u &amp;#34;jdbc:hive2://[ip]:10000[/database]&amp;#34; -n [username] -p [password] -e &amp;#34;USE [database]; ...&amp;#34;   sql normal table:
+1  &amp;gt; create table tablename (var type, var1 type1);   parquet table:
+1  &amp;gt; create table {table_name} (var type, var1 type1) STORED AS PARQUET;   partition table:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/impala/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/impala/</guid>
+      <description>Title: Impala Date: 2017-04-24 22:57:37 Tags: Hadoop, Impala
+Impala https://github.com/apache/incubator-impala
+https://impala.apache.org/
+impala的client: impala-shell
+Cloudera公司的CDH集成了Impala.
+impala-shell/beeline impala-shell
+1  $ impala-shell   beeline
+1 2 3 4  $ beeline --silent=true beeline&amp;gt; !connect jdbc:hive2://[ip]:21050[/database];auth=noSasl [username] [password] $ beeline -u &amp;#34;jdbc:hive2://[ip]:21050[/database];auth=noSasl&amp;#34; -n [username] -p [password] -e &amp;#34;USE [database]; ...&amp;#34;   sql normal table:
+1  &amp;gt; create table {table_name} (var type, var1 type1);   parquet table:
+1  &amp;gt; crate table {table_name} (var type, var1 type1) STORED AS PARQUET;   partition table:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/bigdata/presto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/presto/</guid>
+      <description> Title: SQL On Hadoop Date: 2017-04-24 22:57:37 Tags: Hadoop, Presto
+Presto https://github.com/prestodb
+https://prestodb.io/
+presto的client: presto-cli(rename to presto)
+presto-cli 1 2 3 4  $ presto --server localhost:8080 --catalog hive --schema default # jdbc for presto $ jdbc:presto://host:port/catalog/schema  </description>
+    </item>
+    
+  </channel>
+</rss>

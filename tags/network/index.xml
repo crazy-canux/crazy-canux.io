@@ -13,10 +13,10 @@
     
     <item>
       <title>GSL_network</title>
-      <link>http://canuxcheng.com/post/gsl_network/</link>
+      <link>http://canuxcheng.com/golang/gsl_network/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/gsl_network/</guid>
+      <guid>http://canuxcheng.com/golang/gsl_network/</guid>
       <description>net 网络IO接口，包括TCP/IP, UDP, SOCKET, DNS 1 import &amp;#34;net&amp;#34; constants 1 2 3 4 const ( IPv4len = 4 IPv6len = 16 ) variables functions Addr 代表一个网络终端地址． TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口 1 2 3 4 type Addr interface {</description>
     </item>
     

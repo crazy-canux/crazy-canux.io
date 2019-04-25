@@ -13,10 +13,10 @@
     
     <item>
       <title>Go_Devops</title>
-      <link>http://canuxcheng.com/post/go_devops/</link>
+      <link>http://canuxcheng.com/golang/go_devops/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/go_devops/</guid>
+      <guid>http://canuxcheng.com/golang/go_devops/</guid>
       <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: 1 GOROOT 就是go的安装目录 windows标准包安装go: 1 2 下载zip包解压到C:\go</description>
     </item>
     

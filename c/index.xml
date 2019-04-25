@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cs on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/c/</link>
+    <description>Recent content in Cs on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="http://canuxcheng.com/c/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/c/devops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/c/devops/</guid>
+      <description> Title: DevOps Date: 2016-04-11 22:57:37 Tags: C, DevOps
+IDE Windows: DEV C++
+http://orwelldevcpp.blogspot.com/
+Linux: Vim + Gcc + Gdb
+gcc/clang gdb </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/c/document/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/c/document/</guid>
+      <description> Title: Document Date: 2016-04-11 22:57:37 Tags: C, Document, Doxygen
+Document Doxygen </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/c/iso/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/c/iso/</guid>
+      <description> Title: C ISO Date: 2016-04-01 21:54:16 Tags: C, ISO
+C标准库 ISO C89(ANSI C89) -&amp;gt; ISO C99 -&amp;gt; ISO C11
+ANSI C 和 ISO C是对通用C语言的接口的定义。
+符合这种标准的实现为C语言标准库,也叫libc。
+官方网站：
+http://www.open-std.org/jtc1/sc22/wg14/www/standards
+C89和C99支持的头文件和函数                         C11支持的头文件和函数    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/c/posix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/c/posix/</guid>
+      <description> Title: C POSIX Date: 2016-04-02 11:18:05 Tags: C, Posix
+POSIX标准 Portable Operating System Interface
+可移植性操作系统接口, POSIX兼容ISO C。
+所有Unix都遵循，几乎所有Linux都遵循，Windows部分支持。
+POSIX.1/IEEE 1003.1-1990
+POSIX.2/IEEE Std 1003.2-1992/ISO IEC 9945-2:1993)
+POSIX.1.b/IEEE Std 1003.1b-1993/ISO IEC 9945-1:1996)
+POSIX.1.c/IEEE Std 1003.1c-1995
+POSIX.1.d/IEEE Std 1003.1c-1999
+POSIX.1.g/IEEE Std 1003.1g-2000
+POSIX.1.j/IEEE Std 1003.1j-2000
+POSIX.1-2001/SUSv3(包括了所有C99的API)
+POSIX.1-2008/SUSv4
+官方网站：
+http://www.opengroup.org/austin/
+Cygwin 提供POSIX的API用于windows上开发Linux/Unix程序。
+源代码不能在windows运行。
+https://cygwin.com/index.html
+POSIX标准定义的必须头文件                          POSIX标准定义的可选头文件         POSIX标准定义的XSI扩展头文件                           </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/c/package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/c/package/</guid>
+      <description> Title: Package Date: 2016-04-11 22:57:37 Tags: C, Package
+Package </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/c/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/c/summary/</guid>
+      <description>Title: Summary Date: 2016-04-02 16:06:14 Tags: C, Summary
+C标准 ISO C89(ANSI C89) -&amp;gt; ISO C99 -&amp;gt; ISO C11
+ANSI C 和 ISO C是对通用C语言的接口的定义。
+符合这种标准的实现为C语言标准库,也叫libc。
+Unix/Linux的POSIX包含libc。
+Linux的glibc包含libc及其扩展.
+Windows的msvcrt包含libc及其扩展.
+其它和C相关的标准：
+BSD
+System V
+XPG
+SUS
+glibc Linux的标准C库glibc
+遵循ISO C11 和 POSIX.1-2008, 还包括一些其它标准。
+关于ISO C 和 POSIX参考另外两篇博文。
+msvcrt windows的标准c库msvcrt.
+C注释 单行注释：
+1 2 3  // comment /* comment */   多行注释：
+1 2 3 4  /* * comment1 * commenet2 */   文档 C程序可以用doxygen从程序中提取文档。</description>
+    </item>
+    
+  </channel>
+</rss>

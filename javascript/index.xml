@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScripts on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/javascript/</link>
+    <description>Recent content in JavaScripts on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="http://canuxcheng.com/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/bootstrap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/bootstrap/</guid>
+      <description>Title: Bootstrap Date: 2016-10-27 22:19:20 Tags: Web, Bootstrap
+Bootstrap HTML,CSS,JavaScript的支持响应式和移动设备的WEB框架.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/css/</guid>
+      <description>Title: CSS Date: 2016-06-23 09:40:45 Tags: CSS
+CSS CSS是叠层样式表
+CSS3 CSS3是最新的CSS标准
+CSS创建 优先级从上往下。
+ 内联样式， 在html中通过style属性定义，仅用于一个html元素。 内部样式表，在html中通过style标签在头部定义,针对单个页面。 外部样式表，在html中通过link标签在文档头部定义，方便将样式用于多个页面。 浏览器的默认值。  CSS基本语法 CSS由两部分组成，选择器和声明，选择器是html元素，声明由属性和值组成。
+1 2 3 4 5  selector { property1: value1; property2: value2; ...; }   多个声明用分号隔开，属性的值有空格要用引号。
+CSS对大小写不敏感。
+CSS注释:
+1  /* comment */   CSS选择器 最常见的选择器是元素选择器,html元素是最基本的选择器。
+选择器分组 同组的选择器使用相同的声明。
+1 2 3  h1,h2,h3,h4,h5,h6 { color: green; }   id选择器 id选择器可以为标有特定id的html元素指定特定样式。
+id选择器用#开头定义。
+1 2 3 4  #red {color: red;} #green {color: green;} &amp;lt;p id=&amp;#34;red&amp;#34;&amp;gt;This is red.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/devops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/devops/</guid>
+      <description> Title: DevOps Date: 2016-09-27 03:31:25 Tags: Node, Javascript
+相关工具  npm
+https://github.com/npm/npm
+npm是javascript的包管理器，npm和hexo都是javascript包, 高版本的nodejs自带npm。
+1  $ sudo apt-get install npm   nvm
+https://github.com/creationix/nvm https://github.com/coreybutler/nvm-windows
+nvm是javascript的版本管理器．
+ n
+https://github.com/tj/n
+n是javascript的版本管理工具．
+  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/document/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/document/</guid>
+      <description>Title: Document Date: 2016-09-27 03:31:25 Tags: Node, Javascript, Document</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/html/</guid>
+      <description>Title: HTML Date: 2016-06-23 09:40:39 Tags: HTML
+HTML HTML是超文本标记语言
+XHTML XHTML是更严谨的更纯净的HTML
+HTML5 HTML5是下一代HTML
+html元素和属性 html元素指从开始标签到结束标签的所有代码,包括元素内容：
+html元素可以嵌套。
+1 2 3  &amp;lt;p&amp;gt; This is paragrph &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt; # 空内容的元素 &amp;lt;br /&amp;gt; # 空元素，在开始标签中关闭   html标签可以拥有属性，属性总是以name=&amp;lsquo;value&amp;rsquo;的形式出现，属性总是在html元素的开始标签中规定。
+1  &amp;lt;a href=&amp;#34;http://www.test.com&amp;#34;&amp;gt;This is a link&amp;lt;/a&amp;gt;   html属性和值大小写不敏感，推荐使用小写,始终给属性值加引号。
+html的全局属性(标准属性) 参考：
+http://www.w3school.com.cn/tags/html_ref_standardattributes.asp
+html的事件属性 参考：
+http://www.w3school.com.cn/tags/html_ref_eventattributes.asp
+html字符实体 参考：
+http://www.w3school.com.cn/tags/html_ref_entities.html
+html基本标签 DOCTYPE 1 2 3 4 5 6 7 8 9 10 11 12 13  # 文档类型 &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/html_form/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/html_form/</guid>
+      <description>Title: HTML Form Date: 2016-10-31 04:00:49 Tags: HTML, Form
+html表单 html表单用于搜集不同类型的用户输入。
+form form元素定义html表单。支持全局属性和事件属性。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32  &amp;lt;form action=&amp;#34;action_page.py&amp;#34;&amp;gt; &amp;lt;fieldset&amp;gt; &amp;lt;legend&amp;gt;Form information:&amp;lt;/legend&amp;gt; First name:&amp;lt;br&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;firstname&amp;#34;&amp;gt; &amp;lt;br&amp;gt; Last name:&amp;lt;br&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;lastname&amp;#34;&amp;gt; &amp;lt;/fieldset&amp;gt; &amp;lt;/form&amp;gt; # accept-charset属性规定服务器可处理的表单数据字符集。 # action属性规定当提交表单时向何处发送表单数据。 &amp;lt;form action=&amp;#34;action_page.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/javascript/</guid>
+      <description>Title: Javascript Date: 2017-03-13 09:36:32 Tags: Javascript
+JavaScript概述 Javascript包括三部分:
+ ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内容的方法和接口． BOM浏览器对象模型, 提供与浏览器交互的方法和接口．  javascript基本语法 javascript源程序叫xxx.js.
+javascript大小写敏感．
+javascript使用驼峰命名法．
+javascript的标识符以字母，下划线或美元符号开头，还可以包含数字．不能是关键字．
+JvaScript代码块以大括号{}包围．
+JavaScript使用分号;表示一个语句结束, 一般一行写多个语句才需要显示添加分号．
+javascript中所有事物都是对象，都有属性和方法.
+注释 单行注释：
+1  // comment   多行注释：
+1 2 3 4  /* * comment1 * comment2 */   关键字 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # 数据类型 var function return typeof new delete # 流程控制 if else for in do while switch case default with break continue # 修饰符 void # 动作相关 instanceof this # 异常处理 try catch throw debugger   运算符和优先级 数据类型 变量 申明变量:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/javascript_bom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/javascript_bom/</guid>
+      <description>Title: Javascript_BOM Date: 2018-03-15 09:36:32 Tags: Javascript, BOM
+BOM Browser Object Model
+介绍浏览器对象，不过缺乏规范.
+window window对象是最顶层对象，有6大属性,属性本身也是对象.
+window对象的document属性也是对象，document对象有5大属性.
+引用当前窗口时，可以省略window对象.
+eg:
+1 2 3 4 5  window.document document window.alert() alert()   对象集合:
+1  frames[]   attribution:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  document # DOM的Document对象 history # History对象 location # Location对象 Navigator # Navigator对象 Screen # Screen对象 window # 等价于self closed defaultStatus status innerheight innerwidth outerheight outerwidth   method:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/javascript_dom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/javascript_dom/</guid>
+      <description>Title: Javascript_DOM Date: 2017-03-15 09:36:32 Tags: Javascript, DOM
+DOM DOM: document object model.
+当网页被加载时，浏览器会创建页面的文档对象模型(DOM).
+DOM操作需要在html加载完成后进程.
+dom的对象: document/element/attribute/event.
+js可以通过DOM访问html文档的所有元素.
+ JavaScript 能够改变页面中的所有 HTML 元素 JavaScript 能够改变页面中的所有 HTML 属性 JavaScript 能够改变页面中的所有 CSS 样式 JavaScript 能够对页面中的所有事件做出反应  查找html元素 找到返回该元素的对象，没找到返回null.
+通过id:
+1  document.getElementById(&amp;#34;id&amp;#34;);   通过标签名:
+1  document.getElementsByTagName(&amp;#34;tag&amp;#34;);   通过类名:
+1  document.getElementsByName(&amp;#34;name&amp;#34;)   操作html元素或文本 操作标签或标签内的文本.
+直接改变html内容:
+1 2  # 绝不要使用在文档加载之后使用 document.write()。这会覆盖该文档 document.write(...);   改变元素的内容:
+1  document.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/javascript_oop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/javascript_oop/</guid>
+      <description>Title: Javascript_OOP Date: 2017-03-15 09:36:32 Tags: Javascript, OOP
+OOP javascript中一切都是对象.
+javacript内置了Object/Array/Date/RegExp/Function类型.
+Object 创建Object实例:
+1 2 3 4 5 6 7 8 9 10 11  var obj = new Object(); var obj = Object(); // new 可以省略 var obj = ｛ name: &amp;#34;value&amp;#34; }; var obj = { &amp;#34;name&amp;#34;: &amp;#34;value&amp;#34; }   添加属性:
+1  obj.attr = &amp;#34;value&amp;#34;   添加方法:
+1 2 3 4  obj.method = methodName; function methodName() {}; obj.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/nodejs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/nodejs/</guid>
+      <description> Title: NodeJS Date: 2016-09-27 03:31:25 Tags: Node, Javascript
+Nodejs https://github.com/nodejs/node
+Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。
+Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。
+Node.js 的包管理器npm，是全球最大的开源库生态系统.
+常说的javascript是前端语言，nodejs就是后端版本的javascript。
+安装nodejs:
+1  $ sudo apt-get install nodejs   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/nodejs_oop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/nodejs_oop/</guid>
+      <description>Title: NodeJS_OOP Date: 2016-09-27 03:31:25 Tags: Node, Javascript</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/package/</guid>
+      <description>Title: Package Date: 2016-09-27 03:31:25 Tags: Node, Javascript, Package</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/summary/</guid>
+      <description> Title: DevOps Date: 2016-09-27 03:31:25 Tags: Node, Javascript
+相关工具  npm
+https://github.com/npm/npm
+npm是javascript的包管理器，npm和hexo都是javascript包, 高版本的nodejs自带npm。
+1  $sudo apt-get install npm   nvm
+https://github.com/creationix/nvm
+nvm是javascript的版本管理器．
+ n
+https://github.com/tj/n
+n是javascript的版本管理工具．
+  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/javascript/vue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/javascript/vue/</guid>
+      <description>Title: Vue Date: 2019-01-27 22:19:20 Tags: Web, Vue
+Vue 下载vue并通过script标签引入.也可以通过其它方式安装.
+直接引入：
+1 2 3 4  开发环境 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 生产环境 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;   通过npm安装:
+1  $ npm install vue   vue-cli 为单页面应用快速搭建复杂的脚手架．
+https://github.com/vuejs/vue-cli
+vue-devtools 浏览器工具，可以在友好的界面审查和调试应用.
+https://github.com/vuejs/vue-devtools#vue-devtools</description>
+    </item>
+    
+  </channel>
+</rss>

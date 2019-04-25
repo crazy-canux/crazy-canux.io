@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Regular Expression Date: 2016-04-02 11:16:16 Tags: Linux, Posix, RE
+RE 在线检测：
+https://www.regexpal.com/
+RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE).
+在BRE中&#43;?(){}|没有特殊含义，除非用\转义．
+在ERE中&#43;?(){}被保留有特殊含义，除非用\转义才表示普通字符．
+命令find, grep, sed, awk等都可以使用正则表达式．
+特殊字符含义：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  () 对正则表达式分组, ERE \n 再匹配前面的分组n次 ." /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/linux/regularexpression/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Title: Regular Expression Date: 2016-04-02 11:16:16 Tags: Linux, Posix, RE
+RE 在线检测：
+https://www.regexpal.com/
+RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE).
+在BRE中&#43;?(){}|没有特殊含义，除非用\转义．
+在ERE中&#43;?(){}被保留有特殊含义，除非用\转义才表示普通字符．
+命令find, grep, sed, awk等都可以使用正则表达式．
+特殊字符含义：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  () 对正则表达式分组, ERE \n 再匹配前面的分组n次 ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/linux/regularexpression/" />
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Title: Regular Expression Date: 2016-04-02 11:16:16 Tags: Linux, Posix, RE
+RE 在线检测：
+https://www.regexpal.com/
+RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE).
+在BRE中&#43;?(){}|没有特殊含义，除非用\转义．
+在ERE中&#43;?(){}被保留有特殊含义，除非用\转义才表示普通字符．
+命令find, grep, sed, awk等都可以使用正则表达式．
+特殊字符含义：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  () 对正则表达式分组, ERE \n 再匹配前面的分组n次 .">
+
+
+
+<meta itemprop="wordCount" content="254">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Title: Regular Expression Date: 2016-04-02 11:16:16 Tags: Linux, Posix, RE
+RE 在线检测：
+https://www.regexpal.com/
+RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE).
+在BRE中&#43;?(){}|没有特殊含义，除非用\转义．
+在ERE中&#43;?(){}被保留有特殊含义，除非用\转义才表示普通字符．
+命令find, grep, sed, awk等都可以使用正则表达式．
+特殊字符含义：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  () 对正则表达式分组, ERE \n 再匹配前面的分组n次 ."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    
+
+<p>Title: Regular Expression
+Date: 2016-04-02 11:16:16
+Tags: Linux, Posix, RE</p>
+
+<h1 id="re">RE</h1>
+
+<p>在线检测：</p>
+
+<p><a href="https://www.regexpal.com/">https://www.regexpal.com/</a></p>
+
+<p>RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE).</p>
+
+<p>在BRE中+?(){}|没有特殊含义，除非用\转义．</p>
+
+<p>在ERE中+?(){}被保留有特殊含义，除非用\转义才表示普通字符．</p>
+
+<p>命令find, grep, sed, awk等都可以使用正则表达式．</p>
+
+<p>特殊字符含义：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">()      对正则表达式分组, ERE
+\n      再匹配前面的分组n次
+
+.       匹配任意单个字符, 换行符除外
+^tux    匹配以tux开始的行
+tux$    匹配以tux结束的行
+
+*+?{}特殊字符是贪婪匹配模式,也就是尽可能多的匹配
+*           匹配前面一个字符0次或多次，包括前面这个字符本身
++           匹配前面一个字符1次或多次，包括前面这个字符, ERE
+?           匹配前面一个字符0次或1次，包括前面这个字符, ERE
+{n}         匹配前面一个字符n次，包括前面这个字符, ERE
+{min,}      匹配前面一个字符至少min次，包括前面这个字符, ERE
+{min,max}   匹配前面一个字符至少min次，最多max次，包括前面这个字符, ERE
+
+下面是非贪婪匹配模式
+*?    匹配0个或多个
++?    匹配1个或多个
+??    匹配０个或１个
+{n}?        只匹配n个
+{min,}?     至少min个
+{min,max}?  至少min个，最多max个
+
+[abc]   匹配包含在[]中的任意一个字符，除了\, ^, -三个特殊字符
+[^abc]  匹配不包含在[]中的任意一个字符(和上面相反)
+[a-z]   匹配[]中指定范围内的任意一个字符
+[abc\?] 用＼转义[]中的特殊字符
+
+|       表示逻辑或, ERE
+
+\       转义字符，将特殊字符转义成普通字符
+
+小括号表示分组
+(...)
+(?...)
+(?iLmsux)
+(?:...)
+(?P&lt;name&gt;...)
+(?P=name)
+(?#...)
+(?=...)
+(?!...)
+(?&lt;=...)
+(?&lt;!...)
+(?(id/name)yes-pattern|no-pattern)</pre></td></tr></table>
+</div>
+</div>
+<p>匹配前面一个字符０次，包括前面这个字符，也就是说０次表示不匹配前面这个字符．</p>
+
+<p>字符集:</p>
+
+<p>下列字符集是posix标准，用在[]中，也就是[[:alnum:]].</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[:alnum:]    可打印的字符，包括空白字符
+[:alpha:]　　字母字符
+[:blank:]　　空格和制表符，space, \t
+[:cntrl&#34;]    控制字符
+[:digit:]　　数字字符
+[:graph:]　　图形字符，不包括空白字符
+[:lower:]　　小写字符
+[:print:]　　可打印字符，包括空白字符
+[:punct:]　　标点符号字符
+[:space:]　　空白字符
+[:upper:]　　大写字符
+[:xdigit:]　 十六进制字符</pre></td></tr></table>
+</div>
+</div>
+<p>字符集的简写(不同的编程语言可能不同)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">\b      匹配单词边界
+\B      匹配单词的非边界
+\A      匹配字符串的起始
+\Z　　　匹配字符串的结束
+
+\d      匹配任何数字０－９
+\D      匹配任何非数字，等效[^\d]
+\w      匹配任何数字和字母，a-z,A-Z,0-9
+\W      匹配任何非数字和非字母
+\s      匹配任何空白字符,包括space,\t,\n,\r,\f
+\S      匹配任何非空白字符
+\h      匹配横向空白，包括space,\t
+\v      匹配纵向空白，包括\f,\r,\n
+\r      回车
+\R　　　匹配任何类型的断行
+
+\a
+\f
+\t
+\n</pre></td></tr></table>
+</div>
+</div>
+<h1 id="常用正则表达式">常用正则表达式</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.*           匹配任意字符０次或多次，除了换行符
+^$           匹配空白行
+[\s\S]       匹配任何空白字符和非空白字符
+^\s\+        行首空格
+\s\+$        行尾空格
+^[^&lt;]        不以&lt;开头的字符串</pre></td></tr></table>
+</div>
+</div>
+  </div>
+</article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '0001-01-01 00:00:00 \x2b0000 UTC',
+        title: '',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

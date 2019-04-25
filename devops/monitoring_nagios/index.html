@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Monitoring Nagios Date: 2016-03-25 11:15:48 Tags: Monitoring, Nagios
+Nagios  Nagios is the industry standard in IT infrastructure monitoring
+Nagios offers complete monitoring and alerting for servers, switches, applications, and services.
+ Nagios官方宣称nagios是IT基础监控的工业标准。
+Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。
+Nagios是无agent的，nagios的plugin通过协议远程获取信息。
+https://www.nagios.org/
+https://www.nagios.com/
+https://exchange.nagios.org/
+https://github.com/NagiosEnterprises
+https://github.com/nagios-plugins
+Nagios安装配置 Nagios发展 Nagios core 1.0
+Nagios core 2.0
+Nagios core 3.0
+Nagios XI
+Nagios core 4.0
+目前nagios有两大阵营：
+开源解决方案： Nagios core
+商业解决方案： Nagios XI
+Nagios安装配置 安装和配置nagios core,plugins,addons参考
+官方文档:
+https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/devops/monitoring_nagios/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Title: Monitoring Nagios Date: 2016-03-25 11:15:48 Tags: Monitoring, Nagios
+Nagios  Nagios is the industry standard in IT infrastructure monitoring
+Nagios offers complete monitoring and alerting for servers, switches, applications, and services.
+ Nagios官方宣称nagios是IT基础监控的工业标准。
+Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。
+Nagios是无agent的，nagios的plugin通过协议远程获取信息。
+https://www.nagios.org/
+https://www.nagios.com/
+https://exchange.nagios.org/
+https://github.com/NagiosEnterprises
+https://github.com/nagios-plugins
+Nagios安装配置 Nagios发展 Nagios core 1.0
+Nagios core 2.0
+Nagios core 3.0
+Nagios XI
+Nagios core 4.0
+目前nagios有两大阵营：
+开源解决方案： Nagios core
+商业解决方案： Nagios XI
+Nagios安装配置 安装和配置nagios core,plugins,addons参考
+官方文档:
+https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/devops/monitoring_nagios/" />
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Title: Monitoring Nagios Date: 2016-03-25 11:15:48 Tags: Monitoring, Nagios
+Nagios  Nagios is the industry standard in IT infrastructure monitoring
+Nagios offers complete monitoring and alerting for servers, switches, applications, and services.
+ Nagios官方宣称nagios是IT基础监控的工业标准。
+Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。
+Nagios是无agent的，nagios的plugin通过协议远程获取信息。
+https://www.nagios.org/
+https://www.nagios.com/
+https://exchange.nagios.org/
+https://github.com/NagiosEnterprises
+https://github.com/nagios-plugins
+Nagios安装配置 Nagios发展 Nagios core 1.0
+Nagios core 2.0
+Nagios core 3.0
+Nagios XI
+Nagios core 4.0
+目前nagios有两大阵营：
+开源解决方案： Nagios core
+商业解决方案： Nagios XI
+Nagios安装配置 安装和配置nagios core,plugins,addons参考
+官方文档:
+https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html">
+
+
+
+<meta itemprop="wordCount" content="498">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Title: Monitoring Nagios Date: 2016-03-25 11:15:48 Tags: Monitoring, Nagios
+Nagios  Nagios is the industry standard in IT infrastructure monitoring
+Nagios offers complete monitoring and alerting for servers, switches, applications, and services.
+ Nagios官方宣称nagios是IT基础监控的工业标准。
+Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。
+Nagios是无agent的，nagios的plugin通过协议远程获取信息。
+https://www.nagios.org/
+https://www.nagios.com/
+https://exchange.nagios.org/
+https://github.com/NagiosEnterprises
+https://github.com/nagios-plugins
+Nagios安装配置 Nagios发展 Nagios core 1.0
+Nagios core 2.0
+Nagios core 3.0
+Nagios XI
+Nagios core 4.0
+目前nagios有两大阵营：
+开源解决方案： Nagios core
+商业解决方案： Nagios XI
+Nagios安装配置 安装和配置nagios core,plugins,addons参考
+官方文档:
+https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    
+
+<p>Title: Monitoring Nagios
+Date: 2016-03-25 11:15:48
+Tags: Monitoring, Nagios</p>
+
+<h1 id="nagios">Nagios</h1>
+
+<blockquote>
+<p>Nagios is the industry standard in IT infrastructure monitoring</p>
+
+<p>Nagios offers complete monitoring and alerting for servers, switches, applications, and services.</p>
+</blockquote>
+
+<p>Nagios官方宣称nagios是IT基础监控的工业标准。</p>
+
+<p>Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。</p>
+
+<p>Nagios是无agent的，nagios的plugin通过协议远程获取信息。</p>
+
+<p><a href="https://www.nagios.org/">https://www.nagios.org/</a></p>
+
+<p><a href="https://www.nagios.com/">https://www.nagios.com/</a></p>
+
+<p><a href="https://exchange.nagios.org/">https://exchange.nagios.org/</a></p>
+
+<p><a href="https://github.com/NagiosEnterprises">https://github.com/NagiosEnterprises</a></p>
+
+<p><a href="https://github.com/nagios-plugins">https://github.com/nagios-plugins</a></p>
+
+<hr />
+
+<h1 id="nagios安装配置">Nagios安装配置</h1>
+
+<h2 id="nagios发展">Nagios发展</h2>
+
+<p>Nagios core 1.0</p>
+
+<p>Nagios core 2.0</p>
+
+<p>Nagios core 3.0</p>
+
+<p>Nagios XI</p>
+
+<p>Nagios core 4.0</p>
+
+<p>目前nagios有两大阵营：</p>
+
+<p>开源解决方案： Nagios core</p>
+
+<p>商业解决方案： Nagios XI</p>
+
+<h2 id="nagios安装配置-1">Nagios安装配置</h2>
+
+<p>安装和配置nagios core,plugins,addons参考</p>
+
+<p>官方文档:</p>
+
+<p><a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html</a></p>
+
+<p>中文文档：</p>
+
+<p><a href="http://nagios-cn.sourceforge.net/nagios-cn/index.html">http://nagios-cn.sourceforge.net/nagios-cn/index.html</a></p>
+
+<hr />
+
+<h1 id="nagios开源解决方案">Nagios开源解决方案</h1>
+
+<h2 id="nagios-core">Nagios core:</h2>
+
+<blockquote>
+<p>Nagios Core is the monitoring and alerting engine that serves as the primary application around which hundreds of Nagios projects are built.</p>
+</blockquote>
+
+<p>Nagios core是监控和警报的主引擎，围绕它建立了成千上万的项目。
+技术栈是c，只能安装在linux/unix系统。
+Nagios core只是一个监控套件，本身没有监控功能，需要插件来完成监控。</p>
+
+<p><a href="https://www.nagios.org/projects/nagios-core/">https://www.nagios.org/projects/nagios-core/</a></p>
+
+<p><a href="https://github.com/NagiosEnterprises/nagioscore">https://github.com/NagiosEnterprises/nagioscore</a></p>
+
+<h2 id="nagios-plugins">Nagios plugins:</h2>
+
+<blockquote>
+<p>Efficient, standalone extensions that provide low-level intelligence for monitoring anything and everything with Nagios Core.</p>
+</blockquote>
+
+<p>Nagios core的监控插件,也就是官方插件,主要是c、shell和perl。</p>
+
+<p><a href="https://www.nagios.org/projects/nagios-plugins/">https://www.nagios.org/projects/nagios-plugins/</a></p>
+
+<p><a href="https://github.com/nagios-plugins/nagios-plugins">https://github.com/nagios-plugins/nagios-plugins</a></p>
+
+<h2 id="nagios-frontends">Nagios frontends:</h2>
+
+<blockquote>
+<p>Web interfaces, themes, Windows and Linux interfaces, and mobile apps for Nagios. Change the look and style of Nagios to suite your needs.</p>
+</blockquote>
+
+<p>Nagios frontends包括了 主题,web接口,移动设备接口。</p>
+
+<p><a href="https://www.nagios.org/downloads/nagios-core-frontends/">https://www.nagios.org/downloads/nagios-core-frontends/</a></p>
+
+<h2 id="nagios-config-tools-nagios-addons-projects">Nagios config tools(Nagios addons projects):</h2>
+
+<blockquote>
+<p>Tools and GUIs for simplifying Nagios Core configuration.</p>
+</blockquote>
+
+<p>nagios core的组件。</p>
+
+<p>包括Lilac,NagiosQL,NConf,OneCMDB,ignoramus</p>
+
+<p><a href="https://www.nagios.org/projects/nagios-config-tools/">https://www.nagios.org/projects/nagios-config-tools/</a></p>
+
+<p><a href="https://www.nagios.org/downloads/nagios-core-addons/">https://www.nagios.org/downloads/nagios-core-addons/</a></p>
+
+<p><a href="https://github.com/NagiosEnterprises">https://github.com/NagiosEnterprises</a></p>
+
+<h2 id="nagios-exchange">Nagios exchange:</h2>
+
+<blockquote>
+<p>Nagios® Exchange is the central place where you&rsquo;ll find all types of Nagios projects - plugins, addons, documentation, extensions, and more. This site is designed for the Nagios Community to share its Nagios creations.</p>
+</blockquote>
+
+<p>Nagios exchange是nagios的开源宝库。</p>
+
+<p>包括第三方plugins、addons和docs。</p>
+
+<p><a href="https://exchange.nagios.org/https://exchange.nagios.org/">https://exchange.nagios.org/https://exchange.nagios.org/</a></p>
+
+<hr />
+
+<h1 id="nagios商业解决方案">Nagios商业解决方案</h1>
+
+<h2 id="nagios-xi">Nagios XI:</h2>
+
+<blockquote>
+<p>Our most powerful IT infrastructure monitoring and IT monitoring software alerting solution for today’s demanding organizational requirements.</p>
+</blockquote>
+
+<p>Nagios XI 是现代化的商业监控解决套件。</p>
+
+<p>Nagios XI 使用nagios core 4.0。</p>
+
+<p>Nagios XI 架构：</p>
+
+<p><img src="/images/nagiosxi.png" alt="pic" /></p>
+
+<h2 id="nagios-network-analyzer">Nagios network analyzer</h2>
+
+<h2 id="nagios-log-server">Nagios log server</h2>
+
+<h2 id="nagios-fusion">Nagios fusion</h2>
+
+<h2 id="nagios-incident-manager">Nagios incident manager</h2>
+
+<hr />
+
+<h1 id="nagios命令">Nagios命令</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/usr/local/nagios/bin/nagios --help
+-v 验证配置文件
+-d daemon mode
+-W worker mode.</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="nagios-集中监控">Nagios 集中监控</h1>
+
+<h2 id="本地监控">本地监控</h2>
+
+<p>使用nagios core + plugins只能监控本地的linux/unix机器。</p>
+
+<h2 id="远程监控">远程监控</h2>
+
+<p>使用nagios core + plugins + addons可以监控远程的linux/unix/windows机器。</p>
+
+<p>NRPE(for linux)/NRPE_NT(for windows)和check_nrpe, 运行远程机器上的插件, 支持windows/unix/linux:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + check_nrpe &lt;=&gt; NRPE/NRPE_NT + plugins</pre></td></tr></table>
+</div>
+</div>
+<p>NSCP和check_nt, 只能使用固定的几个命令查基本属性, 支持windows/linux/unix：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + check_nt -H &lt;NSCP IP&gt; [-v &lt;command&gt;] &lt;=&gt; NSCP(NSClient++)</pre></td></tr></table>
+</div>
+</div>
+<p>NSCP和check_nrpe，可以传自己的命令或插件, 支持windows/linux/unix：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + check_nrpe -H &lt;NSCP IP&gt; [-c &lt;command/plugins&gt;] [-a &lt;argument list&gt;] &lt;=&gt; NSCP(NSClient++) + plugins</pre></td></tr></table>
+</div>
+</div>
+<p>NSCP和NSCA/NRDP,NSCP主动check,然后将结果发送给NSCA/NRDP:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + NSCA &lt;=&gt; NSCP(NSClient++)</pre></td></tr></table>
+</div>
+</div>
+<p>NCPA是python写的跨平台代理, 支持linux/windows/unix：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + check_ncpa.py &lt;=&gt; NCPA</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="nagios-分布式监控">Nagios 分布式监控</h1>
+
+<h2 id="nrdp-nsca-nsca-ng">NRDP/NSCA/NSCA-ng</h2>
+
+<p>官方推荐，NRDP是NSCA的升级版,提供被动检测,这种方式效率低，稳定性差。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core &lt;- plugins &lt;- NSCA &lt;= send_nsca &lt;- ocsp &lt;- Nagios core &lt;=&gt; Hosts
+                               ^
+                              ||
+                              send_nsca &lt;- ocsp &lt;- Nagios core &lt;=&gt; Hosts</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="nagios的组件">Nagios的组件</h1>
+
+<p><a href="https://www.nagios.org/downloads/nagios-core-addons/">https://www.nagios.org/downloads/nagios-core-addons/</a></p>
+
+<p><a href="https://github.com/NagiosEnterprises">https://github.com/NagiosEnterprises</a></p>
+
+<h2 id="ndoutils-ndo-idoutils-ido">NDOUtils(NDO)/IDOUtils(IDO)</h2>
+
+<p>从nagios导出当前和历史数据到mysql数据库,需要安装数据库。</p>
+
+<p>相似功能有mk livestatus。</p>
+
+<p>N * (Nagios core + NDO module) -&gt; TCP/Socket -&gt; NDO2DB daemon -&gt; DB</p>
+
+<p><a href="https://github.com/NagiosEnterprises/ndoutils">https://github.com/NagiosEnterprises/ndoutils</a></p>
+
+<h2 id="nsti">NSTI</h2>
+
+<p>Nagios SNMP Trap Interface.</p>
+
+<p><a href="https://github.com/NagiosEnterprises/nsti">https://github.com/NagiosEnterprises/nsti</a></p>
+
+<h2 id="bpi">BPI</h2>
+
+<p>Nagios Business Process Intelligence.</p>
+
+<p><a href="https://github.com/NagiosEnterprises/nagiosbpi">https://github.com/NagiosEnterprises/nagiosbpi</a></p>
+
+<h1 id="其它组件介绍">其它组件介绍</h1>
+
+<h2 id="nconf">NCONF</h2>
+
+<p>nagios的基于web的配置工具。</p>
+
+<p><a href="http://www.nconf.org/dokuwiki/doku.php">http://www.nconf.org/dokuwiki/doku.php</a></p>
+
+<p><a href="https://github.com/nconf/nconf">https://github.com/nconf/nconf</a></p>
+
+<h2 id="dnx">DNX</h2>
+
+<p>分布式组件。</p>
+
+<p><a href="http://dnx.sourceforge.net/">http://dnx.sourceforge.net/</a></p>
+
+<p><a href="https://sourceforge.net/projects/dnx/">https://sourceforge.net/projects/dnx/</a></p>
+
+<h2 id="nagiosgraph">Nagiosgraph</h2>
+
+<blockquote>
+<p>nagiosgraph parses output and performance data from Nagios plugins and stores
+the data in RRD files. nagiosgraph creates graphs and generates HTML pages with
+graphic reports from the data.</p>
+</blockquote>
+
+<p>基于RRD，绘制nagios的性能图。</p>
+
+<p><a href="http://nagiosgraph.sourceforge.net/">http://nagiosgraph.sourceforge.net/</a></p>
+
+<p><a href="https://sourceforge.net/projects/nagiosgraph/">https://sourceforge.net/projects/nagiosgraph/</a></p>
+
+<hr />
+
+<h1 id="consol的分布式监控方案">consol的分布式监控方案</h1>
+
+<p>一家德国的咨询和解决方案软件公司。</p>
+
+<p>可以通过 check_MK 的omd来安装。</p>
+
+<p><a href="https://www.consol.de/">https://www.consol.de/</a></p>
+
+<p><a href="https://labs.consol.de/index.html">https://labs.consol.de/index.html</a></p>
+
+<p><a href="https://github.com/ConSol">https://github.com/ConSol</a></p>
+
+<p>主要贡献组件：</p>
+
+<p><a href="https://github.com/sni">https://github.com/sni</a></p>
+
+<p>主要贡献插件：</p>
+
+<p><a href="https://github.com/lausser">https://github.com/lausser</a></p>
+
+<p><img src="/images/nagios.png" alt="pic" /></p>
+
+<h2 id="mod-gearman">Mod gearman</h2>
+
+<p>labs consol的分布式监控组件, gearman的worker。</p>
+
+<p><a href="http://www.mod-gearman.org/">http://www.mod-gearman.org/</a></p>
+
+<p><a href="https://github.com/sni/mod_gearman">https://github.com/sni/mod_gearman</a></p>
+
+<h2 id="ndoutils-livestatus">NDOUtils/livestatus</h2>
+
+<p>Event broker.</p>
+
+<h2 id="thruk">Thruk</h2>
+
+<p>基于perl的web框架catalyst的dashbord。</p>
+
+<p><a href="http://www.thruk.org/">http://www.thruk.org/</a></p>
+
+<p><a href="https://github.com/sni/Thruk">https://github.com/sni/Thruk</a></p>
+
+<hr />
+
+<h1 id="op5的分布式监控方案">Op5的分布式监控方案</h1>
+
+<p>一家瑞典的监控和解决方案公司。</p>
+
+<p><a href="https://www.op5.com/">https://www.op5.com/</a></p>
+
+<p><a href="https://kb.op5.com/dashboard.action">https://kb.op5.com/dashboard.action</a></p>
+
+<p><a href="https://github.com/op5">https://github.com/op5</a></p>
+
+<h2 id="merlin">merlin</h2>
+
+<p>分布式组件。</p>
+
+<p><a href="https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home">https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home</a></p>
+
+<p><a href="https://github.com/op5/merlin">https://github.com/op5/merlin</a></p>
+
+<h2 id="ndoutils-mk-livestatus">NDOUtils/MK livestatus</h2>
+
+<p>Eevent broker</p>
+
+<h2 id="ninja">Ninja</h2>
+
+<p>Dashboard.</p>
+
+<p><a href="https://kb.op5.com/display/GUI/GUI+%28Ninja%29+Home">https://kb.op5.com/display/GUI/GUI+%28Ninja%29+Home</a></p>
+
+<p><a href="https://github.com/op5/ninja">https://github.com/op5/ninja</a></p>
+
+  </div>
+</article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '0001-01-01 00:00:00 \x2b0000 UTC',
+        title: '',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

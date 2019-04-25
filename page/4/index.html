@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://canuxcheng.com/" />
 
-<meta property="og:updated_time" content="2018-01-01T10:49:21&#43;00:00"/>
+<meta property="og:updated_time" content="2016-04-15T09:41:39&#43;00:00"/>
 
 <meta itemprop="name" content="Canux&#39;s Blog">
 <meta itemprop="description" content="Hugo theme canux site.">
@@ -123,115 +123,117 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gsl_data/">GSL_data</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/development/">Development</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-01-01 </span>
+      <span class="post-time"> 2016-04-15 </span>
       <div class="post-category">
-          <a href="/categories/golang/"> Golang </a>
+          <a href="/categories/devops/"> DevOps </a>
           </div>
-        <span class="more-meta"> 840 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      time constants const: 1 2 3 4 5 6 const ( ANSIC = &#34;Mon Jan _2 15:04:05 2006&#34; Unixdate = &#34;Mon Jan _2 15:04:05 MST 2006&#34; RFC3339 = &#34;2006-01-02T15:04:05Z07:00&#34; ... ) functions 1 2 3 4 5 6 // 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) &lt;- chan Time func Tick(d Duration) &lt;- chan Time Time 代表一
-    </div>
-    <div class="read-more">
-      <a href="/post/gsl_data/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gsl_database/">GSL_database</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-01-01 </span>
-      <div class="post-category">
-          <a href="/categories/golang/"> Golang </a>
-          </div>
-        <span class="more-meta"> 1099 words </span>
-        <span class="more-meta"> 3 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      database/sql 使用该包，必须提供一个数据库驱动 https://github.com/golang/go/wiki/SQLDrivers mssql driver: https://github.com/denisenkom/go-mssqldb mysql driver: https://github.com/go-sql-driver/mysql postgresql driver: https://github.com/lib/pq https://github.com/jackc/pgx variables 1 2 // QueryRow 没有返回row时，调用返回值的Scan方法会返回该变量 var ErrNoRows = errors.New(&#34;sql: no rows in result set&#34;) functions
-    </div>
-    <div class="read-more">
-      <a href="/post/gsl_database/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gsl_file/">GSL_file</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-01-01 </span>
-      <div class="post-category">
-          <a href="/categories/golang/"> Golang </a>
-          </div>
-        <span class="more-meta"> 1606 words </span>
-        <span class="more-meta"> 4 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      path function 1 2 3 4 5 6 7 8 func IsAbs(path string) bool func Join(elem ...string) string func Split(path string) (dir, file string) func Join(elem ...string) string func Dir(path string) string func Base(path string) string func Ext(path string) string ... path/filepath Constants 1 2 3 4 const ( Separator = os.PathSeparator ListSeparator = os.PathListSeparator ) Variable 1 2 3 var ErrBadPattern = errors.New(&#34;Syntax error in pattern&#34;) var SkipDir =
-    </div>
-    <div class="read-more">
-      <a href="/post/gsl_file/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gsl_golang/">GSL_golang</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-01-01 </span>
-      <div class="post-category">
-          <a href="/categories/golang/"> Golang </a>
-          </div>
-        <span class="more-meta"> 285 words </span>
+        <span class="more-meta"> 322 words </span>
         <span class="more-meta"> 1 min read </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      runtime constants 1 2 3 4 5 6 7 8 // 指定编译器 const Compiler = &#34;gc&#34;/&#34;gccgo&#34; // 处理器架构: 386/amd64/arm const GOARCH string = theGoarch // 操作系统: linux/freebsd/darwin/win const GOOS string = theGoos variables 1 var MemProfileRate int = 512 * 1024 functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+      Development 开发相关的工具 传统的软件开发采用的是瀑布式开发流程． 现代的软件开发采用的是敏捷开发流程(Agile development). Alpha: inner test version. Beta: outer test version. RC: release candidate. 最终版本之前的最
     </div>
     <div class="read-more">
-      <a href="/post/gsl_golang/" class="read-more-link">Read more..</a>
+      <a href="/post/development/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gsl_math/">GSL_math</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/gitlab/">Gitlab</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2018-01-01 </span>
+      <span class="post-time"> 2016-04-15 </span>
       <div class="post-category">
-          <a href="/categories/golang/"> Golang </a>
+          <a href="/categories/devops/"> DevOps </a>
           </div>
-        <span class="more-meta"> 127 words </span>
+        <span class="more-meta"> 131 words </span>
         <span class="more-meta"> 1 min read </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      math constants variables functions math/big math/cmplx math/rand sort functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 func Ints(a []int) func IntAreSorted(a []int) bool func SearchInts(a []int, x int) int func Float64s(a []float64) func Float64sArerSorted(a []float64) bool func SearchFloat64s(a []float64, x float64) int func Strings(a []string) func StringsAreSorted(a []string) bool func SearchStrings(a []string, x string) int func Sort(data Interface) func
+      Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: 1 2 3 4 sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash sudo EXTERNAL_URL=&#34;http://gitlab.example.com&#34; apt-get install gitlab-ee 配置: 1 /etc/gitlab/gitlab.rb CLI 备份：
     </div>
     <div class="read-more">
-      <a href="/post/gsl_math/" class="read-more-link">Read more..</a>
+      <a href="/post/gitlab/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/bigdata/">BigData</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-11 </span>
+      <div class="post-category">
+          <a href="/categories/bigdata/"> BigData </a>
+          </div>
+        <span class="more-meta"> 314 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      BigData 大数据最流行的框架是hadoop. 大部分工具都属于Apache基金会的项目． MPP Massive Parallel Process 大规模并行处理数据库包括impala, hawq 分布式存储 hadoop hdfs
+    </div>
+    <div class="read-more">
+      <a href="/post/bigdata/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/cloudcomputing/">CloudComputing</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-05 </span>
+      <div class="post-category">
+          <a href="/categories/cloudcomputing/"> CloudComputing </a>
+          </div>
+        <span class="more-meta"> 16 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      CloudComputing IAAS: Infrastructure as a service
+PAAS: Platform as a service
+SAAS: Software as a service
+    </div>
+    <div class="read-more">
+      <a href="/post/cloudcomputing/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/git/">Git</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-02 </span>
+      <div class="post-category">
+          <a href="/categories/devops/"> DevOps </a>
+          </div>
+        <span class="more-meta"> 2459 words </span>
+        <span class="more-meta"> 5 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2
+    </div>
+    <div class="read-more">
+      <a href="/post/git/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>

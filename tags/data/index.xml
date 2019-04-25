@@ -13,10 +13,10 @@
     
     <item>
       <title>GSL_data</title>
-      <link>http://canuxcheng.com/post/gsl_data/</link>
+      <link>http://canuxcheng.com/golang/gsl_data/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/gsl_data/</guid>
+      <guid>http://canuxcheng.com/golang/gsl_data/</guid>
       <description>time constants const: 1 2 3 4 5 6 const ( ANSIC = &amp;#34;Mon Jan _2 15:04:05 2006&amp;#34; Unixdate = &amp;#34;Mon Jan _2 15:04:05 MST 2006&amp;#34; RFC3339 = &amp;#34;2006-01-02T15:04:05Z07:00&amp;#34; ... ) functions 1 2 3 4 5 6 // 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) &amp;lt;- chan Time func Tick(d Duration) &amp;lt;- chan Time Time 代表一</description>
     </item>
     

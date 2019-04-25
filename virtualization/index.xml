@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualizations on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/virtualization/</link>
+    <description>Recent content in Virtualizations on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Apr 2017 21:47:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Libvirt</title>
+      <link>http://canuxcheng.com/virtualization/libvirt/</link>
+      <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/virtualization/libvirt/</guid>
+      <description>Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) $ sudo apt-get install libvirt-dev # 库, python/go client依赖该库 $</description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>http://canuxcheng.com/virtualization/virtualization/</link>
+      <pubDate>Tue, 05 Apr 2016 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/virtualization/virtualization/</guid>
+      <description>Virtualization 虚拟化技术的发展： DataCenter, 最原始的数据中心 Virtualization, 虚拟化技术，包括Kvm, Xen(Citrix), HyperV(MicroSoft), ESXi(VMware)等</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/virtualization/esxi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/virtualization/esxi/</guid>
+      <description>Title: ESXi Date: 2016-04-05 21:47:54 Tags: Virtualization, ESXi, VMware, vSphere, vCenter
+VMware vSphere是vmware的虚拟化平台,包括ESXi和vSphere Client.
+vSphere Hypervisor(也叫ESXi)是vSphere的免费裸机hypervisor. 把物理机虚拟出多个虚拟机．
+vSphere client是vSphere的简单管理工具．只能管理一台ESXi物理机和上面的虚拟机．
+vCenter Server是vSphere的高级管理系统．需单独购买．
+配置管理 开启虚拟机copy/paste功能：
+1 2 3 4  # 通过vsphere client edit properties -&amp;gt; Options -&amp;gt; Advanced -&amp;gt; General -&amp;gt; configuration Parameters # isolation.tools.copy.disable false # isolation.tools.paste.disable false   开启虚拟机的虚拟化功能：
+1 2 3  # 通过ssh到esxi服务器 $ vim /vmfs/volumes/datastore1/Ubuntu1604/Ubuntu1604.vmx vhv.enable = &amp;#34;TRUE&amp;#34; # 添加到最后一行   创建的vm命名不能带小数点.
+命令 vim-cmd:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/virtualization/kvm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/virtualization/kvm/</guid>
+      <description> Title: KVM + Qemu Date: 2017-04-05 21:47:54 Tags: Virtualization, KVM, Qemu
+KVM Kernel-based Virtual Machine.
+Qemu 安装:
+1  $ sudo apt-get install qemu qemu-kvm   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/virtualization/monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/virtualization/monitoring/</guid>
+      <description>Title: Virtualization Monitoring Date: 2016-04-05 21:47:54 Tags: Virtualization, Monitoring</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/virtualization/vagrant/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/virtualization/vagrant/</guid>
+      <description>Title: Vagrant Date: 2017-01-12 21:00:01 Tags: Vagrant
+Vagrant 构建在虚拟化技术之上的虚拟机运行环境管理工具．
+适合用来构建和分发开发环境．通过命令行可以批量自动化，不用一个一个安装配置图形界面的虚拟机．
+https://github.com/mitchellh/vagrant
+需要安装virtualbox或vmware等虚拟机.
+vagrant还支持其它的providers(docker, vmware, hyper-v, aws)
+可以在这里找到很多vagrant可用的box:
+https://atlas.hashicorp.com/boxes/search
+初始化 1 2 3 4 5 6 7  $ mkdir -p /home/user/vagrant $ cd /vagrant $ vagrant init # 生成一个Vagrantfile文件． # 相当于直接配置了Vagrantfile. $ vagrant init [box-name]   添加box 1 2 3 4 5 6 7 8 9 10 11 12 13  # 默认从https://atlas.hashicorp.com/boxes/search下载该box. $ vagrant box add [[--name ]box-name] hashicorp/precise64 # 也可以使用下载到本地的box $ vagrant box add [[--name ]box-name] /path/to/your.</description>
+    </item>
+    
+  </channel>
+</rss>

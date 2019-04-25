@@ -13,10 +13,10 @@
     
     <item>
       <title>GSL_test</title>
-      <link>http://canuxcheng.com/post/gsl_test/</link>
+      <link>http://canuxcheng.com/golang/gsl_test/</link>
       <pubDate>Tue, 23 Apr 2019 20:50:22 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/gsl_test/</guid>
+      <guid>http://canuxcheng.com/golang/gsl_test/</guid>
       <description>testing go的测试由go test命令和testing包组成． 测试程序命名： 1 2 XXX.go # 测试文件和源码放在一个包中 XXX_test.go 测试程序结构： 1 2 3 4 5 6 7 8 9 import &amp;#34;testing&amp;#34;</description>
     </item>
     

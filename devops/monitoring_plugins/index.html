@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Monitoring Plugins Date: 2016-04-08 16:17:39 Tags: Plugins
+Monitoring Plugins Nagios/naemon/icinga/shinken/centreon/opsview/sensu
+Office project:
+https://github.com/monitoring-plugins
+https://www.monitoring-plugins.org/
+My plugin project:
+https://github.com/crazy-canux/pymonitoringplugins
+Open source project:
+https://github.com/crazy-canux/awesome-monitoring
+monitoring-plugins negate 设置相反状态
+1 2 3 4  -o 设置ok对应状态 -w -c -u   check_http 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [-f &amp;lt;ok|warning|critcal|follow|sticky|stickyport&amp;gt;] # 跳转 -p PORT # http:80, https:443 -a &amp;#34;USERNAME&amp;#34;:&amp;#34;PASSWORD&amp;#34; -u PATH --ssl=1/-S # https需要ssl -s SEARCH -e SEARCH,SEARCH." /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/devops/monitoring_plugins/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Title: Monitoring Plugins Date: 2016-04-08 16:17:39 Tags: Plugins
+Monitoring Plugins Nagios/naemon/icinga/shinken/centreon/opsview/sensu
+Office project:
+https://github.com/monitoring-plugins
+https://www.monitoring-plugins.org/
+My plugin project:
+https://github.com/crazy-canux/pymonitoringplugins
+Open source project:
+https://github.com/crazy-canux/awesome-monitoring
+monitoring-plugins negate 设置相反状态
+1 2 3 4  -o 设置ok对应状态 -w -c -u   check_http 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [-f &lt;ok|warning|critcal|follow|sticky|stickyport&gt;] # 跳转 -p PORT # http:80, https:443 -a &#34;USERNAME&#34;:&#34;PASSWORD&#34; -u PATH --ssl=1/-S # https需要ssl -s SEARCH -e SEARCH,SEARCH." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/devops/monitoring_plugins/" />
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Title: Monitoring Plugins Date: 2016-04-08 16:17:39 Tags: Plugins
+Monitoring Plugins Nagios/naemon/icinga/shinken/centreon/opsview/sensu
+Office project:
+https://github.com/monitoring-plugins
+https://www.monitoring-plugins.org/
+My plugin project:
+https://github.com/crazy-canux/pymonitoringplugins
+Open source project:
+https://github.com/crazy-canux/awesome-monitoring
+monitoring-plugins negate 设置相反状态
+1 2 3 4  -o 设置ok对应状态 -w -c -u   check_http 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [-f &lt;ok|warning|critcal|follow|sticky|stickyport&gt;] # 跳转 -p PORT # http:80, https:443 -a &#34;USERNAME&#34;:&#34;PASSWORD&#34; -u PATH --ssl=1/-S # https需要ssl -s SEARCH -e SEARCH,SEARCH.">
+
+
+
+<meta itemprop="wordCount" content="302">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Title: Monitoring Plugins Date: 2016-04-08 16:17:39 Tags: Plugins
+Monitoring Plugins Nagios/naemon/icinga/shinken/centreon/opsview/sensu
+Office project:
+https://github.com/monitoring-plugins
+https://www.monitoring-plugins.org/
+My plugin project:
+https://github.com/crazy-canux/pymonitoringplugins
+Open source project:
+https://github.com/crazy-canux/awesome-monitoring
+monitoring-plugins negate 设置相反状态
+1 2 3 4  -o 设置ok对应状态 -w -c -u   check_http 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [-f &lt;ok|warning|critcal|follow|sticky|stickyport&gt;] # 跳转 -p PORT # http:80, https:443 -a &#34;USERNAME&#34;:&#34;PASSWORD&#34; -u PATH --ssl=1/-S # https需要ssl -s SEARCH -e SEARCH,SEARCH."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    
+
+<p>Title: Monitoring Plugins
+Date: 2016-04-08 16:17:39
+Tags: Plugins</p>
+
+<h1 id="monitoring-plugins">Monitoring Plugins</h1>
+
+<p>Nagios/naemon/icinga/shinken/centreon/opsview/sensu</p>
+
+<p>Office project:</p>
+
+<p><a href="https://github.com/monitoring-plugins">https://github.com/monitoring-plugins</a></p>
+
+<p><a href="https://www.monitoring-plugins.org/">https://www.monitoring-plugins.org/</a></p>
+
+<p>My plugin project:</p>
+
+<p><a href="https://github.com/crazy-canux/pymonitoringplugins">https://github.com/crazy-canux/pymonitoringplugins</a></p>
+
+<p>Open source project:</p>
+
+<p><a href="https://github.com/crazy-canux/awesome-monitoring">https://github.com/crazy-canux/awesome-monitoring</a></p>
+
+<h1 id="monitoring-plugins-1">monitoring-plugins</h1>
+
+<h2 id="negate">negate</h2>
+
+<p>设置相反状态</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-o 设置ok对应状态
+-w
+-c
+-u</pre></td></tr></table>
+</div>
+</div>
+<h2 id="check-http">check_http</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[-f &lt;ok|warning|critcal|follow|sticky|stickyport&gt;] # 跳转
+-p PORT # http:80, https:443
+-a &#34;USERNAME&#34;:&#34;PASSWORD&#34;
+-u PATH
+--ssl=1/-S # https需要ssl
+-s SEARCH
+-e SEARCH,SEARCH...
+-l # 用在-r或-R前面,表示可以在多行进行正则匹配
+-r # 正则匹配
+-R # 大小写不敏感的正则匹配
+-C # 检查证书, 不检查URL
+-t # timeout.
+-w # warning response time
+-c # critical response time</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="windows-monitoring">Windows monitoring</h1>
+
+<ul>
+<li><p>check_wmi_plus.pl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">IgnoreMyOutDatedPerlModuleVersions
+-m checkfolderfileage -a &#39;C:&#39; -o &#39;/tmp&#39; -inc _FileAge=@0:1000 -c 10
+-m check_file_count -a &#39;F:&#39; -o &#39;/folder&#39;</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>check_snmp_win_services.pl</p>
+
+<p>查windows的service</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-n &lt;name&gt;[,&lt;name2&gt;]... # 指定service名字，默认大小写不敏感,正则匹配，逗号分隔多个service，用display name。
+-N=&lt;n&gt; # 匹配到service数量大于n就报错
+-r # 精确匹配</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>check_smb_shares.pl</p></li>
+</ul>
+
+<h1 id="linux-unix-monitoring">Linux/Unix monitoring</h1>
+
+<ul>
+<li>check_hpasm.pl</li>
+</ul>
+
+<h1 id="os-x-monitoring">OS X monitoring</h1>
+
+<ul>
+<li>OSX-Monitoring-Tools</li>
+</ul>
+
+<h1 id="vitual-machine-monitoring">Vitual Machine monitoring</h1>
+
+<ul>
+<li><p>check_wmware_api.pl</p></li>
+
+<li><p>check_vmware_esx.pl</p></li>
+</ul>
+
+<h1 id="db-monitoring">DB monitoring</h1>
+
+<ul>
+<li><p>check_mysql_health.pl</p></li>
+
+<li><p>check_oracle_health.pl</p></li>
+
+<li><p>check_db2_health.pl</p></li>
+
+<li><p>check_mssql_health.pl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">--name database/sql</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h1 id="network-monitoring">Network monitoring</h1>
+
+<ul>
+<li>check_nwc_health.pl</li>
+</ul>
+
+<h1 id="storage-monitoring">Storage monitoring</h1>
+
+<ul>
+<li><p>check_snmp_storage.pl</p>
+
+<p>返回用了多少空间。</p></li>
+
+<li><p>check_disk</p>
+
+<p>返回剩余多少空间。</p></li>
+</ul>
+
+<h1 id="log-monitoring">Log monitoring</h1>
+
+<ul>
+<li><p>check_logfiles.pl</p></li>
+
+<li><p>check_events.pl</p></li>
+</ul>
+
+<h1 id="process-monitoring">Process monitoring</h1>
+
+<ul>
+<li><p>check_snmp_process.pl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-n &lt;name&gt; # process名字，大小写敏感，正则匹配，windows需要用processname.exe
+-r # 精确匹配
+-w minW, maxW
+-c minC, maxC # minC &lt;= minW &lt; maxW &lt; maxC</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h1 id="application-monitoring">Application monitoring</h1>
+
+<ul>
+<li><p>check_sap_health.pl</p></li>
+
+<li><p>check_mailbox_health.pl</p></li>
+</ul>
+
+<hr />
+
+<h1 id="monitoring插件开发">Monitoring插件开发</h1>
+
+<p>Nagios Plugin API:</p>
+
+<p><a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/pluginapi.html">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/pluginapi.html</a></p>
+
+<p>Developing Plugins For Use With Embedded Perl:</p>
+
+<p><a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/epnplugins.html">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/epnplugins.html</a></p>
+
+<p>Nagios plugin development guidelines:</p>
+
+<p><a href="https://nagios-plugins.org/doc/guidelines.html">https://nagios-plugins.org/doc/guidelines.html</a></p>
+
+<p>Monitoring Plugin Development Guidelines:</p>
+
+<p><a href="https://www.monitoring-plugins.org/doc/guidelines.html">https://www.monitoring-plugins.org/doc/guidelines.html</a></p>
+
+<p>Nagios不是基于agent的，所以插件都是通过协议来获取监控信息。</p>
+
+<p>plugin需要遵守下面规则：
+1. 至少输出一行文本到STDOUT
+2. 事件状态由插件的返回码决定</p>
+
+<p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">just support 4kb data
+shortoutput - $SERVICEOUTPUT$
+perfdata - $SERVICEPERFDATA$
+longoutput - $LONGSERVICEOUTPUT$</pre></td></tr></table>
+</div>
+</div>
+<p>返回码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">0： OK（绿色）
+1： Warning（黄色）
+2： Critical（红色）
+3： Unknown（深黄色）</pre></td></tr></table>
+</div>
+</div>
+<p>阀值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">10     | 0:10   | &lt;0 or &gt;10 alert
+10:    | 10:æ  | &lt;10 alert
+~:10   | -æ:10 | &gt;10 alert
+10:20  |        | &lt;10 or &gt;20 alert
+@10:20 |        | &gt;=10 and &lt;=20 alert</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+  </div>
+</article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '0001-01-01 00:00:00 \x2b0000 UTC',
+        title: '',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

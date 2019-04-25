@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WEBs on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/web/</link>
+    <description>Recent content in WEBs on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="http://canuxcheng.com/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/apache/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/apache/</guid>
+      <description>Title: Apache Date: 2016-09-27 03:25:26 Tags: Apache, httpd
+Apache https://github.com/apache/httpd
+http://httpd.apache.org/
+ubuntu/debian：
+1  sudo aptitude install apache2   redhat/centos/fedora:
+1  $ sudo yum install httpd2   启动服务器：
+1  service apache2 start   启动浏览器查看：
+1  http://localhost:80   apache命令 a2ensite
+1  $ sudo a2ensite &amp;lt;site&amp;gt;   a2dissite
+1  $ sudo a2dissite &amp;lt;site&amp;gt;   a2enmod
+1  $ sudo a2enmod &amp;lt;mod&amp;gt;   a2dismod</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/hexo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/hexo/</guid>
+      <description>Title: Hexo date: 2016-03-22 12:59:10 tags: Hexo
+Hexo 什么是hexo  Hexo是用nodejs开发的快速、简洁且高效的博客框架， Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+ hexo有大量的插件和主题。
+plugins
+themes
+安装hexo 需要安装依赖nodejs(包括npm)和git。
+安装hexo命令行插件hexo-cli：
+1  $sudo npm install hexo-cli -g   Next  Next是一种文雅的Hexo主题。 一个主题，三种外观，选您所好。 通过主题中的主题（亦称Scheme），您可以方便地改变您博客的外观，同时几乎所有配置同样适用。
+ 原生的Next
+作者的Next
+快速使用 初始化 初始化一个hexo的目录：
+1  $hexo init &amp;lt;folder&amp;gt;   安装依赖 进入hexo目录安装依赖：
+1 2  $cd &amp;lt;folder&amp;gt; $sudo npm install &amp;lt;package-name&amp;gt;   默认安装下列依赖：
+1 2 3 4 5 6 7 8 9  hexo hexo-server hexo-generator-index hexo-generator-archive hexo-generator-category hexo-generator-tag hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus   查看文件和目录 安装完成后有下列</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/hugo/</guid>
+      <description>Title: Hugo Date: 2013-04-01 12:49:49 Tags: Hugo
+Hugo go开发的静态站点生成器.
+https://github.com/gohugoio/hugo
+https://gohugo.io/
+搭建博客 创建环境:
+1 2 3 4 5  # linux $ sudo apt-get install hugo # windows PATH: C:\Hugo\bin\hugo.exe   测试安装:
+1  $ hugo help   创建hugo项目:
+1 2 3  $ cd /home/canux/sites &amp;gt; cd C:\hugo\sites $ hugo new site canuxcheng.com   生成下列文件和目录:
+1 2 3 4 5 6 7 8  config.toml archetypes content # md 文件 data layouts static themes bytes   Theme https://github.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/json/</guid>
+      <description>Title: JSON Date: 2016-07-07 16:43:15 Tags: JSON
+JSON http://www.json.org/
+JSON: JavaScript Object Notation.
+json有两种数据结构.
+key-value/键值对 1 2 3 4 5  { key: value, key1: value1, ... }   列表/数组 1  [value, value1, ...]   数据类型 bool:
+1 2  python -&amp;gt; True/False go -&amp;gt; true/false   string:
+1 2 3  python -&amp;gt; str go -&amp;gt; string go -&amp;gt; []byte -&amp;gt; base64编码字符串   number:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/markdown/</guid>
+      <description>Title: Markdown Date: 2016-03-28 22:03:15 Tags: Markdown
+Markdown Markdown简介 Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。 Markdown和html有很大区别，html是一种发布格式，markdown是一种书写格式。
+Markdown 中文手册：
+http://wowubuntu.com/markdown/index.html
+Markdown 英文手册：
+http://daringfireball.net/projects/markdown/syntax
+Markdown文件的扩展名是md。
+两个需要特殊处理的字符 &amp;lt; 的表示方法： &amp;gt; &amp;amp; l t ;
+&amp;amp; 的表示方法： &amp;gt; &amp;amp; a m p ;
+区块元素 段落和换行 段落前后要有一个或以上的空行（空格或制表符都可以）。
+标题 markdown支持两个语法格式的标题
+setext格式 任意个数下等号=表示大标题:
+1 2  Title ======   任意个数下减号表示副标题：
+1 2  Subtitle --------   atx格式 一到六个#表示一到六阶标题,#后面有空格
+1 2 3 4 5 6 7 8 9 10 11  # 一阶标题 ## 二阶标题 ### 三阶标题 #### 四阶标题 ##### 五阶标题 ###### 六阶标题   区块引用 使用&amp;gt;表示单层区块引用：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/nginx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/nginx/</guid>
+      <description> Title: Nginx Date: 2018-09-27 03:25:26 Tags: Nginx
+Nginx </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/pelican/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/pelican/</guid>
+      <description>Title: Pelican Date: 2013-04-01 12:49:49 Tags: Pelican
+Pelican python开发的静态站点生成器.
+http://blog.getpelican.com/
+https://github.com/getpelican/pelican
+http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html
+http://pelican-zh.readthedocs.io/en/latest/zh-cn/
+搭建博客 创建环境:
+1 2 3 4 5 6  $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown   创建pelican项目:
+1  $pelican-quickstart   生成下列文件和目录:
+1 2 3 4 5 6 7  publishconf.py # 主配置文件 pelicanconf.py # 发布的配置文件 fabfile.py # fabric配置文件 Makefile # make配置文件 develop_server.sh # 用于开启测试服务器 content # 用于存放所有文章 output # 静态生成文件   发布站点 pelican部署博客:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/web/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/web/</guid>
+      <description>Title: WEB Date: 2016-09-27 03:25:26 Tags: WEB
+WEB web一般包括web server, web service, load balancing.
+URL: Uniform Resource Locator, 统一资源定位符．
+1  scheme://host[:port#]/path/.../[?query-string][#anchor]   DNS: Domain Name System, 域名系统.
+header: header中用来保存session，cookie等头部信息．
+session: 服务端的数据存储机制．
+cookie: 客户端的数据存储机制．分为会话cookie和持久cookie.
+webserver LAMP: Linux+apache+mysql+php
+LNMP: Linux+nginx+mysql+php
+Blog静态站点 hugo是golang开发的静态站点生成器．
+pelican是python开发的静态站点生成器.
+hexo是nodejs开发的静态站点生成器.
+jekyll是ruby开发的静态站点生成器.
+octopress是ruby开发的kekyll的升级版.
+CMS系统 wordpress是php开发的website, blog, app框架。
+joomla是php开发的内容管理系统.
+drupal是php开发的内容管理系统.
+django-cms是python开发的基于django的内容管理系统.
+wagtail是python开发的基于django的内容管理系统.
+mezzanine是python开发的基于django的内容管理系统.
+Forum系统 vanilla是php开发的论坛系统.
+phpbb是php开发的论坛系统.
+webservice web service是一种标准,将应用程序转换成网络应用程序.
+WSDL:网络服务描述语言
+UDDI:
+RDF:
+RSS:
+SOAP: 是一种简单的基于XML的协议，它使应用程序通过HTTP来交换信息。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/webservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/webservice/</guid>
+      <description>Title: WebService Date: 2018-07-07 16:43:15 Tags: WEB, WebService, SOAP
+webservice webservice用于server和browser之间通讯．
+webservice是基于http的，无状态的．
+webservice一般分为soap webservice和http webservice.
+SOAP Simple Object Access Protocol, 简单对象访问协议，是一个基于XML的协议．
+简单来说SOAP的思想就是通过http + XML来在server和browser之间交换信息．
+soupui 一个用于SOAP和REST的application.
+https://github.com/SmartBear/soapui</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/wordpress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/wordpress/</guid>
+      <description>Title: Wordpress Date: 2016-11-18 00:06:31 Tags: Wordpress
+WordPress 安装 安装依赖：
+1 2 3  $sudo apt install apache2 $sudo apt install mysql-server $sudo apt install php5   下载wordpress：
+1 2  $cd /var/www/html $git clone https://github.com/WordPress/WordPress.git   配置 添加mysql数据库：
+1 2 3 4 5  $mysql -u root -p mysql&amp;gt; create user &amp;#39;wordpress&amp;#39;@&amp;#39;localhost&amp;#39; identified by &amp;#39;******&amp;#39;; mysql&amp;gt; create database &amp;#39;wordpress&amp;#39;; mysql&amp;gt; GRANT ALL PRIVILEGES ON wordpress.* TO &amp;#34;wordpress&amp;#34;@&amp;#34;localhost&amp;#34;; mysql&amp;gt; FLUSH PRIVILEGES;   编辑配置文件：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/xml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/xml/</guid>
+      <description> Title: XML Date: 2017-04-07 16:43:15 Tags: XML, SOAP
+XML </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/xpath/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/xpath/</guid>
+      <description>Title: XPATH Date: 2017-04-07 16:43:15 Tags: XML, XPath
+XPath XPath是一门在XML文档中查找信息的语言．
+xpath定位有绝对定位和相对定位，推荐使用相对定位．
+绝对的XPath定位包含了从HTML根节点起的所有元素，并且一些轻微的改变就会失效。
+相对的XPath用id或者name属性来找到一个靠近的元素(比较理想的是父元素)，这样你就可以依靠他们的相对关系来确定目标元素的位置。
+firefox firebug + firepath
+firefox通过两者结合来获取xpath
+chrome chrome的开发者工具(F12)可以直接copy xpath.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/web/restructuredtext/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/web/restructuredtext/</guid>
+      <description>Title: reStructuredText Date: 2016-08-08 13:39:38 Tags: reStructuredText
+reStructuredText http://docutils.sourceforge.net/rst.html
+reST是易读所见即所得的文本标记语言，格式类似markdown。
+python的reST参考pep12和pep287:
+https://www.python.org/dev/peps/pep-0012/
+https://www.python.org/dev/peps/pep-0287/
+主标题：
+1 2 3 4 5 6  Title ===== ===== Title =====   副标题：
+1 2 3 4 5 6  Subtitle ----- -------- Subtitle --------   次级标题：
+1 2  Content ^^^^^^^   星号斜体强调：
+1  *text*   双星号加粗重点强调：
+1  **text**   四个或以上的-表示分割线：
+1  ----   参考式链接：</description>
+    </item>
+    
+  </channel>
+</rss>

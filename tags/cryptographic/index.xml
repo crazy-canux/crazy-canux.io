@@ -13,10 +13,10 @@
     
     <item>
       <title>GSL_cryptographic</title>
-      <link>http://canuxcheng.com/post/gsl_cryptographic/</link>
+      <link>http://canuxcheng.com/golang/gsl_cryptographic/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/gsl_cryptographic/</guid>
+      <guid>http://canuxcheng.com/golang/gsl_cryptographic/</guid>
       <description>crypto 收集了常用的密码常量 functions 1 RegisterHash(h Hash, f func() hash.Hash) PublicKey interface: 1 type PublicKey interface{} PrivateKey interface: 1 type PrivateKey interface{} Hash 1 type Hash uint method: 1 2 3 func (h Hash) Avaliable() bool func (h Hash) Size() int func (h Hash) New() hash.Hash crypto/cipher 用于包装底层块加密算法的实现.</description>
     </item>
     

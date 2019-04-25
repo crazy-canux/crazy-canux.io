@@ -13,10 +13,10 @@
     
     <item>
       <title>Beego_Template</title>
-      <link>http://canuxcheng.com/post/beego_template/</link>
+      <link>http://canuxcheng.com/beego/beego_template/</link>
       <pubDate>Thu, 27 Sep 2018 01:33:42 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/beego_template/</guid>
+      <guid>http://canuxcheng.com/beego/beego_template/</guid>
       <description>Golang 模板 beego的模板和text/template, html/template差不多． 注释 1 {{/* comment /*}} 变量 变量定义和使用 1 2 3 4 5 申明变量不会产</description>
     </item>
     

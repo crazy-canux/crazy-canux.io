@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Django URL Date: 2016-10-04 04:20:39 Tags: Django, URL
+urls.py 1  from django.conf.urls import url   django请求站点的方法： 1. ROOT_URLCONF，在settings.py中设置。 2. 寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。 3. dnango依次匹配每个URL模式，在第一个匹配停下。 4. 一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。 5. 如果没有匹配到或者过程跑出异常，django调用合适的错误处理。
+项目的URL 项目的URL主要用来包含应用的URL以及全局的URL:
+1 2 3 4 5 6 7 8 9 10 11 12 13  from django.conf.urls import include, url from django.contrib import admin urlpatterns = [ # 默认的项目的admin的url url(r&amp;#39;^admin/&amp;#39;, include(admin.site.urls)), # 在项目URL添加链接到应用URL： # 在下面添加你的所有应用的url, include内的应用的urls需要引号. url(r&amp;#39;^polls/&amp;#39;, include(&amp;#39;polls.urls&amp;#39;)), ..., ]   应用的URL 将应用的视图映射到URL,需要在应用目录新建urls." /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/django/url/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Title: Django URL Date: 2016-10-04 04:20:39 Tags: Django, URL
+urls.py 1  from django.conf.urls import url   django请求站点的方法： 1. ROOT_URLCONF，在settings.py中设置。 2. 寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。 3. dnango依次匹配每个URL模式，在第一个匹配停下。 4. 一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。 5. 如果没有匹配到或者过程跑出异常，django调用合适的错误处理。
+项目的URL 项目的URL主要用来包含应用的URL以及全局的URL:
+1 2 3 4 5 6 7 8 9 10 11 12 13  from django.conf.urls import include, url from django.contrib import admin urlpatterns = [ # 默认的项目的admin的url url(r&#39;^admin/&#39;, include(admin.site.urls)), # 在项目URL添加链接到应用URL： # 在下面添加你的所有应用的url, include内的应用的urls需要引号. url(r&#39;^polls/&#39;, include(&#39;polls.urls&#39;)), ..., ]   应用的URL 将应用的视图映射到URL,需要在应用目录新建urls." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/django/url/" />
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Title: Django URL Date: 2016-10-04 04:20:39 Tags: Django, URL
+urls.py 1  from django.conf.urls import url   django请求站点的方法： 1. ROOT_URLCONF，在settings.py中设置。 2. 寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。 3. dnango依次匹配每个URL模式，在第一个匹配停下。 4. 一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。 5. 如果没有匹配到或者过程跑出异常，django调用合适的错误处理。
+项目的URL 项目的URL主要用来包含应用的URL以及全局的URL:
+1 2 3 4 5 6 7 8 9 10 11 12 13  from django.conf.urls import include, url from django.contrib import admin urlpatterns = [ # 默认的项目的admin的url url(r&#39;^admin/&#39;, include(admin.site.urls)), # 在项目URL添加链接到应用URL： # 在下面添加你的所有应用的url, include内的应用的urls需要引号. url(r&#39;^polls/&#39;, include(&#39;polls.urls&#39;)), ..., ]   应用的URL 将应用的视图映射到URL,需要在应用目录新建urls.">
+
+
+
+<meta itemprop="wordCount" content="161">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Title: Django URL Date: 2016-10-04 04:20:39 Tags: Django, URL
+urls.py 1  from django.conf.urls import url   django请求站点的方法： 1. ROOT_URLCONF，在settings.py中设置。 2. 寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。 3. dnango依次匹配每个URL模式，在第一个匹配停下。 4. 一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。 5. 如果没有匹配到或者过程跑出异常，django调用合适的错误处理。
+项目的URL 项目的URL主要用来包含应用的URL以及全局的URL:
+1 2 3 4 5 6 7 8 9 10 11 12 13  from django.conf.urls import include, url from django.contrib import admin urlpatterns = [ # 默认的项目的admin的url url(r&#39;^admin/&#39;, include(admin.site.urls)), # 在项目URL添加链接到应用URL： # 在下面添加你的所有应用的url, include内的应用的urls需要引号. url(r&#39;^polls/&#39;, include(&#39;polls.urls&#39;)), ..., ]   应用的URL 将应用的视图映射到URL,需要在应用目录新建urls."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    
+
+<p>Title: Django URL
+Date: 2016-10-04 04:20:39
+Tags: Django, URL</p>
+
+<h1 id="urls-py">urls.py</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">from django.conf.urls import url</pre></td></tr></table>
+</div>
+</div>
+<p>django请求站点的方法：
+1. ROOT_URLCONF，在settings.py中设置。
+2. 寻找urlpatterns，它是django.conf.urls.url()实例的一个python列表。
+3. dnango依次匹配每个URL模式，在第一个匹配停下。
+4. 一旦一个正则表达式匹配，django就调用对应的视图，视图获得HttpRequest实例,如果是没有命名的组返回内容作为位置参数，如果是命名的组返回内容作为关键字参数。
+5. 如果没有匹配到或者过程跑出异常，django调用合适的错误处理。</p>
+
+<h1 id="项目的url">项目的URL</h1>
+
+<p>项目的URL主要用来包含应用的URL以及全局的URL:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">from django.conf.urls import include, url
+from django.contrib import admin
+
+urlpatterns = [
+    # 默认的项目的admin的url
+    url(r&#39;^admin/&#39;, include(admin.site.urls)),
+
+    # 在项目URL添加链接到应用URL：
+    # 在下面添加你的所有应用的url,
+    include内的应用的urls需要引号.
+    url(r&#39;^polls/&#39;, include(&#39;polls.urls&#39;)),
+    ...,
+]</pre></td></tr></table>
+</div>
+</div>
+<h1 id="应用的url">应用的URL</h1>
+
+<p>将应用的视图映射到URL,需要在应用目录新建urls.py文件,然后在项目的url中包含应用的url。</p>
+
+<p>urlpatterns是url()实例类型的python列表。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    # views内的内容不要引号。
+    url(r&#39;^$&#39;, views.index, name=&#39;index&#39;),
+    # 基于类的视图
+    url(r&#39;^$&#39;, views.IndexView.as_view(), name=&#39;index&#39;),
+    ...,
+]</pre></td></tr></table>
+</div>
+</div>
+<h1 id="没有命名的组">没有命名的组</h1>
+
+<p>视图函数只有request参数，匹配的正则表达式作为位置参数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">url(r&#39;^pattern1/pattern2/$&#39;, views.index, name=&#39;index&#39;),
+
+def index(request):
+    ...</pre></td></tr></table>
+</div>
+</div>
+<h1 id="命名组">命名组</h1>
+
+<p>视图函数除了request参数还有关键字参数，匹配的命名表达式组作为关键字参数,覆盖默认的关键字参数。</p>
+
+<p>使用命名的正则表达式组： (?P<name>pattern)</p>
+
+<p>name就是关键字参数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">url(r&#39;^pattern1/(?P&lt;name&gt;pattern)/pattern2/$), views.index, name=&#39;index),
+
+def index(request, name):
+    ...</pre></td></tr></table>
+</div>
+</div>
+<h1 id="错误处理">错误处理</h1>
+
+<p>django会调用一个错误处理视图处理异常。
+1. handler404 页面没找到
+2. handler500 服务器错误
+3. handler403 权限被拒绝
+4. handler400 无效的请求</p>
+
+<p>你也可以在项目的urls.py中重新定义这些默认视图：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">handler404 = &#39;mysite.views.your_custom_page_not_found_view&#39;
+handler500 = &#39;mysite.views.your_custom_error_view&#39;
+handler403 = &#39;mysite.views.your_custom_permission_denied_view&#39;
+handler400 = &#39;mysite.views.your_custom_bad_request_view&#39;</pre></td></tr></table>
+</div>
+</div>
+  </div>
+</article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '0001-01-01 00:00:00 \x2b0000 UTC',
+        title: '',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
