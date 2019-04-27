@@ -13,11 +13,20 @@
     
     <item>
       <title>GSL_builtin</title>
-      <link>http://canuxcheng.com/golang/gsl_builtin/</link>
+      <link>http://canuxcheng.com/post/gsl_builtin/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/gsl_builtin/</guid>
+      <guid>http://canuxcheng.com/post/gsl_builtin/</guid>
       <description>builtin go的builtin package. constants 1 2 3 true false iota variables pointer, slice, map, channel, func, interface的零值： 1 nil functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 分配并初始化各种类型的对象</description>
+    </item>
+    
+    <item>
+      <title>PSL_builtins</title>
+      <link>http://canuxcheng.com/post/psl_builtins/</link>
+      <pubDate>Mon, 15 Aug 2016 11:16:29 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_builtins/</guid>
+      <description>__builtins__ python的内置模块，所有python的内置功能都在这个模块中，不需要import导入就可以使用。 包括内置类类型以及所属的内置方法，和内</description>
     </item>
     
   </channel>

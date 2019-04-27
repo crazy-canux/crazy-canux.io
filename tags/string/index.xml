@@ -13,11 +13,20 @@
     
     <item>
       <title>GSL_string</title>
-      <link>http://canuxcheng.com/golang/gsl_string/</link>
+      <link>http://canuxcheng.com/post/gsl_string/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/gsl_string/</guid>
+      <guid>http://canuxcheng.com/post/gsl_string/</guid>
       <description>strings 实现了用于操作字符的函数. functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 func EqualFold(s, t string) bool func HasPrefix(s, prefix string) bool func HasSuffix(s, suffix string)</description>
+    </item>
+    
+    <item>
+      <title>PSL_String</title>
+      <link>http://canuxcheng.com/post/psl_string/</link>
+      <pubDate>Fri, 12 Aug 2016 16:49:07 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_string/</guid>
+      <description>String Services string 1 import string classes: functions: data: 1 2 3 4 5 ascii_letters ascii_lowercase ascii_uppercase digits ... re 1 import re classes: functions: 1 2 3 4 5 6 7 8 9 10 11 compile(pattern, flags=0) escape(pattern) findall(pattern, string, flags=0) finditer(pattern, string, flags=0) match(pattern, string, flags=0) # if not match, return None, else return object. search(pattern, string, flags=0) purge() split(pattern, string, maxsplit=0, flags=0) # 根据pa</description>
     </item>
     
   </channel>

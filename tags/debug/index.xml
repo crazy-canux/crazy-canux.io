@@ -13,12 +13,21 @@
     
     <item>
       <title>Debug</title>
-      <link>http://canuxcheng.com/golang/debug/</link>
+      <link>http://canuxcheng.com/post/go_debug/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/debug/</guid>
+      <guid>http://canuxcheng.com/post/go_debug/</guid>
       <description> gdb delve https://github.com/derekparker/delve
 debug </description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/post/python_debug/</link>
+      <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_debug/</guid>
+      <description>IDE pycharm可以通过breakpoint和step调试. debug bdb pdb hotshot timeit trace cProfile profile</description>
     </item>
     
   </channel>

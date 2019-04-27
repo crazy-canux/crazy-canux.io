@@ -12,110 +12,110 @@
     
     
     <item>
-      <title>Monitoring</title>
-      <link>http://canuxcheng.com/database/redis/</link>
+      <title>Redis</title>
+      <link>http://canuxcheng.com/post/redis/</link>
       <pubDate>Wed, 03 May 2017 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/redis/</guid>
+      <guid>http://canuxcheng.com/post/redis/</guid>
       <description>Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： 1 2 # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: 1 $ sudo apt-get install redis-tools re</description>
     </item>
     
     <item>
       <title>MongoDB</title>
-      <link>http://canuxcheng.com/database/mongodb/</link>
+      <link>http://canuxcheng.com/post/mongodb/</link>
       <pubDate>Sun, 16 Apr 2017 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/mongodb/</guid>
+      <guid>http://canuxcheng.com/post/mongodb/</guid>
       <description>MongoDB https://github.com/mongodb/mongo mongodb是一种开源的文档数据库，高性能，高可用性，自动裁剪． mongodb的database和关系数据库中的database一样．</description>
     </item>
     
     <item>
       <title>TSDB</title>
-      <link>http://canuxcheng.com/database/tsdb/</link>
+      <link>http://canuxcheng.com/post/tsdb/</link>
       <pubDate>Tue, 03 Jan 2017 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/tsdb/</guid>
+      <guid>http://canuxcheng.com/post/tsdb/</guid>
       <description>TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus</description>
     </item>
     
     <item>
       <title>Oracle</title>
-      <link>http://canuxcheng.com/database/oracle/</link>
+      <link>http://canuxcheng.com/post/oracle/</link>
       <pubDate>Wed, 01 Jun 2016 22:40:22 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/oracle/</guid>
+      <guid>http://canuxcheng.com/post/oracle/</guid>
       <description>Oracle oracle的GUI： 1. oracle sql developer(officer) 2. pl/sql 3. toad oracle的CLI： 1. sqlplus Oracle命令 sys是oracle默认管理员权限 1 $ sqlplus / as sysdba system</description>
     </item>
     
     <item>
-      <title>Monitoring</title>
-      <link>http://canuxcheng.com/database/sql/</link>
+      <title>SQL</title>
+      <link>http://canuxcheng.com/post/sql/</link>
       <pubDate>Wed, 25 May 2016 22:06:13 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/sql/</guid>
+      <guid>http://canuxcheng.com/post/sql/</guid>
       <description>SQL sql是结构化查询语言。 sql是一种标准，几乎所有关系型数据库都遵守。 但是不同的数据库又有自己的扩展。 SQL分为两部分，DML和DDL。 S</description>
     </item>
     
     <item>
       <title>Mysql</title>
-      <link>http://canuxcheng.com/database/mysql/</link>
+      <link>http://canuxcheng.com/post/mysql/</link>
       <pubDate>Wed, 25 May 2016 12:14:59 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/mysql/</guid>
+      <guid>http://canuxcheng.com/post/mysql/</guid>
       <description>Mysql 安装mysql服务器 1 2 3 4 5 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind</description>
     </item>
     
     <item>
       <title>SQLite</title>
-      <link>http://canuxcheng.com/database/sqlite/</link>
+      <link>http://canuxcheng.com/post/sqlite/</link>
       <pubDate>Wed, 25 May 2016 12:14:59 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/sqlite/</guid>
+      <guid>http://canuxcheng.com/post/sqlite/</guid>
       <description> SQLite </description>
     </item>
     
     <item>
-      <title>sqlserver</title>
-      <link>http://canuxcheng.com/database/mssql/</link>
+      <title>MSSql</title>
+      <link>http://canuxcheng.com/post/mssql/</link>
       <pubDate>Wed, 06 Apr 2016 15:33:42 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/mssql/</guid>
+      <guid>http://canuxcheng.com/post/mssql/</guid>
       <description>MSSQL 商业版： 1. 企业版 2. 商业智能版 3. 标准版 免费版： 1. Express 2. Developer 3. Compact 4. Web 5. SQL Azure system databases: 1. master 主数据库 2. model 模板数据库 3. msdb 自动机数据库 4. tempdb 零时交换数据库,不需要</description>
     </item>
     
     <item>
       <title>Monitoring</title>
-      <link>http://canuxcheng.com/database/monitoring/</link>
+      <link>http://canuxcheng.com/post/db_monitoring/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/monitoring/</guid>
+      <guid>http://canuxcheng.com/post/db_monitoring/</guid>
       <description>Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/ https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017 https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017 参考telegraf/inputs/sqlserver. Mysql Oracle Postgresql Redis 通过redis-cli&amp;gt; info查看 1 2 3 4 5 6 7 8 其它指</description>
     </item>
     
     <item>
       <title>NoSQL</title>
-      <link>http://canuxcheng.com/database/nosql/</link>
+      <link>http://canuxcheng.com/post/nosql/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/nosql/</guid>
+      <guid>http://canuxcheng.com/post/nosql/</guid>
       <description>NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb</description>
     </item>
     
     <item>
       <title>Postgresql</title>
-      <link>http://canuxcheng.com/database/postgre/</link>
+      <link>http://canuxcheng.com/post/postgre/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/postgre/</guid>
+      <guid>http://canuxcheng.com/post/postgre/</guid>
       <description>PostgreSQL 安装postgresql： 1 $ sudo apt-get install postgresql 安装第三方库： 1 $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． po</description>
     </item>
     
     <item>
       <title>RDBMS</title>
-      <link>http://canuxcheng.com/database/rdbms/</link>
+      <link>http://canuxcheng.com/post/rdbms/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/rdbms/</guid>
+      <guid>http://canuxcheng.com/post/rdbms/</guid>
       <description>RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre c 安装ODBC一般能访问所有数据库。 python 安装相应的数据库的python库。 JavaScript go dataset https://github.com/pudo/dataset 1 2 3 4 import dataset db = dataset.connect(&amp;#39;sqlite:///mydatabase.db&amp;#39;) db = dataset.connect(&amp;#39;mysql://user:password@localhost/mydatabase&amp;#39;) db =</description>
     </item>
     

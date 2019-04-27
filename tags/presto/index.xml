@@ -13,10 +13,10 @@
     
     <item>
       <title>Presto</title>
-      <link>http://canuxcheng.com/bigdata/presto/</link>
+      <link>http://canuxcheng.com/post/presto/</link>
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/bigdata/presto/</guid>
+      <guid>http://canuxcheng.com/post/presto/</guid>
       <description>Presto https://github.com/prestodb https://prestodb.io/ presto的client: presto-cli(rename to presto) presto-cli 1 2 3 4 $ presto --server localhost:8080 --catalog hive --schema default # jdbc for presto $ jdbc:presto://host:port/catalog/schema</description>
     </item>
     

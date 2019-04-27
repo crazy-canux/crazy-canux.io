@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/categories/cloud/</link>
+    <description>Recent content in Cloud on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Feb 2017 22:02:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenStack</title>
+      <link>http://canuxcheng.com/post/openstack/</link>
+      <pubDate>Thu, 23 Feb 2017 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/openstack/</guid>
+      <description>OpenStack https://github.com/openstack https://github.com/openstack-dev openstack是一个云操作系统，通过数据中心可控制大型的计算，存储，网络等资源池． 所有的管理通过前端的界面管理员就可以完成，同样也</description>
+    </item>
+    
+    <item>
+      <title>CloudComputing</title>
+      <link>http://canuxcheng.com/post/cloudcomputing/</link>
+      <pubDate>Tue, 05 Apr 2016 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/cloudcomputing/</guid>
+      <description>CloudComputing IAAS: Infrastructure as a service
+PAAS: Platform as a service
+SAAS: Software as a service</description>
+    </item>
+    
+  </channel>
+</rss>

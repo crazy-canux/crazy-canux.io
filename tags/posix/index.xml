@@ -13,10 +13,10 @@
     
     <item>
       <title>Posix</title>
-      <link>http://canuxcheng.com/c/posix/</link>
+      <link>http://canuxcheng.com/post/c_posix/</link>
       <pubDate>Sat, 02 Apr 2016 11:18:05 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/posix/</guid>
+      <guid>http://canuxcheng.com/post/c_posix/</guid>
       <description>POSIX标准 Portable Operating System Interface 可移植性操作系统接口, POSIX兼容ISO C。 所有Unix都遵循，几乎所有Linux都遵循，Windows部分支持。 POSIX.1/IEEE</description>
     </item>
     

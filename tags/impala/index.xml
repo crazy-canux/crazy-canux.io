@@ -13,10 +13,10 @@
     
     <item>
       <title>Impala</title>
-      <link>http://canuxcheng.com/bigdata/impala/</link>
+      <link>http://canuxcheng.com/post/impala/</link>
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/bigdata/impala/</guid>
+      <guid>http://canuxcheng.com/post/impala/</guid>
       <description>Impala https://github.com/apache/incubator-impala https://impala.apache.org/ impala的client: impala-shell Cloudera公司的CDH集成了Impala. impala-shell/beeline impala-shell 1 $ impala-shell beeline 1 2 3 4 $ beeline --silent=true beeline&amp;gt; !connect jdbc:hive2://[ip]:21050[/database];auth=noSasl [username] [password] $ beeline -u &amp;#34;jdbc:hive2://[ip]:21050[/database];auth=noSasl&amp;#34; -n [username] -p [password] -e &amp;#34;USE</description>
     </item>
     

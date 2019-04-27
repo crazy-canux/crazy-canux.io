@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Monitoring</title>
-      <link>http://canuxcheng.com/database/redis/</link>
+      <title>Redis</title>
+      <link>http://canuxcheng.com/post/redis/</link>
       <pubDate>Wed, 03 May 2017 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/redis/</guid>
+      <guid>http://canuxcheng.com/post/redis/</guid>
       <description>Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： 1 2 # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: 1 $ sudo apt-get install redis-tools re</description>
     </item>
     

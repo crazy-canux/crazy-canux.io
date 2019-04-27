@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>admin</title>
+      <link>http://canuxcheng.com/tags/admin/</link>
+      <pubDate>Tue, 04 Oct 2016 04:29:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>agile</title>
       <link>http://canuxcheng.com/tags/agile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -246,20 +255,20 @@
     </item>
     
     <item>
+      <title>django</title>
+      <link>http://canuxcheng.com/tags/django/</link>
+      <pubDate>Tue, 20 Sep 2016 23:14:07 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>document</title>
       <link>http://canuxcheng.com/tags/document/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/document/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>doxygen</title>
-      <link>http://canuxcheng.com/tags/doxygen/</link>
-      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/doxygen/</guid>
       <description></description>
     </item>
     
@@ -278,6 +287,15 @@
       <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
       
       <guid>http://canuxcheng.com/tags/find/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>form</title>
+      <link>http://canuxcheng.com/tags/form/</link>
+      <pubDate>Tue, 04 Oct 2016 04:30:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/form/</guid>
       <description></description>
     </item>
     
@@ -329,7 +347,7 @@
     <item>
       <title>golang</title>
       <link>http://canuxcheng.com/tags/golang/</link>
-      <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/golang/</guid>
       <description></description>
@@ -350,6 +368,15 @@
       <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/grub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gui</title>
+      <link>http://canuxcheng.com/tags/gui/</link>
+      <pubDate>Mon, 15 Aug 2016 10:28:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/gui/</guid>
       <description></description>
     </item>
     
@@ -431,6 +458,15 @@
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>misc</title>
+      <link>http://canuxcheng.com/tags/misc/</link>
+      <pubDate>Wed, 04 Jan 2017 01:13:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/misc/</guid>
       <description></description>
     </item>
     
@@ -534,6 +570,15 @@
     </item>
     
     <item>
+      <title>pep</title>
+      <link>http://canuxcheng.com/tags/pep/</link>
+      <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/pep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>posix</title>
       <link>http://canuxcheng.com/tags/posix/</link>
       <pubDate>Sat, 02 Apr 2016 11:18:05 +0000</pubDate>
@@ -557,6 +602,15 @@
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/presto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://canuxcheng.com/tags/python/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/python/</guid>
       <description></description>
     </item>
     
@@ -644,7 +698,7 @@
     <item>
       <title>summary</title>
       <link>http://canuxcheng.com/tags/summary/</link>
-      <pubDate>Sat, 02 Apr 2016 16:06:14 +0000</pubDate>
+      <pubDate>Tue, 21 Jun 2016 21:18:20 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/summary/</guid>
       <description></description>
@@ -671,7 +725,7 @@
     <item>
       <title>test</title>
       <link>http://canuxcheng.com/tags/test/</link>
-      <pubDate>Tue, 23 Apr 2019 20:50:22 +0800</pubDate>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/test/</guid>
       <description></description>
@@ -683,6 +737,24 @@
       <pubDate>Tue, 03 Jan 2017 14:46:14 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/tsdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>url</title>
+      <link>http://canuxcheng.com/tags/url/</link>
+      <pubDate>Tue, 04 Oct 2016 04:20:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/url/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>utils</title>
+      <link>http://canuxcheng.com/tags/utils/</link>
+      <pubDate>Tue, 27 Sep 2016 01:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/utils/</guid>
       <description></description>
     </item>
     

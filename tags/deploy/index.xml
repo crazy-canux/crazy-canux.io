@@ -13,11 +13,20 @@
     
     <item>
       <title>Deploy</title>
-      <link>http://canuxcheng.com/beego/deploy/</link>
+      <link>http://canuxcheng.com/post/beego_deploy/</link>
       <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/beego/deploy/</guid>
+      <guid>http://canuxcheng.com/post/beego_deploy/</guid>
       <description>发布beego项目</description>
+    </item>
+    
+    <item>
+      <title>Deploy</title>
+      <link>http://canuxcheng.com/post/django_deploy/</link>
+      <pubDate>Tue, 27 Sep 2016 10:23:22 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_deploy/</guid>
+      <description>发布django项目 django内置一个轻量级web开发服务器。 如果要发布django项目需要另外的操作。 WSGI: web server gateway interface WSGI是python w</description>
     </item>
     
   </channel>

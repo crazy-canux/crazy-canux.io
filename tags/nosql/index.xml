@@ -13,10 +13,10 @@
     
     <item>
       <title>NoSQL</title>
-      <link>http://canuxcheng.com/database/nosql/</link>
+      <link>http://canuxcheng.com/post/nosql/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/nosql/</guid>
+      <guid>http://canuxcheng.com/post/nosql/</guid>
       <description>NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb</description>
     </item>
     

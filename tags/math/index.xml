@@ -13,11 +13,20 @@
     
     <item>
       <title>GSL_math</title>
-      <link>http://canuxcheng.com/golang/gsl_math/</link>
+      <link>http://canuxcheng.com/post/gsl_math/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/gsl_math/</guid>
+      <guid>http://canuxcheng.com/post/gsl_math/</guid>
       <description>math constants variables functions math/big math/cmplx math/rand sort functions 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 func Ints(a []int) func IntAreSorted(a []int) bool func SearchInts(a []int, x int) int func Float64s(a []float64) func Float64sArerSorted(a []float64) bool func SearchFloat64s(a []float64, x float64) int func Strings(a []string) func StringsAreSorted(a []string) bool func SearchStrings(a []string, x string) int func Sort(data Interface) func</description>
+    </item>
+    
+    <item>
+      <title>PSL_Math</title>
+      <link>http://canuxcheng.com/post/psl_math/</link>
+      <pubDate>Fri, 12 Aug 2016 16:56:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_math/</guid>
+      <description>Numeric and Mathematical Modules random 1 import random classes: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # random.Random Random() # methods: seed([self,], a=None) randint(a, b) # 随机一个[a,b]中的整数． choice(self, seq) # 从seq中随机选择一个元素 uniform(self, a, b) sample(self, population,</description>
     </item>
     
   </channel>

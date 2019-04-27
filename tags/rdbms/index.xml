@@ -13,10 +13,10 @@
     
     <item>
       <title>RDBMS</title>
-      <link>http://canuxcheng.com/database/rdbms/</link>
+      <link>http://canuxcheng.com/post/rdbms/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/rdbms/</guid>
+      <guid>http://canuxcheng.com/post/rdbms/</guid>
       <description>RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre c 安装ODBC一般能访问所有数据库。 python 安装相应的数据库的python库。 JavaScript go dataset https://github.com/pudo/dataset 1 2 3 4 import dataset db = dataset.connect(&amp;#39;sqlite:///mydatabase.db&amp;#39;) db = dataset.connect(&amp;#39;mysql://user:password@localhost/mydatabase&amp;#39;) db =</description>
     </item>
     

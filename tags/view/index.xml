@@ -13,11 +13,20 @@
     
     <item>
       <title>View</title>
-      <link>http://canuxcheng.com/beego/view/</link>
+      <link>http://canuxcheng.com/post/beego_view/</link>
       <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/beego/view/</guid>
+      <guid>http://canuxcheng.com/post/beego_view/</guid>
       <description>View beego的view支持html和tpl两种格式．</description>
+    </item>
+    
+    <item>
+      <title>View</title>
+      <link>http://canuxcheng.com/post/django_view/</link>
+      <pubDate>Tue, 04 Oct 2016 04:20:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_view/</guid>
+      <description>views.py 1 from django.shortcuts import render 定义自己的视图函数： 1 2 3 4 5 6 7 8 9 10 11 from django.http import HttpResponse from django.template import RequestContext, loader # 导入模板中的类 from .models import Question def index(request): ... t = loader.get_template(&amp;#39;application/index.html&amp;#39;) c = RequestContext(request, {&amp;#39;foo&amp;#39;: &amp;#39;bar&amp;#39;}) return HttpResponse(t.render(c), content_type=&amp;#34;text/html&amp;#34;) 当请求一个页面时</description>
     </item>
     
   </channel>

@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>sqlserver</title>
-      <link>http://canuxcheng.com/database/mssql/</link>
+      <title>MSSql</title>
+      <link>http://canuxcheng.com/post/mssql/</link>
       <pubDate>Wed, 06 Apr 2016 15:33:42 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/mssql/</guid>
+      <guid>http://canuxcheng.com/post/mssql/</guid>
       <description>MSSQL 商业版： 1. 企业版 2. 商业智能版 3. 标准版 免费版： 1. Express 2. Developer 3. Compact 4. Web 5. SQL Azure system databases: 1. master 主数据库 2. model 模板数据库 3. msdb 自动机数据库 4. tempdb 零时交换数据库,不需要</description>
     </item>
     

@@ -13,11 +13,29 @@
     
     <item>
       <title>Document</title>
-      <link>http://canuxcheng.com/golang/document/</link>
+      <link>http://canuxcheng.com/post/go_document/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/document/</guid>
+      <guid>http://canuxcheng.com/post/go_document/</guid>
       <description>Document go文档相关 https://godoc.org/ go文档的两种方式: go doc godoc go doc 直接在命令行查看文档 1 $ go doc [package/symbol] godoc go自带的文档命令行接口,在浏览器查看文档 1 2 godoc package [name ...] godoc -http=:6060 通过</description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/python_document/</link>
+      <pubDate>Wed, 03 Aug 2016 21:57:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_document/</guid>
+      <description>Document python项目文档相关的工具． pydoc python自带的文档命令行接口 1 2 $ pydoc --help $ pydoc -p &amp;lt;port&amp;gt; TPL Sphinx https://github.com/sphinx-doc/sphinx https://zh-sphinx-doc.readthedocs.io/en/latest/contents.html Sphinx就是python处理reStruc</description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/c_document/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/c_document/</guid>
+      <description> Document Doxygen </description>
     </item>
     
   </channel>

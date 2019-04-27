@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pep on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/pep/</link>
+    <description>Recent content in pep on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 Aug 2016 16:54:08 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/pep/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python PEP</title>
+      <link>http://canuxcheng.com/post/python_pep/</link>
+      <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_pep/</guid>
+      <description>PEP 8 &amp;ndash; Style Guide for Python Code https://www.python.org/dev/peps/pep-0008/ pep7是C风格指南，pep20是zen of python. 1 2 # 查看pep20 &amp;gt;import this PEP 257 &amp;ndash; Docstring Conventions https://www.python.org/dev/peps/pep-0257/</description>
+    </item>
+    
+  </channel>
+</rss>

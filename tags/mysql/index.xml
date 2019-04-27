@@ -13,10 +13,10 @@
     
     <item>
       <title>Mysql</title>
-      <link>http://canuxcheng.com/database/mysql/</link>
+      <link>http://canuxcheng.com/post/mysql/</link>
       <pubDate>Wed, 25 May 2016 12:14:59 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/mysql/</guid>
+      <guid>http://canuxcheng.com/post/mysql/</guid>
       <description>Mysql 安装mysql服务器 1 2 3 4 5 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind</description>
     </item>
     

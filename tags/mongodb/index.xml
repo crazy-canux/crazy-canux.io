@@ -13,10 +13,10 @@
     
     <item>
       <title>MongoDB</title>
-      <link>http://canuxcheng.com/database/mongodb/</link>
+      <link>http://canuxcheng.com/post/mongodb/</link>
       <pubDate>Sun, 16 Apr 2017 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/mongodb/</guid>
+      <guid>http://canuxcheng.com/post/mongodb/</guid>
       <description>MongoDB https://github.com/mongodb/mongo mongodb是一种开源的文档数据库，高性能，高可用性，自动裁剪． mongodb的database和关系数据库中的database一样．</description>
     </item>
     

@@ -6,18 +6,36 @@
     <description>Recent content in test on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Apr 2019 20:50:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GSL_test</title>
-      <link>http://canuxcheng.com/golang/gsl_test/</link>
-      <pubDate>Tue, 23 Apr 2019 20:50:22 +0800</pubDate>
+      <link>http://canuxcheng.com/post/gsl_test/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/gsl_test/</guid>
+      <guid>http://canuxcheng.com/post/gsl_test/</guid>
       <description>testing go的测试由go test命令和testing包组成． 测试程序命名： 1 2 XXX.go # 测试文件和源码放在一个包中 XXX_test.go 测试程序结构： 1 2 3 4 5 6 7 8 9 import &amp;#34;testing&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>http://canuxcheng.com/post/django_test/</link>
+      <pubDate>Tue, 04 Oct 2016 04:51:30 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_test/</guid>
+      <description>tests.py 测试</description>
+    </item>
+    
+    <item>
+      <title>PSL_Test</title>
+      <link>http://canuxcheng.com/post/psl_test/</link>
+      <pubDate>Mon, 11 Apr 2016 22:58:13 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_test/</guid>
+      <description>Test python的单元测试库． 2to3 1 $2to3 pydoc 1 import pydoc test 1 import test doctest python内置的文档测试库． 1 import doctest unittest python内置的单元测试库． 1 import unittest TPL 相关的第三方</description>
     </item>
     
   </channel>

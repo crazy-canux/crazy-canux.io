@@ -13,19 +13,28 @@
     
     <item>
       <title>Package</title>
-      <link>http://canuxcheng.com/golang/package/</link>
+      <link>http://canuxcheng.com/post/go_package/</link>
       <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/golang/package/</guid>
+      <guid>http://canuxcheng.com/post/go_package/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Package</title>
-      <link>http://canuxcheng.com/c/package/</link>
+      <link>http://canuxcheng.com/post/python_package/</link>
+      <pubDate>Wed, 22 Jun 2016 05:17:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_package/</guid>
+      <description>Package PEP426是python最新的打包标准，定义了wheel为最新的python包。 https://www.python.org/dev/peps/pep-0426/ ensurepip 内置模块.提供使用pip从pypi安装模块。 distutils 内置的</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/c_package/</link>
       <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/package/</guid>
+      <guid>http://canuxcheng.com/post/c_package/</guid>
       <description> Package </description>
     </item>
     

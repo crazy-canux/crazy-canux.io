@@ -39,11 +39,11 @@
     </item>
     
     <item>
-      <title>CloudComputing</title>
-      <link>http://canuxcheng.com/categories/cloudcomputing/</link>
+      <title>Cloud</title>
+      <link>http://canuxcheng.com/categories/cloud/</link>
       <pubDate>Thu, 23 Feb 2017 22:02:31 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/categories/cloudcomputing/</guid>
+      <guid>http://canuxcheng.com/categories/cloud/</guid>
       <description></description>
     </item>
     
@@ -62,6 +62,15 @@
       <pubDate>Thu, 12 Jan 2017 21:05:48 +0800</pubDate>
       
       <guid>http://canuxcheng.com/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>http://canuxcheng.com/categories/django/</link>
+      <pubDate>Wed, 04 Jan 2017 01:13:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/django/</guid>
       <description></description>
     </item>
     
@@ -89,6 +98,15 @@
       <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
       
       <guid>http://canuxcheng.com/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://canuxcheng.com/categories/python/</link>
+      <pubDate>Mon, 15 Aug 2016 11:16:29 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/python/</guid>
       <description></description>
     </item>
     

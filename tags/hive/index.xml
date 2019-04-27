@@ -13,10 +13,10 @@
     
     <item>
       <title>Hive</title>
-      <link>http://canuxcheng.com/bigdata/hive/</link>
+      <link>http://canuxcheng.com/post/hive/</link>
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/bigdata/hive/</guid>
+      <guid>http://canuxcheng.com/post/hive/</guid>
       <description>Hive https://github.com/apache/hive http://hive.apache.org/ Hive2数据仓库用于读取，写入和管理使用SQL的大型分布式数据集． hive2的client: beeline(hive命令的升级版) hive/beeline</description>
     </item>
     

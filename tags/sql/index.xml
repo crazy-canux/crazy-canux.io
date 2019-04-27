@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Monitoring</title>
-      <link>http://canuxcheng.com/database/sql/</link>
+      <title>SQL</title>
+      <link>http://canuxcheng.com/post/sql/</link>
       <pubDate>Wed, 25 May 2016 22:06:13 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/sql/</guid>
+      <guid>http://canuxcheng.com/post/sql/</guid>
       <description>SQL sql是结构化查询语言。 sql是一种标准，几乎所有关系型数据库都遵守。 但是不同的数据库又有自己的扩展。 SQL分为两部分，DML和DDL。 S</description>
     </item>
     

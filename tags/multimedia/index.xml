@@ -13,11 +13,20 @@
     
     <item>
       <title>GSL_multimedia</title>
-      <link>http://canuxcheng.com/golang/gsl_multimedia/</link>
+      <link>http://canuxcheng.com/post/gsl_multimedia/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/gsl_multimedia/</guid>
+      <guid>http://canuxcheng.com/post/gsl_multimedia/</guid>
       <description> image mime </description>
+    </item>
+    
+    <item>
+      <title>PSL_Multimedia</title>
+      <link>http://canuxcheng.com/post/psl_multimedia/</link>
+      <pubDate>Fri, 12 Aug 2016 15:51:56 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_multimedia/</guid>
+      <description> Multimedia Services audioop aifc sunau wave chunk colorsys imghdr sndhdr ossaudiodev </description>
     </item>
     
   </channel>

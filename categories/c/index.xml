@@ -13,10 +13,10 @@
     
     <item>
       <title>DevOps</title>
-      <link>http://canuxcheng.com/c/devops/</link>
+      <link>http://canuxcheng.com/post/c_devops/</link>
       <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/devops/</guid>
+      <guid>http://canuxcheng.com/post/c_devops/</guid>
       <description> IDE Windows: DEV C++
 http://orwelldevcpp.blogspot.com/
 Linux: Vim + Gcc + Gdb
@@ -25,46 +25,46 @@ gcc/clang gdb </description>
     
     <item>
       <title>Document</title>
-      <link>http://canuxcheng.com/c/document/</link>
+      <link>http://canuxcheng.com/post/c_document/</link>
       <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/document/</guid>
+      <guid>http://canuxcheng.com/post/c_document/</guid>
       <description> Document Doxygen </description>
     </item>
     
     <item>
       <title>Package</title>
-      <link>http://canuxcheng.com/c/package/</link>
+      <link>http://canuxcheng.com/post/c_package/</link>
       <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/package/</guid>
+      <guid>http://canuxcheng.com/post/c_package/</guid>
       <description> Package </description>
     </item>
     
     <item>
       <title>Summary</title>
-      <link>http://canuxcheng.com/c/summary/</link>
+      <link>http://canuxcheng.com/post/c_summary/</link>
       <pubDate>Sat, 02 Apr 2016 16:06:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/summary/</guid>
+      <guid>http://canuxcheng.com/post/c_summary/</guid>
       <description>C标准 ISO C89(ANSI C89) -&amp;gt; ISO C99 -&amp;gt; ISO C11 ANSI C 和 ISO C是对通用C语言的接口的定义。 符合这种标准的实现为C语言标准库,也叫libc。 Unix/Linux的POSI</description>
     </item>
     
     <item>
       <title>Posix</title>
-      <link>http://canuxcheng.com/c/posix/</link>
+      <link>http://canuxcheng.com/post/c_posix/</link>
       <pubDate>Sat, 02 Apr 2016 11:18:05 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/posix/</guid>
+      <guid>http://canuxcheng.com/post/c_posix/</guid>
       <description>POSIX标准 Portable Operating System Interface 可移植性操作系统接口, POSIX兼容ISO C。 所有Unix都遵循，几乎所有Linux都遵循，Windows部分支持。 POSIX.1/IEEE</description>
     </item>
     
     <item>
       <title>ISO</title>
-      <link>http://canuxcheng.com/c/iso/</link>
+      <link>http://canuxcheng.com/post/c_iso/</link>
       <pubDate>Fri, 01 Apr 2016 21:54:16 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/iso/</guid>
+      <guid>http://canuxcheng.com/post/c_iso/</guid>
       <description>C标准库 ISO C89(ANSI C89) -&amp;gt; ISO C99 -&amp;gt; ISO C11 ANSI C 和 ISO C是对通用C语言的接口的定义。 符合这种标准的实现为C语言标准库,也叫libc。 官方网站： http://www.open-std.org/jtc1/sc22/wg14/www/standards C89和C99支</description>
     </item>
     

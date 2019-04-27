@@ -13,10 +13,10 @@
     
     <item>
       <title>Devops</title>
-      <link>http://canuxcheng.com/golang/devops/</link>
+      <link>http://canuxcheng.com/post/go_devops/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/devops/</guid>
+      <guid>http://canuxcheng.com/post/go_devops/</guid>
       <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: 1 GOROOT 就是go的安装目录 windows标准包安装go: 1 2 下载zip包解压到C:\go</description>
     </item>
     
@@ -31,14 +31,23 @@
     
     <item>
       <title>DevOps</title>
-      <link>http://canuxcheng.com/c/devops/</link>
+      <link>http://canuxcheng.com/post/c_devops/</link>
       <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/c/devops/</guid>
+      <guid>http://canuxcheng.com/post/c_devops/</guid>
       <description> IDE Windows: DEV C++
 http://orwelldevcpp.blogspot.com/
 Linux: Vim + Gcc + Gdb
 gcc/clang gdb </description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/post/python_devops/</link>
+      <pubDate>Sun, 03 Apr 2016 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_devops/</guid>
+      <description>Python python2的最后一个版本是python2.7, 2020年停止更新. Windows安装： 1 2 3 Python2.7.9之后的版本直接下载m</description>
     </item>
     
   </channel>

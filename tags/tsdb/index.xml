@@ -13,10 +13,10 @@
     
     <item>
       <title>TSDB</title>
-      <link>http://canuxcheng.com/database/tsdb/</link>
+      <link>http://canuxcheng.com/post/tsdb/</link>
       <pubDate>Tue, 03 Jan 2017 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/tsdb/</guid>
+      <guid>http://canuxcheng.com/post/tsdb/</guid>
       <description>TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus</description>
     </item>
     

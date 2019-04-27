@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/categories/python/</link>
+    <description>Recent content in Python on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Aug 2016 11:16:29 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PSL_builtins</title>
+      <link>http://canuxcheng.com/post/psl_builtins/</link>
+      <pubDate>Mon, 15 Aug 2016 11:16:29 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_builtins/</guid>
+      <description>__builtins__ python的内置模块，所有python的内置功能都在这个模块中，不需要import导入就可以使用。 包括内置类类型以及所属的内置方法，和内</description>
+    </item>
+    
+    <item>
+      <title>PSL_Concurrency</title>
+      <link>http://canuxcheng.com/post/psl_concurrency/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_concurrency/</guid>
+      <description>Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据 线程：线程（有时被称为轻量级进程）跟进程有些相似，不同的是</description>
+    </item>
+    
+    <item>
+      <title>PSL_Python</title>
+      <link>http://canuxcheng.com/post/psl_python/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_python/</guid>
+      <description>Python Runtime Services __builtin__ builtin/builtins - Built-in functions, exceptions, and other objects. python2叫__builtin__ python3叫builtins __main__ main - Top-level script environment. 1 2 if __name__ == &amp;#34;__main__&amp;#34;: main() 当作为顶层脚本运行时</description>
+    </item>
+    
+    <item>
+      <title>PSL_System</title>
+      <link>http://canuxcheng.com/post/psl_system/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_system/</guid>
+      <description>Generic Operating System Services os 1 2 3 4 5 6 7 8 9 10 11 12 13 14 import os os.path # 参考PSL_File os.name os.curdir os.pardir # 表示上一级路径.., 需要用abspath解析 # os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) os.sep os.extsep os.altsep os.pathsep os.linesep os.defpath os.devnull classes:</description>
+    </item>
+    
+    <item>
+      <title>PSL_GUI</title>
+      <link>http://canuxcheng.com/post/psl_gui/</link>
+      <pubDate>Mon, 15 Aug 2016 10:28:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_gui/</guid>
+      <description>GUI Tkinter ttk Tix ScrolledText turtle TPL 相关的第三方库 wxWidgets python2的库叫wxPython. https://www.wxpython.org/ 1 2 # Windows下载安装包安装即可． $ sudo apt-get install python-wxgtk2.8 python３启用新</description>
+    </item>
+    
+    <item>
+      <title>PSL_Misc</title>
+      <link>http://canuxcheng.com/post/psl_misc/</link>
+      <pubDate>Mon, 15 Aug 2016 10:28:46 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_misc/</guid>
+      <description>PSL Python Standard Library: Python标准库 Internationalization gettext locale Program Frameworks cmd shlex 类shell的词法分析． classes: 1 shlex functions: 1 2 split(s, comments=False, posix=True) # split(&amp;#34;command **kwargs&amp;#34;) -&amp;gt; [&amp;#39;command&amp;#39;, &amp;#39;arg1&amp;#39;, ...] data: Custom Python Interpreters code codeop Python Language Services keyword 1 import keyword functions: 1 keyword.iskeyword(keyword) # x.__contains__(y) &amp;lt;==&amp;gt; y in x</description>
+    </item>
+    
+    <item>
+      <title>PSL_Cryptographic</title>
+      <link>http://canuxcheng.com/post/psl_cryptographic/</link>
+      <pubDate>Sun, 14 Aug 2016 21:15:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_cryptographic/</guid>
+      <description>Cryptographic Services hashlib 哈希算法和摘要算法标准库，就是把任意长度的数据转换为一个长度固定的数据串． MD5: Message Digest Algorithm 5. SHA1: Secure Hash Algorithm. 1 import hashlib classes: 1 2 3 4 5 6 7 8 9 10 # methods: # 哈希对象</description>
+    </item>
+    
+    <item>
+      <title>PSL_Data</title>
+      <link>http://canuxcheng.com/post/psl_data/</link>
+      <pubDate>Sun, 14 Aug 2016 20:57:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_data/</guid>
+      <description>Data Types datetime 1 import datetime classes: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 # datetime.date date(year, month, day) # methods: ctime(...) ... # data descriptors: day month year # datetime.datetime(datetime.date) datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]]) # methods: datetime.datetime.strptime(string, format) format_datetime = datetime.datetime.strptime(&amp;#39;20160824161431&amp;#39;, &amp;#39;%Y%m%d%H%M%S&amp;#39;) # return:</description>
+    </item>
+    
+    <item>
+      <title>PSL_File</title>
+      <link>http://canuxcheng.com/post/psl_file/</link>
+      <pubDate>Sun, 14 Aug 2016 20:51:28 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_file/</guid>
+      <description>File and Directory Access os.path windows的路径要写成： 1 2 3 C:\\test\\sub\\ import os function: 1 2 3 4 5 6 7 8 9 10 11 12 os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&amp;#34;~/src&amp;#34;) -&amp;gt; /home/user/src os.path.expandvars(path) # 把path</description>
+    </item>
+    
+    <item>
+      <title>PSL_Math</title>
+      <link>http://canuxcheng.com/post/psl_math/</link>
+      <pubDate>Fri, 12 Aug 2016 16:56:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_math/</guid>
+      <description>Numeric and Mathematical Modules random 1 import random classes: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # random.Random Random() # methods: seed([self,], a=None) randint(a, b) # 随机一个[a,b]中的整数． choice(self, seq) # 从seq中随机选择一个元素 uniform(self, a, b) sample(self, population,</description>
+    </item>
+    
+    <item>
+      <title>PSL_String</title>
+      <link>http://canuxcheng.com/post/psl_string/</link>
+      <pubDate>Fri, 12 Aug 2016 16:49:07 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_string/</guid>
+      <description>String Services string 1 import string classes: functions: data: 1 2 3 4 5 ascii_letters ascii_lowercase ascii_uppercase digits ... re 1 import re classes: functions: 1 2 3 4 5 6 7 8 9 10 11 compile(pattern, flags=0) escape(pattern) findall(pattern, string, flags=0) finditer(pattern, string, flags=0) match(pattern, string, flags=0) # if not match, return None, else return object. search(pattern, string, flags=0) purge() split(pattern, string, maxsplit=0, flags=0) # 根据pa</description>
+    </item>
+    
+    <item>
+      <title>PSL_Multimedia</title>
+      <link>http://canuxcheng.com/post/psl_multimedia/</link>
+      <pubDate>Fri, 12 Aug 2016 15:51:56 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_multimedia/</guid>
+      <description> Multimedia Services audioop aifc sunau wave chunk colorsys imghdr sndhdr ossaudiodev </description>
+    </item>
+    
+    <item>
+      <title>PSL_Network</title>
+      <link>http://canuxcheng.com/post/psl_network/</link>
+      <pubDate>Fri, 12 Aug 2016 14:21:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_network/</guid>
+      <description>Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i</description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/post/python_debug/</link>
+      <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_debug/</guid>
+      <description>IDE pycharm可以通过breakpoint和step调试. debug bdb pdb hotshot timeit trace cProfile profile</description>
+    </item>
+    
+    <item>
+      <title>Python PEP</title>
+      <link>http://canuxcheng.com/post/python_pep/</link>
+      <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_pep/</guid>
+      <description>PEP 8 &amp;ndash; Style Guide for Python Code https://www.python.org/dev/peps/pep-0008/ pep7是C风格指南，pep20是zen of python. 1 2 # 查看pep20 &amp;gt;import this PEP 257 &amp;ndash; Docstring Conventions https://www.python.org/dev/peps/pep-0257/</description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/python_document/</link>
+      <pubDate>Wed, 03 Aug 2016 21:57:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_document/</guid>
+      <description>Document python项目文档相关的工具． pydoc python自带的文档命令行接口 1 2 $ pydoc --help $ pydoc -p &amp;lt;port&amp;gt; TPL Sphinx https://github.com/sphinx-doc/sphinx https://zh-sphinx-doc.readthedocs.io/en/latest/contents.html Sphinx就是python处理reStruc</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/python_package/</link>
+      <pubDate>Wed, 22 Jun 2016 05:17:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_package/</guid>
+      <description>Package PEP426是python最新的打包标准，定义了wheel为最新的python包。 https://www.python.org/dev/peps/pep-0426/ ensurepip 内置模块.提供使用pip从pypi安装模块。 distutils 内置的</description>
+    </item>
+    
+    <item>
+      <title>Summary</title>
+      <link>http://canuxcheng.com/post/python_summary/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:20 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_summary/</guid>
+      <description>python难点总结 多线程 GIL GIL: Global Interpretror Lock. 全局解释器锁． python不建议使用多线程，用多进程代替． 协程 coroutine 协程就是同时开启两个任务，但一次只顺序执</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>http://canuxcheng.com/post/python_oop/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:09 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_oop/</guid>
+      <description>面向对象/OOP OOD: Object Oriented Design. 面向过程的设计支持任何语言，但是如果语言本身内置面向过程的结构，就会更容易编程． OOP: Object Oriented Programming. python内置OOP的结构</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://canuxcheng.com/post/python/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:09 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python/</guid>
+      <description>Python概述 https://docs.python.org/2.7/index.html http://python.usyiyi.cn/translate/python_278/index.html https://docs.python.org/3.5/index.html http://python.usyiyi.cn/translate/python_352/index.html python是一门优雅而健壮的语言. 继承了编译语言(静态语言)的强大性和通用性. 同时也借鉴了脚本语言(动态语言)的易</description>
+    </item>
+    
+    <item>
+      <title>PSL_Test</title>
+      <link>http://canuxcheng.com/post/psl_test/</link>
+      <pubDate>Mon, 11 Apr 2016 22:58:13 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_test/</guid>
+      <description>Test python的单元测试库． 2to3 1 $2to3 pydoc 1 import pydoc test 1 import test doctest python内置的文档测试库． 1 import doctest unittest python内置的单元测试库． 1 import unittest TPL 相关的第三方</description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/post/python_devops/</link>
+      <pubDate>Sun, 03 Apr 2016 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_devops/</guid>
+      <description>Python python2的最后一个版本是python2.7, 2020年停止更新. Windows安装： 1 2 3 Python2.7.9之后的版本直接下载m</description>
+    </item>
+    
+  </channel>
+</rss>

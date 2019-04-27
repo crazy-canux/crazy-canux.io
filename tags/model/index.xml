@@ -13,11 +13,20 @@
     
     <item>
       <title>Model</title>
-      <link>http://canuxcheng.com/beego/model/</link>
+      <link>http://canuxcheng.com/post/beego_model/</link>
       <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/beego/model/</guid>
+      <guid>http://canuxcheng.com/post/beego_model/</guid>
       <description> Model </description>
+    </item>
+    
+    <item>
+      <title>Model</title>
+      <link>http://canuxcheng.com/post/django_model/</link>
+      <pubDate>Tue, 04 Oct 2016 04:20:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_model/</guid>
+      <description>models.py 1 from django.db import models django模型是和数据库关联的，代码放在models.py，数据库信息在settings.py中统一配置即可。 每个模型对应数据</description>
     </item>
     
   </channel>

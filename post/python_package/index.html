@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Package - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Package PEP426是python最新的打包标准，定义了wheel为最新的python包。 https://www.python.org/dev/peps/pep-0426/ ensurepip 内置模块.提供使用pip从pypi安装模块。 distutils 内置的" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/python_package/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Package" />
+<meta property="og:description" content="Package PEP426是python最新的打包标准，定义了wheel为最新的python包。 https://www.python.org/dev/peps/pep-0426/ ensurepip 内置模块.提供使用pip从pypi安装模块。 distutils 内置的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/python_package/" />
+<meta property="article:published_time" content="2016-06-22T05:17:19&#43;00:00"/>
+<meta property="article:modified_time" content="2016-06-22T05:17:19&#43;00:00"/>
+
+<meta itemprop="name" content="Package">
+<meta itemprop="description" content="Package PEP426是python最新的打包标准，定义了wheel为最新的python包。 https://www.python.org/dev/peps/pep-0426/ ensurepip 内置模块.提供使用pip从pypi安装模块。 distutils 内置的">
+
+
+<meta itemprop="datePublished" content="2016-06-22T05:17:19&#43;00:00" />
+<meta itemprop="dateModified" content="2016-06-22T05:17:19&#43;00:00" />
+<meta itemprop="wordCount" content="1828">
+
+
+
+<meta itemprop="keywords" content="package," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Package"/>
+<meta name="twitter:description" content="Package PEP426是python最新的打包标准，定义了wheel为最新的python包。 https://www.python.org/dev/peps/pep-0426/ ensurepip 内置模块.提供使用pip从pypi安装模块。 distutils 内置的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Package</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-22 </span>
+        <div class="post-category">
+            <a href="/categories/python/"> Python </a>
+            </div>
+          <span class="more-meta"> 1828 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#package">Package</a>
+<ul>
+<li><a href="#ensurepip">ensurepip</a></li>
+<li><a href="#distutils">distutils</a></li>
+<li><a href="#venv">venv</a></li>
+<li><a href="#zipapp">zipapp</a></li>
+</ul></li>
+<li><a href="#tpl">TPL</a>
+<ul>
+<li><a href="#virtualenv">virtualenv</a></li>
+<li><a href="#setuptools">setuptools</a></li>
+<li><a href="#pbr">pbr</a></li>
+<li><a href="#扩展点-entry-points">扩展点（Entry Points）</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-06-22T05:17:19" title="June 22, 2016">June 22, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="package">Package</h1>
+
+<p>PEP426是python最新的打包标准，定义了wheel为最新的python包。</p>
+
+<p><a href="https://www.python.org/dev/peps/pep-0426/">https://www.python.org/dev/peps/pep-0426/</a></p>
+
+<h2 id="ensurepip">ensurepip</h2>
+
+<p>内置模块.提供使用pip从pypi安装模块。</p>
+
+<h2 id="distutils">distutils</h2>
+
+<p>内置的模块.处理简单的包安装,一般使用setuptools代替该模块。</p>
+
+<h2 id="venv">venv</h2>
+
+<p>python3新增了虚拟环境的包．python2中使用virtualenv.</p>
+
+<h2 id="zipapp">zipapp</h2>
+
+<p>python3新增管理可执行的python的zip包．</p>
+
+<hr />
+
+<h1 id="tpl">TPL</h1>
+
+<p>相关的第三方库</p>
+
+<h2 id="virtualenv">virtualenv</h2>
+
+<p>python3.5开始并入了虚拟化标准库venv.</p>
+
+<p>分离的虚拟的python环境,自动安装setuptools和pip和wheel</p>
+
+<p><a href="https://github.com/pypa/virtualenv">https://github.com/pypa/virtualenv</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$cd project
+
+# 默认python2.7
+$virtualenv .venv
+# 指定python3, 会安装pip/setuptools/wheel到当前环境.
+$virtualenv -p `which python3` .venv
+
+# 激活虚拟环境
+$source .venv/bin/activate
+
+# 先升级pip和setuptools
+$pip install pip
+$pip install setuptools
+$pip install wheel
+
+# 导出项目用的所有依赖库．
+$pip freeze &gt; requirements.txt
+# 在其它环境需要安装依赖：
+$pip install -r requirements.txt</pre></td></tr></table>
+</div>
+</div>
+<p>virtualenvwrapper</p>
+
+<p><a href="https://bitbucket.org/virtualenvwrapper/virtualenvwrapper">https://bitbucket.org/virtualenvwrapper/virtualenvwrapper</a></p>
+
+<p>封装了virtualenv的工具:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ pip install virtualenvwrapper
+
+# 创建主目录
+$ mkdir -p $WORKON_HOME
+
+# 最好写入到.bashrc/.zshrc:
+$ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+$ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+$ export WORKON_HOME=~/.virtualenvs
+$ source /usr/local/bin/virtualenvwrapper.sh
+
+# 为每个项目创建独立python环境：
+$ mkvirtualenv -r requirementx.txt [project-name]
+# 不安装setuotools/wheel/pip
+$ mkvirtualenv --no-setuptools --no-wheel --no-pip [name]
+# 指定查找pip/setuptools的路径
+--extra-search-dir=/usr/local/lib/python2.7/dist-packages
+--extra-search-dir=/usr/lib/python2.7/dist-packages
+$ workon [project-name] # 切换到针对该项目的virtualenv
+(pro)$ /path/to/pip install [package] # 安装第三方包
+(pro)$ ~/.virtualenvs/[project-name]/bin/python setupt.py install # 源码安装
+(pro)$ lssitepackages # 查看安装的第三方包
+$ deactivate # 退出virtualenv
+$ rmvirtualenv [project-name] # 删除环境</pre></td></tr></table>
+</div>
+</div>
+<p>pipenv</p>
+
+<p><a href="https://github.com/pypa/pipenv">https://github.com/pypa/pipenv</a></p>
+
+<p>封装了virtualenv的工具，用于取代virtualenvwrapper.</p>
+
+<h2 id="setuptools">setuptools</h2>
+
+<p><a href="https://github.com/pypa/setuptools">https://github.com/pypa/setuptools</a></p>
+
+<p><a href="https://github.com/pypa/wheel">https://github.com/pypa/wheel</a></p>
+
+<p>python2.7.9和python3.4以及virtualenv自带setuptools．</p>
+
+<p>支持sdist打包成tar.gz包,和wheel打包成whl包．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$pip install -U pip
+$pip install -U setuotools
+$pip install -U wheel</pre></td></tr></table>
+</div>
+</div>
+<p>创建setup.py文件：</p>
+
+<p><a href="https://pypi.python.org/pypi?%3Aaction=list_classifiers">https://pypi.python.org/pypi?%3Aaction=list_classifiers</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import os
+
+from setuptools import setup, find_packages
+
+import project
+
+def read(readme):
+    extend = os.path.splitext(readme)[1]
+    # pypi只识别reST格式
+    if (extend == &#34;.rst&#34;):
+        import codecs
+        return codecs.open(readme, &#39;r&#39;, &#39;utf-8&#39;).read()
+    # pypandoc可以将markdown格式转换成reST格式
+    elif (extend == &#34;.md&#34;):
+        import pypandoc
+        return pypandoc.convert(readme, &#39;rst&#39;)
+
+setup(
+    # metadata:
+    name=project,
+    version=project.__version__,
+    url=&#39;&#39;,
+    download_url=&#39;&#39;,
+    author=&#39;&#39;,
+    author_email=&#39;&#39;,
+    maintainer=&#39;&#39;,
+    maintainer_email=&#39;&#39;,
+    description=&#39;&#39;
+    long_description=read(&#39;README.XXX&#39;),
+    license=&#39;&#39;,
+    platforms=&#39;any&#39;,
+    keywords=&#39;&#39;,
+    classifiers=[
+        &#39;Development Status :: 5 - Production/Stable&#39;,
+        ...
+    ],
+
+    # options
+
+    # 指定源码的位置
+    packages=find_packages(),
+    package_dir={},
+
+    # 需要和源码一起安装的非代码文件,写入MANIFEST.in
+    # 比如文档和测试文件
+    package_data={}, # 将指定的文件放入安装路径
+    include_package_data=None, # True表示
+    exclude_package_data=None,
+
+    # 不需要和源码一起安装的非代码文件.
+    # 比如配置文件
+    data_files=[(dest, source),()],
+
+    # 通过pip安装requirement
+    install_requires=[&#39;a==1.0.0&#39;, &#39;b&gt;=1.0.0&#39;],
+    # python版本的要求
+    python_requires=&#39;&gt;=3&#39;,
+    setup_requires=[],
+    extras_require=None,
+    test_require=[]
+
+    zip_safe=True,
+
+    # 安装一个命令
+    scripts=[],    # 会被添加到环境变量用于命令.
+
+    entry_points={}
+
+    # preinst/postinst
+    cmdclass={
+        &#34;develop&#34;: PostInstDevelop,
+        &#34;install&#34;: PostInstInstall
+    }
+)</pre></td></tr></table>
+</div>
+</div>
+<p>怎样实现postinst功能：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">from setuptools.command.develop import develop
+from setuptools.command.install import install
+
+class InstDevelop(develop):
+    def run(self):
+        # your preinst code here for develop.
+        develop.run(self)
+        # your postinst code here for develop.
+
+class InstInstall(install):
+    def run(self):
+        # your preinst code here for install.
+        install.run(self)
+        # your postinst code here for install.</pre></td></tr></table>
+</div>
+</div>
+<p>创建setup.cfg文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[wheel]
+universal = 1</pre></td></tr></table>
+</div>
+</div>
+<p>创建README.rst文件：</p>
+
+<p>可以是rst格式也可是是md格式。</p>
+
+<p>如果是md格式不要使用类似于***的分割线。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">参考rst和md的文档</pre></td></tr></table>
+</div>
+</div>
+<p>创建MAINFEST.in文件：</p>
+
+<p>默认只有python模块和包会被打包，如果需要其它文件需要添加到这个文件中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">include LICENSE README.rst AUTHORS.rst CONTRIBUTING.rst
+recursive-include docs *
+graft examples
+graft tests
+global-exclude *.py[co]
+prune docs/_build
+prune docs/_themes</pre></td></tr></table>
+</div>
+</div>
+<p>创建__init__.py文件：</p>
+
+<p>位于project/project/__init__.py，安装后用import导入，help(project)看到的信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">NAME: 自动获取的项目名字 - 该文件注释的总结部分
+FILE: /install_path/project/project/__init__.py
+DESCRIPTION: 该文件的注释，除总结部分
+PACKAGE CONTENTS: 在project/project/自动获取的py文件名
+DATA: __开头和结尾的变量
+VERSION: __version__变量的值
+AUTHOR: __author__变量的值
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+SUMMARY
+
+Descriptions
+&#34;&#34;&#34;
+
+__version__ = &#39;&#39;
+__author__ = &#39;&#39;
+
+...</pre></td></tr></table>
+</div>
+</div>
+<p>发布到pypi主服务器pypi：</p>
+
+<p>去pypi注册帐号</p>
+
+<p><a href="https://pypi.python.org/pypi">https://pypi.python.org/pypi</a></p>
+
+<p>创建~/.pypirc文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[distutils]
+index-servers = pypi
+
+[pypi]
+username = &lt;username&gt;
+password = &lt;password&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>在索引中注册项目(不再支持，直接upload)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[Deprecated] $ python setup.py register -r pypi</pre></td></tr></table>
+</div>
+</div>
+<p>先打包, 在dist目录生成包:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ python setup.py sdist # 生成tarball
+$ python setup.py bdist_wheel # 安装wheel后，可以用setuptools生成wheel包</pre></td></tr></table>
+</div>
+</div>
+<p>再上传到pypi(推荐):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ pip install twine
+$ twine upload dist/*</pre></td></tr></table>
+</div>
+</div>
+<p>打包并上传到pypi：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$python setup.py sdist upload -r pypi
+$python setup.py bdist_wheel upload -r pypi</pre></td></tr></table>
+</div>
+</div>
+<h2 id="pbr">pbr</h2>
+
+<p><a href="https://github.com/openstack-dev/pbr">https://github.com/openstack-dev/pbr</a></p>
+
+<h2 id="扩展点-entry-points">扩展点（Entry Points）</h2>
+
+<ul>
+<li><p>pkg_resources</p></li>
+
+<li><p>entry_point_inspector</p></li>
+</ul>
+
+<p><a href="https://github.com/dhellmann/entry_point_inspector">https://github.com/dhellmann/entry_point_inspector</a></p>
+
+<ul>
+<li>stevedore</li>
+</ul>
+
+<p><a href="http://docs.openstack.org/developer/stevedore/">http://docs.openstack.org/developer/stevedore/</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-06-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/package/">package</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/python_document/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Document</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/python_summary/">
+            <span class="next-text nav-default">Summary</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-06-22 05:17:19 \x2b0000 UTC',
+        title: 'Package',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

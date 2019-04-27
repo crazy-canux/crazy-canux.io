@@ -129,10 +129,10 @@ pattern:
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/devops/make/</link>
+      <link>http://canuxcheng.com/devops/makefile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/devops/make/</guid>
+      <guid>http://canuxcheng.com/devops/makefile/</guid>
       <description>Title: Make Date: 2017-01-12 21:18:33 Tags: Make, Makefile
 Make make的作用： * 控制源代码的编译 * 手册页的编写 * 将应用程序安装到目标目录
 make的使用规则： * 如果工程没有编译过，需要编译所有源文件和链接所有目标文件． * 如果工程里某几个目标文件被修改，只需要编译修改的源文件，并链接所有目标文件． * 如果头文件被修改，只需要编译引用了被修改的头文件的源文件，并链接所有目标文件．

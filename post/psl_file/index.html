@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PSL_File - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="File and Directory Access os.path windows的路径要写成： 1 2 3 C:\\test\\sub\\ import os function: 1 2 3 4 5 6 7 8 9 10 11 12 os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&amp;#34;~/src&amp;#34;) -&amp;gt; /home/user/src os.path.expandvars(path) # 把path" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/psl_file/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PSL_File" />
+<meta property="og:description" content="File and Directory Access os.path windows的路径要写成： 1 2 3 C:\\test\\sub\\ import os function: 1 2 3 4 5 6 7 8 9 10 11 12 os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&#34;~/src&#34;) -&gt; /home/user/src os.path.expandvars(path) # 把path" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/psl_file/" />
+<meta property="article:published_time" content="2016-08-14T20:51:28&#43;00:00"/>
+<meta property="article:modified_time" content="2016-08-14T20:51:28&#43;00:00"/>
+
+<meta itemprop="name" content="PSL_File">
+<meta itemprop="description" content="File and Directory Access os.path windows的路径要写成： 1 2 3 C:\\test\\sub\\ import os function: 1 2 3 4 5 6 7 8 9 10 11 12 os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&#34;~/src&#34;) -&gt; /home/user/src os.path.expandvars(path) # 把path">
+
+
+<meta itemprop="datePublished" content="2016-08-14T20:51:28&#43;00:00" />
+<meta itemprop="dateModified" content="2016-08-14T20:51:28&#43;00:00" />
+<meta itemprop="wordCount" content="925">
+
+
+
+<meta itemprop="keywords" content="file," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PSL_File"/>
+<meta name="twitter:description" content="File and Directory Access os.path windows的路径要写成： 1 2 3 C:\\test\\sub\\ import os function: 1 2 3 4 5 6 7 8 9 10 11 12 os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&#34;~/src&#34;) -&gt; /home/user/src os.path.expandvars(path) # 把path"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PSL_File</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-08-14 </span>
+        <div class="post-category">
+            <a href="/categories/python/"> Python </a>
+            </div>
+          <span class="more-meta"> 925 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#file-and-directory-access">File and Directory Access</a>
+<ul>
+<li><a href="#os-path">os.path</a></li>
+<li><a href="#stat">stat</a></li>
+<li><a href="#fileinput">fileinput</a></li>
+<li><a href="#filecmp">filecmp</a></li>
+<li><a href="#fnmatch">fnmatch</a></li>
+<li><a href="#linecache">linecache</a></li>
+<li><a href="#glob">glob</a></li>
+<li><a href="#shutil">shutil</a></li>
+<li><a href="#tempfile">tempfile</a></li>
+<li><a href="#macpath">macpath</a></li>
+<li><a href="#configparser">ConfigParser</a></li>
+</ul></li>
+<li><a href="#file-formats">File Formats</a>
+<ul>
+<li><a href="#csv">csv</a></li>
+<li><a href="#robotparser">robotparser</a></li>
+<li><a href="#netrc">netrc</a></li>
+<li><a href="#xdrlib">xdrlib</a></li>
+<li><a href="#plistlib">plistlib</a></li>
+<li><a href="#json">json</a></li>
+</ul></li>
+<li><a href="#yaml">yaml</a></li>
+<li><a href="#internet-data-handling">Internet Data Handling</a>
+<ul>
+<li><a href="#email">email</a></li>
+<li><a href="#mailcap">mailcap</a></li>
+<li><a href="#mailbox">mailbox</a></li>
+<li><a href="#mimetypes">mimetypes</a></li>
+<li><a href="#base64">base64</a></li>
+<li><a href="#binhex">binhex</a></li>
+<li><a href="#binascii">binascii</a></li>
+<li><a href="#quopri">quopri</a></li>
+<li><a href="#uu">uu</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-08-14T20:51:28" title="August 14, 2016">August 14, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="file-and-directory-access">File and Directory Access</h1>
+
+<h2 id="os-path">os.path</h2>
+
+<p>windows的路径要写成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">C:\\test\\sub\\
+
+import os</pre></td></tr></table>
+</div>
+</div>
+<p>function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&#34;~/src&#34;) -&gt; /home/user/src
+os.path.expandvars(path) # 把path中的shell变量$var 或 ${var} 还原．
+os.path.dirname(filename) # 返回filename的路径 dirname(&#34;/home/user/file.py&#34;) -&gt; /home/user
+os.path.join(a, *p) # 拼结一个完整的路径　
+os.path.join(a, os.pardir) # 返回上级目录的路径
+os.path.realpath(filename) # 返回filename的真实路径+文件名 realpath(&#39;__file__&#39;)
+os.path.abspath(path) # 返回绝对路径, os.path.abspath(&#39;__file__&#39;)
+os.path.splitext(p) # 分解路径和扩展名返回组成的元组，/home/user/test.py -&gt; (&#34;/home/user/test&#34;, &#34;.py&#34;)
+os.path.basename(p) # 返回最后一个组件名，也就是文件名 /home/user/test.py -&gt; test.py
+os.path.getsize(filename) # 返回文件大小
+os.path.exists(path) # 判断path(文件或目录)是否存在
+os.path.isfile(path) # 判断path是否是常规文件</pre></td></tr></table>
+</div>
+</div>
+<h2 id="stat">stat</h2>
+
+<h2 id="fileinput">fileinput</h2>
+
+<h2 id="filecmp">filecmp</h2>
+
+<h2 id="fnmatch">fnmatch</h2>
+
+<h2 id="linecache">linecache</h2>
+
+<h2 id="glob">glob</h2>
+
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">glob(pathname) # 返回匹配pathname路径下正则表达式的所有文件组成的列表
+iglob(pathname) # 同上，返回generator.</pre></td></tr></table>
+</div>
+</div>
+<h2 id="shutil">shutil</h2>
+
+<p>Utility functions for copying and archiving files and directory trees.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import shutil</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">copy(src, dst)
+copy2(src, dst)
+...
+rmtree(path, ignore_errors=False, onerror=None) # 删除指定的目录,path不能是文件．
+unregister_archive_format(name)
+move(src, dst)
+...</pre></td></tr></table>
+</div>
+</div>
+<h2 id="tempfile">tempfile</h2>
+
+<h2 id="macpath">macpath</h2>
+
+<h2 id="configparser">ConfigParser</h2>
+
+<p>一般用来处理*.ini文件，格式为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[section]
+option-key = option-value</pre></td></tr></table>
+</div>
+</div>
+<p>导入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import ConfigParser</pre></td></tr></table>
+</div>
+</div>
+<p>classes:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ConfigParser.ConfigParser(defaults=None)
+# methods:
+read(filenames) # 读取ini文件
+sections() # 获取所有section
+options(section) # 获取section的所有option
+get(section, option, raw=False, vars=None) # 返回字符串
+getint(section, options)
+getfloat(section, options)
+getboolean(section, options) # 大小写都可以:0/1, false/true, no/yes, off/on
+set(section, option, value)
+has_section(section)
+has_option(section, option)
+remove_section(section)
+remove_option(section, option)
+write(fp)</pre></td></tr></table>
+</div>
+</div>
+<p>issue:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">默认是全部小写写入.
+config = ConfigParser.ConfigParser(allow_no_value=True)
+config.optionxform =str # 原样写入</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="file-formats">File Formats</h1>
+
+<h2 id="csv">csv</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import csv</pre></td></tr></table>
+</div>
+</div>
+<p>classes:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># csv.DictReader
+DictReader(self, f, fieldnames=None, restkey=None, restval=None, dialect=&#39;excel&#39;, *args, **kwds)
+# methods
+next()
+
+# csv.DictWriter
+DictWriter(self, f, fieldnames, restval=&#39;&#39;, extrasaction=&#39;raise&#39;, dialect=&#39;excel&#39;, *args, **kwargs)
+# mthods
+writeheader()
+writerow(rowdict)
+writerows(rowdicts)</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 返回DictReader对象
+reader(iterable, dialect=&#39;excel&#39;, **kwargs)
+
+// 返回DictWriter对象
+writer(fileobj, dialect=&#39;excel&#39;, **kwargs)</pre></td></tr></table>
+</div>
+</div>
+<p>data:</p>
+
+<h2 id="robotparser">robotparser</h2>
+
+<h2 id="netrc">netrc</h2>
+
+<h2 id="xdrlib">xdrlib</h2>
+
+<h2 id="plistlib">plistlib</h2>
+
+<h2 id="json">json</h2>
+
+<p>http api(restful)一般使用json格式的数据．</p>
+
+<p>python和json数据类型对应关系参考WEB/JSON.</p>
+
+<p>complex和class/def不能被编码.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import json</pre></td></tr></table>
+</div>
+</div>
+<p>classes:</p>
+
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 将转换后的json格式写入文件
+dump(obj, fp, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=&#39;utf-8&#39;, default=None, sort_keys=False, **kw)
+with open(file, &#39;w&#39;) as f:
+    json.dump(dict_data, f)
+
+# 将dict类型转换成json格式
+dumps(obj, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=&#39;utf-8&#39;, default=None, sort_keys=False, **kw)
+json_data = json.dumps(dict_data)
+
+indent=4 # 写入自动缩进４个空格
+
+# 将读出的文件(json格式)转换成dict
+load(fp, encoding=None, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
+with open(file, &#39;r&#39;) as f:
+    dict_data = json.load(f)
+
+# json类型变成dict类型
+loads(s, encoding=None, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
+response_dict = json.loads(response.content) # 使用requests获取的json数据,转化为dict类型</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="yaml">yaml</h1>
+
+<p><a href="http://pyyaml.org/wiki/PyYAML">http://pyyaml.org/wiki/PyYAML</a></p>
+
+<hr />
+
+<h1 id="internet-data-handling">Internet Data Handling</h1>
+
+<h2 id="email">email</h2>
+
+<h2 id="mailcap">mailcap</h2>
+
+<h2 id="mailbox">mailbox</h2>
+
+<h2 id="mimetypes">mimetypes</h2>
+
+<h2 id="base64">base64</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import base64</pre></td></tr></table>
+</div>
+</div>
+<h2 id="binhex">binhex</h2>
+
+<h2 id="binascii">binascii</h2>
+
+<h2 id="quopri">quopri</h2>
+
+<h2 id="uu">uu</h2>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-08-14
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/file/">file</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/psl_data/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">PSL_Data</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/psl_math/">
+            <span class="next-text nav-default">PSL_Math</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-08-14 20:51:28 \x2b0000 UTC',
+        title: 'PSL_File',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

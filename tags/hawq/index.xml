@@ -13,10 +13,10 @@
     
     <item>
       <title>HAWQ</title>
-      <link>http://canuxcheng.com/bigdata/hawq/</link>
+      <link>http://canuxcheng.com/post/hawq/</link>
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/bigdata/hawq/</guid>
+      <guid>http://canuxcheng.com/post/hawq/</guid>
       <description>HAWQ http://hawq.incubator.apache.org/ https://github.com/apache/incubator-hawq HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来． HAWQ也就是Pivotal HDB. HAWQ和Pivota</description>
     </item>
     

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PSL_System - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Generic Operating System Services os 1 2 3 4 5 6 7 8 9 10 11 12 13 14 import os os.path # 参考PSL_File os.name os.curdir os.pardir # 表示上一级路径.., 需要用abspath解析 # os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) os.sep os.extsep os.altsep os.pathsep os.linesep os.defpath os.devnull classes:" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/psl_system/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PSL_System" />
+<meta property="og:description" content="Generic Operating System Services os 1 2 3 4 5 6 7 8 9 10 11 12 13 14 import os os.path # 参考PSL_File os.name os.curdir os.pardir # 表示上一级路径.., 需要用abspath解析 # os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) os.sep os.extsep os.altsep os.pathsep os.linesep os.defpath os.devnull classes:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/psl_system/" />
+<meta property="article:published_time" content="2016-08-15T11:04:12&#43;00:00"/>
+<meta property="article:modified_time" content="2016-08-15T11:04:12&#43;00:00"/>
+
+<meta itemprop="name" content="PSL_System">
+<meta itemprop="description" content="Generic Operating System Services os 1 2 3 4 5 6 7 8 9 10 11 12 13 14 import os os.path # 参考PSL_File os.name os.curdir os.pardir # 表示上一级路径.., 需要用abspath解析 # os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) os.sep os.extsep os.altsep os.pathsep os.linesep os.defpath os.devnull classes:">
+
+
+<meta itemprop="datePublished" content="2016-08-15T11:04:12&#43;00:00" />
+<meta itemprop="dateModified" content="2016-08-15T11:04:12&#43;00:00" />
+<meta itemprop="wordCount" content="1225">
+
+
+
+<meta itemprop="keywords" content="system," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PSL_System"/>
+<meta name="twitter:description" content="Generic Operating System Services os 1 2 3 4 5 6 7 8 9 10 11 12 13 14 import os os.path # 参考PSL_File os.name os.curdir os.pardir # 表示上一级路径.., 需要用abspath解析 # os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) os.sep os.extsep os.altsep os.pathsep os.linesep os.defpath os.devnull classes:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PSL_System</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-08-15 </span>
+        <div class="post-category">
+            <a href="/categories/python/"> Python </a>
+            </div>
+          <span class="more-meta"> 1225 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#generic-operating-system-services">Generic Operating System Services</a>
+<ul>
+<li><a href="#os">os</a></li>
+<li><a href="#time">time</a></li>
+<li><a href="#logging">logging</a></li>
+<li><a href="#getopt">getopt</a></li>
+<li><a href="#argparse">argparse</a></li>
+<li><a href="#io">io</a></li>
+<li><a href="#errno">errno</a></li>
+<li><a href="#getpass">getpass</a></li>
+<li><a href="#curses">curses</a></li>
+<li><a href="#platform">platform</a></li>
+<li><a href="#ctypes">ctypes</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-08-15T11:04:12" title="August 15, 2016">August 15, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="generic-operating-system-services">Generic Operating System Services</h1>
+
+<h2 id="os">os</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import os
+
+os.path # 参考PSL_File
+os.name
+os.curdir
+os.pardir # 表示上一级路径.., 需要用abspath解析
+# os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))
+os.sep
+os.extsep
+os.altsep
+os.pathsep
+os.linesep
+os.defpath
+os.devnull</pre></td></tr></table>
+</div>
+</div>
+<p>classes:</p>
+
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">WCOREDUMP(...)
+...
+
+abort(...)
+fork() # 创建一个子进程，返回0给子进程，返回子进程pid给父进程．
+exec*
+wait() # 等待子进程结束，返回(pid, status).
+waitpid(pid, options) # 等待指定子进程结束.
+listdir(path)
+makedirs(path [, mode=0777])
+mkdir(path [, mode=0777])
+walk(top, topdown=True, onerror=None, followlinks=False) # 返回 (dirpath, dirnames, filenames) 类型的迭代器
+remove(path) # remove a file
+rmdir(path) # remove a directory
+removedirs(path)
+symlink(src, dst)
+...
+
+# 使用subprocess模块代替下列函数：
+system(command) # 在subshell执行命令，返回退出码(windows系统始终为0),而非命令执行结果．
+spawn*
+popen*(command [, mode=&#39;r&#39; [, bufsize]]) # 执行命令，返回命令执行结果的文件句柄(file对象)</pre></td></tr></table>
+</div>
+</div>
+<p>data:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">EX_CANTCREAT = 73
+...</pre></td></tr></table>
+</div>
+</div>
+<h2 id="time">time</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import time</pre></td></tr></table>
+</div>
+</div>
+<p>classes:</p>
+
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">clock()
+sleep(seconds) # 延迟
+tzset()
+
+# 获取时间戳(Epoch seconds)
+time() # 获取当前时间戳
+mktime(tuple) # mktime((2017,8,23,11,7,10,12)) , 参数是时间元组
+
+# 获取时间元组 (tm_year,tm_mon,tm_mday,tm_hour,tm_min, tm_sec,tm_wday,tm_yday,tm_isdst)
+localtime([seconds]) # 参数是时间戳
+gmtime([seconds]) # 参数是时间戳
+strptime(string, format) # 参数是时间字符串
+
+# 获取时间字符串
+asctime([tuple])
+strftime(format[, tuple])
+ctime(seconds) # 参数是时间戳</pre></td></tr></table>
+</div>
+</div>
+<p>data:</p>
+
+<h2 id="logging">logging</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import logging</pre></td></tr></table>
+</div>
+</div>
+<p>classes:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Logger(Filterer)
+# methods:
+setLevel(self, level) # 只会输出指定level以上的log, 默认是WARNING
+critical(self, msg, *args, **kwargs) # 50
+error(self, msg, *args, **kwargs) # 40
+warning(self, msg, *args, **kwargs) # 30
+info(self, msg, *args, **kwargs) # 20
+debug(self, msg, *args, **kwargs) # 10
+exception(self, msg, *args, **kwargs) #
+log(self, level, msg, *args, **kwargs) #
+addHandler(self, hdlr) # 添加handler到logger
+
+Formatter
+# %(asctime)s:%(levelname)s:%(name)s:%(message)s&#39;
+Formatter(fmt=None, datefmt=None)
+
+Handler(Filterer)
+# methods:
+setFormatter(self, fmt)
+setLevel(self, level)
+
+StreamHandler(Handler) # 默认打印到sys.stderr
+StreamHandler(stream=None)
+
+FileHandler(StreamHandler) # 打印到文件
+FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=0)</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">basicConfig(**kwargs) # 设置log的格式
+# filename/filemode/format/datefmt/level/stream
+# format默认是BASIC_FORMAT.
+# level默认是warning/warn.
+# stream默认是sys.stderr,当filename和stream同时指定，stream被忽略．
+# datafmt
+# filename 日志文件名
+# filemode w每次覆盖写入，a每次追加写入
+
+getLogger(name=None) # 返回Logger类型对象</pre></td></tr></table>
+</div>
+</div>
+<p>data:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">BASIC_FORMAT = &#39;%(levelname)s:%(name)s:%(message)s&#39;
+CRITICAL = 50
+FATAL = 50
+ERROR = 40
+WARN = 30
+WARNING = 30
+INFO = 20
+DEBUG = 10
+NOTSET = 0</pre></td></tr></table>
+</div>
+</div>
+<h2 id="getopt">getopt</h2>
+
+<p>C风格的参数处理.</p>
+
+<h2 id="argparse">argparse</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import argparse</pre></td></tr></table>
+</div>
+</div>
+<p>classes:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># argparse.ArgumentParser(_AttributeHolder, _ActionsContainer)
+parser = argparse.ArgumentParser()
+    prog -- The name of the program (default: sys.argv[0])
+    usage -- A usage message (default: auto-generated from arguments)
+    description -- A description of what the program does
+    epilog -- Text following the argument descriptions
+    parents -- Parsers whose arguments should be copied into this one
+    formatter_class -- HelpFormatter class for printing help messages
+    prefix_chars -- Characters that prefix optional arguments
+    fromfile_prefix_chars -- Characters that prefix files  containing additional arguments
+    argument_default -- The default value for all arguments
+    conflict_handler -- String indicating how to handle conflicts
+    add_help -- Add a -h/-help option
+# methods:
+add_argument_group(self, *args, **kwargs) # -&gt; argparse._ArgumentGroup
+add_argument(self, *args, **kwargs)
+    name or flags - Either a name or a list of option strings, e.g. foo or -f, --foo.
+    action - The basic type of action to be taken when this argument is encountered at the command line.
+    nargs - The number of command-line arguments that should be consumed.
+    const - A constant value required by some action and nargs selections.
+    default - The value produced if the argument is absent from the command line.
+    type - The type to which the command-line argument should be converted.
+    choices - A container of the allowable values for the argument.
+    required - Whether or not the command-line option may be omitted (optionals only).
+    help - A brief description of what the argument does. # 用来打印默认值：%(default)s
+    metavar - A name for the argument in usage messages.
+    dest - The name of the attribute to be added to the object returned by.
+add_subparsers(self, **kwargs) # -&gt; argparse._SubParsersAction
+add_mutually_exclusive_group(self, **kwargs)
+set_defaults(self, **kwargs)
+parse_args(self, args=None, namespace=None) # -&gt; argparse.Namespace
+parse_known_args(self, args=None, namespace=None) # -&gt; argparse.Namespace
+convert_arg_line_to_args(self, arg_line)
+error(self, message)
+exit(self, status=0, message=None)
+format_help(self)
+format_usage(self)
+format_version(self)
+print_help(self, file=None)
+print_usage(self, file=None)
+print_version(self, file=None)
+get_default(self, dest)
+register(self, registry_name, value, object)
+
+# argparse._ArgumentGroup
+# methods:
+add_argument(self, *args, **kwargs)
+add_argument_group(self, *args, **kwargs)
+add_mutually_exclusive_group(self, **kwargs)
+get_default(self, dest)
+register(self, registry_name, value, object)
+set_defaults(self, **kwargs)
+
+# argparse._SubParsersAction
+# methods:
+add_parser(self, name, **kwargs) # -&gt; argparse.ArgumentParser
+
+# HelpFormatter
+
+# Action</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+
+<p>data:</p>
+
+<h2 id="io">io</h2>
+
+<h2 id="errno">errno</h2>
+
+<h2 id="getpass">getpass</h2>
+
+<h2 id="curses">curses</h2>
+
+<p><a href="https://github.com/crazy-canux/python/blob/master/python/psl/mycurses.py">https://github.com/crazy-canux/python/blob/master/python/psl/mycurses.py</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import curses</pre></td></tr></table>
+</div>
+</div>
+<h2 id="platform">platform</h2>
+
+<h2 id="ctypes">ctypes</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import ctypes</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-08-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/system/">system</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/psl_python/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">PSL_Python</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/psl_gui/">
+            <span class="next-text nav-default">PSL_GUI</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-08-15 11:04:12 \x2b0000 UTC',
+        title: 'PSL_System',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

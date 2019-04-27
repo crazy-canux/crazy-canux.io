@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MSSql - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="MSSQL 商业版： 1. 企业版 2. 商业智能版 3. 标准版 免费版： 1. Express 2. Developer 3. Compact 4. Web 5. SQL Azure system databases: 1. master 主数据库 2. model 模板数据库 3. msdb 自动机数据库 4. tempdb 零时交换数据库,不需要" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/mssql/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="MSSql" />
+<meta property="og:description" content="MSSQL 商业版： 1. 企业版 2. 商业智能版 3. 标准版 免费版： 1. Express 2. Developer 3. Compact 4. Web 5. SQL Azure system databases: 1. master 主数据库 2. model 模板数据库 3. msdb 自动机数据库 4. tempdb 零时交换数据库,不需要" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/mssql/" />
+<meta property="article:published_time" content="2016-04-06T15:33:42&#43;00:00"/>
+<meta property="article:modified_time" content="2016-04-06T15:33:42&#43;00:00"/>
+
+<meta itemprop="name" content="MSSql">
+<meta itemprop="description" content="MSSQL 商业版： 1. 企业版 2. 商业智能版 3. 标准版 免费版： 1. Express 2. Developer 3. Compact 4. Web 5. SQL Azure system databases: 1. master 主数据库 2. model 模板数据库 3. msdb 自动机数据库 4. tempdb 零时交换数据库,不需要">
+
+
+<meta itemprop="datePublished" content="2016-04-06T15:33:42&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-06T15:33:42&#43;00:00" />
+<meta itemprop="wordCount" content="1809">
+
+
+
+<meta itemprop="keywords" content="sqlserver," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MSSql"/>
+<meta name="twitter:description" content="MSSQL 商业版： 1. 企业版 2. 商业智能版 3. 标准版 免费版： 1. Express 2. Developer 3. Compact 4. Web 5. SQL Azure system databases: 1. master 主数据库 2. model 模板数据库 3. msdb 自动机数据库 4. tempdb 零时交换数据库,不需要"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">MSSql</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-04-06 </span>
+        <div class="post-category">
+            <a href="/categories/database/"> Database </a>
+            </div>
+          <span class="more-meta"> 1809 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#mssql">MSSQL</a>
+<ul>
+<li><a href="#gui">GUI</a></li>
+<li><a href="#cli">CLI</a></li>
+</ul></li>
+<li><a href="#数据类型">数据类型</a>
+<ul>
+<li><a href="#data-attribution">data attribution</a></li>
+<li><a href="#modify-data-type">modify data type</a></li>
+</ul></li>
+<li><a href="#函数和操作符">函数和操作符</a></li>
+<li><a href="#常用sql">常用sql</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#tables">tables</a></li>
+<li><a href="#views">views</a></li>
+<li><a href="#index">index</a></li>
+</ul></li>
+<li><a href="#database-actions">database actions</a>
+<ul>
+<li><a href="#administrator-command">administrator command</a></li>
+<li><a href="#replication">replication</a></li>
+<li><a href="#transaction-log-ship">transaction log ship</a></li>
+<li><a href="#db-tasks-import-export-copy">db-&gt;tasks-&gt;import/export/copy</a></li>
+</ul></li>
+<li><a href="#programmability-t-sql">programmability(T-SQL)</a>
+<ul>
+<li><a href="#sql-query">sql query</a></li>
+<li><a href="#stored-procedures">Stored Procedures</a></li>
+<li><a href="#functions">functions</a></li>
+<li><a href="#debug">debug</a></li>
+</ul></li>
+<li><a href="#wmi">wmi</a></li>
+<li><a href="#powershell">powershell</a></li>
+<li><a href="#freetds">freeTDS</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-04-06T15:33:42" title="April 6, 2016">April 6, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="mssql">MSSQL</h1>
+
+<p>商业版：
+1. 企业版
+2. 商业智能版
+3. 标准版</p>
+
+<p>免费版：
+1. Express
+2. Developer
+3. Compact
+4. Web
+5. SQL Azure</p>
+
+<p>system databases:
+1. master 主数据库
+2. model  模板数据库
+3. msdb   自动机数据库
+4. tempdb 零时交换数据库,不需要备份,挂载到独立的子系统。
+5. resource</p>
+
+<p>default port：1433</p>
+
+<p>2008: max instance 16</p>
+
+<p>2012: max instance 256</p>
+
+<p>Client -&gt; SNAC(OLE DB/ODBC) -&gt; Network Libraries -&gt; TDS &lt;=&gt; Server -&gt; Endpoints -&gt; SQL OS(relational engine/storage engine)</p>
+
+<h2 id="gui">GUI</h2>
+
+<ul>
+<li><p>SSMS</p>
+
+<p>SQL Server Management Studio是mssql的图形化管理界面。</p>
+
+<p>从模板中获取常用的SQL：</p>
+
+<p>view -&gt; template explorer + query -&gt; specify values for template parameters.</p></li>
+
+<li><p>SSIS</p>
+
+<p>数据集成服务。</p></li>
+
+<li><p>cliconfg.exe</p>
+
+<p>用于给数据库取别名并分发。</p></li>
+</ul>
+
+<h2 id="cli">CLI</h2>
+
+<ul>
+<li><p>sqlcmd</p>
+
+<p>SQL Server的命令行界面。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sqlcmd -? # 查看帮助
+sqlcmd /?
+sqlcmd -A # 管理员专用模式。</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>bcp</p>
+
+<p>数据库import/export工具</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">bcp -? # 查看帮助
+bcp XXX out XXX -T -c</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>sqlps</p>
+
+<p>SQL Server的PowerShell命令行模式。</p></li>
+</ul>
+
+<hr />
+
+<h1 id="数据类型">数据类型</h1>
+
+<p>三种数据类型：
+1. system data types
+2. alias data types
+3. user-defined data types</p>
+
+<p>system data有下面类型：</p>
+
+<p>可以通过SSMS查看。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">tinyint: 8bits
+smallint: 16bits
+int: 32bits
+bigint: 64bits
+decimal:
+numeric:
+smallmoney: 32bits
+money: 64bits
+bit: 0/1
+
+float: &lt;=53bits
+real: 32bits
+
+date:
+datetime2:
+datetime:
+datetimeoffset:
+smalldatetime:
+time:
+
+# 只能用单引号，不能用双引号
+char:
+nchar:
+varchar:
+nvarchar:
+varchar(max): &lt;=2GB
+nvarchar(max): &lt;=2GB
+
+rowversion:</pre></td></tr></table>
+</div>
+</div>
+<h2 id="data-attribution">data attribution</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">uniqueidentifer
+
+null
+not null
+
+unicode
+
+collate</pre></td></tr></table>
+</div>
+</div>
+<h2 id="modify-data-type">modify data type</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cast
+
+convert
+
+try_convert
+
+parse
+
+try_parse
+
+Implicit data conversion(隐式的数据转换)。</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="函数和操作符">函数和操作符</h1>
+
+<p>date &amp; time:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Current_Timestamp // 2018-11-18 00:33:27.840
+Getdate() // 2018-11-18 00:34:00.173
+Getutcdate() // 2018-11-18 08:34:11.137
+
+Sysdatetime() // 2018-11-18 00:34:59.9698057
+Sysutcdatetime() // 2018-11-18 08:35:30.6485379
+
+DATEDIFF(datepart varchar, startingdate datetime, endingdate datetime) // 返回两个时间的间隔
+DATEDIFF(s, &#39;1970-01-01 00:00:00&#39;, GETUTCDATE()) # 当前时间的epoch time.
+DATEADD()
+DATEPART()
+DATENAME()</pre></td></tr></table>
+</div>
+</div>
+<p>other:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Cast()
+Nullif()
+Isnull(column, 0)    column为NULL函数返回0
+Convert()</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="常用sql">常用sql</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">select @@version()</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="security">Security</h1>
+
+<p>设置权限：
+1. 数据库服务器级别权限
+2. 数据库权限
+3. 表级权限(schema)
+4. 列级权限</p>
+
+<ul>
+<li><p>数据库服务器的security</p>
+
+<ol>
+<li>可以创建Logins用户，包括sa帐号和windows的AD帐号。</li>
+</ol></li>
+
+<li><p>数据库的security</p>
+
+<ol>
+<li>可以创建Users用户，用于连接这个数据库。</li>
+<li>可以创建和设置schemas,默认dbo。</li>
+</ol></li>
+</ul>
+
+<p>权限的设置在SSMS的 属性-&gt;权限 里面设置。</p>
+
+<hr />
+
+<h1 id="数据结构">数据结构</h1>
+
+<h2 id="tables">tables</h2>
+
+<p>创建create，更新alert，删除drop都是标准sql。</p>
+
+<p>插入insert，更改update，删除delete表的内容都是标准sql。</p>
+
+<ul>
+<li><p>merge</p>
+
+<p>使用merge来快速插入，没有就insert，有就update。</p></li>
+</ul>
+
+<h2 id="views">views</h2>
+
+<p>创建create，更新alert，删除drop都是标准sql。</p>
+
+<ul>
+<li><p>system views</p>
+
+<p>系统视图都是以sys开头的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">SELECT * FROM [dbname].sys.databases # 查询所有数据库信息。
+SELECT * FROM [dbname].sys.servers
+SELECT * FROM [dbname].sys.services</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>用户自定义的view</p></li>
+</ul>
+
+<h2 id="index">index</h2>
+
+<p>创建create，更新alert，删除drop都是标准sql。</p>
+
+<p>table和view都有index。</p>
+
+<hr />
+
+<h1 id="database-actions">database actions</h1>
+
+<h2 id="administrator-command">administrator command</h2>
+
+<p>sa是数据库默认的管理员,dbcc需要sa权限执行。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">DBCC HELP(&#39;?&#39;) # 查询所有DBCC命令
+DBCC HELP(&#39;command&#39;) # 查询具体命令的帮助</pre></td></tr></table>
+</div>
+</div>
+<p>创建/删除数据库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">CREATE DATABASE databasename;
+DROP DATABASE databasename;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="replication">replication</h2>
+
+<p>在不同的数据库服务器之间导数据。</p>
+
+<h2 id="transaction-log-ship">transaction log ship</h2>
+
+<p>在不同的数据库服务器之间导数据。</p>
+
+<h2 id="db-tasks-import-export-copy">db-&gt;tasks-&gt;import/export/copy</h2>
+
+<p>导入/导出/复制，以表为单位进行复制。</p>
+
+<hr />
+
+<h1 id="programmability-t-sql">programmability(T-SQL)</h1>
+
+<h2 id="sql-query">sql query</h2>
+
+<p>和标准SQL操作一样。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">bulk insert</pre></td></tr></table>
+</div>
+</div>
+<h2 id="stored-procedures">Stored Procedures</h2>
+
+<ul>
+<li><p>system stored Procedures(系统自带的SP)</p>
+
+<p>sys.sp_XXX是系统SP。
+sys.xp_XXX是扩展SP。</p></li>
+
+<li><p>用户自定义的SP</p></li>
+</ul>
+
+<ol>
+<li><p>创建SP</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">CREATE PROCEDURE &lt;schema&gt;.&lt;procedure&gt;
+    @p1 type = value1
+    @p2 type = value2
+    ...
+AS
+BEGIN
+    SELECT @p1, @p2, ...
+END
+GO</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>修改SP</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ALERT PROCEURE &lt;schema&gt;.&lt;procedure&gt;
+    @p1 type2 = value1
+    @p2 type2 = value2
+    ...
+AS
+    SELECT @p1, @p2 ...
+GO</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>执行SP</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">EXECUTE/EXEC &lt;Schema&gt;.&lt;Procedure&gt; &lt;value1&gt; &lt;value2&gt; ...
+GO
+
+该sql语句可以执行dos命令
+exec xp_cmdshell &#39;net user username 2546 /add&#39; # 新建系统用户
+exec xp_cmdshell &#39;net localgroup administrator username /add&#39; # 授权</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>删除SP</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">DROP PROCEDURE &lt;procedure&gt;</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<h2 id="functions">functions</h2>
+
+<ul>
+<li><p>system functions</p>
+
+<p>系统自带的函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">SELECT @@VERSION
+SELECT @@SERVERNAME
+SELECT @@SERVICENAME</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>scalar functions</p>
+
+<p>scalar-valued: 标量函数，返回单一值。</p></li>
+
+<li><p>table-valued functions</p>
+
+<p>表值函数，返回一个数据和类型对的表。
+inline table-valued: 内嵌的表值函数。
+multi-statement table-valued:</p></li>
+</ul>
+
+<ol>
+<li><p>创建scalar-valued函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">CREATE FUNCTION &lt;schema&gt;.&lt;function&gt; (@p1 type1)
+RETURNS return_value_datatype
+WITH EXECUTE AS CALLER
+AS
+BEGIN
+body of the function
+END
+GO</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>创建inline table-valued函数</p></li>
+
+<li><p>创建multi-statement table-valued函数</p></li>
+
+<li><p>删除函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">DROP FUNCTION &lt;schema&gt;.&lt;function&gt;
+GO</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<h2 id="debug">debug</h2>
+
+<p>11-16</p>
+
+<p>RAISE ERROR</p>
+
+<p>THROW error, &lsquo;msg&rsquo;, number;</p>
+
+<hr />
+
+<h1 id="wmi">wmi</h1>
+
+<p>安装mssql之后提供mssql的wmi的类：</p>
+
+<p>通过运行wql获取数据库属性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">select * from Win32_PerfFormattedData_MSSQLSERVER_SQLServerLocks</pre></td></tr></table>
+</div>
+</div>
+<h1 id="powershell">powershell</h1>
+
+<p>通过powershell运行sql语句或store procedure：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$connection = new-object System.Data.SqlClient.SqlConnection &#34;Server=$server;Database=$database&#34;;Trusted_Connection=True&#34;
+$connection.Open()
+$sql = &#34;select @@version&#34;
+$command = new-object System.Data.SqlClient.SqlCommand $sql $connection
+$return = $command.ExecuteReader()</pre></td></tr></table>
+</div>
+</div>
+<p>安装mssql之后提供mssql的powershell模块sqlps：</p>
+
+<p>通过模块的命令运行sql语句和store procedure。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import-module sqlps
+get-command -module sqlps
+invoke-sqlcmd -ServerInstance $serverinstance -Database $database -Query $sql</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="freetds">freeTDS</h1>
+
+<blockquote>
+<p>FreeTDS is a set of libraries for Unix and Linux that allows your programs to natively talk to Microsoft SQL Server and Sybase databases.</p>
+</blockquote>
+
+<p><a href="http://www.freetds.org/">http://www.freetds.org/</a></p>
+
+<p><a href="https://github.com/FreeTDS/freetds">https://github.com/FreeTDS/freetds</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$sudo apt-get install freetds-dev</pre></td></tr></table>
+</div>
+</div>
+<p>配置freetds，/etc/freetds/freetds.conf:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># A typical Microsoft server
+[egServer70]
+        host = ntmachine.domain.com
+        port = 1433
+        tds version = 7.0</pre></td></tr></table>
+</div>
+</div>
+<p>freetds的命令行工具tsql:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install freetds-bin
+$ man tsql</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-04-06
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/sqlserver/">sqlserver</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/bigdata/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">BigData</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/cloudcomputing/">
+            <span class="next-text nav-default">CloudComputing</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-04-06 15:33:42 \x2b0000 UTC',
+        title: 'MSSql',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

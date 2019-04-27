@@ -13,10 +13,10 @@
     
     <item>
       <title>Oracle</title>
-      <link>http://canuxcheng.com/database/oracle/</link>
+      <link>http://canuxcheng.com/post/oracle/</link>
       <pubDate>Wed, 01 Jun 2016 22:40:22 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/database/oracle/</guid>
+      <guid>http://canuxcheng.com/post/oracle/</guid>
       <description>Oracle oracle的GUI： 1. oracle sql developer(officer) 2. pl/sql 3. toad oracle的CLI： 1. sqlplus Oracle命令 sys是oracle默认管理员权限 1 $ sqlplus / as sysdba system</description>
     </item>
     

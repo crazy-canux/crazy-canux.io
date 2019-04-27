@@ -13,11 +13,20 @@
     
     <item>
       <title>GSL_cryptographic</title>
-      <link>http://canuxcheng.com/golang/gsl_cryptographic/</link>
+      <link>http://canuxcheng.com/post/gsl_cryptographic/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/gsl_cryptographic/</guid>
+      <guid>http://canuxcheng.com/post/gsl_cryptographic/</guid>
       <description>crypto 收集了常用的密码常量 functions 1 RegisterHash(h Hash, f func() hash.Hash) PublicKey interface: 1 type PublicKey interface{} PrivateKey interface: 1 type PrivateKey interface{} Hash 1 type Hash uint method: 1 2 3 func (h Hash) Avaliable() bool func (h Hash) Size() int func (h Hash) New() hash.Hash crypto/cipher 用于包装底层块加密算法的实现.</description>
+    </item>
+    
+    <item>
+      <title>PSL_Cryptographic</title>
+      <link>http://canuxcheng.com/post/psl_cryptographic/</link>
+      <pubDate>Sun, 14 Aug 2016 21:15:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_cryptographic/</guid>
+      <description>Cryptographic Services hashlib 哈希算法和摘要算法标准库，就是把任意长度的数据转换为一个长度固定的数据串． MD5: Message Digest Algorithm 5. SHA1: Secure Hash Algorithm. 1 import hashlib classes: 1 2 3 4 5 6 7 8 9 10 # methods: # 哈希对象</description>
     </item>
     
   </channel>
