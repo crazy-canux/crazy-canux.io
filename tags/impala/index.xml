@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>impala on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/impala/</link>
+    <description>Recent content in impala on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Apr 2017 22:57:37 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/impala/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Impala</title>
+      <link>http://canuxcheng.com/bigdata/impala/</link>
+      <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/bigdata/impala/</guid>
+      <description>Impala https://github.com/apache/incubator-impala https://impala.apache.org/ impala的client: impala-shell Cloudera公司的CDH集成了Impala. impala-shell/beeline impala-shell 1 $ impala-shell beeline 1 2 3 4 $ beeline --silent=true beeline&amp;gt; !connect jdbc:hive2://[ip]:21050[/database];auth=noSasl [username] [password] $ beeline -u &amp;#34;jdbc:hive2://[ip]:21050[/database];auth=noSasl&amp;#34; -n [username] -p [password] -e &amp;#34;USE</description>
+    </item>
+    
+  </channel>
+</rss>

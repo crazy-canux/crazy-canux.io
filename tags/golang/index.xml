@@ -6,44 +6,17 @@
     <description>Recent content in golang on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Apr 2019 21:47:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2019 21:42:07 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Beego_Deploy</title>
-      <link>http://canuxcheng.com/beego/beego_deploy/</link>
-      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/beego/beego_deploy/</guid>
-      <description>发布beego项目</description>
-    </item>
-    
-    <item>
-      <title>Beego_Model</title>
-      <link>http://canuxcheng.com/beego/beego_model/</link>
-      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/beego/beego_model/</guid>
-      <description> Model </description>
-    </item>
-    
-    <item>
-      <title>Beego_View</title>
-      <link>http://canuxcheng.com/beego/beego_view/</link>
-      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/beego/beego_view/</guid>
-      <description>View beego的view支持html和tpl两种格式．</description>
-    </item>
-    
-    <item>
-      <title>Go_Package</title>
-      <link>http://canuxcheng.com/golang/go_package/</link>
+      <title>Package</title>
+      <link>http://canuxcheng.com/golang/package/</link>
       <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/golang/go_package/</guid>
+      <guid>http://canuxcheng.com/golang/package/</guid>
       <description></description>
     </item>
     
@@ -57,30 +30,31 @@
     </item>
     
     <item>
-      <title>Beego_Template</title>
-      <link>http://canuxcheng.com/beego/beego_template/</link>
-      <pubDate>Thu, 27 Sep 2018 01:33:42 +0000</pubDate>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/golang/debug/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/beego/beego_template/</guid>
-      <description>Golang 模板 beego的模板和text/template, html/template差不多． 注释 1 {{/* comment /*}} 变量 变量定义和使用 1 2 3 4 5 申明变量不会产</description>
+      <guid>http://canuxcheng.com/golang/debug/</guid>
+      <description> gdb delve https://github.com/derekparker/delve
+debug </description>
     </item>
     
     <item>
-      <title>Beego</title>
-      <link>http://canuxcheng.com/beego/beego/</link>
-      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      <title>Devops</title>
+      <link>http://canuxcheng.com/golang/devops/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/beego/beego/</guid>
-      <description>Beego Beego是golang的web框架. beego 是基于八大独立的模块构建的，是一个高度解耦的框架。 bee 工具是一个为了协助快速开发 beego 项目而创建的项目，</description>
+      <guid>http://canuxcheng.com/golang/devops/</guid>
+      <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: 1 GOROOT 就是go的安装目录 windows标准包安装go: 1 2 下载zip包解压到C:\go</description>
     </item>
     
     <item>
-      <title>Beego_Controller</title>
-      <link>http://canuxcheng.com/beego/beego_controller/</link>
-      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      <title>Document</title>
+      <link>http://canuxcheng.com/golang/document/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/beego/beego_controller/</guid>
-      <description> Controller </description>
+      <guid>http://canuxcheng.com/golang/document/</guid>
+      <description>Document go文档相关 https://godoc.org/ go文档的两种方式: go doc godoc go doc 直接在命令行查看文档 1 $ go doc [package/symbol] godoc go自带的文档命令行接口,在浏览器查看文档 1 2 godoc package [name ...] godoc -http=:6060 通过</description>
     </item>
     
     <item>
@@ -225,34 +199,6 @@
       
       <guid>http://canuxcheng.com/golang/go_concurrency/</guid>
       <description>并发/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c</description>
-    </item>
-    
-    <item>
-      <title>Go_Debug</title>
-      <link>http://canuxcheng.com/golang/go_debug/</link>
-      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/golang/go_debug/</guid>
-      <description> gdb delve https://github.com/derekparker/delve
-debug </description>
-    </item>
-    
-    <item>
-      <title>Go_Devops</title>
-      <link>http://canuxcheng.com/golang/go_devops/</link>
-      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/golang/go_devops/</guid>
-      <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: 1 GOROOT 就是go的安装目录 windows标准包安装go: 1 2 下载zip包解压到C:\go</description>
-    </item>
-    
-    <item>
-      <title>Go_Document</title>
-      <link>http://canuxcheng.com/golang/go_document/</link>
-      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/golang/go_document/</guid>
-      <description>Document go文档相关 https://godoc.org/ go文档的两种方式: go doc godoc go doc 直接在命令行查看文档 1 $ go doc [package/symbol] godoc go自带的文档命令行接口,在浏览器查看文档 1 2 godoc package [name ...] godoc -http=:6060 通过</description>
     </item>
     
     <item>

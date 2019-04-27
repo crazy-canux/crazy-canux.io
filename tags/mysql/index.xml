@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/mysql/</link>
+    <description>Recent content in mysql on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 May 2016 12:14:59 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql</title>
+      <link>http://canuxcheng.com/database/mysql/</link>
+      <pubDate>Wed, 25 May 2016 12:14:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/database/mysql/</guid>
+      <description>Mysql 安装mysql服务器 1 2 3 4 5 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind</description>
+    </item>
+    
+  </channel>
+</rss>

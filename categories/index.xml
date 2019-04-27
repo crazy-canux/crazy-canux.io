@@ -23,18 +23,36 @@
     <item>
       <title>BigData</title>
       <link>http://canuxcheng.com/categories/bigdata/</link>
-      <pubDate>Mon, 11 Apr 2016 22:57:37 +0800</pubDate>
+      <pubDate>Wed, 03 May 2017 22:57:37 +0000</pubDate>
       
       <guid>http://canuxcheng.com/categories/bigdata/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>C</title>
+      <link>http://canuxcheng.com/categories/c/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>CloudComputing</title>
       <link>http://canuxcheng.com/categories/cloudcomputing/</link>
-      <pubDate>Tue, 05 Apr 2016 22:02:31 +0000</pubDate>
+      <pubDate>Thu, 23 Feb 2017 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/categories/cloudcomputing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>http://canuxcheng.com/categories/database/</link>
+      <pubDate>Wed, 03 May 2017 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/categories/database/</guid>
       <description></description>
     </item>
     

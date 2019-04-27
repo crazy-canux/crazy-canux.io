@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Canux&#39;s Blog</title>
+  <title>Monitoring - Canux&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,15 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content=" Title: Database Monitoring Date: 2016-04-03 14:46:14 Tags: Database, Monitoring
-Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring
-https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/
-https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017
-https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017
-参考telegraf/inputs/sqlserver.
-Mysql Oracle Postgresql Redis 通过redis-cli&amp;gt; info查看
-1 2 3 4 5 6 7 8  其它指标参考grafana dashboard. Redis_mode: cluster/standalone &amp;gt;&amp;gt;&amp;gt; replication (master/slave) Connected_slaves: 连接的slave实例个数 &amp;gt;&amp;gt;&amp;gt; persistence （rdb和aof的持久化信息）   Mongo 通过mongo&amp;gt; serverStatus()查看
-1  其它指标参考grafana dashboard.  " /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/ https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017 https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017 参考telegraf/inputs/sqlserver. Mysql Oracle Postgresql Redis 通过redis-cli&amp;gt; info查看 1 2 3 4 5 6 7 8 其它指" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -46,49 +38,27 @@ Mysql Oracle Postgresql Redis 通过redis-cli&amp;gt; info查看
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content=" Title: Database Monitoring Date: 2016-04-03 14:46:14 Tags: Database, Monitoring
-Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring
-https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/
-https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017
-https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017
-参考telegraf/inputs/sqlserver.
-Mysql Oracle Postgresql Redis 通过redis-cli&gt; info查看
-1 2 3 4 5 6 7 8  其它指标参考grafana dashboard. Redis_mode: cluster/standalone &gt;&gt;&gt; replication (master/slave) Connected_slaves: 连接的slave实例个数 &gt;&gt;&gt; persistence （rdb和aof的持久化信息）   Mongo 通过mongo&gt; serverStatus()查看
-1  其它指标参考grafana dashboard.  " />
+<meta property="og:title" content="Monitoring" />
+<meta property="og:description" content="Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/ https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017 https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017 参考telegraf/inputs/sqlserver. Mysql Oracle Postgresql Redis 通过redis-cli&gt; info查看 1 2 3 4 5 6 7 8 其它指" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/database/monitoring/" />
+<meta property="article:published_time" content="2016-04-03T14:46:14&#43;00:00"/>
+<meta property="article:modified_time" content="2016-04-03T14:46:14&#43;00:00"/>
+
+<meta itemprop="name" content="Monitoring">
+<meta itemprop="description" content="Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/ https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017 https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017 参考telegraf/inputs/sqlserver. Mysql Oracle Postgresql Redis 通过redis-cli&gt; info查看 1 2 3 4 5 6 7 8 其它指">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content=" Title: Database Monitoring Date: 2016-04-03 14:46:14 Tags: Database, Monitoring
-Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring
-https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/
-https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017
-https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017
-参考telegraf/inputs/sqlserver.
-Mysql Oracle Postgresql Redis 通过redis-cli&gt; info查看
-1 2 3 4 5 6 7 8  其它指标参考grafana dashboard. Redis_mode: cluster/standalone &gt;&gt;&gt; replication (master/slave) Connected_slaves: 连接的slave实例个数 &gt;&gt;&gt; persistence （rdb和aof的持久化信息）   Mongo 通过mongo&gt; serverStatus()查看
-1  其它指标参考grafana dashboard.  ">
-
-
-
-<meta itemprop="wordCount" content="48">
+<meta itemprop="datePublished" content="2016-04-03T14:46:14&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-03T14:46:14&#43;00:00" />
+<meta itemprop="wordCount" content="159">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="monitoring," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=" Title: Database Monitoring Date: 2016-04-03 14:46:14 Tags: Database, Monitoring
-Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring
-https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/
-https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017
-https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017
-参考telegraf/inputs/sqlserver.
-Mysql Oracle Postgresql Redis 通过redis-cli&gt; info查看
-1 2 3 4 5 6 7 8  其它指标参考grafana dashboard. Redis_mode: cluster/standalone &gt;&gt;&gt; replication (master/slave) Connected_slaves: 连接的slave实例个数 &gt;&gt;&gt; persistence （rdb和aof的持久化信息）   Mongo 通过mongo&gt; serverStatus()查看
-1  其它指标参考grafana dashboard.  "/>
+<meta name="twitter:title" content="Monitoring"/>
+<meta name="twitter:description" content="Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/ https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017 https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017 参考telegraf/inputs/sqlserver. Mysql Oracle Postgresql Redis 通过redis-cli&gt; info查看 1 2 3 4 5 6 7 8 其它指"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -160,10 +130,6 @@ Mysql Oracle Postgresql Redis 通过redis-cli&gt; info查看
   <div class="post-content">
     
 
-<p>Title: Database Monitoring
-Date: 2016-04-03 14:46:14
-Tags: Database, Monitoring</p>
-
 <h1 id="monitoring">Monitoring</h1>
 
 <h1 id="mssql">MSSQL</h1>
@@ -232,8 +198,8 @@ Connected_slaves:    连接的slave实例个数
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2016-04-03 14:46:14 \x2b0000 UTC',
+        title: 'Monitoring',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

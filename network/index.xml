@@ -6,23 +6,18 @@
     <description>Recent content in Networks on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 25 Sep 2017 09:41:39 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/network/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
+      <title>Amqp</title>
       <link>http://canuxcheng.com/network/amqp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
       
       <guid>http://canuxcheng.com/network/amqp/</guid>
-      <description>Title: AMQP Date: 2017-09-25 09:41:39 Tags: Network, AMQP, Rabbitmq
-AMQP AMQP: Advanced Message Queue Protocol.
-AMQP是高级消息队列协议．是异步消息传递所使用的应用层协议规范．
-常用的开源AMQP框架：
-https://github.com/rabbitmq
-https://github.com/apache/kafka
-https://github.com/apache/activemq</description>
+      <description>AMQP AMQP: Advanced Message Queue Protocol. AMQP是高级消息队列协议．是异步消息传递所使用的应用层协议规范． 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq</description>
     </item>
     
     <item>

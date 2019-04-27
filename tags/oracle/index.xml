@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oracle on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/oracle/</link>
+    <description>Recent content in oracle on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jun 2016 22:40:22 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oracle</title>
+      <link>http://canuxcheng.com/database/oracle/</link>
+      <pubDate>Wed, 01 Jun 2016 22:40:22 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/database/oracle/</guid>
+      <description>Oracle oracle的GUI： 1. oracle sql developer(officer) 2. pl/sql 3. toad oracle的CLI： 1. sqlplus Oracle命令 sys是oracle默认管理员权限 1 $ sqlplus / as sysdba system</description>
+    </item>
+    
+  </channel>
+</rss>

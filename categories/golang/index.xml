@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Go_Package</title>
-      <link>http://canuxcheng.com/golang/go_package/</link>
+      <title>Package</title>
+      <link>http://canuxcheng.com/golang/package/</link>
       <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/golang/go_package/</guid>
+      <guid>http://canuxcheng.com/golang/package/</guid>
       <description></description>
     </item>
     
@@ -27,6 +27,34 @@
       
       <guid>http://canuxcheng.com/golang/gsl_test/</guid>
       <description>testing go的测试由go test命令和testing包组成． 测试程序命名： 1 2 XXX.go # 测试文件和源码放在一个包中 XXX_test.go 测试程序结构： 1 2 3 4 5 6 7 8 9 import &amp;#34;testing&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/golang/debug/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/golang/debug/</guid>
+      <description> gdb delve https://github.com/derekparker/delve
+debug </description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>http://canuxcheng.com/golang/devops/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/golang/devops/</guid>
+      <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: 1 GOROOT 就是go的安装目录 windows标准包安装go: 1 2 下载zip包解压到C:\go</description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/golang/document/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/golang/document/</guid>
+      <description>Document go文档相关 https://godoc.org/ go文档的两种方式: go doc godoc go doc 直接在命令行查看文档 1 $ go doc [package/symbol] godoc go自带的文档命令行接口,在浏览器查看文档 1 2 godoc package [name ...] godoc -http=:6060 通过</description>
     </item>
     
     <item>
@@ -162,34 +190,6 @@
       
       <guid>http://canuxcheng.com/golang/go_concurrency/</guid>
       <description>并发/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c</description>
-    </item>
-    
-    <item>
-      <title>Go_Debug</title>
-      <link>http://canuxcheng.com/golang/go_debug/</link>
-      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/golang/go_debug/</guid>
-      <description> gdb delve https://github.com/derekparker/delve
-debug </description>
-    </item>
-    
-    <item>
-      <title>Go_Devops</title>
-      <link>http://canuxcheng.com/golang/go_devops/</link>
-      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/golang/go_devops/</guid>
-      <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: 1 GOROOT 就是go的安装目录 windows标准包安装go: 1 2 下载zip包解压到C:\go</description>
-    </item>
-    
-    <item>
-      <title>Go_Document</title>
-      <link>http://canuxcheng.com/golang/go_document/</link>
-      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/golang/go_document/</guid>
-      <description>Document go文档相关 https://godoc.org/ go文档的两种方式: go doc godoc go doc 直接在命令行查看文档 1 $ go doc [package/symbol] godoc go自带的文档命令行接口,在浏览器查看文档 1 2 godoc package [name ...] godoc -http=:6060 通过</description>
     </item>
     
     <item>

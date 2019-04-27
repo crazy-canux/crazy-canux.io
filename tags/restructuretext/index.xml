@@ -13,10 +13,10 @@
     
     <item>
       <title>ReStructuredText</title>
-      <link>http://canuxcheng.com/post/restructuredtext/</link>
+      <link>http://canuxcheng.com/web/restructuredtext/</link>
       <pubDate>Mon, 08 Aug 2016 13:39:38 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/restructuredtext/</guid>
+      <guid>http://canuxcheng.com/web/restructuredtext/</guid>
       <description>reStructuredText http://docutils.sourceforge.net/rst.html reST是易读所见即所得的文本标记语言，格式类似markdown。 python的reST参考pep12和pep287: https://www.python.org/dev/peps/pep-0012/ https://www.python.org/dev/peps/pep-0287/ 主标题： 1 2 3</description>
     </item>
     

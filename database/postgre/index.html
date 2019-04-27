@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Canux&#39;s Blog</title>
+  <title>Postgresql - Canux&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,14 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Postgre Date: 2016-04-03 14:46:14 Tags: Database, Postgre
-PostgreSQL 安装postgresql：
-1  $ sudo apt-get install postgresql   安装第三方库：
-1  $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3   GUI工具： pgAdminIII
-CLI工具： psql
-postgresql的端口是5432．
-postgresql命令 安装完成后默认的admin就是postgres, postgres里有默认数据库postgres.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  $passwd postgres # 修改默认管理员用户postgres的密码 $su - postgres # 切换到默认的postgres用户 $ psql [OPTION]... [DBNAME [USERNAME]] $createuser &amp;lt;username&amp;gt; -P # 在命令行添加用户 $dropuser &amp;lt;username&amp;gt; # 在命令行删除用户 $createdb &amp;lt;database&amp;gt; -O &amp;lt;username&amp;gt; # 在命令行添加数据库 $dropdb &amp;lt;database&amp;gt; # 在命令行删除数据库 # 交互式: $ psql -U [username] [database] # 非交互式： $ PGPASSWORD=&amp;#39;password&amp;#39;;psql -h &amp;lt;host&amp;gt; -p &amp;lt;port&amp;gt; -U &amp;lt;username&amp;gt; -d [database] -c &amp;#34;[psql command]&amp;#34;   导出数据：" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="PostgreSQL 安装postgresql： 1 $ sudo apt-get install postgresql 安装第三方库： 1 $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． po" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -45,46 +38,27 @@ postgresql命令 安装完成后默认的admin就是postgres, postgres里有默�
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="Title: Postgre Date: 2016-04-03 14:46:14 Tags: Database, Postgre
-PostgreSQL 安装postgresql：
-1  $ sudo apt-get install postgresql   安装第三方库：
-1  $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3   GUI工具： pgAdminIII
-CLI工具： psql
-postgresql的端口是5432．
-postgresql命令 安装完成后默认的admin就是postgres, postgres里有默认数据库postgres.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  $passwd postgres # 修改默认管理员用户postgres的密码 $su - postgres # 切换到默认的postgres用户 $ psql [OPTION]... [DBNAME [USERNAME]] $createuser &lt;username&gt; -P # 在命令行添加用户 $dropuser &lt;username&gt; # 在命令行删除用户 $createdb &lt;database&gt; -O &lt;username&gt; # 在命令行添加数据库 $dropdb &lt;database&gt; # 在命令行删除数据库 # 交互式: $ psql -U [username] [database] # 非交互式： $ PGPASSWORD=&#39;password&#39;;psql -h &lt;host&gt; -p &lt;port&gt; -U &lt;username&gt; -d [database] -c &#34;[psql command]&#34;   导出数据：" />
+<meta property="og:title" content="Postgresql" />
+<meta property="og:description" content="PostgreSQL 安装postgresql： 1 $ sudo apt-get install postgresql 安装第三方库： 1 $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． po" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/database/postgre/" />
+<meta property="article:published_time" content="2016-04-03T14:46:14&#43;00:00"/>
+<meta property="article:modified_time" content="2016-04-03T14:46:14&#43;00:00"/>
+
+<meta itemprop="name" content="Postgresql">
+<meta itemprop="description" content="PostgreSQL 安装postgresql： 1 $ sudo apt-get install postgresql 安装第三方库： 1 $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． po">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="Title: Postgre Date: 2016-04-03 14:46:14 Tags: Database, Postgre
-PostgreSQL 安装postgresql：
-1  $ sudo apt-get install postgresql   安装第三方库：
-1  $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3   GUI工具： pgAdminIII
-CLI工具： psql
-postgresql的端口是5432．
-postgresql命令 安装完成后默认的admin就是postgres, postgres里有默认数据库postgres.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  $passwd postgres # 修改默认管理员用户postgres的密码 $su - postgres # 切换到默认的postgres用户 $ psql [OPTION]... [DBNAME [USERNAME]] $createuser &lt;username&gt; -P # 在命令行添加用户 $dropuser &lt;username&gt; # 在命令行删除用户 $createdb &lt;database&gt; -O &lt;username&gt; # 在命令行添加数据库 $dropdb &lt;database&gt; # 在命令行删除数据库 # 交互式: $ psql -U [username] [database] # 非交互式： $ PGPASSWORD=&#39;password&#39;;psql -h &lt;host&gt; -p &lt;port&gt; -U &lt;username&gt; -d [database] -c &#34;[psql command]&#34;   导出数据：">
-
-
-
-<meta itemprop="wordCount" content="333">
+<meta itemprop="datePublished" content="2016-04-03T14:46:14&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-03T14:46:14&#43;00:00" />
+<meta itemprop="wordCount" content="668">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="postgresql," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Title: Postgre Date: 2016-04-03 14:46:14 Tags: Database, Postgre
-PostgreSQL 安装postgresql：
-1  $ sudo apt-get install postgresql   安装第三方库：
-1  $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3   GUI工具： pgAdminIII
-CLI工具： psql
-postgresql的端口是5432．
-postgresql命令 安装完成后默认的admin就是postgres, postgres里有默认数据库postgres.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  $passwd postgres # 修改默认管理员用户postgres的密码 $su - postgres # 切换到默认的postgres用户 $ psql [OPTION]... [DBNAME [USERNAME]] $createuser &lt;username&gt; -P # 在命令行添加用户 $dropuser &lt;username&gt; # 在命令行删除用户 $createdb &lt;database&gt; -O &lt;username&gt; # 在命令行添加数据库 $dropdb &lt;database&gt; # 在命令行删除数据库 # 交互式: $ psql -U [username] [database] # 非交互式： $ PGPASSWORD=&#39;password&#39;;psql -h &lt;host&gt; -p &lt;port&gt; -U &lt;username&gt; -d [database] -c &#34;[psql command]&#34;   导出数据："/>
+<meta name="twitter:title" content="Postgresql"/>
+<meta name="twitter:description" content="PostgreSQL 安装postgresql： 1 $ sudo apt-get install postgresql 安装第三方库： 1 $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． po"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -155,10 +129,6 @@ postgresql命令 安装完成后默认的admin就是postgres, postgres里有默�
           <article class="post">
   <div class="post-content">
     
-
-<p>Title: Postgre
-Date: 2016-04-03 14:46:14
-Tags: Database, Postgre</p>
 
 <h1 id="postgresql">PostgreSQL</h1>
 
@@ -367,8 +337,8 @@ SELECT current_time;</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2016-04-03 14:46:14 \x2b0000 UTC',
+        title: 'Postgresql',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Canux&#39;s Blog</title>
+  <title>HAWQ - Canux&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,18 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: HAWQ Date: 2017-04-24 22:57:37 Tags: Hadoop, HAWQ
-HAWQ http://hawq.incubator.apache.org/
-https://github.com/apache/incubator-hawq
-HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来．
-HAWQ也就是Pivotal HDB.
-HAWQ和Pivotal　HDB是一个项目．
-Hortonworks公司的HDP集成了HAWQ.
-HAWQ可以通过HDFS在本机快速，交互查询hadoop数据．
-hawq的交互式命令行接口, 类似于postgresql, 参考postgresql.
-hawq的client: psql (参考postgresql)
-psql 1 2 3 4 5 6  $ psql $ PGPASSWORD=&amp;#39;password&amp;#39;;psql -h &amp;lt;host&amp;gt; -p &amp;lt;port&amp;gt; -U &amp;lt;username&amp;gt; -d [database] -c &amp;#34;[psql command]&amp;#34; $ psql -l # 查看所有database # jdbc $ jdbc:pivotal:greenplum://hdm1:5432;DatabaseName=getstartdb;User=hdbuser;Password=hdbpass   sql AO(append only) table:
-1  &amp;gt; create table {table_name} (var type, var1 type1);   parquet table:" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux CHENG" /><meta name="description" content="HAWQ http://hawq.incubator.apache.org/ https://github.com/apache/incubator-hawq HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来． HAWQ也就是Pivotal HDB. HAWQ和Pivota" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -49,58 +38,27 @@ psql 1 2 3 4 5 6  $ psql $ PGPASSWORD=&amp;#39;password&amp;#39;;psql -h &amp;lt
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="Title: HAWQ Date: 2017-04-24 22:57:37 Tags: Hadoop, HAWQ
-HAWQ http://hawq.incubator.apache.org/
-https://github.com/apache/incubator-hawq
-HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来．
-HAWQ也就是Pivotal HDB.
-HAWQ和Pivotal　HDB是一个项目．
-Hortonworks公司的HDP集成了HAWQ.
-HAWQ可以通过HDFS在本机快速，交互查询hadoop数据．
-hawq的交互式命令行接口, 类似于postgresql, 参考postgresql.
-hawq的client: psql (参考postgresql)
-psql 1 2 3 4 5 6  $ psql $ PGPASSWORD=&#39;password&#39;;psql -h &lt;host&gt; -p &lt;port&gt; -U &lt;username&gt; -d [database] -c &#34;[psql command]&#34; $ psql -l # 查看所有database # jdbc $ jdbc:pivotal:greenplum://hdm1:5432;DatabaseName=getstartdb;User=hdbuser;Password=hdbpass   sql AO(append only) table:
-1  &gt; create table {table_name} (var type, var1 type1);   parquet table:" />
+<meta property="og:title" content="HAWQ" />
+<meta property="og:description" content="HAWQ http://hawq.incubator.apache.org/ https://github.com/apache/incubator-hawq HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来． HAWQ也就是Pivotal HDB. HAWQ和Pivota" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/bigdata/hawq/" />
+<meta property="article:published_time" content="2017-04-24T22:57:37&#43;00:00"/>
+<meta property="article:modified_time" content="2017-04-24T22:57:37&#43;00:00"/>
+
+<meta itemprop="name" content="HAWQ">
+<meta itemprop="description" content="HAWQ http://hawq.incubator.apache.org/ https://github.com/apache/incubator-hawq HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来． HAWQ也就是Pivotal HDB. HAWQ和Pivota">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="Title: HAWQ Date: 2017-04-24 22:57:37 Tags: Hadoop, HAWQ
-HAWQ http://hawq.incubator.apache.org/
-https://github.com/apache/incubator-hawq
-HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来．
-HAWQ也就是Pivotal HDB.
-HAWQ和Pivotal　HDB是一个项目．
-Hortonworks公司的HDP集成了HAWQ.
-HAWQ可以通过HDFS在本机快速，交互查询hadoop数据．
-hawq的交互式命令行接口, 类似于postgresql, 参考postgresql.
-hawq的client: psql (参考postgresql)
-psql 1 2 3 4 5 6  $ psql $ PGPASSWORD=&#39;password&#39;;psql -h &lt;host&gt; -p &lt;port&gt; -U &lt;username&gt; -d [database] -c &#34;[psql command]&#34; $ psql -l # 查看所有database # jdbc $ jdbc:pivotal:greenplum://hdm1:5432;DatabaseName=getstartdb;User=hdbuser;Password=hdbpass   sql AO(append only) table:
-1  &gt; create table {table_name} (var type, var1 type1);   parquet table:">
+<meta itemprop="datePublished" content="2017-04-24T22:57:37&#43;00:00" />
+<meta itemprop="dateModified" content="2017-04-24T22:57:37&#43;00:00" />
+<meta itemprop="wordCount" content="404">
 
 
 
-<meta itemprop="wordCount" content="214">
-
-
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="hawq," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Title: HAWQ Date: 2017-04-24 22:57:37 Tags: Hadoop, HAWQ
-HAWQ http://hawq.incubator.apache.org/
-https://github.com/apache/incubator-hawq
-HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来．
-HAWQ也就是Pivotal HDB.
-HAWQ和Pivotal　HDB是一个项目．
-Hortonworks公司的HDP集成了HAWQ.
-HAWQ可以通过HDFS在本机快速，交互查询hadoop数据．
-hawq的交互式命令行接口, 类似于postgresql, 参考postgresql.
-hawq的client: psql (参考postgresql)
-psql 1 2 3 4 5 6  $ psql $ PGPASSWORD=&#39;password&#39;;psql -h &lt;host&gt; -p &lt;port&gt; -U &lt;username&gt; -d [database] -c &#34;[psql command]&#34; $ psql -l # 查看所有database # jdbc $ jdbc:pivotal:greenplum://hdm1:5432;DatabaseName=getstartdb;User=hdbuser;Password=hdbpass   sql AO(append only) table:
-1  &gt; create table {table_name} (var type, var1 type1);   parquet table:"/>
+<meta name="twitter:title" content="HAWQ"/>
+<meta name="twitter:description" content="HAWQ http://hawq.incubator.apache.org/ https://github.com/apache/incubator-hawq HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来． HAWQ也就是Pivotal HDB. HAWQ和Pivota"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -171,10 +129,6 @@ psql 1 2 3 4 5 6  $ psql $ PGPASSWORD=&#39;password&#39;;psql -h &lt;host&gt; -p
           <article class="post">
   <div class="post-content">
     
-
-<p>Title: HAWQ
-Date: 2017-04-24 22:57:37
-Tags: Hadoop, HAWQ</p>
 
 <h1 id="hawq">HAWQ</h1>
 
@@ -283,8 +237,8 @@ $ jdbc:pivotal:greenplum://hdm1:5432;DatabaseName=getstartdb;User=hdbuser;Passwo
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2017-04-24 22:57:37 \x2b0000 UTC',
+        title: 'HAWQ',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

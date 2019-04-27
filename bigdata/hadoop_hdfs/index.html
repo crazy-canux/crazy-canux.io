@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Canux&#39;s Blog</title>
+  <title>Hadoop HDFS - Canux&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,15 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Hadoop HDFS Date: 2016-04-11 22:57:37 Tags: Hadoop, HDFS
-HDFS Hadoop Distributed File System: hadoop分布式文件系统
-hadoop hdfs分为三部分:
-NameNode -&amp;gt; JobTracker
-secondary NameNode
-DataNode -&amp;gt; TaskTracker
-hdfs commands 1  hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
-1 2 3 4  $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ...   admin commands:
-1 2  $ hdfs balancer ...   debug commands:" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux CHENG" /><meta name="description" content="HDFS Hadoop Distributed File System: hadoop分布式文件系统 hadoop hdfs分为三部分: NameNode -&amp;gt; JobTracker secondary NameNode DataNode -&amp;gt; TaskTracker hdfs commands 1 hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: 1 2 3 4 $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ... admin commands: 1 2" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -46,49 +38,27 @@ hdfs commands 1  hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="Title: Hadoop HDFS Date: 2016-04-11 22:57:37 Tags: Hadoop, HDFS
-HDFS Hadoop Distributed File System: hadoop分布式文件系统
-hadoop hdfs分为三部分:
-NameNode -&gt; JobTracker
-secondary NameNode
-DataNode -&gt; TaskTracker
-hdfs commands 1  hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
-1 2 3 4  $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ...   admin commands:
-1 2  $ hdfs balancer ...   debug commands:" />
+<meta property="og:title" content="Hadoop HDFS" />
+<meta property="og:description" content="HDFS Hadoop Distributed File System: hadoop分布式文件系统 hadoop hdfs分为三部分: NameNode -&gt; JobTracker secondary NameNode DataNode -&gt; TaskTracker hdfs commands 1 hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: 1 2 3 4 $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ... admin commands: 1 2" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/bigdata/hadoop_hdfs/" />
+<meta property="article:published_time" content="2016-04-11T22:57:37&#43;00:00"/>
+<meta property="article:modified_time" content="2016-04-11T22:57:37&#43;00:00"/>
+
+<meta itemprop="name" content="Hadoop HDFS">
+<meta itemprop="description" content="HDFS Hadoop Distributed File System: hadoop分布式文件系统 hadoop hdfs分为三部分: NameNode -&gt; JobTracker secondary NameNode DataNode -&gt; TaskTracker hdfs commands 1 hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: 1 2 3 4 $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ... admin commands: 1 2">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="Title: Hadoop HDFS Date: 2016-04-11 22:57:37 Tags: Hadoop, HDFS
-HDFS Hadoop Distributed File System: hadoop分布式文件系统
-hadoop hdfs分为三部分:
-NameNode -&gt; JobTracker
-secondary NameNode
-DataNode -&gt; TaskTracker
-hdfs commands 1  hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
-1 2 3 4  $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ...   admin commands:
-1 2  $ hdfs balancer ...   debug commands:">
-
-
-
-<meta itemprop="wordCount" content="69">
+<meta itemprop="datePublished" content="2016-04-11T22:57:37&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-11T22:57:37&#43;00:00" />
+<meta itemprop="wordCount" content="85">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="hadoop," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Title: Hadoop HDFS Date: 2016-04-11 22:57:37 Tags: Hadoop, HDFS
-HDFS Hadoop Distributed File System: hadoop分布式文件系统
-hadoop hdfs分为三部分:
-NameNode -&gt; JobTracker
-secondary NameNode
-DataNode -&gt; TaskTracker
-hdfs commands 1  hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
-1 2 3 4  $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ...   admin commands:
-1 2  $ hdfs balancer ...   debug commands:"/>
+<meta name="twitter:title" content="Hadoop HDFS"/>
+<meta name="twitter:description" content="HDFS Hadoop Distributed File System: hadoop分布式文件系统 hadoop hdfs分为三部分: NameNode -&gt; JobTracker secondary NameNode DataNode -&gt; TaskTracker hdfs commands 1 hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: 1 2 3 4 $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ... admin commands: 1 2"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -159,10 +129,6 @@ hdfs commands 1  hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS
           <article class="post">
   <div class="post-content">
     
-
-<p>Title: Hadoop HDFS
-Date: 2016-04-11 22:57:37
-Tags: Hadoop, HDFS</p>
 
 <h1 id="hdfs">HDFS</h1>
 
@@ -236,8 +202,8 @@ $ hdfs recoverLease</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2016-04-11 22:57:37 \x2b0000 UTC',
+        title: 'Hadoop HDFS',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

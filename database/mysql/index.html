@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Canux&#39;s Blog</title>
+  <title>Mysql - Canux&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,13 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Mysql Date: 2016-05-25 12:14:59 Tags: Database, Mysql
-Mysql 安装mysql服务器
-1 2 3 4 5  $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．   安装mysql客户端
-1 2  $ sudo apt-get install mysql-client $ sudo yum install mysql-community-client   安装开发工具：
-1  $ sudo apt-get install libmysqlclient-dev   CLI工具： mysql
-GUI工具： mysql workbench
-安装完成默认的数据库是 mysql。" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Mysql 安装mysql服务器 1 2 3 4 5 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -44,43 +38,27 @@ GUI工具： mysql workbench
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="Title: Mysql Date: 2016-05-25 12:14:59 Tags: Database, Mysql
-Mysql 安装mysql服务器
-1 2 3 4 5  $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．   安装mysql客户端
-1 2  $ sudo apt-get install mysql-client $ sudo yum install mysql-community-client   安装开发工具：
-1  $ sudo apt-get install libmysqlclient-dev   CLI工具： mysql
-GUI工具： mysql workbench
-安装完成默认的数据库是 mysql。" />
+<meta property="og:title" content="Mysql" />
+<meta property="og:description" content="Mysql 安装mysql服务器 1 2 3 4 5 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/database/mysql/" />
+<meta property="article:published_time" content="2016-05-25T12:14:59&#43;00:00"/>
+<meta property="article:modified_time" content="2016-05-25T12:14:59&#43;00:00"/>
+
+<meta itemprop="name" content="Mysql">
+<meta itemprop="description" content="Mysql 安装mysql服务器 1 2 3 4 5 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="Title: Mysql Date: 2016-05-25 12:14:59 Tags: Database, Mysql
-Mysql 安装mysql服务器
-1 2 3 4 5  $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．   安装mysql客户端
-1 2  $ sudo apt-get install mysql-client $ sudo yum install mysql-community-client   安装开发工具：
-1  $ sudo apt-get install libmysqlclient-dev   CLI工具： mysql
-GUI工具： mysql workbench
-安装完成默认的数据库是 mysql。">
-
-
-
-<meta itemprop="wordCount" content="633">
+<meta itemprop="datePublished" content="2016-05-25T12:14:59&#43;00:00" />
+<meta itemprop="dateModified" content="2016-05-25T12:14:59&#43;00:00" />
+<meta itemprop="wordCount" content="1120">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="mysql," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Title: Mysql Date: 2016-05-25 12:14:59 Tags: Database, Mysql
-Mysql 安装mysql服务器
-1 2 3 4 5  $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-address = 127.0.0.1就无法远程访问，需要注释掉．   安装mysql客户端
-1 2  $ sudo apt-get install mysql-client $ sudo yum install mysql-community-client   安装开发工具：
-1  $ sudo apt-get install libmysqlclient-dev   CLI工具： mysql
-GUI工具： mysql workbench
-安装完成默认的数据库是 mysql。"/>
+<meta name="twitter:title" content="Mysql"/>
+<meta name="twitter:description" content="Mysql 安装mysql服务器 1 2 3 4 5 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -151,10 +129,6 @@ GUI工具： mysql workbench
           <article class="post">
   <div class="post-content">
     
-
-<p>Title: Mysql
-Date: 2016-05-25 12:14:59
-Tags: Database, Mysql</p>
 
 <h1 id="mysql">Mysql</h1>
 
@@ -635,8 +609,8 @@ FLUSH PRIVILEGES;</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2016-05-25 12:14:59 \x2b0000 UTC',
+        title: 'Mysql',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

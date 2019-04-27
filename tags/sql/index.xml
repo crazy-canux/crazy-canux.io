@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sql on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/sql/</link>
+    <description>Recent content in sql on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 May 2016 22:06:13 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/database/sql/</link>
+      <pubDate>Wed, 25 May 2016 22:06:13 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/database/sql/</guid>
+      <description>SQL sql是结构化查询语言。 sql是一种标准，几乎所有关系型数据库都遵守。 但是不同的数据库又有自己的扩展。 SQL分为两部分，DML和DDL。 S</description>
+    </item>
+    
+  </channel>
+</rss>

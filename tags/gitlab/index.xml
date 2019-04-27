@@ -13,19 +13,19 @@
     
     <item>
       <title>Gitlab</title>
-      <link>http://canuxcheng.com/post/gitlab/</link>
+      <link>http://canuxcheng.com/devops/gitlab/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/gitlab/</guid>
+      <guid>http://canuxcheng.com/devops/gitlab/</guid>
       <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: 1 2 3 4 sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;#34;http://gitlab.example.com&amp;#34; apt-get install gitlab-ee 配置: 1 /etc/gitlab/gitlab.rb CLI 备份：</description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>http://canuxcheng.com/post/git/</link>
+      <link>http://canuxcheng.com/devops/git/</link>
       <pubDate>Sat, 02 Apr 2016 21:11:33 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/git/</guid>
+      <guid>http://canuxcheng.com/devops/git/</guid>
       <description>Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2</description>
     </item>
     

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/redis/</link>
+    <description>Recent content in redis on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 May 2017 14:46:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/database/redis/</link>
+      <pubDate>Wed, 03 May 2017 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/database/redis/</guid>
+      <description>Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： 1 2 # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: 1 $ sudo apt-get install redis-tools re</description>
+    </item>
+    
+  </channel>
+</rss>

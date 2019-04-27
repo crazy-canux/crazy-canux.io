@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Canux&#39;s Blog</title>
+  <title>Hadoop MapReduce - Canux&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,11 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content=" Title: Hadoop MapReduce Date: 2017-05-03 22:57:37 Tags: Hadoop, MapReduce
-Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据．
-mapreduce commands 1  mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
-1 2  $ mapred archive ...   admin commands:
-1 2 3  $ mapred historyserver $ mapred hsadmin   " /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux CHENG" /><meta name="description" content="Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据． mapreduce commands 1 mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: 1 2 $ mapred archive ... admin commands: 1 2 3 $ mapred historyserver $ mapred hsadmin" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -42,37 +38,27 @@ mapreduce commands 1  mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content=" Title: Hadoop MapReduce Date: 2017-05-03 22:57:37 Tags: Hadoop, MapReduce
-Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据．
-mapreduce commands 1  mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
-1 2  $ mapred archive ...   admin commands:
-1 2 3  $ mapred historyserver $ mapred hsadmin   " />
+<meta property="og:title" content="Hadoop MapReduce" />
+<meta property="og:description" content="Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据． mapreduce commands 1 mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: 1 2 $ mapred archive ... admin commands: 1 2 3 $ mapred historyserver $ mapred hsadmin" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/bigdata/hadoop_mapreduce/" />
+<meta property="article:published_time" content="2017-05-03T22:57:37&#43;00:00"/>
+<meta property="article:modified_time" content="2017-05-03T22:57:37&#43;00:00"/>
+
+<meta itemprop="name" content="Hadoop MapReduce">
+<meta itemprop="description" content="Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据． mapreduce commands 1 mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: 1 2 $ mapred archive ... admin commands: 1 2 3 $ mapred historyserver $ mapred hsadmin">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content=" Title: Hadoop MapReduce Date: 2017-05-03 22:57:37 Tags: Hadoop, MapReduce
-Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据．
-mapreduce commands 1  mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
-1 2  $ mapred archive ...   admin commands:
-1 2 3  $ mapred historyserver $ mapred hsadmin   ">
-
-
-
-<meta itemprop="wordCount" content="38">
+<meta itemprop="datePublished" content="2017-05-03T22:57:37&#43;00:00" />
+<meta itemprop="dateModified" content="2017-05-03T22:57:37&#43;00:00" />
+<meta itemprop="wordCount" content="57">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="hadoop," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=" Title: Hadoop MapReduce Date: 2017-05-03 22:57:37 Tags: Hadoop, MapReduce
-Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据．
-mapreduce commands 1  mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS]   user commands:
-1 2  $ mapred archive ...   admin commands:
-1 2 3  $ mapred historyserver $ mapred hsadmin   "/>
+<meta name="twitter:title" content="Hadoop MapReduce"/>
+<meta name="twitter:description" content="Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据． mapreduce commands 1 mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: 1 2 $ mapred archive ... admin commands: 1 2 3 $ mapred historyserver $ mapred hsadmin"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -144,10 +130,6 @@ mapreduce commands 1  mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_
   <div class="post-content">
     
 
-<p>Title: Hadoop MapReduce
-Date: 2017-05-03 22:57:37
-Tags: Hadoop, MapReduce</p>
-
 <h1 id="map-reduce">Map-Reduce</h1>
 
 <p>一种基于YARN的大型数据并行处理系统．主要处理离线数据．</p>
@@ -197,8 +179,8 @@ $ mapred hsadmin</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2017-05-03 22:57:37 \x2b0000 UTC',
+        title: 'Hadoop MapReduce',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

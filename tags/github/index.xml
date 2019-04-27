@@ -13,10 +13,10 @@
     
     <item>
       <title>Git</title>
-      <link>http://canuxcheng.com/post/git/</link>
+      <link>http://canuxcheng.com/devops/git/</link>
       <pubDate>Sat, 02 Apr 2016 21:11:33 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/git/</guid>
+      <guid>http://canuxcheng.com/devops/git/</guid>
       <description>Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2</description>
     </item>
     

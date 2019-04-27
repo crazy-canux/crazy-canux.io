@@ -12,12 +12,21 @@
     
     
     <item>
-      <title>Go_Package</title>
-      <link>http://canuxcheng.com/golang/go_package/</link>
+      <title>Package</title>
+      <link>http://canuxcheng.com/golang/package/</link>
       <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/golang/go_package/</guid>
+      <guid>http://canuxcheng.com/golang/package/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/c/package/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/c/package/</guid>
+      <description> Package </description>
     </item>
     
   </channel>

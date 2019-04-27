@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Canux&#39;s Blog</title>
+  <title>Monitoring - Canux&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,20 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content="Title: Redis Date: 2017-05-03 14:46:14 Tags: Database, NoSQL, Redis
-Redis http://redisdoc.com/
-redis在key-value存储上性能比memcached更好．
-安装：
-1 2  # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server   只安装redis-cli:
-1  $ sudo apt-get install redis-tools   redis-server监听端口6379.
-redis-sentinel端口26379.
-redis gui:
-https://github.com/uglide/RedisDesktopManager
-redis的命令 server:
-1  redis-server   client:
-1  redis-client   test:
-1  redis-benchmark   sentinel:
-1  redis-sentinel   CLI redis-cli 进入命令行模式" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： 1 2 # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: 1 $ sudo apt-get install redis-tools re" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -51,64 +38,27 @@ redis的命令 server:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="Title: Redis Date: 2017-05-03 14:46:14 Tags: Database, NoSQL, Redis
-Redis http://redisdoc.com/
-redis在key-value存储上性能比memcached更好．
-安装：
-1 2  # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server   只安装redis-cli:
-1  $ sudo apt-get install redis-tools   redis-server监听端口6379.
-redis-sentinel端口26379.
-redis gui:
-https://github.com/uglide/RedisDesktopManager
-redis的命令 server:
-1  redis-server   client:
-1  redis-client   test:
-1  redis-benchmark   sentinel:
-1  redis-sentinel   CLI redis-cli 进入命令行模式" />
+<meta property="og:title" content="Monitoring" />
+<meta property="og:description" content="Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： 1 2 # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: 1 $ sudo apt-get install redis-tools re" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/database/redis/" />
+<meta property="article:published_time" content="2017-05-03T14:46:14&#43;00:00"/>
+<meta property="article:modified_time" content="2017-05-03T14:46:14&#43;00:00"/>
+
+<meta itemprop="name" content="Monitoring">
+<meta itemprop="description" content="Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： 1 2 # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: 1 $ sudo apt-get install redis-tools re">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="Title: Redis Date: 2017-05-03 14:46:14 Tags: Database, NoSQL, Redis
-Redis http://redisdoc.com/
-redis在key-value存储上性能比memcached更好．
-安装：
-1 2  # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server   只安装redis-cli:
-1  $ sudo apt-get install redis-tools   redis-server监听端口6379.
-redis-sentinel端口26379.
-redis gui:
-https://github.com/uglide/RedisDesktopManager
-redis的命令 server:
-1  redis-server   client:
-1  redis-client   test:
-1  redis-benchmark   sentinel:
-1  redis-sentinel   CLI redis-cli 进入命令行模式">
+<meta itemprop="datePublished" content="2017-05-03T14:46:14&#43;00:00" />
+<meta itemprop="dateModified" content="2017-05-03T14:46:14&#43;00:00" />
+<meta itemprop="wordCount" content="255">
 
 
 
-<meta itemprop="wordCount" content="143">
-
-
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="redis," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Title: Redis Date: 2017-05-03 14:46:14 Tags: Database, NoSQL, Redis
-Redis http://redisdoc.com/
-redis在key-value存储上性能比memcached更好．
-安装：
-1 2  # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server   只安装redis-cli:
-1  $ sudo apt-get install redis-tools   redis-server监听端口6379.
-redis-sentinel端口26379.
-redis gui:
-https://github.com/uglide/RedisDesktopManager
-redis的命令 server:
-1  redis-server   client:
-1  redis-client   test:
-1  redis-benchmark   sentinel:
-1  redis-sentinel   CLI redis-cli 进入命令行模式"/>
+<meta name="twitter:title" content="Monitoring"/>
+<meta name="twitter:description" content="Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： 1 2 # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: 1 $ sudo apt-get install redis-tools re"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -179,10 +129,6 @@ redis的命令 server:
           <article class="post">
   <div class="post-content">
     
-
-<p>Title: Redis
-Date: 2017-05-03 14:46:14
-Tags: Database, NoSQL, Redis</p>
 
 <h1 id="redis">Redis</h1>
 
@@ -358,8 +304,8 @@ $ sudo apt-get install redis-server</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2017-05-03 14:46:14 \x2b0000 UTC',
+        title: 'Monitoring',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

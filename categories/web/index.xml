@@ -13,38 +13,29 @@
     
     <item>
       <title>Bootstrap</title>
-      <link>http://canuxcheng.com/post/bootstrap/</link>
+      <link>http://canuxcheng.com/web/bootstrap/</link>
       <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/bootstrap/</guid>
+      <guid>http://canuxcheng.com/web/bootstrap/</guid>
       <description>Bootstrap HTML,CSS,JavaScript的支持响应式和移动设备的WEB框架.</description>
     </item>
     
     <item>
       <title>Apache</title>
-      <link>http://canuxcheng.com/post/apache/</link>
+      <link>http://canuxcheng.com/web/apache/</link>
       <pubDate>Tue, 27 Sep 2016 03:25:26 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/apache/</guid>
+      <guid>http://canuxcheng.com/web/apache/</guid>
       <description>Apache https://github.com/apache/httpd http://httpd.apache.org/ ubuntu/debian： 1 sudo aptitude install apache2 redhat/centos/fedora: 1 $ sudo yum install httpd2 启动服务器： 1 service apache2 start 启动浏览器查看： 1 http://localhost:80 apache命令 a2ensite 1 $ sudo a2ensite &amp;lt;site&amp;gt; a2dissite 1 $ sudo a2dissite &amp;lt;site&amp;gt; a2enmod</description>
     </item>
     
     <item>
       <title>ReStructuredText</title>
-      <link>http://canuxcheng.com/post/restructuredtext/</link>
+      <link>http://canuxcheng.com/web/restructuredtext/</link>
       <pubDate>Mon, 08 Aug 2016 13:39:38 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/restructuredtext/</guid>
+      <guid>http://canuxcheng.com/web/restructuredtext/</guid>
       <description>reStructuredText http://docutils.sourceforge.net/rst.html reST是易读所见即所得的文本标记语言，格式类似markdown。 python的reST参考pep12和pep287: https://www.python.org/dev/peps/pep-0012/ https://www.python.org/dev/peps/pep-0287/ 主标题： 1 2 3</description>
-    </item>
-    
-    <item>
-      <title>Css</title>
-      <link>http://canuxcheng.com/post/css/</link>
-      <pubDate>Thu, 23 Jun 2016 09:40:45 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/css/</guid>
-      <description>CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元</description>
     </item>
     
   </channel>

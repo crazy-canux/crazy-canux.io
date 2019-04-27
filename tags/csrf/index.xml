@@ -13,10 +13,10 @@
     
     <item>
       <title>Csrf</title>
-      <link>http://canuxcheng.com/post/csrf/</link>
+      <link>http://canuxcheng.com/security/csrf/</link>
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/csrf/</guid>
+      <guid>http://canuxcheng.com/security/csrf/</guid>
       <description>CSRF Cross-site request forgery, 跨站请求伪造． 发生条件： 登陆受信任网站A, 并在本地生成cookie 在不退出A的情况下，访问危险网站B 预防方法: 正确使用get,pos</description>
     </item>
     

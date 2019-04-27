@@ -12,21 +12,33 @@
     
     
     <item>
-      <title>Go_Devops</title>
-      <link>http://canuxcheng.com/golang/go_devops/</link>
+      <title>Devops</title>
+      <link>http://canuxcheng.com/golang/devops/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/golang/go_devops/</guid>
+      <guid>http://canuxcheng.com/golang/devops/</guid>
       <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: 1 GOROOT 就是go的安装目录 windows标准包安装go: 1 2 下载zip包解压到C:\go</description>
     </item>
     
     <item>
       <title>DevOps</title>
-      <link>http://canuxcheng.com/post/devops/</link>
+      <link>http://canuxcheng.com/devops/devops/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/devops/</guid>
+      <guid>http://canuxcheng.com/devops/devops/</guid>
       <description>DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容． DevOps涉</description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/c/devops/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/c/devops/</guid>
+      <description> IDE Windows: DEV C++
+http://orwelldevcpp.blogspot.com/
+Linux: Vim + Gcc + Gdb
+gcc/clang gdb </description>
     </item>
     
   </channel>
