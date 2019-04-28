@@ -26,7 +26,7 @@
       <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_concurrency/</guid>
-      <description>Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据 线程：线程（有时被称为轻量级进程）跟进程有些相似，不同的是</description>
+      <description>Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。 线程：线程（有时被称为轻量级进程）</description>
     </item>
     
     <item>
@@ -138,7 +138,7 @@
     </item>
     
     <item>
-      <title>Python PEP</title>
+      <title>PEP</title>
       <link>http://canuxcheng.com/post/python_pep/</link>
       <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
       

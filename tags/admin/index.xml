@@ -20,5 +20,14 @@
       <description>admin.py 1 from django.contrib import admin 创建一个管理员用户： 1 $ python manage.py createsuperuser 管理员登陆界面： 1 http://localhost:8080/admin/ 在admin.py中注册模型，然后就可以在登陆界面管理模型了 1 2 from .models import Question admin.site.register(Question) 自定</description>
     </item>
     
+    <item>
+      <title>Admin</title>
+      <link>http://canuxcheng.com/post/linux_admin/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_admin/</guid>
+      <description>Linux Admin dpkg: ubuntu, debian. rpm: fedora, centos, redhat. zypper: suse. Linux系统常用的安装和配置 virtualbox 开机自动挂载共享文件夹 1 2 3 4 5 6 # 手动挂在命令, 需要安装增强功能 $ mount -t vboxsf FolderNameOnWindows /path/on/linux # 实现开</description>
+    </item>
+    
   </channel>
 </rss>

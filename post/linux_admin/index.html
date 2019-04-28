@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Admin - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Linux Admin dpkg: ubuntu, debian. rpm: fedora, centos, redhat. zypper: suse. Linux系统常用的安装和配置 virtualbox 开机自动挂载共享文件夹 1 2 3 4 5 6 # 手动挂在命令, 需要安装增强功能 $ mount -t vboxsf FolderNameOnWindows /path/on/linux # 实现开" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/linux_admin/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Admin" />
+<meta property="og:description" content="Linux Admin dpkg: ubuntu, debian. rpm: fedora, centos, redhat. zypper: suse. Linux系统常用的安装和配置 virtualbox 开机自动挂载共享文件夹 1 2 3 4 5 6 # 手动挂在命令, 需要安装增强功能 $ mount -t vboxsf FolderNameOnWindows /path/on/linux # 实现开" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/linux_admin/" />
+<meta property="article:published_time" content="2016-04-15T09:41:39&#43;08:00"/>
+<meta property="article:modified_time" content="2016-04-15T09:41:39&#43;08:00"/>
+
+<meta itemprop="name" content="Admin">
+<meta itemprop="description" content="Linux Admin dpkg: ubuntu, debian. rpm: fedora, centos, redhat. zypper: suse. Linux系统常用的安装和配置 virtualbox 开机自动挂载共享文件夹 1 2 3 4 5 6 # 手动挂在命令, 需要安装增强功能 $ mount -t vboxsf FolderNameOnWindows /path/on/linux # 实现开">
+
+
+<meta itemprop="datePublished" content="2016-04-15T09:41:39&#43;08:00" />
+<meta itemprop="dateModified" content="2016-04-15T09:41:39&#43;08:00" />
+<meta itemprop="wordCount" content="1717">
+
+
+
+<meta itemprop="keywords" content="admin," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Admin"/>
+<meta name="twitter:description" content="Linux Admin dpkg: ubuntu, debian. rpm: fedora, centos, redhat. zypper: suse. Linux系统常用的安装和配置 virtualbox 开机自动挂载共享文件夹 1 2 3 4 5 6 # 手动挂在命令, 需要安装增强功能 $ mount -t vboxsf FolderNameOnWindows /path/on/linux # 实现开"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Admin</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-04-15 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+          <span class="more-meta"> 1717 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#linux-admin">Linux Admin</a></li>
+<li><a href="#linux系统常用的安装和配置">Linux系统常用的安装和配置</a>
+<ul>
+<li><a href="#virtualbox">virtualbox</a></li>
+<li><a href="#xrdp">xrdp</a></li>
+<li><a href="#systemd">systemd</a></li>
+<li><a href="#upstart">upstart</a></li>
+<li><a href="#清理内存的buff-cache">清理内存的buff/cache</a></li>
+<li><a href="#终端现实超大艺术字">终端现实超大艺术字</a></li>
+</ul></li>
+<li><a href="#ubuntu-debian安装后的基本配置">Ubuntu/Debian安装后的基本配置</a>
+<ul>
+<li><a href="#中文输入法">中文输入法</a></li>
+<li><a href="#dconf修改配置">dconf修改配置</a></li>
+<li><a href="#挂载u盘失败">挂载U盘失败</a></li>
+<li><a href="#创建桌面图标-比如eclipse">创建桌面图标（比如eclipse）</a></li>
+<li><a href="#安装qq">安装QQ</a></li>
+<li><a href="#安装文档的包">安装文档的包</a></li>
+<li><a href="#记录终端操作">记录终端操作</a></li>
+<li><a href="#添加用户为管理员">添加用户为管理员</a></li>
+<li><a href="#ubuntu网络设置">Ubuntu网络设置</a></li>
+<li><a href="#e-sub-process-usr-bin-dpkg-returned-an-error-code-1">E: Sub-process /usr/bin/dpkg returned an error code (1)</a></li>
+<li><a href="#ubuntu14-04安装升级pip">ubuntu14.04安装升级pip</a></li>
+<li><a href="#ubuntu16-04安装配置python">ubuntu16.04安装配置python</a></li>
+</ul></li>
+<li><a href="#centos-fedora-redhat安装后的基本配置">Centos/Fedora/Redhat安装后的基本配置</a>
+<ul>
+<li><a href="#centos网络配置">Centos网络配置</a></li>
+<li><a href="#centos安装增强功能">centos安装增强功能</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-04-15T09:41:39" title="April 15, 2016">April 15, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="linux-admin">Linux Admin</h1>
+
+<p>dpkg: ubuntu, debian.</p>
+
+<p>rpm: fedora, centos, redhat.</p>
+
+<p>zypper: suse.</p>
+
+<hr />
+
+<h1 id="linux系统常用的安装和配置">Linux系统常用的安装和配置</h1>
+
+<h2 id="virtualbox">virtualbox</h2>
+
+<p>开机自动挂载共享文件夹</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 手动挂在命令, 需要安装增强功能
+$ mount -t vboxsf FolderNameOnWindows /path/on/linux
+
+# 实现开机自动挂载
+$ sudo vim /etc/rc.local
+mount.vboxsf -w ShareFolderNameOnWindows MountPointOnLinux</pre></td></tr></table>
+</div>
+</div>
+<h2 id="xrdp">xrdp</h2>
+
+<p>从windows的RDP远程连接linux.</p>
+
+<p>use RDP on windows to connect to ubuntu16.04.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo dpkg -i tigervncserver_1.6...deb # download and install tigervncserver first.
+sudo apt-get install -f
+sudo apt-get instal xrdp -y
+echo unity &gt; ~/.xsession</pre></td></tr></table>
+</div>
+</div>
+<p>use RDP on windows to connect to ubuntu14.04.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install xrdp
+sudo apt-get install xfce4
+echo xfce4-session &gt; ~/.xsession
+sudo vim /etc/xrdp/startwm.sh
+# add &#39;startxfce4&#39; to last line.
+sudo service xrdp restart</pre></td></tr></table>
+</div>
+</div>
+<h2 id="systemd">systemd</h2>
+
+<p>sytemd是upstart的替代版本．通过查看/sbin/init指向systemd还是upstart.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ ls -l /sbin/init
+/sbin/init -&gt; /lib/systemd/systemd
+
+/etc/systemd/system/***.service
+$ sudo vim ***.service
+$ sudo systemctl start/stop/status ***
+
+# 重新加载.service文件
+$ systemctl daemon-reload
+
+# 设置开机自动启动
+$ systemctl list-unit-files
+$ systemctl enable ***
+$ systemctl disable ***
+$ systemctl is-enabled grafana-server</pre></td></tr></table>
+</div>
+</div>
+<p>日志管理:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ journalctl -xe ***.servivce</pre></td></tr></table>
+</div>
+</div>
+<h2 id="upstart">upstart</h2>
+
+<p>如果init指向upstart, service如果在/etc/init.d找不到会去/etc/systemd/system找.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ ls -l /sbin/init
+/sbin/init
+
+/etc/init.d/***
+$ sudo vim ***
+$ sudo service *** start/stop/status
+
+# 设置开机自动启动
+$ update-rc.d *** defaults
+# 取消开机启动
+$ update-rc.d *** remove</pre></td></tr></table>
+</div>
+</div>
+<h2 id="清理内存的buff-cache">清理内存的buff/cache</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">echo 3 &gt; /proc/sys/vm/drop_caches
+# reboot才能改回默认的0</pre></td></tr></table>
+</div>
+</div>
+<h2 id="终端现实超大艺术字">终端现实超大艺术字</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install figlet
+$ figlet &lt;text&gt;</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="ubuntu-debian安装后的基本配置">Ubuntu/Debian安装后的基本配置</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install build-essential make libssl-dev</pre></td></tr></table>
+</div>
+</div>
+<h2 id="中文输入法">中文输入法</h2>
+
+<p>安装一个中文输入法框架fcitx(IBus, SCIM, UIM)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install fcitx</pre></td></tr></table>
+</div>
+</div>
+<p>安装一种输入法引擎：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install fcitx-googlepinyin
+sudo apt-get install fcitx-sunpinyin
+sudo apt-get install fcitx-libpinyin
+sudo apt-get install fcitx-sougoupinyin
+sudo apt-get install fcitx-cloudpinyin</pre></td></tr></table>
+</div>
+</div>
+<p>配置程序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kcm-fcitx - for qt - &lt;https://github.com/fcitx/kcm-fcitx&gt;
+fcitx-configtool - for gtk - &lt;https://github.com/fcitx/fcitx-configtool&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>在键盘输入方式系统从ibus改为fcitx，然后重启。</p>
+
+<h2 id="dconf修改配置">dconf修改配置</h2>
+
+<p>也可以通过系统自带的dconf命令修改．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install dconf-editor</pre></td></tr></table>
+</div>
+</div>
+<p>gedit打开txt文件乱码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># org-&gt;gnome-&gt;gedit-&gt;preferences-&gt;encodings-&gt;auto-detected 添加&#39;GB2312&#39;,&#39;GBK&#39;,...</pre></td></tr></table>
+</div>
+</div>
+<p>开启远程桌面无密码登陆</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ dconf write /org/gnome/desktop/remote-access/require-encryption false
+or
+# org-&gt;gnome-&gt;desktop-&gt;remote-access-&gt;require-encryption false</pre></td></tr></table>
+</div>
+</div>
+<h2 id="挂载u盘失败">挂载U盘失败</h2>
+
+<p>移动硬盘或者u盘不能挂载，删掉/etc/fstab的关于sdb的行，保存后重新插拔。</p>
+
+<h2 id="创建桌面图标-比如eclipse">创建桌面图标（比如eclipse）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd /usr/share/applications
+sudo vi XXX.desktop</pre></td></tr></table>
+</div>
+</div>
+<p>添加必要属性后拖到桌面或启动栏即可。</p>
+
+<h2 id="安装qq">安装QQ</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install libgtk2.0-0:i386
+sudo apt-get install lib32ncurses5
+sudo apt-get install -f
+sudo dpkg -i fonts-wqy-microhei_0.2.0-beta-2_all.deb
+sudo dpkg -i ttf-wqy-microhei_0.2.0-beta-2_all.deb
+sudo dpkg -i wine-qqintl_0.1.3-2_i386.deb</pre></td></tr></table>
+</div>
+</div>
+<h2 id="安装文档的包">安装文档的包</h2>
+
+<p>手册位于/usr/share/man</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install glibc-doc manpages-dev manpages-posix-dev manpages-zh</pre></td></tr></table>
+</div>
+</div>
+<h2 id="记录终端操作">记录终端操作</h2>
+
+<p>安装相关工具:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$sudo apt-get install ttyrec
+$sudo apt-get install imagemagick
+$hg clone https://bitbucket.org/antocuni/tty2gif</pre></td></tr></table>
+</div>
+</div>
+<p>开始记录:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ttyrec</pre></td></tr></table>
+</div>
+</div>
+<p>在终端播放记录文件ttyrecord:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ttyplay ttyrecord</pre></td></tr></table>
+</div>
+</div>
+<p>将ttyrecord文件转化成gif文件:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$tty2gif.py typing ttyrecord</pre></td></tr></table>
+</div>
+</div>
+<p>将多个gif文件合并成一个文件:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$convert -limit memory 2mb -limit map 2mb -delay 2 -loop 0 *.gif example.gif</pre></td></tr></table>
+</div>
+</div>
+<h2 id="添加用户为管理员">添加用户为管理员</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vim /etc/sudoers
+user     ALL = (ALL:ALL) ALL</pre></td></tr></table>
+</div>
+</div>
+<h2 id="ubuntu网络设置">Ubuntu网络设置</h2>
+
+<p>ubuntu修改hostname:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo vim /etc/hostname
+new-hostname
+$ sudo vim /etc/hosts
+ip-address hostname
+$ sudo reboot</pre></td></tr></table>
+</div>
+</div>
+<p>设置系统代理:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vim /etc/profile.d/sys_proxy.sh
+http_proxy=&#34;http://proxy-server:port&#34;
+https_proxy=&#34;http://proxy-server:port&#34;
+ftp_proxy=&#34;http://proxy-server:port&#34;
+no_proxy=localhost,127.0.0.1,...
+export http_proxy ftp_proxy https_proxy no_proxy</pre></td></tr></table>
+</div>
+</div>
+<p>设置静态IP:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ ifconfig
+# 查看网卡，ubuntu14.04 eth0, ubuntu16.04 ens160
+$ vim /etc/network/interfaces
+auto eth0
+iface eth0 inet static
+    address 192.168.0.1
+    netmask 255.255.255.0
+    gateway 192.168.0.0
+    dns-nameservers 8.8.8.8
+$ sudo service networking restart</pre></td></tr></table>
+</div>
+</div>
+<h2 id="e-sub-process-usr-bin-dpkg-returned-an-error-code-1">E: Sub-process /usr/bin/dpkg returned an error code (1)</h2>
+
+<p>method1:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo mkdir -p /var/lib/dpkg/info/package
+$ sudo mv /var/lib/dpkg/info/package.* /var/lib/dpkg/info/package</pre></td></tr></table>
+</div>
+</div>
+<p>method2:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get purge package
+$ sudo apt-get install package</pre></td></tr></table>
+</div>
+</div>
+<h2 id="ubuntu14-04安装升级pip">ubuntu14.04安装升级pip</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># ubuntu14.04 默认python2.7.6, 不带pip
+$ sudo apt-get install pip # 安装1.5.4
+$ sudo -H pip install -U pip
+$ sudo pip install pyopenssl ndg-httpsclient pyasn1
+$ sudo -H pip install -U pip</pre></td></tr></table>
+</div>
+</div>
+<h2 id="ubuntu16-04安装配置python">ubuntu16.04安装配置python</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">默认python3.5.2， 需要安装2.7.12
+sudo apt-get --yes install python2.7
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="centos-fedora-redhat安装后的基本配置">Centos/Fedora/Redhat安装后的基本配置</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo yum -y install epel-release kernel-devel gcc gcc-c++</pre></td></tr></table>
+</div>
+</div>
+<h2 id="centos网络配置">Centos网络配置</h2>
+
+<p>安装mini版本之后配置网络：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vi /etc/sysconfig/network-scripts/ifcfg-enxxx
+ONBOOT=no -&gt; yes
+# service network restart
+$ sudo yum install net-tools
+$ ifconfig</pre></td></tr></table>
+</div>
+</div>
+<p>设置静态IP:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vim /etc/sysconfig/network-scripts/ifcfg-enxxx
+BOOTPROTO= # dhcp(自动获取), static(固定IP), node(手动设置)
+IPADDR=&#34;192.168.0.1&#34;
+PREFIX=&#34;21&#34;
+GATEWAY=&#34;192.168.0.0&#34;
+DNS1=&#34;192.168.0.0&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>设置可以同时访问外网和本地连接的方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 网卡１用于外网连接
+# settings -&gt; network -&gt; network card1 -&gt; NAT
+$ cat /etc/sysconfig/network-scripts/ifcfg-en01
+BOOTPROTO=dhcp # 自动获取ip
+ONBOOT=yes
+UUID # 通过$ nmcli con show 命令查看
+HWADDR # 通过 $ ip addr 命令查看, 这个可以不设置
+
+# 网卡２用于本地局域网
+setting -&gt; network-&gt; network card2 -&gt; host-only
+# cp /etc/sysconfig/network-scripts/ifcfg-en01 /etc/sysconfig/network-scripts/ifcfg-en02
+$ vim /etc/sysconfig/network-scripts/ifcfg-en02
+NAME
+DEVICE
+BOOTPROTO=static
+ONBOOT=yes
+UUID
+HWADDR
+IPADDR=192.168.56.102
+
+$ sudo service network restart</pre></td></tr></table>
+</div>
+</div>
+<p>修改hostname,局域网可以根据hostname相互访问：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo vim /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME=new-hostname
+
+$ sudo vim /etc/hostname
+new-hostname
+$ sudo vim /etc/hosts
+ip-address hostname
+
+$ sudo reboot</pre></td></tr></table>
+</div>
+</div>
+<h2 id="centos安装增强功能">centos安装增强功能</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo mkdir -p /media/cdrom
+$ sudo mount /dev/cdrom /media/cdrom
+$ cd /media/cdrom
+$ sudo ./VBoxLinuxAdditions.run --nox11</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-04-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/admin/">admin</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/operations/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Operations</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/agile/">
+            <span class="next-text nav-default">Agile</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-04-15 09:41:39 \x2b0800 CST',
+        title: 'Admin',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

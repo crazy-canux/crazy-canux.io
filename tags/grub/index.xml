@@ -13,11 +13,11 @@
     
     <item>
       <title>Grub</title>
-      <link>http://canuxcheng.com/linux/grub/</link>
+      <link>http://canuxcheng.com/post/linux_grub/</link>
       <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/linux/grub/</guid>
-      <description>Grub 引导程序。 windows的引导程序是NTloader。 linux/unix的引导程序有lilo和grub。 配置 修改grub: 1 $ sudo vim /boot/grub/grub.cfg</description>
+      <guid>http://canuxcheng.com/post/linux_grub/</guid>
+      <description>Grub 引导程序。 linux/unix的引导程序有lilo和grub。 配置 修改grub: 1 $ sudo vim /boot/grub/grub.cfg</description>
     </item>
     
   </channel>

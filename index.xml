@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>Init</title>
+      <link>http://canuxcheng.com/post/linux_init/</link>
+      <pubDate>Sun, 03 Feb 2019 14:04:05 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_init/</guid>
+      <description>Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 $ ls -l /sbin/init /sbin/init -&amp;gt; upstart /sbin/init -&amp;gt; /lib/systemd/systemd systemd sytemd是upstart的替代版本．通过查看/sbin</description>
+    </item>
+    
+    <item>
       <title>Template</title>
       <link>http://canuxcheng.com/post/beego_template/</link>
       <pubDate>Thu, 27 Sep 2018 01:33:42 +0000</pubDate>
@@ -108,6 +117,51 @@
       
       <guid>http://canuxcheng.com/post/beego_controller/</guid>
       <description> Controller </description>
+    </item>
+    
+    <item>
+      <title>Grok</title>
+      <link>http://canuxcheng.com/post/logging_grok/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_grok/</guid>
+      <description>grok logstash和telegraf都是用grok来解析log 在线检测 http://grokdebug.herokuapp.com/ grok的正则表达式 https://github.com/kkos/oniguruma/blob/master/doc/RE 可用的pattern(logstash &amp;amp; telegraf-logparser/tail) https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns https://github.com/influxdata/telegraf/blob/master/plugins/inputs/logparser/grok/patterns/influx-patterns</description>
+    </item>
+    
+    <item>
+      <title>Logging</title>
+      <link>http://canuxcheng.com/post/logging/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging/</guid>
+      <description>Logging 日志采集，存储，可视化. 主要有Elastic stack 和 splunk.</description>
+    </item>
+    
+    <item>
+      <title>Influxdb</title>
+      <link>http://canuxcheng.com/post/monitoring_influxdb/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring_influxdb/</guid>
+      <description>Influxdb https://github.com/influxdata/influxdb Scalable datastore for metrics, events, and real-time analytics. 支持从opentsdb, graphite, collectd等获取数据 默认数据库_internal 用于存储内部运行数据 安装配置参考官方文档</description>
+    </item>
+    
+    <item>
+      <title>Kapacitor</title>
+      <link>http://canuxcheng.com/post/monitoring_kapacitor/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring_kapacitor/</guid>
+      <description>Kapacitor https://github.com/influxdata/Kapacitor Open source framework for processing, monitoring, and alerting on time series data 可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor. 配</description>
+    </item>
+    
+    <item>
+      <title>Telegraf</title>
+      <link>http://canuxcheng.com/post/monitoring_telegraf/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring_telegraf/</guid>
+      <description>Telegraf https://github.com/influxdata/telegraf The plugin-driven server agent for collecting &amp;amp; reporting metrics. Configuartion agent configuration: 1 2 3 4 5 6 interval 所有inputs的默认运行间隔 round_interval collection_jitter precision ns/us/ms/s flush_interval flush_jitter input configuration: 1 2 3 4 5 interval name_override # 默认measurements是插件名</description>
     </item>
     
     <item>
@@ -373,12 +427,48 @@ debug </description>
     </item>
     
     <item>
+      <title>IDE</title>
+      <link>http://canuxcheng.com/post/ide/</link>
+      <pubDate>Sun, 02 Apr 2017 21:11:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ide/</guid>
+      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial pycharm https://plugins.jetbrains.com/plugin/631-python pycharm plugin for intellij. database https://plugins.jetbrains.com/plugin/1800-database-navigator https://confluence.jetbrains.com/display/CONTEST/Database+Navigator oracle/mysql/postgresql/sqlite plugin. vim</description>
+    </item>
+    
+    <item>
       <title>Cryptographic</title>
       <link>http://canuxcheng.com/security/cryptographic/</link>
       <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
       
       <guid>http://canuxcheng.com/security/cryptographic/</guid>
       <description>PGP PGP: Pretty Good Privacy, 是一款收费的加密软件． OpenPGP OpenPGP是一种加密的标准． http://openpgp.org/ GPG GPG: GnuPG, 是一款开源免费的加密软件． GPGME GPGME: GPG Made Easy, 是一个让应用程序使用GPG更容</description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>http://canuxcheng.com/post/testing/</link>
+      <pubDate>Wed, 01 Mar 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing/</guid>
+      <description>QA Quality Assurance QA主要就是进行软件测试相关的工作. 软件测试就是使用人工或自动的手段来运行或测量软件系统的过程，以检验软件系统是否满足规定的要求，并找</description>
+    </item>
+    
+    <item>
+      <title>RobotFramework</title>
+      <link>http://canuxcheng.com/post/testing_robotframework/</link>
+      <pubDate>Sat, 25 Feb 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing_robotframework/</guid>
+      <description>Robot Framework https://github.com/robotframework/robotframework https://github.com/robotframework/QuickStartGuide 支持python和java的API. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). Install: 1 $ pip install robotframework Modular: Test Data Robot Framework(test data syntax) Test Libraries(test library API) + Test Tools System under Test(system interface) Use: 1 2 $ robot --version $ robot</description>
+    </item>
+    
+    <item>
+      <title>Selenium</title>
+      <link>http://canuxcheng.com/post/testing_selenium/</link>
+      <pubDate>Sat, 25 Feb 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing_selenium/</guid>
+      <description>Selenium https://github.com/SeleniumHQ/selenium 用于基于浏览器的web应用的自动化测试工具集． 1 2 3 selenium1: deprecated. selenium2: 默认支持firefox&amp;lt;=46. 支持python2.6+, python3.2+ selenium3: 支持fir</description>
     </item>
     
     <item>
@@ -391,12 +481,21 @@ debug </description>
     </item>
     
     <item>
-      <title>Ansible</title>
-      <link>http://canuxcheng.com/devops/ansible/</link>
-      <pubDate>Thu, 12 Jan 2017 21:05:48 +0800</pubDate>
+      <title>Makefile</title>
+      <link>http://canuxcheng.com/post/makefile/</link>
+      <pubDate>Thu, 12 Jan 2017 21:18:33 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/devops/ansible/</guid>
-      <description>Ansible https://github.com/ansible/ansible http://www.ansible.com.cn/index.html ansible通过SSH来远程管理Linux/Unix机器． ansible通过winrm+powershell来远程管理Windows</description>
+      <guid>http://canuxcheng.com/post/makefile/</guid>
+      <description>Make make的作用： * 控制源代码的编译 * 手册页的编写 * 将应用程序安装到目标目录 make的使用规则： * 如果工程没有编译过，需要编译所有源文件和链</description>
+    </item>
+    
+    <item>
+      <title>Grafana</title>
+      <link>http://canuxcheng.com/post/monitoring_grafana/</link>
+      <pubDate>Thu, 12 Jan 2017 21:05:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring_grafana/</guid>
+      <description>Grafana The tool for beautiful monitoring and metric analytics &amp;amp; dashboards for Graphite, InfluxDB &amp;amp; Prometheus &amp;amp; More. https://github.com/grafana/grafana 支持多种data source: graphite/influxdb/opentsdb/premetheus/elasticsearch/mysql/postgresql 安装配置参考官方文档 grafana配置文件是grafana.ini. HTTP API 1 port = 3000 dashboard</description>
     </item>
     
     <item>
@@ -419,11 +518,11 @@ debug </description>
     
     <item>
       <title>Awk</title>
-      <link>http://canuxcheng.com/linux/awk/</link>
+      <link>http://canuxcheng.com/post/shell_awk/</link>
       <pubDate>Wed, 14 Dec 2016 00:55:37 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/linux/awk/</guid>
-      <description> awk </description>
+      <guid>http://canuxcheng.com/post/shell_awk/</guid>
+      <description>awk awk 是一门编程语言 awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。 nawk</description>
     </item>
     
     <item>
@@ -549,7 +648,7 @@ debug </description>
       <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_concurrency/</guid>
-      <description>Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据 线程：线程（有时被称为轻量级进程）跟进程有些相似，不同的是</description>
+      <description>Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。 线程：线程（有时被称为轻量级进程）</description>
     </item>
     
     <item>
@@ -670,7 +769,7 @@ debug </description>
     </item>
     
     <item>
-      <title>Python PEP</title>
+      <title>PEP</title>
       <link>http://canuxcheng.com/post/python_pep/</link>
       <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
       
@@ -724,6 +823,33 @@ debug </description>
     </item>
     
     <item>
+      <title>Tmux</title>
+      <link>http://canuxcheng.com/post/tmux/</link>
+      <pubDate>Sun, 19 Jun 2016 11:17:53 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tmux/</guid>
+      <description>tmux tmux是终端复用工具，类似于gnu screen。 tmux三个基本概念： 会话（session） 窗口（window） 面板（pane） tmux</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/monitoring/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring/</guid>
+      <description>Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix. Modern monitoring is for Cloud and Container. Modern monitoring based on metrics and logs. Elastic stack kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/linux_package/</link>
+      <pubDate>Tue, 07 Jun 2016 16:57:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_package/</guid>
+      <description>DPKG debian的包管理机制。 dpkg dpkg的本地前端工具。 deb - Debian binary package format dpkg - package manager for Debian 1 2 3 4 dpkg dpkg -X ./xxx.deb xxx # 将deb包解压到xxx目录 dpkg -e ./xxx.deb xxx/DEBIAN # 将co</description>
+    </item>
+    
+    <item>
       <title>Oracle</title>
       <link>http://canuxcheng.com/post/oracle/</link>
       <pubDate>Wed, 01 Jun 2016 22:40:22 +0000</pubDate>
@@ -761,56 +887,110 @@ debug </description>
     
     <item>
       <title>Germany</title>
-      <link>http://canuxcheng.com/travel/germany/</link>
+      <link>http://canuxcheng.com/travel/travel_germany/</link>
       <pubDate>Sun, 08 May 2016 16:41:50 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/travel/germany/</guid>
+      <guid>http://canuxcheng.com/travel/travel_germany/</guid>
       <description>德国之旅 看照片： http://user.qzone.qq.com/1085694641/4 德国是汽车之都。 德国有16个州。 城市州 德国16个州中的三个城市州 柏林 德国首都。 德国第一大城市。 汉堡 德国第二大城市。 不来梅 巴</description>
     </item>
     
     <item>
+      <title>Tivoli</title>
+      <link>http://canuxcheng.com/post/monitoring_tivoli/</link>
+      <pubDate>Wed, 20 Apr 2016 13:57:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring_tivoli/</guid>
+      <description>ITM ITM: IBM Tivoli Monitoring 是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。 Architecture Overview: ITM主要由管理组件和可选组件组成。 Tivoli Management Services: 1. TEMS 2. TEPS 3. TEP client 4. Historical</description>
+    </item>
+    
+    <item>
       <title>Find</title>
-      <link>http://canuxcheng.com/linux/find/</link>
+      <link>http://canuxcheng.com/post/shell_find/</link>
       <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/linux/find/</guid>
-      <description> find </description>
+      <guid>http://canuxcheng.com/post/shell_find/</guid>
+      <description>find Find 查找，用于在目录中查找。 find path options tests actions path 路径 options 选项 tests 测试 actions 动作 optioins选项: -follow -depth -maxdepth -mindepth find dir -mindepth n 指定最小的目录深度，至少从dir往下n级</description>
     </item>
     
     <item>
       <title>Grep</title>
-      <link>http://canuxcheng.com/linux/grep/</link>
+      <link>http://canuxcheng.com/post/shell_grep/</link>
       <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/linux/grep/</guid>
+      <guid>http://canuxcheng.com/post/shell_grep/</guid>
       <description>grep grep相关的命令： 1 2 3 4 grep egrep == grep -E fgrep == grep -F rgrep == grep -r grep: 1 2 grep [OPTIONS] PATTERN [FILE/DIR...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE/DIR...] options: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26</description>
     </item>
     
     <item>
       <title>DevOps</title>
-      <link>http://canuxcheng.com/devops/devops/</link>
+      <link>http://canuxcheng.com/post/devops/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/devops/devops/</guid>
+      <guid>http://canuxcheng.com/post/devops/</guid>
       <description>DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容． DevOps涉</description>
     </item>
     
     <item>
       <title>Development</title>
-      <link>http://canuxcheng.com/devops/development/</link>
+      <link>http://canuxcheng.com/post/development/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/devops/development/</guid>
+      <guid>http://canuxcheng.com/post/development/</guid>
       <description>Development 开发相关的工具 传统的软件开发采用的是瀑布式开发流程． 现代的软件开发采用的是敏捷开发流程(Agile development). Alpha: inner test version. Beta: outer test version. RC: release candidate. 最终版本之前的最</description>
     </item>
     
     <item>
       <title>Gitlab</title>
-      <link>http://canuxcheng.com/devops/gitlab/</link>
+      <link>http://canuxcheng.com/post/gitlab/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/devops/gitlab/</guid>
+      <guid>http://canuxcheng.com/post/gitlab/</guid>
       <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: 1 2 3 4 sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;#34;http://gitlab.example.com&amp;#34; apt-get install gitlab-ee 配置: 1 /etc/gitlab/gitlab.rb CLI 备份：</description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>http://canuxcheng.com/post/jenkins/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/jenkins/</guid>
+      <description>Jenkins Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks such as building, testing, and deploying software. https://github.com/jenkinsci/jenkins 安装好Jenkins后安装需要的插件． 安装jenkins: 1 2 3 # download jenkins.war and install java8. $ java -jar jenkins.war --httpPort=8080</description>
+    </item>
+    
+    <item>
+      <title>Operations</title>
+      <link>http://canuxcheng.com/post/operations/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/operations/</guid>
+      <description>Operations 运维相关的工具． 批量配置管理 puppet chef salt ansible 密码管理工具 keepass http://keepass.info/ KeePassX https://www.keepassx.org/ https://github.com/keepassx/keepassx</description>
+    </item>
+    
+    <item>
+      <title>Admin</title>
+      <link>http://canuxcheng.com/post/linux_admin/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_admin/</guid>
+      <description>Linux Admin dpkg: ubuntu, debian. rpm: fedora, centos, redhat. zypper: suse. Linux系统常用的安装和配置 virtualbox 开机自动挂载共享文件夹 1 2 3 4 5 6 # 手动挂在命令, 需要安装增强功能 $ mount -t vboxsf FolderNameOnWindows /path/on/linux # 实现开</description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>http://canuxcheng.com/post/agile/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/agile/</guid>
+      <description>Agile methodologies Agile的具体方法有Scrum, XP和kanban. ThoughtWorks公司的Martin Fowler提出的敏捷方法． Scrum Scrum</description>
+    </item>
+    
+    <item>
+      <title>Ansible</title>
+      <link>http://canuxcheng.com/post/ansible/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ansible/</guid>
+      <description>Ansible https://github.com/ansible/ansible http://www.ansible.com.cn/index.html ansible通过SSH来远程管理Linux/Unix机器． ansible通过winrm+powershell来远程管理Windows</description>
     </item>
     
     <item>
@@ -890,10 +1070,10 @@ gcc/clang gdb </description>
     
     <item>
       <title>France</title>
-      <link>http://canuxcheng.com/travel/france/</link>
+      <link>http://canuxcheng.com/travel/travel_france/</link>
       <pubDate>Sun, 10 Apr 2016 17:49:15 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/travel/france/</guid>
+      <guid>http://canuxcheng.com/travel/travel_france/</guid>
       <description>法国之旅 看照片： http://user.qzone.qq.com/1085694641 戴高乐机场 雅高集团的宜必思酒店 SNCF的TVG火车 法国有22个大区。 法兰西岛 巴黎省(已去) 巴黎是法国首都，大区首府和该省省</description>
     </item>
     
@@ -973,11 +1153,20 @@ SAAS: Software as a service</description>
     
     <item>
       <title>Git</title>
-      <link>http://canuxcheng.com/devops/git/</link>
+      <link>http://canuxcheng.com/post/git/</link>
       <pubDate>Sat, 02 Apr 2016 21:11:33 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/devops/git/</guid>
+      <guid>http://canuxcheng.com/post/git/</guid>
       <description>Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： 1. github 2. bitbucket 3. sourceForge 4. gitlab Git安装： 1 2</description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>http://canuxcheng.com/post/vim/</link>
+      <pubDate>Sat, 02 Apr 2016 21:11:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vim/</guid>
+      <description>vim http://www.vim.org https://github.com/vim/vim 类似编辑器: emacs Atom(github的开源跨平台编辑器，支持插件。) VSCode(微软的开源跨平台的编辑器，支持插件。) Vim安装和配</description>
     </item>
     
     <item>
@@ -999,12 +1188,21 @@ SAAS: Software as a service</description>
     </item>
     
     <item>
+      <title>Regular Expression</title>
+      <link>http://canuxcheng.com/post/regularexpression/</link>
+      <pubDate>Sat, 02 Apr 2016 11:16:16 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/regularexpression/</guid>
+      <description>RE 在线检测： https://www.regexpal.com/ RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE). 在BRE中+?(){}|没有特殊含义，除非用\转义． 在ERE中+?(){}被保留有特殊含义</description>
+    </item>
+    
+    <item>
       <title>Sed</title>
-      <link>http://canuxcheng.com/linux/sed/</link>
+      <link>http://canuxcheng.com/post/shell_sed/</link>
       <pubDate>Sat, 02 Apr 2016 11:15:57 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/linux/sed/</guid>
-      <description> sed </description>
+      <guid>http://canuxcheng.com/post/shell_sed/</guid>
+      <description>sed sed：stream editor 流编辑器 ，主要用于文本处理。 sed命令格式： sed -options ’expression1;expression2’ file 执行多个命令 sed -options</description>
     </item>
     
     <item>
@@ -1017,12 +1215,102 @@ SAAS: Software as a service</description>
     </item>
     
     <item>
-      <title>Grub</title>
-      <link>http://canuxcheng.com/linux/grub/</link>
+      <title>Shell</title>
+      <link>http://canuxcheng.com/post/shell/</link>
+      <pubDate>Fri, 01 Apr 2016 20:42:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell/</guid>
+      <description>Shell Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。 查看当前使用的shell： 1 2 echo $SHELL echo $0 查看安装了哪些</description>
+    </item>
+    
+    <item>
+      <title>Coreutils</title>
+      <link>http://canuxcheng.com/post/shell_coreutils/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_coreutils/</guid>
+      <description>Linux的外部命令 Linux外部命令的项目是coreutils。 外部命令在coreutils目录中 查看外部命令所在目录： 1 echo $PATH 外部命令在下</description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>http://canuxcheng.com/post/shell_utils/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_utils/</guid>
+      <description>Linux的第三方命令 Linux外部命令的项目是coreutils. 外部命令在coreutils目录中. 第三方命令(相当于外部命令)． 文件和</description>
+    </item>
+    
+    <item>
+      <title>Builtins</title>
+      <link>http://canuxcheng.com/post/shell_builtins/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:03 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_builtins/</guid>
+      <description>Linux内置命令 内置命令在bash/builtins目录中 shell命令分为内置命令和外部命令. 查看一个命令是内置命令还是外部命令： 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>Firewall</title>
+      <link>http://canuxcheng.com/post/linux_firewall/</link>
       <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/linux/grub/</guid>
-      <description>Grub 引导程序。 windows的引导程序是NTloader。 linux/unix的引导程序有lilo和grub。 配置 修改grub: 1 $ sudo vim /boot/grub/grub.cfg</description>
+      <guid>http://canuxcheng.com/post/linux_firewall/</guid>
+      <description>Firewall UFW: linux防火墙配置工具，底层还是调用iptables. filewall: centos的防火墙命令, 底层还是调用iptables. SELinux Security-Enhanced-Linux 本地安全 Netfilter 网络安全</description>
+    </item>
+    
+    <item>
+      <title>Grub</title>
+      <link>http://canuxcheng.com/post/linux_grub/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_grub/</guid>
+      <description>Grub 引导程序。 linux/unix的引导程序有lilo和grub。 配置 修改grub: 1 $ sudo vim /boot/grub/grub.cfg</description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://canuxcheng.com/post/linux/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux/</guid>
+      <description>Linux Linux严格讲指的是Linux这一类操作系统的内核。 Linux内核的github： https://github.com/torvalds/linux Linux内核的站点： https://www.kernel.org/ 商业化的linux系统： redhat enterprise</description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://canuxcheng.com/post/linux_filesystem/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_filesystem/</guid>
+      <description>VFS Linux采用虚拟文件系统，支持多个文件系统协议． ext/ext2/ext3/ext4 JFS2 ramfs linux的VM(虚拟内存)包括ramfs和swap. 对内存的支持 swap 交换分区，当内</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/linux_monitoring/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_monitoring/</guid>
+      <description> inode </description>
+    </item>
+    
+    <item>
+      <title>Nagios</title>
+      <link>http://canuxcheng.com/post/monitoring_nagios/</link>
+      <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring_nagios/</guid>
+      <description>Nagios Nagios is the industry standard in IT infrastructure monitoring Nagios offers complete monitoring and alerting for servers, switches, applications, and services. Nagios官方宣称nagios是IT基础监控的工业标准。 Nagios提供对服务器，交换机，应用</description>
+    </item>
+    
+    <item>
+      <title>Zabbix</title>
+      <link>http://canuxcheng.com/post/monitoring_zabbix/</link>
+      <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring_zabbix/</guid>
+      <description> Zabbix </description>
     </item>
     
     <item>
@@ -1061,396 +1349,6 @@ DevOps development:
 2019 - FullStack: Go/Python/JavaScript/Sql + PMP
 Devops(development/operations/QA)
 2020 - ITIL Practitioner</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/jenkins/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/jenkins/</guid>
-      <description>Title: Jenkins Date: 2016-04-15 09:41:39 Tags: DevOps, Jenkins
-Jenkins Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks such as building, testing, and deploying software.
-https://github.com/jenkinsci/jenkins
-安装好Jenkins后安装需要的插件．
-安装jenkins:
-1 2 3  # download jenkins.war and install java8. $ java -jar jenkins.war --httpPort=8080 $ firefox http://localhost:8080   设置开机自动启动，不用每次从终端启动:
-1 2 3 4  $ vim /etc/systemd/system/jenkins.service $ systemctl daemon-reload $ systemctl enable jenkins.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/jetbrains/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/jetbrains/</guid>
-      <description>Title: JetBrains Date: 2017-04-02 21:11:26 Tags: PyCharm, IntelliJ
-PyCharm/IntelliJ IntelliJ: Java的IDE, 安装Python的插件也支持python.
-PyCharm: Python的IDE.
-https://github.com/JetBrains/intellij-community
-https://github.com/judasn/IntelliJ-IDEA-Tutorial
-Plugins pycharm https://plugins.jetbrains.com/plugin/631-python
-pycharm plugin for intellij.
-database https://plugins.jetbrains.com/plugin/1800-database-navigator
-https://confluence.jetbrains.com/display/CONTEST/Database+Navigator
-oracle/mysql/postgresql/sqlite plugin.
-vim https://github.com/JetBrains/ideavim
-vim plugin.
-solarized https://github.com/jkaving/intellij-colors-solarized
-solarized plugin.
-settings terminal 默认的是bash和powershell, 使用zsh需要改成/usr/bin/zsh.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/logging/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/logging/</guid>
-      <description>Title: Logging Date: 2018-06-08 09:46:47 Tags: Logging
-Logging 日志采集，存储，可视化.
-主要有Elastic stack 和　splunk.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/logging_grok/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/logging_grok/</guid>
-      <description>Title: Logging Grok Date: 2018-06-08 09:46:47 Tags: Logging, Grok
-grok logstash和telegraf都是用grok来解析log
-在线检测
-http://grokdebug.herokuapp.com/
-grok的正则表达式
-https://github.com/kkos/oniguruma/blob/master/doc/RE
-可用的pattern(logstash &amp;amp; telegraf-logparser/tail)
-https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns
-https://github.com/influxdata/telegraf/blob/master/plugins/inputs/logparser/grok/patterns/influx-patterns
-Elastic stack beats/filebeats: 通过filebeats agent获取log．
-logstash: 使用filebeats解析log并写入stash(elasticsearch).
-TICK stack telegraf(agent): 通过logparser/tail插件解析log并写入influxdb.
-pattern:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  # 通过已经定义的变量来定义filter patterns = [&amp;#39;&amp;#39;&amp;#39;${&amp;lt;capture_syntax&amp;gt;[:&amp;lt;semantic_name&amp;gt;][:&amp;lt;modifier&amp;gt;]}&amp;#39;&amp;#39;&amp;#39;] patterns = [&amp;#39;&amp;#39;&amp;#39;%{TIMESTAMP_ISO8601:asctime:string} \[%{DATA:name:string}\] %{LOGLEVEL:levelname:string}: %{GREEDYDATA:message:string}&amp;#39;&amp;#39;&amp;#39;] capture_syntax是已经定义好的pattern.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/makefile/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/makefile/</guid>
-      <description>Title: Make Date: 2017-01-12 21:18:33 Tags: Make, Makefile
-Make make的作用： * 控制源代码的编译 * 手册页的编写 * 将应用程序安装到目标目录
-make的使用规则： * 如果工程没有编译过，需要编译所有源文件和链接所有目标文件． * 如果工程里某几个目标文件被修改，只需要编译修改的源文件，并链接所有目标文件． * 如果头文件被修改，只需要编译引用了被修改的头文件的源文件，并链接所有目标文件．
-makefile文件查找顺序： * 当前目录找makefile * 当前目录找Makefile * 当前目录找GNUmakefile
-make命令 make命令会执行当前目录的makefile/Makefile/GNUmakefile文件．
-1 2 3 4 5 6 7 8 9  make [options] [target] ... -f FILE, --file=FILE, --makefile=FILE # 指定makefile文件 -n, --just-print, --dry-run, --recon # 只打印，不执行 -k, --keep-going　# 忽略错误继续执行 make make all make install make clean   make的工作顺序： * 读入所有makefile文件 * 读入include的其它makefile文件 * 初始化变量 * 推导隐晦规则，分析所有规则 * 为所有目标文件创建依赖关系链 * 根据依赖关系决定哪些目标需要重新生成 * 执行生成的命令</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring/</guid>
-      <description>Title: Monitoring Date: 2016-06-08 09:46:47 Tags: Monitoring
-Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix.
-Modern monitoring is for service, like Elastic stack for log monitoring.
-Modern monitoring based on TSDB, like TICK stack for metrics monitoring.
-Elastic stack kibana: 数据可视化
-elasticsearch: 搜索，分析，存储数据
-x-pack: 具有监控和报警功能的工具包.
-logstash: 动态数据收集管道，支持可扩展的插件．
-beats(agent): 轻量型数据采集平台，从边缘机器向logstash/elasticsearch发送数据．
-TICK stack influxdb: tsdb.
-kapacitor: alerting.
-chronograf: GUI.
-telegraf(agent): metrics collector.
-Graphing 最流行的监控绘图软件是grafana, 支持influxdb和elasticsearch.
-使用grafana替代chronograf.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_addons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_addons/</guid>
-      <description>Title: Monitoring Addons Date: 2016-06-08 09:46:47 Tags: Addons
-OMD  OMD implements a completely new concept of how to install, maintain and update a monitoring system built on Nagios.
- http://omdistro.org/
-http://git.mathias-kettner.de/git/?p=omd.git;a=tree
-The Open Monitoring Distribution
-用于快速部署基于nagios的分布式监控，包括：
- Icinga/Shinken/check_MK
- Monitoring-Plugins和其它插件
- mod-gearman/MK Livestatus/thruk/multisite
- nsca/check_nrpe。
- NagVis/Pnp4nagios/rrdtool/dokuwiki
-  Gearman  Gearman provides a generic application framework to farm out work to other machines or processes that are better suited to do the work.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_grafana/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_grafana/</guid>
-      <description>Title: Monitoring Grafana Date: 2017-01-12 21:05:48 Tags: Monitoring, Graphing, Grafana
-Grafana The tool for beautiful monitoring and metric analytics &amp;amp; dashboards for Graphite, InfluxDB &amp;amp; Prometheus &amp;amp; More.
-https://github.com/grafana/grafana
-支持多种data source:
-graphite/influxdb/opentsdb/premetheus/elasticsearch/mysql/postgresql
-安装配置参考官方文档
-grafana配置文件是grafana.ini.
-HTTP API 1  port = 3000   dashboard create/update dashboard:
-将datasource设置成变量，然后导出的json文件就可以直接导入了．
-dashboard.id=null才能创建新dashboard.
-1 2 3 4 5 6 7 8 9 10  post /api/dashboards/db data = json.dumps({ &amp;#34;dashboard&amp;#34;: { &amp;#34;id&amp;#34;: null, ... }, &amp;#34;folderId&amp;#34;: 0, &amp;#34;overwrite&amp;#34;: True, # True for python, true for go.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_influxdb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_influxdb/</guid>
-      <description>Title: Monitoring Influxdb Date: 2018-01-18 19:23:25 Tags: TICK, Monitoring, Influxdb
-Influxdb https://github.com/influxdata/influxdb
-Scalable datastore for metrics, events, and real-time analytics.
-支持从opentsdb, graphite, collectd等获取数据
-默认数据库_internal 用于存储内部运行数据
-安装配置参考官方文档
-log
-1  $ sudo journalctl -u influxdb.service   config:
-1 2 3  # 开通kapacitor的subscription功能 [[subscriber]] enable = true   数据结构 influxdb每条记录是一个point.
-points包括下面部分：
-1 2 3 4 5 6  measurement: a measurement, like cpu_load, 相当于表名 tags: zero or more tag, key=value, eg: host=ip fields: zero or more field, key=value, eg: value=0.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_kapacitor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_kapacitor/</guid>
-      <description>Title: Monitoring Kapacitor Date: 2018-01-18 19:23:25 Tags: TICK, Monitoring, Kapacitor
-Kapacitor https://github.com/influxdata/Kapacitor
-Open source framework for processing, monitoring, and alerting on time series data
-可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor.
-配置:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  hostname = &amp;#34;10.103.1.1&amp;#34; # 如果从influxdb读取数据需要配置该选项． [[influxdb]] enabled = true # 如果从该路径加载tickscript [[load]] enabled = true dir=&amp;#34;/etc/kapacitor/load&amp;#34; # tasks, 放到/etc/kapacitor/load/tasks/*.tick,重启kapacitor会自动加载task,并默认enable. ## 要求，ID和tick文件同名，tickscript开头需要指定dbrp, tickscript里面需要指定batch/stream. # templates... # handlers...   CLI 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  $ kapacitor help # 创建/更新 task, 创建的默认是disable状态.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_nagios/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_nagios/</guid>
-      <description>Title: Monitoring Nagios Date: 2016-03-25 11:15:48 Tags: Monitoring, Nagios
-Nagios  Nagios is the industry standard in IT infrastructure monitoring
-Nagios offers complete monitoring and alerting for servers, switches, applications, and services.
- Nagios官方宣称nagios是IT基础监控的工业标准。
-Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。
-Nagios是无agent的，nagios的plugin通过协议远程获取信息。
-https://www.nagios.org/
-https://www.nagios.com/
-https://exchange.nagios.org/
-https://github.com/NagiosEnterprises
-https://github.com/nagios-plugins
-Nagios安装配置 Nagios发展 Nagios core 1.0
-Nagios core 2.0
-Nagios core 3.0
-Nagios XI
-Nagios core 4.0
-目前nagios有两大阵营：
-开源解决方案： Nagios core
-商业解决方案： Nagios XI
-Nagios安装配置 安装和配置nagios core,plugins,addons参考
-官方文档:
-https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_plugins/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_plugins/</guid>
-      <description>Title: Monitoring Plugins Date: 2016-04-08 16:17:39 Tags: Plugins
-Monitoring Plugins Nagios/naemon/icinga/shinken/centreon/opsview/sensu
-Office project:
-https://github.com/monitoring-plugins
-https://www.monitoring-plugins.org/
-My plugin project:
-https://github.com/crazy-canux/pymonitoringplugins
-Open source project:
-https://github.com/crazy-canux/awesome-monitoring
-monitoring-plugins negate 设置相反状态
-1 2 3 4  -o 设置ok对应状态 -w -c -u   check_http 1 2 3 4 5 6 7 8 9 10 11 12 13 14  [-f &amp;lt;ok|warning|critcal|follow|sticky|stickyport&amp;gt;] # 跳转 -p PORT # http:80, https:443 -a &amp;#34;USERNAME&amp;#34;:&amp;#34;PASSWORD&amp;#34; -u PATH --ssl=1/-S # https需要ssl -s SEARCH -e SEARCH,SEARCH.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_telegraf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_telegraf/</guid>
-      <description>Title: Monitoring Telegraf Date: 2018-01-18 19:23:25 Tags: TICK, Monitoring, Telegraf
-Telegraf https://github.com/influxdata/telegraf
-The plugin-driven server agent for collecting &amp;amp; reporting metrics.
-Configuartion agent configuration:
-1 2 3 4 5 6  interval 所有inputs的默认运行间隔 round_interval collection_jitter precision ns/us/ms/s flush_interval flush_jitter   input configuration:
-1 2 3 4 5  interval name_override # 默认measurements是插件名,修改默认measurements. name_prefix name_suffix tags   Go API https://godoc.org/github.com/influxdata/telegraf#Input
-测试插件：
-1 2  # 需要配置文件 $ telegraf --input-filter &amp;lt;plugin-name&amp;gt; --test   Build 安装依赖：</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_tivoli/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_tivoli/</guid>
-      <description>Title: Monitoring Tivoli Date: 2016-04-20 13:57:31 Tags: Monitoring, ITM
-ITM ITM: IBM Tivoli Monitoring
-是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。
-Architecture Overview:
-ITM主要由管理组件和可选组件组成。
-Tivoli Management Services: 1. TEMS 2. TEPS 3. TEP client 4. Historical data collection(warehouse agent) * warehouse proxy * summarization and pruning agent 5. OS agent
-Optional components: 1. Dashboard Application Services Hub * Tivoli Monitoring dashboards(Infrastructure Management Dashboards for Servers) * Tivoli Common Reporting * Tivoli Enterprise Monitoring Automation Server 2.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/monitoring_old/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/monitoring_old/</guid>
-      <description>Title: Monitoring old Date: 2016-05-18 19:23:25 Tags: Monitoring, Nagios ,Naemon ,Icinga ,Shinken ,Centreon, Opsview, Check_mk
-Monitoring My monitoring project on github:
-https://github.com/crazy-canux/awesome-monitoring
-Nagios For more informations, see here:
-http://canuxcheng.com
-Naemon http://www.naemon.org/
-https://github.com/naemon
-Distribution Naemon can use the same addons as nagios to do the distribution monitoring.
-Naemon-core Naemon is 100% Nagios compatible and written in C.
-The next generation of nagios.
-https://github.com/naemon/naemon-core
-Naemon-Livestatus Event broker, fork from MK_livestatus.
-https://github.com/naemon/naemon-livestatus</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/operations/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/operations/</guid>
-      <description>Title: Operations Date: 2016-04-15 09:41:39 Tags: DevOps, Operations
-Operations 运维相关的工具．
-批量配置管理 puppet chef salt ansible 密码管理工具 keepass http://keepass.info/
-KeePassX https://www.keepassx.org/
-https://github.com/keepassx/keepassx</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/tmux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/tmux/</guid>
-      <description>Title: TMUX Date: 2016-06-19 11:17:53 Tags: Screen, Tmux
-tmux tmux是终端复用工具，类似于gnu screen。
-tmux三个基本概念：
- 会话（session）
- 窗口（window）
- 面板（pane）
-  tmux使用c/s架构，tmux命令启动tmux服务器，一个tmux服务有多个session， 每个session就是tmux管理下的伪终端集合，一个session有多个window与之关联， 每个window就是一个伪终端，占据整个屏幕，一个window可以被分割成多个pane。
-tmux安装和配置 tmux依赖libevent和ncurses库。
-http://libevent.org/
-1  $ sudo yum install libevent-devel   http://invisible-island.net/ncurses/
-1  $ sudo yum install ncurese-devel   http://tmux.github.io/
-1 2  sudo apt-get install tmux sudo yum install tmux   用户配置文件： ~/.tmux.conf
-系统配置文件： /etc/tmux.conf
-tmux相关项目 TPM Tmux Plugins Manager.
-https://github.com/tmux-plugins/tpm</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/testing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/testing/</guid>
-      <description>Title: Testing Date: 2017-03-01 09:41:39 Tags: DevOps, QA, Testing
-QA Quality Assurance
-QA主要就是进行软件测试相关的工作.
-软件测试就是使用人工或自动的手段来运行或测量软件系统的过程，以检验软件系统是否满足规定的要求，并找出与预期结果之间的差异．
-软件测试五个要素：
- 质量 人员 技术 流程 资源  软件测试两个目标：
- 测试覆盖率 测试效率  软件测试阶段：
- 单元测试(Unit Testing) 集成测试(Integration Testing) 系统测试(System Testing) 验收测试(Acceptance Testing)  软件测试的手段：
- 手动测试/自动化测试 静态测试/动态测试 黑盒测试/白盒测试  软件测试的类型：
- 性能测试 稳定性测试 安全测试 可用性测试 兼容性测试 文档测试 本地化测试 冒烟测试 功能测试Functional Testing 回归测试Regression Testing 用户界面测试UI Testing 端到端测试End-To-End Testing  软件测试的模型：
- 传统的瀑布模型 V模型 W模型 X模型 H模型 敏捷测试模型(金字塔模式)  软件测试的模式：</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/testing_robotframework/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/testing_robotframework/</guid>
-      <description>Title: Testing RobotFramework Date: 2017-02-25 09:41:39 Tags: Testing, QA, RobotFramework
-Robot Framework https://github.com/robotframework/robotframework
-https://github.com/robotframework/QuickStartGuide
-支持python和java的API.
-Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD).
-Install:
-1  $ pip install robotframework   Modular:
- Test Data Robot Framework(test data syntax) Test Libraries(test library API) + Test Tools System under Test(system interface)  Use:
-1 2  $ robot --version $ robot [options] data_sources   会生成三个文件：</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/testing_selenium/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/testing_selenium/</guid>
-      <description>Title: Testing Selenium Date: 2017-02-25 09:41:39 Tags: Testing, QA, Selenium
-Selenium https://github.com/SeleniumHQ/selenium
-用于基于浏览器的web应用的自动化测试工具集．
-1 2 3  selenium1: deprecated. selenium2: 默认支持firefox&amp;lt;=46. 支持python2.6+, python3.2+ selenium3: 支持firefox47+, 所有浏览器都需要安装webdriver.支持python2.6+, python3.3+, 必须重启OS.   支持python, java, javascript等API.
-默认安装selenium3:
-1  $ pip install selenium   selenium3需要安装相应浏览器的driver, 然后重启OS:
-selenium, driver, browser三个版本都需要兼容才能工作．
-1 2  winfows放在C:\Python\Scripts\ linux放在/usr/local/bin/   https://sites.google.com/a/chromium.org/chromedriver/downloads
-https://github.com/mozilla/geckodriver/releases
-[Deprecated] Remote Control: 也就是selenium1.selenium2依然保留了selenium1的API.但是selenium3会彻底删除RC的API.
-[Deprecated] IDE: selenium IDE是一个firefox的插件，用于记录浏览器上的测试步骤，能用于生成测试代码，并且转换成编程语言．但是已经被WebDriver取代．
-WebDriver 也就是selenium2.已经取代了selenium RC和selenium IDE.
-python的API参考python博客．</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/devops/vim/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/vim/</guid>
-      <description>Title: VIM Date: 2016-04-02 21:11:26 Tags: Vi, Vim
-vim http://www.vim.org
-https://github.com/vim/vim
-类似编辑器:
- emacs Atom(github的开源跨平台编辑器，支持插件。) VSCode(微软的开源跨平台的编辑器，支持插件。)  Vim安装和配置 查看vim版本和编译信息：
-1  vim --version   安装vim：
-1 2  $ sudo apt-get install vim $ yum install vim   源码安装vim：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  $ sudo apt-get build-dep vim $ cd vim/src $ .</description>
     </item>
     
     <item>
@@ -1637,218 +1535,6 @@ https://github.com/vuejs/vue-devtools#vue-devtools</description>
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/linux/admin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/admin/</guid>
-      <description>Title: Admin Date: 2016-04-03 14:04:05 Tags: Linux, Ubuntu, CentOS, Suse
-Linux Admin dpkg: ubuntu, debian.
-rpm: fedora, centos, redhat.
-zypper: suse.
-Linux系统常用的安装和配置 virtualbox 开机自动挂载共享文件夹
-1 2 3 4 5 6  # 手动挂在命令, 需要安装增强功能 $ mount -t vboxsf FolderNameOnWindows /path/on/linux # 实现开机自动挂载 $ sudo vim /etc/rc.local mount.vboxsf -w ShareFolderNameOnWindows MountPointOnLinux   xrdp 从windows的RDP远程连接linux.
-use RDP on windows to connect to ubuntu16.04.
-1 2 3 4  sudo dpkg -i tigervncserver_1.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/builtins/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/builtins/</guid>
-      <description> Title: Shell Builtins Date: 2016-03-31 21:51:03 Tags: Linux, Shell, Builtins, Bash, Zsh, Fish
-Linux内置命令 内置命令在bash/builtins目录中
-shell命令分为内置命令和外部命令.
-查看一个命令是内置命令还是外部命令：
-1 2 3  type -a [command] 提示&amp;#34;[command] is a shell builtin&amp;#34;就表示是内置命令，否则就是外部命令。   查看所有内置命令：
-1 2  help enable -a   查看内置命令的帮助：
-1  help [command]   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59  type enable help alias bg bind break builtin caller cd command compgen complete compopt continue declare dirs disown echo eval exec exit export false fc fg getopts hash history jobs kill let local logout mapfile popd printf pushd pwd read readarray readonly return set shift shopt source suspend test times trap true typeset ulimit umask unalias unset wait  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/coreutils/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/coreutils/</guid>
-      <description>Title: Shell Coreutils Date: 2016-03-31 21:51:25 Tags: Linux, Shell, Coreutils, Bash, Zsh, Fish
-Linux的外部命令 Linux外部命令的项目是coreutils。
-外部命令在coreutils目录中
-查看外部命令所在目录：
-1  echo $PATH   外部命令在下列目录中：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  ~/bin # 用户自定义 /sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin /usr/games /usr/local/games   查看外部命令手册的在线手册：
-1 2  man [command] info [command]   自定义外部命令：
-添加\$PATH变量，然后放到该目录。
-系统管理 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58  # 查看cpu/mem/swap/system信息 vmstat # 查看进程消耗的cpu/mem/swap/system等系统信息 top top -H # 查看线程 %cpu = cputime/realtime * 100% cpu_usage = %cpu/cpu-number %mem = RES/physicalMem * 100% htop $ sudo apt-get install htop uname # 打印linux系统信息 $ uname -a cat /etc/issue cat /proc/version uptime lsb_release # 查看发行版本信息 $ lsb_release -a getconf # 查询系统配置的变量，LONG_BIT表示系统位数 lscpu # 显示cpu架构的信息 cat /proc/cpuinfo # 查看cpu信息 cat /proc/cpuinfo | grep &amp;#34;processor&amp;#34; | wc -l # 逻辑cpu总数 cat /proc/cpuinfo | grep &amp;#34;physical id&amp;#34; | sort | uniq | wc -l # 物理cpu个数 cat /proc/cpuinfo | grep &amp;#34;cpu cores&amp;#34; | uniq # 物理cpu核数 cat /proc/cpuinfo | grep -e &amp;#34;cpu cores&amp;#34; -e &amp;#34;siblings&amp;#34; | sort | uniq # 和cpu cores一样说明没有启用超线程.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/filesystem/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/filesystem/</guid>
-      <description> Title: Linux FileSystem Date: 2016-03-31 21:48:59 Tags: Linux, FileSystem
-VFS Linux采用虚拟文件系统，支持多个文件系统协议．
-ext/ext2/ext3/ext4 JFS2 ramfs linux的VM(虚拟内存)包括ramfs和swap.
-对内存的支持
-swap 交换分区，当内存不足，会把内存上暂时不运行的程序保存到swap，获取部分内存空间运行．
-tmpfs 临时文件系统, 优先使用ramfs,　其次使用swap.
-1 2 3 4  # 挂载tmpfs mount -t tmpfs -o size=1024m tmpfs /path/to/mount # /etc/fstab　tmpfs /dev/shm tmpfs,defaults,size=512m 0 0   vfat/fat/ntfs windows文件系统
-cifs/smbfs nfs </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/firewall/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/firewall/</guid>
-      <description>Title: FireWall Date: 2016-03-31 21:48:59 Tags: Linux, FireWall
-Firewall UFW: linux防火墙配置工具，底层还是调用iptables.
-filewall: centos的防火墙命令, 底层还是调用iptables.
-SELinux Security-Enhanced-Linux
-本地安全
-Netfilter 网络安全
-iptables 通过iptables操作Netfilter实现应用层安全.
-table:
-1 2 3  filter 默认表 nat mangle   chain;
-1 2 3  INPUT FORWARD OUTPUT   iptables命令:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  -L/--list [chain [ rulenum]] -S/--list-rules [chain [rulenum]] -Z/--zero [chain [rulenum]] -A/--append chain -C/--check chain -N/--new chain -X/--delete-chain [chain] -F/--flush [chain] -R/--replace chain rulenum -D/--delete chain [rulenum] -I/--insert chain [rulenum] -P/--policy chain target -E/--rename-chain old-chain new-chain   options:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/init/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/init/</guid>
-      <description>Title: Init Date: 2019-02-03 14:04:05 Tags: Linux, Upstart, Systemd
-Linux Init linux系统启动的第一个进程,pid=1的进程.
-1 2 3  $ ls -l /sbin/init /sbin/init -&amp;gt; upstart /sbin/init -&amp;gt; /lib/systemd/systemd   systemd sytemd是upstart的替代版本．通过查看/sbin/init指向systemd还是upstart.
-service文件位置:
-1 2 3  /etc/systemd/system/***.service /lib/systemd/system/*.service /usr/lib/systemd/system/*.service   service文件编写:
-http://www.jinbuguo.com/systemd/systemd.service.html
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [Unit] Description=details After=containerd.service # 之前启动 Before= # 之后运行 Bindsto= # Wants=containerd.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/linux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/linux/</guid>
-      <description>Title: Linux Date: 2016-03-31 21:48:59 Tags: Linux
-Linux Linux严格讲指的是Linux这一类操作系统的内核。
-Linux内核的github：
-https://github.com/torvalds/linux
-Linux内核的站点：
-https://www.kernel.org/
-商业化的linux系统：
- redhat enterprise linux suse enterprise linux  免费的服务器版本：
- centos (rhel的免费版服务器版) open suse debian/ubuntu  免费的桌面版本： 1. fedora (原来的redhat desktop linux) 2. open suse 3. debian/ubuntu
-Linux桌面环境 X windows
-KDE
-GNOME2(Mate)
-GNOME3(Mate/Cinnamon)
-Unity
-xface
-lxde
-enlightenment(https://www.enlightenment.org/start)
-Linux桌面管理器： xDM
-gDM(gnome)
-kDM(kde)
-lightDM
-Linux的shell 查看shell内置命令：
-1  help [command]   查看shell的外部命令(包括应用程序的命令行)
-1 2 3  man [command] man 1 [command] info [command]   查到包括宏，包，惯用法等</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/monitoring/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/monitoring/</guid>
-      <description> Title: Linux Monitoring Date: 2016-03-31 21:48:59 Tags: Linux, Monitoring
-inode </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/package/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/package/</guid>
-      <description>Title: Package Date: 2016-06-07 16:57:45 Tags: Linux, dpkg, yum, zypper
-DPKG debian的包管理机制。
-dpkg dpkg的本地前端工具。
-deb - Debian binary package format
-dpkg - package manager for Debian
-1 2 3 4  dpkg dpkg -X ./xxx.deb xxx # 将deb包解压到xxx目录 dpkg -e ./xxx.deb xxx/DEBIAN # 将control信息解压 dpkg -l | grep pkg # 查看安装的包   dpkg-reconfigure - reconfigure an already installed package
-1  dpkg-reconfigure   dpkg-deb - Debian package archive (.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/regularexpression/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/regularexpression/</guid>
-      <description>Title: Regular Expression Date: 2016-04-02 11:16:16 Tags: Linux, Posix, RE
-RE 在线检测：
-https://www.regexpal.com/
-RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE).
-在BRE中+?(){}|没有特殊含义，除非用\转义．
-在ERE中+?(){}被保留有特殊含义，除非用\转义才表示普通字符．
-命令find, grep, sed, awk等都可以使用正则表达式．
-特殊字符含义：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  () 对正则表达式分组, ERE \n 再匹配前面的分组n次 .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/shell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/shell/</guid>
-      <description>Title: Shell Date: 2016-04-01 20:42:59 Tags: Shell, Bash, Zsh, Fish
-Shell Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。
-查看当前使用的shell：
-1 2  echo $SHELL echo $0   查看安装了哪些shell：
-1  cat /etc/shells   设置登陆shell:
-1  $chsh -s $(which shellname)   shell分为登陆shell和交互式shell:
-1 2  # 输出有i的就是交互shell $echo $-   非交互登陆shell: * 先运行系统配置文件/etc/profile(调用/etc/bash.bashrc和/etc/profile.d/*.sh) * 然后运行用户配置文件~/.profile(调用~/.bashrc和~/bin) * 最后退出用户登陆~/.bash_logout
-交互非登陆shell: * 先运行/etc/bash.bashrc(调用/etc/bash_completion(调用/etc/bash_completion.d/*.sh)) * 然后运行~/.bashrc(调用~/.bash_aliases和~/bash.d和~/bin)
-shell相关项目 bash-it 大部分发行版默认使用bash,无需额外安装。
-bash的优化项目bash-it：
-https://github.com/Bash-it/bash-it
-zsh http://www.zsh.org/
-oh-my-zsh https://github.com/robbyrussell/oh-my-zsh</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/linux/tpc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/linux/tpc/</guid>
-      <description> Title: Third Party Command Date: 2016-03-31 21:51:25 Tags: Linux, Shell, TPC
-Linux的第三方命令 Linux外部命令的项目是coreutils.
-外部命令在coreutils目录中.
-第三方命令(相当于外部命令)．
-系统管理 1 2 3  $ sudo apt-get install sysstat iostat mpstat   文件和目录管理 autojump:
-https://github.com/wting/autojump
-fasd:
-https://github.com/clvv/fasd
-fzf:
-https://github.com/junegunn/fzf
-压缩备份 磁盘管理 设备管理 网络管理 </description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://canuxcheng.com/network/command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1975,8 +1661,7 @@ UTC: Coordinated Universal Time, 世界统一时间
 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC
 CET: Central European Time, 欧洲中部时间, = UTC+1, 下令时=UTC+2
 CST: Chinese Standard Time, 中国标准时间, = UTC+8
-时区管理 1 2 3  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:
-1  $ sudo apt-get install ntp   ntpdate 从目标服务器同步.</description>
+时区管理 1 2 3 4  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ sudo timedatectl set-timezone Etc/UTC $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:</description>
     </item>
     
     <item>
@@ -2536,70 +2221,10 @@ chrome chrome的开发者工具(F12)可以直接copy xpath.</description>
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/windows/admin/</link>
+      <link>http://canuxcheng.com/windows/ps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/windows/admin/</guid>
-      <description>Title: Admin Date: 2016-04-26 09:54:45 Tags: Windows, Admin
-windows的services和process services是windows的服务，有Name(Display Name)，Service Name，Description等属性。
-process是以.exe为后缀的application，有Name(product name)、original filename(Image Name)、file description(description)等属性。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/builtins/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/builtins/</guid>
-      <description>Title: PowerShell Builtin Command Date: 2016-05-24 10:44:44 Tags: PowerShell, Builtins
-Get-Help和Help: get-help查看帮助信息,help分页查看帮助信息，man是help的别名
-命令说明：
-1 2  Get-Help Help   查看所有命令和概念：
-1 2  Get-Help * Help *   模糊查找命令和概念：
-1 2  Get-Help *&amp;lt;name&amp;gt;* Help *&amp;lt;name&amp;gt;*   查看具体命令帮助：
-1 2 3  Get-Help {&amp;lt;CmdletName&amp;gt; | &amp;lt;TopicName&amp;gt;} Help {&amp;lt;CmdletName&amp;gt; | &amp;lt;TopicName&amp;gt;} &amp;lt;CmdletName&amp;gt; -?   get-help/help的选项:
-1 2 3 4 5 6 7  get-help get-help -examples # 查看示例 -full # 查看所有帮助 -parameter # 查看选项的帮助 -detailed # 查看详细信息 -online # 打开文档中的link -showwindow # 用窗口打开   Helpfile 3.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/coreutils/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/coreutils/</guid>
-      <description>Title: PowerShell Coreutils Command Date: 2016-07-12 17:24:25 Tags: PowerShell, Coreutils
-外部命令 powershell可以执行外部命令.
-1  C:\Windows\System32\*.exe   cmd ping netstat ipconfig route arp nslookup ftp mstsc RDP client.
-taskmgr 任务管理器．
-tskill tree whoami 需要下载，然后放入环境变量的第三方命令.
-WinDump Windows版本的tcpdump, 依赖WinPcap包．
-通过windump导出的*.pcap文件可以通过wireshark打开．</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/filesystem/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/filesystem/</guid>
-      <description>Title: Windows FileSystem Date: 2016-04-03 14:15:40 Tags: Windows, FileSystem</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/monitoring/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/monitoring/</guid>
-      <description>Title: Windows Monitroing Date: 2016-04-03 14:15:40 Tags: Windows, Monitoring</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/powershell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/powershell/</guid>
+      <guid>http://canuxcheng.com/windows/ps/</guid>
       <description>Title: PowerShell Date: 2016-04-26 09:52:02 Tags: PowerShell
 PowerShell Console: command line interface
 ISE: script editor and console combination
@@ -2621,10 +2246,41 @@ powershell命令 1 2 3  &amp;gt;powershell -? &amp;gt;powershell /? &amp;gt;powe
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/windows/remotemanagement/</link>
+      <link>http://canuxcheng.com/windows/ps_builtins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/windows/remotemanagement/</guid>
+      <guid>http://canuxcheng.com/windows/ps_builtins/</guid>
+      <description>Title: PowerShell Builtin Command Date: 2016-05-24 10:44:44 Tags: PowerShell, Builtins
+Get-Help和Help: get-help查看帮助信息,help分页查看帮助信息，man是help的别名
+命令说明：
+1 2  Get-Help Help   查看所有命令和概念：
+1 2  Get-Help * Help *   模糊查找命令和概念：
+1 2  Get-Help *&amp;lt;name&amp;gt;* Help *&amp;lt;name&amp;gt;*   查看具体命令帮助：
+1 2 3  Get-Help {&amp;lt;CmdletName&amp;gt; | &amp;lt;TopicName&amp;gt;} Help {&amp;lt;CmdletName&amp;gt; | &amp;lt;TopicName&amp;gt;} &amp;lt;CmdletName&amp;gt; -?   get-help/help的选项:
+1 2 3 4 5 6 7  get-help get-help -examples # 查看示例 -full # 查看所有帮助 -parameter # 查看选项的帮助 -detailed # 查看详细信息 -online # 打开文档中的link -showwindow # 用窗口打开   Helpfile 3.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/ps_coreutils/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/ps_coreutils/</guid>
+      <description>Title: PowerShell Coreutils Command Date: 2016-07-12 17:24:25 Tags: PowerShell, Coreutils
+外部命令 powershell可以执行外部命令.
+1  C:\Windows\System32\*.exe   cmd ping netstat ipconfig route arp nslookup ftp mstsc RDP client.
+taskmgr 任务管理器．
+tskill tree whoami 需要下载，然后放入环境变量的第三方命令.
+WinDump Windows版本的tcpdump, 依赖WinPcap包．
+通过windump导出的*.pcap文件可以通过wireshark打开．</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/ps_remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/ps_remote/</guid>
       <description>Title: PowerShell RemoteManagement Date: 2016-07-18 14:54:39 Tags: PowerShell, RemoteManagement
 Windows远程管理  WinRM, 远程处理,在远程机器上执行命令 WMI/CIM RPC, 远程连接,在发起远程连接的机器上执行命令  WinRM 一对一远程处理:
 类似于linux的ssh。
@@ -2637,10 +2293,75 @@ Invoke-Command一次创建一个连接对象，返回PSComputerName属性，执�
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/windows/wmi/</link>
+      <link>http://canuxcheng.com/windows/ps_utils/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/windows/wmi/</guid>
+      <guid>http://canuxcheng.com/windows/ps_utils/</guid>
+      <description>Title: PowerShell Date: 2016-04-26 09:52:02 Tags: PowerShell
+windows相关项目： choco https://github.com/chocolatey
+windows的apt/yum。
+choco is replacement of chocolatey
+1  choco install openssh   cmder cmd的升级版。
+https://github.com/cmderdev/cmder
+babun a linux-shell like on windows.
+https://github.com/babun/babun
+flinux run unmodified linux applications inside windows
+https://github.com/wishstudio/flinux</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win/</guid>
+      <description>Title: Windows Date: 2016-04-03 14:15:40 Tags:
+windows的IDE VS Enterprise: 收费企业版 VS Professional: 收费个人版 VS Community: 免费社区版
+windows的引导程序是ntloader。
+DOS和NT是windows系统的内核。
+BIOS和MBR基本输入输出系统和主引导记录。
+UEFI和GPT是统一的可扩展接口和GUID分区表。
+FAT是msdos的文件系统
+NTFS是msnt的文件系统
+AD AD: Active Directory
+管理工具：LDAPSoft AD Browser</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win_admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win_admin/</guid>
+      <description>Title: Admin Date: 2016-04-26 09:54:45 Tags: Windows, Admin</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win_filesystem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win_filesystem/</guid>
+      <description>Title: Windows FileSystem Date: 2016-04-03 14:15:40 Tags: Windows, FileSystem</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win_monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win_monitoring/</guid>
+      <description>Title: Windows Monitroing Date: 2016-04-03 14:15:40 Tags: Windows, Monitoring
+windows的services和process services是windows的服务，有Name(Display Name)，Service Name，Description等属性。
+process是以.exe为后缀的application，有Name(product name)、original filename(Image Name)、file description(description)等属性。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win_wmi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win_wmi/</guid>
       <description>Title: WMI Date: 2016-04-03 14:15:47 Tags: Windows, WMI, CIM
 WMI/CIM WMI: windows management instrumentation.
 https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx
@@ -2665,10 +2386,10 @@ windows的wmic：
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/windows/winrm/</link>
+      <link>http://canuxcheng.com/windows/win_winrm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/windows/winrm/</guid>
+      <guid>http://canuxcheng.com/windows/win_winrm/</guid>
       <description>Title: WinRM Date: 2016-07-17 08:36:36 Tags: Windows, WinRM
 WinRM Windows Remote Management
 WinRM是WSMAN(WS-Management Protocol)的增强版。
@@ -2685,42 +2406,6 @@ Basic是基本的明文协议, NTLM是早期的安全协议,Kerberos是最新的
 service权限管理 查看service的auth配置：
 1  cmd&amp;gt; winrm get winrm/config/service/auth   service只有Negotiate和Kerberos是默认开启的:
 1 2 3 4 5  Basic = false Kerberos = true Negotiate = true Certificate = false CredSSP = false   Negotiate对domain用户选择kerberos,对local用户选择NTLM.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/windows/</guid>
-      <description>Title: Windows Date: 2016-04-03 14:15:40 Tags:
-windows的IDE VS Enterprise: 收费企业版 VS Professional: 收费个人版 VS Community: 免费社区版
-windows的引导程序是ntloader。
-DOS和NT是windows系统的内核。
-BIOS和MBR基本输入输出系统和主引导记录。
-UEFI和GPT是统一的可扩展接口和GUID分区表。
-FAT是msdos的文件系统
-NTFS是msnt的文件系统
-windows相关项目： choco https://github.com/chocolatey
-windows的apt/yum。
-choco is replacement of chocolatey
-1  choco install openssh   cmder cmd的升级版。
-https://github.com/cmderdev/cmder
-babun a linux-shell like on windows.
-https://github.com/babun/babun
-flinux run unmodified linux applications inside windows
-https://github.com/wishstudio/flinux
-AD AD: Active Directory
-管理工具：LDAPSoft AD Browser</description>
-    </item>
-    
-    <item>
-      <title>Agile</title>
-      <link>http://canuxcheng.com/devops/agile/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/devops/agile/</guid>
-      <description>Agile methodologies Agile的具体方法有Scrum, XP和kanban. ThoughtWorks公司的Martin Fowler提出的敏捷方法． Scrum Scrum</description>
     </item>
     
   </channel>

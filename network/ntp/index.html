@@ -22,8 +22,7 @@ UTC: Coordinated Universal Time, 世界统一时间
 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC
 CET: Central European Time, 欧洲中部时间, = UTC&#43;1, 下令时=UTC&#43;2
 CST: Chinese Standard Time, 中国标准时间, = UTC&#43;8
-时区管理 1 2 3  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:
-1  $ sudo apt-get install ntp   ntpdate 从目标服务器同步." /><meta name="keywords" content="Hugo, theme, canux" />
+时区管理 1 2 3 4  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ sudo timedatectl set-timezone Etc/UTC $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -52,8 +51,7 @@ UTC: Coordinated Universal Time, 世界统一时间
 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC
 CET: Central European Time, 欧洲中部时间, = UTC&#43;1, 下令时=UTC&#43;2
 CST: Chinese Standard Time, 中国标准时间, = UTC&#43;8
-时区管理 1 2 3  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:
-1  $ sudo apt-get install ntp   ntpdate 从目标服务器同步." />
+时区管理 1 2 3 4  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ sudo timedatectl set-timezone Etc/UTC $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/network/ntp/" />
 
@@ -65,12 +63,11 @@ UTC: Coordinated Universal Time, 世界统一时间
 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC
 CET: Central European Time, 欧洲中部时间, = UTC&#43;1, 下令时=UTC&#43;2
 CST: Chinese Standard Time, 中国标准时间, = UTC&#43;8
-时区管理 1 2 3  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:
-1  $ sudo apt-get install ntp   ntpdate 从目标服务器同步.">
+时区管理 1 2 3 4  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ sudo timedatectl set-timezone Etc/UTC $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:">
 
 
 
-<meta itemprop="wordCount" content="85">
+<meta itemprop="wordCount" content="91">
 
 
 
@@ -83,8 +80,7 @@ UTC: Coordinated Universal Time, 世界统一时间
 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC
 CET: Central European Time, 欧洲中部时间, = UTC&#43;1, 下令时=UTC&#43;2
 CST: Chinese Standard Time, 中国标准时间, = UTC&#43;8
-时区管理 1 2 3  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:
-1  $ sudo apt-get install ntp   ntpdate 从目标服务器同步."/>
+时区管理 1 2 3 4  $ timedatectl list-timezones # 查看所有时区 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区 $ sudo timedatectl set-timezone Etc/UTC $ ls -l /etc/localtime # 应该是一个链接   ntp 安装:"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -180,10 +176,12 @@ Tags: Network, NTP</p>
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ timedatectl list-timezones # 查看所有时区
 $ sudo timedatectl set-timezone Asia/Shanghai # 设置时区
+$ sudo timedatectl set-timezone Etc/UTC
 $ ls -l /etc/localtime # 应该是一个链接</pre></td></tr></table>
 </div>
 </div>

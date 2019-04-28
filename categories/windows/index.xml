@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/categories/windows/</link>
+    <description>Recent content in Windows on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Apr 2016 11:16:16 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Regular Expression</title>
+      <link>http://canuxcheng.com/post/regularexpression/</link>
+      <pubDate>Sat, 02 Apr 2016 11:16:16 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/regularexpression/</guid>
+      <description>RE 在线检测： https://www.regexpal.com/ RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE). 在BRE中+?(){}|没有特殊含义，除非用\转义． 在ERE中+?(){}被保留有特殊含义</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Development</title>
-      <link>http://canuxcheng.com/devops/development/</link>
+      <link>http://canuxcheng.com/post/development/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/devops/development/</guid>
+      <guid>http://canuxcheng.com/post/development/</guid>
       <description>Development 开发相关的工具 传统的软件开发采用的是瀑布式开发流程． 现代的软件开发采用的是敏捷开发流程(Agile development). Alpha: inner test version. Beta: outer test version. RC: release candidate. 最终版本之前的最</description>
     </item>
     

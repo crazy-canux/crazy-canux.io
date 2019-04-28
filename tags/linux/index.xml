@@ -20,5 +20,14 @@
       <description>sysstat: 1 2 3 4 5 6 # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat # 查看diskio信息 $ sudo iostat iotop 1 2 3 # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使</description>
     </item>
     
+    <item>
+      <title>Linux</title>
+      <link>http://canuxcheng.com/post/linux/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux/</guid>
+      <description>Linux Linux严格讲指的是Linux这一类操作系统的内核。 Linux内核的github： https://github.com/torvalds/linux Linux内核的站点： https://www.kernel.org/ 商业化的linux系统： redhat enterprise</description>
+    </item>
+    
   </channel>
 </rss>

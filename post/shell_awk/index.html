@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Awk - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="awk awk 是一门编程语言 awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。 nawk" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/shell_awk/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Awk" />
+<meta property="og:description" content="awk awk 是一门编程语言 awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。 nawk" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/shell_awk/" />
+<meta property="article:published_time" content="2016-12-14T00:55:37&#43;08:00"/>
+<meta property="article:modified_time" content="2016-12-14T00:55:37&#43;08:00"/>
+
+<meta itemprop="name" content="Awk">
+<meta itemprop="description" content="awk awk 是一门编程语言 awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。 nawk">
+
+
+<meta itemprop="datePublished" content="2016-12-14T00:55:37&#43;08:00" />
+<meta itemprop="dateModified" content="2016-12-14T00:55:37&#43;08:00" />
+<meta itemprop="wordCount" content="2868">
+
+
+
+<meta itemprop="keywords" content="shell," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Awk"/>
+<meta name="twitter:description" content="awk awk 是一门编程语言 awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。 nawk"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Awk</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-12-14 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+          <span class="more-meta"> 2868 words </span>
+          <span class="more-meta"> 6 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#awk">awk</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-12-14T00:55:37" title="December 14, 2016">December 14, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="awk">awk</h1>
+
+<p>awk 是一门编程语言</p>
+
+<p>awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。
+nawk： new awk。
+mawk： awk的解释器
+gawk是gnu的awk，功能更全面。</p>
+
+<p>awk命令格式：
+awk [-v var=value [-F *] [–] &lsquo;/pattern/ {action}&rsquo;  file
+awk [-v var=value [-F *] [-f scriptfile &hellip;] [–] file
+awk [-v var=value [-F *] [-] &lsquo;BEGIN {} /pattern/ {action} END {}&rsquo;  file
+BEGIN { }  在读取输入之前就操作
+END { }    在读物输入之后操作
+awk的指令需要用单引号包围；
+模式需要用/pattern/包围；
+过程需要用{command1；command2}包围，多个过程需要用；隔开。</p>
+
+<p>脚本中传递参数格式：
+awk [-f scriptfile]OR[&lsquo;/pattern/{action}&rsquo;] val1=value1 val2=value2 … file1   vala=valuea valb=valueb&hellip; file2 &hellip;
+如果通过shell传参数，把value改成$n即可。
+可以通过命令返回值作为参数value。
+也可以使用环境变量作为value，也可以给awk的环境变量赋值。
+可以在任何位置定义变量（‘ ‘ 之后；-v之后；BEGIN中；{}中；END中）。
+只有在-v和在BEGIN中定义的变量能在BEGIN中使用。
+在END中定义的变量只能在END中使用，其它位置定义的变量都可以在{}中使用。
+在任何位置定义的变量在END中都可以使用。</p>
+
+<p>Options:
+-f: 指定运行脚本文件中的命令,可以指定多个脚本。
+-F: 指定输入字段分隔符，默认是空格键和制表符。
+-v  $val=value  定义变量</p>
+
+<p>awk中的由空格或制表符分隔的单元作为一个字段
+$0  当前行的文本内容
+$1  第一个字段的文本内容
+$n  第n个字段的文本内容</p>
+
+<p>awk中的常量和变量：
+常量：字符串型和数字型，字符串常量必须用“”引号引用。
+变量：变量名大小写敏感，字母或下划线开头，可以包含数字。
+awk回自动将变量根据环境初始化为空串或0.</p>
+
+<p>awk中的命令：</p>
+
+<p>print命令：
+print a,b   参数用，隔开，打印出来的就是用空格隔开的,eg：a b.
+print a“string”b  参数中用双引号打印出来就是原样输出,eg:astringb.
+Print     打印匹配到的行
+print “”  打印一个空行</p>
+
+<p>printf命令：
+格式化输出，和c语言中的printf类似。
+printf(format[,arguments])
+format是用“”引起来的格式
+arguments是一个可选的参数列表
+%s:字符串
+%d：十进制整数
+%f：浮点格式，默认精度小数点后6位。
+%%：打印%
+|%mX|:对于格式X按照默认的右对齐，精确到m位，左边补空格
+|%-mX|：对于格式X按照左对齐，精确到m位，右边补空格
+“%*.*g”， m， n， $val ： 动态指定精度，总共m位，小数点后n位。
+\t：跳格
+\n：换行</p>
+
+<p>next命令：
+取得下一条记录</p>
+
+<p>delete命令：
+删除</p>
+
+<p>exit命令：
+退出输入记录的处理，进入END。
+exit n   设置awk的退出状态。</p>
+
+<p>awk中的内置的变量：</p>
+
+<p>FS  定义输入记录字段分隔符，默认是空格
+OFS 输出记录字段分隔符，默认是空格
+NF  当前输入记录的字段个数（列号）
+RS  输入记录分隔符，默认是换行符
+ORS 输出记录分隔符，默认是换行符
+NR  读入的输入记录的个数(行号）
+FILENAME 当前输入文件的名字
+CONVFMT 控制类型转换，默认为%.6g
+在BEGIN{}中可以给变量赋值；在{}中用$来引用这些变量；在END{}中可以打印这些变量。</p>
+
+<p>运算符：</p>
+
+<p>算数操作符：
++ - * / % ^</p>
+
+<p>赋值操作符：
+++ –-
++= -= *= /= %= ^=</p>
+
+<p>关系操作符：
+&lt; &gt; &lt;= &gt;=
+==(注意和赋值=的区别） !=
+~（匹配） !~（不匹配）</p>
+
+<p>布尔操作符：
+&amp;&amp; 逻辑与，优先级高于||
+|| 逻辑或
+！ 逻辑非</p>
+
+<p>awk内置的语句：
+和c语言相似</p>
+
+<p>条件语句：
+if (expression)
+    action1
+[else if (expression2) {
+    action2
+    action3
+    &hellip;
+}]  多个动作需要用{}包围
+[else if () {action1;action2;&hellip;}]  多个动作写在一行需要用；隔开。
+[else if () action ; else action]  在同一行用；结束一个语句</p>
+
+<p>也可以用条件运算符代替条件语句：
+expression ? Action1 : action2</p>
+
+<p>循环语句：
+while (condition)
+    action
+或
+while (condition) {
+    action1
+    action2
+    …
+}
+或
+while (condition) { action1 ; action2 ; … }</p>
+
+<p>do
+    action
+while (condition)
+或
+do {
+    action1
+    action2
+    …
+} while (condition)
+或
+do { action1;action2;&hellip;} while (condition)</p>
+
+<p>for (set_counter; test_counter; increment_counter)
+    action</p>
+
+<p>break:退出循环</p>
+
+<p>continue：终止本次循环，进入下一次循环</p>
+
+<p>数组：
+array[subscript] = value
+awk中的数组直接给数组元素赋值，不用指定数组大小。通过下标访问。</p>
+
+<p>关联数组：
+awk中的数组是关联数组，也就是可以用数值和字符作为下标来访问。</p>
+
+<p>in操作符用来测试variable是否是数组array的下标，如果是条件为真。
+for (variable in array)
+    print variable: array[variable]
+if (variable in array)
+    print variable: array[variable]</p>
+
+<p>删除数组元素：
+delete array[subscript]</p>
+
+<p>系统变量的数组：
+ARGV：
+命令行参数数组，下标从0开始，不包括awk脚本本身和任何调用awk脚本指定的选项。
+akw -f awk.sh …    #不包括-f和awk.sh</p>
+
+<p>ENVIRON：
+环境变量数组，下标是环境变量的名字，元素是环境变量的值。</p>
+
+<p>awk内置的函数：
+函数分为算数函数和字符串函数。</p>
+
+<p>算数函数有9个：
+sin(x)：返回x的正弦
+cos(x)：返回x的余弦
+atan2(y,x)：返回y/x的反正切
+exp(x)：返回e的x次幂
+log(x)：返回以e为底的x的自然对数
+sqrt(x)：返回x的平方根
+int(x)：返回x的整数部分
+rand()：返回伪随机数r，0=&lt; r &lt;1
+srand(x)：建立rand（）的新的种子数</p>
+
+<p>字符串函数：
+gsub(r,s,t) 在字符串t中用s替换和正则表达式r匹配的所有字符串，返回替换的个数。
+gsub(r,s) 相当于t=$0
+sub(r,s,t)用s替换正则表达式在t中的首次匹配。成功返回1，失败返回0.
+sub(r,s)相当于t=$0</p>
+
+<p>substr(s,p)返回s中从位置p开始的子串
+substr(s,p,n)返回s中从位置p开始最大长度为n的子串。</p>
+
+<p>index(s,t)返回子串t在s中的位置，如果没有指定s或没有匹配项返回0.也就是返回t中的首字母在s中是第几个字符，如果首字母重复出现返回第一个的位置。</p>
+
+<p>length(s)   返回字符串s长度，没有指定s返回$0的长度，\n \t \r 空格都算一个字节。</p>
+
+<p>match(s,r)如果正则表达式r在s中出现，返回出现的起始位置，没有匹配返回0.</p>
+
+<p>split(string, array, separator)
+将字符串string分解到数组array中，数组下标从1到n，string根据指定的分隔符来分解，如果没有指定分隔符，默认为FS。返回数组中元素个数。</p>
+
+<p>sprintf(“format”, expr)和printf一样。</p>
+
+<p>tolower(s)将s中的所有大写字母转换成小写并返回新的字符串
+toupper(s)将s中的左右小写字母转换成大写并返回新的字符串</p>
+
+<p>其它函数：
+getline命令（其实是个函数）：
+获取下一条记录给$0,成功返回1，到达EOF返回0，失败返回-1.
+getline可以从文件中读取：getline &lt; “filename”,每次读一行。
+getline从标准输入读取：getline &lt; “-”,每次从stdin读取一行。
+将输入赋给一个变量：getline var_name.
+从管道读取：”command”|getline；“command”|getline var_name;把一个命令结果输出给getline.</p>
+
+<p>close()：关闭打开的文件和管道</p>
+
+<p>“command” | &hellip;
+close(“command”)关闭输入管道</p>
+
+<p>&hellip;| “command“ &gt; filename
+close(“command &gt; filename”)关闭输出管道</p>
+
+<p>system()：执行一个命令。
+system(“command options”),返回命令的退出状态。</p>
+
+<p>可以定义自己的函数：
+function yourfunctionname(parameter-list) {
+    statements
+}
+可以使用系统定义的变量、语句、函数来定义自己的函数。
+使用自己定义的函数可以将函数写成一个单独脚本，使用-f选项来指定多个脚本进行调用。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-12-14
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/shell/">shell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/tsdb/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">TSDB</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/django_test/">
+            <span class="next-text nav-default">Test</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-12-14 00:55:37 \x2b0800 CST',
+        title: 'Awk',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

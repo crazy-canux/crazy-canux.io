@@ -12,70 +12,10 @@
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/windows/admin/</link>
+      <link>http://canuxcheng.com/windows/ps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/windows/admin/</guid>
-      <description>Title: Admin Date: 2016-04-26 09:54:45 Tags: Windows, Admin
-windows的services和process services是windows的服务，有Name(Display Name)，Service Name，Description等属性。
-process是以.exe为后缀的application，有Name(product name)、original filename(Image Name)、file description(description)等属性。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/builtins/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/builtins/</guid>
-      <description>Title: PowerShell Builtin Command Date: 2016-05-24 10:44:44 Tags: PowerShell, Builtins
-Get-Help和Help: get-help查看帮助信息,help分页查看帮助信息，man是help的别名
-命令说明：
-1 2  Get-Help Help   查看所有命令和概念：
-1 2  Get-Help * Help *   模糊查找命令和概念：
-1 2  Get-Help *&amp;lt;name&amp;gt;* Help *&amp;lt;name&amp;gt;*   查看具体命令帮助：
-1 2 3  Get-Help {&amp;lt;CmdletName&amp;gt; | &amp;lt;TopicName&amp;gt;} Help {&amp;lt;CmdletName&amp;gt; | &amp;lt;TopicName&amp;gt;} &amp;lt;CmdletName&amp;gt; -?   get-help/help的选项:
-1 2 3 4 5 6 7  get-help get-help -examples # 查看示例 -full # 查看所有帮助 -parameter # 查看选项的帮助 -detailed # 查看详细信息 -online # 打开文档中的link -showwindow # 用窗口打开   Helpfile 3.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/coreutils/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/coreutils/</guid>
-      <description>Title: PowerShell Coreutils Command Date: 2016-07-12 17:24:25 Tags: PowerShell, Coreutils
-外部命令 powershell可以执行外部命令.
-1  C:\Windows\System32\*.exe   cmd ping netstat ipconfig route arp nslookup ftp mstsc RDP client.
-taskmgr 任务管理器．
-tskill tree whoami 需要下载，然后放入环境变量的第三方命令.
-WinDump Windows版本的tcpdump, 依赖WinPcap包．
-通过windump导出的*.pcap文件可以通过wireshark打开．</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/filesystem/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/filesystem/</guid>
-      <description>Title: Windows FileSystem Date: 2016-04-03 14:15:40 Tags: Windows, FileSystem</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/monitoring/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/monitoring/</guid>
-      <description>Title: Windows Monitroing Date: 2016-04-03 14:15:40 Tags: Windows, Monitoring</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/powershell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/powershell/</guid>
+      <guid>http://canuxcheng.com/windows/ps/</guid>
       <description>Title: PowerShell Date: 2016-04-26 09:52:02 Tags: PowerShell
 PowerShell Console: command line interface
 ISE: script editor and console combination
@@ -97,10 +37,41 @@ powershell命令 1 2 3  &amp;gt;powershell -? &amp;gt;powershell /? &amp;gt;powe
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/windows/remotemanagement/</link>
+      <link>http://canuxcheng.com/windows/ps_builtins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/windows/remotemanagement/</guid>
+      <guid>http://canuxcheng.com/windows/ps_builtins/</guid>
+      <description>Title: PowerShell Builtin Command Date: 2016-05-24 10:44:44 Tags: PowerShell, Builtins
+Get-Help和Help: get-help查看帮助信息,help分页查看帮助信息，man是help的别名
+命令说明：
+1 2  Get-Help Help   查看所有命令和概念：
+1 2  Get-Help * Help *   模糊查找命令和概念：
+1 2  Get-Help *&amp;lt;name&amp;gt;* Help *&amp;lt;name&amp;gt;*   查看具体命令帮助：
+1 2 3  Get-Help {&amp;lt;CmdletName&amp;gt; | &amp;lt;TopicName&amp;gt;} Help {&amp;lt;CmdletName&amp;gt; | &amp;lt;TopicName&amp;gt;} &amp;lt;CmdletName&amp;gt; -?   get-help/help的选项:
+1 2 3 4 5 6 7  get-help get-help -examples # 查看示例 -full # 查看所有帮助 -parameter # 查看选项的帮助 -detailed # 查看详细信息 -online # 打开文档中的link -showwindow # 用窗口打开   Helpfile 3.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/ps_coreutils/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/ps_coreutils/</guid>
+      <description>Title: PowerShell Coreutils Command Date: 2016-07-12 17:24:25 Tags: PowerShell, Coreutils
+外部命令 powershell可以执行外部命令.
+1  C:\Windows\System32\*.exe   cmd ping netstat ipconfig route arp nslookup ftp mstsc RDP client.
+taskmgr 任务管理器．
+tskill tree whoami 需要下载，然后放入环境变量的第三方命令.
+WinDump Windows版本的tcpdump, 依赖WinPcap包．
+通过windump导出的*.pcap文件可以通过wireshark打开．</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/ps_remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/ps_remote/</guid>
       <description>Title: PowerShell RemoteManagement Date: 2016-07-18 14:54:39 Tags: PowerShell, RemoteManagement
 Windows远程管理  WinRM, 远程处理,在远程机器上执行命令 WMI/CIM RPC, 远程连接,在发起远程连接的机器上执行命令  WinRM 一对一远程处理:
 类似于linux的ssh。
@@ -113,10 +84,75 @@ Invoke-Command一次创建一个连接对象，返回PSComputerName属性，执�
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/windows/wmi/</link>
+      <link>http://canuxcheng.com/windows/ps_utils/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/windows/wmi/</guid>
+      <guid>http://canuxcheng.com/windows/ps_utils/</guid>
+      <description>Title: PowerShell Date: 2016-04-26 09:52:02 Tags: PowerShell
+windows相关项目： choco https://github.com/chocolatey
+windows的apt/yum。
+choco is replacement of chocolatey
+1  choco install openssh   cmder cmd的升级版。
+https://github.com/cmderdev/cmder
+babun a linux-shell like on windows.
+https://github.com/babun/babun
+flinux run unmodified linux applications inside windows
+https://github.com/wishstudio/flinux</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win/</guid>
+      <description>Title: Windows Date: 2016-04-03 14:15:40 Tags:
+windows的IDE VS Enterprise: 收费企业版 VS Professional: 收费个人版 VS Community: 免费社区版
+windows的引导程序是ntloader。
+DOS和NT是windows系统的内核。
+BIOS和MBR基本输入输出系统和主引导记录。
+UEFI和GPT是统一的可扩展接口和GUID分区表。
+FAT是msdos的文件系统
+NTFS是msnt的文件系统
+AD AD: Active Directory
+管理工具：LDAPSoft AD Browser</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win_admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win_admin/</guid>
+      <description>Title: Admin Date: 2016-04-26 09:54:45 Tags: Windows, Admin</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win_filesystem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win_filesystem/</guid>
+      <description>Title: Windows FileSystem Date: 2016-04-03 14:15:40 Tags: Windows, FileSystem</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win_monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win_monitoring/</guid>
+      <description>Title: Windows Monitroing Date: 2016-04-03 14:15:40 Tags: Windows, Monitoring
+windows的services和process services是windows的服务，有Name(Display Name)，Service Name，Description等属性。
+process是以.exe为后缀的application，有Name(product name)、original filename(Image Name)、file description(description)等属性。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/windows/win_wmi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/windows/win_wmi/</guid>
       <description>Title: WMI Date: 2016-04-03 14:15:47 Tags: Windows, WMI, CIM
 WMI/CIM WMI: windows management instrumentation.
 https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx
@@ -141,10 +177,10 @@ windows的wmic：
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/windows/winrm/</link>
+      <link>http://canuxcheng.com/windows/win_winrm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/windows/winrm/</guid>
+      <guid>http://canuxcheng.com/windows/win_winrm/</guid>
       <description>Title: WinRM Date: 2016-07-17 08:36:36 Tags: Windows, WinRM
 WinRM Windows Remote Management
 WinRM是WSMAN(WS-Management Protocol)的增强版。
@@ -161,33 +197,6 @@ Basic是基本的明文协议, NTLM是早期的安全协议,Kerberos是最新的
 service权限管理 查看service的auth配置：
 1  cmd&amp;gt; winrm get winrm/config/service/auth   service只有Negotiate和Kerberos是默认开启的:
 1 2 3 4 5  Basic = false Kerberos = true Negotiate = true Certificate = false CredSSP = false   Negotiate对domain用户选择kerberos,对local用户选择NTLM.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/windows/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/windows/windows/</guid>
-      <description>Title: Windows Date: 2016-04-03 14:15:40 Tags:
-windows的IDE VS Enterprise: 收费企业版 VS Professional: 收费个人版 VS Community: 免费社区版
-windows的引导程序是ntloader。
-DOS和NT是windows系统的内核。
-BIOS和MBR基本输入输出系统和主引导记录。
-UEFI和GPT是统一的可扩展接口和GUID分区表。
-FAT是msdos的文件系统
-NTFS是msnt的文件系统
-windows相关项目： choco https://github.com/chocolatey
-windows的apt/yum。
-choco is replacement of chocolatey
-1  choco install openssh   cmder cmd的升级版。
-https://github.com/cmderdev/cmder
-babun a linux-shell like on windows.
-https://github.com/babun/babun
-flinux run unmodified linux applications inside windows
-https://github.com/wishstudio/flinux
-AD AD: Active Directory
-管理工具：LDAPSoft AD Browser</description>
     </item>
     
   </channel>

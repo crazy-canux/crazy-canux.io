@@ -31,6 +31,15 @@
     
     <item>
       <title>Package</title>
+      <link>http://canuxcheng.com/post/linux_package/</link>
+      <pubDate>Tue, 07 Jun 2016 16:57:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_package/</guid>
+      <description>DPKG debian的包管理机制。 dpkg dpkg的本地前端工具。 deb - Debian binary package format dpkg - package manager for Debian 1 2 3 4 dpkg dpkg -X ./xxx.deb xxx # 将deb包解压到xxx目录 dpkg -e ./xxx.deb xxx/DEBIAN # 将co</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
       <link>http://canuxcheng.com/post/c_package/</link>
       <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
       

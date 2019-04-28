@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>RobotFramework - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Robot Framework https://github.com/robotframework/robotframework https://github.com/robotframework/QuickStartGuide 支持python和java的API. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). Install: 1 $ pip install robotframework Modular: Test Data Robot Framework(test data syntax) Test Libraries(test library API) &#43; Test Tools System under Test(system interface) Use: 1 2 $ robot --version $ robot" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/testing_robotframework/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="RobotFramework" />
+<meta property="og:description" content="Robot Framework https://github.com/robotframework/robotframework https://github.com/robotframework/QuickStartGuide 支持python和java的API. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). Install: 1 $ pip install robotframework Modular: Test Data Robot Framework(test data syntax) Test Libraries(test library API) &#43; Test Tools System under Test(system interface) Use: 1 2 $ robot --version $ robot" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/testing_robotframework/" />
+<meta property="article:published_time" content="2017-02-25T09:41:39&#43;00:00"/>
+<meta property="article:modified_time" content="2017-02-25T09:41:39&#43;00:00"/>
+
+<meta itemprop="name" content="RobotFramework">
+<meta itemprop="description" content="Robot Framework https://github.com/robotframework/robotframework https://github.com/robotframework/QuickStartGuide 支持python和java的API. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). Install: 1 $ pip install robotframework Modular: Test Data Robot Framework(test data syntax) Test Libraries(test library API) &#43; Test Tools System under Test(system interface) Use: 1 2 $ robot --version $ robot">
+
+
+<meta itemprop="datePublished" content="2017-02-25T09:41:39&#43;00:00" />
+<meta itemprop="dateModified" content="2017-02-25T09:41:39&#43;00:00" />
+<meta itemprop="wordCount" content="2427">
+
+
+
+<meta itemprop="keywords" content="testing," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RobotFramework"/>
+<meta name="twitter:description" content="Robot Framework https://github.com/robotframework/robotframework https://github.com/robotframework/QuickStartGuide 支持python和java的API. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). Install: 1 $ pip install robotframework Modular: Test Data Robot Framework(test data syntax) Test Libraries(test library API) &#43; Test Tools System under Test(system interface) Use: 1 2 $ robot --version $ robot"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">RobotFramework</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-02-25 </span>
+        <div class="post-category">
+            <a href="/categories/devops/"> DevOps </a>
+            </div>
+          <span class="more-meta"> 2427 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#robot-framework">Robot Framework</a></li>
+<li><a href="#setting-table">setting table</a></li>
+<li><a href="#test-case-table">Test Case table</a></li>
+<li><a href="#keywords-table">Keywords table</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#organizing-test-cases">Organizing test cases</a></li>
+<li><a href="#libraries">Libraries</a>
+<ul>
+<li><a href="#standard-build-in-libraries">standard(build-in libraries)</a></li>
+<li><a href="#external">External</a></li>
+<li><a href="#other">other</a></li>
+</ul></li>
+<li><a href="#tools">Tools</a>
+<ul>
+<li><a href="#build-in-tools">build-in tools</a></li>
+<li><a href="#editors">editors</a></li>
+<li><a href="#build">build</a></li>
+<li><a href="#other-1">other</a></li>
+</ul></li>
+<li><a href="#robot-command">robot command</a></li>
+<li><a href="#library">Library</a></li>
+<li><a href="#static-librarty-api">Static librarty API</a></li>
+<li><a href="#dylamic-library-api">dylamic library API</a></li>
+<li><a href="#hybird-library-api">hybird library API</a></li>
+<li><a href="#测试库范围">测试库范围</a></li>
+<li><a href="#测试库版本">测试库版本</a></li>
+<li><a href="#指定文档格式">指定文档格式</a></li>
+<li><a href="#listener">Listener</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2017-02-25T09:41:39" title="February 25, 2017">February 25, 2017</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="robot-framework">Robot Framework</h1>
+
+<p><a href="https://github.com/robotframework/robotframework">https://github.com/robotframework/robotframework</a></p>
+
+<p><a href="https://github.com/robotframework/QuickStartGuide">https://github.com/robotframework/QuickStartGuide</a></p>
+
+<p>支持python和java的API.</p>
+
+<p>Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD).</p>
+
+<p>Install:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ pip install robotframework</pre></td></tr></table>
+</div>
+</div>
+<p>Modular:</p>
+
+<ul>
+<li>Test Data</li>
+<li>Robot Framework(test data syntax)</li>
+<li>Test Libraries(test library API) + Test Tools</li>
+<li>System under Test(system interface)</li>
+</ul>
+
+<p>Use:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ robot --version
+$ robot [options] data_sources</pre></td></tr></table>
+</div>
+</div>
+<p>会生成三个文件：</p>
+
+<ul>
+<li>output.xml</li>
+<li>log.html</li>
+<li>report.html</li>
+</ul>
+
+<hr />
+
+<h1 id="setting-table">setting table</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">*** Settings ***
+# 前三个是加载外部文件
+Library    Selenium2Library # 需要在sys.path路径里面
+Resource    ${RESOURCES}/common.tsv
+Variables    ${RESOURCES}/common.py
+Documentation    Docs
+Metadata    Version    2.0
+Suite Setup
+Suite Teardown
+Force Tags
+Default Tags
+Test Setup
+Test Teardown
+Test Template
+Test Timeout</pre></td></tr></table>
+</div>
+</div>
+<h1 id="test-case-table">Test Case table</h1>
+
+<p><a href="https://github.com/robotframework/HowToWriteGoodTestCases">https://github.com/robotframework/HowToWriteGoodTestCases</a></p>
+
+<p>test case:data_sources就是test cases files.robotframework测试用例可以使用带参数的简单表格语法，也可以是不带参数的关键字表格,也可以是数据驱动测试用例.</p>
+
+<p>Test Cases由keywords和可能的arguments组成．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">*** Test Cases ***
+Test Case Name
+    [Documentation]    Docs
+    [Tags]
+    [Setup]
+    [Teardown]
+    [Template]
+    [Timeout]
+    ...</pre></td></tr></table>
+</div>
+</div>
+<p>Test Case分类：</p>
+
+<ul>
+<li>Workflow tests</li>
+<li>higher-level tests</li>
+<li>Data-driven tests</li>
+</ul>
+
+<h1 id="keywords-table">Keywords table</h1>
+
+<p>key word:测试用例使用关键词创建,关键词的2个来源是库关键字和用户关键字．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">*** Keywords ***
+Keyword name
+    [Documentation]    docs
+    [Tags]
+    [Arguments]
+    [Return]
+    [Teardown]
+    [Timeout]</pre></td></tr></table>
+</div>
+</div>
+<p>Keywords分类：</p>
+
+<ul>
+<li>Library keywords</li>
+<li>User keywords</li>
+</ul>
+
+<h1 id="variables">Variables</h1>
+
+<p>variables:测试用例中可能变化的数据定义成变量．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">*** Variables ***
+${ScalarVar}    first one    second one
+@{ListVar}     one    two
+&amp;{DictVar}     key=value    key1=value1</pre></td></tr></table>
+</div>
+</div>
+<p>变量类型：</p>
+
+<ul>
+<li>scalar variables标量</li>
+<li>list variables列表</li>
+<li>dictionary variables字典</li>
+</ul>
+
+<h1 id="organizing-test-cases">Organizing test cases</h1>
+
+<p>test suites:测试用例的集合叫测试套件．每个包含测试用例的输入文件组成一个测试套件．</p>
+
+<p>test setup/suit setup: 在测试之前执行某些关键词．</p>
+
+<p>test teardown/suit teardown: 在测试之后执行某些关键词．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">*** Settings ***
+Suite Setup    Action/Keyword
+Test Setup
+Suite Teardown    Action/Keyword
+Test Teardown</pre></td></tr></table>
+</div>
+</div>
+<p>tags:给测试用例设置标签，以便给他们自由的元数据．</p>
+
+<p>给测试套件加标签：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">*** Settings ***
+Force Tags    quickstart # 这个是case的强制的tag.
+Default Tags    example smoke # 这个是case的默认的tag.</pre></td></tr></table>
+</div>
+</div>
+<p>自定义标签注意多个标签之间用四个空格区分．</p>
+
+<p>给单个case加标签：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 自定义的tag名字多个单词最好用-连接，不要用空格．
+[Tags]    Your-tags1    tag2 # 这个是自定义的tag.</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="libraries">Libraries</h1>
+
+<p>内置标准库和第三方库，自定义库都可以作为keywords.</p>
+
+<p>robotframework的强大之处在于可以根据自己的需要开发自己的库．</p>
+
+<h2 id="standard-build-in-libraries">standard(build-in libraries)</h2>
+
+<ul>
+<li><p>BuiltIn</p>
+
+<p>内置标准库，默认唯一自动加载的库．其它的库都需要手动加载．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># Comment关键字用来注释．
+Comment    this is comment
+# Evaluate关键字用来调用python程序．
+${var}    Evaluate    random.randint(1000, 999)    random
+# Import Library关键字用来导入python模块．
+Import Library    mytest.py</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>Collections</p></li>
+
+<li><p>DateTime</p></li>
+
+<li><p>Dialogs</p></li>
+
+<li><p>Easter</p></li>
+
+<li><p>OperatingSystem</p></li>
+
+<li><p>Process</p></li>
+
+<li><p>Remote</p></li>
+
+<li><p>Screenshot</p>
+
+<p>用于测试过程中的截屏．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># Take Screenshot关键字用来截屏
+Take Screenshot</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>String</p></li>
+
+<li><p>Telnet</p></li>
+
+<li><p>XML</p></li>
+</ul>
+
+<h2 id="external">External</h2>
+
+<ul>
+<li><p>selenium2library</p>
+
+<p>用于web自动化测试．提供了丰富的定位器，包括id,name, xpath, css.</p>
+
+<p><a href="https://github.com/robotframework/Selenium2Library">https://github.com/robotframework/Selenium2Library</a></p>
+
+<p>Install:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ pip install robotframework-selenium2library</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h2 id="other">other</h2>
+
+<hr />
+
+<h1 id="tools">Tools</h1>
+
+<p>robot framework相关的工具．</p>
+
+<h2 id="build-in-tools">build-in tools</h2>
+
+<ul>
+<li><p>Rebot</p></li>
+
+<li><p>Testdoc</p></li>
+
+<li><p>Libdoc</p></li>
+
+<li><p>Tidy</p></li>
+</ul>
+
+<h2 id="editors">editors</h2>
+
+<ul>
+<li><p>RIDE</p>
+
+<p>robot framework的IDE.</p>
+
+<p><a href="https://github.com/robotframework/RIDE">https://github.com/robotframework/RIDE</a></p>
+
+<p>Install:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># Only wxPython 2.8.12.1 with Unicode support is officially supported
+$ pip install robotframework-ride</pre></td></tr></table>
+</div>
+</div>
+<p>Usage:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 添加windows的桌面：
+# C:\Python27\python.exe -c &#34;from robotide import main; main()&#34;
+# C:\Python27\Lib\site-packages\robotide\widgets\robot.ico
+&gt; ride.py
+$ ride.py
+# F5搜索关键字</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h2 id="build">build</h2>
+
+<h2 id="other-1">other</h2>
+
+<hr />
+
+<h1 id="robot-command">robot command</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ robot tests.robot
+$ robot -t/--test [test cases] tests.robot
+$ robot -t My*test*case* tests.robot # 例如case叫My test case just for test.
+$ robot -s/--suite [test suites] tests.robot
+$ robot -i/--include [tags] tests.robot
+$ robot -i My-test-tag tests.robot # 例如tag叫My-test-tag.
+$ robot -e/--exclude [tags] tests.robot
+-d --outputdir dir # 存放output, log, report文件的路径.
+-o --output file
+-l --log file
+-r --report file
+-W --consolewidth chars
+-C --consolecolors auto|on|ansi|off
+-K --consolemarkers auto|on|off
+-L --loglevel level    # 格式LOGLEVEL:DEFAULT, 可选TRACE, DEBUG, INFO (default), WARN, NONE
+# DEFAULT是log file中默认显示的日志级别
+-b --debugfile # 存放debug log的文件．
+-T --timestampoutputs # 表示所有在outputdir里面的文件都自动加时间戳．
+-P --pythonpath path * # 指定PYTHONPATH, 可以指定正在开发的库用来测试，而不需要安装到site-packages.</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="library">Library</h1>
+
+<p>robotframework的灵活就在于可以自己开发第三方库，实现和自己业务相关的关键字．</p>
+
+<p>在robot中导入的这个库必须在sys.path路径里面．</p>
+
+<p>库API的三种类型： 静态库, 动态库, 混合库.</p>
+
+<p>以Selenium2Library为例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Selenium2Library
+|-- docs
+|-- tests
+|-- Selenium2Library
+    |-- __init__.py
+    |-- keywords/*.py
+    |-- ...
+|-- setup.py
+|-- ...
+
+$ pip install robotframework-selenium2library
+# C:\Python27\Lib\site-packages\Selenium2Library
+# /usr/local/lib/python2.7/dist-packages/Selenium2Library
+# 通过ride导入该库后，可以用F5查看关键字的帮助.
+
+# __init__.py
+# 一个类继承所有关键字所在的类．rf通过导入这个类导入所有关键字．
+from .keywords import *
+from .utils import LibraryListener
+...
+
+__version__ =  1.0.0
+
+class Selenium2Library(keywords):
+    &#34;&#34;&#34;docs.&#34;&#34;&#34;
+
+    ROBOT_LIBRARY_SCOPE = &#39;GLOBAL&#39;
+    ROBOT_LIBRARY_VERSION = __version__
+
+    def __init__(self, ...):
+       &#34;&#34;&#34;docs&#34;&#34;&#34;
+       self.ROBOT_LIBRARY_LISTENER = LibraryListener()
+       ...</pre></td></tr></table>
+</div>
+</div>
+<h1 id="static-librarty-api">Static librarty API</h1>
+
+<p>使用一个模块或一个类，方法直接映射到关键字名称．静态API是最基本最常用的．</p>
+
+<p>robotframework在类和模块中寻找关键字对应的方法，会忽略单下划线或双下划线开头的方法．</p>
+
+<p>robotframework在类中寻找关键字对应的方法，不区分大小写，会自动忽略空格和下划线．</p>
+
+<p>robotframework测试库实现为类时，基类中的方法也被识别为关键字．</p>
+
+<p>robotframework测试库实现为模块时，导入的模块的命名空间的可能函数也被识别为关键字．此时要防止导入的库中的方法成为关键字．</p>
+
+<p>关键字跑出异常，该关键字状态就是failed,否则就是pass.</p>
+
+<h1 id="dylamic-library-api">dylamic library API</h1>
+
+<p>可以在运行时动态确定要实现的关键字的名称以及执行方法．</p>
+
+<h1 id="hybird-library-api">hybird library API</h1>
+
+<p>静态和动态都有的方式．</p>
+
+<h1 id="测试库范围">测试库范围</h1>
+
+<p>要确保一个测试用例对状态的更改不会影响其它用例．</p>
+
+<p>测试库可以控制何时使用类属性创建新库．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ROBOT_LIBRARY_SCOPE
+# Global: 只有一个instance创建，并且所有test cases共享．
+# TEST CASE: 为每个test case创建一个instance.
+# TEST SUITE: 为每个test suite创建一个instance.</pre></td></tr></table>
+</div>
+</div>
+<h1 id="测试库版本">测试库版本</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ROBOT_LIBRARY_VERSION</pre></td></tr></table>
+</div>
+</div>
+<h1 id="指定文档格式">指定文档格式</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ROBOT_LIBRARY_DOC_FORMAT
+# reST: 需要安装docutils模块
+# ROBOT: 默认的html格式
+# TEXT:　纯文本格式</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="listener">Listener</h1>
+
+<p>Listener监听器接口允许外部监听器获取关于测试执行的通知．</p>
+
+<p>同名的默认方法会先调用，然后调用自定义的方法．</p>
+
+<p>可以实现的方法有：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">start_suite(name, attribute)/end_suite(name, attribute) # test suite开始/结束的时候调用
+start_test(name, attribute)/end_test(name, attribute) # test case开始/结束的时候调用
+start_keyword(name, attributes)/end_keyword(name, attribute) # keyword开始/结束的时候调用
+close() # 相当于teardown.
+log_message(message) # 当执行的keyword写log的时候调用
+message(message) # 当framework写system log的时候调用
+...</pre></td></tr></table>
+</div>
+</div>
+<p><a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#listener-interface-methods">http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#listener-interface-methods</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># librarylistener.py
+# rf的外部监听程序
+
+from robot.api import logger
+...
+
+class LibraryListener(object):
+    &#34;&#34;&#34;docs&#34;&#34;&#34;
+    # version 2 for rf&gt;=2.1
+    # version 3 for rf&gt;=3.0
+    ROBOT_LISTENER_API_VERSION = 2</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2017-02-25
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/testing/">testing</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/testing/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Testing</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/testing_selenium/">
+            <span class="next-text nav-default">Selenium</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2017-02-25 09:41:39 \x2b0000 UTC',
+        title: 'RobotFramework',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
