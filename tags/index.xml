@@ -6,28 +6,10 @@
     <description>Recent content in Tags on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Mar 2017 17:11:58 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Feb 2019 14:04:05 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>GPG</title>
-      <link>http://canuxcheng.com/tags/gpg/</link>
-      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/gpg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GPGME</title>
-      <link>http://canuxcheng.com/tags/gpgme/</link>
-      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/gpgme/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Init</title>
@@ -44,24 +26,6 @@
       <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/logging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OpenPGP</title>
-      <link>http://canuxcheng.com/tags/openpgp/</link>
-      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/openpgp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PGP</title>
-      <link>http://canuxcheng.com/tags/pgp/</link>
-      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/pgp/</guid>
       <description></description>
     </item>
     
@@ -156,15 +120,6 @@
     </item>
     
     <item>
-      <title>cfssl</title>
-      <link>http://canuxcheng.com/tags/cfssl/</link>
-      <pubDate>Sat, 28 Jul 2018 16:08:54 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/cfssl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cloud</title>
       <link>http://canuxcheng.com/tags/cloud/</link>
       <pubDate>Tue, 05 Apr 2016 22:02:31 +0000</pubDate>
@@ -206,15 +161,6 @@
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/cryptographic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>csrf</title>
-      <link>http://canuxcheng.com/tags/csrf/</link>
-      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/csrf/</guid>
       <description></description>
     </item>
     
@@ -296,6 +242,15 @@
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/document/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>esxi</title>
+      <link>http://canuxcheng.com/tags/esxi/</link>
+      <pubDate>Tue, 05 Apr 2016 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/esxi/</guid>
       <description></description>
     </item>
     
@@ -503,6 +458,15 @@
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/keepalived/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kvm</title>
+      <link>http://canuxcheng.com/tags/kvm/</link>
+      <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/kvm/</guid>
       <description></description>
     </item>
     
@@ -849,6 +813,15 @@
     </item>
     
     <item>
+      <title>sqlinjection</title>
+      <link>http://canuxcheng.com/tags/sqlinjection/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/sqlinjection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>sqlite</title>
       <link>http://canuxcheng.com/tags/sqlite/</link>
       <pubDate>Wed, 25 May 2016 12:14:59 +0000</pubDate>
@@ -975,6 +948,15 @@
     </item>
     
     <item>
+      <title>vagrant</title>
+      <link>http://canuxcheng.com/tags/vagrant/</link>
+      <pubDate>Thu, 12 Jan 2017 21:00:01 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/vagrant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>view</title>
       <link>http://canuxcheng.com/tags/view/</link>
       <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
@@ -1025,6 +1007,15 @@
       <pubDate>Tue, 03 Apr 2018 14:46:19 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xss</title>
+      <link>http://canuxcheng.com/tags/xss/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/xss/</guid>
       <description></description>
     </item>
     

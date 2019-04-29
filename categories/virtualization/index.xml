@@ -12,20 +12,47 @@
     
     
     <item>
-      <title>Libvirt</title>
-      <link>http://canuxcheng.com/virtualization/libvirt/</link>
+      <title>Kvm</title>
+      <link>http://canuxcheng.com/post/kvm/</link>
       <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/virtualization/libvirt/</guid>
+      <guid>http://canuxcheng.com/post/kvm/</guid>
+      <description>KVM Kernel-based Virtual Machine. Qemu 安装: 1 $ sudo apt-get install qemu qemu-kvm</description>
+    </item>
+    
+    <item>
+      <title>Libvirt</title>
+      <link>http://canuxcheng.com/post/libvirt/</link>
+      <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/libvirt/</guid>
       <description>Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) $ sudo apt-get install libvirt-dev # 库, python/go client依赖该库 $</description>
     </item>
     
     <item>
-      <title>Virtualization</title>
-      <link>http://canuxcheng.com/virtualization/virtualization/</link>
+      <title>Vagrant</title>
+      <link>http://canuxcheng.com/post/vagrant/</link>
+      <pubDate>Thu, 12 Jan 2017 21:00:01 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vagrant/</guid>
+      <description>Vagrant 构建在虚拟化技术之上的虚拟机运行环境管理工具． 适合用来构建和分发开发环境．通过命令行可以批量自动化，不用一个一个安装配置图形界面的虚拟机．</description>
+    </item>
+    
+    <item>
+      <title>Esxi</title>
+      <link>http://canuxcheng.com/post/esxi/</link>
       <pubDate>Tue, 05 Apr 2016 21:47:54 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/virtualization/virtualization/</guid>
+      <guid>http://canuxcheng.com/post/esxi/</guid>
+      <description>VMware vSphere是vmware的虚拟化平台,包括ESXi和vSphere Client. vSphere Hypervisor(也叫ESXi)是vSphere的免费裸机h</description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>http://canuxcheng.com/post/virtualization/</link>
+      <pubDate>Tue, 05 Apr 2016 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/virtualization/</guid>
       <description>Virtualization 虚拟化技术的发展： DataCenter, 最原始的数据中心 Virtualization, 虚拟化技术，包括Kvm, Xen(Citrix), HyperV(MicroSoft), ESXi(VMware)等</description>
     </item>
     

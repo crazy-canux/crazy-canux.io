@@ -13,11 +13,38 @@
     
     <item>
       <title>Capture</title>
-      <link>http://canuxcheng.com/security/capture/</link>
+      <link>http://canuxcheng.com/post/sec_capture/</link>
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/security/capture/</guid>
-      <description>title: Capture Packet Capture 网络抓包 Fiddler http://www.telerik.com/fiddler Wireshark https://www.wireshark.org/</description>
+      <guid>http://canuxcheng.com/post/sec_capture/</guid>
+      <description>Packet Capture 网络抓包 Fiddler http://www.telerik.com/fiddler Wireshark https://www.wireshark.org/</description>
+    </item>
+    
+    <item>
+      <title>Csrf</title>
+      <link>http://canuxcheng.com/post/sec_csrf/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_csrf/</guid>
+      <description>CSRF Cross-site request forgery, 跨站请求伪造． 发生条件： 登陆受信任网站A, 并在本地生成cookie 在不退出A的情况下，访问危险网站B 预防方法: 正确使用get,pos</description>
+    </item>
+    
+    <item>
+      <title>Cfssl</title>
+      <link>http://canuxcheng.com/post/sec_cfssl/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_cfssl/</guid>
+      <description>cfssl https://github.com/cloudflare/cfssl</description>
+    </item>
+    
+    <item>
+      <title>Cryptographic</title>
+      <link>http://canuxcheng.com/post/sec_cryptographic/</link>
+      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_cryptographic/</guid>
+      <description>PGP PGP: Pretty Good Privacy, 是一款收费的加密软件． OpenPGP OpenPGP是一种加密的标准． http://openpgp.org/ GPG GPG: GnuPG, 是一款开源免费的加密软件． GPGME GPGME: GPG Made Easy, 是一个让应用程序使用GPG更容</description>
     </item>
     
   </channel>

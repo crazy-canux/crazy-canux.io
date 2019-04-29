@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vagrant - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Vagrant 构建在虚拟化技术之上的虚拟机运行环境管理工具． 适合用来构建和分发开发环境．通过命令行可以批量自动化，不用一个一个安装配置图形界面的虚拟机．" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/vagrant/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Vagrant" />
+<meta property="og:description" content="Vagrant 构建在虚拟化技术之上的虚拟机运行环境管理工具． 适合用来构建和分发开发环境．通过命令行可以批量自动化，不用一个一个安装配置图形界面的虚拟机．" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/vagrant/" />
+<meta property="article:published_time" content="2017-01-12T21:00:01&#43;00:00"/>
+<meta property="article:modified_time" content="2017-01-12T21:00:01&#43;00:00"/>
+
+<meta itemprop="name" content="Vagrant">
+<meta itemprop="description" content="Vagrant 构建在虚拟化技术之上的虚拟机运行环境管理工具． 适合用来构建和分发开发环境．通过命令行可以批量自动化，不用一个一个安装配置图形界面的虚拟机．">
+
+
+<meta itemprop="datePublished" content="2017-01-12T21:00:01&#43;00:00" />
+<meta itemprop="dateModified" content="2017-01-12T21:00:01&#43;00:00" />
+<meta itemprop="wordCount" content="1022">
+
+
+
+<meta itemprop="keywords" content="vagrant," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vagrant"/>
+<meta name="twitter:description" content="Vagrant 构建在虚拟化技术之上的虚拟机运行环境管理工具． 适合用来构建和分发开发环境．通过命令行可以批量自动化，不用一个一个安装配置图形界面的虚拟机．"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vagrant</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-01-12 </span>
+        <div class="post-category">
+            <a href="/categories/virtualization/"> Virtualization </a>
+            </div>
+          <span class="more-meta"> 1022 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#vagrant">Vagrant</a></li>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#添加box">添加box</a></li>
+<li><a href="#使用box">使用box</a></li>
+<li><a href="#结束使用">结束使用</a></li>
+<li><a href="#管理box">管理box</a></li>
+<li><a href="#配置vagrantfile">配置Vagrantfile</a></li>
+<li><a href="#打包">打包</a></li>
+<li><a href="#windows">windows</a></li>
+<li><a href="#linux">linux</a></li>
+<li><a href="#q-a">Q&amp;A</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2017-01-12T21:00:01" title="January 12, 2017">January 12, 2017</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="vagrant">Vagrant</h1>
+
+<p>构建在虚拟化技术之上的虚拟机运行环境管理工具．</p>
+
+<p>适合用来构建和分发开发环境．通过命令行可以批量自动化，不用一个一个安装配置图形界面的虚拟机．</p>
+
+<p><a href="https://github.com/mitchellh/vagrant">https://github.com/mitchellh/vagrant</a></p>
+
+<p>需要安装virtualbox或vmware等虚拟机.</p>
+
+<p>vagrant还支持其它的providers(docker, vmware, hyper-v, aws)</p>
+
+<p>可以在这里找到很多vagrant可用的box:</p>
+
+<p><a href="https://atlas.hashicorp.com/boxes/search">https://atlas.hashicorp.com/boxes/search</a></p>
+
+<hr />
+
+<h1 id="初始化">初始化</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ mkdir -p /home/user/vagrant
+$ cd /vagrant
+
+$ vagrant init # 生成一个Vagrantfile文件．
+
+# 相当于直接配置了Vagrantfile.
+$ vagrant init [box-name]</pre></td></tr></table>
+</div>
+</div>
+<h1 id="添加box">添加box</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 默认从https://atlas.hashicorp.com/boxes/search下载该box.
+$ vagrant box add [[--name ]box-name] hashicorp/precise64
+
+# 也可以使用下载到本地的box
+$ vagrant box add [[--name ]box-name] /path/to/your.box
+
+# 也可以使用自己的服务器上的box
+$ vagrant box add [[--name ]box-name] URL
+
+# 修改Vagrantfile:
+Vagrant.configure(&#34;2&#34;) do |config|
+  config.vm.box = &#34;[box-name]&#34;
+end</pre></td></tr></table>
+</div>
+</div>
+<h1 id="使用box">使用box</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vagrant up [box-name]
+$ vagrant up --provider docker/aws/vmware/hyperv/... [box-name]
+
+$ vagrant ssh
+# 会进入一个vagrant@precise64:~$的环境．
+# /vagrant 是一个和/home/user/vagrant同步的路径．</pre></td></tr></table>
+</div>
+</div>
+<h1 id="结束使用">结束使用</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vagrant status # 查看box状态
+$ vagrant halt # 关闭box
+$ vagrant reload # 重启box
+$ vagrant suspend
+$ vagrant resume
+$ vagrant provision
+
+# 会销毁box占用的所有资源，但不删除box.
+$ vagrant destroy</pre></td></tr></table>
+</div>
+</div>
+<h1 id="管理box">管理box</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vagrant box list
+$ vagrant box remove</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="配置vagrantfile">配置Vagrantfile</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">config.vm.box_version = &#34;1.1.0&#34;
+cfg.vm.hostname = &#34;ubuntu.labs&#34;
+
+# 端口映射, 把主机的端口映射到vagrant的box
+# 访问主机的该端口就是访问vagrant的box
+cfg.vm.network :forward_port, guest: 80, host: 8080
+
+# 私有网络，只有主机可以访问vagrant的box.
+# 如果多个vagrant的box设定在同一个网段也可以互相访问．
+cfg.vm.network :private_network, ip: &#34;192.168.50.10&#34;
+
+# 公有网络，vagrant的box和主机使用一样的网络．
+cfg.vm.network :public_network
+cfg.vm.network :public_network, ip: &#34;192.168.1.1&#34;
+
+cfg.vm.synced_folder &#34;/var/tmp/pkg-build&#34;, &#34;/var/tmp/pkg-build&#34;</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="打包">打包</h1>
+
+<p>用户可以打包自己的开发环境，然后分发出去．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="err">$</span> <span class="nx">vagrant</span> <span class="kn">package</span> <span class="p">[</span><span class="nx">options</span><span class="p">]</span> <span class="p">[</span><span class="nx">name</span><span class="p">]</span>
+<span class="err">$</span> <span class="nx">vagrant</span> <span class="kn">package</span></pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="windows">windows</h1>
+
+<p>在windows物理机安装virtualbox和vagrant.</p>
+
+<p>windows不支持ssh,所以需要类似于putty这种客户端．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">host: 127.0.0.1
+port: 2222
+user: vagrant/root
+password: vagrant</pre></td></tr></table>
+</div>
+</div>
+<h1 id="linux">linux</h1>
+
+<p>只能在linux物理机安装virtualbox和vagrant使用．</p>
+
+<p>如果想在windows物理机里面的virtualbox上安装的linux系统中使用vagrant会报错：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># default: Warning: Connection timeout. Retrying...</pre></td></tr></table>
+</div>
+</div>
+<p>因为需要在linux上在安装virtualxo，然后不能设置加速．</p>
+
+<p><img src="/images/vagrant.PNG" alt="Pic" /></p>
+
+<p><img src="/images/vagrant1.PNG" alt="Pic1" /></p>
+
+<h1 id="q-a">Q&amp;A</h1>
+
+<ol>
+<li><p>vagrant怎样打包ESXi上的虚拟机．</p></li>
+
+<li><p>vagrant能否打包cluster(virtualbox或esxi)</p></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2017-01-12
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/vagrant/">vagrant</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/monitoring_grafana/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Grafana</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/django_misc/">
+            <span class="next-text nav-default">Utils</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2017-01-12 21:00:01 \x2b0000 UTC',
+        title: 'Vagrant',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

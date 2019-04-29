@@ -66,14 +66,14 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/security/capture/</loc>
+    <loc>http://canuxcheng.com/post/sec_capture/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/security/csrf/</loc>
+    <loc>http://canuxcheng.com/post/sec_csrf/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -87,7 +87,21 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/security/cfssl/</loc>
+    <loc>http://canuxcheng.com/post/sec_sqlinjection/</loc>
+    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/sec_xss/</loc>
+    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/sec_cfssl/</loc>
     <lastmod>2018-07-28T16:08:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -409,7 +423,14 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/virtualization/libvirt/</loc>
+    <loc>http://canuxcheng.com/post/kvm/</loc>
+    <lastmod>2017-04-05T21:47:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/libvirt/</loc>
     <lastmod>2017-04-05T21:47:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -423,7 +444,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/security/cryptographic/</loc>
+    <loc>http://canuxcheng.com/post/sec_cryptographic/</loc>
     <lastmod>2017-03-27T17:11:58+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -467,6 +488,13 @@
   <url>
     <loc>http://canuxcheng.com/post/monitoring_grafana/</loc>
     <lastmod>2017-01-12T21:05:48+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/vagrant/</loc>
+    <lastmod>2017-01-12T21:00:01+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -976,7 +1004,14 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/virtualization/virtualization/</loc>
+    <loc>http://canuxcheng.com/post/esxi/</loc>
+    <lastmod>2016-04-05T21:47:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/virtualization/</loc>
     <lastmod>2016-04-05T21:47:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1109,6 +1144,13 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/linux_filesystem/</loc>
+    <lastmod>2016-03-31T21:48:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/linux_firewall/</loc>
     <lastmod>2016-03-31T21:48:59+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1124,13 +1166,6 @@
   
   <url>
     <loc>http://canuxcheng.com/post/linux/</loc>
-    <lastmod>2016-03-31T21:48:59+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/post/linux_filesystem/</loc>
     <lastmod>2016-03-31T21:48:59+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1240,42 +1275,6 @@
   
   <url>
     <loc>http://canuxcheng.com/javascript/vue/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/security/security/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/security/sqlinjection/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/security/xss/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/virtualization/esxi/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/virtualization/kvm/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/virtualization/vagrant/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1431,6 +1430,12 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/sec_security/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/categories/beego/</loc>
     <lastmod>2019-04-23T21:47:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1494,20 +1499,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/tags/gpg/</loc>
-    <lastmod>2017-03-27T17:11:58+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/tags/gpgme/</loc>
-    <lastmod>2017-03-27T17:11:58+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/categories/golang/</loc>
     <lastmod>2019-04-23T21:42:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1555,20 +1546,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/tags/openpgp/</loc>
-    <lastmod>2017-03-27T17:11:58+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/tags/pgp/</loc>
-    <lastmod>2017-03-27T17:11:58+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/post/</loc>
     <lastmod>2019-04-23T21:47:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1578,13 +1555,6 @@
   <url>
     <loc>http://canuxcheng.com/categories/python/</loc>
     <lastmod>2016-08-15T11:16:29+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/security/</loc>
-    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1605,7 +1575,7 @@
   
   <url>
     <loc>http://canuxcheng.com/tags/</loc>
-    <lastmod>2017-03-27T17:11:58+00:00</lastmod>
+    <lastmod>2019-02-03T14:04:05+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1619,13 +1589,6 @@
   
   <url>
     <loc>http://canuxcheng.com/categories/virtualization/</loc>
-    <lastmod>2017-04-05T21:47:54+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/virtualization/</loc>
     <lastmod>2017-04-05T21:47:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -1729,13 +1692,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/tags/cfssl/</loc>
-    <lastmod>2018-07-28T16:08:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/tags/cloud/</loc>
     <lastmod>2016-04-05T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1766,13 +1722,6 @@
   <url>
     <loc>http://canuxcheng.com/tags/cryptographic/</loc>
     <lastmod>2018-01-01T10:49:21+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/tags/csrf/</loc>
-    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1836,6 +1785,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/document/</loc>
     <lastmod>2018-01-01T10:49:21+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/esxi/</loc>
+    <lastmod>2016-04-05T21:47:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1997,6 +1953,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/keepalived/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/kvm/</loc>
+    <lastmod>2017-04-05T21:47:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2268,6 +2231,13 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/tags/sqlinjection/</loc>
+    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/tags/sqlite/</loc>
     <lastmod>2016-05-25T12:14:59+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2366,6 +2336,13 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/tags/vagrant/</loc>
+    <lastmod>2017-01-12T21:00:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/tags/view/</loc>
     <lastmod>2019-04-23T21:47:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2403,6 +2380,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/websocket/</loc>
     <lastmod>2018-04-03T14:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/xss/</loc>
+    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

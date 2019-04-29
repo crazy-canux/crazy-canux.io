@@ -120,6 +120,15 @@
     </item>
     
     <item>
+      <title>FileSystem</title>
+      <link>http://canuxcheng.com/post/linux_filesystem/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_filesystem/</guid>
+      <description>VFS Linux采用虚拟文件系统，支持多个文件系统协议． ext/ext2/ext3/ext4 JFS2 ramfs linux的VM(虚拟内存)包括ramfs和swap. 对内存的支持 swap 交换分区，当内</description>
+    </item>
+    
+    <item>
       <title>Firewall</title>
       <link>http://canuxcheng.com/post/linux_firewall/</link>
       <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
@@ -144,15 +153,6 @@
       
       <guid>http://canuxcheng.com/post/linux/</guid>
       <description>Linux Linux严格讲指的是Linux这一类操作系统的内核。 Linux内核的github： https://github.com/torvalds/linux Linux内核的站点： https://www.kernel.org/ 商业化的linux系统： redhat enterprise</description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>http://canuxcheng.com/post/linux_filesystem/</link>
-      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/linux_filesystem/</guid>
-      <description>VFS Linux采用虚拟文件系统，支持多个文件系统协议． ext/ext2/ext3/ext4 JFS2 ramfs linux的VM(虚拟内存)包括ramfs和swap. 对内存的支持 swap 交换分区，当内</description>
     </item>
     
     <item>
