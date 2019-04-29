@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>http on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/http/</link>
+    <description>Recent content in http on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Sep 2016 01:39:34 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Http</title>
+      <link>http://canuxcheng.com/post/http/</link>
+      <pubDate>Tue, 13 Sep 2016 01:39:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/http/</guid>
+      <description>HTTP/HTTPS http port: 80 https port: 443 http/https的请求方式： 1 2 3 4 5 6 7 get # 从服务器取出资源 post # 在服务器新建资源 put # 在服务器更新资源，客户端提供改变后的</description>
+    </item>
+    
+  </channel>
+</rss>

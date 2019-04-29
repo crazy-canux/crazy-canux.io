@@ -84,15 +84,6 @@
     </item>
     
     <item>
-      <title>amqp</title>
-      <link>http://canuxcheng.com/tags/amqp/</link>
-      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/amqp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ansible</title>
       <link>http://canuxcheng.com/tags/ansible/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
@@ -138,6 +129,15 @@
     </item>
     
     <item>
+      <title>brazil</title>
+      <link>http://canuxcheng.com/tags/brazil/</link>
+      <pubDate>Thu, 08 Mar 2018 16:41:50 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/brazil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>builtin</title>
       <link>http://canuxcheng.com/tags/builtin/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
@@ -170,6 +170,15 @@
       <pubDate>Tue, 05 Apr 2016 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>command</title>
+      <link>http://canuxcheng.com/tags/command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/command/</guid>
       <description></description>
     </item>
     
@@ -273,6 +282,15 @@
     </item>
     
     <item>
+      <title>dns</title>
+      <link>http://canuxcheng.com/tags/dns/</link>
+      <pubDate>Thu, 03 May 2018 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>document</title>
       <link>http://canuxcheng.com/tags/document/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
@@ -327,11 +345,20 @@
     </item>
     
     <item>
-      <title>gearmany</title>
-      <link>http://canuxcheng.com/tags/gearmany/</link>
-      <pubDate>Sun, 08 May 2016 16:41:50 +0000</pubDate>
+      <title>ftp</title>
+      <link>http://canuxcheng.com/tags/ftp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/tags/gearmany/</guid>
+      <guid>http://canuxcheng.com/tags/ftp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>germany</title>
+      <link>http://canuxcheng.com/tags/germany/</link>
+      <pubDate>Mon, 08 May 2017 16:41:50 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/germany/</guid>
       <description></description>
     </item>
     
@@ -390,6 +417,15 @@
     </item>
     
     <item>
+      <title>haproxy</title>
+      <link>http://canuxcheng.com/tags/haproxy/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/haproxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>hawq</title>
       <link>http://canuxcheng.com/tags/hawq/</link>
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
@@ -404,6 +440,15 @@
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/hive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>http</title>
+      <link>http://canuxcheng.com/tags/http/</link>
+      <pubDate>Tue, 13 Sep 2016 01:39:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/http/</guid>
       <description></description>
     </item>
     
@@ -453,6 +498,24 @@
     </item>
     
     <item>
+      <title>keepalived</title>
+      <link>http://canuxcheng.com/tags/keepalived/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/keepalived/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ldap</title>
+      <link>http://canuxcheng.com/tags/ldap/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/ldap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>libvirt</title>
       <link>http://canuxcheng.com/tags/libvirt/</link>
       <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
@@ -464,7 +527,7 @@
     <item>
       <title>linux</title>
       <link>http://canuxcheng.com/tags/linux/</link>
-      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/linux/</guid>
       <description></description>
@@ -527,7 +590,7 @@
     <item>
       <title>monitoring</title>
       <link>http://canuxcheng.com/tags/monitoring/</link>
-      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/monitoring/</guid>
       <description></description>
@@ -561,11 +624,29 @@
     </item>
     
     <item>
+      <title>nfs</title>
+      <link>http://canuxcheng.com/tags/nfs/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/nfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>nosql</title>
       <link>http://canuxcheng.com/tags/nosql/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/nosql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ntp</title>
+      <link>http://canuxcheng.com/tags/ntp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/ntp/</guid>
       <description></description>
     </item>
     
@@ -660,6 +741,15 @@
     </item>
     
     <item>
+      <title>rabbitmq</title>
+      <link>http://canuxcheng.com/tags/rabbitmq/</link>
+      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/rabbitmq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>rdbms</title>
       <link>http://canuxcheng.com/tags/rdbms/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
@@ -687,6 +777,15 @@
     </item>
     
     <item>
+      <title>restful</title>
+      <link>http://canuxcheng.com/tags/restful/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/restful/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>restructuretext</title>
       <link>http://canuxcheng.com/tags/restructuretext/</link>
       <pubDate>Mon, 08 Aug 2016 13:39:38 +0000</pubDate>
@@ -696,11 +795,47 @@
     </item>
     
     <item>
+      <title>rpc</title>
+      <link>http://canuxcheng.com/tags/rpc/</link>
+      <pubDate>Sun, 03 Sep 2017 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/rpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>samba</title>
+      <link>http://canuxcheng.com/tags/samba/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/samba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>shell</title>
       <link>http://canuxcheng.com/tags/shell/</link>
       <pubDate>Wed, 14 Dec 2016 00:55:37 +0800</pubDate>
       
       <guid>http://canuxcheng.com/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>smtp</title>
+      <link>http://canuxcheng.com/tags/smtp/</link>
+      <pubDate>Wed, 26 Apr 2017 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/smtp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>snmp</title>
+      <link>http://canuxcheng.com/tags/snmp/</link>
+      <pubDate>Tue, 26 Apr 2016 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/snmp/</guid>
       <description></description>
     </item>
     
@@ -732,9 +867,18 @@
     </item>
     
     <item>
+      <title>ssh</title>
+      <link>http://canuxcheng.com/tags/ssh/</link>
+      <pubDate>Thu, 28 Jul 2016 15:53:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>storage</title>
       <link>http://canuxcheng.com/tags/storage/</link>
-      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/storage/</guid>
       <description></description>
@@ -867,11 +1011,20 @@
     </item>
     
     <item>
-      <title>windows</title>
-      <link>http://canuxcheng.com/tags/windows/</link>
-      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      <title>webhook</title>
+      <link>http://canuxcheng.com/tags/webhook/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/tags/windows/</guid>
+      <guid>http://canuxcheng.com/tags/webhook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>websocket</title>
+      <link>http://canuxcheng.com/tags/websocket/</link>
+      <pubDate>Tue, 03 Apr 2018 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/websocket/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,19 @@
     <description>Recent content in monitoring on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Jan 2018 19:23:25 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Apr 2018 21:47:54 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/storage_monitoring/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_monitoring/</guid>
+      <description>Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &amp;#34;read&amp;#34; FROM &amp;#34;diskio&amp;#34; SELECT non_negative_derivative(mean(writes),1s) as &amp;#34;write&amp;#34; FROM &amp;#34;diskio&amp;#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &amp;#34;read&amp;#34; FROM &amp;#34;diskio&amp;#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &amp;#34;write&amp;#34; FROM &amp;#34;diskio&amp;#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&amp;#34;io_time&amp;#34;),1ms) FROM &amp;#34;diskio&amp;#34; WHERE &amp;#34;name&amp;#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &amp;#34;host&amp;#34;,&amp;#34;name&amp;#34;,time(_interval) Queue length: 1 2 3</description>
+    </item>
     
     <item>
       <title>Influxdb</title>
@@ -99,6 +108,19 @@
       
       <guid>http://canuxcheng.com/post/monitoring_zabbix/</guid>
       <description> Zabbix </description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/network_monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network_monitoring/</guid>
+      <description>Monitoring network usage:
+1 2  bytes_sent(out) bytes_recv(in)   packets:
+1 2  packets_sent(out) packets_recv(in)   error_in/out:
+1 2 3 4  SELECT non_negative_derivative(mean(&amp;#34;err_in&amp;#34;), 1s) AS &amp;#34;recv&amp;#34;, non_negative_derivative(mean(&amp;#34;err_out&amp;#34;), 1s) AS &amp;#34;send&amp;#34; FROM &amp;#34;net&amp;#34; WHERE &amp;#34;interface&amp;#34; =~ /^(vlan|eth|ens|bond).*/ AND $timeFilter GROUP BY time($__interval), &amp;#34;host&amp;#34;, &amp;#34;interface&amp;#34; fill(none)   drop_in/out:
+1 2 3 4  SELECT non_negative_derivative(mean(&amp;#34;drop_in&amp;#34;), 1s) AS &amp;#34;recv&amp;#34;, non_negative_derivative(mean(&amp;#34;drop_out&amp;#34;), 1s) AS &amp;#34;send&amp;#34; FROM &amp;#34;net&amp;#34; WHERE &amp;#34;interface&amp;#34; =~ /^(vlan|eth|ens|bond).</description>
     </item>
     
   </channel>

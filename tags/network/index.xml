@@ -29,5 +29,14 @@
       <description>Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i</description>
     </item>
     
+    <item>
+      <title>Network</title>
+      <link>http://canuxcheng.com/post/network/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network/</guid>
+      <description>网络基础 小端： 低字节在起始地址，高字节在高地址 大端： 高字节在起始地址，低字节在高地址 linux一般是小端，unix一般是大端 网络模型 OSI七</description>
+    </item>
+    
   </channel>
 </rss>

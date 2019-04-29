@@ -48,6 +48,24 @@
     </item>
     
     <item>
+      <title>Command</title>
+      <link>http://canuxcheng.com/post/network_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network_command/</guid>
+      <description>telnet 1 telnet nc/netcat 1 2 nc -z IP PORT # 查看指定tcp://ip:port是否监听 nc -zu IP PORT # 查看udp://ip:port是否监听 ping 1 2 $ sudo apt-get install iputils-ping ping # 用于确定</description>
+    </item>
+    
+    <item>
+      <title>Command</title>
+      <link>http://canuxcheng.com/post/storage_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_command/</guid>
+      <description>sysstat: 1 2 3 4 5 6 # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat # 查看diskio信息 $ sudo iostat iotop 1 2 3 # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使</description>
+    </item>
+    
+    <item>
       <title>Init</title>
       <link>http://canuxcheng.com/post/linux_init/</link>
       <pubDate>Sun, 03 Feb 2019 14:04:05 +0000</pubDate>
@@ -63,6 +81,24 @@
       
       <guid>http://canuxcheng.com/post/beego_template/</guid>
       <description>Golang 模板 beego的模板和text/template, html/template差不多． 注释 1 {{/* comment /*}} 变量 变量定义和使用 1 2 3 4 5 申明变量不会产</description>
+    </item>
+    
+    <item>
+      <title>Amqp</title>
+      <link>http://canuxcheng.com/post/haproxy/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/haproxy/</guid>
+      <description>HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg</description>
+    </item>
+    
+    <item>
+      <title>Keepalived</title>
+      <link>http://canuxcheng.com/post/keepalived/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/keepalived/</guid>
+      <description>Keepalived http://www.keepalived.org/ https://github.com/acassen/keepalived 安装: 配置:</description>
     </item>
     
     <item>
@@ -84,6 +120,24 @@
     </item>
     
     <item>
+      <title>Restful</title>
+      <link>http://canuxcheng.com/post/rest/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rest/</guid>
+      <description>REST REST: REpresentational State Transfer． restclient 一个是firefox的插件． https://github.com/chao/RESTClient 另一个是java开发的application. https://github.com/wiztools/rest-client postman postman是一个applic</description>
+    </item>
+    
+    <item>
+      <title>Webhook</title>
+      <link>http://canuxcheng.com/post/webhook/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/webhook/</guid>
+      <description>WebHook 用于server和server之间通讯．</description>
+    </item>
+    
+    <item>
       <title>Grok</title>
       <link>http://canuxcheng.com/post/logging_grok/</link>
       <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
@@ -99,6 +153,51 @@
       
       <guid>http://canuxcheng.com/post/logging/</guid>
       <description>Logging 日志采集，存储，可视化. 主要有Elastic stack 和 splunk.</description>
+    </item>
+    
+    <item>
+      <title>Dns</title>
+      <link>http://canuxcheng.com/post/dns/</link>
+      <pubDate>Thu, 03 May 2018 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/dns/</guid>
+      <description>DNS Domain Name System: 域名系统</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/storage_monitoring/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_monitoring/</guid>
+      <description>Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &amp;#34;read&amp;#34; FROM &amp;#34;diskio&amp;#34; SELECT non_negative_derivative(mean(writes),1s) as &amp;#34;write&amp;#34; FROM &amp;#34;diskio&amp;#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &amp;#34;read&amp;#34; FROM &amp;#34;diskio&amp;#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &amp;#34;write&amp;#34; FROM &amp;#34;diskio&amp;#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&amp;#34;io_time&amp;#34;),1ms) FROM &amp;#34;diskio&amp;#34; WHERE &amp;#34;name&amp;#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &amp;#34;host&amp;#34;,&amp;#34;name&amp;#34;,time(_interval) Queue length: 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>http://canuxcheng.com/post/storage/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage/</guid>
+      <description>Storage RAID RAID: redundant array of independent disks, 独立磁盘冗余数组． 存储方式 DAS: direct attached storage, 直连式存储，通过SCSI或FC连接服务器． NAS: network attached storage，网络接入存储，通过IP(N</description>
+    </item>
+    
+    <item>
+      <title>Websocket</title>
+      <link>http://canuxcheng.com/post/websocket/</link>
+      <pubDate>Tue, 03 Apr 2018 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/websocket/</guid>
+      <description>WebSocket websocket用于server和browser之间通讯． websocket采用特殊报头，使得浏览器和服务器只需要做一个握手的动作． 通讯</description>
+    </item>
+    
+    <item>
+      <title>Brazil</title>
+      <link>http://canuxcheng.com/post/travel_brazil/</link>
+      <pubDate>Thu, 08 Mar 2018 16:41:50 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/travel_brazil/</guid>
+      <description>巴西之旅 看照片： 库里提巴 库里提巴（Curitiba）</description>
     </item>
     
     <item>
@@ -310,6 +409,33 @@ debug </description>
     </item>
     
     <item>
+      <title>Rabbitmq</title>
+      <link>http://canuxcheng.com/post/rabbitmq/</link>
+      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rabbitmq/</guid>
+      <description>AMQP AMQP: Advanced Message Queue Protocol. AMQP是高级消息队列协议．是异步消息传递所使用的应用层协议规范． 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq Rabbitmq https://github.com/rabbitmq RabbitMQ是一个erl</description>
+    </item>
+    
+    <item>
+      <title>Rpc</title>
+      <link>http://canuxcheng.com/post/rpc/</link>
+      <pubDate>Sun, 03 Sep 2017 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rpc/</guid>
+      <description>RPC Remote Procedure Call Protocol: 远程过程调用. google的rpc框架，支持多语言: https://github.com/grpc/grpc facebook的rpc框架，贡献给了apache, 支持多语言: https://github.com/apache/thrift</description>
+    </item>
+    
+    <item>
+      <title>Germany</title>
+      <link>http://canuxcheng.com/post/travel_germany/</link>
+      <pubDate>Mon, 08 May 2017 16:41:50 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/travel_germany/</guid>
+      <description>德国之旅 看照片： http://user.qzone.qq.com/1085694641/4 德国是汽车之都。 德国有16个州。 城市州 德国16个州中的三个城市州 柏林 德国首都。 德国第一大城市。 汉堡 德国第二大城市。 不来梅 巴</description>
+    </item>
+    
+    <item>
       <title>Hadoop MapReduce</title>
       <link>http://canuxcheng.com/post/hadoop_mapreduce/</link>
       <pubDate>Wed, 03 May 2017 22:57:37 +0000</pubDate>
@@ -325,6 +451,15 @@ debug </description>
       
       <guid>http://canuxcheng.com/post/redis/</guid>
       <description>Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： 1 2 # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: 1 $ sudo apt-get install redis-tools re</description>
+    </item>
+    
+    <item>
+      <title>Smtp</title>
+      <link>http://canuxcheng.com/post/smtp/</link>
+      <pubDate>Wed, 26 Apr 2017 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/smtp/</guid>
+      <description>Email MTA: Mail Transfer Agent MUA: Mail User Agent python邮件服务器MTA：smtp协议 python客户端MUA：本地协议pop3, 远程协议imap mailutils: mailutils</description>
     </item>
     
     <item>
@@ -553,6 +688,15 @@ debug </description>
     </item>
     
     <item>
+      <title>Http</title>
+      <link>http://canuxcheng.com/post/http/</link>
+      <pubDate>Tue, 13 Sep 2016 01:39:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/http/</guid>
+      <description>HTTP/HTTPS http port: 80 https port: 443 http/https的请求方式： 1 2 3 4 5 6 7 get # 从服务器取出资源 post # 在服务器新建资源 put # 在服务器更新资源，客户端提供改变后的</description>
+    </item>
+    
+    <item>
       <title>PSL_builtins</title>
       <link>http://canuxcheng.com/post/psl_builtins/</link>
       <pubDate>Mon, 15 Aug 2016 11:16:29 +0000</pubDate>
@@ -697,6 +841,51 @@ debug </description>
     </item>
     
     <item>
+      <title>Ldap</title>
+      <link>http://canuxcheng.com/post/ldap/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ldap/</guid>
+      <description>LDAP LDAP占用tcp和udp的389端口。 使用SSL的LDAP占用tcp和udp的636端口。 Lightweight Directory Access Protocol. http://www.openldap.org/ LDAP的windows工具：LDA</description>
+    </item>
+    
+    <item>
+      <title>Nfs</title>
+      <link>http://canuxcheng.com/post/nfs/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/nfs/</guid>
+      <description>NFS NFS: Network File System 安装： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 在nfs服务器安装nfs服务 $ sudo apt-get install nfs-kernel-server # 添加共享目录并授权 $ sudo vim /etc/exports /home/user/share *(rw,no_root_squash) $ sudo service nfs-kernel-server restart # 在nfs客</description>
+    </item>
+    
+    <item>
+      <title>Ntp</title>
+      <link>http://canuxcheng.com/post/ntp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ntp/</guid>
+      <description>NTP NFS: Network Time Protocol UTC: Coordinated Universal Time, 世界统一时间 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC CET: Central European Time, 欧洲中部时间, = UTC+1, 下令时=UTC+2 CST: Chinese Standard Time, 中国标准时间, = UTC+8 时区管理 1</description>
+    </item>
+    
+    <item>
+      <title>ftp</title>
+      <link>http://canuxcheng.com/post/ftp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ftp/</guid>
+      <description>FTP ftp服务器有很多： vsftpd proftpd pyftpdlib vsftpd 安装vsftpd: 1 $ sudo apt-get install vsftpd windows开启ftp服务和建立IIS站点即可。 linux配置： 1 2 3 4 5 6 7</description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>http://canuxcheng.com/post/ssh/</link>
+      <pubDate>Thu, 28 Jul 2016 15:53:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ssh/</guid>
+      <description>OpenSSH http://www.openssh.com/ windows上支持ssh协议的客户端： putty xshell MobaXterm secureCRT 安装： 1 $ sudo apt-get install openssh-server SSH命令 ssh是openssh协议的客户端． 远程操作的命令包括ssh</description>
+    </item>
+    
+    <item>
       <title>Package</title>
       <link>http://canuxcheng.com/post/python_package/</link>
       <pubDate>Wed, 22 Jun 2016 05:17:19 +0000</pubDate>
@@ -793,6 +982,15 @@ debug </description>
       
       <guid>http://canuxcheng.com/post/sqlite/</guid>
       <description> SQLite </description>
+    </item>
+    
+    <item>
+      <title>Snmp</title>
+      <link>http://canuxcheng.com/post/snmp/</link>
+      <pubDate>Tue, 26 Apr 2016 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/snmp/</guid>
+      <description>SNMP Simple Network Management Protocol, 简单网络管理协议 MIB SMI 安装和配置snmp: 1 $sudo apt-get install snmp snmpd snmp-mibs-downloader snmp命令</description>
     </item>
     
     <item>
@@ -970,6 +1168,15 @@ gcc/clang gdb </description>
     </item>
     
     <item>
+      <title>France</title>
+      <link>http://canuxcheng.com/post/travel_france/</link>
+      <pubDate>Sun, 10 Apr 2016 17:49:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/travel_france/</guid>
+      <description>法国之旅 看照片： http://user.qzone.qq.com/1085694641 戴高乐机场 雅高集团的宜必思酒店 SNCF的TVG火车 法国有22个大区。 法兰西岛 巴黎省(已去) 巴黎是法国首都，大区首府和该省省</description>
+    </item>
+    
+    <item>
       <title>MSSql</title>
       <link>http://canuxcheng.com/post/mssql/</link>
       <pubDate>Wed, 06 Apr 2016 15:33:42 +0000</pubDate>
@@ -987,6 +1194,24 @@ gcc/clang gdb </description>
       <description>CloudComputing IAAS: Infrastructure as a service
 PAAS: Platform as a service
 SAAS: Software as a service</description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://canuxcheng.com/post/network/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network/</guid>
+      <description>网络基础 小端： 低字节在起始地址，高字节在高地址 大端： 高字节在起始地址，低字节在高地址 linux一般是小端，unix一般是大端 网络模型 OSI七</description>
+    </item>
+    
+    <item>
+      <title>Samba</title>
+      <link>http://canuxcheng.com/post/samba/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/samba/</guid>
+      <description>SMB/CIFS SMB/CIFS占用TCP和UDP的139和445端口。 SMB: server message block. CIFS: common internet file system, 是SMB的升级版本。 Samba Samba: Linux/Unix上的SBM/CIFS</description>
     </item>
     
     <item>
@@ -1194,6 +1419,19 @@ SAAS: Software as a service</description>
       
       <guid>http://canuxcheng.com/post/monitoring_zabbix/</guid>
       <description> Zabbix </description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/network_monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network_monitoring/</guid>
+      <description>Monitoring network usage:
+1 2  bytes_sent(out) bytes_recv(in)   packets:
+1 2  packets_sent(out) packets_recv(in)   error_in/out:
+1 2 3 4  SELECT non_negative_derivative(mean(&amp;#34;err_in&amp;#34;), 1s) AS &amp;#34;recv&amp;#34;, non_negative_derivative(mean(&amp;#34;err_out&amp;#34;), 1s) AS &amp;#34;send&amp;#34; FROM &amp;#34;net&amp;#34; WHERE &amp;#34;interface&amp;#34; =~ /^(vlan|eth|ens|bond).*/ AND $timeFilter GROUP BY time($__interval), &amp;#34;host&amp;#34;, &amp;#34;interface&amp;#34; fill(none)   drop_in/out:
+1 2 3 4  SELECT non_negative_derivative(mean(&amp;#34;drop_in&amp;#34;), 1s) AS &amp;#34;recv&amp;#34;, non_negative_derivative(mean(&amp;#34;drop_out&amp;#34;), 1s) AS &amp;#34;send&amp;#34; FROM &amp;#34;net&amp;#34; WHERE &amp;#34;interface&amp;#34; =~ /^(vlan|eth|ens|bond).</description>
     </item>
     
   </channel>

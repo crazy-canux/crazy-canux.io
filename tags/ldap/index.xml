@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ldap on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/ldap/</link>
+    <description>Recent content in ldap on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Jul 2016 16:08:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/ldap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ldap</title>
+      <link>http://canuxcheng.com/post/ldap/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ldap/</guid>
+      <description>LDAP LDAP占用tcp和udp的389端口。 使用SSL的LDAP占用tcp和udp的636端口。 Lightweight Directory Access Protocol. http://www.openldap.org/ LDAP的windows工具：LDA</description>
+    </item>
+    
+  </channel>
+</rss>

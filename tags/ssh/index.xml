@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/ssh/</link>
+    <description>Recent content in ssh on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Jul 2016 15:53:34 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ssh</title>
+      <link>http://canuxcheng.com/post/ssh/</link>
+      <pubDate>Thu, 28 Jul 2016 15:53:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ssh/</guid>
+      <description>OpenSSH http://www.openssh.com/ windows上支持ssh协议的客户端： putty xshell MobaXterm secureCRT 安装： 1 $ sudo apt-get install openssh-server SSH命令 ssh是openssh协议的客户端． 远程操作的命令包括ssh</description>
+    </item>
+    
+  </channel>
+</rss>
