@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/hugo/</link>
+    <description>Recent content in hugo on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Apr 2013 12:49:49 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://canuxcheng.com/post/hugo/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hugo/</guid>
+      <description>Hugo go开发的静态站点生成器. https://github.com/gohugoio/hugo https://gohugo.io/ 搭建博客 创建环境: 1 2 3 4 5 # linux $ sudo apt-get install hugo # windows PATH: C:\Hugo\bin\hugo.exe 测试安装: 1 $ hugo help 创建hugo项目: 1 2 3 $ cd /home/canux/sites &amp;gt; cd C:\hugo\sites $ hugo</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hexo - Canux&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Hexo 什么是hexo Hexo是用nodejs开发的快速、简洁且高效的博客框架， Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/hexo/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Hexo" />
+<meta property="og:description" content="Hexo 什么是hexo Hexo是用nodejs开发的快速、简洁且高效的博客框架， Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/hexo/" />
+<meta property="article:published_time" content="2016-03-22T12:59:10&#43;00:00"/>
+<meta property="article:modified_time" content="2016-03-22T12:59:10&#43;00:00"/>
+
+<meta itemprop="name" content="Hexo">
+<meta itemprop="description" content="Hexo 什么是hexo Hexo是用nodejs开发的快速、简洁且高效的博客框架， Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利">
+
+
+<meta itemprop="datePublished" content="2016-03-22T12:59:10&#43;00:00" />
+<meta itemprop="dateModified" content="2016-03-22T12:59:10&#43;00:00" />
+<meta itemprop="wordCount" content="2248">
+
+
+
+<meta itemprop="keywords" content="hexo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hexo"/>
+<meta name="twitter:description" content="Hexo 什么是hexo Hexo是用nodejs开发的快速、简洁且高效的博客框架， Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Canux&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Canux&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Hexo</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-03-22 </span>
+        <div class="post-category">
+            <a href="/categories/web/"> Web </a>
+            </div>
+          <span class="more-meta"> 2248 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#hexo">Hexo</a>
+<ul>
+<li><a href="#什么是hexo">什么是hexo</a></li>
+<li><a href="#安装hexo">安装hexo</a></li>
+<li><a href="#next">Next</a></li>
+</ul></li>
+<li><a href="#快速使用">快速使用</a>
+<ul>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#安装依赖">安装依赖</a></li>
+<li><a href="#查看文件和目录">查看文件和目录</a></li>
+<li><a href="#生成静态文件">生成静态文件</a></li>
+<li><a href="#启动本地服务器">启动本地服务器</a></li>
+<li><a href="#写博文">写博文</a></li>
+<li><a href="#清理生成文件和缓存">清理生成文件和缓存</a></li>
+<li><a href="#安装部署插件">安装部署插件</a></li>
+<li><a href="#部署到github">部署到github</a></li>
+</ul></li>
+<li><a href="#配置">配置</a>
+<ul>
+<li><a href="#全局配置">全局配置</a></li>
+<li><a href="#主题配置">主题配置</a></li>
+</ul></li>
+<li><a href="#部署">部署</a></li>
+<li><a href="#安装hexo插件">安装hexo插件</a></li>
+<li><a href="#配置hexo插件">配置hexo插件</a></li>
+<li><a href="#站点地图">站点地图</a></li>
+<li><a href="#rss">RSS</a></li>
+<li><a href="#seo优化">SEO优化</a></li>
+<li><a href="#next-1">Next</a></li>
+<li><a href="#主题配置文件">主题配置文件</a></li>
+<li><a href="#主题配置-1">主题配置</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-03-22T12:59:10" title="March 22, 2016">March 22, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="hexo">Hexo</h1>
+
+<h2 id="什么是hexo">什么是hexo</h2>
+
+<blockquote>
+<p>Hexo是用nodejs开发的快速、简洁且高效的博客框架，
+Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+
+<p>hexo有大量的插件和主题。</p>
+
+<p><a href="https://hexo.io/plugins/">plugins</a></p>
+
+<p><a href="https://hexo.io/themes/">themes</a></p>
+
+<h2 id="安装hexo">安装hexo</h2>
+
+<p>需要安装依赖nodejs(包括npm)和git。</p>
+
+<p>安装hexo命令行插件hexo-cli：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$sudo npm install hexo-cli -g</pre></td></tr></table>
+</div>
+</div>
+<h2 id="next">Next</h2>
+
+<blockquote>
+<p>Next是一种文雅的Hexo主题。
+一个主题，三种外观，选您所好。
+通过主题中的主题（亦称Scheme），您可以方便地改变您博客的外观，同时几乎所有配置同样适用。</p>
+</blockquote>
+
+<p><a href="https://github.com/iissnan/hexo-theme-next">原生的Next</a></p>
+
+<p><a href="https://github.com/crazy-canux/hexo-theme-next">作者的Next</a></p>
+
+<hr />
+
+<h1 id="快速使用">快速使用</h1>
+
+<h2 id="初始化">初始化</h2>
+
+<p>初始化一个hexo的目录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$hexo init &lt;folder&gt;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="安装依赖">安装依赖</h2>
+
+<p>进入hexo目录安装依赖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$cd &lt;folder&gt;
+$sudo npm install &lt;package-name&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>默认安装下列依赖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hexo
+hexo-server
+hexo-generator-index
+hexo-generator-archive
+hexo-generator-category
+hexo-generator-tag
+hexo-renderer-ejs
+hexo-renderer-marked
+hexo-renderer-stylus</pre></td></tr></table>
+</div>
+</div>
+<h2 id="查看文件和目录">查看文件和目录</h2>
+
+<p>安装完成后有下列</p>
+
+<p>文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">_config.yml
+db.json
+package.json</pre></td></tr></table>
+</div>
+</div>
+<p>目录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">node_modules
+scaffolds
+source
+themes</pre></td></tr></table>
+</div>
+</div>
+<h2 id="生成静态文件">生成静态文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$hexo g
+$hexo generate</pre></td></tr></table>
+</div>
+</div>
+<h2 id="启动本地服务器">启动本地服务器</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$hexo s
+$hexo server</pre></td></tr></table>
+</div>
+</div>
+<p>用浏览器打开链接即可本地查看默认博客。</p>
+
+<h2 id="写博文">写博文</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$hexo new post &lt;article-name&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>编辑这篇文章。</p>
+
+<h2 id="清理生成文件和缓存">清理生成文件和缓存</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$hexo clean</pre></td></tr></table>
+</div>
+</div>
+<p>再次运行hexo g和hexo s查看。</p>
+
+<h2 id="安装部署插件">安装部署插件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$sudo npm install hexo-deployer-git --save</pre></td></tr></table>
+</div>
+</div>
+<p>修改全局配置文件，参考插件的<a href="https://github.com/hexojs/hexo-deployer-git">github</a>
+针对github需要新建一个名字为&lt;your-github-name&gt;.github.io的仓库。</p>
+
+<h2 id="部署到github">部署到github</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$hexo d
+$hexo deploy</pre></td></tr></table>
+</div>
+</div>
+<p>在浏览器打开http://&lt;your-github-name&gt;.github.io/查看博客。</p>
+
+<hr />
+
+<h1 id="配置">配置</h1>
+
+<h2 id="全局配置">全局配置</h2>
+
+<p>全局配置文件是&lt;folder&gt;/_config.yml</p>
+
+<blockquote>
+<blockquote>
+<p># Hexo Configuration</p>
+</blockquote>
+
+<p>## Docs: <a href="https://hexo.io/docs/configuration.html">https://hexo.io/docs/configuration.html</a></p>
+
+<p>## Source: <a href="https://github.com/hexojs/hexo/">https://github.com/hexojs/hexo/</a></p>
+
+<blockquote>
+<p># Site</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   title:
+
+   subtitle:
+
+   description:
+
+   author:
+
+   language: zh-Hans
+
+   timezone: Asia/Shanghai</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p># URL</p>
+</blockquote>
+
+<p>## If your site is put in a subdirectory, set url as &lsquo;<a href="http://yoursite.com/child'">http://yoursite.com/child'</a> and root as &lsquo;/child/&rsquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   url: http://&lt;your-github-name&gt;.github.io/
+
+   root: /
+
+   permalink: :year/:month/:day/:title/
+
+   permalink_defaults:</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p># Directory</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   source_dir: source
+
+   public_dir: public
+
+   tag_dir: tags
+
+   archive_dir: archives
+
+   category_dir: categories
+
+   code_dir: downloads/code
+
+   i18n_dir: :lang
+
+   skip_render:</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p># Writing</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   new_post_name: :title.md # File name of new posts
+
+   default_layout: post # post | page | draft
+
+   titlecase: false # Transform title into titlecase
+
+   external_link: true # Open external links in new tab
+
+   filename_case: 0
+
+   render_drafts: false
+
+   post_asset_folder: false
+
+   relative_link: false
+
+   future: true
+
+   highlight:
+
+   enable: true
+
+   line_number: true
+
+   auto_detect: true
+
+   tab_replace: &#39;&#39;</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p># Category &amp; Tag</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   default_category: uncategorized
+
+   category_map:
+
+   tag_map:</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p># Date / Time format</p>
+</blockquote>
+
+<p>## Hexo uses Moment.js to parse and display date</p>
+
+<p>## You can customize the date format as defined in</p>
+
+<p>## <a href="http://momentjs.com/docs/#/displaying/format/">http://momentjs.com/docs/#/displaying/format/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   date_format: YYYY-MM-DD
+
+   time_format: HH:mm:ss</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p># Pagination</p>
+</blockquote>
+
+<p>## Set per_page to 0 to disable pagination</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   per_page: 10
+
+   pagination_dir: page</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p># Extensions</p>
+</blockquote>
+
+<p>## Plugins: <a href="https://hexo.io/plugins/">https://hexo.io/plugins/</a></p>
+
+<p>## Themes: <a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   theme: hexo-theme-canux
+
+   Plugins:
+
+   - hexo-deployer-git</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p># Extend plugins</p>
+</blockquote>
+
+<p>## deploy</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   deploy:
+
+     type: git
+
+     repo:
+
+        github: https://github.com/crazy-canux/crazy-canux.github.io.git,master
+
+        coding: https://git.coding.net/Canux/Canux.git,master</pre></td></tr></table>
+</div>
+</div></blockquote>
+
+<h2 id="主题配置">主题配置</h2>
+
+<p>hexo官方默认主题是&lt;folder&gt;/themes/landscape。</p>
+
+<p>主题配置文件是&lt;folder&gt;/themes/landscape/_config.yml</p>
+
+<p>现在将默认主题替换成自己喜欢的主题：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd &lt;folder&gt;/themes
+git clone &lt;github-url-of-your-favourite-theme&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>然后将全局配置的 theme: landscape 改为 theme: &lt;your-favourite-theme-name&gt;</p>
+
+<hr />
+
+<h1 id="部署">部署</h1>
+
+<p>部署到github和coding(gitcafe)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$hexo clean
+$hexo g
+$hexo d</pre></td></tr></table>
+</div>
+</div>
+<p>github访问http://<your-github-name>.github.io即可。</p>
+
+<p>coding访问http://<your-coding-name>.coding.me/<your-coding-name></p>
+
+<p>绑定自己的域名：
+1. 在域名供应商购买域名后添加解析，记录类型A或者CNAME，主机类型@或者www，记录值可以是http://<your-github-name>.github.io或者通过ping获取的ip地址。
+2. 在<your-blog>/source/新建文件CNAME，添加你购买的域名<your-domain>.com。
+3. 正常部署到github。
+4. 访问http://<your-doamin>.com即可。</p>
+
+<hr />
+
+<h1 id="安装hexo插件">安装hexo插件</h1>
+
+<p><a href="https://hexo.io/plugins/">plugins</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$sudo npm install &lt;plugin-name&gt; --save</pre></td></tr></table>
+</div>
+</div>
+<h1 id="配置hexo插件">配置hexo插件</h1>
+
+<p>全局配置文件是&lt;folder&gt;/_config.yml</p>
+
+<blockquote>
+<blockquote>
+<p># Extensions</p>
+</blockquote>
+
+<p>## Plugins: <a href="https://hexo.io/plugins/">https://hexo.io/plugins/</a></p>
+
+<p>## Themes: <a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   theme: next
+
+   Plugins:
+
+   - hexo-deployer-git</pre></td></tr></table>
+</div>
+</div>
+<p># Extend plugins</p>
+
+<p>## deploy</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   deploy:
+
+   type: git
+
+   repo: git@github.com:&lt;your-github-name&gt;/&lt;your-github-name&gt;.github.io.git
+
+   branch: master
+
+   message:</pre></td></tr></table>
+</div>
+</div></blockquote>
+
+<h1 id="站点地图">站点地图</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$npm install hexo-generator-sitemap --save</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>## sitemap</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   sitemap:
+
+       path: sitemap.xml</pre></td></tr></table>
+</div>
+</div></blockquote>
+
+<p><a href="https://github.com/hexojs/hexo-generator-sitemap">https://github.com/hexojs/hexo-generator-sitemap</a></p>
+
+<h1 id="rss">RSS</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$npm install hexo-generator-feed --save</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>## feed</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   feed:
+
+     type: atom
+
+     path: atom.xml
+
+     limit: 20
+
+     hub:</pre></td></tr></table>
+</div>
+</div></blockquote>
+
+<p><a href="https://github.com/hexojs/hexo-generator-feed">https://github.com/hexojs/hexo-generator-feed</a></p>
+
+<h1 id="seo优化">SEO优化</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$npm install hexo-generator-seo-friendly-sitemap --save</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">   sitemap:
+
+       path: sitemap.xml</pre></td></tr></table>
+</div>
+</div></blockquote>
+
+<p><a href="https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap">https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap</a></p>
+
+<hr />
+
+<h1 id="next-1">Next</h1>
+
+<p>以hexo主题next为例</p>
+
+<p>中文文档：</p>
+
+<p><a href="http://theme-next.iissnan.com/">http://theme-next.iissnan.com/</a></p>
+
+<p>英文文档：</p>
+
+<p><a href="https://github.com/iissnan/hexo-theme-next/blob/master/README.en.md">https://github.com/iissnan/hexo-theme-next/blob/master/README.en.md</a></p>
+
+<h1 id="主题配置文件">主题配置文件</h1>
+
+<p>主题配置文件在：</p>
+
+<p>&lt;folder&gt;/themes/next/_config.yml</p>
+
+<h1 id="主题配置-1">主题配置</h1>
+
+<blockquote>
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 站点信息设置</p>
+
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 将制作好的favicon图标放到/source里面。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">favicon: /favicon.ico</pre></td></tr></table>
+</div>
+</div>
+<p># SEO优化的关键字。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">keywords: &#34;Canux, CHENG, blog&#34;</pre></td></tr></table>
+</div>
+</div>
+<p># 指定站点的起始日期。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">since: 2013</pre></td></tr></table>
+</div>
+</div>
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 菜单设置</p>
+
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 顶部菜单栏</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">menu:
+
+  home: /
+
+  about: /about
+
+  categories: /categories
+
+  tags: /tags
+
+  archives: /archives
+
+  #commonweal: /404.html</pre></td></tr></table>
+</div>
+</div>
+<p># 菜单栏图标,使用fontawsome</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">menu_icons:
+
+  enable: true
+
+  home: home
+
+  about: user
+
+  categories: th
+
+  tags: tags
+
+  archives: archive
+
+  #commonweal: heartbeat</pre></td></tr></table>
+</div>
+</div>
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 主题方案设计: Must | Mist | Pisces</p>
+
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">scheme: Muse</pre></td></tr></table>
+</div>
+</div>
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 捐赠设置</p>
+
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">reward_comment: 您的支持是我创作的动力!
+
+wechatpay: /images/myimages/wechatpay.jpg
+
+alipay: /images/myimages/alipay.jpg</pre></td></tr></table>
+</div>
+</div>
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 侧边栏设置</p>
+
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 社交信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">social:
+
+  GitHub: https://github.com/crazy-canux
+
+  Stackoverflow: http://stackoverflow.com/
+
+  LinkedIn: http://www.linkedin.com/profile/preview?locale=zh_CN&amp;trk=prof-0-sb-preview-primary-button
+
+  E-mail: mailto:canuxcheng@gmail.com</pre></td></tr></table>
+</div>
+</div>
+<p># 社交信息图标，使用fontawsome。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">social_icons:
+
+  enable: true
+
+  GitHub: github
+
+  LinkedIn: linkedin
+
+  Stackoverflow: stack-overflow
+
+  E-mail: envelope</pre></td></tr></table>
+</div>
+</div>
+<p># 友情链接</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">links_title: Links
+
+links:
+
+  CSDN: http://bbs.csdn.net/home
+
+  51CTO: http://bbs.51cto.com/
+
+  ChinaUnix: http://bbs.chinaunix.net/
+
+  ITPUB: http://www.itpub.net/forum.php</pre></td></tr></table>
+</div>
+</div>
+<p># 侧边栏图像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">avatar: /images/myimages/avatar.jpg</pre></td></tr></table>
+</div>
+</div>
+<p># TOC(table of contents)设置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">toc:
+
+  enable: true
+
+  number: true</pre></td></tr></table>
+</div>
+</div>
+<p>#  设置 4.0 International 许可证: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">creative_commons: zero</pre></td></tr></table>
+</div>
+</div>
+<p># 侧边栏位置: left | right</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sidebar:
+
+  position: left</pre></td></tr></table>
+</div>
+</div>
+<p># 侧边栏显示方式： post | always | hide | remove</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">display: post</pre></td></tr></table>
+</div>
+</div>
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 其它设置</p>
+
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 使用Custom Logo.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">custom_logo:
+
+  enabled: false
+
+  image:</pre></td></tr></table>
+</div>
+</div>
+<p># 代码高亮主题: normal | night | night eighties | night blue | night bright</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">highlight_theme: night eighties</pre></td></tr></table>
+</div>
+</div>
+<p># 自动滚动页面</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">scroll_to_more: true</pre></td></tr></table>
+</div>
+</div>
+<p># 自动摘录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">auto_excerpt:
+
+  enable: true
+
+  length: 150</pre></td></tr></table>
+</div>
+</div>
+<p># 使用Lato font</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">use_font_lato: true</pre></td></tr></table>
+</div>
+</div>
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 第三方插件: 一般都需要去插件的官网注册使用。</p>
+
+<p># &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># MathJax Support</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mathjax: true</pre></td></tr></table>
+</div>
+</div>
+<p># Google Analytics - US</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#google_analytics:</pre></td></tr></table>
+</div>
+</div>
+<p># Facebook sdk Analytics - US</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">facebook_sdk:
+
+  enable: false
+
+  app_id: #&lt;app_id&gt;
+
+  fb_admin: #&lt;user_id&gt;
+
+  like_button: #true
+
+  webmaster: #true</pre></td></tr></table>
+</div>
+</div>
+<p># CNZZ Analytics - CN</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cnzz_siteid: ******</pre></td></tr></table>
+</div>
+</div>
+<p># leancloud Analytics - CN</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">leancloud_visitors:
+
+  enable: false
+
+  app_id: #&lt;app_id&gt;
+
+  app_key: #&lt;app_key&gt;</pre></td></tr></table>
+</div>
+</div>
+<p># Baidu Analytics</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#baidu_analytics: ******</pre></td></tr></table>
+</div>
+</div>
+<p># Tencent Analytics</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#tencent_analytics: ******</pre></td></tr></table>
+</div>
+</div>
+<p># Disqus - US</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#disqus_shortname: ******</pre></td></tr></table>
+</div>
+</div>
+<p># Duoshuo - CN</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">duoshuo_shortname: ******</pre></td></tr></table>
+</div>
+</div>
+<p># Make duoshuo show UA</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">duoshuo_info:
+
+  ua_enable: true
+
+  admin_enable: false
+
+  user_id:
+
+  #admin_nickname: ROOT</pre></td></tr></table>
+</div>
+</div>
+<p># Make duoshuo show hot artical</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">duoshuo_hotartical: true</pre></td></tr></table>
+</div>
+</div>
+<p># AddThis - US</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#add_this_id:</pre></td></tr></table>
+</div>
+</div>
+<p># JiaThis - CN</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">jiathis: true</pre></td></tr></table>
+</div>
+</div>
+<p># Baidu Share</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#baidushare: true</pre></td></tr></table>
+</div>
+</div>
+<p># Duoshuo Share</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#duoshuo_share: true</pre></td></tr></table>
+</div>
+</div>
+<p># Swiftype - US</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">swiftype_key: ******</pre></td></tr></table>
+</div>
+</div>
+<p># Tinysou - CN</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#tinysou_Key</pre></td></tr></table>
+</div>
+</div>
+<p>#! &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p>#! 谨慎编辑的主题信息</p>
+
+<p>#! &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+
+<p># 侧边栏移动插件 Motion</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">use_motion: true</pre></td></tr></table>
+</div>
+</div>
+<p># 图片弹出插件 Fancybox</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">fancybox: true</pre></td></tr></table>
+</div>
+</div>
+<p># Static files</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">vendors: vendors
+
+css: css
+
+js: js
+
+images: images</pre></td></tr></table>
+</div>
+</div>
+<p># Theme version</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">version: 0.5.0</pre></td></tr></table>
+</div>
+</div></blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-03-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/hexo/">hexo</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/monitoring_zabbix/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Zabbix</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/hugo/">
+            <span class="next-text nav-default">Hugo</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-03-22 12:59:10 \x2b0000 UTC',
+        title: 'Hexo',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

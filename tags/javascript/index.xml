@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/javascript/</link>
+    <description>Recent content in javascript on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Mar 2017 09:36:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript</title>
+      <link>http://canuxcheng.com/post/js/</link>
+      <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js/</guid>
+      <description>JavaScript概述 Javascript包括三部分: ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内</description>
+    </item>
+    
+  </channel>
+</rss>

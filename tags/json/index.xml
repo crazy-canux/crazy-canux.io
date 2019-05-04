@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>json on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/json/</link>
+    <description>Recent content in json on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Jul 2016 16:43:15 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Json</title>
+      <link>http://canuxcheng.com/post/json/</link>
+      <pubDate>Thu, 07 Jul 2016 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/json/</guid>
+      <description>JSON http://www.json.org/ JSON: JavaScript Object Notation. json有两种数据结构. key-value/键值对 1 2 3 4 5 { key: value, key1: value1, ... } 列表/数组 1 [value, value1, ...] 数据类型 bool: 1 2 python -&amp;gt; True/False go -&amp;gt; true/false string: 1 2 3 python</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -20,5 +20,14 @@
       <description>Utils Django Third Party Library. https://github.com/rosarior/awesome-django Add this application to your django project in settings.py. 1 2 3 4 5 6 INSTALLED_APPS = ( &amp;#39;south&amp;#39;, &amp;#39;debug_toolbar&amp;#39;, &amp;#39;crispy_forms&amp;#39;, ... ) django-debug-toolbar django的debugging的application。 https://github.com/jazzband/django-debug-toolbar django-crispy-forms django的fo</description>
     </item>
     
+    <item>
+      <title>Utils</title>
+      <link>http://canuxcheng.com/post/ps_utils/</link>
+      <pubDate>Tue, 26 Apr 2016 09:52:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_utils/</guid>
+      <description>windows相关项目： choco https://github.com/chocolatey windows的apt/yum。 choco is replacement of chocolatey 1 choco install openssh cmder cmd的升级版。 https://github.com/cmderdev/cmder babun a linux-shell like on windows. https://github.com/babun/babun flinux run unmodified linux applications inside windows https://github.com/wishstudio/flinux</description>
+    </item>
+    
   </channel>
 </rss>

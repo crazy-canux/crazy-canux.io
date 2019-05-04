@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wmi on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/wmi/</link>
+    <description>Recent content in wmi on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Apr 2016 14:15:47 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/wmi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WMI</title>
+      <link>http://canuxcheng.com/post/win_wmi/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_wmi/</guid>
+      <description>WMI/CIM WMI: windows management instrumentation. https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx CIM: common information model. https://msdn.microsoft.com/en-us/library/aa389234(v=vs.85).aspx DCOM: distributed COM. wmi通过DCOM远程连接，但是DCOM不能绕过防火墙。 命名空间: 1 2 3 root\cimv2 root\microsoftdns root\securitycenter WMI工具： 1. windows自带w</description>
+    </item>
+    
+  </channel>
+</rss>

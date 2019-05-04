@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>remote on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/remote/</link>
+    <description>Recent content in remote on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Jul 2016 14:54:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/remote/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Remote Management</title>
+      <link>http://canuxcheng.com/post/ps_remote/</link>
+      <pubDate>Mon, 18 Jul 2016 14:54:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_remote/</guid>
+      <description>Windows远程管理 WinRM, 远程处理,在远程机器上执行命令 WMI/CIM RPC, 远程连接,在发起远程连接的机器上执行命令 WinRM 一对一远程处理: 类似于linux的ssh</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -75,6 +75,24 @@
     </item>
     
     <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/vue/</link>
+      <pubDate>Sun, 27 Jan 2019 22:19:20 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vue/</guid>
+      <description>Vue 下载vue并通过script标签引入.也可以通过其它方式安装. 直接引入： 1 2 3 4 开发环境 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 生产环境 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 通过npm安装: 1 $ npm install vue vue-cli 为单页</description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://canuxcheng.com/post/nginx/</link>
+      <pubDate>Thu, 27 Sep 2018 03:25:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/nginx/</guid>
+      <description> Nginx </description>
+    </item>
+    
+    <item>
       <title>Template</title>
       <link>http://canuxcheng.com/post/beego_template/</link>
       <pubDate>Thu, 27 Sep 2018 01:33:42 +0000</pubDate>
@@ -174,6 +192,15 @@
     </item>
     
     <item>
+      <title>WebService</title>
+      <link>http://canuxcheng.com/post/webservice/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/webservice/</guid>
+      <description>webservice webservice用于server和browser之间通讯． webservice是基于http的，无状态的． webservice一般分为</description>
+    </item>
+    
+    <item>
       <title>Webhook</title>
       <link>http://canuxcheng.com/post/webhook/</link>
       <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
@@ -234,6 +261,15 @@
       
       <guid>http://canuxcheng.com/post/websocket/</guid>
       <description>WebSocket websocket用于server和browser之间通讯． websocket采用特殊报头，使得浏览器和服务器只需要做一个握手的动作． 通讯</description>
+    </item>
+    
+    <item>
+      <title>BOM</title>
+      <link>http://canuxcheng.com/post/js_bom/</link>
+      <pubDate>Thu, 15 Mar 2018 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_bom/</guid>
+      <description>BOM Browser Object Model 介绍浏览器对象，不过缺乏规范. window window对象是最顶层对象，有6大属性,属性本身也是对象. window对象的document属性也</description>
     </item>
     
     <item>
@@ -445,7 +481,7 @@ debug </description>
     </item>
     
     <item>
-      <title>Go_Oop</title>
+      <title>OOP</title>
       <link>http://canuxcheng.com/post/go_oop/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
@@ -553,6 +589,24 @@ debug </description>
     </item>
     
     <item>
+      <title>Xml</title>
+      <link>http://canuxcheng.com/post/xml/</link>
+      <pubDate>Fri, 07 Apr 2017 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/xml/</guid>
+      <description> XML </description>
+    </item>
+    
+    <item>
+      <title>Xpath</title>
+      <link>http://canuxcheng.com/post/xpath/</link>
+      <pubDate>Fri, 07 Apr 2017 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/xpath/</guid>
+      <description>XPath XPath是一门在XML文档中查找信息的语言． xpath定位有绝对定位和相对定位，推荐使用相对定位． 绝对的XPath定位包含了从HTML根</description>
+    </item>
+    
+    <item>
       <title>Kvm</title>
       <link>http://canuxcheng.com/post/kvm/</link>
       <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
@@ -586,6 +640,33 @@ debug </description>
       
       <guid>http://canuxcheng.com/post/sec_cryptographic/</guid>
       <description>PGP PGP: Pretty Good Privacy, 是一款收费的加密软件． OpenPGP OpenPGP是一种加密的标准． http://openpgp.org/ GPG GPG: GnuPG, 是一款开源免费的加密软件． GPGME GPGME: GPG Made Easy, 是一个让应用程序使用GPG更容</description>
+    </item>
+    
+    <item>
+      <title>DOM</title>
+      <link>http://canuxcheng.com/post/js_dom/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_dom/</guid>
+      <description>DOM DOM: document object model. 当网页被加载时，浏览器会创建页面的文档对象模型(DOM). DOM操作需要在html加载完成后进程. dom的对象: document/element/attribute/event. js可以通过DO</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>http://canuxcheng.com/post/js_oop/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_oop/</guid>
+      <description>OOP javascript中一切都是对象. javacript内置了Object/Array/Date/RegExp/Function类型. Object 创建</description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>http://canuxcheng.com/post/js/</link>
+      <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js/</guid>
+      <description>JavaScript概述 Javascript包括三部分: ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内</description>
     </item>
     
     <item>
@@ -679,6 +760,33 @@ debug </description>
     </item>
     
     <item>
+      <title>Wordpress</title>
+      <link>http://canuxcheng.com/post/wordpress/</link>
+      <pubDate>Fri, 18 Nov 2016 00:06:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/wordpress/</guid>
+      <description>WordPress 安装 安装依赖： 1 2 3 $sudo apt install apache2 $sudo apt install mysql-server $sudo apt install php5 下载wordpress： 1 2 $cd /var/www/html $git clone https://github.com/WordPress/WordPress.git 配置 添加mysql数据库： 1 2 3 4 5 $mysql -u root -p mysql&amp;gt; create user &amp;#39;wordpress&amp;#39;@&amp;#39;localhost&amp;#39; identified by</description>
+    </item>
+    
+    <item>
+      <title>Html Form</title>
+      <link>http://canuxcheng.com/post/html_form/</link>
+      <pubDate>Mon, 31 Oct 2016 04:00:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/html_form/</guid>
+      <description>html表单 html表单用于搜集不同类型的用户输入。 form form元素定义html表单。支持全局属性和事件属性。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap</title>
+      <link>http://canuxcheng.com/post/bootstrap/</link>
+      <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/bootstrap/</guid>
+      <description>Bootstrap HTML,CSS,JavaScript的支持响应式和移动设备的WEB框架.</description>
+    </item>
+    
+    <item>
       <title>Test</title>
       <link>http://canuxcheng.com/post/django_test/</link>
       <pubDate>Tue, 04 Oct 2016 04:51:30 +0000</pubDate>
@@ -751,12 +859,75 @@ debug </description>
     </item>
     
     <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/post/js_devops/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_devops/</guid>
+      <description>相关工具 npm https://github.com/npm/npm npm是javascript的包管理器，npm和hexo都是javascript包, 高版本的nodejs自带npm。 1 $ sudo apt-get install npm</description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/js_document/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_document/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>http://canuxcheng.com/post/js_node/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_node/</guid>
+      <description>Nodejs https://github.com/nodejs/node Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 Node.js 的包管理器npm，是全球最大的开源库生态系统</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/js_package/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Summary</title>
+      <link>http://canuxcheng.com/post/js_summary/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_summary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://canuxcheng.com/post/web/</link>
+      <pubDate>Tue, 27 Sep 2016 03:25:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/web/</guid>
+      <description>WEB web一般包括web server, web service, load balancing. URL: Uniform Resource Locator, 统一资源定位符． 1 scheme://host[:port#]/path/.../[?query-string][#anchor] DNS: Domain Name System, 域名系统. header: header中用来保存session，cookie等头部信息</description>
+    </item>
+    
+    <item>
       <title>Utils</title>
       <link>http://canuxcheng.com/post/django_utils/</link>
       <pubDate>Tue, 27 Sep 2016 01:33:42 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/django_utils/</guid>
       <description>Utils Django Third Party Library. https://github.com/rosarior/awesome-django Add this application to your django project in settings.py. 1 2 3 4 5 6 INSTALLED_APPS = ( &amp;#39;south&amp;#39;, &amp;#39;debug_toolbar&amp;#39;, &amp;#39;crispy_forms&amp;#39;, ... ) django-debug-toolbar django的debugging的application。 https://github.com/jazzband/django-debug-toolbar django-crispy-forms django的fo</description>
+    </item>
+    
+    <item>
+      <title>Apache</title>
+      <link>http://canuxcheng.com/post/apache/</link>
+      <pubDate>Tue, 27 Sep 2016 03:25:26 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/apache/</guid>
+      <description>Apache https://github.com/apache/httpd http://httpd.apache.org/ ubuntu/debian： 1 sudo aptitude install apache2 redhat/centos/fedora: 1 $ sudo yum install httpd2 启动服务器： 1 service apache2 start 启动浏览器查看： 1 http://localhost:80 apache命令 a2ensite 1 $ sudo a2ensite &amp;lt;site&amp;gt; a2dissite 1 $ sudo a2dissite &amp;lt;site&amp;gt; a2enmod</description>
     </item>
     
     <item>
@@ -895,6 +1066,15 @@ debug </description>
     </item>
     
     <item>
+      <title>ReStructuredText</title>
+      <link>http://canuxcheng.com/post/restructuredtext/</link>
+      <pubDate>Mon, 08 Aug 2016 13:39:38 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/restructuredtext/</guid>
+      <description>reStructuredText http://docutils.sourceforge.net/rst.html reST是易读所见即所得的文本标记语言，格式类似markdown。 python的reST参考pep12和pep287: https://www.python.org/dev/peps/pep-0012/ https://www.python.org/dev/peps/pep-0287/ 主标题： 1 2 3</description>
+    </item>
+    
+    <item>
       <title>Debug</title>
       <link>http://canuxcheng.com/post/python_debug/</link>
       <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
@@ -964,6 +1144,60 @@ debug </description>
       
       <guid>http://canuxcheng.com/post/ssh/</guid>
       <description>OpenSSH http://www.openssh.com/ windows上支持ssh协议的客户端： putty xshell MobaXterm secureCRT 安装： 1 $ sudo apt-get install openssh-server SSH命令 ssh是openssh协议的客户端． 远程操作的命令包括ssh</description>
+    </item>
+    
+    <item>
+      <title>Remote Management</title>
+      <link>http://canuxcheng.com/post/ps_remote/</link>
+      <pubDate>Mon, 18 Jul 2016 14:54:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_remote/</guid>
+      <description>Windows远程管理 WinRM, 远程处理,在远程机器上执行命令 WMI/CIM RPC, 远程连接,在发起远程连接的机器上执行命令 WinRM 一对一远程处理: 类似于linux的ssh</description>
+    </item>
+    
+    <item>
+      <title>WinRM</title>
+      <link>http://canuxcheng.com/post/win_winrm/</link>
+      <pubDate>Sun, 17 Jul 2016 08:36:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_winrm/</guid>
+      <description>WinRM Windows Remote Management WinRM是WSMAN(WS-Management Protocol)的增强版。 WinRM是基于SOAP的防火墙友好的远程协议。 https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx Wi</description>
+    </item>
+    
+    <item>
+      <title>Coreutils</title>
+      <link>http://canuxcheng.com/post/ps_coreutils/</link>
+      <pubDate>Tue, 12 Jul 2016 17:24:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_coreutils/</guid>
+      <description>外部命令 powershell可以执行外部命令. 1 C:\Windows\System32\*.exe cmd ping netstat ipconfig route arp nslookup ftp mstsc RDP client. taskmgr 任务管理器． tskill tree whoami 需要下载，然后放入环境变量的第三方命令. WinDump Win</description>
+    </item>
+    
+    <item>
+      <title>Json</title>
+      <link>http://canuxcheng.com/post/json/</link>
+      <pubDate>Thu, 07 Jul 2016 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/json/</guid>
+      <description>JSON http://www.json.org/ JSON: JavaScript Object Notation. json有两种数据结构. key-value/键值对 1 2 3 4 5 { key: value, key1: value1, ... } 列表/数组 1 [value, value1, ...] 数据类型 bool: 1 2 python -&amp;gt; True/False go -&amp;gt; true/false string: 1 2 3 python</description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>http://canuxcheng.com/post/css/</link>
+      <pubDate>Thu, 23 Jun 2016 09:40:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/css/</guid>
+      <description>CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元</description>
+    </item>
+    
+    <item>
+      <title>Html</title>
+      <link>http://canuxcheng.com/post/html/</link>
+      <pubDate>Thu, 23 Jun 2016 09:40:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/html/</guid>
+      <description>HTML HTML是超文本标记语言 XHTML XHTML是更严谨的更纯净的HTML HTML5 HTML5是下一代HTML html元素和属性 html元素指从开始标签到结束</description>
     </item>
     
     <item>
@@ -1066,12 +1300,48 @@ debug </description>
     </item>
     
     <item>
+      <title>Builtins</title>
+      <link>http://canuxcheng.com/post/ps_builtins/</link>
+      <pubDate>Tue, 24 May 2016 10:44:44 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_builtins/</guid>
+      <description>Get-Help和Help: get-help查看帮助信息,help分页查看帮助信息，man是help的别名 命令说明： 1 2 Get-Help Help 查看所有命令和概</description>
+    </item>
+    
+    <item>
       <title>Snmp</title>
       <link>http://canuxcheng.com/post/snmp/</link>
       <pubDate>Tue, 26 Apr 2016 09:56:04 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/snmp/</guid>
       <description>SNMP Simple Network Management Protocol, 简单网络管理协议 MIB SMI 安装和配置snmp: 1 $sudo apt-get install snmp snmpd snmp-mibs-downloader snmp命令</description>
+    </item>
+    
+    <item>
+      <title>Admin</title>
+      <link>http://canuxcheng.com/post/win_admin/</link>
+      <pubDate>Tue, 26 Apr 2016 09:54:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>http://canuxcheng.com/post/ps/</link>
+      <pubDate>Tue, 26 Apr 2016 09:52:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps/</guid>
+      <description>PowerShell Console: command line interface ISE: script editor and console combination Version: 2.0,3.0,4.0,5.0 C:\Windows\System32\powershell 存放64位powershell C:\Windows\SysWOW64\powershell 存放32位powershell 1 2 &amp;gt;$PSVersionTable &amp;gt;$HOST Install/Update: https://www.microsoft.com/zh-CN/download/details.aspx?id=40855 安装Windows Management Framework</description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>http://canuxcheng.com/post/ps_utils/</link>
+      <pubDate>Tue, 26 Apr 2016 09:52:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_utils/</guid>
+      <description>windows相关项目： choco https://github.com/chocolatey windows的apt/yum。 choco is replacement of chocolatey 1 choco install openssh cmder cmd的升级版。 https://github.com/cmderdev/cmder babun a linux-shell like on windows. https://github.com/babun/babun flinux run unmodified linux applications inside windows https://github.com/wishstudio/flinux</description>
     </item>
     
     <item>
@@ -1350,6 +1620,42 @@ SAAS: Software as a service</description>
     </item>
     
     <item>
+      <title>WMI</title>
+      <link>http://canuxcheng.com/post/win_wmi/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_wmi/</guid>
+      <description>WMI/CIM WMI: windows management instrumentation. https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx CIM: common information model. https://msdn.microsoft.com/en-us/library/aa389234(v=vs.85).aspx DCOM: distributed COM. wmi通过DCOM远程连接，但是DCOM不能绕过防火墙。 命名空间: 1 2 3 root\cimv2 root\microsoftdns root\securitycenter WMI工具： 1. windows自带w</description>
+    </item>
+    
+    <item>
+      <title>FileSystem</title>
+      <link>http://canuxcheng.com/post/win_filesystem/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_filesystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/win_monitoring/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_monitoring/</guid>
+      <description>windows的services和process services是windows的服务，有Name(Display Name)，Service</description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://canuxcheng.com/post/win/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win/</guid>
+      <description>windows的IDE VS Enterprise: 收费企业版 VS Professional: 收费个人版 VS Community: 免费社区版 windows的引导程序是ntloader。 DOS和NT是windows系统</description>
+    </item>
+    
+    <item>
       <title>DevOps</title>
       <link>http://canuxcheng.com/post/python_devops/</link>
       <pubDate>Sun, 03 Apr 2016 10:49:21 +0000</pubDate>
@@ -1503,6 +1809,15 @@ SAAS: Software as a service</description>
     </item>
     
     <item>
+      <title>Markdown</title>
+      <link>http://canuxcheng.com/post/markdown/</link>
+      <pubDate>Mon, 28 Mar 2016 22:03:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/markdown/</guid>
+      <description>Markdown Markdown简介 Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。 Markdown和html有很大区别，</description>
+    </item>
+    
+    <item>
       <title>Nagios</title>
       <link>http://canuxcheng.com/post/monitoring_nagios/</link>
       <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
@@ -1518,6 +1833,33 @@ SAAS: Software as a service</description>
       
       <guid>http://canuxcheng.com/post/monitoring_zabbix/</guid>
       <description> Zabbix </description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>http://canuxcheng.com/post/hexo/</link>
+      <pubDate>Tue, 22 Mar 2016 12:59:10 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hexo/</guid>
+      <description>Hexo 什么是hexo Hexo是用nodejs开发的快速、简洁且高效的博客框架， Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://canuxcheng.com/post/hugo/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hugo/</guid>
+      <description>Hugo go开发的静态站点生成器. https://github.com/gohugoio/hugo https://gohugo.io/ 搭建博客 创建环境: 1 2 3 4 5 # linux $ sudo apt-get install hugo # windows PATH: C:\Hugo\bin\hugo.exe 测试安装: 1 $ hugo help 创建hugo项目: 1 2 3 $ cd /home/canux/sites &amp;gt; cd C:\hugo\sites $ hugo</description>
+    </item>
+    
+    <item>
+      <title>Pelican</title>
+      <link>http://canuxcheng.com/post/pelican/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/pelican/</guid>
+      <description>Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: 1 2 3 4 5 6 $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: 1 $pelican-quickstart 生成下列文</description>
     </item>
     
     <item>

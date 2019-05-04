@@ -6,10 +6,109 @@
     <description>Recent content in Windows on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Apr 2016 11:16:16 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jul 2016 14:54:39 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/categories/windows/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Remote Management</title>
+      <link>http://canuxcheng.com/post/ps_remote/</link>
+      <pubDate>Mon, 18 Jul 2016 14:54:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_remote/</guid>
+      <description>Windows远程管理 WinRM, 远程处理,在远程机器上执行命令 WMI/CIM RPC, 远程连接,在发起远程连接的机器上执行命令 WinRM 一对一远程处理: 类似于linux的ssh</description>
+    </item>
+    
+    <item>
+      <title>WinRM</title>
+      <link>http://canuxcheng.com/post/win_winrm/</link>
+      <pubDate>Sun, 17 Jul 2016 08:36:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_winrm/</guid>
+      <description>WinRM Windows Remote Management WinRM是WSMAN(WS-Management Protocol)的增强版。 WinRM是基于SOAP的防火墙友好的远程协议。 https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx Wi</description>
+    </item>
+    
+    <item>
+      <title>Coreutils</title>
+      <link>http://canuxcheng.com/post/ps_coreutils/</link>
+      <pubDate>Tue, 12 Jul 2016 17:24:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_coreutils/</guid>
+      <description>外部命令 powershell可以执行外部命令. 1 C:\Windows\System32\*.exe cmd ping netstat ipconfig route arp nslookup ftp mstsc RDP client. taskmgr 任务管理器． tskill tree whoami 需要下载，然后放入环境变量的第三方命令. WinDump Win</description>
+    </item>
+    
+    <item>
+      <title>Builtins</title>
+      <link>http://canuxcheng.com/post/ps_builtins/</link>
+      <pubDate>Tue, 24 May 2016 10:44:44 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_builtins/</guid>
+      <description>Get-Help和Help: get-help查看帮助信息,help分页查看帮助信息，man是help的别名 命令说明： 1 2 Get-Help Help 查看所有命令和概</description>
+    </item>
+    
+    <item>
+      <title>Admin</title>
+      <link>http://canuxcheng.com/post/win_admin/</link>
+      <pubDate>Tue, 26 Apr 2016 09:54:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>http://canuxcheng.com/post/ps/</link>
+      <pubDate>Tue, 26 Apr 2016 09:52:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps/</guid>
+      <description>PowerShell Console: command line interface ISE: script editor and console combination Version: 2.0,3.0,4.0,5.0 C:\Windows\System32\powershell 存放64位powershell C:\Windows\SysWOW64\powershell 存放32位powershell 1 2 &amp;gt;$PSVersionTable &amp;gt;$HOST Install/Update: https://www.microsoft.com/zh-CN/download/details.aspx?id=40855 安装Windows Management Framework</description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>http://canuxcheng.com/post/ps_utils/</link>
+      <pubDate>Tue, 26 Apr 2016 09:52:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_utils/</guid>
+      <description>windows相关项目： choco https://github.com/chocolatey windows的apt/yum。 choco is replacement of chocolatey 1 choco install openssh cmder cmd的升级版。 https://github.com/cmderdev/cmder babun a linux-shell like on windows. https://github.com/babun/babun flinux run unmodified linux applications inside windows https://github.com/wishstudio/flinux</description>
+    </item>
+    
+    <item>
+      <title>WMI</title>
+      <link>http://canuxcheng.com/post/win_wmi/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_wmi/</guid>
+      <description>WMI/CIM WMI: windows management instrumentation. https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx CIM: common information model. https://msdn.microsoft.com/en-us/library/aa389234(v=vs.85).aspx DCOM: distributed COM. wmi通过DCOM远程连接，但是DCOM不能绕过防火墙。 命名空间: 1 2 3 root\cimv2 root\microsoftdns root\securitycenter WMI工具： 1. windows自带w</description>
+    </item>
+    
+    <item>
+      <title>FileSystem</title>
+      <link>http://canuxcheng.com/post/win_filesystem/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_filesystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/win_monitoring/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_monitoring/</guid>
+      <description>windows的services和process services是windows的服务，有Name(Display Name)，Service</description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://canuxcheng.com/post/win/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win/</guid>
+      <description>windows的IDE VS Enterprise: 收费企业版 VS Professional: 收费个人版 VS Community: 免费社区版 windows的引导程序是ntloader。 DOS和NT是windows系统</description>
+    </item>
     
     <item>
       <title>Regular Expression</title>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/vue/</link>
+    <description>Recent content in vue on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 27 Jan 2019 22:19:20 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/vue/</link>
+      <pubDate>Sun, 27 Jan 2019 22:19:20 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vue/</guid>
+      <description>Vue 下载vue并通过script标签引入.也可以通过其它方式安装. 直接引入： 1 2 3 4 开发环境 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 生产环境 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 通过npm安装: 1 $ npm install vue vue-cli 为单页</description>
+    </item>
+    
+  </channel>
+</rss>

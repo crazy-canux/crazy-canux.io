@@ -6,18 +6,18 @@
     <description>Recent content in windows on Canux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Mar 2019 21:51:25 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Apr 2016 14:15:40 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Storage_Command</title>
-      <link>http://canuxcheng.com/storage/command/</link>
-      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      <title>Windows</title>
+      <link>http://canuxcheng.com/post/win/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/storage/command/</guid>
-      <description>sysstat: 1 2 3 4 5 6 # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat # 查看diskio信息 $ sudo iostat iotop 1 2 3 # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使</description>
+      <guid>http://canuxcheng.com/post/win/</guid>
+      <description>windows的IDE VS Enterprise: 收费企业版 VS Professional: 收费个人版 VS Community: 免费社区版 windows的引导程序是ntloader。 DOS和NT是windows系统</description>
     </item>
     
   </channel>

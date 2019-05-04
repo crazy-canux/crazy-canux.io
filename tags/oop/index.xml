@@ -21,12 +21,21 @@
     </item>
     
     <item>
-      <title>Go_Oop</title>
+      <title>OOP</title>
       <link>http://canuxcheng.com/post/go_oop/</link>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/go_oop/</guid>
       <description>Go面向对象 golang通过方法和接口实现面向对象. 方法/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>http://canuxcheng.com/post/js_oop/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_oop/</guid>
+      <description>OOP javascript中一切都是对象. javacript内置了Object/Array/Date/RegExp/Function类型. Object 创建</description>
     </item>
     
     <item>

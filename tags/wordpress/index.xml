@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wordpress on Canux&#39;s Blog</title>
+    <link>http://canuxcheng.com/tags/wordpress/</link>
+    <description>Recent content in wordpress on Canux&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Nov 2016 00:06:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wordpress</title>
+      <link>http://canuxcheng.com/post/wordpress/</link>
+      <pubDate>Fri, 18 Nov 2016 00:06:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/wordpress/</guid>
+      <description>WordPress 安装 安装依赖： 1 2 3 $sudo apt install apache2 $sudo apt install mysql-server $sudo apt install php5 下载wordpress： 1 2 $cd /var/www/html $git clone https://github.com/WordPress/WordPress.git 配置 添加mysql数据库： 1 2 3 4 5 $mysql -u root -p mysql&amp;gt; create user &amp;#39;wordpress&amp;#39;@&amp;#39;localhost&amp;#39; identified by</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -22,6 +22,15 @@
     
     <item>
       <title>DevOps</title>
+      <link>http://canuxcheng.com/post/js_devops/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_devops/</guid>
+      <description>相关工具 npm https://github.com/npm/npm npm是javascript的包管理器，npm和hexo都是javascript包, 高版本的nodejs自带npm。 1 $ sudo apt-get install npm</description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
       <link>http://canuxcheng.com/post/devops/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
