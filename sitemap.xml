@@ -1486,13 +1486,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/</loc>
-    <lastmod>2019-04-23T21:47:16+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/categories/</loc>
     <lastmod>2019-04-23T21:47:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1566,6 +1559,13 @@
     <loc>http://canuxcheng.com/post/network_monitoring/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/</loc>
+    <lastmod>2019-04-23T21:47:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
   </url>
   
   <url>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ansible on Canux&#39;s Blog</title>
+    <title>ansible on Morgoth</title>
     <link>http://canuxcheng.com/tags/ansible/</link>
-    <description>Recent content in ansible on Canux&#39;s Blog</description>
+    <description>Recent content in ansible on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 15 Apr 2016 09:41:39 +0800</lastBuildDate>
