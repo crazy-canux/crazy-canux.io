@@ -31,11 +31,11 @@
     
     <item>
       <title>TSDB</title>
-      <link>http://canuxcheng.com/post/tsdb/</link>
+      <link>http://canuxcheng.com/post/database/</link>
       <pubDate>Tue, 03 Jan 2017 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/tsdb/</guid>
-      <description>TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus</description>
+      <guid>http://canuxcheng.com/post/database/</guid>
+      <description>RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus</description>
     </item>
     
     <item>
@@ -66,15 +66,6 @@
     </item>
     
     <item>
-      <title>SQLite</title>
-      <link>http://canuxcheng.com/post/sqlite/</link>
-      <pubDate>Wed, 25 May 2016 12:14:59 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/sqlite/</guid>
-      <description> SQLite </description>
-    </item>
-    
-    <item>
       <title>MSSql</title>
       <link>http://canuxcheng.com/post/mssql/</link>
       <pubDate>Wed, 06 Apr 2016 15:33:42 +0000</pubDate>
@@ -84,39 +75,12 @@
     </item>
     
     <item>
-      <title>Monitoring</title>
-      <link>http://canuxcheng.com/post/db_monitoring/</link>
-      <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/db_monitoring/</guid>
-      <description>Monitoring MSSQL https://github.com/Microsoft/mssql-monitoring https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/ https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views?view=sql-server-2017 https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql?view=sql-server-2017 参考telegraf/inputs/sqlserver. Mysql Oracle Postgresql Redis 通过redis-cli&amp;gt; info查看 1 2 3 4 5 6 7 8 其它指</description>
-    </item>
-    
-    <item>
-      <title>NoSQL</title>
-      <link>http://canuxcheng.com/post/nosql/</link>
-      <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/nosql/</guid>
-      <description>NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb</description>
-    </item>
-    
-    <item>
       <title>Postgresql</title>
       <link>http://canuxcheng.com/post/postgre/</link>
       <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/postgre/</guid>
       <description>PostgreSQL 安装postgresql： 1 $ sudo apt-get install postgresql 安装第三方库： 1 $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． po</description>
-    </item>
-    
-    <item>
-      <title>RDBMS</title>
-      <link>http://canuxcheng.com/post/rdbms/</link>
-      <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/rdbms/</guid>
-      <description>RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre c 安装ODBC一般能访问所有数据库。 python 安装相应的数据库的python库。 JavaScript go dataset https://github.com/pudo/dataset 1 2 3 4 import dataset db = dataset.connect(&amp;#39;sqlite:///mydatabase.db&amp;#39;) db = dataset.connect(&amp;#39;mysql://user:password@localhost/mydatabase&amp;#39;) db =</description>
     </item>
     
   </channel>

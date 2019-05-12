@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Pelican - Morgoth</title>
+  <title>TSDB - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: 1 2 3 4 5 6 $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: 1 $pelican-quickstart 生成下列文" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/pelican/" />
+<link rel="canonical" href="http://canuxcheng.com/post/database/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Pelican" />
-<meta property="og:description" content="Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: 1 2 3 4 5 6 $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: 1 $pelican-quickstart 生成下列文" />
+<meta property="og:title" content="TSDB" />
+<meta property="og:description" content="RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/pelican/" />
-<meta property="article:published_time" content="2013-04-01T12:49:49&#43;00:00"/>
-<meta property="article:modified_time" content="2013-04-01T12:49:49&#43;00:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/database/" />
+<meta property="article:published_time" content="2017-01-03T14:46:14&#43;00:00"/>
+<meta property="article:modified_time" content="2017-01-03T14:46:14&#43;00:00"/>
 
-<meta itemprop="name" content="Pelican">
-<meta itemprop="description" content="Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: 1 2 3 4 5 6 $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: 1 $pelican-quickstart 生成下列文">
-
-
-<meta itemprop="datePublished" content="2013-04-01T12:49:49&#43;00:00" />
-<meta itemprop="dateModified" content="2013-04-01T12:49:49&#43;00:00" />
-<meta itemprop="wordCount" content="520">
+<meta itemprop="name" content="TSDB">
+<meta itemprop="description" content="RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus">
 
 
+<meta itemprop="datePublished" content="2017-01-03T14:46:14&#43;00:00" />
+<meta itemprop="dateModified" content="2017-01-03T14:46:14&#43;00:00" />
+<meta itemprop="wordCount" content="49">
 
-<meta itemprop="keywords" content="pelican," />
+
+
+<meta itemprop="keywords" content="tsdb," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Pelican"/>
-<meta name="twitter:description" content="Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: 1 2 3 4 5 6 $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: 1 $pelican-quickstart 生成下列文"/>
+<meta name="twitter:title" content="TSDB"/>
+<meta name="twitter:description" content="RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,15 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Pelican</h1>
+      <h1 class="post-title">TSDB</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2013-04-01 </span>
+        <span class="post-time"> 2017-01-03 </span>
         <div class="post-category">
-            <a href="/categories/web/"> Web </a>
+            <a href="/categories/database/"> Database </a>
             </div>
-          <span class="more-meta"> 520 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 49 words </span>
+          <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -147,242 +147,73 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#pelican">Pelican</a></li>
-<li><a href="#搭建博客">搭建博客</a></li>
-<li><a href="#发布站点">发布站点</a></li>
-<li><a href="#配置">配置</a></li>
-<li><a href="#theme">Theme</a></li>
-<li><a href="#plugin">Plugin</a></li>
-<li><a href="#部署到github">部署到github</a></li>
+<li><a href="#rdbms">RDBMS</a></li>
+<li><a href="#nosql">NoSQL</a></li>
+<li><a href="#tsdb">TSDB</a></li>
 </ul>
 </nav>
   </div>
 </div>
   <div class="post-outdated">
     <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="2013-04-01T12:49:49" title="April 1, 2013">April 1, 2013</span>. This article may have outdated content or subject matter.</p>
+      <p>[NOTE] Updated <span class="timeago" datetime="2017-01-03T14:46:14" title="January 3, 2017">January 3, 2017</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
 
-<h1 id="pelican">Pelican</h1>
+<h1 id="rdbms">RDBMS</h1>
 
-<p>python开发的静态站点生成器.</p>
+<p>关系数据库管理系统。</p>
 
-<p><a href="http://blog.getpelican.com/">http://blog.getpelican.com/</a></p>
+<p>SQLite</p>
 
-<p><a href="https://github.com/getpelican/pelican">https://github.com/getpelican/pelican</a></p>
+<p>Oracle</p>
 
-<p><a href="http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html">http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html</a></p>
+<p>MSSQL</p>
 
-<p><a href="http://pelican-zh.readthedocs.io/en/latest/zh-cn/">http://pelican-zh.readthedocs.io/en/latest/zh-cn/</a></p>
+<p>Mysql</p>
 
-<h1 id="搭建博客">搭建博客</h1>
-
-<p>创建环境:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$mkdir blog_pelican
-$cd blog_pelican
-$virtualenv .venv
-$source .venv/bin/activate
-$pip install pelican
-$pip install markdown</pre></td></tr></table>
-</div>
-</div>
-<p>创建pelican项目:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$pelican-quickstart</pre></td></tr></table>
-</div>
-</div>
-<p>生成下列文件和目录:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">publishconf.py # 主配置文件
-pelicanconf.py # 发布的配置文件
-fabfile.py # fabric配置文件
-Makefile   # make配置文件
-develop_server.sh # 用于开启测试服务器
-content # 用于存放所有文章
-output # 静态生成文件</pre></td></tr></table>
-</div>
-</div>
-<h1 id="发布站点">发布站点</h1>
-
-<p>pelican部署博客:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># 将rst或md格式转换成html,默认导入到output.
-$pelican content
-$pelican content -s pelicanconf.py
-
-# 启动web服务器预览
-$cd output
-$python -m pelican.server
-$python2.7 -m SimpleHTTPServer
-$python3 -m http.server
-$firefox http://localhost:8000/
-
-# 部署站点
-# 一般publishconf.py导入pelicanconf.py即可，配置一样．
-$pelican content -s publishconf.py</pre></td></tr></table>
-</div>
-</div>
-<p>fabric部署博客:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$fab github # 一键部署到github/coding.</pre></td></tr></table>
-</div>
-</div>
-<p>make部署博客:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$make github # 一键部署到github/coding.</pre></td></tr></table>
-</div>
-</div>
-<hr />
-
-<h1 id="配置">配置</h1>
-
-<p>pelicanconf.py</p>
-
-<p>publishconf.py</p>
-
-<p>参考pelican和hexo的配置：</p>
-
-<p><a href="https://github.com/crazy-canux/blog_hexo">https://github.com/crazy-canux/blog_hexo</a></p>
-
-<p><a href="https://github.com/crazy-canux/blog_pelican">https://github.com/crazy-canux/blog_pelican</a></p>
+<p>Postgre</p>
 
 <hr />
 
-<h1 id="theme">Theme</h1>
+<h1 id="nosql">NoSQL</h1>
 
-<p>添加主题</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$cd blog_pelican
-$git submodule add https://github.com/getpelican/pelican-themes.git themes</pre></td></tr></table>
-</div>
-</div>
-<p>安装主题：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$cd pelican-themes
-$pelican-themes -i bootstrap2</pre></td></tr></table>
-</div>
-</div>
-<p>在pelicanconf.py添加主题：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">THEME = &#39;bootstrap2&#39;</pre></td></tr></table>
-</div>
-</div>
+<p>NoSQL: Not only SQL.</p>
+
+<p>非关系型数据库。</p>
+
+<p>memcached(cache)</p>
+
+<p>redis(cache)</p>
+
+<p>mongodb</p>
+
+<p>hbase(hadoop)</p>
+
+<p>cassandra(hadoop)</p>
+
+<p>rethinkdb</p>
+
 <hr />
 
-<h1 id="plugin">Plugin</h1>
+<h1 id="tsdb">TSDB</h1>
 
-<p>添加插件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$cd blog_pelican
-$git submodule add https://github.com/getpelican/pelican-plugins.git plugins</pre></td></tr></table>
-</div>
-</div>
-<hr />
+<p>Time series database.</p>
 
-<h1 id="部署到github">部署到github</h1>
+<p>时序数据库</p>
 
-<p>在makefile添加三个变量：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">GITHUB_BRANCH=master
-GITHUB_URL=https://github.com/crazy-canux/crazy-canux.github.io.git</pre></td></tr></table>
-</div>
-</div>
-<p>修改makefile:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">github: publish
-    cd $(OUTPUTDIR); git init; git remote add origin $(GITHUB_URL); git add -A; git commit -m &#34;[$(shell date +%Y%m%d)]update&#34;; git push -f -u origin $(GITHUB_BRANCH)</pre></td></tr></table>
-</div>
-</div>
-<p>一键部署：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$make github</pre></td></tr></table>
-</div>
-</div>
+<p>influxdb</p>
+
+<p>rrdtool</p>
+
+<p>graphite</p>
+
+<p>opentsdb</p>
+
+<p>premetheus</p>
+
     </div>
 
     <div class="post-copyright">
@@ -393,7 +224,7 @@ GITHUB_URL=https://github.com/crazy-canux/crazy-canux.github.io.git</pre></td></
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2013-04-01
+        2017-01-03
         
     </span>
   </p>
@@ -416,16 +247,16 @@ GITHUB_URL=https://github.com/crazy-canux/crazy-canux.github.io.git</pre></td></
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/pelican/">pelican</a>
+          <a href="/tags/tsdb/">tsdb</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/hugo/">
+        <a class="prev" href="/post/django_misc/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Hugo</span>
+            <span class="prev-text nav-default">Utils</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/harbor/">
-            <span class="next-text nav-default"></span>
+        <a class="next" href="/post/shell_awk/">
+            <span class="next-text nav-default">Awk</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -438,8 +269,8 @@ GITHUB_URL=https://github.com/crazy-canux/crazy-canux.github.io.git</pre></td></
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2013-04-01 12:49:49 \x2b0000 UTC',
-        title: 'Pelican',
+        id: '2017-01-03 14:46:14 \x2b0000 UTC',
+        title: 'TSDB',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

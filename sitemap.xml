@@ -570,7 +570,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/tsdb/</loc>
+    <loc>http://canuxcheng.com/post/database/</loc>
     <lastmod>2017-01-03T14:46:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -997,13 +997,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/sqlite/</loc>
-    <lastmod>2016-05-25T12:14:59+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/post/ps_builtins/</loc>
     <lastmod>2016-05-24T10:44:44+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1221,28 +1214,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/db_monitoring/</loc>
-    <lastmod>2016-04-03T14:46:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/post/nosql/</loc>
-    <lastmod>2016-04-03T14:46:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/post/postgre/</loc>
-    <lastmod>2016-04-03T14:46:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/post/rdbms/</loc>
     <lastmod>2016-04-03T14:46:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1454,6 +1426,18 @@
   <url>
     <loc>http://canuxcheng.com/todo/</loc>
     <lastmod>2013-04-01T12:49:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/harbor/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/helm/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2164,13 +2148,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/tags/nosql/</loc>
-    <lastmod>2016-04-03T14:46:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/tags/ntp/</loc>
     <lastmod>2016-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2269,13 +2246,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/tags/rdbms/</loc>
-    <lastmod>2016-04-03T14:46:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/tags/re/</loc>
     <lastmod>2016-04-02T11:16:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2355,13 +2325,6 @@
   <url>
     <loc>http://canuxcheng.com/tags/sqlinjection/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/tags/sqlite/</loc>
-    <lastmod>2016-05-25T12:14:59+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

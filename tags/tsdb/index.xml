@@ -13,11 +13,11 @@
     
     <item>
       <title>TSDB</title>
-      <link>http://canuxcheng.com/post/tsdb/</link>
+      <link>http://canuxcheng.com/post/database/</link>
       <pubDate>Tue, 03 Jan 2017 14:46:14 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/tsdb/</guid>
-      <description>TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus</description>
+      <guid>http://canuxcheng.com/post/database/</guid>
+      <description>RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus</description>
     </item>
     
   </channel>

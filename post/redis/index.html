@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2017-05-03T14:46:14&#43;00:00" />
 <meta itemprop="dateModified" content="2017-05-03T14:46:14&#43;00:00" />
-<meta itemprop="wordCount" content="255">
+<meta itemprop="wordCount" content="334">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/database/"> Database </a>
             </div>
-          <span class="more-meta"> 255 words </span>
+          <span class="more-meta"> 334 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -151,6 +151,7 @@
 <li><a href="#redis的命令">redis的命令</a></li>
 <li><a href="#cli">CLI</a></li>
 <li><a href="#数据类型">数据类型</a></li>
+<li><a href="#monitoring">Monitoring</a></li>
 </ul>
 </nav>
   </div>
@@ -329,6 +330,31 @@ $ sudo apt-get install redis-server</pre></td></tr></table>
 </div>
 <hr />
 
+<h1 id="monitoring">Monitoring</h1>
+
+<p>通过redis-cli&gt; info查看</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">其它指标参考grafana dashboard.
+
+Redis_mode: cluster/standalone
+
+&gt;&gt;&gt; replication (master/slave)
+Connected_slaves:    连接的slave实例个数
+
+&gt;&gt;&gt; persistence  （rdb和aof的持久化信息）</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
