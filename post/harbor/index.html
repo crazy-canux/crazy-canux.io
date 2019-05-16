@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Morgoth</title>
+  <title>Harbor - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Harbor https://github.com/goharbor/harbor Habor是由VMWare中国团队开源的容器镜像仓库, 用于存储和分发docker镜像的registry服务器. 安装步骤: 下载并解压安装包" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -38,25 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Harbor" />
+<meta property="og:description" content="Harbor https://github.com/goharbor/harbor Habor是由VMWare中国团队开源的容器镜像仓库, 用于存储和分发docker镜像的registry服务器. 安装步骤: 下载并解压安装包" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/harbor/" />
+<meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
+<meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
+
+<meta itemprop="name" content="Harbor">
+<meta itemprop="description" content="Harbor https://github.com/goharbor/harbor Habor是由VMWare中国团队开源的容器镜像仓库, 用于存储和分发docker镜像的registry服务器. 安装步骤: 下载并解压安装包">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="wordCount" content="367">
 
 
 
-<meta itemprop="wordCount" content="0">
-
-
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="harbor," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Harbor"/>
+<meta name="twitter:description" content="Harbor https://github.com/goharbor/harbor Habor是由VMWare中国团队开源的容器镜像仓库, 用于存储和分发docker镜像的registry服务器. 安装步骤: 下载并解压安装包"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,13 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title"></h1>
+      <h1 class="post-title">Harbor</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 0001-01-01 </span>
-        
-          <span class="more-meta"> 0 words </span>
-          <span class="more-meta"> 0 mins read </span>
+        <span class="post-time"> 2018-04-05 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 367 words </span>
+          <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -141,27 +145,189 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#harbor">Harbor</a></li>
+<li><a href="#docker使用harbor">docker使用harbor</a></li>
+</ul>
+</nav>
   </div>
 </div>
   <div class="post-outdated">
     <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="0001-01-01T00:00:00" title="January 1, 0001">January 1, 0001</span>. This article may have outdated content or subject matter.</p>
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-04-05T22:02:31" title="April 5, 2018">April 5, 2018</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
+
+<h1 id="harbor">Harbor</h1>
+
+<p><a href="https://github.com/goharbor/harbor">https://github.com/goharbor/harbor</a></p>
+
+<p>Habor是由VMWare中国团队开源的容器镜像仓库, 用于存储和分发docker镜像的registry服务器.</p>
+
+<p>安装步骤:</p>
+
+<ol>
+<li>下载并解压安装包, <a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></li>
+<li>配置harbor.cfg;</li>
+</ol>
+
+<p>运行安装程序:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./install.sh
+./install.sh --with-notary --with-clair --with-chartmuseum</pre></td></tr></table>
+</div>
+</div>
+<p>修改web的port:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vim /data/harbor/docker-compose.yml
+proxy:
+  ports:
+    - 8080:80 # 默认http是80
+    - 4433:443 # 默认https是443
+$ vim /data/harbor/harbor.cfg
+hostname = ip:port
+$ cd /data/harbor
+./prepare
+$ docker-compose up -d</pre></td></tr></table>
+</div>
+</div>
+<p>管理harbor:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$cd /data/harbor
+docker-compose stop　停止
+docker-compose start　恢复
+docker-compose down -v 　停止并删除container
+docker-cmopose up -d 启动</pre></td></tr></table>
+</div>
+</div>
+<p>使用notary/clair/helm:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># ./prepare --with-notary --with-clair --with-chartmuseum
+# docker-compose -f ./docker-compose.yml -f ./docker-compose.notary.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d</pre></td></tr></table>
+</div>
+</div>
+<h1 id="docker使用harbor">docker使用harbor</h1>
+
+<p>Deploy a plain HTTP registry:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># vim /etc/docker/daemon.json
+{  &#34;insecure-registries&#34; : [&#34;myregistrydomain.com:5000&#34;]}</pre></td></tr></table>
+</div>
+</div>
+<p>Use self-signed certificates:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># cp your-ca /etc/docker/certs.d/harbor.domain.com/ca.crt
+# vim /lib/systemd/system/docker.service
+ExecStart=/usr/bin/dockerd --insecure-registry harbor.domain.com:port
+# systemctl daemon-reload
+# systemctl restart docker</pre></td></tr></table>
+</div>
+</div>
+<p>update hosts on docker client:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># vim /etc/hosts ip harbor.domain.com</pre></td></tr></table>
+</div>
+</div>
+<p>create user account:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">https://&lt;ip:port&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>push images to harbor:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ docker login harbor.domain.com:port
+$ docker tag SOURCE_IMAGE[:TAG] harbor.domain.com:port/&lt;project&gt;/IMAGE[:TAG]
+$ docker push harbor.domain.com:port/&lt;project&gt;/IMAGE[:TAG]</pre></td></tr></table>
+</div>
+</div>
+<p>pull images from harbor:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ docker login harbor.domain.com:port
+$ docker pull harbor.domain.com:port/&lt;project&gt;/IMAGE[:TAG]</pre></td></tr></table>
+</div>
+</div>
+<p>k8s使用harbor:</p>
+
+<p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/</a>
+​</p>
+
     </div>
 
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
-    <span class="item-content">Canux CHENG</span>
+    <span class="item-content">Canux</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        0001-01-01
+        2018-04-05
         
     </span>
   </p>
@@ -183,15 +349,17 @@
       </label>
   </div>
 </div><footer class="post-footer">
-      
+      <div class="post-tags">
+          <a href="/tags/harbor/">harbor</a>
+          </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/pelican/">
+        <a class="prev" href="/post/container/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Pelican</span>
+            <span class="prev-text nav-default">Container</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/helm/">
-            <span class="next-text nav-default"></span>
+        <a class="next" href="/post/storage_monitoring/">
+            <span class="next-text nav-default">Monitoring</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -204,8 +372,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2018-04-05 22:02:31 \x2b0000 UTC',
+        title: 'Harbor',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

@@ -6,10 +6,19 @@
     <description>Recent content in network on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Apr 2018 22:02:31 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CNI</title>
+      <link>http://canuxcheng.com/post/cni/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/cni/</guid>
+      <description>CNI CNI: Container Network Intarface 单台host上的container通信: * none * host * bridge 多台host之间的container通信: * overlay * macvlan 提供overlay/macv</description>
+    </item>
     
     <item>
       <title>GSL_network</title>

@@ -6,28 +6,9 @@
     <description>Recent content in Tags on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Feb 2019 14:04:05 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Init</title>
-      <link>http://canuxcheng.com/tags/init/</link>
-      <pubDate>Sun, 03 Feb 2019 14:04:05 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/init/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logging</title>
-      <link>http://canuxcheng.com/tags/logging/</link>
-      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/logging/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>admin</title>
@@ -161,6 +142,15 @@
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>http://canuxcheng.com/tags/container/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/container/</guid>
       <description></description>
     </item>
     
@@ -426,6 +416,15 @@
     </item>
     
     <item>
+      <title>harbor</title>
+      <link>http://canuxcheng.com/tags/harbor/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/harbor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>hawq</title>
       <link>http://canuxcheng.com/tags/hawq/</link>
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
@@ -494,6 +493,15 @@
       <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/impala/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>init</title>
+      <link>http://canuxcheng.com/tags/init/</link>
+      <pubDate>Sun, 03 Feb 2019 14:04:05 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/init/</guid>
       <description></description>
     </item>
     
@@ -671,7 +679,7 @@
     <item>
       <title>network</title>
       <link>http://canuxcheng.com/tags/network/</link>
-      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/network/</guid>
       <description></description>
@@ -962,6 +970,15 @@
       <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
       
       <guid>http://canuxcheng.com/tags/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storate</title>
+      <link>http://canuxcheng.com/tags/storate/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/tags/storate/</guid>
       <description></description>
     </item>
     

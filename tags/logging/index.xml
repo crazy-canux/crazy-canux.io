@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Grok</title>
+      <link>http://canuxcheng.com/post/logging_grok/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_grok/</guid>
+      <description>grok logstash和telegraf都是用grok来解析log 在线检测 http://grokdebug.herokuapp.com/ grok的正则表达式 https://github.com/kkos/oniguruma/blob/master/doc/RE 可用的pattern(logstash &amp;amp; telegraf-logparser/tail) https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns https://github.com/influxdata/telegraf/blob/master/plugins/inputs/logparser/grok/patterns/influx-patterns</description>
+    </item>
+    
+    <item>
       <title>Logging</title>
       <link>http://canuxcheng.com/post/logging/</link>
       <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
