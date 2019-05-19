@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Morgoth</title>
+  <title>Kubernetes - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -38,25 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Kubernetes" />
+<meta property="og:description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/kubernetes/" />
+<meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
+<meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
+
+<meta itemprop="name" content="Kubernetes">
+<meta itemprop="description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="wordCount" content="951">
 
 
 
-<meta itemprop="wordCount" content="0">
-
-
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Kubernetes"/>
+<meta name="twitter:description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,13 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title"></h1>
+      <h1 class="post-title">Kubernetes</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 0001-01-01 </span>
-        
-          <span class="more-meta"> 0 words </span>
-          <span class="more-meta"> 0 mins read </span>
+        <span class="post-time"> 2018-04-05 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 951 words </span>
+          <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -141,27 +145,308 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#kubernetes">Kubernetes</a></li>
+<li><a href="#k8s集群组成">k8s集群组成</a>
+<ul>
+<li><a href="#master">master</a></li>
+<li><a href="#node">node</a></li>
+<li><a href="#addons">addons</a></li>
+</ul></li>
+<li><a href="#kubectl命令">kubectl命令</a></li>
+</ul>
+</nav>
   </div>
 </div>
   <div class="post-outdated">
     <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="0001-01-01T00:00:00" title="January 1, 0001">January 1, 0001</span>. This article may have outdated content or subject matter.</p>
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-04-05T22:02:31" title="April 5, 2018">April 5, 2018</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
+
+<h1 id="kubernetes">Kubernetes</h1>
+
+<p><a href="https://github.com/kubernetes/kubernetes">https://github.com/kubernetes/kubernetes</a></p>
+
+<p><a href="https://github.com/kubernetes/kubeadm">https://github.com/kubernetes/kubeadm</a></p>
+
+<p><a href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a></p>
+
+<p><a href="https://github.com/kubernetes-sigs/kubespray">https://github.com/kubernetes-sigs/kubespray</a></p>
+
+<p>kubernetes简称k8s, 是开源的容器编排工具。</p>
+
+<p>安装单机版k8s:</p>
+
+<ul>
+<li>minikube</li>
+</ul>
+
+<p>安装k8s集群:</p>
+
+<ul>
+<li>kubeadm (k8s内置的，类似于docker swarm.)</li>
+<li>kops (目前主要支持aws等云平台)</li>
+<li>kubespray (通过ansible部署)</li>
+</ul>
+
+<p>概念:</p>
+
+<ul>
+<li>nodes, 运行pod的物理机或虚拟机.</li>
+<li>namespace, 对资源和对象的抽象集合．pods/deployments/services都属于某个ns.</li>
+<li>pods,一组紧密关联的容器集合，共享pid,ipc,network,uts,namespace.</li>
+</ul>
+
+<p>k8s业务类型:</p>
+
+<ul>
+<li>long-running 长期伺服型 -&gt; RC, RS, Deployment</li>
+<li>batch 批处理型-&gt; Job</li>
+<li>node-daemon 节点后台支撑型-&gt; DaemonSet</li>
+<li>stateful application 有状态应用型-&gt; StatefulSet</li>
+</ul>
+
+<p>api对象三大类属性:</p>
+
+<ul>
+<li>metadata 元数据(至少包含namespace, name, uid).</li>
+<li>spec 规范</li>
+<li>status 状态</li>
+</ul>
+
+<p>api对象:</p>
+
+<ul>
+<li>ReplidcationController/rc: 控制pod运行数量</li>
+<li>ReplicaSet/rs: rc的升级版</li>
+<li>Deployments/deploy: 对集群更新</li>
+<li>Job</li>
+<li>DaemonSet/ds</li>
+<li>StatefulSet/sts: 控制有状态的pod, rc/rs都是控制无状态的pod.</li>
+<li>Services/svc: 通过service来访问pod提供的服务.为一组pod提供统一的入口,同时提供负载均衡和自动服务发现.</li>
+<li>Secrets</li>
+<li>ServiceAccount/sa</li>
+</ul>
+
+<h1 id="k8s集群组成">k8s集群组成</h1>
+
+<h2 id="master">master</h2>
+
+<ul>
+<li>aip-server, 提供资源操作唯一入口</li>
+<li>scheduler, 负责资源调度</li>
+<li>controller-manager, 负责维护集群状态</li>
+<li>etcd(可以部署单独集群), 保存整个集群的状态</li>
+</ul>
+
+<h2 id="node">node</h2>
+
+<ul>
+<li>kubelet, 负责维护容器生命周期, 还包括CNI CVI</li>
+<li>kube-proxy, 为service提供cluster内部的服务发现和负载均衡</li>
+<li>CRI(containerd), 创建pod</li>
+</ul>
+
+<h2 id="addons">addons</h2>
+
+<ul>
+<li>coredns</li>
+<li>dashboard, web-gui</li>
+<li>metrics-server, 取代heapster，用于cpu/memory监控</li>
+<li>ingress-nginx, 为服务提供外网入口</li>
+<li>federation, 提供跨可用区的集群</li>
+</ul>
+
+<hr />
+
+<h1 id="kubectl命令">kubectl命令</h1>
+
+<p><a href="https://github.com/cloudnativelabs/kube-shell">https://github.com/cloudnativelabs/kube-shell</a></p>
+
+<p><a href="https://github.com/jonmosco/kube-ps1">https://github.com/jonmosco/kube-ps1</a></p>
+
+<p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
+
+<p>在master上通过kubectl命令管理集群.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl options # 查看所有命令可用选项</pre></td></tr></table>
+</div>
+</div>
+<p>Basic command</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">通过yaml或json文件创建pod/container:
+$ kubectl create -f FILENAME [options]
+
+创建serivce:
+$ kubectl expose
+
+创建pod/container:
+$ kubectl run (docker run)
+$ kubectl run &lt;name&gt; --image=&lt;image&gt; --labels=&lt;key=value&gt; ...
+
+$ kubectl set
+
+获取信息:
+$ kubectl get (docker ps)
+kubectl get nodes/no # 获取node节点信息
+kubectl get namespace/ns # 获取namespace信息
+kubectl -n kube-system get pods/po
+kubectl -n kube-system get deployments/deploy
+kubectl -n kube-system get services/svc
+
+$ kubectl explain
+
+$ kubectl edit
+
+$ kubectl delete</pre></td></tr></table>
+</div>
+</div>
+<p>deploy command</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl scale
+
+$ kubectl autoscale
+
+$ kubectl rollout
+
+$ kubectl rolling-update</pre></td></tr></table>
+</div>
+</div>
+<p>debug&amp;troubleshoot</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl describe (docker inspect)
+
+# 获取k8s-dashboard的token
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)
+
+$ kubectl logs (docker logs)
+
+$ kubectl exec (docker exec)
+
+$ kubectl attach
+
+$ kubectl port-forward
+
+$ kubectl proxy
+
+$ kubectl cp
+
+$ kubectl auth</pre></td></tr></table>
+</div>
+</div>
+<p>cluster management</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl top
+
+$ kubectl cluster-info
+
+$ kubectl certificate
+
+$ kubectl cordon
+
+$ kubectl uncordon
+
+$ kubectl drain
+
+$ kubectl taint</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
     </div>
 
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
-    <span class="item-content">Canux CHENG</span>
+    <span class="item-content">Canux</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        0001-01-01
+        2018-04-05
         
     </span>
   </p>
@@ -183,15 +468,17 @@
       </label>
   </div>
 </div><footer class="post-footer">
-      
+      <div class="post-tags">
+          <a href="/tags/k8s/">k8s</a>
+          </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/helm/">
+        <a class="prev" href="/post/harbor/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default"></span>
+            <span class="prev-text nav-default">Harbor</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/sec_security/">
-            <span class="next-text nav-default"></span>
+        <a class="next" href="/post/swarm/">
+            <span class="next-text nav-default">Swarm</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -204,8 +491,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2018-04-05 22:02:31 \x2b0000 UTC',
+        title: 'Kubernetes',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

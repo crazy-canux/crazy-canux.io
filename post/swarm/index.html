@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - Morgoth</title>
+  <title>Swarm - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux CHENG" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker swarm init --advertise-addr &amp;lt;ip&amp;gt; 指定manager的ip ​ docker swarm join --token &amp;lt;token&amp;gt; &amp;lt;host:port&amp;gt; ​ # 查" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -38,25 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Swarm" />
+<meta property="og:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker swarm init --advertise-addr &lt;ip&gt; 指定manager的ip ​ docker swarm join --token &lt;token&gt; &lt;host:port&gt; ​ # 查" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/swarm/" />
+<meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
+<meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
+
+<meta itemprop="name" content="Swarm">
+<meta itemprop="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker swarm init --advertise-addr &lt;ip&gt; 指定manager的ip ​ docker swarm join --token &lt;token&gt; &lt;host:port&gt; ​ # 查">
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="wordCount" content="832">
 
 
 
-<meta itemprop="wordCount" content="0">
-
-
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="swarm," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Swarm"/>
+<meta name="twitter:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker swarm init --advertise-addr &lt;ip&gt; 指定manager的ip ​ docker swarm join --token &lt;token&gt; &lt;host:port&gt; ​ # 查"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,13 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title"></h1>
+      <h1 class="post-title">Swarm</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 0001-01-01 </span>
-        
-          <span class="more-meta"> 0 words </span>
-          <span class="more-meta"> 0 mins read </span>
+        <span class="post-time"> 2018-04-05 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 832 words </span>
+          <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -141,27 +145,316 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#swarm">Swarm</a></li>
+<li><a href="#swarm命令">swarm命令</a></li>
+<li><a href="#swarm-scheduler">swarm scheduler</a></li>
+</ul>
+</nav>
   </div>
 </div>
   <div class="post-outdated">
     <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="0001-01-01T00:00:00" title="January 1, 0001">January 1, 0001</span>. This article may have outdated content or subject matter.</p>
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-04-05T22:02:31" title="April 5, 2018">April 5, 2018</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
+
+<h1 id="swarm">Swarm</h1>
+
+<p>docker swarm 是 docker内置的容器编排工具。</p>
+
+<h1 id="swarm命令">swarm命令</h1>
+
+<p>创建集群</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">docker swarm init
+--advertise-addr &lt;ip&gt; 指定manager的ip
+​
+docker swarm join --token &lt;token&gt; &lt;host:port&gt;
+​
+# 查看token
+docker swarm join-token manager   获取添加manager命令
+docker swarm join-token worker   获取添加worker命令
+​
+docker swarm leave -f/--force
+​
+docker swarm update</pre></td></tr></table>
+</div>
+</div>
+<p>管理节点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">docker node ls
+docker node ls --format &#34;{{.Hostname}}&#34;
+​
+docker node rm
+​
+docker node inspect
+​
+# 查看node上运行的tasks/container
+docker node ps -f/--filter NODE
+​
+# 添加label, node.labels.role=api
+docker node update --label-add role=api node1
+# 删除label
+docker node update --label-rm role node1
+​
+# 活跃节点
+docker node update --availability active node1
+# 指定该节点满载,不再分派任务,关闭已有任务并重新分派.
+docker node update --availability drain node1
+# 已有任务继续运行,不分配新任务.
+​
+docker node update --availability pause node1</pre></td></tr></table>
+</div>
+</div>
+<p>service</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">相当于docker-compose.yml里面的service.docker service ls # 列出所有service
+​
+docker service rm SERVICE
+​
+docker service inspect SERVICE
+​
+# 查看service的log
+docker service logs SERVICE
+​
+# 查看service的状态,在哪些node上运行,运行状态等
+docker service ps SERVICE
+​
+docker service update
+docker service update --image &lt;url:tag&gt; # 根据镜像更新服务
+​
+docker service scale
+​
+docker service rollback
+​
+docker service create
+--constraint node.id/node.hostname/node.role/node.labels/engine.labels
+--env/-e
+--label
+--limit-cpu
+--limit-memory
+--replicas
+--restart-condition
+--user/--group
+--mode global/replicated
+--endpoint-mode vip/dnsrr
+compose file
+
+deploy:
+​
+  mode: global # 部署到匹配的全部node.
+​
+  mode: replicated
+  reoplicas: 3
+​
+  placement:
+    constraints:
+      - node.role == manager
+    preferences:
+      - spreed:
+​
+  resources:
+    limits:
+      cpus: &#39;0.5&#39;
+      memory: 1G
+​
+  restart_policy:
+    condition: on-failure
+    delay: 5s
+    max_attempts: 3
+    window: 10s
+​
+  update_config:
+​
+  rollback_config:
+​</pre></td></tr></table>
+</div>
+</div>
+<p>stack</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&gt; stack = n*service
+&gt; service = n*task(container)
+docker stack ls # 列出所有stack
+​
+# 查看stack的service
+docker stack services
+​
+查看stack的task/container
+docker stack ps STACK
+​
+根据docker-compose.yml部署应用
+docker stack deploy -c/--compose-file &lt;docker-compose.yml&gt; STACK
+docker stack deploy --bundle-file &lt;DAB&gt; STACK
+​
+docker stack rm STACK</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="swarm-scheduler">swarm scheduler</h1>
+
+<p>filter过滤器可以实现特定的容器运行在特定的node上, swarm支持３种策略和6个过滤器.</p>
+
+<p>swarm strategy:</p>
+
+<ul>
+<li>spread： 默认策略,配置相同的情况下选择容器数量最少的node</li>
+<li>binpack： 尽可能将容器放到一台node上运行。</li>
+<li>random： 直接随机分配</li>
+</ul>
+
+<p>swarm node filters:</p>
+
+<ul>
+<li>constraint</li>
+<li>health</li>
+<li>containerslots</li>
+</ul>
+
+<p>swarm container-configuration filters:</p>
+
+<ul>
+<li>affinity</li>
+<li>dependency</li>
+<li>port</li>
+</ul>
+
     </div>
 
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
-    <span class="item-content">Canux CHENG</span>
+    <span class="item-content">Canux</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        0001-01-01
+        2018-04-05
         
     </span>
   </p>
@@ -183,14 +476,16 @@
       </label>
   </div>
 </div><footer class="post-footer">
-      
+      <div class="post-tags">
+          <a href="/tags/swarm/">swarm</a>
+          </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sec_security/">
+        <a class="prev" href="/post/kubernetes/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default"></span>
+            <span class="prev-text nav-default">Kubernetes</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/network_monitoring/">
+        <a class="next" href="/post/storage_monitoring/">
             <span class="next-text nav-default">Monitoring</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -204,8 +499,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '0001-01-01 00:00:00 \x2b0000 UTC',
-        title: '',
+        id: '2018-04-05 22:02:31 \x2b0000 UTC',
+        title: 'Swarm',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

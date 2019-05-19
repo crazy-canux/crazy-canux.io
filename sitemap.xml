@@ -199,7 +199,28 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/docker/</loc>
+    <lastmod>2018-04-05T22:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/harbor/</loc>
+    <lastmod>2018-04-05T22:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/kubernetes/</loc>
+    <lastmod>2018-04-05T22:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/swarm/</loc>
     <lastmod>2018-04-05T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1465,19 +1486,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/kubernetes/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/post/sec_security/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/post/swarm/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1845,6 +1854,13 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/tags/docker/</loc>
+    <lastmod>2018-04-05T22:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/tags/document/</loc>
     <lastmod>2018-01-01T10:49:21+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2057,6 +2073,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/json/</loc>
     <lastmod>2016-07-07T16:43:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/k8s/</loc>
+    <lastmod>2018-04-05T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2414,6 +2437,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/summary/</loc>
     <lastmod>2016-09-27T03:31:25+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/swarm/</loc>
+    <lastmod>2018-04-05T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

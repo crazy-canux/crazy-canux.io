@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>swarm on Morgoth</title>
+    <link>http://canuxcheng.com/tags/swarm/</link>
+    <description>Recent content in swarm on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Apr 2018 22:02:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/swarm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swarm</title>
+      <link>http://canuxcheng.com/post/swarm/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm/</guid>
+      <description>Swarm docker swarm 是 docker内置的容器编排工具。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker swarm init --advertise-addr &amp;lt;ip&amp;gt; 指定manager的ip ​ docker swarm join --token &amp;lt;token&amp;gt; &amp;lt;host:port&amp;gt; ​ # 查</description>
+    </item>
+    
+  </channel>
+</rss>

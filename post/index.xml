@@ -267,12 +267,39 @@ CSI: Container Storage Interface.</description>
     </item>
     
     <item>
+      <title>Docker</title>
+      <link>http://canuxcheng.com/post/docker/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/docker/</guid>
+      <description>Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． Docker包括三个基本概念</description>
+    </item>
+    
+    <item>
       <title>Harbor</title>
       <link>http://canuxcheng.com/post/harbor/</link>
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/harbor/</guid>
       <description>Harbor https://github.com/goharbor/harbor Habor是由VMWare中国团队开源的容器镜像仓库, 用于存储和分发docker镜像的registry服务器. 安装步骤: 下载并解压安装包</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>http://canuxcheng.com/post/kubernetes/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/kubernetes/</guid>
+      <description>Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops</description>
+    </item>
+    
+    <item>
+      <title>Swarm</title>
+      <link>http://canuxcheng.com/post/swarm/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm/</guid>
+      <description>Swarm docker swarm 是 docker内置的容器编排工具。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker swarm init --advertise-addr &amp;lt;ip&amp;gt; 指定manager的ip ​ docker swarm join --token &amp;lt;token&amp;gt; &amp;lt;host:port&amp;gt; ​ # 查</description>
     </item>
     
     <item>
@@ -1876,15 +1903,6 @@ SAAS: Software as a service</description>
     
     <item>
       <title></title>
-      <link>http://canuxcheng.com/post/kubernetes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://canuxcheng.com/post/sec_security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1899,15 +1917,6 @@ WAF Web Application Firewall, web应用防火墙
 IPS Intrusion Prevention System, 入侵防御系统
 IDS Intrusion Detection System, 入侵检测系统
 NSM Network Security Monitoring, 网络安全监控</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/post/swarm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/swarm/</guid>
-      <description></description>
     </item>
     
     <item>

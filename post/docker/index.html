@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Docker - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． Docker包括三个基本概念" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/docker/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Docker" />
+<meta property="og:description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． Docker包括三个基本概念" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/docker/" />
+<meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
+<meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
+
+<meta itemprop="name" content="Docker">
+<meta itemprop="description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． Docker包括三个基本概念">
+
+
+<meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="wordCount" content="2134">
+
+
+
+<meta itemprop="keywords" content="docker," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker"/>
+<meta name="twitter:description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． Docker包括三个基本概念"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Docker</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-04-05 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 2134 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#docker">Docker</a></li>
+<li><a href="#docker命令">docker命令</a></li>
+<li><a href="#dockerfile">Dockerfile</a></li>
+<li><a href="#docker-compose">docker-compose</a>
+<ul>
+<li><a href="#docker-compose命令">docker-compose命令</a></li>
+<li><a href="#docker-compose-yml">docker-compose.yml</a></li>
+</ul></li>
+<li><a href="#docker-machine">docker-machine</a>
+<ul>
+<li><a href="#docker-machine命令">docker-machine命令</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-04-05T22:02:31" title="April 5, 2018">April 5, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="docker">Docker</h1>
+
+<p><a href="https://store.docker.com/">https://store.docker.com/</a></p>
+
+<p><a href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+
+<p><a href="https://github.com/docker">https://github.com/docker</a></p>
+
+<p><a href="https://github.com/moby/moby">https://github.com/moby/moby</a></p>
+
+<p>Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术．</p>
+
+<p>Docker包括三个基本概念:</p>
+
+<ul>
+<li>仓库repository,集中存放镜像文件的场所,docker hub/store是最大的公开仓库．</li>
+<li>镜像image, 镜像是一个文件系统.</li>
+<li>容器container, 容器是镜像的运行的实例．</li>
+</ul>
+
+<p>修改默认register:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># http://7bd09afa.m.daocloud.io
+# https://docker.mirrors.ustc.edu.cn
+# https://registry.docker-cn.com
+$ sudo vim /etc/docker/daemon.json
+{
+    &#34;registry-mirrors&#34;: [&#34;https://docker.mirrors.ustc.edu.cn&#34;]
+}</pre></td></tr></table>
+</div>
+</div>
+<p>禁止docker修改iptables:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo vim /lib/systemd/system/docker.service
+&gt; ExecStart=/usr/bin/dockerd -H fd:// --iptables=false</pre></td></tr></table>
+</div>
+</div>
+<p>Install:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">windows:
+https://docs.docker.com/docker-for-windows/install/
+
+linux:
+https://docs.docker.com/install/linux/docker-ce/ubuntu/</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="docker命令">docker命令</h1>
+
+<p>image管理:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ docker image COMMAND</pre></td></tr></table>
+</div>
+</div>
+<p>​
+    查看本地镜像:
+    $ docker image ls
+    $ docker images -a
+​
+    根据创建dockerfile，创建新的images:
+    $ docker image build
+​
+    创建tag
+    $ docker image tag
+​
+    删除image
+    $ docker image rm <IMAGE ID>
+    $ docker rmi <IMAGE ID>
+​
+    $ docker rmi $(docker images -a -q) # 删除所有image</p>
+
+<p>container管理</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ docker container COMMAND</pre></td></tr></table>
+</div>
+</div>
+<p>​
+    列出container:
+    $ docker container ls
+    $ docker ps -a  # 默认只显示running状态的
+​
+    运行image,产生一个container:
+    $ docker container run <IMAGE ID>/<REPOSITORY> [COMMAND] [ARGS]
+​
+    在container中执行命令
+    $ docker container exec [OPTIONS] <CONTAINER> COMMAND [ARG&hellip;]
+​
+    创建container但不启动
+    $ docker container create &ndash;name <name> <CONTAINER>
+​
+    启动container:
+    $ docker container start/restart <CONTAINER>
+​
+    停止container:
+    $ docker container stop <CONTAINER>
+​
+    删除container：
+    $ docker container rm <CONTAINER>
+    $ docker rm <CONTAINER>
+​
+    $ docker rm $(docker ps -a -q) # 删除所有容器</p>
+
+<p>制作镜像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 根据Dockerfile 构建image
+docker build [OPTIONS] PATH | URL | -
+docker build .  # 默认就是当前目录的Dockerfile
+docker build -t &lt;repo&gt;/&lt;name&gt;:&lt;tag&gt; .  # 创建tag
+docker build -f /path/to/mydockerfile . # 也可以指定其它路径的其它文件
+docker build --target &lt;stage&gt; . # 指定阶段构建.
+
+# 把image导出到tar包
+# 既可以从image也可以从container导出。
+# 从container导出不包含运行后的修改，只导出原始镜像。
+docker save -o name.tgz &lt;repo1&gt;:&lt;tag1&gt; &lt;repo2&gt;:&lt;tag2&gt; ...</pre></td></tr></table>
+</div>
+</div>
+<p>​
+    # 从stdin或文件加载image
+    docker load [OPTIONS]
+    docker load &lt; name.tar.gz
+    docker load &ndash;input/-i name.tar</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 把container导出到tar包，从container导出镜像。
+# 包括container启动后的修改。
+docker export -o name.tar [container]</pre></td></tr></table>
+</div>
+</div>
+<p>​
+    # 从container导出的包加载成镜像
+    docker import name.tar [repo]:[tag]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 根据container的修改创建新的image
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+docker commit -a &#34;author&#34; -c &#34;Dockerfile instruction&#34; -m &#34;commit message&#34; CONTAINER [REPOSITORY[:TAG]]</pre></td></tr></table>
+</div>
+</div>
+<p>运行容器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 创建一个新的container并运行命令
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+docker run --name [NAME] IMAGE # 运行容器并命名
+docker run -d IMAGE # 后台运行
+docker run -it IMAGE /bin/bash # 交互模式启动容器
+docker run -P IMAGE # 默认将容器的8０端口映射到主机的随机端口
+docker run -p [host:port]:[containerPort] # 指定映射端口
+--add-host # 相当于修改容器的/etc/hosts,但是容器重启后不会消失
+-h/--hostname # 修改容器的/etc/hostname
+-c, --cpu-shares int             CPU shares (relative weight)
+--cpus decimal                   Number of CPUs
+--cpuset-cpus string             CPUs in which to allow execution (0-3, 0,1)
+--cpuset-mems string             MEMs in which to allow execution (0-3, 0,1)
+-m, --memory bytes               Memory limit
+--memory-reservation bytes       Memory soft limit
+--memory-swap bytes              Swap limit equal to memory plus swap: &#39;-1&#39; to enable unlimited swap
+--memory-swappiness int          Tune container memory swappiness (0 to 100) (default -1)
+
+# 在运行的container中执行命令
+docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+docker exec -d CONTAINER ... # 在后台运行
+docker exec -it CONTAINER /bin/bash ... # 进入命令行</pre></td></tr></table>
+</div>
+</div>
+<p>其它命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 在container和host之前拷贝文件和目录
+docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+
+# 查看容器的日志.
+docker logs [OPTIONS] CONTAINER
+docker diff CONTAINER
+docker history [OPTIONS] IMAGE</pre></td></tr></table>
+</div>
+</div>
+<p>register使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 登陆到docker hub 或其他register
+docker login
+docker login -u/--username &lt;user&gt; -p/--password &lt;password&gt;
+
+# 从docker hub/store查找images:
+docker search [OPTIONS] TERM
+$ docker search
+
+# 从registry获取repository/images到/var/lib/docker：
+docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+$ docker pull
+$ docker pull ubuntu # 默认下载所有tag
+$ docker pull ubuntu:14.04
+
+# 从中国站点下载
+$ docker pull registry.docker-cn.com/library/ubuntu:16.04
+
+# 推送到docker hub
+docker push</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="dockerfile">Dockerfile</h1>
+
+<p>ADD</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># add可以是远程文件，不推荐使用
+ADD [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;
+ADD [--chown=&lt;user&gt;:&lt;group&gt;] [&#34;&lt;src&gt;&#34;,... &#34;&lt;dest&gt;&#34;]</pre></td></tr></table>
+</div>
+</div>
+<p>COPY</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 只能操作本地文件
+COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;
+COPY [--chown=&lt;user&gt;:&lt;group&gt;] [&#34;&lt;src&gt;&#34;,... &#34;&lt;dest&gt;&#34;]</pre></td></tr></table>
+</div>
+</div>
+<p>ENV</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 指定容器中的环境变量
+ENV &lt;key&gt; &lt;value&gt;
+ENV &lt;key&gt;=&lt;value&gt; ...</pre></td></tr></table>
+</div>
+</div>
+<p>EXPOSE</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 指定容器需要映射到主机的端口
+EXPOSE &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]</pre></td></tr></table>
+</div>
+</div>
+<p>FROM</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">FROM &lt;image&gt; [AS &lt;name&gt;]
+FROM &lt;image&gt;[:&lt;tag&gt;] [AS &lt;name&gt;]
+FROM &lt;image&gt;[@&lt;digest&gt;] [AS &lt;name&gt;]</pre></td></tr></table>
+</div>
+</div>
+<p>LABEL</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">LABEL &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; ...</pre></td></tr></table>
+</div>
+</div>
+<p>STOPSIGNAL</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">STOPSIGNAL signal</pre></td></tr></table>
+</div>
+</div>
+<p>USER</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">USER &lt;user&gt;[:&lt;group&gt;]
+USER &lt;UID&gt;[:&lt;GID&gt;]</pre></td></tr></table>
+</div>
+</div>
+<p>VOLUME</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 指定挂载点做数据持久化
+VOLUME [&#34;/data&#34;]</pre></td></tr></table>
+</div>
+</div>
+<p>WORKDIR</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 对run/cmd/entrypoint有效的工作目录
+WORKDIR /path/to/workdir</pre></td></tr></table>
+</div>
+</div>
+<p>RUN</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 在容器构建过程中运行
+RUN &lt;command&gt;  # shell 格式
+RUN [&#34;executable&#34;, &#34;param1&#34;, &#34;param2&#34;]   # exec 格式</pre></td></tr></table>
+</div>
+</div>
+<p>CMD</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 在容器运行过程中运行, 可以被覆盖
+CMD [&#34;executable&#34;, &#34;param1&#34;, &#34;param2&#34;]  # exec格式
+CMD [&#34;param2&#34;, &#34;param2&#34;]   # entrypoint的参数
+CMD command param1 param2   # shell 格式</pre></td></tr></table>
+</div>
+</div>
+<p>ENTRYPOINT</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 和cmd类似,指定容器运行过程中的执行命令
+ENTRYPOINT [&#34;executable&#34;, &#34;param1&#34;, &#34;param2&#34;] (exec form, preferred)
+ENTRYPOINT command param1 param2</pre></td></tr></table>
+</div>
+</div>
+<p>ARG</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ARG &lt;name&gt;[=&lt;default value&gt;]</pre></td></tr></table>
+</div>
+</div>
+<p>ONBUILD</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ONBUILD ...</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="docker-compose">docker-compose</h1>
+
+<p><a href="https://github.com/docker/compose">https://github.com/docker/compose</a></p>
+
+<p>通过一个yaml文件来管理容器中的服务，包括网络和存储。</p>
+
+<p>安装:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">https://docs.docker.com/compose/install/
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose</pre></td></tr></table>
+</div>
+</div>
+<h2 id="docker-compose命令">docker-compose命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]
+-f/--file
+-p/--project-name # 默认目录名
+-H/--host
+
+# 根据docker-compose.yml把stack打包成一个Distributed Application Bundles文件.
+$ docker-compose bundle -o &lt;project name&gt;.dab
+
+$ docker-compose start [servoce...]
+$ docker-compose stop [service...]
+$ docker-compose restart [service...]
+$ docker-compose up -d [service...]
+$ docker-compose down -v
+
+$ docker-compose logs -f</pre></td></tr></table>
+</div>
+</div>
+<h2 id="docker-compose-yml">docker-compose.yml</h2>
+
+<p>compose文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">version: &#34;3.6&#34;
+services:
+mongo:
+    image: mongo:latest
+    networks:
+    - mynetwork
+    volumes:
+    - myvolume
+    deploy: // for swarm
+    ports:
+    environment:
+​
+networks:
+mynetwork:
+    external:
+    name: lan0
+​
+networks:
+mynetwork:
+    driver: bridge
+    driver_opts:
+    com.docker.network.bridge.name: lan0
+    ipam:
+    driver: default
+    config:
+    - subnet: 192.168.1.0/24</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="docker-machine">docker-machine</h1>
+
+<p><a href="https://github.com/docker/machine">https://github.com/docker/machine</a></p>
+
+<p>在本地安装docker和docker-machine，然后就可以从本机安装或管理远程机器上的docker.</p>
+
+<p>需要添加ssh的无密码登陆:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote-ip</pre></td></tr></table>
+</div>
+</div>
+<p>安装:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">https://docs.docker.com/machine/install-machine/$ base=https://github.com/docker/machine/releases/download/v0.16.0
+&amp;&amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/tmp/docker-machine
+&amp;&amp; sudo install /tmp/docker-machine /usr/local/bin/docker-machine</pre></td></tr></table>
+</div>
+</div>
+<h2 id="docker-machine命令">docker-machine命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">docker-machine create -d generic \
+--generic-ip-address=remote-ip \
+--generic-ssh-user=user \
+--generic-ssh-key ~/.ssh/id_rsa \
+node1
+docker-machine ls</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-04-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/docker/">docker</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/container/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Container</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/harbor/">
+            <span class="next-text nav-default">Harbor</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2018-04-05 22:02:31 \x2b0000 UTC',
+        title: 'Docker',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
