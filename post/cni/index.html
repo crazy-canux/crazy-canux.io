@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="CNI CNI: Container Network Intarface 单台host上的container通信: * none * host * bridge 多台host之间的container通信: * overlay * macvlan 提供overlay/macv" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="CNI" />
-<meta property="og:description" content="CNI CNI: Container Network Intarface 单台host上的container通信: * none * host * bridge 多台host之间的container通信: * overlay * macvlan 提供overlay/macv" />
+<meta property="og:description" content="CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/cni/" />
 <meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="CNI">
-<meta itemprop="description" content="CNI CNI: Container Network Intarface 单台host上的container通信: * none * host * bridge 多台host之间的container通信: * overlay * macvlan 提供overlay/macv">
+<meta itemprop="description" content="CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网">
 
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="749">
+<meta itemprop="wordCount" content="726">
 
 
 
 <meta itemprop="keywords" content="network," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CNI"/>
-<meta name="twitter:description" content="CNI CNI: Container Network Intarface 单台host上的container通信: * none * host * bridge 多台host之间的container通信: * overlay * macvlan 提供overlay/macv"/>
+<meta name="twitter:description" content="CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 749 words </span>
+          <span class="more-meta"> 726 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -167,20 +167,29 @@
 
 <p>CNI: Container Network Intarface</p>
 
-<p>单台host上的container通信:
-* none
-* host
-* bridge</p>
+<p>单台host上的container通信:</p>
 
-<p>多台host之间的container通信:
-* overlay
-* macvlan</p>
+<ul>
+<li>none</li>
+<li>host</li>
+<li>bridge</li>
+</ul>
 
-<p>提供overlay/macvlan的网络服务:
-* flannel
-* cilium
-* kube-router
-* calico</p>
+<p>多台host之间的container通信:</p>
+
+<ul>
+<li>overlay</li>
+<li>macvlan</li>
+</ul>
+
+<p>提供overlay/macvlan的网络服务:</p>
+
+<ul>
+<li>flannel</li>
+<li>cilium</li>
+<li>kube-router</li>
+<li>calico</li>
+</ul>
 
 <h1 id="docker网络管理">Docker网络管理</h1>
 
@@ -280,9 +289,9 @@ $ docker network create --driver=bridge --gateway=192.168.1.1 --subnet=192.168.1
 </div>
 <h1 id="overlay网络">overlay网络</h1>
 
-<p>overlay网络可以跨主机通信，swarm默认使用overlay网络，node1上的container能通过container-hostname找到node2上的container.</p>
+<p>overlay网络可以跨主机通信，swarm默认使用overlay网络, container之间可以通过service-name通信.</p>
 
-<p>container能通过ip访问局域网中的其它node, 但是不能通过hostname访问其它node. 局域网中的node 既不能通过container-hostname也不能通过container-ip访问container, 也就是说外部服务只能通过expose port来访问container.</p>
+<p>container能通过ip访问局域网中的其它node, 但是不能通过hostname访问其它node. 局域网中的node 既不能通过container-servicename也不能通过container-hostname/ip访问container, 也就是说外部服务只能通过expose port来访问container.</p>
 
 <p>创建:</p>
 <div class="highlight"><div class="chroma">

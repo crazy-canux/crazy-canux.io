@@ -17,7 +17,7 @@
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/swarm/</guid>
-      <description>Swarm docker swarm 是 docker内置的容器编排工具。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker swarm init --advertise-addr &amp;lt;ip&amp;gt; 指定manager的ip ​ docker swarm join --token &amp;lt;token&amp;gt; &amp;lt;host:port&amp;gt; ​ # 查</description>
+      <description>Swarm docker swarm 是 docker内置的容器编排工具。 直接在manager上通过compose文件运行服务，通过service-name调用服务，所有no</description>
     </item>
     
   </channel>

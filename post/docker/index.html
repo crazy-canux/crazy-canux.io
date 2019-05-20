@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2134">
+<meta itemprop="wordCount" content="2172">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2134 words </span>
+          <span class="more-meta"> 2172 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -254,23 +254,23 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/</pre></td></tr></table>
 </div>
 </div>
 <p>​
-    查看本地镜像:
+    # 查看本地镜像:
     $ docker image ls
     $ docker images -a
 ​
-    根据创建dockerfile，创建新的images:
+    # 根据创建dockerfile，创建新的images:
     $ docker image build
 ​
-    创建tag
+    # 创建tag
     $ docker image tag
 ​
-    删除image
+    # 删除image
     $ docker image rm <IMAGE ID>
     $ docker rmi <IMAGE ID>
 ​
     $ docker rmi $(docker images -a -q) # 删除所有image</p>
 
-<p>container管理</p>
+<p>container管理:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -280,26 +280,26 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/</pre></td></tr></table>
 </div>
 </div>
 <p>​
-    列出container:
+    # 列出container:
     $ docker container ls
     $ docker ps -a  # 默认只显示running状态的
 ​
-    运行image,产生一个container:
+    # 运行image,产生一个container:
     $ docker container run <IMAGE ID>/<REPOSITORY> [COMMAND] [ARGS]
 ​
-    在container中执行命令
+    # 在container中执行命令
     $ docker container exec [OPTIONS] <CONTAINER> COMMAND [ARG&hellip;]
 ​
-    创建container但不启动
+    # 创建container但不启动
     $ docker container create &ndash;name <name> <CONTAINER>
 ​
-    启动container:
+    # 启动container:
     $ docker container start/restart <CONTAINER>
 ​
-    停止container:
+    # 停止container:
     $ docker container stop <CONTAINER>
 ​
-    删除container：
+    # 删除container：
     $ docker container rm <CONTAINER>
     $ docker rm <CONTAINER>
 ​
@@ -701,12 +701,18 @@ $ sudo chmod +x /usr/local/bin/docker-compose</pre></td></tr></table>
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]
 -f/--file
 -p/--project-name # 默认目录名
 -H/--host
+
+# 拉取compose文件中指定的镜像
+$ docker-compose -f service.yml pull
 
 # 根据docker-compose.yml把stack打包成一个Distributed Application Bundles文件.
 $ docker-compose bundle -o &lt;project name&gt;.dab
