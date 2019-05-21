@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2172">
+<meta itemprop="wordCount" content="2225">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2172 words </span>
+          <span class="more-meta"> 2225 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -757,12 +757,29 @@ $ docker-compose logs -f</pre></td></tr></table>
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">version: &#34;3.6&#34;
 services:
-mongo:
+  mongo:
     image: mongo:latest
+    hostname: hostname
     networks:
     - mynetwork
     volumes:
@@ -770,6 +787,21 @@ mongo:
     deploy: // for swarm
     ports:
     environment:
+    depends_on:
+
+    # 下列选项不能用于swarm stack部署.
+    build
+    cgroup_parent
+    container_name
+    devices
+    tmpfs
+    external_links
+    links
+    network_mode
+    restart
+    security_opt
+    sysctls
+    userns_mode
 ​
 networks:
 mynetwork:
