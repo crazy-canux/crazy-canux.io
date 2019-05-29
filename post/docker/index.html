@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2221">
+<meta itemprop="wordCount" content="2274">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2221 words </span>
+          <span class="more-meta"> 2274 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -234,77 +234,120 @@ $ sudo vim /etc/docker/daemon.json
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">windows:
-https://docs.docker.com/docker-for-windows/install/
+&lt;https://docs.docker.com/docker-for-windows/install/&gt;
 
 linux:
-https://docs.docker.com/install/linux/docker-ce/ubuntu/</pre></td></tr></table>
+&lt;https://docs.docker.com/install/linux/docker-ce/ubuntu/&gt;</pre></td></tr></table>
 </div>
 </div>
 <hr />
 
 <h1 id="docker命令">docker命令</h1>
 
-<p>image管理</p>
+<p>image管理:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">docker image COMMAND</pre></td></tr></table>
-</div>
-</div>
-<p>​
-    #查看本地镜像:
-    $ docker image ls
-    $ docker images -a
-​
-    # 根据创建dockerfile，创建新的images:
-    $ docker image build
-​
-    # 创建tag
-    $ docker image tag
-​
-    # 删除image
-    $ docker image rm <IMAGE ID>
-    $ docker rmi <IMAGE ID>
-​
-    $ docker rmi $(docker images -a -q) # 删除所有image</p>
+<pre class="chroma">$ docker image COMMAND
 
+&gt; 查看本地镜像:
+$ docker image ls
+$ docker images -a
+
+&gt; 根据创建dockerfile，创建新的images
+$ docker image build
+
+&gt; 创建tag
+$ docker image tag
+
+&gt; 删除image
+$ docker image rm &lt;IMAGE ID&gt;
+$ docker rmi &lt;IMAGE ID&gt;
+
+&gt; 删除所有image
+$ docker rmi $(docker images -a -q)</pre></td></tr></table>
+</div>
+</div>
 <p>container管理</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">docker container COMMAND</pre></td></tr></table>
-</div>
-</div>
-<p>​
-    # 列出container:
-    $ docker container ls
-    $ docker ps -a  # 默认只显示running状态的
-​
-    # 运行image,产生一个container:
-    $ docker container run <IMAGE ID>/<REPOSITORY> [COMMAND] [ARGS]
-​
-    # 在container中执行命令
-    $ docker container exec [OPTIONS] <CONTAINER> COMMAND [ARG&hellip;]
-​
-    # 创建container但不启动
-    $ docker container create &ndash;name <name> <CONTAINER>
-​
-    # 启动container:
-    $ docker container start/restart <CONTAINER>
-​
-    # 停止container:
-    $ docker container stop <CONTAINER>
-​
-    # 删除container：
-    $ docker container rm <CONTAINER>
-    $ docker rm <CONTAINER>
-​
-    $ docker rm $(docker ps -a -q) # 删除所有容器</p>
+<pre class="chroma">$docker container COMMAND
 
+# 列出container:
+$ docker container ls
+$ docker ps -a  # 默认只显示running状态的
+
+# 运行image,产生一个container:
+$ docker container run &lt;IMAGE ID&gt;/&lt;REPOSITORY&gt; [COMMAND] [ARGS]
+
+# 在container中执行命令
+$ docker container exec [OPTIONS] &lt;CONTAINER&gt; COMMAND [ARG...]
+
+# 创建container但不启动
+$ docker container create --name &lt;name&gt; &lt;CONTAINER&gt;
+
+# 启动container:
+$ docker container start/restart &lt;CONTAINER&gt;
+
+# 停止container:
+$ docker container stop &lt;CONTAINER&gt;
+
+# 删除container：
+$ docker container rm &lt;CONTAINER&gt;
+$ docker rm &lt;CONTAINER&gt;
+
+# 删除所有容器
+$ docker rm $(docker ps -a -q) </pre></td></tr></table>
+</div>
+</div>
 <p>制作镜像</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -319,49 +362,49 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/</pre></td></tr></table>
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 根据Dockerfile 构建image
 docker build [OPTIONS] PATH | URL | -
-docker build .  # 默认就是当前目录的Dockerfile
-docker build -t &lt;repo&gt;/&lt;name&gt;:&lt;tag&gt; .  # 创建tag
-docker build -f /path/to/mydockerfile . # 也可以指定其它路径的其它文件
-docker build --target &lt;stage&gt; . # 指定阶段构建.
+docker build .  // 默认就是当前目录的Dockerfile
+docker build -t &lt;repo&gt;/&lt;name&gt;:&lt;tag&gt; .  // 创建tag
+docker build -f /path/to/mydockerfile . // 也可以指定其它路径的其它文件
+docker build --target &lt;stage&gt; . // 指定阶段构建.
 
 # 把image导出到tar包
 # 既可以从image也可以从container导出。
 # 从container导出不包含运行后的修改，只导出原始镜像。
-docker save -o name.tgz &lt;repo1&gt;:&lt;tag1&gt; &lt;repo2&gt;:&lt;tag2&gt; ...</pre></td></tr></table>
-</div>
-</div>
-<p>​
-    # 从stdin或文件加载image
-    docker load [OPTIONS]
-    docker load &lt; name.tar.gz
-    docker load &ndash;input/-i name.tar</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># 把container导出到tar包，从container导出镜像。
+$ docker save -o name.tgz &lt;repo1&gt;:&lt;tag1&gt; &lt;repo2&gt;:&lt;tag2&gt; ...
+
+# 从stdin或文件加载image
+docker load [OPTIONS]
+docker load &lt; name.tar.gz
+docker load --input/-i name.tar
+
+# 把container导出到tar包，从container导出镜像。
 # 包括container启动后的修改。
-docker export -o name.tar [container]</pre></td></tr></table>
-</div>
-</div>
-<p>​
-    # 从container导出的包加载成镜像
-    docker import name.tar [repo]:[tag]</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># 根据container的修改创建新的image
+docker export -o name.tar [container]
+
+# 从container导出的包加载成镜像
+docker import name.tar [repo]:[tag]
+
+# 根据container的修改创建新的image
 docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 docker commit -a &#34;author&#34; -c &#34;Dockerfile instruction&#34; -m &#34;commit message&#34; CONTAINER [REPOSITORY[:TAG]]</pre></td></tr></table>
 </div>
@@ -395,11 +438,11 @@ docker commit -a &#34;author&#34; -c &#34;Dockerfile instruction&#34; -m &#34;co
 <td class="lntd">
 <pre class="chroma"># 创建一个新的container并运行命令
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-docker run --name [NAME] IMAGE # 运行容器并命名
-docker run -d IMAGE # 后台运行
-docker run -it IMAGE /bin/bash # 交互模式启动容器
-docker run -P IMAGE # 默认将容器的8０端口映射到主机的随机端口
-docker run -p [host:port]:[containerPort] # 指定映射端口
+docker run --name [NAME] IMAGE // 运行容器并命名
+docker run -d IMAGE // 后台运行
+docker run -it IMAGE /bin/bash // 交互模式启动容器
+docker run -P IMAGE // 默认将容器的8０端口映射到主机的随机端口
+docker run -p [host:port]:[containerPort] // 指定映射端口
 --add-host # 相当于修改容器的/etc/hosts,但是容器重启后不会消失
 -h/--hostname # 修改容器的/etc/hostname
 -c, --cpu-shares int             CPU shares (relative weight)
@@ -413,8 +456,8 @@ docker run -p [host:port]:[containerPort] # 指定映射端口
 
 # 在运行的container中执行命令
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
-docker exec -d CONTAINER ... # 在后台运行
-docker exec -it CONTAINER /bin/bash ... # 进入命令行</pre></td></tr></table>
+docker exec -d CONTAINER ... // 在后台运行
+docker exec -it CONTAINER /bin/bash ... // 进入命令行</pre></td></tr></table>
 </div>
 </div>
 <p>其它命令</p>
@@ -434,7 +477,7 @@ docker exec -it CONTAINER /bin/bash ... # 进入命令行</pre></td></tr></table
 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
 docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
 
-# 查看容器的日志.
+# 查看容器的日志
 docker logs [OPTIONS] CONTAINER
 docker diff CONTAINER
 docker history [OPTIONS] IMAGE</pre></td></tr></table>
@@ -468,12 +511,12 @@ docker history [OPTIONS] IMAGE</pre></td></tr></table>
 docker login
 docker login -u/--username &lt;user&gt; -p/--password &lt;password&gt;
 
-# 从docker hub/store查找images:
-docker search [OPTIONS] TERM
+# 从docker hub/store查找images
+$ docker search [OPTIONS] TERM
 $ docker search
 
 # 从registry获取repository/images到/var/lib/docker：
-docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+$ docker pull [OPTIONS] NAME[:TAG|@DIGEST]
 $ docker pull
 $ docker pull ubuntu # 默认下载所有tag
 $ docker pull ubuntu:14.04
@@ -482,7 +525,7 @@ $ docker pull ubuntu:14.04
 $ docker pull registry.docker-cn.com/library/ubuntu:16.04
 
 # 推送到docker hub
-docker push</pre></td></tr></table>
+$ docker push</pre></td></tr></table>
 </div>
 </div>
 <hr />
