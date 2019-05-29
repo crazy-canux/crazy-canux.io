@@ -17,7 +17,7 @@
       <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/kvm/</guid>
-      <description>KVM Kernel-based Virtual Machine. Qemu 安装: 1 $ sudo apt-get install qemu qemu-kvm</description>
+      <description>KVM Kernel-based Virtual Machine. Qemu 安装: 1 2 # install $ sudo apt-get install qemu qemu-kvm</description>
     </item>
     
   </channel>

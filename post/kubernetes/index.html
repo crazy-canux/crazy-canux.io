@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="962">
+<meta itemprop="wordCount" content="979">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 962 words </span>
+          <span class="more-meta"> 979 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -343,9 +343,11 @@ $ kubectl delete</pre></td></tr></table>
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ kubectl scale
+<pre class="chroma"># scale service.
+$ kubectl scale
 
 $ kubectl autoscale
 
@@ -375,16 +377,22 @@ $ kubectl rolling-update</pre></td></tr></table>
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ kubectl describe (docker inspect)
+<pre class="chroma"># like docker inspect
+$ kubectl describe
 
 # 获取k8s-dashboard的token
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)
 
-$ kubectl logs (docker logs)
+# like docker logs
+$ kubectl logs
 
-$ kubectl exec (docker exec)
+# like docker exec
+$ kubectl exec
 
 $ kubectl attach
 
@@ -413,9 +421,11 @@ $ kubectl auth</pre></td></tr></table>
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ kubectl top
+<pre class="chroma"># top command
+$ kubectl top
 
 $ kubectl cluster-info
 

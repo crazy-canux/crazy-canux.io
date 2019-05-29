@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="977">
+<meta itemprop="wordCount" content="979">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 977 words </span>
+          <span class="more-meta"> 979 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -411,17 +411,17 @@ deploy:
 </span><span class="lnt">15
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">&gt; stack = n*service
-&gt; service = n*task(container)
+<pre class="chroma"># stack = n*service
+# service = n*task(container)
 docker stack ls # 列出所有stack
 ​
 # 查看stack的service
 docker stack services
 ​
-查看stack的task/container
+# 查看stack的task/container
 docker stack ps STACK
 ​
-根据docker-compose.yml部署应用
+# 根据docker-compose.yml部署应用
 docker stack deploy -c/--compose-file &lt;docker-compose.yml&gt; STACK
 docker stack deploy --bundle-file &lt;DAB&gt; STACK
 ​
