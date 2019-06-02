@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2274">
+<meta itemprop="wordCount" content="2305">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2274 words </span>
+          <span class="more-meta"> 2305 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -378,6 +378,7 @@ $ docker rm $(docker ps -a -q) </pre></td></tr></table>
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
+</span><span class="lnt">28
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 根据Dockerfile 构建image
@@ -386,6 +387,7 @@ docker build .  // 默认就是当前目录的Dockerfile
 docker build -t &lt;repo&gt;/&lt;name&gt;:&lt;tag&gt; .  // 创建tag
 docker build -f /path/to/mydockerfile . // 也可以指定其它路径的其它文件
 docker build --target &lt;stage&gt; . // 指定阶段构建.
+docker build ... --network=host // 使用host网络构建.
 
 # 把image导出到tar包
 # 既可以从image也可以从container导出。
@@ -703,6 +705,17 @@ ENTRYPOINT command param1 param2</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">ONBUILD ...</pre></td></tr></table>
+</div>
+</div>
+<p>stage:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">COPY --from=stage1 / .
+docker build --target stage1 -t docker:latest . </pre></td></tr></table>
 </div>
 </div>
 <hr />
