@@ -6,10 +6,19 @@
     <description>Recent content in Virtualization on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Apr 2017 21:47:54 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 22:53:23 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/categories/virtualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Virtualbox</title>
+      <link>http://canuxcheng.com/post/virtualbox/</link>
+      <pubDate>Mon, 03 Jun 2019 22:53:23 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/virtualbox/</guid>
+      <description>Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &amp;#34;win764&amp;#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage</description>
+    </item>
     
     <item>
       <title>Kvm</title>

@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="title: &amp;ldquo;Virtualbox&amp;rdquo; date: 2019-06-05T21:47:54 categories: [&amp;ldquo;Virtualization&amp;rdquo;] tags: [&amp;ldquo;virtualbox&amp;rdquo;] keywords: [] author: &amp;ldquo;Canux&amp;rdquo; draft: false Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为host" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &amp;#34;win764&amp;#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Virtualbox" />
-<meta property="og:description" content="title: &ldquo;Virtualbox&rdquo; date: 2019-06-05T21:47:54 categories: [&ldquo;Virtualization&rdquo;] tags: [&ldquo;virtualbox&rdquo;] keywords: [] author: &ldquo;Canux&rdquo; draft: false Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为host" />
+<meta property="og:description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/virtualbox/" />
 <meta property="article:published_time" content="2019-06-03T22:53:23&#43;08:00"/>
 <meta property="article:modified_time" content="2019-06-03T22:53:23&#43;08:00"/>
 
 <meta itemprop="name" content="Virtualbox">
-<meta itemprop="description" content="title: &ldquo;Virtualbox&rdquo; date: 2019-06-05T21:47:54 categories: [&ldquo;Virtualization&rdquo;] tags: [&ldquo;virtualbox&rdquo;] keywords: [] author: &ldquo;Canux&rdquo; draft: false Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为host">
+<meta itemprop="description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage">
 
 
 <meta itemprop="datePublished" content="2019-06-03T22:53:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-03T22:53:23&#43;08:00" />
-<meta itemprop="wordCount" content="257">
+<meta itemprop="wordCount" content="243">
 
 
 
-<meta itemprop="keywords" content="tag," />
+<meta itemprop="keywords" content="virtualbox," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Virtualbox"/>
-<meta name="twitter:description" content="title: &ldquo;Virtualbox&rdquo; date: 2019-06-05T21:47:54 categories: [&ldquo;Virtualization&rdquo;] tags: [&ldquo;virtualbox&rdquo;] keywords: [] author: &ldquo;Canux&rdquo; draft: false Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为host"/>
+<meta name="twitter:description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -134,9 +134,9 @@
       <div class="post-meta">
         <span class="post-time"> 2019-06-03 </span>
         <div class="post-category">
-            <a href="/categories/cat/"> cat </a>
+            <a href="/categories/virtualization/"> Virtualization </a>
             </div>
-          <span class="more-meta"> 257 words </span>
+          <span class="more-meta"> 243 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,10 +147,6 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li><a href="#draft-false">draft: false</a></li>
-</ul></li>
 <li><a href="#virtualbox">Virtualbox</a></li>
 <li><a href="#vboxmanage">vboxmanage</a></li>
 </ul>
@@ -159,17 +155,6 @@
 </div>
     <div class="post-content">
       
-
-<hr />
-
-<p>title: &ldquo;Virtualbox&rdquo;
-date: 2019-06-05T21:47:54
-categories: [&ldquo;Virtualization&rdquo;]
-tags: [&ldquo;virtualbox&rdquo;]
-keywords: []
-author: &ldquo;Canux&rdquo;</p>
-
-<h2 id="draft-false">draft: false</h2>
 
 <h1 id="virtualbox">Virtualbox</h1>
 
@@ -296,7 +281,7 @@ $ sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/tag/">tag</a>
+          <a href="/tags/virtualbox/">virtualbox</a>
           </div>
       <nav class="post-nav">
         

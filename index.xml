@@ -17,7 +17,7 @@
       <pubDate>Mon, 03 Jun 2019 22:53:23 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/virtualbox/</guid>
-      <description>title: &amp;ldquo;Virtualbox&amp;rdquo; date: 2019-06-05T21:47:54 categories: [&amp;ldquo;Virtualization&amp;rdquo;] tags: [&amp;ldquo;virtualbox&amp;rdquo;] keywords: [] author: &amp;ldquo;Canux&amp;rdquo; draft: false Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为host</description>
+      <description>Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &amp;#34;win764&amp;#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage</description>
     </item>
     
     <item>
