@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &amp;#34;win764&amp;#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // 导入ova $ vboxmanage import win7.ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Virtualbox" />
-<meta property="og:description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage" />
+<meta property="og:description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // 导入ova $ vboxmanage import win7.ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/virtualbox/" />
 <meta property="article:published_time" content="2019-06-03T22:53:23&#43;08:00"/>
 <meta property="article:modified_time" content="2019-06-03T22:53:23&#43;08:00"/>
 
 <meta itemprop="name" content="Virtualbox">
-<meta itemprop="description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage">
+<meta itemprop="description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // 导入ova $ vboxmanage import win7.ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm">
 
 
 <meta itemprop="datePublished" content="2019-06-03T22:53:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-03T22:53:23&#43;08:00" />
-<meta itemprop="wordCount" content="243">
+<meta itemprop="wordCount" content="279">
 
 
 
 <meta itemprop="keywords" content="virtualbox," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Virtualbox"/>
-<meta name="twitter:description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1 vboxnet0 $ vboxmanage"/>
+<meta name="twitter:description" content="Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // 导入ova $ vboxmanage import win7.ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/virtualization/"> Virtualization </a>
             </div>
-          <span class="more-meta"> 243 words </span>
+          <span class="more-meta"> 279 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -178,21 +178,35 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ vboxmanage import win7.ova // 导入ova
+<pre class="chroma">// 导入ova
+$ vboxmanage import win7.ova 
 
 // 修改虚拟机的网络为hostonly
 $ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1 vboxnet0
-
-$ vboxmanage modifyvm &lt;vm&gt; --name &lt;new-name&gt; // 重命名vm
+// 重命名vm
+$ vboxmanage modifyvm &lt;vm&gt; --name &lt;new-name&gt; 
+// 修改参数
+$ vboxmanage modifyvm &lt;vm&gt; --memory 4096 --cpus 4 --hwvirtex on --ioapic on
 
 // 启动虚拟机
 $ vboxmanage startvm &#34;Win732&#34;
 $ vboxmanage startvm &lt;vm&gt; --type headless 
 $ VBoxHeadless --startvm &lt;uuid|name&gt; --vrde on
 
-$ vboxmanage list vms/runningvms // 查看所有/运行虚拟机</pre></td></tr></table>
+// 控制虚拟机
+$ vboxmanage controlvm &lt;vm&gt; pause/resume/reset/poweroff/savestate
+
+// 查看所有/运行虚拟机
+$ vboxmanage list vms/runningvms </pre></td></tr></table>
 </div>
 </div>
 <p>snapshot</p>
@@ -207,7 +221,7 @@ $ vboxmanage list vms/runningvms // 查看所有/运行虚拟机</pre></td></tr>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">//查看快照
-$vboxmanage &lt;vm/uuid&gt; snapshot list 
+$ vboxmanage &lt;vm/uuid&gt; snapshot list 
 
 $ vboxmanage snapshot &#34;Win732&#34; take &lt;name&gt; --live --pause // 创建快照
 
