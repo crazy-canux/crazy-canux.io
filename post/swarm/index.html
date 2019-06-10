@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="979">
+<meta itemprop="wordCount" content="988">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 979 words </span>
+          <span class="more-meta"> 988 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -227,7 +227,6 @@ docker swarm update</pre></td></tr></table>
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
-</span><span class="lnt">22
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">docker node ls
@@ -250,7 +249,6 @@ docker node update --availability active node1
 # 指定该节点满载,不再分派任务,关闭已有任务并重新分派.
 docker node update --availability drain node1
 # 已有任务继续运行,不分配新任务.
-​
 docker node update --availability pause node1</pre></td></tr></table>
 </div>
 </div>
@@ -322,6 +320,10 @@ docker node update --availability pause node1</pre></td></tr></table>
 </span><span class="lnt">63
 </span><span class="lnt">64
 </span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 相当于docker-compose.yml里面的service.
@@ -332,7 +334,7 @@ docker service rm SERVICE
 docker service inspect SERVICE
 ​
 # 查看service的log
-docker service logs SERVICE
+docker service logs -f SERVICE
 ​
 # 查看service的状态,在哪些node上运行,运行状态等
 docker service ps SERVICE
@@ -355,8 +357,8 @@ docker service create
 --user/--group
 --mode global/replicated
 --endpoint-mode vip/dnsrr
-compose file
 
+# compose file
 deploy:
   mode: global # 部署到匹配的全部node.
 ​
@@ -388,7 +390,11 @@ deploy:
   update_config:
 ​
   rollback_config:
-​</pre></td></tr></table>
+​
+networks: 
+  lan0: 
+    external: 
+      name: lan0</pre></td></tr></table>
 </div>
 </div>
 <p>stack</p>
