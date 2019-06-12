@@ -111,15 +111,6 @@
     </item>
     
     <item>
-      <title>Amqp</title>
-      <link>http://canuxcheng.com/post/haproxy/</link>
-      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/haproxy/</guid>
-      <description>HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg</description>
-    </item>
-    
-    <item>
       <title>Capture</title>
       <link>http://canuxcheng.com/post/sec_capture/</link>
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
@@ -135,6 +126,15 @@
       
       <guid>http://canuxcheng.com/post/sec_csrf/</guid>
       <description>CSRF Cross-site request forgery, 跨站请求伪造． 发生条件： 登陆受信任网站A, 并在本地生成cookie 在不退出A的情况下，访问危险网站B 预防方法: 正确使用get,pos</description>
+    </item>
+    
+    <item>
+      <title>HAProxy</title>
+      <link>http://canuxcheng.com/post/haproxy/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/haproxy/</guid>
+      <description>HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg</description>
     </item>
     
     <item>
@@ -269,10 +269,12 @@
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/container/</guid>
-      <description>Container OCI: Open Container Initiative: runc
+      <description> Container OCI: Open Container Initiative: runc
 CRI: Container Runtime Interface: docker-containerd, rkt
 CNI: Container Network Interface.
-CSI: Container Storage Interface.</description>
+CSI: Container Storage Interface.
+nsenter nsenter - run program with namespaces of other processes
+1 2 3 4 5 6 7 8  $ nsenter [options] [program [arguments]] $ nsenter -a --all $ nsenter -n/--net &amp;lt;namespace&amp;gt; &amp;lt;command&amp;gt; $ nsenter --net=/var/run/docker/netns/lb_atz8r3bly ifconfig $ nsenter -m/--mount &amp;lt;namespace&amp;gt; &amp;lt;command&amp;gt;  </description>
     </item>
     
     <item>
@@ -308,7 +310,7 @@ CSI: Container Storage Interface.</description>
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/swarm/</guid>
-      <description>Swarm docker swarm 是 docker内置的容器编排工具。 直接在manager上通过compose文件运行服务，通过service-name调用服务，所有no</description>
+      <description>Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker</description>
     </item>
     
     <item>
@@ -1177,6 +1179,15 @@ debug </description>
     </item>
     
     <item>
+      <title>Ftp</title>
+      <link>http://canuxcheng.com/post/ftp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ftp/</guid>
+      <description>FTP ftp服务器有很多： vsftpd proftpd pyftpdlib vsftpd 安装vsftpd: 1 $ sudo apt-get install vsftpd windows开启ftp服务和建立IIS站点即可。 linux配置： 1 2 3 4 5 6 7</description>
+    </item>
+    
+    <item>
       <title>Ldap</title>
       <link>http://canuxcheng.com/post/ldap/</link>
       <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
@@ -1201,15 +1212,6 @@ debug </description>
       
       <guid>http://canuxcheng.com/post/ntp/</guid>
       <description>NTP NFS: Network Time Protocol UTC: Coordinated Universal Time, 世界统一时间 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC CET: Central European Time, 欧洲中部时间, = UTC+1, 下令时=UTC+2 CST: Chinese Standard Time, 中国标准时间, = UTC+8 时区管理 1</description>
-    </item>
-    
-    <item>
-      <title>ftp</title>
-      <link>http://canuxcheng.com/post/ftp/</link>
-      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/ftp/</guid>
-      <description>FTP ftp服务器有很多： vsftpd proftpd pyftpdlib vsftpd 安装vsftpd: 1 $ sudo apt-get install vsftpd windows开启ftp服务和建立IIS站点即可。 linux配置： 1 2 3 4 5 6 7</description>
     </item>
     
     <item>

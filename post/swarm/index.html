@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 直接在manager上通过compose文件运行服务，通过service-name调用服务，所有no" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Swarm" />
-<meta property="og:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 直接在manager上通过compose文件运行服务，通过service-name调用服务，所有no" />
+<meta property="og:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/swarm/" />
 <meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="Swarm">
-<meta itemprop="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 直接在manager上通过compose文件运行服务，通过service-name调用服务，所有no">
+<meta itemprop="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker">
 
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="988">
+<meta itemprop="wordCount" content="1132">
 
 
 
 <meta itemprop="keywords" content="swarm," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Swarm"/>
-<meta name="twitter:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 直接在manager上通过compose文件运行服务，通过service-name调用服务，所有no"/>
+<meta name="twitter:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 988 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 1132 words </span>
+          <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -149,6 +149,7 @@
 <ul>
 <li><a href="#swarm">Swarm</a></li>
 <li><a href="#swarm命令">swarm命令</a></li>
+<li><a href="#swarm-network">swarm network</a></li>
 <li><a href="#swarm-scheduler">swarm scheduler</a></li>
 </ul>
 </nav>
@@ -166,9 +167,7 @@
 
 <p>docker swarm 是 docker内置的容器编排工具。</p>
 
-<p>直接在manager上通过compose文件运行服务，通过service-name调用服务，所有node上都需要相关的images。</p>
-
-<p>replicated类型service通过service-name访问，global类型通过service-name和hostname都能访问。</p>
+<p>部署服务之前所有node上都需要相关的images。</p>
 
 <h1 id="swarm命令">swarm命令</h1>
 
@@ -190,7 +189,7 @@
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">docker swarm init
---advertise-addr &lt;ip&gt; 指定manager的ip
+--advertise-addr &lt;ip&gt; 多网卡情况下指定manager的ip
 ​
 docker swarm join --token &lt;token&gt; &lt;host:port&gt;
 ​
@@ -434,6 +433,21 @@ docker stack deploy --bundle-file &lt;DAB&gt; STACK
 docker stack rm STACK</pre></td></tr></table>
 </div>
 </div>
+<hr />
+
+<h1 id="swarm-network">swarm network</h1>
+
+<p>container内部有eth0和eth1两个虚拟网卡。</p>
+
+<p>eth0(overlay) 通过4789/udp跨主机访问其他container.</p>
+
+<p>eth1(docker_gwbridge)通过tcp访问host和外网.</p>
+
+<p>container之间通过service-name调用服务，
+replicated类型service通过service-name访问，global类型通过service-name和hostname都能访问。</p>
+
+<p>外部通过port访问服务，manager通过ingress网络做端口转发和route mesh自动做负载均衡。</p>
+
 <hr />
 
 <h1 id="swarm-scheduler">swarm scheduler</h1>

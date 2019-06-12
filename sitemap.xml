@@ -80,13 +80,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/haproxy/</loc>
-    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/post/sec_capture/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -95,6 +88,13 @@
   
   <url>
     <loc>http://canuxcheng.com/post/sec_csrf/</loc>
+    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/haproxy/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -906,6 +906,13 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/ftp/</loc>
+    <lastmod>2016-07-28T16:08:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/ldap/</loc>
     <lastmod>2016-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -921,13 +928,6 @@
   
   <url>
     <loc>http://canuxcheng.com/post/ntp/</loc>
-    <lastmod>2016-07-28T16:08:54+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/post/ftp/</loc>
     <lastmod>2016-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

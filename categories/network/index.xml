@@ -21,7 +21,7 @@
     </item>
     
     <item>
-      <title>Amqp</title>
+      <title>HAProxy</title>
       <link>http://canuxcheng.com/post/haproxy/</link>
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
       
@@ -111,6 +111,15 @@
     </item>
     
     <item>
+      <title>Ftp</title>
+      <link>http://canuxcheng.com/post/ftp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ftp/</guid>
+      <description>FTP ftp服务器有很多： vsftpd proftpd pyftpdlib vsftpd 安装vsftpd: 1 $ sudo apt-get install vsftpd windows开启ftp服务和建立IIS站点即可。 linux配置： 1 2 3 4 5 6 7</description>
+    </item>
+    
+    <item>
       <title>Ldap</title>
       <link>http://canuxcheng.com/post/ldap/</link>
       <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
@@ -135,15 +144,6 @@
       
       <guid>http://canuxcheng.com/post/ntp/</guid>
       <description>NTP NFS: Network Time Protocol UTC: Coordinated Universal Time, 世界统一时间 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC CET: Central European Time, 欧洲中部时间, = UTC+1, 下令时=UTC+2 CST: Chinese Standard Time, 中国标准时间, = UTC+8 时区管理 1</description>
-    </item>
-    
-    <item>
-      <title>ftp</title>
-      <link>http://canuxcheng.com/post/ftp/</link>
-      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/ftp/</guid>
-      <description>FTP ftp服务器有很多： vsftpd proftpd pyftpdlib vsftpd 安装vsftpd: 1 $ sudo apt-get install vsftpd windows开启ftp服务和建立IIS站点即可。 linux配置： 1 2 3 4 5 6 7</description>
     </item>
     
     <item>
