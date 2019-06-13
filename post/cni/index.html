@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="807">
+<meta itemprop="wordCount" content="880">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 807 words </span>
+          <span class="more-meta"> 880 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -151,6 +151,7 @@
 <li><a href="#docker网络管理">Docker网络管理</a></li>
 <li><a href="#bridge网络">bridge网络</a></li>
 <li><a href="#overlay网络">overlay网络</a></li>
+<li><a href="#macvlan">macvlan</a></li>
 </ul>
 </nav>
   </div>
@@ -307,7 +308,24 @@ $ docker network create --driver=bridge --gateway=192.168.1.1 --subnet=192.168.1
 <td class="lntd">
 <pre class="chroma">$ docker network create -d overlay ... [name]
 
-$ docker network create --attachable --driver=overlay --gateway=192.168.1.1 --subnet=192.168.1.0/24 --opt com.docker.network.bridge.name=br0 br0</pre></td></tr></table>
+$ docker network create --attachable --driver=overlay --gateway=192.168.1.1 --subnet=192.168.1.0/24 --opt com.docker.network.bridge.name=vlan0 vlan0</pre></td></tr></table>
+</div>
+</div>
+<h1 id="macvlan">macvlan</h1>
+
+<p>macvlan不仅支持在interface上创建，还支持sub-interface(vlan).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ip link set eth1 promisc on  |  
+ifconfig eth1 promisc 
+
+docker network create -d macvlan --subnet=192.168.100.0/24 --gateway=192.168.100.1 -o parent=eth1 lan0</pre></td></tr></table>
 </div>
 </div>
     </div>

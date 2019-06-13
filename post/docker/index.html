@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2389">
+<meta itemprop="wordCount" content="2473">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2389 words </span>
+          <span class="more-meta"> 2473 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -265,13 +265,15 @@ linux:
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ docker image COMMAND
 
 &gt; 查看本地镜像:
 $ docker image ls
-$ docker images -a
+$ docker image -a
 
 &gt; 根据创建dockerfile，创建新的images
 $ docker image build
@@ -282,9 +284,11 @@ $ docker image tag
 &gt; 删除image
 $ docker image rm &lt;IMAGE ID&gt;
 $ docker rmi &lt;IMAGE ID&gt;
-
 &gt; 删除所有image
-$ docker rmi $(docker images -a -q)</pre></td></tr></table>
+$ docker rmi $(docker images -a -q)
+
+&gt; 清理所有临时images
+$ docker image prune</pre></td></tr></table>
 </div>
 </div>
 <p>container管理</p>
@@ -317,6 +321,8 @@ $ docker rmi $(docker images -a -q)</pre></td></tr></table>
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$docker container COMMAND
@@ -343,9 +349,11 @@ $ docker container stop &lt;CONTAINER&gt;
 # 删除container：
 $ docker container rm &lt;CONTAINER&gt;
 $ docker rm &lt;CONTAINER&gt;
-
 # 删除所有容器
-$ docker rm $(docker ps -a -q) </pre></td></tr></table>
+$ docker rm $(docker ps -a -q) 
+
+# 清理停止的container
+$ docker container prune</pre></td></tr></table>
 </div>
 </div>
 <p>制作镜像</p>
@@ -379,6 +387,9 @@ $ docker rm $(docker ps -a -q) </pre></td></tr></table>
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 根据Dockerfile 构建image
@@ -408,7 +419,10 @@ docker import name.tar [repo]:[tag]
 
 # 根据container的修改创建新的image
 docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
-docker commit -a &#34;author&#34; -c &#34;Dockerfile instruction&#34; -m &#34;commit message&#34; CONTAINER [REPOSITORY[:TAG]]</pre></td></tr></table>
+docker commit -a &#34;author&#34; -c &#34;Dockerfile instruction&#34; -m &#34;commit message&#34; CONTAINER [REPOSITORY[:TAG]]
+
+# 创建新的tag
+docker tag &lt;old&gt; &lt;new&gt;</pre></td></tr></table>
 </div>
 </div>
 <p>运行容器</p>
@@ -833,6 +847,23 @@ $ docker-compose logs -f</pre></td></tr></table>
 </span><span class="lnt">42
 </span><span class="lnt">43
 </span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">version: &#34;3.6&#34;
@@ -846,10 +877,16 @@ services:
     - myvolume
     deploy: // for swarm
     ports:
+      - 80:80
+      - 1234:1234/udp
     environment:
-      - key=value (value不加&#34;&#34;)
-      - key: value (value不加&#34;&#34;)
+      RABBITMQ_DEFAULT_USER: sandbox
+      RABBITMQ_DEFAULT_PASS: password
+    environment:
+      - RABBITMQ_DEFAULT_USER=sandbox
+      - RABBITMQ_DEFAULT_PASS=password
     depends_on:
+      - service-name
 
     # 下列选项不能用于swarm stack部署.
     build
@@ -866,19 +903,30 @@ services:
     userns_mode
 ​
 networks:
-mynetwork:
+  mynetwork:
     external:
-    name: lan0
+      name: lan0
 ​
 networks:
-mynetwork:
+  mynetwork:
     driver: bridge
     driver_opts:
-    com.docker.network.bridge.name: lan0
+      com.docker.network.bridge.name: lan0
     ipam:
-    driver: default
-    config:
-    - subnet: 192.168.1.0/24</pre></td></tr></table>
+      driver: default
+      config:
+        - subnet: 192.168.1.0/24
+
+
+# compose文件中用到的变量
+.Service.ID Service ID 
+.Service.Name Service name 
+.Service.Labels Service labels 
+.Node.ID Node ID 
+.Node.Hostname Node Hostname 
+.Task.ID Task ID 
+.Task.Name Task name 
+.Task.Slot Task slot </pre></td></tr></table>
 </div>
 </div>
 <hr />

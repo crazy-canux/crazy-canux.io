@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Swarm" />
-<meta property="og:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker" />
+<meta property="og:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/swarm/" />
 <meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="Swarm">
-<meta itemprop="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker">
+<meta itemprop="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均">
 
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="1132">
+<meta itemprop="wordCount" content="1416">
 
 
 
 <meta itemprop="keywords" content="swarm," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Swarm"/>
-<meta name="twitter:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker"/>
+<meta name="twitter:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1132 words </span>
+          <span class="more-meta"> 1416 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -149,6 +149,7 @@
 <ul>
 <li><a href="#swarm">Swarm</a></li>
 <li><a href="#swarm命令">swarm命令</a></li>
+<li><a href="#swarm-compose">swarm compose</a></li>
 <li><a href="#swarm-network">swarm network</a></li>
 <li><a href="#swarm-scheduler">swarm scheduler</a></li>
 </ul>
@@ -166,6 +167,10 @@
 <h1 id="swarm">Swarm</h1>
 
 <p>docker swarm 是 docker内置的容器编排工具。</p>
+
+<p>从docker1.12开始swarm内置于docker engine.</p>
+
+<p>swarm mode具有内置kv存储，服务发现，负载均衡，陆游网格，动态伸缩，滚动更新，安全传输等功能。</p>
 
 <p>部署服务之前所有node上都需要相关的images。</p>
 
@@ -285,44 +290,6 @@ docker node update --availability pause node1</pre></td></tr></table>
 </span><span class="lnt">29
 </span><span class="lnt">30
 </span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 相当于docker-compose.yml里面的service.
@@ -355,45 +322,7 @@ docker service create
 --restart-condition
 --user/--group
 --mode global/replicated
---endpoint-mode vip/dnsrr
-
-# compose file
-deploy:
-  mode: global # 部署到匹配的全部node.
-​
-  mode: replicated
-  reoplicas: 3
-​
-  placement:
-    constraints:
-      - node.role == manager
-    preferences:
-      - spreed:
-​
-  resources:
-    limits:
-      cpus: &#39;0.5&#39;
-      memory: 1G
-    reservations:
-      cpus: &#39;0.25&#39;
-      memory: 20M
-​
-  restart_policy:
-    condition: on-failure
-    delay: 5s
-    max_attempts: 3
-    window: 10s
-
-  endpoint_mode: vip(default)/dnsrr
-​
-  update_config:
-​
-  rollback_config:
-​
-networks: 
-  lan0: 
-    external: 
-      name: lan0</pre></td></tr></table>
+--endpoint-mode vip/dnsrr</pre></td></tr></table>
 </div>
 </div>
 <p>stack</p>
@@ -435,6 +364,109 @@ docker stack rm STACK</pre></td></tr></table>
 </div>
 <hr />
 
+<h1 id="swarm-compose">swarm compose</h1>
+
+<p>通过compose文件部署服务.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">deploy:
+  mode: global # 部署到匹配的全部node.
+​
+  mode: replicated
+  reoplicas: 3
+​
+  # global和replicated都可以用placement.
+  placement:
+    constraints:
+      - node.role == manager
+    preferences:
+      - spreed:
+​
+  resources:
+    limits:
+      cpus: &#39;0.5&#39;
+      memory: 1G
+    reservations:
+      cpus: &#39;0.25&#39;
+      memory: 20M
+​
+  restart_policy:
+    condition: on-failure
+    delay: 5s
+    max_attempts: 3
+    window: 10s
+​
+  update_config:
+​
+  rollback_config:
+
+  // 默认是vip,支持route mesh, 自动负载均衡和服务发现.
+  // dnsrr只能用port-&gt;mode=host.
+  endpoint_mode: vip
+  ports:
+  - target: 80
+    published: 8080
+    mode: ingress
+    protocol: tcp/udp
+  - 8080:80/tcp
+  endpoint_mode: dnsrr
+  ports:
+  - target: 80
+    published: 8080
+    mode: host
+    protocol: tcp/udp</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
 <h1 id="swarm-network">swarm network</h1>
 
 <p>container内部有eth0和eth1两个虚拟网卡。</p>
@@ -447,6 +479,13 @@ docker stack rm STACK</pre></td></tr></table>
 replicated类型service通过service-name访问，global类型通过service-name和hostname都能访问。</p>
 
 <p>外部通过port访问服务，manager通过ingress网络做端口转发和route mesh自动做负载均衡。</p>
+
+<p>endpoint_mode:</p>
+
+<ul>
+<li>vip: 通过vip这个虚拟ip对外访问，提供负载均衡，不暴露具体的container的ip.</li>
+<li>dnssr: DNS round-robin, 为每个服务设置dns,连接到其中一个具体的contaier的ip.</li>
+</ul>
 
 <hr />
 

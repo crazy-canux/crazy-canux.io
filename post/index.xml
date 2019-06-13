@@ -310,7 +310,7 @@ nsenter nsenter - run program with namespaces of other processes
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/swarm/</guid>
-      <description>Swarm docker swarm 是 docker内置的容器编排工具。 部署服务之前所有node上都需要相关的images。 swarm命令 创建集群 1 2 3 4 5 6 7 8 9 10 11 12 docker</description>
+      <description>Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均</description>
     </item>
     
     <item>
