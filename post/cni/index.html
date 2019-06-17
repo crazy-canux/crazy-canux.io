@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="880">
+<meta itemprop="wordCount" content="918">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 880 words </span>
+          <span class="more-meta"> 918 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -273,9 +273,11 @@ com.docker.network.driver.mtu</pre></td></tr></table>
 </div>
 <h1 id="bridge网络">bridge网络</h1>
 
-<p>bridge网络不能跨主机通信(单网卡情况下), node1上的container不能通过container-hostname找到node2上的container.</p>
+<p>bridge网络不能跨主机通信(单网卡情况下), node1上的container不能通过container-hostname/ip访问node2上的container.</p>
 
 <p>主要用于container访问host并通过host访问外部网络，container能通过ip访问host和局域网中的其他node,或者通过node访问外网。</p>
+
+<p>host或局域网中的其它机器能通过container-ip(bridge网络)访问container.</p>
 
 <p>创建:</p>
 <div class="highlight"><div class="chroma">
@@ -294,9 +296,9 @@ $ docker network create --driver=bridge --gateway=192.168.1.1 --subnet=192.168.1
 
 <p>overlay网络可以实现容器之间的跨主机通信.</p>
 
-<p>container通过overlay网络实现通信.container能通过service-name/container-ip/container-hostname访问其它container。</p>
+<p>container通过overlay网络实现通信.container能通过service-name/container-ip访问其它container。</p>
 
-<p>局域网中的node 既不能通过container-servicename也不能通过container-hostname/ip访问container, 也就是说外部服务只能通过expose port来访问container.</p>
+<p>局域网中的node 既不能通过container-servicename也不能通过container-ip(overlay的ip)访问container, 也就是说外部服务只能通过expose port来访问container.</p>
 
 <p>创建:</p>
 <div class="highlight"><div class="chroma">
