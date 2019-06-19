@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="telnet 1 telnet nc/netcat 1 2 nc -z IP PORT # 查看指定tcp://ip:port是否监听 nc -zu IP PORT # 查看udp://ip:port是否监听 ping 1 2 $ sudo apt-get install iputils-ping ping # 用于确定" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="telnet 1 telnet nc/netcat 1 2 3 4 5 6 7 8 9 10 // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Command" />
-<meta property="og:description" content="telnet 1 telnet nc/netcat 1 2 nc -z IP PORT # 查看指定tcp://ip:port是否监听 nc -zu IP PORT # 查看udp://ip:port是否监听 ping 1 2 $ sudo apt-get install iputils-ping ping # 用于确定" />
+<meta property="og:description" content="telnet 1 telnet nc/netcat 1 2 3 4 5 6 7 8 9 10 // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/network_command/" />
 <meta property="article:published_time" content="2019-03-31T21:51:25&#43;00:00"/>
 <meta property="article:modified_time" content="2019-03-31T21:51:25&#43;00:00"/>
 
 <meta itemprop="name" content="Command">
-<meta itemprop="description" content="telnet 1 telnet nc/netcat 1 2 nc -z IP PORT # 查看指定tcp://ip:port是否监听 nc -zu IP PORT # 查看udp://ip:port是否监听 ping 1 2 $ sudo apt-get install iputils-ping ping # 用于确定">
+<meta itemprop="description" content="telnet 1 telnet nc/netcat 1 2 3 4 5 6 7 8 9 10 // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设">
 
 
 <meta itemprop="datePublished" content="2019-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="770">
+<meta itemprop="wordCount" content="856">
 
 
 
 <meta itemprop="keywords" content="command," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Command"/>
-<meta name="twitter:description" content="telnet 1 telnet nc/netcat 1 2 nc -z IP PORT # 查看指定tcp://ip:port是否监听 nc -zu IP PORT # 查看udp://ip:port是否监听 ping 1 2 $ sudo apt-get install iputils-ping ping # 用于确定"/>
+<meta name="twitter:description" content="telnet 1 telnet nc/netcat 1 2 3 4 5 6 7 8 9 10 // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/network/"> Network </a>
             </div>
-          <span class="more-meta"> 770 words </span>
+          <span class="more-meta"> 856 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -185,11 +185,27 @@
 <h1 id="nc-netcat">nc/netcat</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">nc -z IP PORT # 查看指定tcp://ip:port是否监听
+<pre class="chroma">// 有的系统默认安装netcat-traditional
+$ sudo apt-get install netcat-traditional 
+// 安装netcat-openbsd
+$ sudo apt-get install netcat-openbsd
+// 设置默认值
+$ sudo update-alternatives --config nc
+$ sudo update-alternatives --set nc /bin/nc.openbsd
+
+nc -z IP PORT # 查看指定tcp://ip:port是否监听
 nc -zu IP PORT # 查看udp://ip:port是否监听</pre></td></tr></table>
 </div>
 </div>
@@ -253,9 +269,13 @@ brctl delif &lt;bridge&gt; &lt;interface&gt; # 删除bridge上的interface</pre>
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">ip link
+<pre class="chroma">$ sudo apt-get install iproute2
+
+ip link
 
 # 创建vlan
 ip link add link eth1 name eth1.10 type vlan id 10

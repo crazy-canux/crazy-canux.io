@@ -17,7 +17,7 @@
       <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/network_command/</guid>
-      <description>telnet 1 telnet nc/netcat 1 2 nc -z IP PORT # 查看指定tcp://ip:port是否监听 nc -zu IP PORT # 查看udp://ip:port是否监听 ping 1 2 $ sudo apt-get install iputils-ping ping # 用于确定</description>
+      <description>telnet 1 telnet nc/netcat 1 2 3 4 5 6 7 8 9 10 // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设</description>
     </item>
     
     <item>

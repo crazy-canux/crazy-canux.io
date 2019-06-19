@@ -17,7 +17,7 @@
       <pubDate>Thu, 28 Jul 2016 15:53:34 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/ssh/</guid>
-      <description>OpenSSH http://www.openssh.com/ windows上支持ssh协议的客户端： putty xshell MobaXterm secureCRT 安装： 1 $ sudo apt-get install openssh-server SSH命令 ssh是openssh协议的客户端． 远程操作的命令包括ssh</description>
+      <description>OpenSSH http://www.openssh.com/ windows上支持ssh协议的客户端： putty xshell MobaXterm secureCRT 安装： 1 2 $ sudo apt-get install openssh-server $ sudo apt-get install openssh-client SSH命令 ssh是openssh协议的客户端． 远程操作的命</description>
     </item>
     
   </channel>

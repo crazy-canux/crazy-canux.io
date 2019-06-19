@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) $ sudo apt-get install libvirt-dev # 库, python/go client依赖该库 $" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 10 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Libvirt" />
-<meta property="og:description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) $ sudo apt-get install libvirt-dev # 库, python/go client依赖该库 $" />
+<meta property="og:description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 10 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/libvirt/" />
 <meta property="article:published_time" content="2017-04-05T21:47:54&#43;00:00"/>
 <meta property="article:modified_time" content="2017-04-05T21:47:54&#43;00:00"/>
 
 <meta itemprop="name" content="Libvirt">
-<meta itemprop="description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) $ sudo apt-get install libvirt-dev # 库, python/go client依赖该库 $">
+<meta itemprop="description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 10 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container">
 
 
 <meta itemprop="datePublished" content="2017-04-05T21:47:54&#43;00:00" />
 <meta itemprop="dateModified" content="2017-04-05T21:47:54&#43;00:00" />
-<meta itemprop="wordCount" content="608">
+<meta itemprop="wordCount" content="793">
 
 
 
 <meta itemprop="keywords" content="libvirt," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Libvirt"/>
-<meta name="twitter:description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) $ sudo apt-get install libvirt-dev # 库, python/go client依赖该库 $"/>
+<meta name="twitter:description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 10 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/virtualization/"> Virtualization </a>
             </div>
-          <span class="more-meta"> 608 words </span>
+          <span class="more-meta"> 793 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -151,6 +151,7 @@
 <li><a href="#virsh">virsh</a></li>
 <li><a href="#qemu-img">qemu-img</a></li>
 <li><a href="#libvirt-qemu">libvirt-qemu</a></li>
+<li><a href="#libvirtd配置">libvirtd配置</a></li>
 </ul>
 </nav>
   </div>
@@ -172,18 +173,20 @@
 <p>安装:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon)
+// libvirtd在container中无法运行；在container中安装libvirt-bin可以获取virsh命令远程访问libvirt-bin server.
 
 $ sudo apt-get install libvirt-dev # 库, python/go client依赖该库
 
@@ -268,15 +271,31 @@ qemu+unix:///session</pre></td></tr></table>
 <p>ssh远程:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># 需要安装nc和sshpass
-$ sudo apt-get install netcat-traditional netcat-openbsd
-$ sudo apt-get install sshpass
+<pre class="chroma"># libvirt-bin server上需要安装nc和libvirt-bin
+$ sudo apt-get install netcat-openbsd
+$ sudo update-alternatives --config nc // netcat-traditional避免使用默认安装
+
+# ssh用户需要在libvirt和kvm组里
+$ adduser username libvirtd
+$ adduser username kvm
+
+$ sudo apt-get install sshpass // 免密码访问
+
+# client上需要安装openssh-clients
 $ sshpass -p password virsh -c qemu+ssh://user@127.0.0.1/system list</pre></td></tr></table>
 </div>
 </div>
@@ -293,50 +312,43 @@ $ sshpass -p password virsh -c qemu+ssh://user@127.0.0.1/system list</pre></td><
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">qemu+tcp://host:port/system
+<pre class="chroma">$ vim /etc/libvirt/libvirtd.conf:
+listen_tls = 0　　　　　　　　　 #禁用tls登录
+listen_tcp = 1　　　　　　　　　 #启用tcp方式登录
+tcp_port = &#34;16509&#34;　　　　　　　 #tcp端口16509
+listen_addr = &#34;0.0.0.0&#34;         # 允许任意ip访问
+auth_tcp = &#34;none&#34;　　　　　　    #TCP不使用认证
 
-vim /etc/libvirt/libvirtd.conf:
-listen_tls = 0　　　　　　　　　　#禁用tls登录
-listen_tcp = 1　　　　　　　　　  #启用tcp方式登录
-tcp_port = &#34;16509&#34;　　　　　　　#tcp端口16509
-listen_addr = &#34;0.0.0.0&#34;
-unix_sock_group = &#34;libvirtd&#34;
-unix_sock_rw_perms = &#34;0770&#34;
-auth_unix_ro = &#34;none&#34;
-auth_unix_rw = &#34;none&#34;
-auth_tcp = &#34;none&#34;　　　　　　   #TCP不使用认证
-max_clients = 1024　　　　　　  #最大总的连接客户数1024
+$ sudo service libvirt-bin restart
+
+$ virsh -c qemu+tcp://127.0.0.1:16509/system list</pre></td></tr></table>
+</div>
+</div>
+<h1 id="libvirtd配置">libvirtd配置</h1>
+
+<p>配置libvirtd：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vim /etc/libvirt/libvirtd.conf
+
+max_clients = 1024　　　　　　   #最大总的连接客户数1024
 min_workers = 50　　　　　　    #libvirtd启动时，初始的工作线程数目
 max_workers = 200　　　　　　 #同上，最大数目
 max_requests = 1000　　　　　
 #最大同时支持的RPC调用，必须大于等于max_workers
-max_client_requests = 200　　 #每个客户端支持的最大连接数
-
-vim /etc/default/libvirt-bin:
-# Start libvirtd to handle qemu/kvm:
-start_libvirtd=&#34;yes&#34;
-# options passed to libvirtd, add &#34;-l&#34; to listen on tcp
-libvirtd_opts=&#34;-d -l --config /etc/libvirt/libvirtd.conf&#34;
-
-$ sudo service libvirt-bin restart</pre></td></tr></table>
+max_client_requests = 200　　 #每个客户端支持的最大连接数</pre></td></tr></table>
 </div>
 </div>
     </div>
