@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-05-25T12:14:59&#43;00:00" />
 <meta itemprop="dateModified" content="2016-05-25T12:14:59&#43;00:00" />
-<meta itemprop="wordCount" content="1121">
+<meta itemprop="wordCount" content="1129">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/database/"> Database </a>
             </div>
-          <span class="more-meta"> 1121 words </span>
+          <span class="more-meta"> 1129 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -486,7 +486,7 @@ NOT IN()</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">SELECT DISTINCT(USER) FROM mysql.user;
-SELECT user,host FROM mysql.user;</pre></td></tr></table>
+SELECT user,host,plugin FROM mysql.user;</pre></td></tr></table>
 </div>
 </div>
 <p>查看当前用户：</p>
@@ -547,15 +547,6 @@ DROP USER &#39;username&#39;@&#39;%&#39;;</pre></td></tr></table>
 DROP DATABASE databasename;</pre></td></tr></table>
 </div>
 </div>
-<p>使用数据库：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">use databasename</pre></td></tr></table>
-</div>
-</div>
 <p>指定数据库对用户授权：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -574,6 +565,15 @@ FLUSH PRIVILEGES;</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">SHOW GRANTS FOR &#39;username&#39;@&#39;%&#39;;</pre></td></tr></table>
+</div>
+</div>
+<p>使用数据库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">use databasename</pre></td></tr></table>
 </div>
 </div>
 <p>查看所有表：</p>
@@ -637,9 +637,13 @@ FLUSH PRIVILEGES;</pre></td></tr></table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">set global max_connections = 5000;</pre></td></tr></table>
+<pre class="chroma">show processlist;
+show variables like &#39;max_connections&#39;;
+set global max_connections = 2048;</pre></td></tr></table>
 </div>
 </div>
 <hr />
