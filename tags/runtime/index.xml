@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>runtime on Morgoth</title>
+    <link>http://canuxcheng.com/tags/runtime/</link>
+    <description>Recent content in runtime on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Jun 2019 22:02:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/runtime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CRI</title>
+      <link>http://canuxcheng.com/post/cri/</link>
+      <pubDate>Wed, 05 Jun 2019 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/cri/</guid>
+      <description>OCI Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，致力于container runti</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -17,7 +17,7 @@
       <pubDate>Mon, 03 Jun 2019 22:53:23 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/virtualbox/</guid>
-      <description>Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // 导入ova $ vboxmanage import win7.ova // 修改虚拟机的网络为hostonly $ vboxmanage modifyvm</description>
+      <description>Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 // 导入ova $ vboxmanage import win7.ova // 修改虚拟机的网络为hostonly</description>
     </item>
     
   </channel>

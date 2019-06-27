@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode.)" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Kubernetes" />
-<meta property="og:description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops" />
+<meta property="og:description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode.)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/kubernetes/" />
 <meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="Kubernetes">
-<meta itemprop="description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops">
+<meta itemprop="description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode.)">
 
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="979">
+<meta itemprop="wordCount" content="990">
 
 
 
 <meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes"/>
-<meta name="twitter:description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops"/>
+<meta name="twitter:description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode.)"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 979 words </span>
+          <span class="more-meta"> 990 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -188,9 +188,16 @@
 <p>安装k8s集群:</p>
 
 <ul>
-<li>kubeadm (k8s内置的，类似于docker swarm.)</li>
+<li>kubeadm (k8s内置的，类似于docker swarm mode.)</li>
 <li>kops (目前主要支持aws等云平台)</li>
 <li>kubespray (通过ansible部署)</li>
+</ul>
+
+<p>k8s发行版：</p>
+
+<ul>
+<li>openshift(redhat)</li>
+<li>rancher</li>
 </ul>
 
 <p>概念:</p>
@@ -251,6 +258,7 @@
 
 <ul>
 <li>coredns</li>
+<li>fannel</li>
 <li>dashboard, web-gui</li>
 <li>metrics-server, 取代heapster，用于cpu/memory监控</li>
 <li>ingress-nginx, 为服务提供外网入口</li>

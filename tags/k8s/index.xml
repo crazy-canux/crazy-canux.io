@@ -17,7 +17,7 @@
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/kubernetes/</guid>
-      <description>Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm.) kops</description>
+      <description>Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode.)</description>
     </item>
     
   </channel>

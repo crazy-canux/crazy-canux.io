@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2519">
+<meta itemprop="wordCount" content="2566">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2519 words </span>
+          <span class="more-meta"> 2566 words </span>
           <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -881,6 +881,20 @@ $ docker-compose logs -f</pre></td></tr></table>
 </span><span class="lnt">59
 </span><span class="lnt">60
 </span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">version: &#34;3.6&#34;
@@ -888,12 +902,26 @@ services:
   mongo:
     image: mongo:latest
     hostname: hostname
+    deploy: // for swarm
     networks:
     - mynetwork
-    volumes:
-    - myvolume
-    deploy: // for swarm
-    ports:
+    volumes: // short syntax
+    - myvolume:/container/dir
+    volumes: // long syntax
+    - type: valume/bind/tmpfs
+      source: 
+      target:
+      read_only:
+      bind:
+      volume:
+      tmpfs:
+      consistency:
+    ports:  // long syntax
+    - target: 80
+      published: 8080
+      mode: host
+      protocol: tcp/udp
+    ports: // short syntax
       - 80:80
       - 1234:1234/udp
     environment:
