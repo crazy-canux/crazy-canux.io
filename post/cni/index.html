@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="918">
+<meta itemprop="wordCount" content="956">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 918 words </span>
+          <span class="more-meta"> 956 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -285,11 +285,17 @@ com.docker.network.driver.mtu</pre></td></tr></table>
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ docker network create -d bridge ... [name]
 
-$ docker network create --driver=bridge --gateway=192.168.1.1 --subnet=192.168.1.0/24 --opt com.docker.network.bridge.name=br0 br0</pre></td></tr></table>
+$ docker network create --driver=bridge --gateway=192.168.1.1 --subnet=192.168.1.0/24 --opt com.docker.network.bridge.name=br0 br0
+
+// 定制docker_gwbridge网络
+$ docker network create --subnet 172.18.0.0/16 --ip-range 172.18.0.0/24 --opt com.docker.network.bridge.name=docker_gwbridge --opt com.docker.network.bridge.enable_icc=true --opt com.docker.network.bridge.enable_ip_masquerade=true docker_gwbridge</pre></td></tr></table>
 </div>
 </div>
 <h1 id="overlay网络">overlay网络</h1>
