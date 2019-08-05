@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2566">
+<meta itemprop="wordCount" content="2573">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2566 words </span>
+          <span class="more-meta"> 2573 words </span>
           <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -895,6 +895,7 @@ $ docker-compose logs -f</pre></td></tr></table>
 </span><span class="lnt">73
 </span><span class="lnt">74
 </span><span class="lnt">75
+</span><span class="lnt">76
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">version: &#34;3.6&#34;
@@ -932,6 +933,7 @@ services:
       - RABBITMQ_DEFAULT_PASS=password
     depends_on:
       - service-name
+    command: [&#34;./wait-for-it.sh&#34;, &#34;db:5432&#34;, &#34;--&#34;, &#34;python&#34;, &#34;app.py&#34;]
 
     # 下列选项不能用于swarm stack部署.
     build

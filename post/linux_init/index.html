@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-02-03T14:04:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-02-03T14:04:05&#43;00:00" />
-<meta itemprop="wordCount" content="553">
+<meta itemprop="wordCount" content="557">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 553 words </span>
+          <span class="more-meta"> 557 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -155,7 +155,7 @@
   </div>
 </div>
   <div class="post-outdated">
-    <div class="hint">
+    <div class="warn">
       <p>[NOTE] Updated <span class="timeago" datetime="2019-02-03T14:04:05" title="February 3, 2019">February 3, 2019</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
@@ -200,7 +200,32 @@ $ sudo readlink /sbin/init
 </div>
 <p>service文件编写:</p>
 
-<p><a href="http://www.jinbuguo.com/systemd/systemd.service.html">http://www.jinbuguo.com/systemd/systemd.service.html</a></p>
+<p><a href="https://www.freedesktop.org/software/systemd/man/systemd.unit.html#">https://www.freedesktop.org/software/systemd/man/systemd.unit.html#</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[Unit]
+Description=details
+After=containerd.service # 之前启动
+Before= # 之后运行
+Bindsto= #
+Wants=containerd.service # 弱依赖
+Requires= # 强依赖
+StartLimitInterval=10s
+StartLimitBurst=5</pre></td></tr></table>
+</div>
+</div>
+<p><a href="https://www.freedesktop.org/software/systemd/man/systemd.service.html#">https://www.freedesktop.org/software/systemd/man/systemd.service.html#</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -218,25 +243,9 @@ $ sudo readlink /sbin/init
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">[Unit]
-Description=details
-After=containerd.service # 之前启动
-Before= # 之后运行
-Bindsto= #
-Wants=containerd.service # 弱依赖
-Requires= # 强依赖
-
-[Service]
+<pre class="chroma">[Service]
 Type=simple/notify/dbus/forking/idle/oneshot
 ExecStartPre=
 ExecStart=

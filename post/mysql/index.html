@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-05-25T12:14:59&#43;00:00" />
 <meta itemprop="dateModified" content="2016-05-25T12:14:59&#43;00:00" />
-<meta itemprop="wordCount" content="1129">
+<meta itemprop="wordCount" content="1147">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/database/"> Database </a>
             </div>
-          <span class="more-meta"> 1129 words </span>
+          <span class="more-meta"> 1147 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -249,18 +249,22 @@ $ mysql -h&lt;host&gt; -P&lt;port&gt; -uroot -p&lt;password&gt;</pre></td></tr><
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database&gt; -e/--execute &lt;sql query&gt;</pre></td></tr></table>
+<pre class="chroma">$ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database&gt; -e/--execute &lt;sql query&gt;
+$ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database&gt; &lt; test.sql</pre></td></tr></table>
 </div>
 </div>
 <p>远程执行sql语句或mysql客户端命令:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ mysql -h&lt;host&gt; -P&lt;port&gt; -u&lt;username&gt; -p&lt;password&gt; &lt;database&gt; -e/--execute &lt;sql query&gt;</pre></td></tr></table>
+<pre class="chroma">$ mysql -h&lt;host&gt; -P&lt;port&gt; -u&lt;username&gt; -p&lt;password&gt; &lt;database&gt; -e/--execute &lt;sql query&gt;
+$ mysql -h&lt;host&gt; -P&lt;port&gt; -u&lt;username&gt; -p&lt;password&gt; &lt;database&gt; &lt; test.sql</pre></td></tr></table>
 </div>
 </div>
 <p>启用&rsquo;load data local&rsquo;命令：</p>

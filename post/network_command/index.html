@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="857">
+<meta itemprop="wordCount" content="880">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/network/"> Network </a>
             </div>
-          <span class="more-meta"> 857 words </span>
+          <span class="more-meta"> 880 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -431,6 +431,9 @@ tcpdump -i &lt;interface&gt; host &lt;ip&gt;</pre></td></tr></table>
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">wget [option] [URL]
@@ -443,7 +446,7 @@ tcpdump -i &lt;interface&gt; host &lt;ip&gt;</pre></td></tr></table>
 -t, --tries=NUMBER    超时重连次数, 0表示不限制, 默认20
 -nc, --no-clobber    不覆盖原有文件
 -N, --timestamping   只下载比本地新的文件
--c, --continue    断点续传
+-c, --continue    断点续传,会覆盖-N
 -T, --timeout=SECONDS    超时时间, 默认900s
 -w, --wait=SECONDS    重连之间的等待时间
 -O, --output-document=FILE, 重命名下载文件
@@ -457,7 +460,10 @@ tcpdump -i &lt;interface&gt; host &lt;ip&gt;</pre></td></tr></table>
 -np, --no-parent 不下载父目录的内容
 
 # 同步目录
-wget -Nc -r -np -nH --cut-dirs=3 -R &#34;index.*, *.js, *.css, *.html, *.jpg, *.png, *.gif&#34; -P /path/to/source/ http://host/path/to/dest/</pre></td></tr></table>
+wget -Nc -r -np -nH --cut-dirs=3 -R &#34;index.*, *.js, *.css, *.html, *.jpg, *.png, *.gif&#34; -P /path/to/source/ http://host/path/to/dest/
+
+$ wget -q -N -P /folder url
+$ wget -q -c -O /path/to/file.ext url</pre></td></tr></table>
 </div>
 </div>
 <p>curl:</p>
