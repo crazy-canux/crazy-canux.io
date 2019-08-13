@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-06-03T22:53:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-03T22:53:23&#43;08:00" />
-<meta itemprop="wordCount" content="328">
+<meta itemprop="wordCount" content="335">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/virtualization/"> Virtualization </a>
             </div>
-          <span class="more-meta"> 328 words </span>
+          <span class="more-meta"> 335 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -201,7 +201,7 @@
 $ vboxmanage import win7.ova 
 
 // 添加host网络
-$ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1
+$ vboxmanage modifyvm &#34;win764&#34; --nic1 hostonly --hostonlyadapter1 vboxnet0
 // 添加bridge网络
 $ vboxmanage modifyvm &#34;Win732&#34; --nic2 bridged --bridgeadapter2 docker_gwbridge
 // 重命名vm
@@ -251,10 +251,12 @@ $ vboxmanage snapshot &lt;vm&gt; delete &lt;snapshot-name/uuid&gt; // 删除快�
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ vboxmanage hostonlyif crate // 创建hostonly bridge
 $ vboxmanage hostonlyif ipconfig vboxnet0 --ip 192.168.1.1 --netmask 255.255.255.0 // 给hostonly bridge分配ip和netmask.
+$ vboxmanage hostonlyif remove &lt;name&gt;
 
 // 查看所有hostonly网路
 $ vboxmanage list hostonlyifs</pre></td></tr></table>

@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-08-15T11:04:12&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-15T11:04:12&#43;00:00" />
-<meta itemprop="wordCount" content="1225">
+<meta itemprop="wordCount" content="1267">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/python/"> Python </a>
             </div>
-          <span class="more-meta"> 1225 words </span>
+          <span class="more-meta"> 1267 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -160,6 +160,10 @@
 <li><a href="#curses">curses</a></li>
 <li><a href="#platform">platform</a></li>
 <li><a href="#ctypes">ctypes</a></li>
+</ul></li>
+<li><a href="#unix-linux-sytem">Unix/Linux sytem</a>
+<ul>
+<li><a href="#pwd">pwd</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -237,6 +241,8 @@ os.devnull</pre></td></tr></table>
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">WCOREDUMP(...)
@@ -248,13 +254,15 @@ exec*
 wait() # 等待子进程结束，返回(pid, status).
 waitpid(pid, options) # 等待指定子进程结束.
 listdir(path)
-makedirs(path [, mode=0777])
+makedirs(path [, mode=0o777], exist_ok=False)
 mkdir(path [, mode=0777])
 walk(top, topdown=True, onerror=None, followlinks=False) # 返回 (dirpath, dirnames, filenames) 类型的迭代器
 remove(path) # remove a file
 rmdir(path) # remove a directory
 removedirs(path)
 symlink(src, dst)
+chown(path, uid, gid)
+chmod(path, mode=0o777)
 ...
 
 # 使用subprocess模块代替下列函数：
@@ -622,6 +630,36 @@ add_parser(self, name, **kwargs) # -&gt; argparse.ArgumentParser
 </div>
 <hr />
 
+<h1 id="unix-linux-sytem">Unix/Linux sytem</h1>
+
+<h2 id="pwd">pwd</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import pwd</pre></td></tr></table>
+</div>
+</div>
+<p>functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 根据用户名获取uid和gid
+pw = getpwnam(user)  
+pw.pw_uid
+pw.pw_gid
+
+getpwuid(uid)</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
