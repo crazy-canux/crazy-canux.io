@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>CA</title>
+      <link>http://canuxcheng.com/post/sec_ca/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_ca/</guid>
+      <description>CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&amp;#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.com.key -out server.csr -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor.com&amp;#34; $ openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out harbor.com.crt</description>
+    </item>
+    
+    <item>
       <title>Capture</title>
       <link>http://canuxcheng.com/post/sec_capture/</link>
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>

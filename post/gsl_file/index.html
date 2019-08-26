@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
-<meta itemprop="wordCount" content="1606">
+<meta itemprop="wordCount" content="1620">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/golang/"> Golang </a>
             </div>
-          <span class="more-meta"> 1606 words </span>
+          <span class="more-meta"> 1620 words </span>
           <span class="more-meta"> 4 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -228,7 +228,7 @@ func Split(path string) (dir, file string)
 func Join(elem ...string) string
 func Dir(path string) string
 func Base(path string) string
-func Ext(path string) string
+func Ext(path string) string 
 ...</pre></td></tr></table>
 </div>
 </div>
@@ -284,14 +284,14 @@ var SkipDir = errors.New(&#34;skip this diractory&#34;)</pre></td></tr></table>
 <pre class="chroma">func IsAbs(path string) bool
 func Abs(path string) (string, error)
 
-// 返回 targpath 相对于 basepath 的 路径 （相当于返回 targpath - basepath)
+// 返回 targpath 相对于 basepath 的 路径 （相当于返回 targpath - basepath), 实际就是文件名.
 func Rel(basepath, targpath string) (string, error)
 
 func Split(path string) (dir, file string)
 func Join(elem ...string) string
 func Dir(path string) string
 func Base(path string) string
-func Ext(path string) string)
+func Ext(path string) string) // 包括小数点
 func Walk(root string, walkFn WalkFunc) error</pre></td></tr></table>
 </div>
 </div>

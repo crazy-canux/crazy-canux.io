@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-04-02T21:11:33&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-02T21:11:33&#43;00:00" />
-<meta itemprop="wordCount" content="2453">
+<meta itemprop="wordCount" content="2483">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 2453 words </span>
+          <span class="more-meta"> 2483 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -714,13 +714,19 @@ git commit --amend</pre></td></tr></table>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">git branch [branch-name]
 git branch -d [branch-name] # 删除已经merge到master的分支
 git branch -D [branch-name] # 强制删除分支
 git branch -m [old-name] [new-name] # 重命名
-git branch -M [old-name] [new-name] # 强制重命名</pre></td></tr></table>
+git branch -M [old-name] [new-name] # 强制重命名
+git branch -vv   # 查看上游
+git branch --unset-upstream [branch] # 取消上游
+git branch -u &lt;origin/branch&gt; [branch] # 设置上游</pre></td></tr></table>
 </div>
 </div>
 <h2 id="blame">blame</h2>

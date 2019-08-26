@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Capture - Morgoth</title>
+  <title>CA - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Packet Capture 网络抓包 Fiddler http://www.telerik.com/fiddler Wireshark https://www.wireshark.org/" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&amp;#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.com.key -out server.csr -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor.com&amp;#34; $ openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out harbor.com.crt" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/sec_capture/" />
+<link rel="canonical" href="http://canuxcheng.com/post/sec_ca/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Capture" />
-<meta property="og:description" content="Packet Capture 网络抓包 Fiddler http://www.telerik.com/fiddler Wireshark https://www.wireshark.org/" />
+<meta property="og:title" content="CA" />
+<meta property="og:description" content="CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.com.key -out server.csr -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor.com&#34; $ openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out harbor.com.crt" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/sec_capture/" />
+<meta property="og:url" content="http://canuxcheng.com/post/sec_ca/" />
 <meta property="article:published_time" content="2018-07-28T16:08:54&#43;00:00"/>
 <meta property="article:modified_time" content="2018-07-28T16:08:54&#43;00:00"/>
 
-<meta itemprop="name" content="Capture">
-<meta itemprop="description" content="Packet Capture 网络抓包 Fiddler http://www.telerik.com/fiddler Wireshark https://www.wireshark.org/">
+<meta itemprop="name" content="CA">
+<meta itemprop="description" content="CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.com.key -out server.csr -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor.com&#34; $ openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out harbor.com.crt">
 
 
 <meta itemprop="datePublished" content="2018-07-28T16:08:54&#43;00:00" />
 <meta itemprop="dateModified" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="wordCount" content="10">
+<meta itemprop="wordCount" content="59">
 
 
 
-<meta itemprop="keywords" content="capture," />
+<meta itemprop="keywords" content="CA," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Capture"/>
-<meta name="twitter:description" content="Packet Capture 网络抓包 Fiddler http://www.telerik.com/fiddler Wireshark https://www.wireshark.org/"/>
+<meta name="twitter:title" content="CA"/>
+<meta name="twitter:description" content="CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.com.key -out server.csr -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor.com&#34; $ openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out harbor.com.crt"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Capture</h1>
+      <h1 class="post-title">CA</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2018-07-28 </span>
         <div class="post-category">
             <a href="/categories/security/"> Security </a>
             </div>
-          <span class="more-meta"> 10 words </span>
+          <span class="more-meta"> 59 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,9 +147,8 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#packet-capture">Packet Capture</a></li>
-<li><a href="#fiddler">Fiddler</a></li>
-<li><a href="#wireshark">Wireshark</a></li>
+<li><a href="#ca">CA</a></li>
+<li><a href="#创建自签名证书">创建自签名证书</a></li>
 </ul>
 </nav>
   </div>
@@ -162,18 +161,29 @@
     <div class="post-content">
       
 
-<h1 id="packet-capture">Packet Capture</h1>
+<h1 id="ca">CA</h1>
 
-<p>网络抓包</p>
+<p>Certificate Authority.</p>
 
-<h1 id="fiddler">Fiddler</h1>
+<hr />
 
-<p><a href="http://www.telerik.com/fiddler">http://www.telerik.com/fiddler</a></p>
+<h1 id="创建自签名证书">创建自签名证书</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ openssl req  -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&#34;
 
-<h1 id="wireshark">Wireshark</h1>
+$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.com.key -out server.csr -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor.com&#34;
 
-<p><a href="https://www.wireshark.org/">https://www.wireshark.org/</a></p>
-
+$ openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out harbor.com.crt</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -207,16 +217,16 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/capture/">capture</a>
+          <a href="/tags/ca/">CA</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sec_ca/">
+        <a class="prev" href="/post/beego_template/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">CA</span>
+            <span class="prev-text nav-default">Template</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/sec_csrf/">
-            <span class="next-text nav-default">Csrf</span>
+        <a class="next" href="/post/sec_capture/">
+            <span class="next-text nav-default">Capture</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -230,7 +240,7 @@
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2018-07-28 16:08:54 \x2b0000 UTC',
-        title: 'Capture',
+        title: 'CA',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',
