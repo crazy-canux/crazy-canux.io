@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Jun 2019 22:02:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 22:02:31 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Helm</title>
+      <link>http://canuxcheng.com/post/helm/</link>
+      <pubDate>Thu, 05 Sep 2019 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/helm/</guid>
+      <description>Helm helm: 客户端 tiller: 服务端</description>
+    </item>
     
     <item>
       <title>CRI</title>
@@ -89,7 +98,7 @@
       <pubDate>Sun, 03 Feb 2019 14:04:05 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/linux_init/</guid>
-      <description>Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&amp;gt; upstart /sbin/init -&amp;gt; /lib/systemd/systemd systemd sytemd是upstart的替代版本．通过查看</description>
+      <description>Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 5 6 7 8 9 10 11 12 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&amp;gt; upstart /sbin/init -&amp;gt; /lib/systemd/systemd /etc/init.d The directory containing System V init scripts. 通过service</description>
     </item>
     
     <item>
@@ -107,7 +116,7 @@
       <pubDate>Thu, 27 Sep 2018 03:25:26 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/nginx/</guid>
-      <description> Nginx </description>
+      <description> Nginx 1 2 3  nginx -V nginx -t nginx -s reload  </description>
     </item>
     
     <item>
@@ -269,7 +278,7 @@
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/cni/</guid>
-      <description>CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网</description>
+      <description>CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服</description>
     </item>
     
     <item>
@@ -1920,15 +1929,6 @@ SAAS: Software as a service</description>
       
       <guid>http://canuxcheng.com/post/pelican/</guid>
       <description>Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: 1 2 3 4 5 6 $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: 1 $pelican-quickstart 生成下列文</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://canuxcheng.com/post/helm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/helm/</guid>
-      <description></description>
     </item>
     
     <item>

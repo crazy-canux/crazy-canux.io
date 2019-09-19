@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="367">
+<meta itemprop="wordCount" content="341">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 367 words </span>
+          <span class="more-meta"> 341 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -174,30 +174,34 @@
 <li>配置harbor.cfg;</li>
 </ol>
 
+<p>修改配置:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">vim harbor.yml</pre></td></tr></table>
+</div>
+</div>
 <p>运行安装程序:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">./install.sh
-./install.sh --with-notary --with-clair --with-chartmuseum</pre></td></tr></table>
+<pre class="chroma">./install.sh --with-notary --with-clair --with-chartmuseum</pre></td></tr></table>
 </div>
 </div>
 <p>修改web的port:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ vim /data/harbor/docker-compose.yml
@@ -205,11 +209,8 @@ proxy:
   ports:
     - 8080:80 # 默认http是80
     - 4433:443 # 默认https是443
-$ vim /data/harbor/harbor.cfg
-hostname = ip:port
-$ cd /data/harbor
-./prepare
-$ docker-compose up -d</pre></td></tr></table>
+$ vim /data/harbor/harbor.yml
+hostname = ip:port</pre></td></tr></table>
 </div>
 </div>
 <p>管理harbor:</p>
@@ -220,24 +221,19 @@ $ docker-compose up -d</pre></td></tr></table>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$cd /data/harbor
-docker-compose stop　停止
-docker-compose start　恢复
+<pre class="chroma"># cd /data/harbor
 docker-compose down -v 　停止并删除container
+
+&gt; 更新配置
+# ./prepare --with-notary --with-clair --with-chartmuseum
+# docker-compose -f ./docker-compose.yml -f ./docker-compose.notary.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d
+
 docker-cmopose up -d 启动</pre></td></tr></table>
-</div>
-</div>
-<p>使用notary/clair/helm:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># ./prepare --with-notary --with-clair --with-chartmuseum
-# docker-compose -f ./docker-compose.yml -f ./docker-compose.notary.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d</pre></td></tr></table>
 </div>
 </div>
 <h1 id="docker使用harbor">docker使用harbor</h1>

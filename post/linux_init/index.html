@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&amp;gt; upstart /sbin/init -&amp;gt; /lib/systemd/systemd systemd sytemd是upstart的替代版本．通过查看" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 5 6 7 8 9 10 11 12 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&amp;gt; upstart /sbin/init -&amp;gt; /lib/systemd/systemd /etc/init.d The directory containing System V init scripts. 通过service" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Init" />
-<meta property="og:description" content="Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&gt; upstart /sbin/init -&gt; /lib/systemd/systemd systemd sytemd是upstart的替代版本．通过查看" />
+<meta property="og:description" content="Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 5 6 7 8 9 10 11 12 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&gt; upstart /sbin/init -&gt; /lib/systemd/systemd /etc/init.d The directory containing System V init scripts. 通过service" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/linux_init/" />
 <meta property="article:published_time" content="2019-02-03T14:04:05&#43;00:00"/>
 <meta property="article:modified_time" content="2019-02-03T14:04:05&#43;00:00"/>
 
 <meta itemprop="name" content="Init">
-<meta itemprop="description" content="Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&gt; upstart /sbin/init -&gt; /lib/systemd/systemd systemd sytemd是upstart的替代版本．通过查看">
+<meta itemprop="description" content="Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 5 6 7 8 9 10 11 12 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&gt; upstart /sbin/init -&gt; /lib/systemd/systemd /etc/init.d The directory containing System V init scripts. 通过service">
 
 
 <meta itemprop="datePublished" content="2019-02-03T14:04:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-02-03T14:04:05&#43;00:00" />
-<meta itemprop="wordCount" content="557">
+<meta itemprop="wordCount" content="540">
 
 
 
 <meta itemprop="keywords" content="init," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Init"/>
-<meta name="twitter:description" content="Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&gt; upstart /sbin/init -&gt; /lib/systemd/systemd systemd sytemd是upstart的替代版本．通过查看"/>
+<meta name="twitter:description" content="Linux Init linux系统启动的第一个进程,pid=1的进程. 1 2 3 4 5 6 7 8 9 10 11 12 $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&gt; upstart /sbin/init -&gt; /lib/systemd/systemd /etc/init.d The directory containing System V init scripts. 通过service"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 557 words </span>
+          <span class="more-meta"> 540 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -167,16 +167,32 @@
 <p>linux系统启动的第一个进程,pid=1的进程.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ ls -l /sbin/init
 $ sudo readlink /sbin/init
 /sbin/init -&gt; upstart
-/sbin/init -&gt; /lib/systemd/systemd</pre></td></tr></table>
+/sbin/init -&gt; /lib/systemd/systemd
+
+/etc/init.d
+The directory containing System V init scripts.
+通过service命令操作
+
+/etc/init
+The directory containing upstart jobs.
+通过initctl命令操作</pre></td></tr></table>
 </div>
 </div>
 <hr />
@@ -303,8 +319,6 @@ $ systemctl is-enabled ***</pre></td></tr></table>
 <hr />
 
 <h1 id="upstart">upstart</h1>
-
-<p>如果init指向upstart, service命令如果在/etc/init.d找不到会去/etc/systemd/system找.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1

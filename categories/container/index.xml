@@ -6,10 +6,19 @@
     <description>Recent content in Container on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Jun 2019 22:02:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 22:02:31 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/categories/container/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Helm</title>
+      <link>http://canuxcheng.com/post/helm/</link>
+      <pubDate>Thu, 05 Sep 2019 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/helm/</guid>
+      <description>Helm helm: 客户端 tiller: 服务端</description>
+    </item>
     
     <item>
       <title>CRI</title>
@@ -26,7 +35,7 @@
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/cni/</guid>
-      <description>CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网</description>
+      <description>CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服</description>
     </item>
     
     <item>

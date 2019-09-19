@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="684">
+<meta itemprop="wordCount" content="726">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/storage/"> Storage </a>
             </div>
-          <span class="more-meta"> 684 words </span>
+          <span class="more-meta"> 726 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -245,6 +245,8 @@ $ df /path/folder</pre></td></tr></table>
 </div>
 <h1 id="fdisk">fdisk</h1>
 
+<p>支持msdos，支持2T以下的磁盘.</p>
+
 <p>fdisk管理磁盘分区表:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -270,8 +272,17 @@ partprobe /dev/sda # 在不重启的情况下保存分区</pre></td></tr></table
 </div>
 <h1 id="parted">parted</h1>
 
-<p>大存储分区工具,比如nas,raid.</p>
+<p>支持gpt分区表，支持2T以上的大磁盘.</p>
 
+<p>大存储分区工具,比如nas,raid.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">parted /dev/sda print</pre></td></tr></table>
+</div>
+</div>
 <h1 id="mkfd">mkfd</h1>
 
 <p>mkfs:</p>

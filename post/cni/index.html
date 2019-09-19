@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="CNI" />
-<meta property="og:description" content="CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网" />
+<meta property="og:description" content="CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/cni/" />
 <meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="CNI">
-<meta itemprop="description" content="CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网">
+<meta itemprop="description" content="CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服">
 
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="956">
+<meta itemprop="wordCount" content="960">
 
 
 
 <meta itemprop="keywords" content="network," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CNI"/>
-<meta name="twitter:description" content="CNI CNI: Container Network Intarface 单台host上的container通信: none host bridge 多台host之间的container通信: overlay macvlan 提供overlay/macvlan的网"/>
+<meta name="twitter:description" content="CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 956 words </span>
+          <span class="more-meta"> 960 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,7 +147,14 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#cni">CNI</a></li>
+<li><a href="#cni">CNI</a>
+<ul>
+<li><a href="#单台host上的container通信">单台host上的container通信</a></li>
+<li><a href="#多台host之间的container通信">多台host之间的container通信</a>
+<ul>
+<li><a href="#提供overlay-macvlan的网络服务">提供overlay/macvlan的网络服务</a></li>
+</ul></li>
+</ul></li>
 <li><a href="#docker网络管理">Docker网络管理</a></li>
 <li><a href="#bridge网络">bridge网络</a></li>
 <li><a href="#overlay网络">overlay网络</a></li>
@@ -168,7 +175,7 @@
 
 <p>CNI: Container Network Intarface</p>
 
-<p>单台host上的container通信:</p>
+<h2 id="单台host上的container通信">单台host上的container通信</h2>
 
 <ul>
 <li>none</li>
@@ -176,20 +183,30 @@
 <li>bridge</li>
 </ul>
 
-<p>多台host之间的container通信:</p>
+<h2 id="多台host之间的container通信">多台host之间的container通信</h2>
 
 <ul>
 <li>overlay</li>
 <li>macvlan</li>
 </ul>
 
-<p>提供overlay/macvlan的网络服务:</p>
+<h3 id="提供overlay-macvlan的网络服务">提供overlay/macvlan的网络服务</h3>
+
+<p>vxlan encapsulated:</p>
 
 <ul>
+<li>canal</li>
 <li>flannel</li>
+<li>weave</li>
+</ul>
+
+<p>bgp unencapsulated:</p>
+
+<ul>
+<li>calico</li>
+<li>romana</li>
 <li>cilium</li>
 <li>kube-router</li>
-<li>calico</li>
 </ul>
 
 <h1 id="docker网络管理">Docker网络管理</h1>
