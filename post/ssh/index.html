@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-07-28T15:53:34&#43;00:00" />
 <meta itemprop="dateModified" content="2016-07-28T15:53:34&#43;00:00" />
-<meta itemprop="wordCount" content="361">
+<meta itemprop="wordCount" content="826">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/network/"> Network </a>
             </div>
-          <span class="more-meta"> 361 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 826 words </span>
+          <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -150,6 +150,7 @@
 <li><a href="#openssh">OpenSSH</a></li>
 <li><a href="#ssh命令">SSH命令</a></li>
 <li><a href="#启用root远程ssh">启用root远程ssh</a></li>
+<li><a href="#ssh-tunel">ssh tunel</a></li>
 </ul>
 </nav>
   </div>
@@ -298,6 +299,69 @@ $ sshpass -p [password]</pre></td></tr></table>
 # service ssh restart</pre></td></tr></table>
 </div>
 </div>
+<h1 id="ssh-tunel">ssh tunel</h1>
+
+<p>SSH Tunnel有三种</p>
+
+<ul>
+<li><p>本地Local（ssh -NfL）, 在ssh client(本地)执行.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">正向代理：（a能ssh到b，b能访问c，实现a访问c，相当于a是ssh client）A 通过 中转B连接 server C.
+
+在A 上建立tunnel:
+ssh -Nf -L  ssh-client-ip:ssh-client-port:remoteServerIp:remoteServerPort  user@agentIp</pre></td></tr></table>
+</div>
+</div>
+<p>访问ssh-client-ip/A的ssh-client-port 即可访问 remoteServerIp/C 的 remoteServerPort 提供的服务.</p></li>
+
+<li><p>远程Remote（ssh -NfR）, 在ssh server执行.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">反向代理：（b能ssh到a，b能访问c，实现a访问c, a相当于ssh server, c相当于remote server) A 通过中转B访问server C.
+
+在B上建立tunnel:
+ssh -Nf -R  ssh-server-ip:ssh-server-port:remoteServerIp:remoteServerPort    user@agent
+
+访问ssh-server-ip/A的ssh-server-port端口即可访问remoteServerIp/C 的 remoteServerPort 提供的服务。</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>动态Dynamic（ssh -NfD）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">socks代理： a能ssh到B，b能访问一个网段，实现a访问该网段.
+
+在a上建立tunnel
+ssh -D [ssh-client-ip]:ssh-client-port user@agent
+
+socks代理配置ssh-client-ip:ssh-client-port 即可通过B访问该网段。</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
     </div>
 
     <div class="post-copyright">
