@@ -44,7 +44,7 @@
       <pubDate>Sat, 02 Apr 2016 11:15:57 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/shell_sed/</guid>
-      <description>sed sed：stream editor 流编辑器 ，主要用于文本处理。 sed命令格式： sed -options ’expression1;expression2’ file 执行多个命令 sed -options</description>
+      <description>sed sed：stream editor 流编辑器 ，主要用于文本处理。 sed命令格式： 1 2 3 4 sed -options ’expression1;expression2’ file 执行多个</description>
     </item>
     
     <item>

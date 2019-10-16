@@ -17,7 +17,7 @@
       <pubDate>Thu, 05 Sep 2019 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/helm/</guid>
-      <description>Helm helm: 客户端 tiller: 服务端</description>
+      <description>Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实</description>
     </item>
     
     <item>
@@ -1032,7 +1032,7 @@ debug </description>
       <pubDate>Tue, 27 Sep 2016 03:25:26 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/apache/</guid>
-      <description>Apache https://github.com/apache/httpd http://httpd.apache.org/ ubuntu/debian： 1 sudo aptitude install apache2 redhat/centos/fedora: 1 $ sudo yum install httpd2 启动服务器： 1 service apache2 start 启动浏览器查看： 1 http://localhost:80 apache命令 a2ensite 1 $ sudo a2ensite &amp;lt;site&amp;gt; a2dissite 1 $ sudo a2dissite &amp;lt;site&amp;gt; a2enmod</description>
+      <description>Apache https://github.com/apache/httpd http://httpd.apache.org/ ubuntu/debian： 1 sudo aptitude install apache2 redhat/centos/fedora: 1 $ sudo yum install httpd2 启动服务器： 1 service apache2 start 启动浏览器查看： 1 http://localhost:80 apache命令 apache2ctl: 1 2 // 检查配置 $ apache2ctl configtest a2ensite 1</description>
     </item>
     
     <item>
@@ -1784,7 +1784,7 @@ SAAS: Software as a service</description>
       <pubDate>Sat, 02 Apr 2016 11:15:57 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/shell_sed/</guid>
-      <description>sed sed：stream editor 流编辑器 ，主要用于文本处理。 sed命令格式： sed -options ’expression1;expression2’ file 执行多个命令 sed -options</description>
+      <description>sed sed：stream editor 流编辑器 ，主要用于文本处理。 sed命令格式： 1 2 3 4 sed -options ’expression1;expression2’ file 执行多个</description>
     </item>
     
     <item>

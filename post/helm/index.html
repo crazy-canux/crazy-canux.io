@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Helm helm: 客户端 tiller: 服务端" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Helm" />
-<meta property="og:description" content="Helm helm: 客户端 tiller: 服务端" />
+<meta property="og:description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/helm/" />
 <meta property="article:published_time" content="2019-09-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2019-09-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="Helm">
-<meta itemprop="description" content="Helm helm: 客户端 tiller: 服务端">
+<meta itemprop="description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实">
 
 
 <meta itemprop="datePublished" content="2019-09-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="9">
+<meta itemprop="wordCount" content="93">
 
 
 
 <meta itemprop="keywords" content="helm," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Helm"/>
-<meta name="twitter:description" content="Helm helm: 客户端 tiller: 服务端"/>
+<meta name="twitter:description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 9 words </span>
+          <span class="more-meta"> 93 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -148,6 +148,8 @@
     <nav id="TableOfContents">
 <ul>
 <li><a href="#helm">Helm</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#应用">应用</a></li>
 </ul>
 </nav>
   </div>
@@ -162,8 +164,24 @@
 
 <h1 id="helm">Helm</h1>
 
-<p>helm: 客户端
-tiller: 服务端</p>
+<p>helm有两个组件:</p>
+
+<ul>
+<li>helm: 客户端</li>
+<li>tiller: 服务端</li>
+</ul>
+
+<p>概念:</p>
+
+<ul>
+<li>chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源.</li>
+<li>release: 在k8s集群上运行的一个chart实例.</li>
+<li>repository: 用于发布和存储chart的仓库.</li>
+</ul>
+
+<h1 id="安装">安装</h1>
+
+<h1 id="应用">应用</h1>
 
     </div>
 

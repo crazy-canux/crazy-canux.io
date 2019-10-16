@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-12-14T00:55:37&#43;08:00" />
 <meta itemprop="dateModified" content="2016-12-14T00:55:37&#43;08:00" />
-<meta itemprop="wordCount" content="2868">
+<meta itemprop="wordCount" content="3030">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 2868 words </span>
-          <span class="more-meta"> 6 mins read </span>
+          <span class="more-meta"> 3030 words </span>
+          <span class="more-meta"> 7 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -148,6 +148,7 @@
     <nav id="TableOfContents">
 <ul>
 <li><a href="#awk">awk</a></li>
+<li><a href="#常用命令">常用命令</a></li>
 </ul>
 </nav>
   </div>
@@ -164,24 +165,45 @@
 
 <p>awk 是一门编程语言</p>
 
-<p>awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。
-nawk： new awk。
-mawk： awk的解释器
-gawk是gnu的awk，功能更全面。</p>
+<p>awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。</p>
 
-<p>awk命令格式：
-awk [-v var=value [-F *] [–] &lsquo;/pattern/ {action}&rsquo;  file
-awk [-v var=value [-F *] [-f scriptfile &hellip;] [–] file
-awk [-v var=value [-F *] [-] &lsquo;BEGIN {} /pattern/ {action} END {}&rsquo;  file
+<p>nawk： new awk。</p>
+
+<p>mawk： awk的解释器</p>
+
+<p>gawk是gnu的awk，功能更全面。</p>
+
+<p>awk命令格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">awk [-v var=value [-F *] [–] &#39;/pattern/ {action}&#39;  file
+awk [-v var=value [-F *] [-f scriptfile ...] [–] file
+awk [-v var=value [-F *] [-] &#39;BEGIN {} /pattern/ {action} END {}&#39;  file
 BEGIN { }  在读取输入之前就操作
-END { }    在读物输入之后操作
-awk的指令需要用单引号包围；
+END { }    在读物输入之后操作</pre></td></tr></table>
+</div>
+</div>
+<p>awk的指令需要用单引号包围；
 模式需要用/pattern/包围；
 过程需要用{command1；command2}包围，多个过程需要用；隔开。</p>
 
-<p>脚本中传递参数格式：
-awk [-f scriptfile]OR[&lsquo;/pattern/{action}&rsquo;] val1=value1 val2=value2 … file1   vala=valuea valb=valueb&hellip; file2 &hellip;
-如果通过shell传参数，把value改成$n即可。
+<p>脚本中传递参数格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">awk [-f scriptfile]OR[&#39;/pattern/{action}&#39;] val1=value1 val2=value2 … file1   vala=valuea valb=valueb... file2 ...</pre></td></tr></table>
+</div>
+</div>
+<p>如果通过shell传参数，把value改成$n即可。
 可以通过命令返回值作为参数value。
 也可以使用环境变量作为value，也可以给awk的环境变量赋值。
 可以在任何位置定义变量（‘ ‘ 之后；-v之后；BEGIN中；{}中；END中）。
@@ -189,32 +211,82 @@ awk [-f scriptfile]OR[&lsquo;/pattern/{action}&rsquo;] val1=value1 val2=value2 �
 在END中定义的变量只能在END中使用，其它位置定义的变量都可以在{}中使用。
 在任何位置定义的变量在END中都可以使用。</p>
 
-<p>Options:
--f: 指定运行脚本文件中的命令,可以指定多个脚本。
+<p>Options:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-f: 指定运行脚本文件中的命令,可以指定多个脚本。
 -F: 指定输入字段分隔符，默认是空格键和制表符。
--v  $val=value  定义变量</p>
-
-<p>awk中的由空格或制表符分隔的单元作为一个字段
-$0  当前行的文本内容
+-v  $val=value  定义变量</pre></td></tr></table>
+</div>
+</div>
+<p>awk中的由空格或制表符分隔的单元作为一个字段</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$0  当前行的文本内容
 $1  第一个字段的文本内容
-$n  第n个字段的文本内容</p>
-
-<p>awk中的常量和变量：
-常量：字符串型和数字型，字符串常量必须用“”引号引用。
+$n  第n个字段的文本内容</pre></td></tr></table>
+</div>
+</div>
+<p>awk中的常量和变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">常量：字符串型和数字型，字符串常量必须用“”引号引用。
 变量：变量名大小写敏感，字母或下划线开头，可以包含数字。
-awk回自动将变量根据环境初始化为空串或0.</p>
-
+awk会自动将变量根据环境初始化为空串或0.</pre></td></tr></table>
+</div>
+</div>
 <p>awk中的命令：</p>
-
-<p>print命令：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">print命令：
 print a,b   参数用，隔开，打印出来的就是用空格隔开的,eg：a b.
 print a“string”b  参数中用双引号打印出来就是原样输出,eg:astringb.
 Print     打印匹配到的行
-print “”  打印一个空行</p>
+print “”  打印一个空行</pre></td></tr></table>
+</div>
+</div>
+<p>printf命令：</p>
 
-<p>printf命令：
-格式化输出，和c语言中的printf类似。
-printf(format[,arguments])
+<p>格式化输出，和c语言中的printf类似。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">printf(format[,arguments])
 format是用“”引起来的格式
 arguments是一个可选的参数列表
 %s:字符串
@@ -225,126 +297,264 @@ arguments是一个可选的参数列表
 |%-mX|：对于格式X按照左对齐，精确到m位，右边补空格
 “%*.*g”， m， n， $val ： 动态指定精度，总共m位，小数点后n位。
 \t：跳格
-\n：换行</p>
+\n：换行</pre></td></tr></table>
+</div>
+</div>
+<p>next命令：</p>
 
-<p>next命令：
-取得下一条记录</p>
+<p>取得下一条记录</p>
 
-<p>delete命令：
-删除</p>
+<p>delete命令：</p>
 
-<p>exit命令：
-退出输入记录的处理，进入END。
+<p>删除</p>
+
+<p>exit命令：</p>
+
+<p>退出输入记录的处理，进入END。
 exit n   设置awk的退出状态。</p>
 
 <p>awk中的内置的变量：</p>
-
-<p>FS  定义输入记录字段分隔符，默认是空格
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">FS  定义输入记录字段分隔符，默认是空格
 OFS 输出记录字段分隔符，默认是空格
 NF  当前输入记录的字段个数（列号）
 RS  输入记录分隔符，默认是换行符
 ORS 输出记录分隔符，默认是换行符
 NR  读入的输入记录的个数(行号）
 FILENAME 当前输入文件的名字
-CONVFMT 控制类型转换，默认为%.6g
-在BEGIN{}中可以给变量赋值；在{}中用$来引用这些变量；在END{}中可以打印这些变量。</p>
+CONVFMT 控制类型转换，默认为%.6g</pre></td></tr></table>
+</div>
+</div>
+<p>在BEGIN{}中可以给变量赋值；在{}中用$来引用这些变量；在END{}中可以打印这些变量。</p>
 
 <p>运算符：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">算数操作符：
++ - * / % ^
 
-<p>算数操作符：
-+ - * / % ^</p>
-
-<p>赋值操作符：
+赋值操作符：
 ++ –-
-+= -= *= /= %= ^=</p>
++= -= *= /= %= ^=
 
-<p>关系操作符：
+关系操作符：
 &lt; &gt; &lt;= &gt;=
 ==(注意和赋值=的区别） !=
-~（匹配） !~（不匹配）</p>
+~（匹配） !~（不匹配）
 
-<p>布尔操作符：
+布尔操作符：
 &amp;&amp; 逻辑与，优先级高于||
 || 逻辑或
-！ 逻辑非</p>
+！ 逻辑非</pre></td></tr></table>
+</div>
+</div>
+<p>awk内置的语句：</p>
 
-<p>awk内置的语句：
-和c语言相似</p>
+<p>和c语言相似</p>
 
-<p>条件语句：
-if (expression)
+<p>条件语句：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">if (expression)
     action1
 [else if (expression2) {
     action2
     action3
-    &hellip;
+    ...
 }]  多个动作需要用{}包围
-[else if () {action1;action2;&hellip;}]  多个动作写在一行需要用；隔开。
-[else if () action ; else action]  在同一行用；结束一个语句</p>
-
-<p>也可以用条件运算符代替条件语句：
-expression ? Action1 : action2</p>
-
-<p>循环语句：
-while (condition)
+[else if () {action1;action2;...}]  多个动作写在一行需要用；隔开。
+[else if () action ; else action]  在同一行用；结束一个语句</pre></td></tr></table>
+</div>
+</div>
+<p>也可以用条件运算符代替条件语句：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">expression ? Action1 : action2</pre></td></tr></table>
+</div>
+</div>
+<p>循环语句：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">while (condition)
     action
-或
+
 while (condition) {
     action1
     action2
     …
 }
-或
-while (condition) { action1 ; action2 ; … }</p>
 
-<p>do
+while (condition) { action1 ; action2 ; … }
+
+do
     action
 while (condition)
-或
+
 do {
     action1
     action2
     …
 } while (condition)
-或
-do { action1;action2;&hellip;} while (condition)</p>
 
-<p>for (set_counter; test_counter; increment_counter)
-    action</p>
+do { action1;action2;...} while (condition)
 
-<p>break:退出循环</p>
+for (set_counter; test_counter; increment_counter)
+    action</pre></td></tr></table>
+</div>
+</div>
+<p>break:</p>
 
-<p>continue：终止本次循环，进入下一次循环</p>
+<p>退出循环</p>
 
-<p>数组：
-array[subscript] = value
-awk中的数组直接给数组元素赋值，不用指定数组大小。通过下标访问。</p>
+<p>continue：</p>
 
-<p>关联数组：
-awk中的数组是关联数组，也就是可以用数值和字符作为下标来访问。</p>
+<p>终止本次循环，进入下一次循环</p>
 
-<p>in操作符用来测试variable是否是数组array的下标，如果是条件为真。
-for (variable in array)
+<p>数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">array[subscript] = value
+awk中的数组直接给数组元素赋值，不用指定数组大小。通过下标访问。</pre></td></tr></table>
+</div>
+</div>
+<p>关联数组：</p>
+
+<p>awk中的数组是关联数组，也就是可以用数值和字符作为下标来访问。</p>
+
+<p>in操作符用来测试variable是否是数组array的下标，如果是条件为真。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for (variable in array)
     print variable: array[variable]
 if (variable in array)
-    print variable: array[variable]</p>
-
-<p>删除数组元素：
-delete array[subscript]</p>
-
-<p>系统变量的数组：
-ARGV：
+    print variable: array[variable]</pre></td></tr></table>
+</div>
+</div>
+<p>删除数组元素：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">delete array[subscript]</pre></td></tr></table>
+</div>
+</div>
+<p>系统变量的数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ARGV：
 命令行参数数组，下标从0开始，不包括awk脚本本身和任何调用awk脚本指定的选项。
-akw -f awk.sh …    #不包括-f和awk.sh</p>
+akw -f awk.sh …    #不包括-f和awk.sh</pre></td></tr></table>
+</div>
+</div>
+<p>ENVIRON：</p>
 
-<p>ENVIRON：
-环境变量数组，下标是环境变量的名字，元素是环境变量的值。</p>
+<p>环境变量数组，下标是环境变量的名字，元素是环境变量的值。</p>
 
-<p>awk内置的函数：
-函数分为算数函数和字符串函数。</p>
+<p>awk内置的函数：</p>
 
-<p>算数函数有9个：
-sin(x)：返回x的正弦
+<p>函数分为算数函数和字符串函数。</p>
+
+<p>算数函数有9个：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sin(x)：返回x的正弦
 cos(x)：返回x的余弦
 atan2(y,x)：返回y/x的反正切
 exp(x)：返回e的x次幂
@@ -352,57 +562,128 @@ log(x)：返回以e为底的x的自然对数
 sqrt(x)：返回x的平方根
 int(x)：返回x的整数部分
 rand()：返回伪随机数r，0=&lt; r &lt;1
-srand(x)：建立rand（）的新的种子数</p>
-
-<p>字符串函数：
-gsub(r,s,t) 在字符串t中用s替换和正则表达式r匹配的所有字符串，返回替换的个数。
+srand(x)：建立rand（）的新的种子数</pre></td></tr></table>
+</div>
+</div>
+<p>字符串函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">gsub(r,s,t) 在字符串t中用s替换和正则表达式r匹配的所有字符串，返回替换的个数。
 gsub(r,s) 相当于t=$0
 sub(r,s,t)用s替换正则表达式在t中的首次匹配。成功返回1，失败返回0.
-sub(r,s)相当于t=$0</p>
+sub(r,s)相当于t=$0
 
-<p>substr(s,p)返回s中从位置p开始的子串
-substr(s,p,n)返回s中从位置p开始最大长度为n的子串。</p>
+substr(s,p)返回s中从位置p开始的子串
+substr(s,p,n)返回s中从位置p开始最大长度为n的子串。
 
-<p>index(s,t)返回子串t在s中的位置，如果没有指定s或没有匹配项返回0.也就是返回t中的首字母在s中是第几个字符，如果首字母重复出现返回第一个的位置。</p>
+index(s,t)返回子串t在s中的位置，如果没有指定s或没有匹配项返回0.也就是返回t中的首字母在s中是第几个字符，如果首字母重复出现返回第一个的位置。
 
-<p>length(s)   返回字符串s长度，没有指定s返回$0的长度，\n \t \r 空格都算一个字节。</p>
+length(s)   返回字符串s长度，没有指定s返回$0的长度，\n \t \r 空格都算一个字节。
 
-<p>match(s,r)如果正则表达式r在s中出现，返回出现的起始位置，没有匹配返回0.</p>
+match(s,r)如果正则表达式r在s中出现，返回出现的起始位置，没有匹配返回0.
 
-<p>split(string, array, separator)
-将字符串string分解到数组array中，数组下标从1到n，string根据指定的分隔符来分解，如果没有指定分隔符，默认为FS。返回数组中元素个数。</p>
+split(string, array, separator)
+将字符串string分解到数组array中，数组下标从1到n，string根据指定的分隔符来分解，如果没有指定分隔符，默认为FS。返回数组中元素个数。
 
-<p>sprintf(“format”, expr)和printf一样。</p>
+sprintf(“format”, expr)和printf一样。
 
-<p>tolower(s)将s中的所有大写字母转换成小写并返回新的字符串
-toupper(s)将s中的左右小写字母转换成大写并返回新的字符串</p>
-
-<p>其它函数：
-getline命令（其实是个函数）：
+tolower(s)将s中的所有大写字母转换成小写并返回新的字符串
+toupper(s)将s中的左右小写字母转换成大写并返回新的字符串</pre></td></tr></table>
+</div>
+</div>
+<p>其它函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">getline命令（其实是个函数）：
 获取下一条记录给$0,成功返回1，到达EOF返回0，失败返回-1.
 getline可以从文件中读取：getline &lt; “filename”,每次读一行。
 getline从标准输入读取：getline &lt; “-”,每次从stdin读取一行。
 将输入赋给一个变量：getline var_name.
-从管道读取：”command”|getline；“command”|getline var_name;把一个命令结果输出给getline.</p>
+从管道读取：”command”|getline；“command”|getline var_name;把一个命令结果输出给getline.
 
-<p>close()：关闭打开的文件和管道</p>
+close()：关闭打开的文件和管道
 
-<p>“command” | &hellip;
-close(“command”)关闭输入管道</p>
+“command” | ...
+close(“command”)关闭输入管道
 
-<p>&hellip;| “command“ &gt; filename
-close(“command &gt; filename”)关闭输出管道</p>
+...| “command“ &gt; filename
+close(“command &gt; filename”)关闭输出管道
 
-<p>system()：执行一个命令。
-system(“command options”),返回命令的退出状态。</p>
-
-<p>可以定义自己的函数：
-function yourfunctionname(parameter-list) {
+system()：执行一个命令。
+system(“command options”),返回命令的退出状态。</pre></td></tr></table>
+</div>
+</div>
+<p>可以定义自己的函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function yourfunctionname(parameter-list) {
     statements
-}
-可以使用系统定义的变量、语句、函数来定义自己的函数。
+}</pre></td></tr></table>
+</div>
+</div>
+<p>可以使用系统定义的变量、语句、函数来定义自己的函数。
 使用自己定义的函数可以将函数写成一个单独脚本，使用-f选项来指定多个脚本进行调用。</p>
 
+<hr />
+
+<h1 id="常用命令">常用命令</h1>
+
+<p>删除字符串前后空格:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">echo &#34;string&#34; |　awk &#34;$1=$1&#34;</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
