@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-04-15T09:41:39&#43;08:00" />
 <meta itemprop="dateModified" content="2016-04-15T09:41:39&#43;08:00" />
-<meta itemprop="wordCount" content="1465">
+<meta itemprop="wordCount" content="1496">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 1465 words </span>
+          <span class="more-meta"> 1496 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -157,6 +157,7 @@
 </ul></li>
 <li><a href="#ubuntu-debian安装后的基本配置">Ubuntu/Debian安装后的基本配置</a>
 <ul>
+<li><a href="#apt-mirror">apt mirror</a></li>
 <li><a href="#中文输入法">中文输入法</a></li>
 <li><a href="#dconf修改配置">dconf修改配置</a></li>
 <li><a href="#挂载u盘失败">挂载U盘失败</a></li>
@@ -289,6 +290,29 @@ $ figlet &lt;text&gt;</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">sudo apt-get install build-essential make libssl-dev</pre></td></tr></table>
+</div>
+</div>
+<h2 id="apt-mirror">apt mirror</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">vim /etc/apt/sources.list
+# deb http://ip:port/path   ubuntu16/
+# deb [trusted=yes] https://&lt;user&gt;:&lt;pw&gt;@ip:port/path   ubuntu16/
+deb [trusted=yes] https://user:pw@mirror.com/mirror ubuntu16/
+
+vim /etc/apt/apt.conf
+Acquire::https::mirror.com::Verify-Peer &#34;false&#34;;
+Acqhire::https::mirror.com::Verify-Host &#34;false&#34;;</pre></td></tr></table>
 </div>
 </div>
 <h2 id="中文输入法">中文输入法</h2>

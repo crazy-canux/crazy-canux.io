@@ -17,7 +17,7 @@
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/sec_ca/</guid>
-      <description>CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&amp;#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.com.key -out server.csr -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor.com&amp;#34; $ openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out harbor.com.crt</description>
+      <description>CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&amp;#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout &amp;lt;domain&amp;gt;.key -out &amp;lt;domain&amp;gt;.csr -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=&amp;lt;domain&amp;gt;&amp;#34; $ openssl x509 -req -days 365 -in &amp;lt;domain&amp;gt;.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out &amp;lt;domain&amp;gt;.crt</description>
     </item>
     
   </channel>

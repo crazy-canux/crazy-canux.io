@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
-<meta itemprop="wordCount" content="713">
+<meta itemprop="wordCount" content="787">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/golang/"> Golang </a>
             </div>
-          <span class="more-meta"> 713 words </span>
+          <span class="more-meta"> 787 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -153,6 +153,7 @@
 <li><a href="#安装第三方包">安装第三方包</a>
 <ul>
 <li><a href="#dep">dep</a></li>
+<li><a href="#module">module</a></li>
 </ul></li>
 <li><a href="#项目结构">项目结构</a></li>
 <li><a href="#ci-cd">CI/CD</a></li>
@@ -433,6 +434,27 @@ $ dep prune
 
 $ dep ensure
 $ dep ensure -update</pre></td></tr></table>
+</div>
+</div>
+<h2 id="module">module</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">export GOPROXY=https://proxy.golang.org
+export GOPROXY=https://goproxy.cn
+export GOPROXY=https://mirrors.aliyun.com/goproxy/
+
+go get -u (without any arguments) now only upgrades the direct and indirect dependencies of your current package, and no longer examines your entire module.
+go get -u ./... from your module root upgrades all the direct and indirect dependencies of your module, and now excludes test dependencies.
+go get -u -t ./... is similar, but also upgrades test dependencies.</pre></td></tr></table>
 </div>
 </div>
 <hr />
