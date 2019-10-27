@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-09-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="93">
+<meta itemprop="wordCount" content="235">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 93 words </span>
+          <span class="more-meta"> 235 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -149,7 +149,8 @@
 <ul>
 <li><a href="#helm">Helm</a></li>
 <li><a href="#安装">安装</a></li>
-<li><a href="#应用">应用</a></li>
+<li><a href="#命令">命令</a></li>
+<li><a href="#chart">chart</a></li>
 </ul>
 </nav>
   </div>
@@ -181,8 +182,79 @@
 
 <h1 id="安装">安装</h1>
 
-<h1 id="应用">应用</h1>
+<p>helm和kubectl一样，访问指定配置的k8s集群。</p>
 
+<p>本地二进制安装helm:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mv linux-amd64/helm /usr/local/bin/helm &amp;&amp; chmod +x /usr/local/bin/helm</pre></td></tr></table>
+</div>
+</div>
+<p>安装tiller到k8s上:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl --kubeconfig=kube_configxxx.yml -n kube-system create serviceaccount tiller
+kubectl --kubeconfig=kube_configxxx.yml create clusterrolebinding tiller \
+--clusterrole cluster-admin --serviceaccount=kube-system:tiller
+
+helm_version=`helm version |grep Client | awk -F&#34;&#34;\&#34; &#39;{print $2}&#39;`
+helm init --kubeconfig=$kubeconfig \
+--service-account tiller --skip-refresh \
+--tiller-image registry.cn-shanghai.aliyuncs.com/rancher/tiller:$helm_version</pre></td></tr></table>
+</div>
+</div>
+<h1 id="命令">命令</h1>
+
+<p>查看release:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">helm list</pre></td></tr></table>
+</div>
+</div>
+<p>删除release:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">helm delete </pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="chart">chart</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Chart.yaml
+values.yaml
+requirements.yaml
+templates/deployment.yaml
+charts/</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
