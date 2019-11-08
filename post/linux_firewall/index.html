@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-03-31T21:48:59&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-31T21:48:59&#43;00:00" />
-<meta itemprop="wordCount" content="292">
+<meta itemprop="wordCount" content="304">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 292 words </span>
+          <span class="more-meta"> 304 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -150,7 +150,12 @@
 <li><a href="#firewall">Firewall</a></li>
 <li><a href="#selinux">SELinux</a></li>
 <li><a href="#netfilter">Netfilter</a></li>
-<li><a href="#iptables">iptables</a></li>
+<li><a href="#iptables">iptables</a>
+<ul>
+<li><a href="#filter">filter</a></li>
+<li><a href="#nat">nat</a></li>
+<li><a href="#iptables命令">iptables命令</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -202,7 +207,9 @@ nat
 mangle</pre></td></tr></table>
 </div>
 </div>
-<p>chain;</p>
+<h2 id="filter">filter</h2>
+
+<p>chain:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -215,7 +222,26 @@ FORWARD
 OUTPUT</pre></td></tr></table>
 </div>
 </div>
-<p>iptables命令:</p>
+<h2 id="nat">nat</h2>
+
+<p>chain:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">INPUT
+OUTPUT
+FORWARD
+PREROUTING
+POSTROUTING</pre></td></tr></table>
+</div>
+</div>
+<h2 id="iptables命令">iptables命令</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1

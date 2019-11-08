@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="880">
+<meta itemprop="wordCount" content="909">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/network/"> Network </a>
             </div>
-          <span class="more-meta"> 880 words </span>
+          <span class="more-meta"> 909 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -162,6 +162,7 @@
 <li><a href="#iftop">iftop</a></li>
 <li><a href="#tcpdump">tcpdump</a></li>
 <li><a href="#wget">wget</a></li>
+<li><a href="#curl">curl</a></li>
 </ul>
 </nav>
   </div>
@@ -434,6 +435,9 @@ tcpdump -i &lt;interface&gt; host &lt;ip&gt;</pre></td></tr></table>
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">wget [option] [URL]
@@ -462,17 +466,26 @@ tcpdump -i &lt;interface&gt; host &lt;ip&gt;</pre></td></tr></table>
 # 同步目录
 wget -Nc -r -np -nH --cut-dirs=3 -R &#34;index.*, *.js, *.css, *.html, *.jpg, *.png, *.gif&#34; -P /path/to/source/ http://host/path/to/dest/
 
+# ssl + basic auth
+wget --no-check-certificate --user &lt;user&gt; --password &lt;pw&gt; -nv -N -P &lt;dest-folder&gt; &lt;src-url&gt;
+
 $ wget -q -N -P /folder url
 $ wget -q -c -O /path/to/file.ext url</pre></td></tr></table>
 </div>
 </div>
-<p>curl:</p>
+<h1 id="curl">curl</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">curl</pre></td></tr></table>
+<pre class="chroma">curl
+-k/--insecure    ignore ssl check.
+-H/--header
+-u/--user &lt;user:password&gt;</pre></td></tr></table>
 </div>
 </div>
     </div>

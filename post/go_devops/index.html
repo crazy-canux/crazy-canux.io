@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
-<meta itemprop="wordCount" content="787">
+<meta itemprop="wordCount" content="923">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/golang/"> Golang </a>
             </div>
-          <span class="more-meta"> 787 words </span>
+          <span class="more-meta"> 923 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -152,7 +152,7 @@
 <li><a href="#go命令">go命令</a></li>
 <li><a href="#安装第三方包">安装第三方包</a>
 <ul>
-<li><a href="#dep">dep</a></li>
+<li><a href="#dep-deprecated">dep(deprecated)</a></li>
 <li><a href="#module">module</a></li>
 </ul></li>
 <li><a href="#项目结构">项目结构</a></li>
@@ -293,12 +293,18 @@ bin    编译后生成的可执行文件</pre></td></tr></table>
 <p>下载并安装包和依赖, 也就是安装第三方的库．</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ go get [...] [packages]
@@ -306,7 +312,13 @@ bin    编译后生成的可执行文件</pre></td></tr></table>
 &gt; go get安装第三方包如果出现依赖无法安装，可以通过github下载．
 $ cd golang.org/x
 $ git clone https://github.com/golang/crypto.git crypto
-$ go install golang.org/x/crypto/ssh</pre></td></tr></table>
+$ go install golang.org/x/crypto/ssh
+
+go get -u (without any arguments) now only upgrades the direct and indirect dependencies of your current package, and no longer examines your entire module.
+
+go get -u ./... from your module root upgrades all the direct and indirect dependencies of your module, and now excludes test dependencies.
+
+go get -u -t ./... is similar, but also upgrades test dependencies.</pre></td></tr></table>
 </div>
 </div>
 <p>build</p>
@@ -386,6 +398,32 @@ $ go install golang.org/x/crypto/ssh</pre></td></tr></table>
 <pre class="chroma">$ go doc [package/symbol]</pre></td></tr></table>
 </div>
 </div>
+<p>mod</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go mod init &lt;name&gt;
+go mod tidy
+go mod download
+go mod verify</pre></td></tr></table>
+</div>
+</div>
+<p>env</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 通过env 设置golang的变量，取代系统环境变量
+go env</pre></td></tr></table>
+</div>
+</div>
 <hr />
 
 <h1 id="安装第三方包">安装第三方包</h1>
@@ -394,7 +432,7 @@ $ go install golang.org/x/crypto/ssh</pre></td></tr></table>
 
 <p>godep和golide都会被官方的dep取代．</p>
 
-<h2 id="dep">dep</h2>
+<h2 id="dep-deprecated">dep(deprecated)</h2>
 
 <p><a href="https://github.com/golang/dep">https://github.com/golang/dep</a></p>
 
@@ -437,6 +475,12 @@ $ dep ensure -update</pre></td></tr></table>
 </div>
 </div>
 <h2 id="module">module</h2>
+
+<p>vgo已经集成到go1.11</p>
+
+<p>通过go mod init初始化两个文件.</p>
+
+<p>go.mod:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -444,17 +488,58 @@ $ dep ensure -update</pre></td></tr></table>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">export GOPROXY=https://proxy.golang.org
-export GOPROXY=https://goproxy.cn
-export GOPROXY=https://mirrors.aliyun.com/goproxy/
+<pre class="chroma">module
+go
+require
+exclude
+replace</pre></td></tr></table>
+</div>
+</div>
+<p>go.sum:</p>
 
-go get -u (without any arguments) now only upgrades the direct and indirect dependencies of your current package, and no longer examines your entire module.
-go get -u ./... from your module root upgrades all the direct and indirect dependencies of your module, and now excludes test dependencies.
-go get -u -t ./... is similar, but also upgrades test dependencies.</pre></td></tr></table>
+<p>设置相关环境变量:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">GO111MODULE:
+// auto/on/off
+go env -w GO111MODULE=on
+
+
+GOPROXY:
+go env -w GOPROXY=https://goproxy.cn,direct
+https://proxy.golang.org //默认值
+https://goproxy.cn
+https://mirrors.aliyun.com/goproxy/
+
+GOSUMDB:
+
+GOPRIVATE
+
+GONOPROXY
+
+GONOSUMDB</pre></td></tr></table>
 </div>
 </div>
 <hr />
