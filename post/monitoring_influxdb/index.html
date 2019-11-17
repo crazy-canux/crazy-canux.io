@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-18T19:23:25&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-18T19:23:25&#43;00:00" />
-<meta itemprop="wordCount" content="1689">
+<meta itemprop="wordCount" content="1739">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 1689 words </span>
+          <span class="more-meta"> 1739 words </span>
           <span class="more-meta"> 4 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -166,6 +166,7 @@
 </ul></li>
 <li><a href="#rp">RP</a></li>
 <li><a href="#cq">CQ</a></li>
+<li><a href="#best-practice">Best Practice</a></li>
 </ul>
 </nav>
   </div>
@@ -418,9 +419,11 @@ params = {
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">select &#34;&lt;field_key/tag_key&gt;&#34; from &#34;&lt;measurement&gt;&#34;</pre></td></tr></table>
+<pre class="chroma">select &#34;&lt;field_key/tag_key&gt;&#34; from &#34;&lt;measurement&gt;&#34;
+select &#34;&lt;field_key/tag_key&gt;&#34; as &#34;alias&#34; from &#34;&lt;measurement&gt;&#34;</pre></td></tr></table>
 </div>
 </div>
 <p>The INTO clause writes query results to a user-specified measurement.</p>
@@ -701,6 +704,27 @@ DROP CONTINUOUS QUERY &lt;cq_name&gt; ON &lt;database_name&gt;</pre></td></tr></
 </div>
 <hr />
 
+<h1 id="best-practice">Best Practice</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">select 1-(mean(&#34;part&#34;) / mean(&#34;all&#34;)) as &#34;rate&#34;
+from (
+    select sum(&#34;value&#34;) as &#34;smash&#34; from &#34;jobs_type&#34; where &#34;type&#34;=&#39;SMASH&#39; and $timeFilter
+),(
+    select sum(&#34;value&#34;) as &#34;all&#34; from &#34;jobs_type&#34; where &#34;type&#34;=&#39;reversinglab_cloud&#39; and $timeFilter
+)
+group by time($__interval) fill(none)</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">

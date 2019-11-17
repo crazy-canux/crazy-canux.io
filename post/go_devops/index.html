@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
-<meta itemprop="wordCount" content="923">
+<meta itemprop="wordCount" content="998">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/golang/"> Golang </a>
             </div>
-          <span class="more-meta"> 923 words </span>
+          <span class="more-meta"> 998 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -418,10 +418,27 @@ go mod verify</pre></td></tr></table>
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">// 通过env 设置golang的变量，取代系统环境变量
-go env</pre></td></tr></table>
+go env
+go env -w GOPATH=&#34;$HOME/Src/go&#34;
+go env -w GOBIN=&#34;/usr/local/go/bin&#34;
+go env -w GOROOT=&#34;/usr/local/go&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>clean</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go clean -cache
+go clean -modcache</pre></td></tr></table>
 </div>
 </div>
 <hr />
@@ -488,17 +505,32 @@ $ dep ensure -update</pre></td></tr></table>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">module
 go
 require
 exclude
-replace</pre></td></tr></table>
-</div>
-</div>
-<p>go.sum:</p>
+replace
 
+// 使用本地module,或使用指定repo里面的module
+replace github.com/crazy-canux/go-devops =&gt; /path/to/local/github.com/crazy-canux/go-devops</pre></td></tr></table>
+</div>
+</div>
+<p>使用本地module</p>
+
+<p>go.sum:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go env -w GOSUMDB=off</pre></td></tr></table>
+</div>
+</div>
 <p>设置相关环境变量:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -519,13 +551,11 @@ replace</pre></td></tr></table>
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span><span class="lnt">18
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">GO111MODULE:
 // auto/on/off
 go env -w GO111MODULE=on
-
 
 GOPROXY:
 go env -w GOPROXY=https://goproxy.cn,direct
