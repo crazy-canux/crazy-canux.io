@@ -26,7 +26,7 @@
       <pubDate>Wed, 05 Jun 2019 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/cri/</guid>
-      <description>OCI Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，致力于container runti</description>
+      <description>CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt</description>
     </item>
     
     <item>
@@ -296,13 +296,7 @@
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/container/</guid>
-      <description> Container OCI: Open Container Initiative.
-CRI: Container Runtime Interface.
-CNI: Container Network Interface.
-CSI: Container Storage Interface.
-nsenter nsenter - run program with namespaces of other processes
-1 2 3 4 5 6 7 8  $ nsenter [options] [program [arguments]] $ nsenter -a --all $ nsenter -n/--net &amp;lt;namespace&amp;gt; &amp;lt;command&amp;gt; $ nsenter --net=/var/run/docker/netns/lb_atz8r3bly ifconfig $ nsenter -m/--mount &amp;lt;namespace&amp;gt; &amp;lt;command&amp;gt;   misc get host ip(docker/docker_gwbridge) from container:
-1  ip route | awk &amp;#39;/default/ { print $3 }&amp;#39;  </description>
+      <description>Container OCI: Open Container Initiative. CRI: Container Runtime Interface. CNI: Container Network Interface. CSI: Container Storage Interface. OCI Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，</description>
     </item>
     
     <item>
@@ -311,7 +305,7 @@ nsenter nsenter - run program with namespaces of other processes
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/docker/</guid>
-      <description>Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． Docker包括三个基本概念</description>
+      <description>Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&amp;gt; dockerd -&amp;gt; containerd -&amp;gt; docker-shim -&amp;gt; runc Docke</description>
     </item>
     
     <item>

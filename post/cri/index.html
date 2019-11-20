@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="OCI Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，致力于container runti" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="CRI" />
-<meta property="og:description" content="OCI Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，致力于container runti" />
+<meta property="og:description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/cri/" />
 <meta property="article:published_time" content="2019-06-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2019-06-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="CRI">
-<meta itemprop="description" content="OCI Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，致力于container runti">
+<meta itemprop="description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt">
 
 
 <meta itemprop="datePublished" content="2019-06-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2019-06-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="101">
+<meta itemprop="wordCount" content="67">
 
 
 
 <meta itemprop="keywords" content="runtime," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CRI"/>
-<meta name="twitter:description" content="OCI Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，致力于container runti"/>
+<meta name="twitter:description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 101 words </span>
+          <span class="more-meta"> 67 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,12 +147,12 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#oci">OCI</a></li>
 <li><a href="#cri">CRI</a>
 <ul>
 <li><a href="#containerd">containerd</a></li>
 <li><a href="#cri-o">CRI-O</a></li>
 <li><a href="#kata">kata</a></li>
+<li><a href="#rkt">rkt</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -166,25 +166,35 @@
     <div class="post-content">
       
 
-<h1 id="oci">OCI</h1>
-
-<p>Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，致力于container runtime的标准的制定和runc的开发等工作。</p>
-
 <h1 id="cri">CRI</h1>
 
 <p>CRI: Container Runtime Intarface</p>
 
+<p>定义了k8s和container runtime进行交互的接口.</p>
+
+<p>是k8s与container交互的标准.</p>
+
 <h2 id="containerd">containerd</h2>
+
+<p>docker.</p>
 
 <p><a href="https://github.com/containerd/containerd">https://github.com/containerd/containerd</a></p>
 
 <h2 id="cri-o">CRI-O</h2>
+
+<p>redhat.</p>
 
 <p><a href="https://github.com/cri-o/cri-o">https://github.com/cri-o/cri-o</a></p>
 
 <h2 id="kata">kata</h2>
 
 <p><a href="https://github.com/kata-containers/runtime">https://github.com/kata-containers/runtime</a></p>
+
+<h2 id="rkt">rkt</h2>
+
+<p>redhat(coreos)</p>
+
+<p><a href="https://github.com/rkt/rkt">https://github.com/rkt/rkt</a></p>
 
     </div>
 
