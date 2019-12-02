@@ -6,10 +6,21 @@
     <description>Recent content on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Sep 2019 22:02:31 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 21:43:24 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenShift</title>
+      <link>http://canuxcheng.com/post/openshift/</link>
+      <pubDate>Mon, 02 Dec 2019 21:43:24 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/openshift/</guid>
+      <description>OpenShift readhat kubernetes.
+Deploy pre-install:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  &amp;gt; check &amp;#34;sysctl net.ipv4.ip_forward&amp;#34; is set to 1 /etc/containers/registries.conf [registries.insecure] registries = [&amp;#39;172.30.0.0/16&amp;#39;] /etc/docker/daemon.json { &amp;#34;insecure-registries&amp;#34;: [ &amp;#34;172.30.0.0/16&amp;#34; ] } $ sudo systemctl daemon-reload $ sudo systemctl restart docker docker network inspect -f &amp;#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&amp;#34; bridge # firewall-cmd --permanent --new-zone dockerc # firewall-cmd --permanent --zone dockerc --add-source 172.</description>
+    </item>
     
     <item>
       <title>Helm</title>

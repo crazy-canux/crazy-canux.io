@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="341">
+<meta itemprop="wordCount" content="406">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 341 words </span>
+          <span class="more-meta"> 406 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -149,6 +149,7 @@
 <ul>
 <li><a href="#harbor">Harbor</a></li>
 <li><a href="#docker使用harbor">docker使用harbor</a></li>
+<li><a href="#修改存储路径">修改存储路径</a></li>
 </ul>
 </nav>
   </div>
@@ -310,9 +311,47 @@ $ docker pull harbor.domain.com:port/&lt;project&gt;/IMAGE[:TAG]</pre></td></tr>
 </div>
 <p>k8s使用harbor:</p>
 
-<p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/</a>
-​</p>
+<p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/</a></p>
 
+<h1 id="修改存储路径">修改存储路径</h1>
+
+<p>默认路径是/data/registry</p>
+
+<p>停服务:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ docker-compose down -v</pre></td></tr></table>
+</div>
+</div>
+<p>修改路径:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vim /data/harbor/harbor.cfg
+secretkey_path = /new/path
+
+$ vim /data/harbor/docker-compose.yml
+/data =&gt; /new/path</pre></td></tr></table>
+</div>
+</div>
+<p>启动服务:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ docker-compose up -d</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
