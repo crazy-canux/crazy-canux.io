@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="406">
+<meta itemprop="wordCount" content="414">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 406 words </span>
+          <span class="more-meta"> 414 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -334,12 +334,14 @@ $ docker pull harbor.domain.com:port/&lt;project&gt;/IMAGE[:TAG]</pre></td></tr>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ vim /data/harbor/harbor.cfg
-secretkey_path = /new/path
+<pre class="chroma">$ mv /data/* /new/path
+$ vim /new/path/harbor/harbor.yml
+data_volume: /new/path
 
-$ vim /data/harbor/docker-compose.yml
+$ vim /new/path/harbor/docker-compose.yml
 /data =&gt; /new/path</pre></td></tr></table>
 </div>
 </div>
@@ -347,9 +349,11 @@ $ vim /data/harbor/docker-compose.yml
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ docker-compose up -d</pre></td></tr></table>
+<pre class="chroma">$ cd /new/path
+$ docker-compose up -d</pre></td></tr></table>
 </div>
 </div>
     </div>
