@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>alpine on Morgoth</title>
+    <link>http://canuxcheng.com/tags/alpine/</link>
+    <description>Recent content in alpine on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 03 Dec 2019 21:50:47 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/alpine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alpine</title>
+      <link>http://canuxcheng.com/post/alpine/</link>
+      <pubDate>Tue, 03 Dec 2019 21:50:47 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/alpine/</guid>
+      <description> alpine https://www.alpinelinux.org/
+issue command not found:
+1 2  # mkdir /lib64 # ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2  </description>
+    </item>
+    
+  </channel>
+</rss>

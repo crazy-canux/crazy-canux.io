@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://canuxcheng.com/post/rancher/</loc>
+    <lastmod>2019-12-03T21:54:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/alpine/</loc>
+    <lastmod>2019-12-03T21:50:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/openshift/</loc>
     <lastmod>2019-12-02T21:43:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1564,7 +1578,7 @@
   
   <url>
     <loc>http://canuxcheng.com/categories/container/</loc>
-    <lastmod>2019-12-02T21:43:24+08:00</lastmod>
+    <lastmod>2019-12-03T21:54:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1619,7 +1633,7 @@
   
   <url>
     <loc>http://canuxcheng.com/</loc>
-    <lastmod>2019-12-02T21:43:24+08:00</lastmod>
+    <lastmod>2019-12-03T21:54:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1633,7 +1647,7 @@
   
   <url>
     <loc>http://canuxcheng.com/post/</loc>
-    <lastmod>2019-12-02T21:43:24+08:00</lastmod>
+    <lastmod>2019-12-03T21:54:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1704,6 +1718,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/agile/</loc>
     <lastmod>2016-04-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/alpine/</loc>
+    <lastmod>2019-12-03T21:50:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2355,6 +2376,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/rabbitmq/</loc>
     <lastmod>2017-09-25T09:41:39+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/rancher/</loc>
+    <lastmod>2019-12-03T21:54:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

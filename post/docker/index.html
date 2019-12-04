@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2691">
+<meta itemprop="wordCount" content="2762">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2691 words </span>
+          <span class="more-meta"> 2762 words </span>
           <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -159,6 +159,7 @@
 <ul>
 <li><a href="#docker-machine命令">docker-machine命令</a></li>
 </ul></li>
+<li><a href="#oom">OOM</a></li>
 </ul>
 </nav>
   </div>
@@ -469,6 +470,11 @@ docker tag &lt;old&gt; &lt;new&gt;</pre></td></tr></table>
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 创建一个新的container并运行命令
@@ -480,14 +486,19 @@ docker run -P IMAGE // 默认将容器的8０端口映射到主机的随机端�
 docker run -p [host:port]:[containerPort] // 指定映射端口
 --add-host # 相当于修改容器的/etc/hosts,但是容器重启后不会消失
 -h/--hostname # 修改容器的/etc/hostname
--c, --cpu-shares int             CPU shares (relative weight)
 --cpus decimal                   Number of CPUs
+-c, --cpu-shares int             CPU shares (relative weight)
 --cpuset-cpus string             CPUs in which to allow execution (0-3, 0,1)
 --cpuset-mems string             MEMs in which to allow execution (0-3, 0,1)
+--cpu-period
+--cpu-quota
 -m, --memory bytes               Memory limit
 --memory-reservation bytes       Memory soft limit
 --memory-swap bytes              Swap limit equal to memory plus swap: &#39;-1&#39; to enable unlimited swap
 --memory-swappiness int          Tune container memory swappiness (0 to 100) (default -1)
+--oom-kill-disable
+--oom-score-adj
+--kernel-memory
 
 # 在运行的container中执行命令
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
@@ -1073,6 +1084,26 @@ node1
 docker-machine ls</pre></td></tr></table>
 </div>
 </div>
+<hr />
+
+<h1 id="oom">OOM</h1>
+
+<p><a href="https://docs.docker.com/config/containers/resource_constraints/">https://docs.docker.com/config/containers/resource_constraints/</a></p>
+
+<p><a href="https://github.com/docker/compose/issues/4513">https://github.com/docker/compose/issues/4513</a></p>
+
+<p>swarm mode:</p>
+
+<p>swarm模式使用compose format 3来限制资源.</p>
+
+<p><a href="https://docs.docker.com/compose/compose-file/#resources">https://docs.docker.com/compose/compose-file/#resources</a></p>
+
+<p>non swarm mode:</p>
+
+<p>非swarm模式可以用compose format 2 来做资源限制.</p>
+
+<p><a href="https://docs.docker.com/compose/compose-file/compose-file-v2/#cpu-and-other-resources">https://docs.docker.com/compose/compose-file/compose-file-v2/#cpu-and-other-resources</a></p>
+
     </div>
 
     <div class="post-copyright">

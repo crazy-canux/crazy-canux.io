@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>OpenShift - Morgoth</title>
+  <title>Rancher - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,9 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="OpenShift readhat kubernetes.
-Deploy pre-install:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  &amp;gt; check &amp;#34;sysctl net.ipv4.ip_forward&amp;#34; is set to 1 /etc/containers/registries.conf [registries.insecure] registries = [&amp;#39;172.30.0.0/16&amp;#39;] /etc/docker/daemon.json { &amp;#34;insecure-registries&amp;#34;: [ &amp;#34;172.30.0.0/16&amp;#34; ] } $ sudo systemctl daemon-reload $ sudo systemctl restart docker docker network inspect -f &amp;#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&amp;#34; bridge # firewall-cmd --permanent --new-zone dockerc # firewall-cmd --permanent --zone dockerc --add-source 172." /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content=" Rancher Deploy " /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -28,7 +26,7 @@ Deploy pre-install:
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/openshift/" />
+<link rel="canonical" href="http://canuxcheng.com/post/rancher/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,33 +38,27 @@ Deploy pre-install:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="OpenShift" />
-<meta property="og:description" content="OpenShift readhat kubernetes.
-Deploy pre-install:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  &gt; check &#34;sysctl net.ipv4.ip_forward&#34; is set to 1 /etc/containers/registries.conf [registries.insecure] registries = [&#39;172.30.0.0/16&#39;] /etc/docker/daemon.json { &#34;insecure-registries&#34;: [ &#34;172.30.0.0/16&#34; ] } $ sudo systemctl daemon-reload $ sudo systemctl restart docker docker network inspect -f &#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&#34; bridge # firewall-cmd --permanent --new-zone dockerc # firewall-cmd --permanent --zone dockerc --add-source 172." />
+<meta property="og:title" content="Rancher" />
+<meta property="og:description" content=" Rancher Deploy " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/openshift/" />
-<meta property="article:published_time" content="2019-12-02T21:43:24&#43;08:00"/>
-<meta property="article:modified_time" content="2019-12-02T21:43:24&#43;08:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/rancher/" />
+<meta property="article:published_time" content="2019-12-03T21:54:05&#43;08:00"/>
+<meta property="article:modified_time" content="2019-12-03T21:54:05&#43;08:00"/>
 
-<meta itemprop="name" content="OpenShift">
-<meta itemprop="description" content="OpenShift readhat kubernetes.
-Deploy pre-install:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  &gt; check &#34;sysctl net.ipv4.ip_forward&#34; is set to 1 /etc/containers/registries.conf [registries.insecure] registries = [&#39;172.30.0.0/16&#39;] /etc/docker/daemon.json { &#34;insecure-registries&#34;: [ &#34;172.30.0.0/16&#34; ] } $ sudo systemctl daemon-reload $ sudo systemctl restart docker docker network inspect -f &#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&#34; bridge # firewall-cmd --permanent --new-zone dockerc # firewall-cmd --permanent --zone dockerc --add-source 172.">
+<meta itemprop="name" content="Rancher">
+<meta itemprop="description" content=" Rancher Deploy ">
 
 
-<meta itemprop="datePublished" content="2019-12-02T21:43:24&#43;08:00" />
-<meta itemprop="dateModified" content="2019-12-02T21:43:24&#43;08:00" />
-<meta itemprop="wordCount" content="135">
+<meta itemprop="datePublished" content="2019-12-03T21:54:05&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-03T21:54:05&#43;08:00" />
+<meta itemprop="wordCount" content="2">
 
 
 
-<meta itemprop="keywords" content="k8s," />
+<meta itemprop="keywords" content="rancher," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="OpenShift"/>
-<meta name="twitter:description" content="OpenShift readhat kubernetes.
-Deploy pre-install:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  &gt; check &#34;sysctl net.ipv4.ip_forward&#34; is set to 1 /etc/containers/registries.conf [registries.insecure] registries = [&#39;172.30.0.0/16&#39;] /etc/docker/daemon.json { &#34;insecure-registries&#34;: [ &#34;172.30.0.0/16&#34; ] } $ sudo systemctl daemon-reload $ sudo systemctl restart docker docker network inspect -f &#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&#34; bridge # firewall-cmd --permanent --new-zone dockerc # firewall-cmd --permanent --zone dockerc --add-source 172."/>
+<meta name="twitter:title" content="Rancher"/>
+<meta name="twitter:description" content=" Rancher Deploy "/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,14 +129,14 @@ Deploy pre-install:
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">OpenShift</h1>
+      <h1 class="post-title">Rancher</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-12-02 </span>
+        <span class="post-time"> 2019-12-03 </span>
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 135 words </span>
+          <span class="more-meta"> 2 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -155,7 +147,7 @@ Deploy pre-install:
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#openshift">OpenShift</a></li>
+<li><a href="#rancher">Rancher</a></li>
 <li><a href="#deploy">Deploy</a></li>
 </ul>
 </nav>
@@ -164,93 +156,10 @@ Deploy pre-install:
     <div class="post-content">
       
 
-<h1 id="openshift">OpenShift</h1>
-
-<p>readhat kubernetes.</p>
+<h1 id="rancher">Rancher</h1>
 
 <h1 id="deploy">Deploy</h1>
 
-<p>pre-install:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; check &#34;sysctl net.ipv4.ip_forward&#34; is set to 1
-
-/etc/containers/registries.conf
-[registries.insecure]
-registries = [&#39;172.30.0.0/16&#39;]
-
-/etc/docker/daemon.json
-{
-    &#34;insecure-registries&#34;: [
-        &#34;172.30.0.0/16&#34;
-    ]
-}
-
-$ sudo systemctl daemon-reload
-$ sudo systemctl restart docker
-
-docker network inspect -f &#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&#34; bridge
-
-# firewall-cmd --permanent --new-zone dockerc
-# firewall-cmd --permanent --zone dockerc --add-source 172.17.0.0/16
-# firewall-cmd --permanent --zone dockerc --add-port 8443/tcp
-# firewall-cmd --permanent --zone dockerc --add-port 53/udp
-# firewall-cmd --permanent --zone dockerc --add-port 8053/udp
-# firewall-cmd --reload</pre></td></tr></table>
-</div>
-</div>
-<p>install:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; download binary and put in $PATH
-# oc cluster up --public-hostname=&#39;your.domain.com&#39; --base-dir=/opt/oc
-
-# firewall-cmd --zone=public --add-port=8443/tcp --permanent
-# firewall-cmd --reload</pre></td></tr></table>
-</div>
-</div>
-<p>test:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; https://your.domain.com:8443</pre></td></tr></table>
-</div>
-</div>
     </div>
 
     <div class="post-copyright">
@@ -261,7 +170,7 @@ docker network inspect -f &#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&#34; 
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2019-12-02
+        2019-12-03
         
     </span>
   </p>
@@ -284,16 +193,12 @@ docker network inspect -f &#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&#34; 
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/k8s/">k8s</a>
+          <a href="/tags/rancher/">rancher</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/alpine/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Alpine</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/helm/">
-            <span class="next-text nav-default">Helm</span>
+        
+        <a class="next" href="/post/alpine/">
+            <span class="next-text nav-default">Alpine</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -306,8 +211,8 @@ docker network inspect -f &#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&#34; 
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2019-12-02 21:43:24 \x2b0800 CST',
-        title: 'OpenShift',
+        id: '2019-12-03 21:54:05 \x2b0800 CST',
+        title: 'Rancher',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',
