@@ -107,7 +107,7 @@
       <pubDate>Thu, 07 Jul 2016 16:43:15 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/json/</guid>
-      <description>JSON http://www.json.org/ JSON: JavaScript Object Notation. json有两种数据结构. key-value/键值对 1 2 3 4 5 { key: value, key1: value1, ... } 列表/数组 1 [value, value1, ...] 数据类型 bool: 1 2 python -&amp;gt; True/False go -&amp;gt; true/false string: 1 2 3 python</description>
+      <description>JSON http://www.json.org/ JSON: JavaScript Object Notation. json有两种数据结构. key-value/键值对 1 2 3 4 5 { key: value, key1: value1, ... } 列表/数组 1 [value, value1, ...] 数据类型 bool: 1 2 python -&amp;gt; True/False go -&amp;gt; true/false string: 1 2 3 4</description>
     </item>
     
     <item>
