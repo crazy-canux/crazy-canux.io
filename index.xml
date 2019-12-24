@@ -481,7 +481,7 @@ debug </description>
       <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/gsl_concurrency/</guid>
-      <description>sync sync用于goroutine同步. 1 import &amp;#34;sync&amp;#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Once 只执行一次动作的对象(单例模式) 1 type Once</description>
+      <description>sync sync用于goroutine同步. 1 import &amp;#34;sync&amp;#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Pool是一个可以分别存取的临时对象的集</description>
     </item>
     
     <item>

@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
-<meta itemprop="wordCount" content="1494">
+<meta itemprop="wordCount" content="2285">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/golang/"> Golang </a>
             </div>
-          <span class="more-meta"> 1494 words </span>
-          <span class="more-meta"> 3 mins read </span>
+          <span class="more-meta"> 2285 words </span>
+          <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -150,10 +150,15 @@
 <li><a href="#并发-concurrency">并发/concurrency</a></li>
 <li><a href="#goroutines">goroutines</a></li>
 <li><a href="#竟态">竟态</a></li>
-<li><a href="#同步">同步</a></li>
-<li><a href="#消息传递">消息传递</a>
+<li><a href="#channel">channel</a></li>
+<li><a href="#sync">sync</a>
 <ul>
 <li><a href="#select">select</a></li>
+</ul></li>
+<li><a href="#退出goroutine">退出goroutine</a>
+<ul>
+<li><a href="#for-range">for-range</a></li>
+<li><a href="#for-select">for-select</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -208,8 +213,6 @@
 </div>
 <p>主进程main结束了，goroutine也结束．</p>
 
-<hr />
-
 <h1 id="竟态">竟态</h1>
 
 <p>race condition: 竞争状态，多个goroutine同时操作同一资源.</p>
@@ -225,17 +228,32 @@ $ go build -race</pre></td></tr></table>
 </div>
 <p>所以要解决goroutine间的消息传递和同步的问题.</p>
 
-<h1 id="同步">同步</h1>
+<p>通过通信共享内存，而不是通过共享内存而通信,说明解决并发问题优先使用chan，而不是sync包。</p>
 
-<p>通过对资源上锁来保持同步.</p>
+<p>channel还是mutex,选择的依据是他们的能力/特性.</p>
 
-<p>golang的同步通过sync和sync/atomic两个包实现.</p>
+<p>channel的能力是让数据流动起来，擅长的是数据流动的场景:</p>
 
-<h1 id="消息传递">消息传递</h1>
+<ul>
+<li>传递数据的所有权，即把某个数据发送给其他协程</li>
+<li>分发任务，每个任务都是一个数据</li>
+<li>交流异步结果，结果是一个数据</li>
+</ul>
+
+<p>sync的能力是数据不动，某段时间只给一个协程访问数据的权限擅长数据位置固定的场景:</p>
+
+<ul>
+<li>缓存</li>
+<li>状态</li>
+</ul>
+
+<hr />
+
+<h1 id="channel">channel</h1>
 
 <p>goroutine通过channel来传递消息.</p>
 
-<p>channels是引用类型.</p>
+<p>channels是引用类型,chan是线程安全的，并且不会有数据冲突。</p>
 
 <p>channel可以共享内置类型，命名类型，结构类型，引用类型的值或指针.</p>
 
@@ -361,18 +379,164 @@ close(ch)
 v, ok := &lt;-ch</pre></td></tr></table>
 </div>
 </div>
+<h1 id="sync">sync</h1>
+
+<p>通过对资源上锁来保持同步.</p>
+
+<p>golang的同步通过sync和sync/atomic两个包实现.</p>
+
 <hr />
 
 <h2 id="select">select</h2>
 
-<p>监听chan的数据流，类似于switch-case, 处理多个chan的情况</p>
+<p>监听chan的数据流，类似于switch-case, 可用于处理多个chan的情况</p>
 
-<p>select默认是阻塞的，只有监听的chan中有数据才执行.</p>
+<p>运行规则：</p>
 
-<p>select类似switch, default是监听的chan都没有准备好的时候默认执行的．</p>
+<ol>
+<li>每次执行select都只会执行一个case或者执行default；当有case可以执行，default不会执行；没有case执行时才执行default。</li>
+<li>当没有case或default可以执行，select阻塞等待。</li>
+<li>当有多个case可以执行，select随机选择一个执行。</li>
+
+<li><p>case后面必须是读或写chan的操作，否则编译出错。</p>
+
+<p>select {
+case condition1:
+    do something
+case condition2:
+    do something
+&hellip;
+default:    // default可以省略
+    do default thing.
+}</p></li>
+</ol>
 
 <hr />
 
+<h1 id="退出goroutine">退出goroutine</h1>
+
+<h2 id="for-range">for-range</h2>
+
+<p>range能感知channel关闭，当channel被发送数据的goroutine关闭时，range就会结束，然后退出for循环。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go func(in &lt;-chan int) {
+    for x := range in {
+        ...
+    }
+}(inCh)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="for-select">for-select</h2>
+
+<p>select有多路复用能力，for-select 可以持续处理多路多个channel的能力。但select不能感知channel的关闭.</p>
+
+<p>通道关闭退出goroutine：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go func() {
+    for {
+        select {
+        case x, ok := &lt;-in:
+            if !ok {
+                return
+            }
+        case &lt;-t.C:
+            ...
+        }
+    }
+}</pre></td></tr></table>
+</div>
+</div>
+<p>某个通道关闭，不再处理该通道，但是继续处理其它channel,select不会在nil的通道上进行等待:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go func() {
+    for {
+        select {
+        case x, ok := in1:
+            if !ok {
+                in1 = nil   把只读channel设置为nil,select不会在这里阻塞。
+            }
+        case y, ok :=&lt;-in2:
+            if !ok {
+                in2 = nil
+            }
+        if in1 == nil &amp;&amp; in2 == nil {
+            return
+        }
+    }
+}()</pre></td></tr></table>
+</div>
+</div>
+<p>使用专门channel发送退出信号,只需要在main中关闭channel，所有goroutine都会接收到信号退出:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go func() {
+    for {
+        select {
+        case &lt;- stopCh:
+            ...
+            return
+        case &lt;- t.C:
+            ...
+        }
+    }
+}()</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">

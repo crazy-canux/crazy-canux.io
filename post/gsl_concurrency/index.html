@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="sync sync用于goroutine同步. 1 import &amp;#34;sync&amp;#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Once 只执行一次动作的对象(单例模式) 1 type Once" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="sync sync用于goroutine同步. 1 import &amp;#34;sync&amp;#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Pool是一个可以分别存取的临时对象的集" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="GSL_concurrency" />
-<meta property="og:description" content="sync sync用于goroutine同步. 1 import &#34;sync&#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Once 只执行一次动作的对象(单例模式) 1 type Once" />
+<meta property="og:description" content="sync sync用于goroutine同步. 1 import &#34;sync&#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Pool是一个可以分别存取的临时对象的集" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/gsl_concurrency/" />
 <meta property="article:published_time" content="2018-01-01T10:49:21&#43;00:00"/>
 <meta property="article:modified_time" content="2018-01-01T10:49:21&#43;00:00"/>
 
 <meta itemprop="name" content="GSL_concurrency">
-<meta itemprop="description" content="sync sync用于goroutine同步. 1 import &#34;sync&#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Once 只执行一次动作的对象(单例模式) 1 type Once">
+<meta itemprop="description" content="sync sync用于goroutine同步. 1 import &#34;sync&#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Pool是一个可以分别存取的临时对象的集">
 
 
 <meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
-<meta itemprop="wordCount" content="563">
+<meta itemprop="wordCount" content="626">
 
 
 
 <meta itemprop="keywords" content="concurrency," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GSL_concurrency"/>
-<meta name="twitter:description" content="sync sync用于goroutine同步. 1 import &#34;sync&#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Once 只执行一次动作的对象(单例模式) 1 type Once"/>
+<meta name="twitter:description" content="sync sync用于goroutine同步. 1 import &#34;sync&#34; constants variables functions Locker 一个可以加锁和解锁的接口 1 2 3 4 type Locker interface { Lock() Unlock() } Pool Pool是一个可以分别存取的临时对象的集"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/golang/"> Golang </a>
             </div>
-          <span class="more-meta"> 563 words </span>
+          <span class="more-meta"> 626 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -212,6 +212,8 @@
 </div>
 <h2 id="pool">Pool</h2>
 
+<p>Pool是一个可以分别存取的临时对象的集合。</p>
+
 <h2 id="once">Once</h2>
 
 <p>只执行一次动作的对象(单例模式)</p>
@@ -238,13 +240,19 @@ func (o *Once) Do(f func())</pre></td></tr></table>
 
 <p>互斥锁,锁和线程无关，可以由不同的线程加锁和解锁.</p>
 
+<p>Mutex的初始值为未锁的状态，并且Mutex通常作为结构体的匿名成员存在。</p>
+
 <p>同一时刻只能有一个线程进入临界区.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">type Mutex struct {}</pre></td></tr></table>
+<pre class="chroma">type Mutex struct {}
+
+Mutex</pre></td></tr></table>
 </div>
 </div>
 <p>method:</p>
