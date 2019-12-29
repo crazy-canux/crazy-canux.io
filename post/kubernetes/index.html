@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="1024">
+<meta itemprop="wordCount" content="1131">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1024 words </span>
+          <span class="more-meta"> 1131 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -155,6 +155,8 @@
 <li><a href="#addons">addons</a></li>
 </ul></li>
 <li><a href="#kubectl命令">kubectl命令</a></li>
+<li><a href="#minikube">minikube</a></li>
+<li><a href="#kubeadm">kubeadm</a></li>
 </ul>
 </nav>
   </div>
@@ -463,6 +465,51 @@ $ kubectl taint</pre></td></tr></table>
 </div>
 <hr />
 
+<h1 id="minikube">minikube</h1>
+
+<p><a href="https://kubernetes.io/zh/docs/setup/learning-environment/minikube/">https://kubernetes.io/zh/docs/setup/learning-environment/minikube/</a></p>
+
+<p>minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 在裸机上创建：
+sudo minikube start --vm-driver=none</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="kubeadm">kubeadm</h1>
+
+<p><a href="https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/">https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/</a></p>
+
+<p>关闭交换分区:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo swapoff -a</pre></td></tr></table>
+</div>
+</div>
+<p>在每台机器上安装 kubeadm, kubelet, kubectl:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list
+$ sudo apt-get update
+$ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl
+$ apt-mark hold kubelet kubeadm kubectl</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
