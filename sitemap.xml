@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://canuxcheng.com/post/flannel/</loc>
+    <lastmod>2019-12-30T22:06:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/kubeadm/</loc>
+    <lastmod>2019-12-30T21:47:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/rancher/</loc>
     <lastmod>2019-12-03T21:54:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1578,7 +1592,7 @@
   
   <url>
     <loc>http://canuxcheng.com/categories/container/</loc>
-    <lastmod>2019-12-03T21:54:05+08:00</lastmod>
+    <lastmod>2019-12-30T22:06:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1633,7 +1647,7 @@
   
   <url>
     <loc>http://canuxcheng.com/</loc>
-    <lastmod>2019-12-03T21:54:05+08:00</lastmod>
+    <lastmod>2019-12-30T22:06:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1647,7 +1661,7 @@
   
   <url>
     <loc>http://canuxcheng.com/post/</loc>
-    <lastmod>2019-12-03T21:54:05+08:00</lastmod>
+    <lastmod>2019-12-30T22:06:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2144,7 +2158,7 @@
   
   <url>
     <loc>http://canuxcheng.com/tags/k8s/</loc>
-    <lastmod>2019-12-02T21:43:24+08:00</lastmod>
+    <lastmod>2019-12-30T21:47:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2256,7 +2270,7 @@
   
   <url>
     <loc>http://canuxcheng.com/tags/network/</loc>
-    <lastmod>2018-04-05T22:02:31+00:00</lastmod>
+    <lastmod>2019-12-30T22:06:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2494,13 +2508,6 @@
   
   <url>
     <loc>http://canuxcheng.com/tags/storage/</loc>
-    <lastmod>2018-04-05T21:47:54+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/tags/storate/</loc>
     <lastmod>2018-04-05T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>

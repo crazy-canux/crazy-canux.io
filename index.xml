@@ -6,10 +6,28 @@
     <description>Recent content on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Dec 2019 21:54:05 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 22:06:48 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flannel</title>
+      <link>http://canuxcheng.com/post/flannel/</link>
+      <pubDate>Mon, 30 Dec 2019 22:06:48 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/flannel/</guid>
+      <description>Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 部署: 1 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 重新部署网络插件: 1 2 3 4 5 6 7 8 9 10 11 12 $ kubectl delete -f X.yml // 第二步，在node节点清</description>
+    </item>
+    
+    <item>
+      <title>Kubeadm</title>
+      <link>http://canuxcheng.com/post/kubeadm/</link>
+      <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/kubeadm/</guid>
+      <description>kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 $ echo &amp;#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $ apt-mark hold kubelet kubeadm kubect Kubeadm</description>
+    </item>
     
     <item>
       <title>Rancher</title>

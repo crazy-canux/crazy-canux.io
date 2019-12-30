@@ -6,10 +6,19 @@
     <description>Recent content in storage on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Apr 2018 21:47:54 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Apr 2018 22:02:31 +0000</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/storage/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSI</title>
+      <link>http://canuxcheng.com/post/csi/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/csi/</guid>
+      <description>CSI CSI: Container Storage Interface CSI提供容器的数据持久化服务. 容器管理数据的两种方式： 数据卷(Volumes) 挂载主机目录(bind mounts) 临时文件系统(tmpfs)</description>
+    </item>
     
     <item>
       <title>Storage</title>
