@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-12-30T21:47:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T21:47:17&#43;08:00" />
-<meta itemprop="wordCount" content="426">
+<meta itemprop="wordCount" content="588">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 426 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 588 words </span>
+          <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -151,6 +151,9 @@
 <li><a href="#install">Install</a></li>
 <li><a href="#kubeadm-1">Kubeadm</a></li>
 <li><a href="#cluster">Cluster</a></li>
+<li><a href="#dashboard">dashboard</a></li>
+<li><a href="#metrics-server">metrics-server</a></li>
+<li><a href="#ingress-nginx">ingress-nginx</a></li>
 </ul>
 </nav>
   </div>
@@ -218,6 +221,15 @@ $ apt-mark hold kubelet kubeadm kubect</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ kubeadm reset -f/--force</pre></td></tr></table>
+</div>
+</div>
+<p>token:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubeadm token create/delete/generate/list</pre></td></tr></table>
 </div>
 </div>
 <hr />
@@ -352,6 +364,15 @@ $ sudo kubeadm join 192.168.1.1:6443 \
 $ sudo kubeadm reset</pre></td></tr></table>
 </div>
 </div>
+<p>允许将pod部署在master节点(默认不会):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl taint nodes --all node-role.kubernetes.io/master-</pre></td></tr></table>
+</div>
+</div>
 <p>veryfy:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -363,6 +384,81 @@ $ sudo kubeadm reset</pre></td></tr></table>
 $ kubectl get pod --all-namespaces</pre></td></tr></table>
 </div>
 </div>
+<hr />
+
+<h1 id="dashboard">dashboard</h1>
+
+<p><a href="https://github.com/kubernetes/dashboard">https://github.com/kubernetes/dashboard</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
+
+// 创建 Service Account 和 ClusterRoleBinding
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+name: admin-user
+namespace: kubernetes-dashboard
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+name: admin-user
+roleRef:
+apiGroup: rbac.authorization.k8s.io
+kind: ClusterRole
+name: cluster-admin
+subjects:
+- kind: ServiceAccount
+name: admin-user
+namespace: kubernetes-dashboard
+
+// 获取token
+$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)
+
+
+// 删除已安装的dashboard
+$ kubectl delete ns kubernetes-dashboard</pre></td></tr></table>
+</div>
+</div>
+<h1 id="metrics-server">metrics-server</h1>
+
+<p><a href="https://github.com/kubernetes-sigs/metrics-server">https://github.com/kubernetes-sigs/metrics-server</a></p>
+
+<h1 id="ingress-nginx">ingress-nginx</h1>
+
+<p><a href="https://github.com/kubernetes/ingress-nginx">https://github.com/kubernetes/ingress-nginx</a></p>
+
     </div>
 
     <div class="post-copyright">
@@ -462,7 +558,7 @@ $ kubectl get pod --all-namespaces</pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2013 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
