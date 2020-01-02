@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="1112">
+<meta itemprop="wordCount" content="1182">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1112 words </span>
+          <span class="more-meta"> 1182 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -335,12 +335,13 @@
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 通过yaml或json文件创建pod/container:
 $ kubectl create -f FILENAME [options]
-
-$ kubectl apply -f FILENAME
 
 $ kubectl delete -f FILENAME
 
@@ -353,20 +354,58 @@ $ kubectl run &lt;name&gt; --image=&lt;image&gt; --labels=&lt;key=value&gt; ...
 
 $ kubectl set
 
-# 获取信息:
+// 获取resource信息:
 $ kubectl get (docker ps)
 kubectl get nodes/no # 获取node节点信息
 kubectl get namespace/ns # 获取namespace信息
 kubectl get componentstatuses/cs
+
 kubectl get pod --all-namespaces
-kubectl -n cattle-system get all 
+kubectl get pods -o wide
+kubectl -n kube-system get all 
 kubectl -n kube-system get pods/po
 kubectl -n kube-system get deployments/deploy
 kubectl -n kube-system get services/svc
 
+// 查看所有支持的resources
+$ kubectl api-resources
+
 $ kubectl explain
 
 $ kubectl edit</pre></td></tr></table>
+</div>
+</div>
+<p>advanced commands:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl apply -f FILENAME
+
+$ kubectl diff
+
+$ kubectl patch
+
+$ kubectl replace
+
+$ kubectl wait
+
+$ kubectl convert
+
+$ kubectl kustomize</pre></td></tr></table>
 </div>
 </div>
 <p>deploy command</p>
@@ -382,7 +421,7 @@ $ kubectl edit</pre></td></tr></table>
 </span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># scale service.
+<pre class="chroma">// scale service.
 $ kubectl scale
 
 $ kubectl autoscale
@@ -418,11 +457,11 @@ $ kubectl rolling-update</pre></td></tr></table>
 </span><span class="lnt">21
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># like docker inspect
+<pre class="chroma">// like docker inspect
 $ kubectl describe
 
-# 获取k8s-dashboard的token
-kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)
+// 获取k8s-dashboard的token
+$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)
 
 # like docker logs
 $ kubectl logs

@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-12-30T21:47:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T21:47:17&#43;08:00" />
-<meta itemprop="wordCount" content="588">
+<meta itemprop="wordCount" content="704">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 588 words </span>
+          <span class="more-meta"> 704 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -419,33 +419,79 @@ $ kubectl get pod --all-namespaces</pre></td></tr></table>
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
+<pre class="chroma">// https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml 修改服务类型为NodePort
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kubernetes-dashboard
+spec:
+  # use nodeport
+  type: NodePort
+  ports:
+    - port: 443
+    targetPort: 8443
+    # specify nodeport
+    nodePort: 30001
+selector:
+  k8s-app: kubernetes-dashboard
+// 部署dashboard
+$ kubectl apply -f dashboard.yaml
 
-// 创建 Service Account 和 ClusterRoleBinding
+// ServiceAccount 和 ClusterRoleBinding
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-name: admin-user
-namespace: kubernetes-dashboard
+  name: admin-user
+  namespace: kubernetes-dashboard
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-name: admin-user
+  name: admin-user
 roleRef:
-apiGroup: rbac.authorization.k8s.io
-kind: ClusterRole
-name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
 subjects:
-- kind: ServiceAccount
-name: admin-user
-namespace: kubernetes-dashboard
+  - kind: ServiceAccount
+    name: admin-user
+    namespace: kubernetes-dashboard
+// 创建admin账号
+$ kubectl apply -f auth.yaml
 
 // 获取token
 $ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)
 
+// 使用admin帐号的token登录
+&gt; https://&lt;IP&gt;:30001
 
 // 删除已安装的dashboard
 $ kubectl delete ns kubernetes-dashboard</pre></td></tr></table>
