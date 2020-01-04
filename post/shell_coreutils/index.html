@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="1967">
+<meta itemprop="wordCount" content="2033">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 1967 words </span>
-          <span class="more-meta"> 4 mins read </span>
+          <span class="more-meta"> 2033 words </span>
+          <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -402,6 +402,23 @@ select-editor</pre></td></tr></table>
 <pre class="chroma">timedatectl list-timezones # 查看所有时区
 sudo timedatectl set-timezone Asia/Shanghai # 设置时区
 ls -l /etc/localtime # 应该是一个链接</pre></td></tr></table>
+</div>
+</div>
+<p>update-alternatives:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">update-alternatives --display python // 查看候选项
+update-alternatives --config python // 选择候选项
+update-alternatives --set python /usr/bin/python // 添加候选项
+update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1 // 设置候选项的link
+update-alternatives --remove python /usr/bin/python3.5 // 删除候选项的link</pre></td></tr></table>
 </div>
 </div>
 <h1 id="linux管理">Linux管理</h1>

@@ -6,26 +6,35 @@
     <description>Recent content in Posts on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Dec 2019 22:06:48 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jan 2020 20:03:39 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>IngressNginx</title>
+      <link>http://canuxcheng.com/post/k8s_ingress/</link>
+      <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
+      <description>IngressNginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch</description>
+    </item>
+    
+    <item>
       <title>Flannel</title>
-      <link>http://canuxcheng.com/post/flannel/</link>
+      <link>http://canuxcheng.com/post/k8s_flannel/</link>
       <pubDate>Mon, 30 Dec 2019 22:06:48 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/flannel/</guid>
+      <guid>http://canuxcheng.com/post/k8s_flannel/</guid>
       <description>Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 部署: 1 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 重新部署网络插件: 1 2 3 4 5 6 7 8 9 10 11 12 $ kubectl delete -f X.yml // 第二步，在node节点清</description>
     </item>
     
     <item>
       <title>Kubeadm</title>
-      <link>http://canuxcheng.com/post/kubeadm/</link>
+      <link>http://canuxcheng.com/post/k8s_kubeadm/</link>
       <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/kubeadm/</guid>
+      <guid>http://canuxcheng.com/post/k8s_kubeadm/</guid>
       <description>kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 $ echo &amp;#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $ apt-mark hold kubelet kubeadm kubect Kubeadm</description>
     </item>
     
@@ -1237,7 +1246,7 @@ debug </description>
       <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/python_pep/</guid>
-      <description>PEP 8 &amp;ndash; Style Guide for Python Code https://www.python.org/dev/peps/pep-0008/ pep7是C风格指南，pep20是zen of python. 1 2 # 查看pep20 &amp;gt;import this PEP 257 &amp;ndash; Docstring Conventions https://www.python.org/dev/peps/pep-0257/</description>
+      <description>PEP 8 &amp;ndash; Style Guide for Python Code https://www.python.org/dev/peps/pep-0008/ PEP 257 &amp;ndash; Docstring Conventions https://www.python.org/dev/peps/pep-0257/ PEP-20PEP 20 &amp;ndash; The Zen of Python https://www.python.org/dev/peps/pep-0020/ 1 2 # 查看pep20 &amp;gt;import this</description>
     </item>
     
     <item>

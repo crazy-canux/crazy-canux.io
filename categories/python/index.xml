@@ -143,7 +143,7 @@
       <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/python_pep/</guid>
-      <description>PEP 8 &amp;ndash; Style Guide for Python Code https://www.python.org/dev/peps/pep-0008/ pep7是C风格指南，pep20是zen of python. 1 2 # 查看pep20 &amp;gt;import this PEP 257 &amp;ndash; Docstring Conventions https://www.python.org/dev/peps/pep-0257/</description>
+      <description>PEP 8 &amp;ndash; Style Guide for Python Code https://www.python.org/dev/peps/pep-0008/ PEP 257 &amp;ndash; Docstring Conventions https://www.python.org/dev/peps/pep-0257/ PEP-20PEP 20 &amp;ndash; The Zen of Python https://www.python.org/dev/peps/pep-0020/ 1 2 # 查看pep20 &amp;gt;import this</description>
     </item>
     
     <item>

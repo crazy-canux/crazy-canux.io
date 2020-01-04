@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Rancher - Morgoth</title>
+  <title>IngressNginx - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content=" Rancher Deploy " /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="IngressNginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/rancher/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_ingress/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Rancher" />
-<meta property="og:description" content=" Rancher Deploy " />
+<meta property="og:title" content="IngressNginx" />
+<meta property="og:description" content="IngressNginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/rancher/" />
-<meta property="article:published_time" content="2019-12-03T21:54:05&#43;08:00"/>
-<meta property="article:modified_time" content="2019-12-03T21:54:05&#43;08:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_ingress/" />
+<meta property="article:published_time" content="2020-01-04T20:03:39&#43;08:00"/>
+<meta property="article:modified_time" content="2020-01-04T20:03:39&#43;08:00"/>
 
-<meta itemprop="name" content="Rancher">
-<meta itemprop="description" content=" Rancher Deploy ">
-
-
-<meta itemprop="datePublished" content="2019-12-03T21:54:05&#43;08:00" />
-<meta itemprop="dateModified" content="2019-12-03T21:54:05&#43;08:00" />
-<meta itemprop="wordCount" content="2">
+<meta itemprop="name" content="IngressNginx">
+<meta itemprop="description" content="IngressNginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch">
 
 
+<meta itemprop="datePublished" content="2020-01-04T20:03:39&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-04T20:03:39&#43;08:00" />
+<meta itemprop="wordCount" content="34">
 
-<meta itemprop="keywords" content="rancher," />
+
+
+<meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Rancher"/>
-<meta name="twitter:description" content=" Rancher Deploy "/>
+<meta name="twitter:title" content="IngressNginx"/>
+<meta name="twitter:description" content="IngressNginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Rancher</h1>
+      <h1 class="post-title">IngressNginx</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-12-03 </span>
+        <span class="post-time"> 2020-01-04 </span>
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2 words </span>
+          <span class="more-meta"> 34 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,24 +147,35 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#rancher">Rancher</a></li>
-<li><a href="#deploy">Deploy</a></li>
+<li><a href="#ingressnginx">IngressNginx</a></li>
 </ul>
 </nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="hint">
-      <p>[NOTE] Updated <span class="timeago" datetime="2019-12-03T21:54:05" title="December 3, 2019">December 3, 2019</span>. This article may have outdated content or subject matter.</p>
-    </div>
-  </div>
     <div class="post-content">
       
 
-<h1 id="rancher">Rancher</h1>
+<h1 id="ingressnginx">IngressNginx</h1>
 
-<h1 id="deploy">Deploy</h1>
+<p><a href="https://github.com/kubernetes/ingress-nginx">https://github.com/kubernetes/ingress-nginx</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 部署
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml
 
+// 验证部署
+$ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -175,7 +186,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2019-12-03
+        2020-01-04
         
     </span>
   </p>
@@ -198,16 +209,12 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/rancher/">rancher</a>
+          <a href="/tags/k8s/">k8s</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/k8s_kubeadm/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Kubeadm</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/alpine/">
-            <span class="next-text nav-default">Alpine</span>
+        
+        <a class="next" href="/post/k8s_flannel/">
+            <span class="next-text nav-default">Flannel</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -220,8 +227,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2019-12-03 21:54:05 \x2b0800 CST',
-        title: 'Rancher',
+        id: '2020-01-04 20:03:39 \x2b0800 CST',
+        title: 'IngressNginx',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',
