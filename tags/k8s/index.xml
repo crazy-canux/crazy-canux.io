@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>IngressNginx</title>
+      <title>Ingress</title>
       <link>http://canuxcheng.com/post/k8s_ingress/</link>
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
-      <description>IngressNginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch</description>
+      <description>Ingress-Nginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 7 8 9 10 11 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&amp;#39;{.items[0].metadata.name}&amp;#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version</description>
     </item>
     
     <item>
