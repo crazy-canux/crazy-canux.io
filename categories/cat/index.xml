@@ -6,18 +6,18 @@
     <description>Recent content in cat on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Jun 2019 22:53:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 20:58:01 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/categories/cat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Virtualbox</title>
-      <link>http://canuxcheng.com/post/virtualbox/</link>
-      <pubDate>Mon, 03 Jun 2019 22:53:23 +0800</pubDate>
+      <title>K8S_Kubectl</title>
+      <link>http://canuxcheng.com/post/k8s_kubectl/</link>
+      <pubDate>Fri, 10 Jan 2020 20:58:01 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/virtualbox/</guid>
-      <description>title: &amp;ldquo;Virtualbox&amp;rdquo; date: 2019-06-05T21:47:54 categories: [&amp;ldquo;Virtualization&amp;rdquo;] tags: [&amp;ldquo;virtualbox&amp;rdquo;] keywords: [] author: &amp;ldquo;Canux&amp;rdquo; draft: false Virtualbox 虚拟化工具virtualbox. vboxmanage vm 1 2 3 4 5 6 7 8 9 10 11 12 13 $ vboxmanage import win7.ova // 导入ova // 修改虚拟机的网络为host</description>
+      <guid>http://canuxcheng.com/post/k8s_kubectl/</guid>
+      <description>kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1</description>
     </item>
     
   </channel>

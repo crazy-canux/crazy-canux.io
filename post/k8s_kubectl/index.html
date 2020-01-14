@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Compose - Morgoth</title>
+  <title>K8S_Kubectl - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: 1 2 3 https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 1 2 3" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/compose/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_kubectl/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Compose" />
-<meta property="og:description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: 1 2 3 https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 1 2 3" />
+<meta property="og:title" content="K8S_Kubectl" />
+<meta property="og:description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/compose/" />
-<meta property="article:published_time" content="2020-01-04T21:53:40&#43;08:00"/>
-<meta property="article:modified_time" content="2020-01-04T21:53:40&#43;08:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_kubectl/" />
+<meta property="article:published_time" content="2020-01-10T20:58:01&#43;08:00"/>
+<meta property="article:modified_time" content="2020-01-10T20:58:01&#43;08:00"/>
 
-<meta itemprop="name" content="Compose">
-<meta itemprop="description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: 1 2 3 https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 1 2 3">
-
-
-<meta itemprop="datePublished" content="2020-01-04T21:53:40&#43;08:00" />
-<meta itemprop="dateModified" content="2020-01-04T21:53:40&#43;08:00" />
-<meta itemprop="wordCount" content="700">
+<meta itemprop="name" content="K8S_Kubectl">
+<meta itemprop="description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1">
 
 
+<meta itemprop="datePublished" content="2020-01-10T20:58:01&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-10T20:58:01&#43;08:00" />
+<meta itemprop="wordCount" content="581">
 
-<meta itemprop="keywords" content="docker," />
+
+
+<meta itemprop="keywords" content="tag," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Compose"/>
-<meta name="twitter:description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: 1 2 3 https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 1 2 3"/>
+<meta name="twitter:title" content="K8S_Kubectl"/>
+<meta name="twitter:description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Compose</h1>
+      <h1 class="post-title">K8S_Kubectl</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-01-04 </span>
+        <span class="post-time"> 2020-01-10 </span>
         <div class="post-category">
-            <a href="/categories/container/"> Container </a>
+            <a href="/categories/cat/"> cat </a>
             </div>
-          <span class="more-meta"> 700 words </span>
+          <span class="more-meta"> 581 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,10 +147,18 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#docker-compose">docker-compose</a></li>
-<li><a href="#docker-compose命令">docker-compose命令</a></li>
-<li><a href="#docker-compose-yml">docker-compose.yml</a></li>
-<li><a href="#kompose">Kompose</a></li>
+<li><a href="#kubectl">kubectl</a>
+<ul>
+<li><a href="#basic-command">basic command</a></li>
+<li><a href="#advanced-commands">advanced commands</a></li>
+<li><a href="#deploy-command">deploy command</a></li>
+<li><a href="#debug-troubleshoot">debug&amp;troubleshoot</a></li>
+</ul></li>
+<li><a href="#cluster-management">cluster management</a>
+<ul>
+<li><a href="#settings-commands">Settings Commands</a></li>
+<li><a href="#others">others</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -158,26 +166,35 @@
     <div class="post-content">
       
 
-<h1 id="docker-compose">docker-compose</h1>
+<h1 id="kubectl">kubectl</h1>
 
-<p><a href="https://github.com/docker/compose">https://github.com/docker/compose</a></p>
+<p>kubectl是kubernetes的管理工具.</p>
 
-<p>通过一个yaml文件来管理容器中的服务，包括网络和存储。</p>
+<p><a href="https://github.com/cloudnativelabs/kube-shell">https://github.com/cloudnativelabs/kube-shell</a></p>
 
-<p>安装:</p>
+<p><a href="https://github.com/jonmosco/kube-ps1">https://github.com/jonmosco/kube-ps1</a></p>
+
+<p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
+
+<p>在master上通过kubectl命令管理集群.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">https://docs.docker.com/compose/install/
-$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose</pre></td></tr></table>
+<pre class="chroma">kubectl options # 查看所有命令可用选项</pre></td></tr></table>
 </div>
 </div>
-<h1 id="docker-compose命令">docker-compose命令</h1>
+<p>配置:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl --kubeconfig=$HOME/.kube.config (default)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="basic-command">basic command</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -198,286 +215,224 @@ $ sudo chmod +x /usr/local/bin/docker-compose</pre></td></tr></table>
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]
--f/--file
--p/--project-name # 默认目录名
--H/--host
+<pre class="chroma"># 通过yaml或json文件创建pod/container:
+$ kubectl create -f FILENAME [options]
 
-# 拉取compose文件中指定的镜像
-$ docker-compose -f service.yml pull
+$ kubectl delete -f FILENAME
 
-# 根据docker-compose.yml把stack打包成一个Distributed Application Bundles文件.
-$ docker-compose bundle -o &lt;project name&gt;.dab
+# 创建serivce:
+$ kubectl expose
 
-$ docker-compose start [servoce...]
-$ docker-compose stop [service...]
-$ docker-compose restart [service...]
-$ docker-compose up -d [service...]
-$ docker-compose down -v
+# 创建pod/container:
+$ kubectl run (docker run)
+$ kubectl run &lt;name&gt; --image=&lt;image&gt; --labels=&lt;key=value&gt; ...
 
-$ docker-compose logs -f</pre></td></tr></table>
+$ kubectl set
+
+// 获取resource信息:
+$ kubectl get (docker ps)
+kubectl get nodes/no # 获取node节点信息
+kubectl get namespace/ns # 获取namespace信息
+kubectl get componentstatuses/cs
+
+kubectl --all-namespaces get pod 
+kubectl --all-namespaces get pods -o wide
+kubectl -n kube-system get all 
+kubectl -n kube-system get pods/po
+kubectl -n kube-system get deployments/deploy
+kubectl -n kube-system get services/svc
+
+$ kubectl explain
+
+$ kubectl edit</pre></td></tr></table>
 </div>
 </div>
-<h1 id="docker-compose-yml">docker-compose.yml</h1>
-
-<p>compose文件</p>
+<h2 id="advanced-commands">advanced commands</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">  1
-</span><span class="lnt">  2
-</span><span class="lnt">  3
-</span><span class="lnt">  4
-</span><span class="lnt">  5
-</span><span class="lnt">  6
-</span><span class="lnt">  7
-</span><span class="lnt">  8
-</span><span class="lnt">  9
-</span><span class="lnt"> 10
-</span><span class="lnt"> 11
-</span><span class="lnt"> 12
-</span><span class="lnt"> 13
-</span><span class="lnt"> 14
-</span><span class="lnt"> 15
-</span><span class="lnt"> 16
-</span><span class="lnt"> 17
-</span><span class="lnt"> 18
-</span><span class="lnt"> 19
-</span><span class="lnt"> 20
-</span><span class="lnt"> 21
-</span><span class="lnt"> 22
-</span><span class="lnt"> 23
-</span><span class="lnt"> 24
-</span><span class="lnt"> 25
-</span><span class="lnt"> 26
-</span><span class="lnt"> 27
-</span><span class="lnt"> 28
-</span><span class="lnt"> 29
-</span><span class="lnt"> 30
-</span><span class="lnt"> 31
-</span><span class="lnt"> 32
-</span><span class="lnt"> 33
-</span><span class="lnt"> 34
-</span><span class="lnt"> 35
-</span><span class="lnt"> 36
-</span><span class="lnt"> 37
-</span><span class="lnt"> 38
-</span><span class="lnt"> 39
-</span><span class="lnt"> 40
-</span><span class="lnt"> 41
-</span><span class="lnt"> 42
-</span><span class="lnt"> 43
-</span><span class="lnt"> 44
-</span><span class="lnt"> 45
-</span><span class="lnt"> 46
-</span><span class="lnt"> 47
-</span><span class="lnt"> 48
-</span><span class="lnt"> 49
-</span><span class="lnt"> 50
-</span><span class="lnt"> 51
-</span><span class="lnt"> 52
-</span><span class="lnt"> 53
-</span><span class="lnt"> 54
-</span><span class="lnt"> 55
-</span><span class="lnt"> 56
-</span><span class="lnt"> 57
-</span><span class="lnt"> 58
-</span><span class="lnt"> 59
-</span><span class="lnt"> 60
-</span><span class="lnt"> 61
-</span><span class="lnt"> 62
-</span><span class="lnt"> 63
-</span><span class="lnt"> 64
-</span><span class="lnt"> 65
-</span><span class="lnt"> 66
-</span><span class="lnt"> 67
-</span><span class="lnt"> 68
-</span><span class="lnt"> 69
-</span><span class="lnt"> 70
-</span><span class="lnt"> 71
-</span><span class="lnt"> 72
-</span><span class="lnt"> 73
-</span><span class="lnt"> 74
-</span><span class="lnt"> 75
-</span><span class="lnt"> 76
-</span><span class="lnt"> 77
-</span><span class="lnt"> 78
-</span><span class="lnt"> 79
-</span><span class="lnt"> 80
-</span><span class="lnt"> 81
-</span><span class="lnt"> 82
-</span><span class="lnt"> 83
-</span><span class="lnt"> 84
-</span><span class="lnt"> 85
-</span><span class="lnt"> 86
-</span><span class="lnt"> 87
-</span><span class="lnt"> 88
-</span><span class="lnt"> 89
-</span><span class="lnt"> 90
-</span><span class="lnt"> 91
-</span><span class="lnt"> 92
-</span><span class="lnt"> 93
-</span><span class="lnt"> 94
-</span><span class="lnt"> 95
-</span><span class="lnt"> 96
-</span><span class="lnt"> 97
-</span><span class="lnt"> 98
-</span><span class="lnt"> 99
-</span><span class="lnt">100
-</span><span class="lnt">101
-</span><span class="lnt">102
-</span><span class="lnt">103
-</span><span class="lnt">104
-</span><span class="lnt">105
-</span><span class="lnt">106
-</span><span class="lnt">107
-</span><span class="lnt">108
-</span><span class="lnt">109
-</span><span class="lnt">110
-</span><span class="lnt">111
-</span><span class="lnt">112
-</span><span class="lnt">113
-</span><span class="lnt">114
-</span><span class="lnt">115
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">version: &#34;3.6&#34;
-services:
-  mongo:
-    image: mongo:latest
-    hostname: hostname
-    deploy: // for swarm
-    networks:
-    - mynetwork
-    volumes: // short syntax
-    - myvolume:/container/dir
-    volumes: // long syntax
-    - type: valume/bind/tmpfs
-      source: 
-      target:
-      read_only:
-      bind:
-      volume:
-      tmpfs:
-      consistency:
-    ports:  // long syntax
-    - target: 80
-      published: 8080
-      mode: host
-      protocol: tcp/udp
-    ports: // short syntax
-      - 80:80
-      - 1234:1234/udp
-    environment:
-      RABBITMQ_DEFAULT_USER: sandbox
-      RABBITMQ_DEFAULT_PASS: password
-    environment:
-      - RABBITMQ_DEFAULT_USER=sandbox
-      - RABBITMQ_DEFAULT_PASS=password
-    depends_on:
-      - service-name
-    command: [&#34;./wait-for-it.sh&#34;, &#34;db:5432&#34;, &#34;--&#34;, &#34;python&#34;, &#34;app.py&#34;]
+<pre class="chroma">$ kubectl apply -f FILENAME
 
-    // 在compose v3 中针对非swarm模式的container做资源限制等操作.
-    // --compatibility If set, Compose will attempt to convert keys in v3 files to their non-Swarm equivalent
-    $ docker-compose --compatibility up -d
-    // --compatibility 支持下面三种key:
-    replicas:
-    restart_policy:
-      condition:
-      max_attempts:
-    resources:
-      limits:
-        cpus: &#39;0.5&#39;
-        memory: 1G
-      reservations:
-        cpus: &#39;0.25&#39;
-        memory: 20M
+$ kubectl diff
 
-    # 下列选项不能用于swarm stack部署.
-    build
-    cgroup_parent
-    container_name
-    devices
-    tmpfs
-    external_links
-    links
-    network_mode
-    restart
-    security_opt
-    sysctls
-    userns_mode
-​
-// 使用已经创建好的网络
-networks:
-  mynetwork:
-    external:
-      name: lan0
-​
-// 创建bridge网络
-networks:
-  mynetwork:
-    driver: bridge
-    driver_opts:
-      com.docker.network.bridge.name: lan0
-    ipam:
-      driver: default
-      config:
-        - subnet: 192.168.1.0/24
+$ kubectl patch
 
-// 创建overlay网络
-networks:
-  ol0:
-    driver: overlay
-    attachable: true
-    driver_opts:
-      com.docker.network.bridge.name: ol0
-    ipam:
-      driver: default
-      config:
-      - subnet: 172.12.0.0/16
+$ kubectl replace
 
-// 解析为: &#34;line1 line2\n&#34;,  会自动加换行符.
-command: &gt;
-  line1
-  line2
+$ kubectl wait
 
-// 解析为: &#34;line1 line2&#34;, 没有换行符.
-command: &gt;-
-  line1
-  line2
+$ kubectl convert
 
-# compose文件中用到的变量
-.Service.ID Service ID 
-.Service.Name Service name 
-.Service.Labels Service labels 
-.Node.ID Node ID 
-.Node.Hostname Node Hostname 
-.Task.ID Task ID 
-.Task.Name Task name 
-.Task.Slot Task slot </pre></td></tr></table>
+$ kubectl kustomize</pre></td></tr></table>
 </div>
 </div>
-<hr />
-
-<h1 id="kompose">Kompose</h1>
-
-<p><a href="https://github.com/kubernetes/kompose">https://github.com/kubernetes/kompose</a></p>
-
-<p>install:</p>
+<h2 id="deploy-command">deploy command</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ curl -L https://github.com/kubernetes/kompose/releases/download/v1.19.0/kompose-linux-amd64 -o kompose
+<pre class="chroma">// scale service.
+$ kubectl scale
 
-$ chmod +x kompose
-$ sudo mv ./kompose /usr/local/bin/kompose</pre></td></tr></table>
+$ kubectl autoscale
+
+$ kubectl rollout
+
+$ kubectl rolling-update</pre></td></tr></table>
+</div>
+</div>
+<h2 id="debug-troubleshoot">debug&amp;troubleshoot</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// like docker inspect
+$ kubectl describe
+//查看pod详细信息
+$ kubectl -n kube-system describe pod &lt;pod-name&gt; 
+
+// 获取k8s-dashboard的token
+$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)
+
+# like docker logs
+$ kubectl logs
+
+# like docker exec
+$ kubectl exec
+
+$ kubectl attach
+
+$ kubectl port-forward
+
+$ kubectl proxy
+
+$ kubectl cp
+
+$ kubectl auth</pre></td></tr></table>
+</div>
+</div>
+<h1 id="cluster-management">cluster management</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># top command
+$ kubectl top
+
+$ kubectl cluster-info
+
+$ kubectl certificate
+
+$ kubectl cordon
+
+$ kubectl uncordon
+
+$ kubectl drain
+
+$ kubectl taint</pre></td></tr></table>
+</div>
+</div>
+<h2 id="settings-commands">Settings Commands</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">label          Update the labels on a resource
+annotate       Update the annotations on a resource
+completion     Output shell completion code for the specified shell (bash or zsh)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="others">others</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">api-resources  Print the supported API resources on the server.
+api-versions   Print the supported API versions on the server, in the form of &#34;group/version&#34;.
+config         Modify kubeconfig files.
+plugin         Provides utilities for interacting with plugins.
+version        Print the client and server version information.</pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -490,7 +445,7 @@ $ sudo mv ./kompose /usr/local/bin/kompose</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2020-01-04
+        2020-01-10
         
     </span>
   </p>
@@ -513,16 +468,12 @@ $ sudo mv ./kompose /usr/local/bin/kompose</pre></td></tr></table>
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/docker/">docker</a>
+          <a href="/tags/tag/">tag</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/k8s_yaml/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Yaml</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/k8s_ingress/">
-            <span class="next-text nav-default">Ingress</span>
+        
+        <a class="next" href="/post/k8s_yaml/">
+            <span class="next-text nav-default">Yaml</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -535,8 +486,8 @@ $ sudo mv ./kompose /usr/local/bin/kompose</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2020-01-04 21:53:40 \x2b0800 CST',
-        title: 'Compose',
+        id: '2020-01-10 20:58:01 \x2b0800 CST',
+        title: 'K8S_Kubectl',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

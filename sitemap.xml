@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://canuxcheng.com/post/k8s_kubectl/</loc>
+    <lastmod>2020-01-10T20:58:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/k8s_yaml/</loc>
+    <lastmod>2020-01-10T20:55:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/compose/</loc>
     <lastmod>2020-01-04T21:53:40+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1606,7 +1620,7 @@
   
   <url>
     <loc>http://canuxcheng.com/categories/container/</loc>
-    <lastmod>2020-01-04T21:53:40+08:00</lastmod>
+    <lastmod>2020-01-10T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1661,7 +1675,7 @@
   
   <url>
     <loc>http://canuxcheng.com/</loc>
-    <lastmod>2020-01-04T21:53:40+08:00</lastmod>
+    <lastmod>2020-01-10T20:58:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1675,7 +1689,7 @@
   
   <url>
     <loc>http://canuxcheng.com/post/</loc>
-    <lastmod>2020-01-04T21:53:40+08:00</lastmod>
+    <lastmod>2020-01-10T20:58:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1823,6 +1837,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/capture/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/categories/cat/</loc>
+    <lastmod>2020-01-10T20:58:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2172,7 +2193,7 @@
   
   <url>
     <loc>http://canuxcheng.com/tags/k8s/</loc>
-    <lastmod>2020-01-04T20:03:39+08:00</lastmod>
+    <lastmod>2020-01-10T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2551,6 +2572,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/system/</loc>
     <lastmod>2018-01-01T10:49:21+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/tag/</loc>
+    <lastmod>2020-01-10T20:58:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

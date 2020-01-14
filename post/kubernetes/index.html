@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="1203">
+<meta itemprop="wordCount" content="735">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1203 words </span>
-          <span class="more-meta"> 3 mins read </span>
+          <span class="more-meta"> 735 words </span>
+          <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -154,7 +154,14 @@
 <li><a href="#node">node</a></li>
 <li><a href="#addons">addons</a></li>
 </ul></li>
-<li><a href="#kubectl命令">kubectl命令</a></li>
+<li><a href="#resources">resources</a>
+<ul>
+<li><a href="#workloads">Workloads</a></li>
+<li><a href="#service-discovery-load-balancing">service discovery &amp; load balancing</a></li>
+<li><a href="#config-storage">Config &amp; Storage</a></li>
+<li><a href="#metadata">metadata</a></li>
+<li><a href="#cluster">cluster</a></li>
+</ul></li>
 <li><a href="#minikube">minikube</a></li>
 </ul>
 </nav>
@@ -222,20 +229,6 @@
 <li>status 状态</li>
 </ul>
 
-<p>api对象:</p>
-
-<ul>
-<li>ReplidcationController/rc: 控制pod运行数量</li>
-<li>ReplicaSet/rs: rc的升级版</li>
-<li>Deployments/deploy: 对集群更新</li>
-<li>Job</li>
-<li>DaemonSet/ds</li>
-<li>StatefulSet/sts: 控制有状态的pod, rc/rs都是控制无状态的pod.</li>
-<li>Services/svc: 通过service来访问pod提供的服务.为一组pod提供统一的入口,同时提供负载均衡和自动服务发现.</li>
-<li>Secrets</li>
-<li>ServiceAccount/sa</li>
-</ul>
-
 <p>kubernetes对外暴露服务的三种方式:</p>
 
 <ul>
@@ -276,249 +269,85 @@
 
 <hr />
 
-<h1 id="kubectl命令">kubectl命令</h1>
+<h1 id="resources">resources</h1>
 
-<p><a href="https://github.com/cloudnativelabs/kube-shell">https://github.com/cloudnativelabs/kube-shell</a></p>
-
-<p><a href="https://github.com/jonmosco/kube-ps1">https://github.com/jonmosco/kube-ps1</a></p>
-
-<p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
-
-<p>在master上通过kubectl命令管理集群.</p>
+<p>查看所有对象:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">kubectl options # 查看所有命令可用选项</pre></td></tr></table>
+<pre class="chroma">$ kubectl api-resources</pre></td></tr></table>
 </div>
 </div>
-<p>配置:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">kubectl --kubeconfig=$HOME/.kube.config (default)</pre></td></tr></table>
-</div>
-</div>
-<p>Basic command</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># 通过yaml或json文件创建pod/container:
-$ kubectl create -f FILENAME [options]
+<p><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#statefulsetcondition-v1beta2-apps">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#statefulsetcondition-v1beta2-apps</a></p>
 
-$ kubectl delete -f FILENAME
+<h2 id="workloads">Workloads</h2>
 
-# 创建serivce:
-$ kubectl expose
+<p>replicasets/rs: 控制无状态的pod数量,增删Pods.</p>
 
-# 创建pod/container:
-$ kubectl run (docker run)
-$ kubectl run &lt;name&gt; --image=&lt;image&gt; --labels=&lt;key=value&gt; ...
+<p>deployments/deploy: 对集群更新,增删ReplicaSets.</p>
 
-$ kubectl set
+<p>statefulsets/sts: 控制有状态的pod数量.</p>
 
-// 获取resource信息:
-$ kubectl get (docker ps)
-kubectl get nodes/no # 获取node节点信息
-kubectl get namespace/ns # 获取namespace信息
-kubectl get componentstatuses/cs
+<p>daemonsets/ds:</p>
 
-kubectl --all-namespaces get pod 
-kubectl --all-namespaces get pods -o wide
-kubectl -n kube-system get all 
-kubectl -n kube-system get pods/po
-kubectl -n kube-system get deployments/deploy
-kubectl -n kube-system get services/svc
+<p>jobs:</p>
 
-// 查看所有支持的resources
-$ kubectl api-resources
+<p>cronJobs/cj:</p>
 
-$ kubectl explain
+<h2 id="service-discovery-load-balancing">service discovery &amp; load balancing</h2>
 
-$ kubectl edit</pre></td></tr></table>
-</div>
-</div>
-<p>advanced commands:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl apply -f FILENAME
+<p>services/svc: 通过service来访问pod提供的服务.为一组pod提供统一的入口,同时提供负载均衡和自动服务发现.</p>
 
-$ kubectl diff
+<p>ingresses:</p>
 
-$ kubectl patch
+<p>endpointslices:</p>
 
-$ kubectl replace
+<h2 id="config-storage">Config &amp; Storage</h2>
 
-$ kubectl wait
+<p>secrets:</p>
 
-$ kubectl convert
+<p>configmaps/cm:</p>
 
-$ kubectl kustomize</pre></td></tr></table>
-</div>
-</div>
-<p>deploy command</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">// scale service.
-$ kubectl scale
+<p>persistentvolumeclaims/pvc:</p>
 
-$ kubectl autoscale
+<p>csidrivers:</p>
 
-$ kubectl rollout
+<p>csinodes:</p>
 
-$ kubectl rolling-update</pre></td></tr></table>
-</div>
-</div>
-<p>debug&amp;troubleshoot</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">// like docker inspect
-$ kubectl describe
-//查看pod详细信息
-$ kubectl -n kube-system describe pod &lt;pod-name&gt; 
+<p>storageclasses/sc:</p>
 
-// 获取k8s-dashboard的token
-$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)
+<p>volumeattachments:</p>
 
-# like docker logs
-$ kubectl logs
+<h2 id="metadata">metadata</h2>
 
-# like docker exec
-$ kubectl exec
+<p>events</p>
 
-$ kubectl attach
+<p>horizontalpodautoscaler</p>
 
-$ kubectl port-forward
+<p>podtemplate</p>
 
-$ kubectl proxy
+<h2 id="cluster">cluster</h2>
 
-$ kubectl cp
+<p>componentstatuses:</p>
 
-$ kubectl auth</pre></td></tr></table>
-</div>
-</div>
-<p>cluster management</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># top command
-$ kubectl top
+<p>namespaces:</p>
 
-$ kubectl cluster-info
+<p>nodes:</p>
 
-$ kubectl certificate
+<p>serviceaccount/sa</p>
 
-$ kubectl cordon
+<p>role</p>
 
-$ kubectl uncordon
+<p>rolebinding</p>
 
-$ kubectl drain
+<p>persistentvolume</p>
 
-$ kubectl taint</pre></td></tr></table>
-</div>
-</div>
+<p>clusterrole</p>
+
+<p>clusterrolebinding</p>
+
 <hr />
 
 <h1 id="minikube">minikube</h1>

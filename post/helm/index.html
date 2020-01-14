@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Helm" />
-<meta property="og:description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实" />
+<meta property="og:description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/helm/" />
 <meta property="article:published_time" content="2019-09-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2019-09-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="Helm">
-<meta itemprop="description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实">
+<meta itemprop="description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运">
 
 
 <meta itemprop="datePublished" content="2019-09-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="235">
+<meta itemprop="wordCount" content="296">
 
 
 
 <meta itemprop="keywords" content="helm," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Helm"/>
-<meta name="twitter:description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运行的一个chart实"/>
+<meta name="twitter:description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 235 words </span>
+          <span class="more-meta"> 296 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -169,7 +169,7 @@
 
 <ul>
 <li>helm: 客户端</li>
-<li>tiller: 服务端</li>
+<li>tiller: 服务端(helm3被移除)</li>
 </ul>
 
 <p>概念:</p>
@@ -188,12 +188,14 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">mv linux-amd64/helm /usr/local/bin/helm &amp;&amp; chmod +x /usr/local/bin/helm</pre></td></tr></table>
+<pre class="chroma">// 下载helm二进制文件
+mv linux-amd64/helm /usr/local/bin/helm &amp;&amp; chmod +x /usr/local/bin/helm</pre></td></tr></table>
 </div>
 </div>
-<p>安装tiller到k8s上:</p>
+<p>helm2需要安装tiller到k8s上:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -201,23 +203,30 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">kubectl --kubeconfig=kube_configxxx.yml -n kube-system create serviceaccount tiller
 kubectl --kubeconfig=kube_configxxx.yml create clusterrolebinding tiller \
 --clusterrole cluster-admin --serviceaccount=kube-system:tiller
 
-helm_version=`helm version |grep Client | awk -F&#34;&#34;\&#34; &#39;{print $2}&#39;`
-helm init --kubeconfig=$kubeconfig \
---service-account tiller --skip-refresh \
---tiller-image registry.cn-shanghai.aliyuncs.com/rancher/tiller:$helm_version</pre></td></tr></table>
+helm init --kubeconfig=$kubeconfig --service-account tiller --skip-refresh </pre></td></tr></table>
 </div>
 </div>
+<p>helm3+不再需要安装tiller,也不需要helm init.</p>
+
 <h1 id="命令">命令</h1>
 
+<p>安装chart:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">helm install [name] [chart] [flags]
+helm install redis ./redis</pre></td></tr></table>
+</div>
+</div>
 <p>查看release:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

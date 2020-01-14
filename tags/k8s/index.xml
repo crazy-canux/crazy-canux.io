@@ -6,10 +6,19 @@
     <description>Recent content in k8s on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Jan 2020 20:03:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 20:55:52 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Yaml</title>
+      <link>http://canuxcheng.com/post/k8s_yaml/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_yaml/</guid>
+      <description>yaml 部署k8s可以通过yaml文件来配置资源. 5个基本组成部分: 1 2 3 4 5 apiVersion: Kind: metadata: spec: status: 查看apiVersion: 1 kubectl api-versions 查看Kind: 1 kubectl api-resources metadata spec status</description>
+    </item>
     
     <item>
       <title>Ingress</title>
@@ -17,7 +26,7 @@
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
-      <description>Ingress-Nginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 7 8 9 10 11 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&amp;#39;{.items[0].metadata.name}&amp;#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version</description>
+      <description>Ingress-Nginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 7 8 9 10 11 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&amp;#39;{.items[0].metadata.name}&amp;#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik</description>
     </item>
     
     <item>
