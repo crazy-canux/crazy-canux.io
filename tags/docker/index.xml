@@ -26,7 +26,7 @@
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/docker/</guid>
-      <description>Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&amp;gt; dockerd -&amp;gt; containerd -&amp;gt; docker-shim -&amp;gt; runc Docke</description>
+      <description>Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&amp;gt; dockerd -&amp;gt; containerd -&amp;gt; shim -&amp;gt; runc conta</description>
     </item>
     
   </channel>

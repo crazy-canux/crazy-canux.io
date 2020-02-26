@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>HAProxy - Morgoth</title>
+  <title>Helm - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/haproxy/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_helm/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="HAProxy" />
-<meta property="og:description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg" />
+<meta property="og:title" content="Helm" />
+<meta property="og:description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/haproxy/" />
-<meta property="article:published_time" content="2018-07-28T16:08:54&#43;00:00"/>
-<meta property="article:modified_time" content="2018-07-28T16:08:54&#43;00:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_helm/" />
+<meta property="article:published_time" content="2019-09-05T22:02:31&#43;00:00"/>
+<meta property="article:modified_time" content="2019-09-05T22:02:31&#43;00:00"/>
 
-<meta itemprop="name" content="HAProxy">
-<meta itemprop="description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg">
-
-
-<meta itemprop="datePublished" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="dateModified" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="wordCount" content="19">
+<meta itemprop="name" content="Helm">
+<meta itemprop="description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运">
 
 
+<meta itemprop="datePublished" content="2019-09-05T22:02:31&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-05T22:02:31&#43;00:00" />
+<meta itemprop="wordCount" content="296">
 
-<meta itemprop="keywords" content="haproxy," />
+
+
+<meta itemprop="keywords" content="helm," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HAProxy"/>
-<meta name="twitter:description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg"/>
+<meta name="twitter:title" content="Helm"/>
+<meta name="twitter:description" content="Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">HAProxy</h1>
+      <h1 class="post-title">Helm</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-07-28 </span>
+        <span class="post-time"> 2019-09-05 </span>
         <div class="post-category">
-            <a href="/categories/network/"> Network </a>
+            <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 19 words </span>
+          <span class="more-meta"> 296 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,39 +147,121 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#haproxy">HAProxy</a></li>
+<li><a href="#helm">Helm</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#命令">命令</a></li>
+<li><a href="#chart">chart</a></li>
 </ul>
 </nav>
   </div>
 </div>
   <div class="post-outdated">
-    <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="2018-07-28T16:08:54" title="July 28, 2018">July 28, 2018</span>. This article may have outdated content or subject matter.</p>
+    <div class="hint">
+      <p>[NOTE] Updated <span class="timeago" datetime="2019-09-05T22:02:31" title="September 5, 2019">September 5, 2019</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
 
-<h1 id="haproxy">HAProxy</h1>
+<h1 id="helm">Helm</h1>
 
-<p><a href="https://www.haproxy.com/">https://www.haproxy.com/</a></p>
+<p>helm有两个组件:</p>
 
-<p>安装:</p>
+<ul>
+<li>helm: 客户端</li>
+<li>tiller: 服务端(helm3被移除)</li>
+</ul>
+
+<p>概念:</p>
+
+<ul>
+<li>chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源.</li>
+<li>release: 在k8s集群上运行的一个chart实例.</li>
+<li>repository: 用于发布和存储chart的仓库.</li>
+</ul>
+
+<h1 id="安装">安装</h1>
+
+<p>helm和kubectl一样，访问指定配置的k8s集群。</p>
+
+<p>本地二进制安装helm:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 下载helm二进制文件
+mv linux-amd64/helm /usr/local/bin/helm &amp;&amp; chmod +x /usr/local/bin/helm</pre></td></tr></table>
+</div>
+</div>
+<p>helm2需要安装tiller到k8s上:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl --kubeconfig=kube_configxxx.yml -n kube-system create serviceaccount tiller
+kubectl --kubeconfig=kube_configxxx.yml create clusterrolebinding tiller \
+--clusterrole cluster-admin --serviceaccount=kube-system:tiller
+
+helm init --kubeconfig=$kubeconfig --service-account tiller --skip-refresh </pre></td></tr></table>
+</div>
+</div>
+<p>helm3+不再需要安装tiller,也不需要helm init.</p>
+
+<h1 id="命令">命令</h1>
+
+<p>安装chart:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">helm install [name] [chart] [flags]
+helm install redis ./redis</pre></td></tr></table>
+</div>
+</div>
+<p>查看release:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo apt-get install haproxy</pre></td></tr></table>
+<pre class="chroma">helm list</pre></td></tr></table>
 </div>
 </div>
-<p>配置:</p>
+<p>删除release:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo vim /etc/haproxy/haproxy.cfg</pre></td></tr></table>
+<pre class="chroma">helm delete </pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="chart">chart</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Chart.yaml
+values.yaml
+requirements.yaml
+templates/deployment.yaml
+charts/</pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -192,7 +274,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2018-07-28
+        2019-09-05
         
     </span>
   </p>
@@ -215,16 +297,16 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/haproxy/">haproxy</a>
+          <a href="/tags/helm/">helm</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sec_csrf/">
+        <a class="prev" href="/post/openshift/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Csrf</span>
+            <span class="prev-text nav-default">OpenShift</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/sec_sqlinjection/">
-            <span class="next-text nav-default">Sql Injection</span>
+        <a class="next" href="/post/cri/">
+            <span class="next-text nav-default">CRI</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -237,8 +319,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-07-28 16:08:54 \x2b0000 UTC',
-        title: 'HAProxy',
+        id: '2019-09-05 22:02:31 \x2b0000 UTC',
+        title: 'Helm',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

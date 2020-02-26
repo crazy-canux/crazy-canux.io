@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>HAProxy - Morgoth</title>
+  <title>Minikube - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="minikube https://kubernetes.io/zh/docs/setup/learning-environment/minikube/ minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建. 1 2 // 在裸机上创建： sudo minikube start --vm-driver=none" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/haproxy/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_minikube/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="HAProxy" />
-<meta property="og:description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg" />
+<meta property="og:title" content="Minikube" />
+<meta property="og:description" content="minikube https://kubernetes.io/zh/docs/setup/learning-environment/minikube/ minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建. 1 2 // 在裸机上创建： sudo minikube start --vm-driver=none" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/haproxy/" />
-<meta property="article:published_time" content="2018-07-28T16:08:54&#43;00:00"/>
-<meta property="article:modified_time" content="2018-07-28T16:08:54&#43;00:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_minikube/" />
+<meta property="article:published_time" content="2019-12-30T21:47:17&#43;08:00"/>
+<meta property="article:modified_time" content="2019-12-30T21:47:17&#43;08:00"/>
 
-<meta itemprop="name" content="HAProxy">
-<meta itemprop="description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg">
-
-
-<meta itemprop="datePublished" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="dateModified" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="wordCount" content="19">
+<meta itemprop="name" content="Minikube">
+<meta itemprop="description" content="minikube https://kubernetes.io/zh/docs/setup/learning-environment/minikube/ minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建. 1 2 // 在裸机上创建： sudo minikube start --vm-driver=none">
 
 
+<meta itemprop="datePublished" content="2019-12-30T21:47:17&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-30T21:47:17&#43;08:00" />
+<meta itemprop="wordCount" content="49">
 
-<meta itemprop="keywords" content="haproxy," />
+
+
+<meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HAProxy"/>
-<meta name="twitter:description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg"/>
+<meta name="twitter:title" content="Minikube"/>
+<meta name="twitter:description" content="minikube https://kubernetes.io/zh/docs/setup/learning-environment/minikube/ minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建. 1 2 // 在裸机上创建： sudo minikube start --vm-driver=none"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">HAProxy</h1>
+      <h1 class="post-title">Minikube</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-07-28 </span>
+        <span class="post-time"> 2019-12-30 </span>
         <div class="post-category">
-            <a href="/categories/network/"> Network </a>
+            <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 19 words </span>
+          <span class="more-meta"> 49 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,39 +147,32 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#haproxy">HAProxy</a></li>
+<li><a href="#minikube">minikube</a></li>
 </ul>
 </nav>
   </div>
 </div>
   <div class="post-outdated">
-    <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="2018-07-28T16:08:54" title="July 28, 2018">July 28, 2018</span>. This article may have outdated content or subject matter.</p>
+    <div class="hint">
+      <p>[NOTE] Updated <span class="timeago" datetime="2019-12-30T21:47:17" title="December 30, 2019">December 30, 2019</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
 
-<h1 id="haproxy">HAProxy</h1>
+<h1 id="minikube">minikube</h1>
 
-<p><a href="https://www.haproxy.com/">https://www.haproxy.com/</a></p>
+<p><a href="https://kubernetes.io/zh/docs/setup/learning-environment/minikube/">https://kubernetes.io/zh/docs/setup/learning-environment/minikube/</a></p>
 
-<p>安装:</p>
+<p>minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo apt-get install haproxy</pre></td></tr></table>
-</div>
-</div>
-<p>配置:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ sudo vim /etc/haproxy/haproxy.cfg</pre></td></tr></table>
+<pre class="chroma">// 在裸机上创建：
+sudo minikube start --vm-driver=none</pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -192,7 +185,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2018-07-28
+        2019-12-30
         
     </span>
   </p>
@@ -215,16 +208,16 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/haproxy/">haproxy</a>
+          <a href="/tags/k8s/">k8s</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sec_csrf/">
+        <a class="prev" href="/post/k8s_kubeadm/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Csrf</span>
+            <span class="prev-text nav-default">Kubeadm</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/sec_sqlinjection/">
-            <span class="next-text nav-default">Sql Injection</span>
+        <a class="next" href="/post/rancher/">
+            <span class="next-text nav-default">Rancher</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -237,8 +230,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-07-28 16:08:54 \x2b0000 UTC',
-        title: 'HAProxy',
+        id: '2019-12-30 21:47:17 \x2b0800 CST',
+        title: 'Minikube',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

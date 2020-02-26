@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Yaml</title>
-      <link>http://canuxcheng.com/post/k8s_yaml/</link>
+      <title>API</title>
+      <link>http://canuxcheng.com/post/k8s_api/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/k8s_yaml/</guid>
-      <description>yaml 部署k8s可以通过yaml文件来配置资源. 5个基本组成部分: 1 2 3 4 5 apiVersion: Kind: metadata: spec: status: 查看apiVersion: 1 kubectl api-versions 查看Kind: 1 kubectl api-resources metadata spec status</description>
+      <guid>http://canuxcheng.com/post/k8s_api/</guid>
+      <description>API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8</description>
     </item>
     
     <item>
@@ -36,6 +36,15 @@
       
       <guid>http://canuxcheng.com/post/k8s_kubeadm/</guid>
       <description>kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 $ echo &amp;#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $ apt-mark hold kubelet kubeadm kubect Kubeadm</description>
+    </item>
+    
+    <item>
+      <title>Minikube</title>
+      <link>http://canuxcheng.com/post/k8s_minikube/</link>
+      <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_minikube/</guid>
+      <description>minikube https://kubernetes.io/zh/docs/setup/learning-environment/minikube/ minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建. 1 2 // 在裸机上创建： sudo minikube start --vm-driver=none</description>
     </item>
     
     <item>

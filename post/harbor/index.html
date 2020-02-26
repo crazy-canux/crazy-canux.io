@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="414">
+<meta itemprop="wordCount" content="405">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 414 words </span>
+          <span class="more-meta"> 405 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -211,7 +211,7 @@ proxy:
     - 8080:80 # 默认http是80
     - 4433:443 # 默认https是443
 $ vim /data/harbor/harbor.yml
-hostname = ip:port</pre></td></tr></table>
+hostname = ip</pre></td></tr></table>
 </div>
 </div>
 <p>管理harbor:</p>
@@ -228,13 +228,13 @@ hostname = ip:port</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># cd /data/harbor
-docker-compose down -v 　停止并删除container
+# docker-compose down -v 　停止并删除container
 
 &gt; 更新配置
 # ./prepare --with-notary --with-clair --with-chartmuseum
-# docker-compose -f ./docker-compose.yml -f ./docker-compose.notary.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d
 
-docker-cmopose up -d 启动</pre></td></tr></table>
+&gt; 启动
+# docker-compose up -d</pre></td></tr></table>
 </div>
 </div>
 <h1 id="docker使用harbor">docker使用harbor</h1>

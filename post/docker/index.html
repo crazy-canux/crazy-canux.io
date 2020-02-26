@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&amp;gt; dockerd -&amp;gt; containerd -&amp;gt; docker-shim -&amp;gt; runc Docke" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&amp;gt; dockerd -&amp;gt; containerd -&amp;gt; shim -&amp;gt; runc conta" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Docker" />
-<meta property="og:description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&gt; dockerd -&gt; containerd -&gt; docker-shim -&gt; runc Docke" />
+<meta property="og:description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&gt; dockerd -&gt; containerd -&gt; shim -&gt; runc conta" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/docker/" />
 <meta property="article:published_time" content="2018-04-05T22:02:31&#43;00:00"/>
 <meta property="article:modified_time" content="2018-04-05T22:02:31&#43;00:00"/>
 
 <meta itemprop="name" content="Docker">
-<meta itemprop="description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&gt; dockerd -&gt; containerd -&gt; docker-shim -&gt; runc Docke">
+<meta itemprop="description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&gt; dockerd -&gt; containerd -&gt; shim -&gt; runc conta">
 
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2248">
+<meta itemprop="wordCount" content="2284">
 
 
 
 <meta itemprop="keywords" content="docker," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker"/>
-<meta name="twitter:description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&gt; dockerd -&gt; containerd -&gt; docker-shim -&gt; runc Docke"/>
+<meta name="twitter:description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&gt; dockerd -&gt; containerd -&gt; shim -&gt; runc conta"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2248 words </span>
+          <span class="more-meta"> 2284 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -179,7 +179,11 @@
 
 <p>Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术．</p>
 
-<p>docker-cli -&gt; dockerd -&gt; containerd -&gt; docker-shim -&gt; runc</p>
+<p>docker-cli -&gt; dockerd -&gt; containerd -&gt; shim -&gt; runc</p>
+
+<p>containerd是容器运行时管理引擎.</p>
+
+<p>shim用于管理容器生命周期.</p>
 
 <p>Docker包括三个基本概念:</p>
 

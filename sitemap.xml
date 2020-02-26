@@ -10,7 +10,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/k8s_yaml/</loc>
+    <loc>http://canuxcheng.com/post/k8s_api/</loc>
     <lastmod>2020-01-10T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -45,6 +45,13 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/k8s_minikube/</loc>
+    <lastmod>2019-12-30T21:47:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/rancher/</loc>
     <lastmod>2019-12-03T21:54:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -66,7 +73,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/helm/</loc>
+    <loc>http://canuxcheng.com/post/k8s_helm/</loc>
     <lastmod>2019-09-05T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -179,13 +186,6 @@
   
   <url>
     <loc>http://canuxcheng.com/post/haproxy/</loc>
-    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/post/keepalived/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1620,7 +1620,7 @@
   
   <url>
     <loc>http://canuxcheng.com/categories/container/</loc>
-    <lastmod>2020-01-10T20:55:52+08:00</lastmod>
+    <lastmod>2020-01-10T20:58:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1837,13 +1837,6 @@
   <url>
     <loc>http://canuxcheng.com/tags/capture/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/categories/cat/</loc>
-    <lastmod>2020-01-10T20:58:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2194,13 +2187,6 @@
   <url>
     <loc>http://canuxcheng.com/tags/k8s/</loc>
     <lastmod>2020-01-10T20:55:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/tags/keepalived/</loc>
-    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

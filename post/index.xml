@@ -21,12 +21,12 @@
     </item>
     
     <item>
-      <title>Yaml</title>
-      <link>http://canuxcheng.com/post/k8s_yaml/</link>
+      <title>API</title>
+      <link>http://canuxcheng.com/post/k8s_api/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/k8s_yaml/</guid>
-      <description>yaml 部署k8s可以通过yaml文件来配置资源. 5个基本组成部分: 1 2 3 4 5 apiVersion: Kind: metadata: spec: status: 查看apiVersion: 1 kubectl api-versions 查看Kind: 1 kubectl api-resources metadata spec status</description>
+      <guid>http://canuxcheng.com/post/k8s_api/</guid>
+      <description>API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8</description>
     </item>
     
     <item>
@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>Minikube</title>
+      <link>http://canuxcheng.com/post/k8s_minikube/</link>
+      <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_minikube/</guid>
+      <description>minikube https://kubernetes.io/zh/docs/setup/learning-environment/minikube/ minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建. 1 2 // 在裸机上创建： sudo minikube start --vm-driver=none</description>
+    </item>
+    
+    <item>
       <title>Rancher</title>
       <link>http://canuxcheng.com/post/rancher/</link>
       <pubDate>Tue, 03 Dec 2019 21:54:05 +0800</pubDate>
@@ -98,10 +107,10 @@ Deploy pre-install:
     
     <item>
       <title>Helm</title>
-      <link>http://canuxcheng.com/post/helm/</link>
+      <link>http://canuxcheng.com/post/k8s_helm/</link>
       <pubDate>Thu, 05 Sep 2019 22:02:31 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/helm/</guid>
+      <guid>http://canuxcheng.com/post/k8s_helm/</guid>
       <description>Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运</description>
     </item>
     
@@ -250,15 +259,6 @@ Deploy pre-install:
     </item>
     
     <item>
-      <title>Keepalived</title>
-      <link>http://canuxcheng.com/post/keepalived/</link>
-      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/keepalived/</guid>
-      <description>Keepalived http://www.keepalived.org/ https://github.com/acassen/keepalived 安装: 配置:</description>
-    </item>
-    
-    <item>
       <title>Sql Injection</title>
       <link>http://canuxcheng.com/post/sec_sqlinjection/</link>
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
@@ -390,7 +390,7 @@ Deploy pre-install:
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/docker/</guid>
-      <description>Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&amp;gt; dockerd -&amp;gt; containerd -&amp;gt; docker-shim -&amp;gt; runc Docke</description>
+      <description>Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&amp;gt; dockerd -&amp;gt; containerd -&amp;gt; shim -&amp;gt; runc conta</description>
     </item>
     
     <item>

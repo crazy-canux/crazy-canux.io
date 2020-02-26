@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>HAProxy - Morgoth</title>
+  <title>API - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/haproxy/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_api/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="HAProxy" />
-<meta property="og:description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg" />
+<meta property="og:title" content="API" />
+<meta property="og:description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/haproxy/" />
-<meta property="article:published_time" content="2018-07-28T16:08:54&#43;00:00"/>
-<meta property="article:modified_time" content="2018-07-28T16:08:54&#43;00:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_api/" />
+<meta property="article:published_time" content="2020-01-10T20:55:52&#43;08:00"/>
+<meta property="article:modified_time" content="2020-01-10T20:55:52&#43;08:00"/>
 
-<meta itemprop="name" content="HAProxy">
-<meta itemprop="description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg">
-
-
-<meta itemprop="datePublished" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="dateModified" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="wordCount" content="19">
+<meta itemprop="name" content="API">
+<meta itemprop="description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8">
 
 
+<meta itemprop="datePublished" content="2020-01-10T20:55:52&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-10T20:55:52&#43;08:00" />
+<meta itemprop="wordCount" content="282">
 
-<meta itemprop="keywords" content="haproxy," />
+
+
+<meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HAProxy"/>
-<meta name="twitter:description" content="HAProxy https://www.haproxy.com/ 安装: 1 $ sudo apt-get install haproxy 配置: 1 $ sudo vim /etc/haproxy/haproxy.cfg"/>
+<meta name="twitter:title" content="API"/>
+<meta name="twitter:description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">HAProxy</h1>
+      <h1 class="post-title">API</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-07-28 </span>
+        <span class="post-time"> 2020-01-10 </span>
         <div class="post-category">
-            <a href="/categories/network/"> Network </a>
+            <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 19 words </span>
+          <span class="more-meta"> 282 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,41 +147,93 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#haproxy">HAProxy</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#yaml">yaml</a>
+<ul>
+<li><a href="#metadata">metadata</a></li>
+<li><a href="#spec">spec</a></li>
+<li><a href="#status">status</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
 </div>
   <div class="post-outdated">
-    <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="2018-07-28T16:08:54" title="July 28, 2018">July 28, 2018</span>. This article may have outdated content or subject matter.</p>
+    <div class="hint">
+      <p>[NOTE] Updated <span class="timeago" datetime="2020-01-10T20:55:52" title="January 10, 2020">January 10, 2020</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
 
-<h1 id="haproxy">HAProxy</h1>
+<h1 id="api">API</h1>
 
-<p><a href="https://www.haproxy.com/">https://www.haproxy.com/</a></p>
+<p>api-server统一的操作入口.</p>
 
-<p>安装:</p>
+<p>kubectl, UI, 等都是通过api-server操作资源.</p>
+
+<p>payload可以是json，也可以是yaml.</p>
+
+<hr />
+
+<h1 id="yaml">yaml</h1>
+
+<p>部署k8s可以通过yaml文件来配置资源.</p>
+
+<p>资源对象组成部分:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: 
+Kind: 
+metadata: 元数据
+spec: 期望的状态
+status: 观测到的状态</pre></td></tr></table>
+</div>
+</div>
+<p>查看apiVersion:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo apt-get install haproxy</pre></td></tr></table>
+<pre class="chroma">kubectl api-versions</pre></td></tr></table>
 </div>
 </div>
-<p>配置:</p>
+<p>查看Kind:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo vim /etc/haproxy/haproxy.cfg</pre></td></tr></table>
+<pre class="chroma">kubectl api-resources</pre></td></tr></table>
 </div>
 </div>
+<h2 id="metadata">metadata</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">metadata:
+  labels/标签: 用户筛选资源，唯一的资源组合方法, 可以使用selector来查询.
+  annotations/注解: 存储资源的非标识性信息，扩展资源的spec/status.
+  ownerReference/关系: 方便反向查找创建资源的对象，方便进行级联删除。</pre></td></tr></table>
+</div>
+</div>
+<h2 id="spec">spec</h2>
+
+<h2 id="status">status</h2>
+
     </div>
 
     <div class="post-copyright">
@@ -192,7 +244,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2018-07-28
+        2020-01-10
         
     </span>
   </p>
@@ -215,16 +267,16 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/haproxy/">haproxy</a>
+          <a href="/tags/k8s/">k8s</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sec_csrf/">
+        <a class="prev" href="/post/k8s_kubectl/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Csrf</span>
+            <span class="prev-text nav-default">K8S_Kubectl</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/sec_sqlinjection/">
-            <span class="next-text nav-default">Sql Injection</span>
+        <a class="next" href="/post/compose/">
+            <span class="next-text nav-default">Compose</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -237,8 +289,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-07-28 16:08:54 \x2b0000 UTC',
-        title: 'HAProxy',
+        id: '2020-01-10 20:55:52 \x2b0800 CST',
+        title: 'API',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

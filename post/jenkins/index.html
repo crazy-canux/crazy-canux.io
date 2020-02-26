@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-04-15T09:41:39&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-15T09:41:39&#43;00:00" />
-<meta itemprop="wordCount" content="382">
+<meta itemprop="wordCount" content="351">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 382 words </span>
+          <span class="more-meta"> 351 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -148,15 +148,17 @@
     <nav id="TableOfContents">
 <ul>
 <li><a href="#jenkins">Jenkins</a></li>
-<li><a href="#系统管理">系统管理</a></li>
-<li><a href="#添加credentials">添加credentials</a></li>
 <li><a href="#nodes">nodes</a></li>
-<li><a href="#blueocean">blueocean</a></li>
 <li><a href="#plugins">plugins</a>
 <ul>
 <li><a href="#thinbackup">thinbackup</a></li>
-</ul></li>
 <li><a href="#pipeline">pipeline</a></li>
+<li><a href="#blueocean">blueocean</a></li>
+</ul></li>
+<li><a href="#git-plugin">git plugin</a></li>
+<li><a href="#docker-plugin">docker plugin</a></li>
+<li><a href="#k8s">k8s</a></li>
+<li><a href="#docker">docker</a></li>
 </ul>
 </nav>
   </div>
@@ -216,14 +218,6 @@ $ systemctl start jenkins</pre></td></tr></table>
 </div>
 <hr />
 
-<h1 id="系统管理">系统管理</h1>
-
-<p>管理插件，管理用户等.</p>
-
-<h1 id="添加credentials">添加credentials</h1>
-
-<p>首先添加源代码的credential.比如github/gitlab/p4v/bitbucket.</p>
-
 <h1 id="nodes">nodes</h1>
 
 <p>添加节点需要安装和master版本一样的java.</p>
@@ -241,10 +235,6 @@ $ systemctl start jenkins</pre></td></tr></table>
 <li>create credential and node.</li>
 </ol>
 
-<h1 id="blueocean">blueocean</h1>
-
-<p>blueocean是jenkins的一个差劲，提供更好的用户界面.</p>
-
 <hr />
 
 <h1 id="plugins">plugins</h1>
@@ -253,16 +243,75 @@ $ systemctl start jenkins</pre></td></tr></table>
 
 <p>备份插件，主要备份jenkins主目录.</p>
 
-<hr />
+<h2 id="pipeline">pipeline</h2>
 
-<h1 id="pipeline">pipeline</h1>
+<p><a href="https://github.com/jenkinsci/pipeline-plugin">https://github.com/jenkinsci/pipeline-plugin</a></p>
 
 <p>使用pipeline需要先安装pipeline插件.</p>
 
 <p>pipeline是groovy语法的jenkins的DSL.</p>
 
+<h2 id="blueocean">blueocean</h2>
+
+<p><a href="https://github.com/jenkinsci/blueocean-plugin">https://github.com/jenkinsci/blueocean-plugin</a></p>
+
+<h1 id="git-plugin">git plugin</h1>
+
+<p><a href="https://github.com/jenkinsci/git-plugin">https://github.com/jenkinsci/git-plugin</a></p>
+
+<h1 id="docker-plugin">docker plugin</h1>
+
+<p><a href="https://github.com/jenkinsci/docker-workflow-plugin">https://github.com/jenkinsci/docker-workflow-plugin</a></p>
+
+<h1 id="k8s">k8s</h1>
+
+<p><a href="https://github.com/jenkinsci/kubernetes-plugin">https://github.com/jenkinsci/kubernetes-plugin</a></p>
+
 <hr />
 
+<h1 id="docker">docker</h1>
+
+<p>在docker上执行流水线</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">agent {
+    docker {
+        image &#39;maven:3-alpine&#39;
+        label &#39;my-defined-label&#39;
+        args  &#39;-v /tmp:/tmp&#39;
+    }
+}
+
+agent {
+    // Equivalent to &#34;docker build -f Dockerfile.build --build-arg version=1.0.2 ./build/
+    dockerfile {
+        filename &#39;Dockerfile.build&#39;
+        dir &#39;build&#39;
+        label &#39;my-defined-label&#39;
+        additionalBuildArgs  &#39;--build-arg version=1.0.2&#39;
+    }
+}</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">

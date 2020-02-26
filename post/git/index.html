@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-04-02T21:11:33&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-02T21:11:33&#43;00:00" />
-<meta itemprop="wordCount" content="2514">
+<meta itemprop="wordCount" content="2534">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 2514 words </span>
+          <span class="more-meta"> 2534 words </span>
           <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -822,6 +822,16 @@ git log --pretty=format:&#39;%h&#39; -n 1 // 查看commit id.</pre></td></tr></t
 </div>
 <h2 id="merge">merge</h2>
 
+<p>merge的5中策略:</p>
+
+<ul>
+<li>resolve</li>
+<li>recursive</li>
+<li>octopus</li>
+<li>ours</li>
+<li>subtree</li>
+</ul>
+
 <p>Join two or more development histories together</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -829,12 +839,14 @@ git log --pretty=format:&#39;%h&#39; -n 1 // 查看commit id.</pre></td></tr></t
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">git merge [branch-name]
 git merge --ff # fast-forward,默认直接两个分支合并，不会产生新的commit,看不到开发分支的分叉．
+git merge --ff-only
 git merge --no-ff # no fast-forward,每次合并会创建新的commit.可以看到开发分支的分叉
-git merge --ff-only</pre></td></tr></table>
+git merge --squash</pre></td></tr></table>
 </div>
 </div>
 <h2 id="mv">mv</h2>
