@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>ELK</title>
+      <link>http://canuxcheng.com/post/logging_elk/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_elk/</guid>
+      <description>ELK kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可扩展的插件． beats(agent): 轻量型数据采集平台，从边缘机器向l</description>
+    </item>
+    
+    <item>
       <title>Grok</title>
       <link>http://canuxcheng.com/post/logging_grok/</link>
       <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
@@ -26,7 +35,16 @@
       <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/logging/</guid>
-      <description>Logging 日志采集，存储，可视化. 主要有Elastic stack 和 splunk.</description>
+      <description>Logging 日志采集，存储，可视化. 主要有Elastic stack, splunk, loki.</description>
+    </item>
+    
+    <item>
+      <title>Loki</title>
+      <link>http://canuxcheng.com/post/logging_loki/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_loki/</guid>
+      <description>ELK kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可扩展的插件． beats(agent): 轻量型数据采集平台，从边缘机器向l</description>
     </item>
     
   </channel>

@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tivoli - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="ITM ITM: IBM Tivoli Monitoring 是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。 Architecture Overview: ITM主要由管理组件和可选组件组成。 Tivoli Management Services: 1. TEMS 2. TEPS 3. TEP client 4. Historical" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/metrics_tivoli/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Tivoli" />
+<meta property="og:description" content="ITM ITM: IBM Tivoli Monitoring 是IBM的Cloud &amp; Smart Infrastructure监控解决方案。 Architecture Overview: ITM主要由管理组件和可选组件组成。 Tivoli Management Services: 1. TEMS 2. TEPS 3. TEP client 4. Historical" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/metrics_tivoli/" />
+<meta property="article:published_time" content="2016-04-20T13:57:31&#43;00:00"/>
+<meta property="article:modified_time" content="2016-04-20T13:57:31&#43;00:00"/>
+
+<meta itemprop="name" content="Tivoli">
+<meta itemprop="description" content="ITM ITM: IBM Tivoli Monitoring 是IBM的Cloud &amp; Smart Infrastructure监控解决方案。 Architecture Overview: ITM主要由管理组件和可选组件组成。 Tivoli Management Services: 1. TEMS 2. TEPS 3. TEP client 4. Historical">
+
+
+<meta itemprop="datePublished" content="2016-04-20T13:57:31&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-20T13:57:31&#43;00:00" />
+<meta itemprop="wordCount" content="2547">
+
+
+
+<meta itemprop="keywords" content="monitoring," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tivoli"/>
+<meta name="twitter:description" content="ITM ITM: IBM Tivoli Monitoring 是IBM的Cloud &amp; Smart Infrastructure监控解决方案。 Architecture Overview: ITM主要由管理组件和可选组件组成。 Tivoli Management Services: 1. TEMS 2. TEPS 3. TEP client 4. Historical"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Tivoli</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-04-20 </span>
+        <div class="post-category">
+            <a href="/categories/devops/"> DevOps </a>
+            </div>
+          <span class="more-meta"> 2547 words </span>
+          <span class="more-meta"> 6 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#itm">ITM</a>
+<ul>
+<li><a href="#安装itm">安装ITM</a></li>
+</ul></li>
+<li><a href="#tems">TEMS</a></li>
+<li><a href="#tema">TEMA</a>
+<ul>
+<li><a href="#agentless">Agentless</a></li>
+<li><a href="#agent">Agent</a></li>
+</ul></li>
+<li><a href="#teps-db">TEPS+DB</a></li>
+<li><a href="#tepd-tep-client">TEPD(TEP client)</a></li>
+<li><a href="#history-data-collection-tdw">History data collection(TDW)</a>
+<ul>
+<li><a href="#warehouse-proxy">Warehouse Proxy</a></li>
+<li><a href="#summarization-and-pruning-agent">Summarization and Pruning agent</a></li>
+</ul></li>
+<li><a href="#jazz-for-service-management-visualization">Jazz for Service Management(Visualization)</a>
+<ul>
+<li><a href="#dashboard-application-services-hub-dash-visualization-services">Dashboard Application Services Hub(DASH)(visualization services)</a></li>
+<li><a href="#ibm-tivoli-common-reporting-reporting-services">IBM Tivoli Common Reporting(reporting services)</a></li>
+<li><a href="#registry-services">Registry Services</a></li>
+<li><a href="#security-services">Security Services</a></li>
+<li><a href="#administration-services">Administration Services</a></li>
+<li><a href="#tivoli-directory-integrator">Tivoli Directory Integrator</a></li>
+<li><a href="#ibm-http-server">IBM HTTP Server</a></li>
+<li><a href="#ibm-websphere-application-server">IBM WebSphere® Application Server</a></li>
+<li><a href="#web-server-plug-ins-for-ibm-websphere-application-server">Web Server Plug-ins for IBM WebSphere Application Server</a></li>
+</ul></li>
+<li><a href="#management">Management</a></li>
+<li><a href="#cli">CLI</a>
+<ul>
+<li><a href="#tacmd">tacmd</a></li>
+<li><a href="#itmcmd">itmcmd</a></li>
+<li><a href="#tivcmd">tivcmd</a></li>
+</ul></li>
+<li><a href="#advanced-administration">Advanced Administration</a>
+<ul>
+<li><a href="#queries-query-editor">Queries(query editor)</a></li>
+<li><a href="#advanced-link-topics">Advanced link topics</a></li>
+<li><a href="#advanced-situation-techniques-situation-editor">Advanced situation techniques(situation editor)</a></li>
+<li><a href="#agent-autonomy">Agent autonomy</a></li>
+<li><a href="#policy-workflow-editor">Policy(workflow editor)</a></li>
+<li><a href="#agentless-monitoring">Agentless monitoring</a></li>
+<li><a href="#agent-managent-services-ams">Agent Managent Services(AMS)</a></li>
+</ul></li>
+<li><a href="#agent-builder">Agent Builder</a></li>
+<li><a href="#create-agent">create agent</a></li>
+<li><a href="#install-agent">install agent</a></li>
+<li><a href="#config-agent">config agent</a></li>
+<li><a href="#uninstall-agent">uninstall agent</a></li>
+<li><a href="#monitoring-windows-resources">Monitoring windows resources</a></li>
+<li><a href="#monitoring-process-and-command-return-codes">Monitoring process and command return codes</a></li>
+<li><a href="#monitoring-custom-data-sources">Monitoring custom data sources</a></li>
+<li><a href="#monitoring-remote-resources">Monitoring remote resources</a></li>
+<li><a href="#netcool-omnibus">Netcool/OMNIbus</a></li>
+<li><a href="#eif">EIF</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-04-20T13:57:31" title="April 20, 2016">April 20, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="itm">ITM</h1>
+
+<p>ITM: IBM Tivoli Monitoring</p>
+
+<p>是IBM的Cloud &amp; Smart Infrastructure监控解决方案。</p>
+
+<p>Architecture Overview:</p>
+
+<p><img src="/images/tivoli.png" alt="pic" /></p>
+
+<p>ITM主要由管理组件和可选组件组成。</p>
+
+<p>Tivoli Management Services:
+1. TEMS
+2. TEPS
+3. TEP client
+4. Historical data collection(warehouse agent)
+   * warehouse proxy
+   * summarization and pruning agent
+5. OS agent</p>
+
+<p>Optional components:
+1. Dashboard Application Services Hub
+    * Tivoli Monitoring dashboards(Infrastructure Management Dashboards for Servers)
+    * Tivoli Common Reporting
+    * Tivoli Enterprise Monitoring Automation Server
+2. Tivoli Event Synchronization component
+3. Authorization Policy Components(tivcmd)</p>
+
+<p><a href="http://www.ibm.com/support/knowledgecenter/SSTFXA_6.3.0/com.ibm.itm.doc_6.3/welcome_63.htm">http://www.ibm.com/support/knowledgecenter/SSTFXA_6.3.0/com.ibm.itm.doc_6.3/welcome_63.htm</a></p>
+
+<h2 id="安装itm">安装ITM</h2>
+
+<p>Windows: C:\IBM\ITM</p>
+
+<p>Linux/Unix: /opt/IBM/ITM</p>
+
+<p>分为本地安装和分布式安装。</p>
+
+<ol>
+<li><p>需要先为TEPS和TDW安装DB(ODBC/JDBC)。</p>
+
+<p>DB2</p>
+
+<p>MSSQL</p>
+
+<p>Oracle</p></li>
+
+<li><p>在windows/linux/unix安装ITM framework</p>
+
+<p>TEMA</p>
+
+<p>Warehouse Proxy agent</p>
+
+<p>Summarization and Pruning agent</p>
+
+<p>Tivoli performance Analyzer</p>
+
+<p>TEMS</p>
+
+<p>TEPS</p>
+
+<p>TEPD</p>
+
+<p>TEMAS</p></li>
+
+<li><p>安装agent</p>
+
+<p>安装操作系统的agent：</p>
+
+<p>monitoring agent for your OS。</p>
+
+<p>安装数据库的agent：</p>
+
+<p>TEMA/TEMS/TEPS同时勾选DB的agent。</p>
+
+<p>安装agent builder的agent。</p></li>
+</ol>
+
+<p><a href="http://www-933.ibm.com/support/fixcentral/swg/downloadFixes?parent=ibm%2FTivoli&amp;product=ibm/Tivoli/IBM+Tivoli+Monitoring&amp;release=All&amp;platform=All&amp;function=fixId&amp;fixids=6.3.0-TIV-ITM-FP0005&amp;includeRequisites=1&amp;includeSupersedes=0&amp;downloadMethod=http">http://www-933.ibm.com/support/fixcentral/swg/downloadFixes?parent=ibm%2FTivoli&amp;product=ibm/Tivoli/IBM+Tivoli+Monitoring&amp;release=All&amp;platform=All&amp;function=fixId&amp;fixids=6.3.0-TIV-ITM-FP0005&amp;includeRequisites=1&amp;includeSupersedes=0&amp;downloadMethod=http</a></p>
+
+<p>&hellip;</p>
+
+<h1 id="tems">TEMS</h1>
+
+<p>TEMS:  Tivoli Enterprise Monitoing Server</p>
+
+<p>TEMS分为remote和hub，remote最后都汇总到hub。</p>
+
+<p>HTEMS: Hub Tivoli Enterprise Monitoring Server</p>
+
+<p>RTEMS: Remote Tivoli Enterprise Monitoring Server</p>
+
+<p>一个TEMS建议管理700个agent</p>
+
+<h1 id="tema">TEMA</h1>
+
+<p>TEMA: Tivoli Enterprise Monitoring Agent</p>
+
+<p>安装agent之后通过GUI工具Tivoli Enterprise Monitoring Service来配置和启动agent。</p>
+
+<p>也可以通过命令行来配置和启动agent。</p>
+
+<p>agent配置需要指定HTEMS服务器。</p>
+
+<h2 id="agentless">Agentless</h2>
+
+<p>TEMS -&gt; Agentless server -&gt; servers</p>
+
+<p>就是用一个中间服务器通过snmp等协议来监控不需要安装agent的被监控服务器。</p>
+
+<p>一个agentless可以设置10个实例(操作系统)，一个实例可以监控100个节点(被监控服务器)。</p>
+
+<p>Agentless OS agents:
+1. Agentless Monitoring for AIX OS - SNMP
+2. Agentless Monitoring for HP-UX OS - SNMP
+3. Agentless Monitoring for Linux OS - SNMP
+4. Agentless Monitoring for Solaris OS - SNMP,CIM-XML
+5. Agentless Monitoring for Windows OS - SNMP,WMI</p>
+
+<h2 id="agent">Agent</h2>
+
+<p>TEMS -&gt; servers(agent)</p>
+
+<p>一个agent连2个TEMS,一个primary，一个backup。</p>
+
+<p>agent分为：</p>
+
+<ol>
+<li>Operating System agent</li>
+<li>specialized agent</li>
+<li>Application agent</li>
+</ol>
+
+<p>OS agent：
+1. Windows
+2. Unix
+3. Linux
+4. IBM i5/OS</p>
+
+<p>specialized agent：
+1. warehouse proxy agent
+2. warehouse summarization and pruning agent
+3. Log file agent
+4. System p® agents (AIX Premium, CEC Base, HMC Base, VIOS Premium)
+5. Systems Director base agent
+6. Tivoli zEnterprise® Agent
+7. Performance Analyzer</p>
+
+<h1 id="teps-db">TEPS+DB</h1>
+
+<p>TEPS: Tivoli Enterprise Portal Server</p>
+
+<p>使用MTEMS来配置TEPS,添加DB。</p>
+
+<h1 id="tepd-tep-client">TEPD(TEP client)</h1>
+
+<p>TEP -&gt; TEPS</p>
+
+<p>TEP: Tivoli Enterprise Portal client</p>
+
+<p>TEP是GUI界面，分为：
+1. Desktop
+2. Browser
+3. JavaWS: java web start</p>
+
+<p>需要安装IBM的java，在C:\Program Files\IBM\Java70。</p>
+
+<p>使用TEP来查看监控结果。</p>
+
+<p>默认用户是sysadmin, 需要为TEPD指定TEPS服务器。</p>
+
+<ol>
+<li><p>Browser版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">http://&lt;TEPS Server&gt;:15200/cnp.html</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>Desktop版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">http://&lt;TEPS Server&gt;:15200/tep.jnlp</pre></td></tr></table>
+</div>
+</div>
+<p>安装ITM可以选择安装桌面版,也可以从Java Web Start获取桌面版。</p></li>
+
+<li><p>Java Web Start版本</p>
+
+<p>结合了desktop和browser的优点,从web下载，在桌面运行。</p></li>
+</ol>
+
+<p>TEP的结构：</p>
+
+<ul>
+<li><p>Navigator view</p>
+
+<p>Enterprise</p>
+
+<p>Operating Platform(操作系统类型)</p>
+
+<p>Node(一台服务器一个节点)</p>
+
+<p>Agent(一个节点上的agent)</p>
+
+<p>Situation(一个agent上的situation)</p>
+
+<p>Event(一个situation有多个event)</p>
+
+<p>Attribute group(相同的Situation是一个group)</p></li>
+
+<li><p>Navigator workspace</p>
+
+<p>每个view项目都有一个默认的workspace。</p></li>
+</ul>
+
+<p>&hellip;</p>
+
+<h1 id="history-data-collection-tdw">History data collection(TDW)</h1>
+
+<p>TDW: Tivoli Data Warehouse</p>
+
+<p>存储历史数据。支持DB2，Oracle， MSSQL。</p>
+
+<p>也就是将agent收集的数据存到数据库。</p>
+
+<h2 id="warehouse-proxy">Warehouse Proxy</h2>
+
+<p>TDW使用该agent从agents收集和加载数据。</p>
+
+<p>使用MTEMS配置warehouse proxy。</p>
+
+<h2 id="summarization-and-pruning-agent">Summarization and Pruning agent</h2>
+
+<p>TDW使用该agent控制数据库大小。</p>
+
+<p>使用MTEMS配置summarization and pruning agent。</p>
+
+<h1 id="jazz-for-service-management-visualization">Jazz for Service Management(Visualization)</h1>
+
+<h2 id="dashboard-application-services-hub-dash-visualization-services">Dashboard Application Services Hub(DASH)(visualization services)</h2>
+
+<h2 id="ibm-tivoli-common-reporting-reporting-services">IBM Tivoli Common Reporting(reporting services)</h2>
+
+<h2 id="registry-services">Registry Services</h2>
+
+<h2 id="security-services">Security Services</h2>
+
+<h2 id="administration-services">Administration Services</h2>
+
+<h2 id="tivoli-directory-integrator">Tivoli Directory Integrator</h2>
+
+<h2 id="ibm-http-server">IBM HTTP Server</h2>
+
+<h2 id="ibm-websphere-application-server">IBM WebSphere® Application Server</h2>
+
+<h2 id="web-server-plug-ins-for-ibm-websphere-application-server">Web Server Plug-ins for IBM WebSphere Application Server</h2>
+
+<p>&hellip;</p>
+
+<h1 id="management">Management</h1>
+
+<p>管理所有组件一般使用GUI叫manage tivoli monitoring services</p>
+
+<p>windows/linux/unix都可以用GUI。</p>
+
+<p>也可以使用CLI（命令行）,见后文.</p>
+
+<p>一般使用GUI来启动、停止和配置组件。</p>
+
+<h1 id="cli">CLI</h1>
+
+<p>Command Line Interface</p>
+
+<h2 id="tacmd">tacmd</h2>
+
+<p>支持windows/linux/unix。</p>
+
+<p>/opt/IBM/ITM/bin/tacmd</p>
+
+<p>C:\IBM\ITM\BIN\tacmd</p>
+
+<p>查看tacmd手册：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./tacmd help
+./tacmd ?</pre></td></tr></table>
+</div>
+</div>
+<p>登陆和登出HTEMS:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./tacmd login -s [PROTOCOL://]HOST[:PORT] -u [USERNAME] -p [PASSWORD] -t [TIMEOUT]
+./tacmd logout</pre></td></tr></table>
+</div>
+</div>
+<p>登陆和登出TEPS：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./tacmd tepsLogin -s [TEPS_HOSTNAME] -u [USERNAME] -p [TEPS_PASSWORD] -t [TIMEOUT] -i [IGNORE]
+./tacmd tepsLogout</pre></td></tr></table>
+</div>
+</div>
+<p>管理agent：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./tacmd startAgent/stopAgent/restartAgent/viewAgent/updateAgent ...</pre></td></tr></table>
+</div>
+</div>
+<p>刷新Netcool/OMNIbus：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./tacmd refreshTECinfo {-t|--type} {eif|maps|attr|all}</pre></td></tr></table>
+</div>
+</div>
+<h2 id="itmcmd">itmcmd</h2>
+
+<p>用于Linux/Unix系统的命令</p>
+
+<p>/opt/IBM/ITM/bin/itmcmd</p>
+
+<p>查看itmcmd手册：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./itmcmd help
+./itmcmd ?</pre></td></tr></table>
+</div>
+</div>
+<p>启动或停止TEMS:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./itmcmd server [-options] {start|stop} tems_name</pre></td></tr></table>
+</div>
+</div>
+<p>启动或停止agent：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./itmcmd agent [-options] {start|stop} {pc ...|all}</pre></td></tr></table>
+</div>
+</div>
+<p>启动MTEMS:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./itmcmd manage &amp;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="tivcmd">tivcmd</h2>
+
+<p>&hellip;</p>
+
+<h1 id="advanced-administration">Advanced Administration</h1>
+
+<h2 id="queries-query-editor">Queries(query editor)</h2>
+
+<p>DB agent -&gt; normal way to get data source from database servers.</p>
+
+<p>ODBC -&gt; get data source from windows database</p>
+
+<p>JDBC -&gt; get data source from linux/unix database</p>
+
+<h2 id="advanced-link-topics">Advanced link topics</h2>
+
+<p>Simple link:</p>
+
+<p>Just used to navigate portal workspaces without using the navigator.</p>
+
+<p>Advanced link:</p>
+
+<p>Can be used to manipulate data that is displayed in the target workspace.</p>
+
+<h2 id="advanced-situation-techniques-situation-editor">Advanced situation techniques(situation editor)</h2>
+
+<h2 id="agent-autonomy">Agent autonomy</h2>
+
+<h2 id="policy-workflow-editor">Policy(workflow editor)</h2>
+
+<h2 id="agentless-monitoring">Agentless monitoring</h2>
+
+<p>TEPS -&gt; Agentless Monitoring Serve -&gt; Servers</p>
+
+<h2 id="agent-managent-services-ams">Agent Managent Services(AMS)</h2>
+
+<hr />
+
+<hr />
+
+<h1 id="agent-builder">Agent Builder</h1>
+
+<p>IBM Agent Builder agents</p>
+
+<p>windows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">C:\Program Files(x86)\IBM\AgentBuilder</pre></td></tr></table>
+</div>
+</div>
+<p>aix/linux:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/opt/ibm/AgentBuilder</pre></td></tr></table>
+</div>
+</div>
+<p>Data source:
+1. JDBC
+2. HTTP
+3. SOAP
+4. Ping
+5. Socket
+6. Java API
+7. WMI
+8. Perfmon
+9. CIM
+10. SNMP
+11. JMX
+12. command return code
+13. output from a script
+14. A log file
+15. AIX Binary Log
+16. windows event log
+17. A process
+18. A Windows service</p>
+
+<h1 id="create-agent">create agent</h1>
+
+<p>Every agent have a unique produce code.</p>
+
+<p>Like: k00-k99, k{0-9}{A-Z}.</p>
+
+<ol>
+<li><p>Create the agent in the Agent Builder
+agent information
+data source
+runtime configuration</p></li>
+
+<li><p>Install and test the agent
+output and install the agent
+config and start agent in MTEMS.
+confirm agent data
+revise and retest as needed</p></li>
+
+<li><p>Add application support
+create in TEP, including queries, workspaces, situations, and take actions.
+Import application support into agent in Agent Builder.
+Retest the agent and application support</p></li>
+
+<li><p>Create an installation solution.
+Create solution install package from the agent.
+Create solution install package from the package.
+Run the image on the target location.</p></li>
+</ol>
+
+<h1 id="install-agent">install agent</h1>
+
+<p>Three ways to instal the agent.</p>
+
+<p>You must install the TEMS and TEPS support on TEMS(HTEMS) and TEPS server.</p>
+
+<ol>
+<li><p>generate the agent files in an ITM installation on this machine</p>
+
+<p>通过GUI快速安装，Agent Builder和ITM（TEMS和TEPS）安装在同一台机器上。</p></li>
+
+<li><p>generate a solution install package</p>
+
+<p>创建安装镜像来安装，windows的.exe和linux/unix的.bin。</p></li>
+
+<li><p>create a compressed file so that the agent can be installed on another system</p>
+
+<p>命令行安装。
+生成一个.zip和一个.tgz文件。
+包括windows的.bat和linux/unix的.sh安装文件</p>
+
+<p>安装下面三个包(等效方法一）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">InstallIra.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
+InstallIra.bat C:\IBM\ITM -h &lt;HTEMS&gt; -u &lt;username&gt; -p &lt;password&gt; # for windows
+./InstallIra.sh /opt/IBM/ITM -h &lt;HTEMS&gt; -u &lt;username&gt; -p &lt;password&gt; # for linux</pre></td></tr></table>
+</div>
+</div>
+<p>在被监控机器安装agent:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">installIraAgent.bat/.sh itm_install_location
+installIraAgent.bat C:\IBM\ITM # for windows
+./installIraAgent.sh /opt/IBM/ITM # for linux</pre></td></tr></table>
+</div>
+</div>
+<p>在TEMS(HTEMS)服务器安装对agent的支持：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">installIraAgentTEMS.bat/.sh itm_install_location [[-h Hub_TEMS_hostname] -u HUB_TEMS_username -p Hub_TEMS_password]
+installIraAgentTEMS.bat C:\IBM\ITM # for local HTEMS windows server.
+./installIraAgentTEMS.sh /opt/IBM/ITM # for local HTEMS linux server.</pre></td></tr></table>
+</div>
+</div>
+<p>在TEPS服务器安装对agent的支持：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">installIraAgentTEPS.bat/.sh itm_install_location [[-h TEPS_hostname] -u TEPS_username -p TEPS_password]
+installIraAgentTEPS.bat C:\IBM\ITM # for local TEPS windows server.
+./installIraAgentTEPS.sh /opt/IBM/ITM # for local TEPS linux server.</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<h1 id="config-agent">config agent</h1>
+
+<p>需要为agent指定HTEMS服务器，并重启agent，然后重启TEPD。</p>
+
+<p>可以通过Tivoli Enterprise Monitoring Service来配置和启动，也可以通过命令行。</p>
+
+<p>查看所有agent信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/opt/IBM/ITM/bin/cinfo -i # check the productcode and platformCode.</pre></td></tr></table>
+</div>
+</div>
+<p>config agent:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./itmcmd config -A productcode</pre></td></tr></table>
+</div>
+</div>
+<p>start agent:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./tacmd agent start productcode</pre></td></tr></table>
+</div>
+</div>
+<h1 id="uninstall-agent">uninstall agent</h1>
+
+<ol>
+<li><p>uninstall from commandline.</p>
+
+<p>windows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd ITM_INSTALL/TMAITM6
+cd C:\IBM\ITM\TMAITM6_x64
+kxx_uninstall.vbs ITM_INSTALL
+K&lt;product code&gt;_uninstall.vbs C:\IBM\ITM</pre></td></tr></table>
+</div>
+</div>
+<p>linux/unix:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/opt/IBM/ITM/bin/uninstall.sh [-f] [-i] [-h install_dir] productcode platformCode</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>Remove from TEP client(clear offline entry)</p></li>
+</ol>
+
+<h1 id="monitoring-windows-resources">Monitoring windows resources</h1>
+
+<ol>
+<li><p>Windows Management Instrumentation(WMI)</p></li>
+
+<li><p>Windows Performance Monitor(Perfmon)</p></li>
+
+<li><p>Windows Event Log</p></li>
+</ol>
+
+<h1 id="monitoring-process-and-command-return-codes">Monitoring process and command return codes</h1>
+
+<ol>
+<li><p>Monitoring process</p></li>
+
+<li><p>Monitoring command return code</p></li>
+</ol>
+
+<h1 id="monitoring-custom-data-sources">Monitoring custom data sources</h1>
+
+<ol>
+<li><p>Monitoring script output</p></li>
+
+<li><p>Monitoring log file</p></li>
+</ol>
+
+<h1 id="monitoring-remote-resources">Monitoring remote resources</h1>
+
+<ol>
+<li><p>Monitoring SNMP</p></li>
+
+<li><p>Monitoring CIM</p></li>
+
+<li><p>Moitoring JMX</p></li>
+</ol>
+
+<hr />
+
+<hr />
+
+<h1 id="netcool-omnibus">Netcool/OMNIbus</h1>
+
+<p>IBM Tivoli Netcool/OMNIbus</p>
+
+<p>TEC: Tivoli Enterprise Console, 已经被Netcool/OMNIbus替代。</p>
+
+<p>windows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">C:\Program Files(x86)\IBM\NCOhome</pre></td></tr></table>
+</div>
+</div>
+<p>linux/aix:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/opt/IBM/NCOhome</pre></td></tr></table>
+</div>
+</div>
+<p>Browser版本需要安装IBM的JRE，在C:\Program Files\IBM\Java70。</p>
+
+<h1 id="eif">EIF</h1>
+
+<p>EIF: Event Integration Facility</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-04-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/monitoring/">monitoring</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ps_utils/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Utils</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/shell_find/">
+            <span class="next-text nav-default">Find</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-04-20 13:57:31 \x2b0000 UTC',
+        title: 'Tivoli',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -248,6 +248,13 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/logging_elk/</loc>
+    <lastmod>2018-06-08T09:46:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/logging_grok/</loc>
     <lastmod>2018-06-08T09:46:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -256,6 +263,13 @@
   
   <url>
     <loc>http://canuxcheng.com/post/logging/</loc>
+    <lastmod>2018-06-08T09:46:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/logging_loki/</loc>
     <lastmod>2018-06-08T09:46:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -353,21 +367,28 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/monitoring_influxdb/</loc>
+    <loc>http://canuxcheng.com/post/metrics_influxdb/</loc>
     <lastmod>2018-01-18T19:23:25+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/monitoring_kapacitor/</loc>
+    <loc>http://canuxcheng.com/post/metrics_kapacitor/</loc>
     <lastmod>2018-01-18T19:23:25+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/monitoring_telegraf/</loc>
+    <loc>http://canuxcheng.com/post/metrics_prometheus/</loc>
+    <lastmod>2018-01-18T19:23:25+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/metrics_telegraf/</loc>
     <lastmod>2018-01-18T19:23:25+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -689,7 +710,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/monitoring_grafana/</loc>
+    <loc>http://canuxcheng.com/post/metrics_grafana/</loc>
     <lastmod>2017-01-12T21:05:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1102,7 +1123,35 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/tracing_jaeger/</loc>
+    <lastmod>2016-06-08T09:46:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/metrics/</loc>
+    <lastmod>2016-06-08T09:46:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/monitoring/</loc>
+    <lastmod>2016-06-08T09:46:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/tracing_sentry/</loc>
+    <lastmod>2016-06-08T09:46:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/tracing/</loc>
     <lastmod>2016-06-08T09:46:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1172,7 +1221,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/monitoring_tivoli/</loc>
+    <loc>http://canuxcheng.com/post/metrics_tivoli/</loc>
     <lastmod>2016-04-20T13:57:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1515,14 +1564,14 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/monitoring_nagios/</loc>
+    <loc>http://canuxcheng.com/post/metrics_nagios/</loc>
     <lastmod>2016-03-25T11:15:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/monitoring_zabbix/</loc>
+    <loc>http://canuxcheng.com/post/metrics_zabbix/</loc>
     <lastmod>2016-03-25T11:15:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2593,6 +2642,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/tmux/</loc>
     <lastmod>2016-06-19T11:17:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/tracing/</loc>
+    <lastmod>2016-06-08T09:46:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

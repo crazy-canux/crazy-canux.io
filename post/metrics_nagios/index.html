@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Nagios - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Nagios Nagios is the industry standard in IT infrastructure monitoring Nagios offers complete monitoring and alerting for servers, switches, applications, and services. Nagios官方宣称nagios是IT基础监控的工业标准。 Nagios提供对服务器，交换机，应用" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/metrics_nagios/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Nagios" />
+<meta property="og:description" content="Nagios Nagios is the industry standard in IT infrastructure monitoring Nagios offers complete monitoring and alerting for servers, switches, applications, and services. Nagios官方宣称nagios是IT基础监控的工业标准。 Nagios提供对服务器，交换机，应用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/metrics_nagios/" />
+<meta property="article:published_time" content="2016-03-25T11:15:48&#43;00:00"/>
+<meta property="article:modified_time" content="2016-03-25T11:15:48&#43;00:00"/>
+
+<meta itemprop="name" content="Nagios">
+<meta itemprop="description" content="Nagios Nagios is the industry standard in IT infrastructure monitoring Nagios offers complete monitoring and alerting for servers, switches, applications, and services. Nagios官方宣称nagios是IT基础监控的工业标准。 Nagios提供对服务器，交换机，应用">
+
+
+<meta itemprop="datePublished" content="2016-03-25T11:15:48&#43;00:00" />
+<meta itemprop="dateModified" content="2016-03-25T11:15:48&#43;00:00" />
+<meta itemprop="wordCount" content="3187">
+
+
+
+<meta itemprop="keywords" content="monitoring," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nagios"/>
+<meta name="twitter:description" content="Nagios Nagios is the industry standard in IT infrastructure monitoring Nagios offers complete monitoring and alerting for servers, switches, applications, and services. Nagios官方宣称nagios是IT基础监控的工业标准。 Nagios提供对服务器，交换机，应用"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Nagios</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-03-25 </span>
+        <div class="post-category">
+            <a href="/categories/devops/"> DevOps </a>
+            </div>
+          <span class="more-meta"> 3187 words </span>
+          <span class="more-meta"> 7 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#nagios">Nagios</a></li>
+<li><a href="#nagios安装配置">Nagios安装配置</a>
+<ul>
+<li><a href="#nagios发展">Nagios发展</a></li>
+<li><a href="#nagios安装配置-1">Nagios安装配置</a></li>
+</ul></li>
+<li><a href="#nagios开源解决方案">Nagios开源解决方案</a>
+<ul>
+<li><a href="#nagios-core">Nagios core:</a></li>
+<li><a href="#nagios-plugins">Nagios plugins:</a></li>
+<li><a href="#nagios-frontends">Nagios frontends:</a></li>
+<li><a href="#nagios-config-tools-nagios-addons-projects">Nagios config tools(Nagios addons projects):</a></li>
+<li><a href="#nagios-exchange">Nagios exchange:</a></li>
+</ul></li>
+<li><a href="#nagios商业解决方案">Nagios商业解决方案</a>
+<ul>
+<li><a href="#nagios-xi">Nagios XI:</a></li>
+<li><a href="#nagios-network-analyzer">Nagios network analyzer</a></li>
+<li><a href="#nagios-log-server">Nagios log server</a></li>
+<li><a href="#nagios-fusion">Nagios fusion</a></li>
+<li><a href="#nagios-incident-manager">Nagios incident manager</a></li>
+</ul></li>
+<li><a href="#nagios命令">Nagios命令</a></li>
+<li><a href="#nagios-集中监控">Nagios 集中监控</a>
+<ul>
+<li><a href="#本地监控">本地监控</a></li>
+<li><a href="#远程监控">远程监控</a></li>
+</ul></li>
+<li><a href="#nagios-分布式监控">Nagios 分布式监控</a>
+<ul>
+<li><a href="#nrdp-nsca-nsca-ng">NRDP/NSCA/NSCA-ng</a></li>
+</ul></li>
+<li><a href="#nagios的组件">Nagios的组件</a>
+<ul>
+<li><a href="#ndoutils-ndo-idoutils-ido">NDOUtils(NDO)/IDOUtils(IDO)</a></li>
+<li><a href="#nsti">NSTI</a></li>
+<li><a href="#bpi">BPI</a></li>
+</ul></li>
+<li><a href="#其它组件介绍">其它组件介绍</a>
+<ul>
+<li><a href="#nconf">NCONF</a></li>
+<li><a href="#dnx">DNX</a></li>
+<li><a href="#nagiosgraph">Nagiosgraph</a></li>
+</ul></li>
+<li><a href="#consol的分布式监控方案">consol的分布式监控方案</a>
+<ul>
+<li><a href="#mod-gearman">Mod gearman</a></li>
+<li><a href="#ndoutils-livestatus">NDOUtils/livestatus</a></li>
+<li><a href="#thruk">Thruk</a></li>
+</ul></li>
+<li><a href="#op5的分布式监控方案">Op5的分布式监控方案</a>
+<ul>
+<li><a href="#merlin">merlin</a></li>
+<li><a href="#ndoutils-mk-livestatus">NDOUtils/MK livestatus</a></li>
+<li><a href="#ninja">Ninja</a></li>
+</ul></li>
+<li><a href="#omd">OMD</a></li>
+<li><a href="#gearman">Gearman</a></li>
+<li><a href="#rrdtools">rrdtools</a></li>
+<li><a href="#pnp4nagios">pnp4nagios</a></li>
+<li><a href="#nagvis">Nagvis</a></li>
+<li><a href="#dokuwiki">dokuwiki</a></li>
+<li><a href="#graphite">graphite</a></li>
+<li><a href="#grafana">grafana</a></li>
+<li><a href="#graphios">graphios</a></li>
+<li><a href="#ledbetter">Ledbetter</a></li>
+<li><a href="#nscp">NSCP</a></li>
+<li><a href="#monitoring-plugins">Monitoring Plugins</a></li>
+<li><a href="#monitoring-plugins-1">monitoring-plugins</a>
+<ul>
+<li><a href="#negate">negate</a></li>
+<li><a href="#check-http">check_http</a></li>
+</ul></li>
+<li><a href="#windows-monitoring">Windows monitoring</a></li>
+<li><a href="#linux-unix-monitoring">Linux/Unix monitoring</a></li>
+<li><a href="#os-x-monitoring">OS X monitoring</a></li>
+<li><a href="#vitual-machine-monitoring">Vitual Machine monitoring</a></li>
+<li><a href="#db-monitoring">DB monitoring</a></li>
+<li><a href="#network-monitoring">Network monitoring</a></li>
+<li><a href="#storage-monitoring">Storage monitoring</a></li>
+<li><a href="#log-monitoring">Log monitoring</a></li>
+<li><a href="#process-monitoring">Process monitoring</a></li>
+<li><a href="#application-monitoring">Application monitoring</a></li>
+<li><a href="#monitoring插件开发">Monitoring插件开发</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-03-25T11:15:48" title="March 25, 2016">March 25, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      
+
+<h1 id="nagios">Nagios</h1>
+
+<blockquote>
+<p>Nagios is the industry standard in IT infrastructure monitoring</p>
+
+<p>Nagios offers complete monitoring and alerting for servers, switches, applications, and services.</p>
+</blockquote>
+
+<p>Nagios官方宣称nagios是IT基础监控的工业标准。</p>
+
+<p>Nagios提供对服务器，交换机，应用和服务的完整的监控和警报。</p>
+
+<p>Nagios是无agent的，nagios的plugin通过协议远程获取信息。</p>
+
+<p><a href="https://www.nagios.org/">https://www.nagios.org/</a></p>
+
+<p><a href="https://www.nagios.com/">https://www.nagios.com/</a></p>
+
+<p><a href="https://exchange.nagios.org/">https://exchange.nagios.org/</a></p>
+
+<p><a href="https://github.com/NagiosEnterprises">https://github.com/NagiosEnterprises</a></p>
+
+<p><a href="https://github.com/nagios-plugins">https://github.com/nagios-plugins</a></p>
+
+<hr />
+
+<h1 id="nagios安装配置">Nagios安装配置</h1>
+
+<h2 id="nagios发展">Nagios发展</h2>
+
+<p>Nagios core 1.0</p>
+
+<p>Nagios core 2.0</p>
+
+<p>Nagios core 3.0</p>
+
+<p>Nagios XI</p>
+
+<p>Nagios core 4.0</p>
+
+<p>目前nagios有两大阵营：</p>
+
+<p>开源解决方案： Nagios core</p>
+
+<p>商业解决方案： Nagios XI</p>
+
+<h2 id="nagios安装配置-1">Nagios安装配置</h2>
+
+<p>安装和配置nagios core,plugins,addons参考</p>
+
+<p>官方文档:</p>
+
+<p><a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/toc.html</a></p>
+
+<p>中文文档：</p>
+
+<p><a href="http://nagios-cn.sourceforge.net/nagios-cn/index.html">http://nagios-cn.sourceforge.net/nagios-cn/index.html</a></p>
+
+<hr />
+
+<h1 id="nagios开源解决方案">Nagios开源解决方案</h1>
+
+<h2 id="nagios-core">Nagios core:</h2>
+
+<blockquote>
+<p>Nagios Core is the monitoring and alerting engine that serves as the primary application around which hundreds of Nagios projects are built.</p>
+</blockquote>
+
+<p>Nagios core是监控和警报的主引擎，围绕它建立了成千上万的项目。
+技术栈是c，只能安装在linux/unix系统。
+Nagios core只是一个监控套件，本身没有监控功能，需要插件来完成监控。</p>
+
+<p><a href="https://www.nagios.org/projects/nagios-core/">https://www.nagios.org/projects/nagios-core/</a></p>
+
+<p><a href="https://github.com/NagiosEnterprises/nagioscore">https://github.com/NagiosEnterprises/nagioscore</a></p>
+
+<h2 id="nagios-plugins">Nagios plugins:</h2>
+
+<blockquote>
+<p>Efficient, standalone extensions that provide low-level intelligence for monitoring anything and everything with Nagios Core.</p>
+</blockquote>
+
+<p>Nagios core的监控插件,也就是官方插件,主要是c、shell和perl。</p>
+
+<p><a href="https://www.nagios.org/projects/nagios-plugins/">https://www.nagios.org/projects/nagios-plugins/</a></p>
+
+<p><a href="https://github.com/nagios-plugins/nagios-plugins">https://github.com/nagios-plugins/nagios-plugins</a></p>
+
+<h2 id="nagios-frontends">Nagios frontends:</h2>
+
+<blockquote>
+<p>Web interfaces, themes, Windows and Linux interfaces, and mobile apps for Nagios. Change the look and style of Nagios to suite your needs.</p>
+</blockquote>
+
+<p>Nagios frontends包括了 主题,web接口,移动设备接口。</p>
+
+<p><a href="https://www.nagios.org/downloads/nagios-core-frontends/">https://www.nagios.org/downloads/nagios-core-frontends/</a></p>
+
+<h2 id="nagios-config-tools-nagios-addons-projects">Nagios config tools(Nagios addons projects):</h2>
+
+<blockquote>
+<p>Tools and GUIs for simplifying Nagios Core configuration.</p>
+</blockquote>
+
+<p>nagios core的组件。</p>
+
+<p>包括Lilac,NagiosQL,NConf,OneCMDB,ignoramus</p>
+
+<p><a href="https://www.nagios.org/projects/nagios-config-tools/">https://www.nagios.org/projects/nagios-config-tools/</a></p>
+
+<p><a href="https://www.nagios.org/downloads/nagios-core-addons/">https://www.nagios.org/downloads/nagios-core-addons/</a></p>
+
+<p><a href="https://github.com/NagiosEnterprises">https://github.com/NagiosEnterprises</a></p>
+
+<h2 id="nagios-exchange">Nagios exchange:</h2>
+
+<blockquote>
+<p>Nagios® Exchange is the central place where you&rsquo;ll find all types of Nagios projects - plugins, addons, documentation, extensions, and more. This site is designed for the Nagios Community to share its Nagios creations.</p>
+</blockquote>
+
+<p>Nagios exchange是nagios的开源宝库。</p>
+
+<p>包括第三方plugins、addons和docs。</p>
+
+<p><a href="https://exchange.nagios.org/https://exchange.nagios.org/">https://exchange.nagios.org/https://exchange.nagios.org/</a></p>
+
+<hr />
+
+<h1 id="nagios商业解决方案">Nagios商业解决方案</h1>
+
+<h2 id="nagios-xi">Nagios XI:</h2>
+
+<blockquote>
+<p>Our most powerful IT infrastructure monitoring and IT monitoring software alerting solution for today’s demanding organizational requirements.</p>
+</blockquote>
+
+<p>Nagios XI 是现代化的商业监控解决套件。</p>
+
+<p>Nagios XI 使用nagios core 4.0。</p>
+
+<p>Nagios XI 架构：</p>
+
+<p><img src="/images/nagiosxi.png" alt="pic" /></p>
+
+<h2 id="nagios-network-analyzer">Nagios network analyzer</h2>
+
+<h2 id="nagios-log-server">Nagios log server</h2>
+
+<h2 id="nagios-fusion">Nagios fusion</h2>
+
+<h2 id="nagios-incident-manager">Nagios incident manager</h2>
+
+<hr />
+
+<h1 id="nagios命令">Nagios命令</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/usr/local/nagios/bin/nagios --help
+-v 验证配置文件
+-d daemon mode
+-W worker mode.</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="nagios-集中监控">Nagios 集中监控</h1>
+
+<h2 id="本地监控">本地监控</h2>
+
+<p>使用nagios core + plugins只能监控本地的linux/unix机器。</p>
+
+<h2 id="远程监控">远程监控</h2>
+
+<p>使用nagios core + plugins + addons可以监控远程的linux/unix/windows机器。</p>
+
+<p>NRPE(for linux)/NRPE_NT(for windows)和check_nrpe, 运行远程机器上的插件, 支持windows/unix/linux:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + check_nrpe &lt;=&gt; NRPE/NRPE_NT + plugins</pre></td></tr></table>
+</div>
+</div>
+<p>NSCP和check_nt, 只能使用固定的几个命令查基本属性, 支持windows/linux/unix：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + check_nt -H &lt;NSCP IP&gt; [-v &lt;command&gt;] &lt;=&gt; NSCP(NSClient++)</pre></td></tr></table>
+</div>
+</div>
+<p>NSCP和check_nrpe，可以传自己的命令或插件, 支持windows/linux/unix：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + check_nrpe -H &lt;NSCP IP&gt; [-c &lt;command/plugins&gt;] [-a &lt;argument list&gt;] &lt;=&gt; NSCP(NSClient++) + plugins</pre></td></tr></table>
+</div>
+</div>
+<p>NSCP和NSCA/NRDP,NSCP主动check,然后将结果发送给NSCA/NRDP:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + NSCA &lt;=&gt; NSCP(NSClient++)</pre></td></tr></table>
+</div>
+</div>
+<p>NCPA是python写的跨平台代理, 支持linux/windows/unix：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core + check_ncpa.py &lt;=&gt; NCPA</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="nagios-分布式监控">Nagios 分布式监控</h1>
+
+<h2 id="nrdp-nsca-nsca-ng">NRDP/NSCA/NSCA-ng</h2>
+
+<p>官方推荐，NRDP是NSCA的升级版,提供被动检测,这种方式效率低，稳定性差。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nagios core &lt;- plugins &lt;- NSCA &lt;= send_nsca &lt;- ocsp &lt;- Nagios core &lt;=&gt; Hosts
+                               ^
+                              ||
+                              send_nsca &lt;- ocsp &lt;- Nagios core &lt;=&gt; Hosts</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="nagios的组件">Nagios的组件</h1>
+
+<p><a href="https://www.nagios.org/downloads/nagios-core-addons/">https://www.nagios.org/downloads/nagios-core-addons/</a></p>
+
+<p><a href="https://github.com/NagiosEnterprises">https://github.com/NagiosEnterprises</a></p>
+
+<h2 id="ndoutils-ndo-idoutils-ido">NDOUtils(NDO)/IDOUtils(IDO)</h2>
+
+<p>从nagios导出当前和历史数据到mysql数据库,需要安装数据库。</p>
+
+<p>相似功能有mk livestatus。</p>
+
+<p>N * (Nagios core + NDO module) -&gt; TCP/Socket -&gt; NDO2DB daemon -&gt; DB</p>
+
+<p><a href="https://github.com/NagiosEnterprises/ndoutils">https://github.com/NagiosEnterprises/ndoutils</a></p>
+
+<h2 id="nsti">NSTI</h2>
+
+<p>Nagios SNMP Trap Interface.</p>
+
+<p><a href="https://github.com/NagiosEnterprises/nsti">https://github.com/NagiosEnterprises/nsti</a></p>
+
+<h2 id="bpi">BPI</h2>
+
+<p>Nagios Business Process Intelligence.</p>
+
+<p><a href="https://github.com/NagiosEnterprises/nagiosbpi">https://github.com/NagiosEnterprises/nagiosbpi</a></p>
+
+<h1 id="其它组件介绍">其它组件介绍</h1>
+
+<h2 id="nconf">NCONF</h2>
+
+<p>nagios的基于web的配置工具。</p>
+
+<p><a href="http://www.nconf.org/dokuwiki/doku.php">http://www.nconf.org/dokuwiki/doku.php</a></p>
+
+<p><a href="https://github.com/nconf/nconf">https://github.com/nconf/nconf</a></p>
+
+<h2 id="dnx">DNX</h2>
+
+<p>分布式组件。</p>
+
+<p><a href="http://dnx.sourceforge.net/">http://dnx.sourceforge.net/</a></p>
+
+<p><a href="https://sourceforge.net/projects/dnx/">https://sourceforge.net/projects/dnx/</a></p>
+
+<h2 id="nagiosgraph">Nagiosgraph</h2>
+
+<blockquote>
+<p>nagiosgraph parses output and performance data from Nagios plugins and stores
+the data in RRD files. nagiosgraph creates graphs and generates HTML pages with
+graphic reports from the data.</p>
+</blockquote>
+
+<p>基于RRD，绘制nagios的性能图。</p>
+
+<p><a href="http://nagiosgraph.sourceforge.net/">http://nagiosgraph.sourceforge.net/</a></p>
+
+<p><a href="https://sourceforge.net/projects/nagiosgraph/">https://sourceforge.net/projects/nagiosgraph/</a></p>
+
+<hr />
+
+<h1 id="consol的分布式监控方案">consol的分布式监控方案</h1>
+
+<p>一家德国的咨询和解决方案软件公司。</p>
+
+<p>可以通过 check_MK 的omd来安装。</p>
+
+<p><a href="https://www.consol.de/">https://www.consol.de/</a></p>
+
+<p><a href="https://labs.consol.de/index.html">https://labs.consol.de/index.html</a></p>
+
+<p><a href="https://github.com/ConSol">https://github.com/ConSol</a></p>
+
+<p>主要贡献组件：</p>
+
+<p><a href="https://github.com/sni">https://github.com/sni</a></p>
+
+<p>主要贡献插件：</p>
+
+<p><a href="https://github.com/lausser">https://github.com/lausser</a></p>
+
+<p><img src="/images/nagios.png" alt="pic" /></p>
+
+<h2 id="mod-gearman">Mod gearman</h2>
+
+<p>labs consol的分布式监控组件, gearman的worker。</p>
+
+<p><a href="http://www.mod-gearman.org/">http://www.mod-gearman.org/</a></p>
+
+<p><a href="https://github.com/sni/mod_gearman">https://github.com/sni/mod_gearman</a></p>
+
+<h2 id="ndoutils-livestatus">NDOUtils/livestatus</h2>
+
+<p>Event broker.</p>
+
+<h2 id="thruk">Thruk</h2>
+
+<p>基于perl的web框架catalyst的dashbord。</p>
+
+<p><a href="http://www.thruk.org/">http://www.thruk.org/</a></p>
+
+<p><a href="https://github.com/sni/Thruk">https://github.com/sni/Thruk</a></p>
+
+<hr />
+
+<h1 id="op5的分布式监控方案">Op5的分布式监控方案</h1>
+
+<p>一家瑞典的监控和解决方案公司。</p>
+
+<p><a href="https://www.op5.com/">https://www.op5.com/</a></p>
+
+<p><a href="https://kb.op5.com/dashboard.action">https://kb.op5.com/dashboard.action</a></p>
+
+<p><a href="https://github.com/op5">https://github.com/op5</a></p>
+
+<h2 id="merlin">merlin</h2>
+
+<p>分布式组件。</p>
+
+<p><a href="https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home">https://kb.op5.com/display/MERLIN/Distributed+%28Merlin%29+Home</a></p>
+
+<p><a href="https://github.com/op5/merlin">https://github.com/op5/merlin</a></p>
+
+<h2 id="ndoutils-mk-livestatus">NDOUtils/MK livestatus</h2>
+
+<p>Eevent broker</p>
+
+<h2 id="ninja">Ninja</h2>
+
+<p>Dashboard.</p>
+
+<p><a href="https://kb.op5.com/display/GUI/GUI+%28Ninja%29+Home">https://kb.op5.com/display/GUI/GUI+%28Ninja%29+Home</a></p>
+
+<p><a href="https://github.com/op5/ninja">https://github.com/op5/ninja</a></p>
+
+<hr />
+
+<p>介绍Addons.</p>
+
+<h1 id="omd">OMD</h1>
+
+<blockquote>
+<p>OMD implements a completely new concept of how to install, maintain and update a monitoring system built on Nagios.</p>
+</blockquote>
+
+<p><a href="http://omdistro.org/">http://omdistro.org/</a></p>
+
+<p><a href="http://git.mathias-kettner.de/git/?p=omd.git;a=tree">http://git.mathias-kettner.de/git/?p=omd.git;a=tree</a></p>
+
+<p>The Open Monitoring Distribution</p>
+
+<p>用于快速部署基于nagios的分布式监控，包括：</p>
+
+<ol>
+<li><p>Icinga/Shinken/check_MK</p></li>
+
+<li><p>Monitoring-Plugins和其它插件</p></li>
+
+<li><p>mod-gearman/MK Livestatus/thruk/multisite</p></li>
+
+<li><p>nsca/check_nrpe。</p></li>
+
+<li><p>NagVis/Pnp4nagios/rrdtool/dokuwiki</p></li>
+</ol>
+
+<h1 id="gearman">Gearman</h1>
+
+<blockquote>
+<p>Gearman provides a generic application framework to farm out work to other machines or processes that are better suited to do the work.</p>
+</blockquote>
+
+<p>Gearman用来做任务分发的.</p>
+
+<p>一个C++实现的Gearman Job Server:</p>
+
+<p><a href="http://gearman.org/">http://gearman.org/</a></p>
+
+<p><a href="https://github.com/gearman/gearmand">https://github.com/gearman/gearmand</a></p>
+
+<p>一个C实现的Gearman worker:</p>
+
+<p><a href="http://www.mod-gearman.org/">http://www.mod-gearman.org/</a></p>
+
+<p><a href="https://github.com/sni/mod_gearman">https://github.com/sni/mod_gearman</a></p>
+
+<h1 id="rrdtools">rrdtools</h1>
+
+<blockquote>
+<p>RRDtool is a little program for easily maintaining a database of time-series data. It comes with a charting program for drawing pretty graphs based on the data stored.</p>
+</blockquote>
+
+<p>存储性能数据。</p>
+
+<p><a href="http://oss.oetiker.ch/rrdtool/">http://oss.oetiker.ch/rrdtool/</a></p>
+
+<p><a href="https://github.com/oetiker/rrdtool-1.x">https://github.com/oetiker/rrdtool-1.x</a></p>
+
+<h1 id="pnp4nagios">pnp4nagios</h1>
+
+<blockquote>
+<p>PNP is an addon to Nagios which analyzes performance data provided by plugins and stores them automatically into RRD-databases.</p>
+</blockquote>
+
+<p>基于RRD，绘制nagios的性能图。</p>
+
+<p><a href="http://docs.pnp4nagios.org/">http://docs.pnp4nagios.org/</a></p>
+
+<p><a href="https://github.com/lingej/pnp4nagios">https://github.com/lingej/pnp4nagios</a></p>
+
+<p>可以在nagios的service配置中添加“ostpl_enable-graph&rdquo;启用图形。</p>
+
+<p>templates.dist是自带模板</p>
+
+<p>templates是用户自定义模板</p>
+
+<p>XXX.php需要和nagios的service的command_name同名，默认查找这个同名的模板.</p>
+
+<p>测试就是scp XXX.php nagios-server:/usr/share/pnp4nagios/html/templates/然后去nagios查看结果</p>
+
+<p>pnp4nagios查找顺序：</p>
+
+<ol>
+<li>templates/check_XXX.php</li>
+<li>templates.dist/check_XXX.php</li>
+<li>templates/default.php</li>
+<li>templates.dist/default.php</li>
+</ol>
+
+<h1 id="nagvis">Nagvis</h1>
+
+<blockquote>
+<p>NagVis is a program for visualizing the data the monitoring core of your choice, for example Nagios, Naemon, Icinga or Shinken, in a human friendly way.</p>
+</blockquote>
+
+<p>绘制监控地图。</p>
+
+<p><a href="http://www.nagvis.org/">http://www.nagvis.org/</a></p>
+
+<p><a href="https://github.com/NagVis/nagvis">https://github.com/NagVis/nagvis</a></p>
+
+<h1 id="dokuwiki">dokuwiki</h1>
+
+<blockquote>
+<p>DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn&rsquo;t require a database.</p>
+</blockquote>
+
+<p>创建监控的procedure。</p>
+
+<p><a href="https://www.dokuwiki.org/dokuwiki/">https://www.dokuwiki.org/dokuwiki/</a></p>
+
+<p><a href="https://github.com/splitbrain/dokuwiki">https://github.com/splitbrain/dokuwiki</a></p>
+
+<h1 id="graphite">graphite</h1>
+
+<p><a href="https://github.com/graphite-project">https://github.com/graphite-project</a></p>
+
+<p><a href="http://graphite.readthedocs.io/en/latest/index.html">http://graphite.readthedocs.io/en/latest/index.html</a></p>
+
+<p>Zabbix,Sensu,Ganglia,Nagios/Naemon/Icinga/Shinken都可以配合使用。</p>
+
+<p>绘制性能图。</p>
+
+<p>graphite-web</p>
+
+<blockquote>
+<p>A highly scalable real-time graphing system</p>
+</blockquote>
+
+<p>carbon</p>
+
+<blockquote>
+<p>Carbon is responsible for receiving metrics over the network, caching them in memory for &ldquo;hot queries&rdquo; from the Graphite-Web application, and persisting them to disk using the Whisper time-series library.</p>
+</blockquote>
+
+<p>whisper/ceres</p>
+
+<p>ceres会替代whisper。</p>
+
+<blockquote>
+<p>Whisper is a fixed-size database, similar in design and purpose to RRD (round-robin-database). It provides fast, reliable storage of numeric data over time. Whisper allows for higher resolution (seconds per point) of recent data to degrade into lower resolutions for long-term retention of historical data.</p>
+</blockquote>
+
+<h1 id="grafana">grafana</h1>
+
+<blockquote>
+<p>Grafana is an open source, feature rich metrics dashboard and graph editor for Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.</p>
+</blockquote>
+
+<p>为graphite提供更好的可视化图形。</p>
+
+<p><a href="https://github.com/grafana/grafana">https://github.com/grafana/grafana</a></p>
+
+<p><a href="http://grafana.org/">http://grafana.org/</a></p>
+
+<h1 id="graphios">graphios</h1>
+
+<blockquote>
+<p>A program to send nagios perf data to graphite(carbon)/statsd/librato/influxdb</p>
+</blockquote>
+
+<p>发送nagios性能数据到Graphite。</p>
+
+<p><a href="https://github.com/shawn-sterling/graphios">https://github.com/shawn-sterling/graphios</a></p>
+
+<h1 id="ledbetter">Ledbetter</h1>
+
+<blockquote>
+<p>A simple script for gathering Nagios problem statistics and submitting them to Graphite. It focuses on summary (overall, servicegroup and hostgroup) statistics and writes them to the nagios.problems metrics namespace within Graphite.</p>
+</blockquote>
+
+<p>发送nagios性能数据到Graphite。</p>
+
+<p><a href="https://github.com/github/ledbetter">https://github.com/github/ledbetter</a></p>
+
+<h1 id="nscp">NSCP</h1>
+
+<blockquote>
+<p>NSClient is an agent designed originally to work with Nagios but has since evolved into a fully fledged monitoring agent which can be used with numerous monitoring tools (like Icinga, Naemon, OP5, NetEye Opsview etc).</p>
+</blockquote>
+
+<p>又叫NSClient++,现在同时支持windows和linux,主要用来安装到windows服务器,用于监控windows系统.</p>
+
+<p><a href="https://nsclient.org/">https://nsclient.org/</a></p>
+
+<p><a href="https://github.com/mickem/nscp">https://github.com/mickem/nscp</a></p>
+
+<hr />
+
+<p>介绍Plugins</p>
+
+<h1 id="monitoring-plugins">Monitoring Plugins</h1>
+
+<p>Nagios/naemon/icinga/shinken/centreon/opsview/sensu</p>
+
+<p>Office project:</p>
+
+<p><a href="https://github.com/monitoring-plugins">https://github.com/monitoring-plugins</a></p>
+
+<p><a href="https://www.monitoring-plugins.org/">https://www.monitoring-plugins.org/</a></p>
+
+<p>My plugin project:</p>
+
+<p><a href="https://github.com/crazy-canux/pymonitoringplugins">https://github.com/crazy-canux/pymonitoringplugins</a></p>
+
+<p>Open source project:</p>
+
+<p><a href="https://github.com/crazy-canux/awesome-monitoring">https://github.com/crazy-canux/awesome-monitoring</a></p>
+
+<h1 id="monitoring-plugins-1">monitoring-plugins</h1>
+
+<h2 id="negate">negate</h2>
+
+<p>设置相反状态</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-o 设置ok对应状态
+-w
+-c
+-u</pre></td></tr></table>
+</div>
+</div>
+<h2 id="check-http">check_http</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[-f &lt;ok|warning|critcal|follow|sticky|stickyport&gt;] # 跳转
+-p PORT # http:80, https:443
+-a &#34;USERNAME&#34;:&#34;PASSWORD&#34;
+-u PATH
+--ssl=1/-S # https需要ssl
+-s SEARCH
+-e SEARCH,SEARCH...
+-l # 用在-r或-R前面,表示可以在多行进行正则匹配
+-r # 正则匹配
+-R # 大小写不敏感的正则匹配
+-C # 检查证书, 不检查URL
+-t # timeout.
+-w # warning response time
+-c # critical response time</pre></td></tr></table>
+</div>
+</div>
+<h1 id="windows-monitoring">Windows monitoring</h1>
+
+<ul>
+<li><p>check_wmi_plus.pl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">IgnoreMyOutDatedPerlModuleVersions
+-m checkfolderfileage -a &#39;C:&#39; -o &#39;/tmp&#39; -inc _FileAge=@0:1000 -c 10
+-m check_file_count -a &#39;F:&#39; -o &#39;/folder&#39;</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>check_snmp_win_services.pl</p>
+
+<p>查windows的service</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-n &lt;name&gt;[,&lt;name2&gt;]... # 指定service名字，默认大小写不敏感,正则匹配，逗号分隔多个service，用display name。
+-N=&lt;n&gt; # 匹配到service数量大于n就报错
+-r # 精确匹配</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>check_smb_shares.pl</p></li>
+</ul>
+
+<h1 id="linux-unix-monitoring">Linux/Unix monitoring</h1>
+
+<ul>
+<li>check_hpasm.pl</li>
+</ul>
+
+<h1 id="os-x-monitoring">OS X monitoring</h1>
+
+<ul>
+<li>OSX-Monitoring-Tools</li>
+</ul>
+
+<h1 id="vitual-machine-monitoring">Vitual Machine monitoring</h1>
+
+<ul>
+<li><p>check_wmware_api.pl</p></li>
+
+<li><p>check_vmware_esx.pl</p></li>
+</ul>
+
+<h1 id="db-monitoring">DB monitoring</h1>
+
+<ul>
+<li><p>check_mysql_health.pl</p></li>
+
+<li><p>check_oracle_health.pl</p></li>
+
+<li><p>check_db2_health.pl</p></li>
+
+<li><p>check_mssql_health.pl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">--name database/sql</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h1 id="network-monitoring">Network monitoring</h1>
+
+<ul>
+<li>check_nwc_health.pl</li>
+</ul>
+
+<h1 id="storage-monitoring">Storage monitoring</h1>
+
+<ul>
+<li><p>check_snmp_storage.pl</p>
+
+<p>返回用了多少空间。</p></li>
+
+<li><p>check_disk</p>
+
+<p>返回剩余多少空间。</p></li>
+</ul>
+
+<h1 id="log-monitoring">Log monitoring</h1>
+
+<ul>
+<li><p>check_logfiles.pl</p></li>
+
+<li><p>check_events.pl</p></li>
+</ul>
+
+<h1 id="process-monitoring">Process monitoring</h1>
+
+<ul>
+<li><p>check_snmp_process.pl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-n &lt;name&gt; # process名字，大小写敏感，正则匹配，windows需要用processname.exe
+-r # 精确匹配
+-w minW, maxW
+-c minC, maxC # minC &lt;= minW &lt; maxW &lt; maxC</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h1 id="application-monitoring">Application monitoring</h1>
+
+<ul>
+<li><p>check_sap_health.pl</p></li>
+
+<li><p>check_mailbox_health.pl</p></li>
+</ul>
+
+<h1 id="monitoring插件开发">Monitoring插件开发</h1>
+
+<p>Nagios Plugin API:</p>
+
+<p><a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/pluginapi.html">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/pluginapi.html</a></p>
+
+<p>Developing Plugins For Use With Embedded Perl:</p>
+
+<p><a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/epnplugins.html">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/epnplugins.html</a></p>
+
+<p>Nagios plugin development guidelines:</p>
+
+<p><a href="https://nagios-plugins.org/doc/guidelines.html">https://nagios-plugins.org/doc/guidelines.html</a></p>
+
+<p>Monitoring Plugin Development Guidelines:</p>
+
+<p><a href="https://www.monitoring-plugins.org/doc/guidelines.html">https://www.monitoring-plugins.org/doc/guidelines.html</a></p>
+
+<p>Nagios不是基于agent的，所以插件都是通过协议来获取监控信息。</p>
+
+<p>plugin需要遵守下面规则：
+1. 至少输出一行文本到STDOUT
+2. 事件状态由插件的返回码决定</p>
+
+<p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">just support 4kb data
+shortoutput - $SERVICEOUTPUT$
+perfdata - $SERVICEPERFDATA$
+longoutput - $LONGSERVICEOUTPUT$</pre></td></tr></table>
+</div>
+</div>
+<p>返回码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">0： OK（绿色）
+1： Warning（黄色）
+2： Critical（红色）
+3： Unknown（深黄色）</pre></td></tr></table>
+</div>
+</div>
+<p>阀值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">10     | 0:10   | &lt;0 or &gt;10 alert
+10:    | 10:æ  | &lt;10 alert
+~:10   | -æ:10 | &gt;10 alert
+10:20  |        | &lt;10 or &gt;20 alert
+@10:20 |        | &gt;=10 and &lt;=20 alert</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-03-25
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/monitoring/">monitoring</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/markdown/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Markdown</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/metrics_zabbix/">
+            <span class="next-text nav-default">Zabbix</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-03-25 11:15:48 \x2b0000 UTC',
+        title: 'Nagios',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

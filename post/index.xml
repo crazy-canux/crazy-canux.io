@@ -331,6 +331,15 @@ Deploy pre-install:
     </item>
     
     <item>
+      <title>ELK</title>
+      <link>http://canuxcheng.com/post/logging_elk/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_elk/</guid>
+      <description>ELK kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可扩展的插件． beats(agent): 轻量型数据采集平台，从边缘机器向l</description>
+    </item>
+    
+    <item>
       <title>Grok</title>
       <link>http://canuxcheng.com/post/logging_grok/</link>
       <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
@@ -345,7 +354,16 @@ Deploy pre-install:
       <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/logging/</guid>
-      <description>Logging 日志采集，存储，可视化. 主要有Elastic stack 和 splunk.</description>
+      <description>Logging 日志采集，存储，可视化. 主要有Elastic stack, splunk, loki.</description>
+    </item>
+    
+    <item>
+      <title>Loki</title>
+      <link>http://canuxcheng.com/post/logging_loki/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_loki/</guid>
+      <description>ELK kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可扩展的插件． beats(agent): 轻量型数据采集平台，从边缘机器向l</description>
     </item>
     
     <item>
@@ -467,28 +485,37 @@ Deploy pre-install:
     
     <item>
       <title>Influxdb</title>
-      <link>http://canuxcheng.com/post/monitoring_influxdb/</link>
+      <link>http://canuxcheng.com/post/metrics_influxdb/</link>
       <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/monitoring_influxdb/</guid>
+      <guid>http://canuxcheng.com/post/metrics_influxdb/</guid>
       <description>Influxdb https://github.com/influxdata/influxdb Scalable datastore for metrics, events, and real-time analytics. 支持从opentsdb, graphite, collectd等获取数据 默认数据库_internal 用于存储内部运行数据 安装配置参考官方文档</description>
     </item>
     
     <item>
       <title>Kapacitor</title>
-      <link>http://canuxcheng.com/post/monitoring_kapacitor/</link>
+      <link>http://canuxcheng.com/post/metrics_kapacitor/</link>
       <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/monitoring_kapacitor/</guid>
+      <guid>http://canuxcheng.com/post/metrics_kapacitor/</guid>
       <description>Kapacitor https://github.com/influxdata/Kapacitor Open source framework for processing, monitoring, and alerting on time series data 可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor. 配</description>
     </item>
     
     <item>
-      <title>Telegraf</title>
-      <link>http://canuxcheng.com/post/monitoring_telegraf/</link>
+      <title>Prometheus</title>
+      <link>http://canuxcheng.com/post/metrics_prometheus/</link>
       <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/monitoring_telegraf/</guid>
+      <guid>http://canuxcheng.com/post/metrics_prometheus/</guid>
+      <description> Prometheus </description>
+    </item>
+    
+    <item>
+      <title>Telegraf</title>
+      <link>http://canuxcheng.com/post/metrics_telegraf/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_telegraf/</guid>
       <description>Telegraf https://github.com/influxdata/telegraf The plugin-driven server agent for collecting &amp;amp; reporting metrics. Configuartion agent configuration: 1 2 3 4 5 6 interval 所有inputs的默认运行间隔 round_interval collection_jitter precision ns/us/ms/s flush_interval flush_jitter input configuration: 1 2 3 4 5 interval name_override # 默认measurements是插件名</description>
     </item>
     
@@ -900,10 +927,10 @@ debug </description>
     
     <item>
       <title>Grafana</title>
-      <link>http://canuxcheng.com/post/monitoring_grafana/</link>
+      <link>http://canuxcheng.com/post/metrics_grafana/</link>
       <pubDate>Thu, 12 Jan 2017 21:05:48 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/monitoring_grafana/</guid>
+      <guid>http://canuxcheng.com/post/metrics_grafana/</guid>
       <description>Grafana The tool for beautiful monitoring and metric analytics &amp;amp; dashboards for Graphite, InfluxDB &amp;amp; Prometheus &amp;amp; More. https://github.com/grafana/grafana 支持多种data source: graphite/influxdb/opentsdb/premetheus/elasticsearch/mysql/postgresql 安装配置参考官方文档 grafana配置文件是grafana.ini. HTTP API 1 port = 3000 dashboard</description>
     </item>
     
@@ -1430,12 +1457,49 @@ debug </description>
     </item>
     
     <item>
+      <title>Jaeger</title>
+      <link>http://canuxcheng.com/post/tracing_jaeger/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing_jaeger/</guid>
+      <description>Jaeger https://www.jaegertracing.io/
+https://github.com/jaegertracing/jaeger</description>
+    </item>
+    
+    <item>
+      <title>Metrics</title>
+      <link>http://canuxcheng.com/post/metrics/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics/</guid>
+      <description>Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix. Modern monitoring is for Cloud and Container. Modern monitoring based on metrics, logs and tracing. TICK stack influxdb: tsdb. kapacitor: alerting. chronograf: GUI. telegraf(agent): metrics collector. Prometheus Graphing 最流行的监控绘图软件是grafana, 支持influxdb,ela</description>
+    </item>
+    
+    <item>
       <title>Monitoring</title>
       <link>http://canuxcheng.com/post/monitoring/</link>
       <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/monitoring/</guid>
-      <description>Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix. Modern monitoring is for Cloud and Container. Modern monitoring based on metrics and logs. Elastic stack kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可</description>
+      <description>Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix. Modern monitoring is for Cloud and Container. Modern monitoring based on metrics, logs and tracing. 现代的监控系统在DevOps的基础上，除了传统的metrics和logging的采集，还需要</description>
+    </item>
+    
+    <item>
+      <title>Sentry</title>
+      <link>http://canuxcheng.com/post/tracing_sentry/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing_sentry/</guid>
+      <description>Sentry https://github.com/getsentry/sentry</description>
+    </item>
+    
+    <item>
+      <title>Tracing</title>
+      <link>http://canuxcheng.com/post/tracing/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing/</guid>
+      <description>Tracing APM 监控，也叫全链路监控。 sentry https://github.com/getsentry/sentry zipkin https://github.com/openzipkin/zipkin open-telemetry opentracing和opencensus 合并成open-telemetry. https://github.com/opentracing https://github.com/census-instrumentation https://github.com/open-telemetry jaeger https://github.com/jaegertracing/jaeger</description>
     </item>
     
     <item>
@@ -1521,10 +1585,10 @@ debug </description>
     
     <item>
       <title>Tivoli</title>
-      <link>http://canuxcheng.com/post/monitoring_tivoli/</link>
+      <link>http://canuxcheng.com/post/metrics_tivoli/</link>
       <pubDate>Wed, 20 Apr 2016 13:57:31 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/monitoring_tivoli/</guid>
+      <guid>http://canuxcheng.com/post/metrics_tivoli/</guid>
       <description>ITM ITM: IBM Tivoli Monitoring 是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。 Architecture Overview: ITM主要由管理组件和可选组件组成。 Tivoli Management Services: 1. TEMS 2. TEPS 3. TEP client 4. Historical</description>
     </item>
     
@@ -1967,19 +2031,19 @@ SAAS: Software as a service</description>
     
     <item>
       <title>Nagios</title>
-      <link>http://canuxcheng.com/post/monitoring_nagios/</link>
+      <link>http://canuxcheng.com/post/metrics_nagios/</link>
       <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/monitoring_nagios/</guid>
+      <guid>http://canuxcheng.com/post/metrics_nagios/</guid>
       <description>Nagios Nagios is the industry standard in IT infrastructure monitoring Nagios offers complete monitoring and alerting for servers, switches, applications, and services. Nagios官方宣称nagios是IT基础监控的工业标准。 Nagios提供对服务器，交换机，应用</description>
     </item>
     
     <item>
       <title>Zabbix</title>
-      <link>http://canuxcheng.com/post/monitoring_zabbix/</link>
+      <link>http://canuxcheng.com/post/metrics_zabbix/</link>
       <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/monitoring_zabbix/</guid>
+      <guid>http://canuxcheng.com/post/metrics_zabbix/</guid>
       <description> Zabbix </description>
     </item>
     
