@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="323">
+<meta itemprop="wordCount" content="316">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 323 words </span>
+          <span class="more-meta"> 316 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -153,7 +153,13 @@
 <li><a href="#runc">runc</a></li>
 <li><a href="#rkt">rkt</a></li>
 </ul></li>
-<li><a href="#tools">tools</a></li>
+<li><a href="#tools">tools</a>
+<ul>
+<li><a href="#dumb-init">dumb-init</a></li>
+<li><a href="#baseimage-docker">baseimage-docker</a></li>
+<li><a href="#watchtower">watchtower</a></li>
+<li><a href="#hadolint">hadolint</a></li>
+</ul></li>
 <li><a href="#cli">CLI</a></li>
 <li><a href="#misc">misc</a></li>
 </ul>
@@ -206,21 +212,25 @@
 
 <h1 id="tools">tools</h1>
 
+<h2 id="dumb-init">dumb-init</h2>
+
 <p>管理pid=1的进程的子进程:</p>
 
 <p><a href="https://github.com/Yelp/dumb-init">https://github.com/Yelp/dumb-init</a></p>
+
+<h2 id="baseimage-docker">baseimage-docker</h2>
 
 <p>处理container中运行多个进程的问题:</p>
 
 <p><a href="https://github.com/phusion/baseimage-docker">https://github.com/phusion/baseimage-docker</a></p>
 
-<p>减小image大小:</p>
-
-<p><a href="https://github.com/docker-slim/docker-slim">https://github.com/docker-slim/docker-slim</a></p>
+<h2 id="watchtower">watchtower</h2>
 
 <p>根据registry中的更新自动更新 container:</p>
 
 <p><a href="https://github.com/containrrr/watchtower/">https://github.com/containrrr/watchtower/</a></p>
+
+<h2 id="hadolint">hadolint</h2>
 
 <p>dockerfile 语法检查:</p>
 

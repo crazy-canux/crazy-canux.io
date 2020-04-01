@@ -147,11 +147,13 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#csi">CSI</a></li>
+<li><a href="#csi">CSI</a>
+<ul>
 <li><a href="#数据存储原理">数据存储原理</a></li>
 <li><a href="#volumes">Volumes</a></li>
 <li><a href="#bind-mount">Bind mount</a></li>
 <li><a href="#tmpfs">tmpfs</a></li>
+</ul></li>
 <li><a href="#docker管理volume">Docker管理volume</a></li>
 </ul>
 </nav>
@@ -179,7 +181,7 @@
 
 <p>临时文件系统(tmpfs)</p>
 
-<h1 id="数据存储原理">数据存储原理</h1>
+<h2 id="数据存储原理">数据存储原理</h2>
 
 <p>如果host上目录不存在，docker会自动创建</p>
 
@@ -187,7 +189,7 @@
 
 <p>如果container目录存在且有内容，会被host上的目录覆盖掉，但不会被删除.</p>
 
-<h1 id="volumes">Volumes</h1>
+<h2 id="volumes">Volumes</h2>
 
 <p>volumes是被设计用来持久化数据的，它的生命周期独立于容器.数据卷通过docker volume命令管理的，位于/var/lib/docker/volumes/下面.</p>
 
@@ -215,7 +217,7 @@ $ docker volume rm &lt;volume-name&gt;</pre></td></tr></table>
 $ docker run --mount source=myvolume,target=/var/lib/app ...</pre></td></tr></table>
 </div>
 </div>
-<h1 id="bind-mount">Bind mount</h1>
+<h2 id="bind-mount">Bind mount</h2>
 
 <p>bind mount就是直接将host路径挂在到docker．</p>
 
@@ -230,7 +232,7 @@ $ docker run --mount source=myvolume,target=/var/lib/app ...</pre></td></tr></ta
 $ docker run --mount type=bind,source=/opt/app,target=/var/lib/app,readonly ...</pre></td></tr></table>
 </div>
 </div>
-<h1 id="tmpfs">tmpfs</h1>
+<h2 id="tmpfs">tmpfs</h2>
 
 <p>tmpfs是临时文件系统，也叫内存文件系统，就是将数据存在内存上。</p>
 
@@ -249,6 +251,8 @@ $ docker run --mount type=bind,source=/opt/app,target=/var/lib/app,readonly ...<
 $ docker run --tmpfs  ...</pre></td></tr></table>
 </div>
 </div>
+<hr />
+
 <h1 id="docker管理volume">Docker管理volume</h1>
 
 <p>查看:</p>

@@ -6,10 +6,28 @@
     <description>Recent content in k8s on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jan 2020 20:55:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 20:55:52 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Network</title>
+      <link>http://canuxcheng.com/post/k8s_network/</link>
+      <pubDate>Thu, 26 Mar 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_network/</guid>
+      <description> Network </description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>http://canuxcheng.com/post/k8s_storage/</link>
+      <pubDate>Wed, 25 Mar 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_storage/</guid>
+      <description>Storage kubernetes 存储. Pod Volumes 应用: * 一个pod中的某个容器异常退出，被kubelet拉起来之前保证之前的数据部丢失. * 同一个pod的多个容器共享数据. pod v</description>
+    </item>
     
     <item>
       <title>API</title>
@@ -17,7 +35,7 @@
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_api/</guid>
-      <description>API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8</description>
+      <description>API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文</description>
     </item>
     
     <item>

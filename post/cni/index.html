@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="960">
+<meta itemprop="wordCount" content="975">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 960 words </span>
+          <span class="more-meta"> 975 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -208,6 +208,8 @@
 <li>cilium</li>
 <li>kube-router</li>
 </ul>
+
+<hr />
 
 <h1 id="docker网络管理">Docker网络管理</h1>
 
@@ -288,6 +290,8 @@ com.docker.network.bridge.host_binding_ipv4
 com.docker.network.driver.mtu</pre></td></tr></table>
 </div>
 </div>
+<hr />
+
 <h1 id="bridge网络">bridge网络</h1>
 
 <p>bridge网络不能跨主机通信(单网卡情况下), node1上的container不能通过container-hostname/ip访问node2上的container.</p>
@@ -299,12 +303,16 @@ com.docker.network.driver.mtu</pre></td></tr></table>
 <p>创建:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ docker network create -d bridge ... [name]
@@ -312,7 +320,11 @@ com.docker.network.driver.mtu</pre></td></tr></table>
 $ docker network create --driver=bridge --gateway=192.168.1.1 --subnet=192.168.1.0/24 --opt com.docker.network.bridge.name=br0 br0
 
 // 定制docker_gwbridge网络
-$ docker network create --subnet 172.18.0.0/16 --ip-range 172.18.0.0/24 --opt com.docker.network.bridge.name=docker_gwbridge --opt com.docker.network.bridge.enable_icc=true --opt com.docker.network.bridge.enable_ip_masquerade=true docker_gwbridge</pre></td></tr></table>
+$ docker network create --subnet 172.18.0.0/16 --ip-range 172.18.0.0/24 --gateway 172.18.0.1 \
+--opt com.docker.network.bridge.name=docker_gwbridge \
+--opt com.docker.network.bridge.enable_icc=true \
+--opt com.docker.network.bridge.enable_ip_masquerade=true \
+docker_gwbridge</pre></td></tr></table>
 </div>
 </div>
 <h1 id="overlay网络">overlay网络</h1>
@@ -329,11 +341,15 @@ $ docker network create --subnet 172.18.0.0/16 --ip-range 172.18.0.0/24 --opt co
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ docker network create -d overlay ... [name]
 
-$ docker network create --attachable --driver=overlay --gateway=192.168.1.1 --subnet=192.168.1.0/24 --opt com.docker.network.bridge.name=vlan0 vlan0</pre></td></tr></table>
+$ docker network create --attachable --driver=overlay --gateway=192.168.1.1 --subnet=192.168.1.0/24 --ip-range=192.168.0.0/24 \
+--opt com.docker.network.bridge.name=ol0 \
+ol0 </pre></td></tr></table>
 </div>
 </div>
 <h1 id="macvlan">macvlan</h1>
@@ -353,6 +369,8 @@ ifconfig eth1 promisc
 docker network create -d macvlan --subnet=192.168.100.0/24 --gateway=192.168.100.1 -o parent=eth1 lan0</pre></td></tr></table>
 </div>
 </div>
+<hr />
+
     </div>
 
     <div class="post-copyright">

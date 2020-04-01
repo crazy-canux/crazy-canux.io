@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="1048">
+<meta itemprop="wordCount" content="2086">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1048 words </span>
-          <span class="more-meta"> 3 mins read </span>
+          <span class="more-meta"> 2086 words </span>
+          <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -160,11 +160,45 @@
 </ul></li>
 <li><a href="#resources">resources</a>
 <ul>
-<li><a href="#workloads">Workloads</a></li>
-<li><a href="#service-discovery-load-balancing">service discovery &amp; load balancing</a></li>
-<li><a href="#config-storage">Config &amp; Storage</a></li>
-<li><a href="#metadata">metadata</a></li>
-<li><a href="#cluster">cluster</a></li>
+<li><a href="#workloads">Workloads</a>
+<ul>
+<li><a href="#replicasets-rs">replicasets/rs</a></li>
+<li><a href="#deployments-deploy">deployments/deploy</a></li>
+<li><a href="#daemonsets-ds">daemonsets/ds</a></li>
+<li><a href="#jobs">jobs</a></li>
+<li><a href="#cronjobs-cj">cronJobs/cj</a></li>
+<li><a href="#statefulsets-sts">statefulsets/sts</a></li>
+</ul></li>
+<li><a href="#service-discovery-load-balancing">service discovery &amp; load balancing</a>
+<ul>
+<li><a href="#services-svc">services/svc</a></li>
+<li><a href="#ingresses">ingresses</a></li>
+<li><a href="#endpointslices">endpointslices</a></li>
+</ul></li>
+<li><a href="#config-storage">Config &amp; Storage</a>
+<ul>
+<li><a href="#secrets">secrets</a></li>
+<li><a href="#configmaps-cm">configmaps/cm</a></li>
+<li><a href="#persistentvolumeclaims-pvc">persistentvolumeclaims/pvc</a></li>
+<li><a href="#csidrivers">csidrivers</a></li>
+<li><a href="#csinodes">csinodes</a></li>
+<li><a href="#storageclasses-sc">storageclasses/sc</a></li>
+<li><a href="#volumeattachments">volumeattachments</a></li>
+</ul></li>
+<li><a href="#metadata">metadata</a>
+<ul>
+<li><a href="#events">events</a></li>
+<li><a href="#horizontalpodautoscaler">horizontalpodautoscaler</a></li>
+<li><a href="#podtemplate">podtemplate</a></li>
+</ul></li>
+<li><a href="#cluster">cluster</a>
+<ul>
+<li><a href="#componentstatuses-cs">componentstatuses/cs</a></li>
+<li><a href="#namespaces-ns">namespaces/ns</a></li>
+<li><a href="#nodes-no">nodes/no</a></li>
+<li><a href="#persistentvolume-pv">persistentvolume/pv</a></li>
+<li><a href="#serviceaccount-sa">serviceaccount/sa</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -288,25 +322,25 @@
 
 <p>通过volumes, 使不同的pod看到的内容是一样的。</p>
 
-<p>apiVersion: v1
-  Kind: Pod
-  medadata:
-  spec:
-    volumes:
-    - name: shared-data
-      hostPath:
-        path: /path/on/host
-    containers:
-    - name: container1
-      image: test
-      volumeMounts:
-      - name: shared-data
-        mountpath: /path/on/container
-    - name: container2
-      image: test
-      volumeMounts:
-      - name: shared-data
-        mountpath: /path/on/container</p>
+<p>pod服务质量配置:</p>
+
+<p>依据容器对cpu,memory资源的request/limit需求，pod服务质量分类:</p>
+
+<ul>
+<li>Guaranteed</li>
+<li>Burstable</li>
+<li>BestEffort</li>
+</ul>
+
+<p>initContainer:</p>
+
+<p>initContainer用于普通Container启动前的初始化（如配置文件准备) 和 前置条件校验 (如网络)。</p>
+
+<ol>
+<li>initContainer会先于普通container启动执行，直到所有initcontainer执行成功后，普通container 才会执行。</li>
+<li>pod中多个initcontainer之间是按次序依次启动执行，而pod中多个普通container是并行启动。</li>
+<li>initcontainer 执行成功后就结束退出，而普通container会一直执行或重启。</li>
+</ol>
 
 <hr />
 
@@ -325,69 +359,130 @@
 
 <h2 id="workloads">Workloads</h2>
 
-<p>replicasets/rs: 控制无状态的pod数量,增删Pods.</p>
+<h3 id="replicasets-rs">replicasets/rs</h3>
 
-<p>deployments/deploy: 定义pod的数目和版本，通过Controller自动恢复失败的pod，滚动升级，重新生成，回滚等。</p>
+<p>控制无状态的pod数量,增删Pods.</p>
 
-<p>statefulsets/sts: 控制有状态的pod数量.</p>
+<h3 id="deployments-deploy">deployments/deploy</h3>
 
-<p>daemonsets/ds:</p>
+<p>定义pod的数目和版本，通过Controller自动恢复失败的pod，滚动升级，重新生成，回滚等。</p>
 
-<p>jobs:</p>
+<p>DeploymentStatus: complete, processing, failed</p>
 
-<p>cronJobs/cj:</p>
+<p>Deployment只负责管理不同版本的ReplicaSet, 由ReplicaSet管理Pod副本个数; 每个版本的ReplicaSet对应了Deployment template的一个版本; 一个ReplicaSet下的Pod都是相同的版本.</p>
+
+<h3 id="daemonsets-ds">daemonsets/ds</h3>
+
+<p>ds作用:</p>
+
+<ul>
+<li>保证集群内每个节点运行一组相同的pod</li>
+<li>跟踪集群节点状态，保证新加入的节点自动创建对应的pod</li>
+<li>跟踪集群节点状态，保证移除的节点删除对应的pod</li>
+<li>跟踪pod状态，保证每个节点pod处于运行状态</li>
+</ul>
+
+<h3 id="jobs">jobs</h3>
+
+<p>job的作用:</p>
+
+<ul>
+<li>创建一个或多个pod确保指定数量的Pod可以成功运行和终止.</li>
+<li>跟踪pod状态，根据配置及时重试失败的pod.</li>
+<li>确定依赖关系，保证上一个任务运行完毕后再运行下一个任务.</li>
+<li>控制任务并行度，并根据配置确保pod队列大小。</li>
+</ul>
+
+<h3 id="cronjobs-cj">cronJobs/cj</h3>
+
+<h3 id="statefulsets-sts">statefulsets/sts</h3>
+
+<p>控制有状态的pod数量.</p>
+
+<hr />
 
 <h2 id="service-discovery-load-balancing">service discovery &amp; load balancing</h2>
 
-<p>services/svc: 提供访问一个或多个pod的稳定的访问地址.支持ClusterIP, NodePort, LoadBalancer等访问方式.</p>
+<h3 id="services-svc">services/svc</h3>
 
-<p>ingresses:</p>
+<p>提供访问一个或多个pod的稳定的访问地址.支持ClusterIP, NodePort, LoadBalancer等访问方式.</p>
 
-<p>endpointslices:</p>
+<h3 id="ingresses">ingresses</h3>
+
+<h3 id="endpointslices">endpointslices</h3>
+
+<hr />
 
 <h2 id="config-storage">Config &amp; Storage</h2>
 
-<p>secrets:</p>
+<h3 id="secrets">secrets</h3>
 
-<p>configmaps/cm:</p>
+<p>secret用于在集群中存储密码，token等敏感信息用的资源对象.</p>
 
-<p>persistentvolumeclaims/pvc:</p>
+<p>其中敏感数据采用base-64编码保存.</p>
 
-<p>csidrivers:</p>
+<p>四种类型:</p>
 
-<p>csinodes:</p>
+<ul>
+<li>Opaque</li>
+<li>kubernetes.io/service-account-token</li>
+<li>kubernetes.io/dockerconfigjson</li>
+<li>bootstrap.kubernetes.io/token</li>
+</ul>
 
-<p>storageclasses/sc:</p>
+<p>secret主要被pod使用，一般通过volume挂载到指定容器目录，供容器中业务使用.</p>
 
-<p>volumeattachments:</p>
+<p>访问私有镜像仓库也可以通过secret实现.</p>
+
+<p>secret大小限制1M; secret不适合机密信息，推荐用vault.</p>
+
+<h3 id="configmaps-cm">configmaps/cm</h3>
+
+<p>主要管理容器运行所需的配置文件，环境变量，命令行参数等可变配置。</p>
+
+<p>可用于解耦容器镜像和可变配置，从而保障工作负载的可移植性.</p>
+
+<p>主要被pod使用，一般用于挂载pod用的配置文件，环境变量，命令行参数.</p>
+
+<p>ConigMap 大小不超过1M; pod只能引用相同namespace中的configmap, pod引用的configmap不存在时，pod无法创建;使用envFrom从ConfigMap配置环境变量时，如果ConfigMap中的某些key被认为无效，该环境变量不会注入容器，但是pod可以创建; 只有通过k8s api创建的pod才能使用ConfigMap, 其它方式创建的pod不能使用ConfigMap.</p>
+
+<h3 id="persistentvolumeclaims-pvc">persistentvolumeclaims/pvc</h3>
+
+<h3 id="csidrivers">csidrivers</h3>
+
+<h3 id="csinodes">csinodes</h3>
+
+<h3 id="storageclasses-sc">storageclasses/sc</h3>
+
+<h3 id="volumeattachments">volumeattachments</h3>
+
+<hr />
 
 <h2 id="metadata">metadata</h2>
 
-<p>events</p>
+<h3 id="events">events</h3>
 
-<p>horizontalpodautoscaler</p>
+<h3 id="horizontalpodautoscaler">horizontalpodautoscaler</h3>
 
-<p>podtemplate</p>
+<h3 id="podtemplate">podtemplate</h3>
+
+<hr />
 
 <h2 id="cluster">cluster</h2>
 
-<p>componentstatuses:</p>
+<h3 id="componentstatuses-cs">componentstatuses/cs</h3>
 
-<p>namespaces: 一个集群内部的逻辑隔离机制，每个资源都属于一个namespace，同一个namespace中的资源命名唯一，不同namespace中的资源可重名.</p>
+<h3 id="namespaces-ns">namespaces/ns</h3>
 
-<p>nodes:</p>
+<p>一个集群内部的逻辑隔离机制，每个资源都属于一个namespace，同一个namespace中的资源命名唯一，不同namespace中的资源可重名.</p>
 
-<p>serviceaccount/sa:</p>
+<h3 id="nodes-no">nodes/no</h3>
 
-<p>role:</p>
+<h3 id="persistentvolume-pv">persistentvolume/pv</h3>
 
-<p>rolebinding</p>
+<h3 id="serviceaccount-sa">serviceaccount/sa</h3>
 
-<p>persistentvolume</p>
-
-<p>clusterrole</p>
-
-<p>clusterrolebinding</p>
+<p>解决pod在集群中的身份认证问题.</p>
 
 <hr />
 

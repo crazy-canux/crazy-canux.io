@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>K8S_Kubectl - Morgoth</title>
+  <title>Kubectl - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: 1 2 3 4 5 6 kubectl options # 查看所有命令可用" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="K8S_Kubectl" />
-<meta property="og:description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1" />
+<meta property="og:title" content="Kubectl" />
+<meta property="og:description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: 1 2 3 4 5 6 kubectl options # 查看所有命令可用" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_kubectl/" />
 <meta property="article:published_time" content="2020-01-10T20:58:01&#43;08:00"/>
 <meta property="article:modified_time" content="2020-01-10T20:58:01&#43;08:00"/>
 
-<meta itemprop="name" content="K8S_Kubectl">
-<meta itemprop="description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1">
+<meta itemprop="name" content="Kubectl">
+<meta itemprop="description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: 1 2 3 4 5 6 kubectl options # 查看所有命令可用">
 
 
 <meta itemprop="datePublished" content="2020-01-10T20:58:01&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:58:01&#43;08:00" />
-<meta itemprop="wordCount" content="581">
+<meta itemprop="wordCount" content="987">
 
 
 
 <meta itemprop="keywords" content="tag," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="K8S_Kubectl"/>
-<meta name="twitter:description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1"/>
+<meta name="twitter:title" content="Kubectl"/>
+<meta name="twitter:description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: 1 2 3 4 5 6 kubectl options # 查看所有命令可用"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">K8S_Kubectl</h1>
+      <h1 class="post-title">Kubectl</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-01-10 </span>
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 581 words </span>
+          <span class="more-meta"> 987 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,18 +147,20 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#kubectl">kubectl</a>
-<ul>
+<li><a href="#kubectl">kubectl</a></li>
+<li><a href="#options">options:</a></li>
 <li><a href="#basic-command">basic command</a></li>
 <li><a href="#advanced-commands">advanced commands</a></li>
 <li><a href="#deploy-command">deploy command</a></li>
 <li><a href="#debug-troubleshoot">debug&amp;troubleshoot</a></li>
-</ul></li>
-<li><a href="#cluster-management">cluster management</a>
+<li><a href="#cluster-management">cluster management</a></li>
+<li><a href="#settings-commands">Settings Commands</a>
 <ul>
-<li><a href="#settings-commands">Settings Commands</a></li>
 <li><a href="#others">others</a></li>
 </ul></li>
+<li><a href="#shell-auotcompletion">shell-auotcompletion</a></li>
+<li><a href="#krew">krew</a></li>
+<li><a href="#kubectx">kubectx</a></li>
 </ul>
 </nav>
   </div>
@@ -182,24 +184,112 @@
 <p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
 
 <p>在master上通过kubectl命令管理集群.</p>
+
+<h1 id="options">options:</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">kubectl options # 查看所有命令可用选项</pre></td></tr></table>
+<pre class="chroma">kubectl options # 查看所有命令可用选项
+
+--kubeconfig
+kubectl --kubeconfig=$HOME/.kube.config (default)
+
+-n/--namespace</pre></td></tr></table>
 </div>
 </div>
-<p>配置:</p>
+<h1 id="basic-command">basic command</h1>
+
+<p>create:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">kubectl --kubeconfig=$HOME/.kube.config (default)</pre></td></tr></table>
+<pre class="chroma"># 通过yaml或json文件创建资源
+$ kubectl create -f FILENAME [options]
+
+options:
+-f/--filename</pre></td></tr></table>
 </div>
 </div>
-<h2 id="basic-command">basic command</h2>
+<p>delete:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 删除资源
+$ kubectl delete (-f FILENAME | -k DICT | TYPE [(NAME|-l label|--all)]) [optiions]
+
+options:
+-f/--filename
+--all  
+--all-namespaces
+--force
+
+$ kubectl delete pods --all
+$ kubectl delete pod &lt;name&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>expose:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 创建serivce:
+$ kubectl expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol=TCP|UDP|SCTP] [--target-port=...] [--name=...] [--external-ip=...] [--type=type] [options]</pre></td></tr></table>
+</div>
+</div>
+<p>run:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 创建pod/container(docker run):
+$ kubectl run NAME --image=image [--env=&#34;key=value&#34;] [--port=port] [--replicas=replicas] [--dry-run=bool] [--overrides=inline-json] [--command] -- [COMMAND] [args...] [options]</pre></td></tr></table>
+</div>
+</div>
+<p>set:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl set SUBCOMMAND [options]
+
+// 更新镜像
+$ kubectl set image deployment.v1.apps/&lt;deploy-name&gt; &lt;container-name&gt;=&lt;image:tag&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>get:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -226,47 +316,63 @@
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># 通过yaml或json文件创建pod/container:
-$ kubectl create -f FILENAME [options]
+<pre class="chroma">// 获取resource信息(docker ps)
+$ kubectl [-n &lt;namespace&gt;] get [resource] [flags] [options]
 
-$ kubectl delete -f FILENAME
+options:
+-A/--all-namespaces
+-f/--filename
+-o--output json/yaml/json/wide/name/...
+-w/--watch
+--watch-only
 
-# 创建serivce:
-$ kubectl expose
-
-# 创建pod/container:
-$ kubectl run (docker run)
-$ kubectl run &lt;name&gt; --image=&lt;image&gt; --labels=&lt;key=value&gt; ...
-
-$ kubectl set
-
-// 获取resource信息:
-$ kubectl get (docker ps)
 kubectl get nodes/no # 获取node节点信息
 kubectl get namespace/ns # 获取namespace信息
 kubectl get componentstatuses/cs
 
-kubectl --all-namespaces get pod 
-kubectl --all-namespaces get pods -o wide
+kubectl get all --all-namespaces
 kubectl -n kube-system get all 
-kubectl -n kube-system get pods/po
-kubectl -n kube-system get deployments/deploy
-kubectl -n kube-system get services/svc
 
-$ kubectl explain
+kubectl get pod/pods/po 
+kubectl get po -w/--watch
+kubectl get po -o wide
 
-$ kubectl edit</pre></td></tr></table>
+kubectl get deployment/deployments/deploy
+
+kubectl get service/services/svc</pre></td></tr></table>
 </div>
 </div>
-<h2 id="advanced-commands">advanced commands</h2>
+<p>explain:</p>
+
+<p><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 查看资源解析
+$ kubectl explain RESOURCE [options]
+
+kubectl explain deploy.spec</pre></td></tr></table>
+</div>
+</div>
+<p>edit:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl edit</pre></td></tr></table>
+</div>
+</div>
+<h1 id="advanced-commands">advanced commands</h1>
+
+<p>apply:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -284,7 +390,7 @@ $ kubectl edit</pre></td></tr></table>
 </span><span class="lnt">13
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ kubectl apply -f FILENAME
+<pre class="chroma">$ kubectl apply
 
 $ kubectl diff
 
@@ -299,30 +405,49 @@ $ kubectl convert
 $ kubectl kustomize</pre></td></tr></table>
 </div>
 </div>
-<h2 id="deploy-command">deploy command</h2>
+<h1 id="deploy-command">deploy command</h1>
+
+<p>scale:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl scale</pre></td></tr></table>
+</div>
+</div>
+<p>autoscale:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl autoscale</pre></td></tr></table>
+</div>
+</div>
+<p>rollout:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">// scale service.
-$ kubectl scale
-
-$ kubectl autoscale
-
-$ kubectl rollout
-
-$ kubectl rolling-update</pre></td></tr></table>
+<pre class="chroma">// 回滚
+$ kubectl rollout</pre></td></tr></table>
 </div>
 </div>
-<h2 id="debug-troubleshoot">debug&amp;troubleshoot</h2>
+<p>rolling-update:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl rolling-update</pre></td></tr></table>
+</div>
+</div>
+<h1 id="debug-troubleshoot">debug&amp;troubleshoot</h1>
+
+<p>describe:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -340,31 +465,82 @@ $ kubectl rolling-update</pre></td></tr></table>
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">// like docker inspect
-$ kubectl describe
+$ kubectl describe (-f FILENAME | TYPE ... | TYPE/NAME) [options]
+
+options:
+-A/--all-namespaces
+-f/--filename
+
+// 查看node信息
+$ kubectl describe nodes &lt;name&gt;
+
 //查看pod详细信息
-$ kubectl -n kube-system describe pod &lt;pod-name&gt; 
+$ kubectl describe pods &lt;name&gt; 
 
 // 获取k8s-dashboard的token
-$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)
+$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)</pre></td></tr></table>
+</div>
+</div>
+<p>logs:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># like docker logs
+$ kubectl logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER] [options]
 
-# like docker logs
-$ kubectl logs
+options:
+--all-containers
+-f/--follow
+-p/--previous</pre></td></tr></table>
+</div>
+</div>
+<p>exec:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># like docker exec
+$ kubectl exec (POD | TYPE/NAME) [-c CONTAINER] [flags] -- COMMAND [args...] [options]
 
-# like docker exec
-$ kubectl exec
-
-$ kubectl attach
+options:
+-c/--container
+-i/--stdin
+-t/--tty</pre></td></tr></table>
+</div>
+</div>
+<p>attach:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl attach
 
 $ kubectl port-forward
 
@@ -376,6 +552,127 @@ $ kubectl auth</pre></td></tr></table>
 </div>
 </div>
 <h1 id="cluster-management">cluster management</h1>
+
+<p>top:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl top
+
+$ kubectl cluster-info
+
+$ kubectl certificate
+
+$ kubectl cordon
+
+$ kubectl uncordon
+
+$ kubectl drain
+
+$ kubectl taint</pre></td></tr></table>
+</div>
+</div>
+<h1 id="settings-commands">Settings Commands</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">label          Update the labels on a resource
+
+annotate       Update the annotations on a resource
+
+completion     Output shell completion code for the specified shell (bash or zsh)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="others">others</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">api-resources  Print the supported API resources on the server.
+
+api-versions   Print the supported API versions on the server, in the form of &#34;group/version&#34;.</pre></td></tr></table>
+</div>
+</div>
+<p>config:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 参考kubectx
+config         Modify kubeconfig files.</pre></td></tr></table>
+</div>
+</div>
+<p>plugin:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 参考krew
+plugin         Provides utilities for interacting with plugins.
+
+// 查看安装的plugin
+$ kubectl plugin list</pre></td></tr></table>
+</div>
+</div>
+<p>version:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">version        Print the client and server version information.</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="shell-auotcompletion">shell-auotcompletion</h1>
+
+<p>bash/zsh 自动补全工具.</p>
+
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion">https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl</pre></td></tr></table>
+</div>
+</div>
+<h1 id="krew">krew</h1>
+
+<p>安装kubectl plugin的工具</p>
+
+<p><a href="https://github.com/kubernetes-sigs/krew">https://github.com/kubernetes-sigs/krew</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -394,50 +691,39 @@ $ kubectl auth</pre></td></tr></table>
 </span><span class="lnt">14
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># top command
-$ kubectl top
+<pre class="chroma">// 下载插件列表
+$ kubectl krew update
 
-$ kubectl cluster-info
+// 查找插件
+$ kubectl krew search
 
-$ kubectl certificate
+// 安装插件
+$ kubectl krew install &lt;name&gt;
 
-$ kubectl cordon
+// 升级插件
+$ kubectl krew upgrade
 
-$ kubectl uncordon
-
-$ kubectl drain
-
-$ kubectl taint</pre></td></tr></table>
+// 卸载插件
+$ kubectl krew uninstall &lt;name&gt;</pre></td></tr></table>
 </div>
 </div>
-<h2 id="settings-commands">Settings Commands</h2>
+<h1 id="kubectx">kubectx</h1>
+
+<p>在cluster和namespace之间切换的命令行工具.</p>
+
+<p>包括kubectx 和 kubedns</p>
+
+<p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
+
+<p>通过krew安装，作为kubectl的plugin:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">label          Update the labels on a resource
-annotate       Update the annotations on a resource
-completion     Output shell completion code for the specified shell (bash or zsh)</pre></td></tr></table>
-</div>
-</div>
-<h2 id="others">others</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">api-resources  Print the supported API resources on the server.
-api-versions   Print the supported API versions on the server, in the form of &#34;group/version&#34;.
-config         Modify kubeconfig files.
-plugin         Provides utilities for interacting with plugins.
-version        Print the client and server version information.</pre></td></tr></table>
+<pre class="chroma">$ kubectl krew install ctx
+$ kubectl krew install ns</pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -476,7 +762,11 @@ version        Print the client and server version information.</pre></td></tr><
           <a href="/tags/tag/">tag</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/k8s_storage/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Storage</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/k8s_api/">
             <span class="next-text nav-default">API</span>
             <span class="next-text nav-mobile">Next</span>
@@ -492,7 +782,7 @@ version        Print the client and server version information.</pre></td></tr><
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2020-01-10 20:58:01 \x2b0800 CST',
-        title: 'K8S_Kubectl',
+        title: 'Kubectl',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

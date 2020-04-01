@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>K8S_Kubectl</title>
+      <title>Kubectl</title>
       <link>http://canuxcheng.com/post/k8s_kubectl/</link>
       <pubDate>Fri, 10 Jan 2020 20:58:01 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_kubectl/</guid>
-      <description>kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1</description>
+      <description>kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: 1 2 3 4 5 6 kubectl options # 查看所有命令可用</description>
     </item>
     
   </channel>

@@ -39,15 +39,6 @@
     </item>
     
     <item>
-      <title>alpine</title>
-      <link>http://canuxcheng.com/tags/alpine/</link>
-      <pubDate>Tue, 03 Dec 2019 21:50:47 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/tags/alpine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ansible</title>
       <link>http://canuxcheng.com/tags/ansible/</link>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
@@ -581,7 +572,7 @@
     <item>
       <title>k8s</title>
       <link>http://canuxcheng.com/tags/k8s/</link>
-      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      <pubDate>Thu, 26 Mar 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/tags/k8s/</guid>
       <description></description>

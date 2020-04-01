@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-08-15T11:16:29&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-15T11:16:29&#43;00:00" />
-<meta itemprop="wordCount" content="8405">
+<meta itemprop="wordCount" content="8490">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/python/"> Python </a>
             </div>
-          <span class="more-meta"> 8405 words </span>
+          <span class="more-meta"> 8490 words </span>
           <span class="more-meta"> 17 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -306,7 +306,6 @@
 </span><span class="lnt">72
 </span><span class="lnt">73
 </span><span class="lnt">74
-</span><span class="lnt">75
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">__import__(name, globals={}, locals={}, fromlist=[], level=-1) # import关键字实际调用该函数
@@ -368,7 +367,6 @@ min(iterable[, key=func]) # 返回可迭代对象iterable中的最小元素
 min(a, b, c, ...[, key=func])  # 返回a,b,c...中的最小元素
 max(iterable[, key=func]) # 和min相反
 max(a, b, c, ...[, key=func]) # 和min相反
-sorted(iterable, cmp=None, key=None, reverse=False) # 返回可迭代对象iterable的元素排序后组成的列表．
 all(iterable) # 如果可迭代的参数iterable中所有的元素都不是0,False,&#39;&#39;则返回True,iterable为空也返回True,否则返回False
 any(iterable) # 如果可迭代的参数iterable中所有的元素都是0,False,&#39;&#39;则返回False,　否则返回True
 sum(sequence[, start]) # 返回数字序列sequence的所有元素加上start的和，start默认是０．
@@ -403,7 +401,7 @@ ascii(object) # 和repr()函数等效．
 print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False) # python2中是一个关键字，python3才是内置函数．</pre></td></tr></table>
 </div>
 </div>
-<p>python2.7中有，python3中被废弃的内置函数：</p>
+<p>[Deprecated]python2.7中有，python3中被废弃的内置函数：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -422,7 +420,7 @@ print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=Fals
 </span><span class="lnt">14
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">[Deprecated]apply(object[, args[, kwargs]]) # 直接使用函数定义的可变长参数形式, function_name(*args, **kwargs)
+<pre class="chroma">apply(object[, args[, kwargs]]) # 直接使用函数定义的可变长参数形式, function_name(*args, **kwargs)
 
 # python2中还可以使用的函数
 coerce(x, y)
@@ -436,6 +434,33 @@ raw_input([prompt]) # python3中合并为input(). 不会对输入的表达式求
 cmp(x, y) # 参考python3的operator.cmp()
 reduce(function, sequence[, initial]) # 参考python3的functools.reduce()
 reload(module) # 参考python3的imp.reload()</pre></td></tr></table>
+</div>
+</div>
+<p>[Changed]python3中发生变化的函数:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// python2
+sorted(iterable, cmp=None, key=None, reverse=False) # 返回可迭代对象iterable的元素排序后组成的列表．
+
+// python3
+sorted(iterable, key=None, reverse=False)
+// 多维数据排序
+dict = {&#39;a&#39;: 3, &#39;b&#39;: 2, &#39;c&#39;: 1}
+sorted(dict.items(), key=lambda x:x[1], reverse=False)
+json = [{&#34;time&#34;: 1, &#34;data&#34;: &#34;message&#34;}, {&#34;time&#34;: 2, &#34;data&#34;: &#34;message&#34;}]
+sorted(json, key=lambda k:k[&#34;time&#34;])</pre></td></tr></table>
 </div>
 </div>
 <hr />

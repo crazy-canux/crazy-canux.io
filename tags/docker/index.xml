@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Image</title>
+      <link>http://canuxcheng.com/post/image/</link>
+      <pubDate>Tue, 03 Dec 2019 21:50:47 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/image/</guid>
+      <description>image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps https://github.com/docker-library/buildpack-deps busybox https://github.com/docker-library/busybox a</description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>http://canuxcheng.com/post/docker/</link>
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>

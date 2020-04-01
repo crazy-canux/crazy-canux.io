@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="API" />
-<meta property="og:description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8" />
+<meta property="og:description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_api/" />
 <meta property="article:published_time" content="2020-01-10T20:55:52&#43;08:00"/>
 <meta property="article:modified_time" content="2020-01-10T20:55:52&#43;08:00"/>
 
 <meta itemprop="name" content="API">
-<meta itemprop="description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8">
+<meta itemprop="description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文">
 
 
 <meta itemprop="datePublished" content="2020-01-10T20:55:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:55:52&#43;08:00" />
-<meta itemprop="wordCount" content="282">
+<meta itemprop="wordCount" content="1017">
 
 
 
 <meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API"/>
-<meta name="twitter:description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8"/>
+<meta name="twitter:description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 282 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 1017 words </span>
+          <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -148,12 +148,15 @@
     <nav id="TableOfContents">
 <ul>
 <li><a href="#api">API</a></li>
-<li><a href="#yaml">yaml</a>
-<ul>
-<li><a href="#metadata">metadata</a></li>
-<li><a href="#spec">spec</a></li>
-<li><a href="#status">status</a></li>
-</ul></li>
+<li><a href="#yaml">yaml</a></li>
+<li><a href="#pod">Pod</a></li>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#job">Job</a></li>
+<li><a href="#cronjob">CronJob</a></li>
+<li><a href="#daemonset">DaemonSet</a></li>
+<li><a href="#configmap">ConfigMap</a></li>
+<li><a href="#secret">Secret</a></li>
+<li><a href="#serviceaccont">ServiceAccont</a></li>
 </ul>
 </nav>
   </div>
@@ -174,6 +177,8 @@
 
 <p>payload可以是json，也可以是yaml.</p>
 
+<p>yaml文件中#表示行注释。</p>
+
 <hr />
 
 <h1 id="yaml">yaml</h1>
@@ -191,7 +196,7 @@
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">apiVersion: 
-Kind: 
+kind: 
 metadata: 元数据
 spec: 期望的状态
 status: 观测到的状态</pre></td></tr></table>
@@ -215,25 +220,502 @@ status: 观测到的状态</pre></td></tr></table>
 <pre class="chroma">kubectl api-resources</pre></td></tr></table>
 </div>
 </div>
-<h2 id="metadata">metadata</h2>
+<p>metadata:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">metadata:
+
+  name:
+  namespace:
+
+  labels/标签: 用户筛选资源，唯一的资源组合方法, 可以使用selector来查询.
+
+  annotations/注解: 存储资源的非标识性信息，扩展资源的spec/status.
+
+  ownerReference/关系: 方便反向查找创建资源的对象，方便进行级联删除。</pre></td></tr></table>
+</div>
+</div>
+<p>spec:</p>
+
+<p>status:</p>
+
+<hr />
+
+<h1 id="pod">Pod</h1>
+
+<p>pod</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: v1
+metadata:
+  name: test
+spec:
+  securityContext: // pod级别security context定义
+    runAsuser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000
+  initContainers: // 
+  - name: init
+    image: my-image
+    command: ...
+    args: ...
+  containers:
+  - name: test
+    image: image
+    resources:
+      requests:  // 申明需要的资源
+        memory: &#34;64Mi&#34;  // byte
+        cpu: &#34;250m&#34;     // millicore (1 core = 1000 millicore)
+        ephemeral-storage: &#34;2Gi&#34; // byte
+      limits:
+        memory: &#34;128Mi&#34;
+        cpu: &#34;500m&#34;
+        ephemeral-storage: &#34;4Gi&#34;
+    command: [&#39;/bin/bash&#39;, &#39;-c&#39;, &#39;env&#39;]
+    env:
+    - name: special_level_key
+      valueFrom: // 挂载ConfigMap
+        configMapKeyRef:
+          name: cm-name
+          key: cm-key
+    volumeMounts: // secret以文件形式挂载到/etc/foo
+    - name: foo
+      mountPath: &#34;/etc/foo&#34;
+      readOnly: true
+  volumes:
+  - name: foo // 指定要挂载的secret
+    secret:
+      secretName: mysecret
+  imagePullSecrets:  // 私有镜像授权
+  - name: regcred</pre></td></tr></table>
+</div>
+</div>
+<p>pod中的container共享存储:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: v1
+Kind: Pod
+medadata:
+spec:
+  volumes:
+  - name: shared-data
+    hostPath:
+      path: /path/on/host
+  containers:
+  - name: container1
+    image: test
+    volumeMounts:
+    - name: shared-data
+      mountpath: /path/on/container
+  - name: container2
+    image: test
+    volumeMounts:
+    - name: shared-data
+      mountpath: /path/on/container</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="deployment">Deployment</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deploy
+  namespace: my-ns
+  lables:
+    app: my-app
+spec:
+  replicas: 3
+  # 选择器
+  selector: 
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: image:latest
+        imagePullPolicy: IfNotPresent/Always
+        ports:
+        - containerPort: 443
+        volumeMounts:
+        - mountPath: /path/on/cpod
+          name: my-volumes
+      volumes:
+      - name: my-volumes
+        hostPath: 
+          path: /path/on/host</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="job">Job</h1>
+
+<p>Job</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">appVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+spec:
+  # 代表本pod队列执行此次数(被执行8次)
+  completions: 8
+  # 代表并行执行个数(同时有两个在运行)
+  parallelism: 2
+  backoffLimit: 4
+  template:
+    spec:
+      containers:
+      - name: my-job
+        image: my-image
+        conmand: [&#39;test&#39;]
+      restartPolicy: Never</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="cronjob">CronJob</h1>
+
+<p>CronJob</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: my-cj
+spec:
+  schedule: &#34;*/1 * * * *&#34;
+  startingDeadlineSeconds: 10
+  concurrencyPolicy: Allow
+  successfulJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: image
+            image: image
+            args:
+            - /bin/sh
+            - -c
+            - date
+          restartPolicy: OnFailure</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="daemonset">DaemonSet</h1>
+
+<p>DaemonSet</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-ds
+  namespace: my-ns
+  labels:
+    k8s-app: my-app
+  spec:
+    selector:
+      matchLabels:
+        name: my-app
+    template:
+      metadata:
+        labels:
+          name: my-app
+      spec:
+        containers:
+        - name: my-container
+          image: my-img</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="configmap">ConfigMap</h1>
+
+<p>ConfigMap</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: flanel
+    tier: node
+  name: flannel-cfg
+  namespace: kube-system
+data:
+  cni-conf.json: |
+    {
+      &#34;name&#34;: &#34;n1&#34;
+    }</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="secret">Secret</h1>
+
+<p>secret</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">metadata:
-  labels/标签: 用户筛选资源，唯一的资源组合方法, 可以使用selector来查询.
-  annotations/注解: 存储资源的非标识性信息，扩展资源的spec/status.
-  ownerReference/关系: 方便反向查找创建资源的对象，方便进行级联删除。</pre></td></tr></table>
+<pre class="chroma">apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+  namespace: kube-system
+type: Opaque
+data:
+  username: name 
+  password: pw</pre></td></tr></table>
 </div>
 </div>
-<h2 id="spec">spec</h2>
+<hr />
 
-<h2 id="status">status</h2>
+<h1 id="serviceaccont">ServiceAccont</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: default
+  namespace: default
+data:
+  namespace: ...
+  ca.crt: ...
+  token: ...
+type: kubernetes.io/service-account-token
 
+secrets: // 指定secret
+- name: default-token
+
+imagePullSecrets: // 使用该sa的都会自动授权registry.
+- name: myregistrykey</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -272,7 +754,7 @@ status: 观测到的状态</pre></td></tr></table>
       <nav class="post-nav">
         <a class="prev" href="/post/k8s_kubectl/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">K8S_Kubectl</span>
+            <span class="prev-text nav-default">Kubectl</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         <a class="next" href="/post/compose/">

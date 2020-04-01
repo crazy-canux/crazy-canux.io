@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-06-21T21:18:09&#43;00:00" />
 <meta itemprop="dateModified" content="2016-06-21T21:18:09&#43;00:00" />
-<meta itemprop="wordCount" content="13447">
+<meta itemprop="wordCount" content="13553">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/python/"> Python </a>
             </div>
-          <span class="more-meta"> 13447 words </span>
-          <span class="more-meta"> 27 mins read </span>
+          <span class="more-meta"> 13553 words </span>
+          <span class="more-meta"> 28 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -856,7 +856,19 @@ obj not in seq # obj不包含在序列中返回True</pre></td></tr></table>
 
 <p>bool类继承自int.</p>
 
-<p>bool类型只有True和False两个值．</p></li>
+<p>bool类型只有True和False两个值．</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">bool类型取反: 
+a = True
+b = bool(1-a) # b=False</pre></td></tr></table>
+</div>
+</div></li>
 
 <li><p>[Deprecated in python 3]long</p>
 
@@ -993,7 +1005,7 @@ open(r&#39;C:\windows\test.txt&#39;)</pre></td></tr></table>
 
 <p>python2因为比unicode出现要早，所以python2默认使用的是ASCII编码．</p>
 
-<p>python3默认使用的是UTF-8编码．</p>
+<p>python3 默认使用utf-8编码。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -1038,40 +1050,58 @@ open(r&#39;C:\windows\test.txt&#39;)</pre></td></tr></table>
 </span><span class="lnt">40
 </span><span class="lnt">41
 </span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 获取默认编码
 import sys
 print(sys.getdefaultencoding())
 
+// python2
 a = u&#39;测试&#39;
 type(a) # unicode
 a # u&#39;\u6d4b\u8bd5&#39;,　十六进制表示
 
+// python2
 # str类型
 b = &#39;测试&#39;
 type(b) # str
 b # \xe6\xb5\x8b\xe8\xaf\x95
 
+// python2
 # encode将unicode类型编码成str类型用于数据传输．
 encode([encoding[,errors]]) # 编码
 c = a.encode(&#39;uft-8&#39;)
 type(c) # str
 c # \xe6\xb5\x8b\xe8\xaf\x95
 
+// python2
 # decode将str类型根据原来的编码类型解码成unicode类型进行阅读．
 decode([encoding[,errors]]) # 解码
 d = c.decode(&#39;utf-8&#39;) # 参数必须是原来的编码的类型
 type(d) # unicode
 d # u&#39;\u6d4b\u8bd5&#39;
 
+// python2
 # python2默认ascii编码，所以encode和decode默认都是ascii. 不能处理中文
 u&#39;测试&#39;.encode() # UnicodeEncodeError
 
+// python2
 # str+unicode, str会隐式的转换成unicode.
 &#39;测&#39; + u&#39;试&#39; -&gt; &#39;测&#39;.decode() + u&#39;试&#39; # 因为decode默认是ascii不能解码中文,UnicodeDecodeError．
 &#39;测&#39;.decode(&#39;uft-8&#39;) + u&#39;试&#39;
 
+// python2
 # 对非unicode进行encode编码，会先隐式解码成unicode再编码
 &#39;测试&#39;.encode(&#39;utf-8&#39;) # UnicodeDecodeError, 因为&#39;测试&#39;.decode()默认用ascii解码
 &#39;测试&#39;.decode(&#39;utf-8&#39;).decode(&#39;utf-8&#39;)
@@ -1081,7 +1111,11 @@ u&#39;hello world&#39;
 # 不要用str(), 用unicode().
 # 只在写入文件／数据库／网络时才调用编码函数encode().
 # 只在读回数据时才调用解码函数decode().
-# 始终使用utf-8编码．否则容易出现乱码．</pre></td></tr></table>
+# 始终使用utf-8编码．否则容易出现乱码．
+
+// python3 默认类型非str，而是bytes。
+str.encode()  # str类型通过encode编码成types类型
+bytes.decode() # bytes类型通过decode解码成str类型</pre></td></tr></table>
 </div>
 </div>
 <p>可迭代对象转换成字符串：</p>

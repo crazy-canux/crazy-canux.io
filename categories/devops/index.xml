@@ -152,8 +152,7 @@
       <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/tracing_jaeger/</guid>
-      <description>Jaeger https://www.jaegertracing.io/
-https://github.com/jaegertracing/jaeger</description>
+      <description>Jaeger 一款uber贡献给cncf的微服务tracing监控工具. https://www.jaegertracing.io/ https://github.com/jaegertracing/jaeger Deploy Jaeger on K8S https://github.com/jaegertracing/jaeger-kubernetes</description>
     </item>
     
     <item>
@@ -180,7 +179,8 @@ https://github.com/jaegertracing/jaeger</description>
       <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/tracing_sentry/</guid>
-      <description>Sentry https://github.com/getsentry/sentry</description>
+      <description>Sentry https://github.com/getsentry/sentry
+Deploy Sentry on K8S https://github.com/getsentry/onpremise</description>
     </item>
     
     <item>

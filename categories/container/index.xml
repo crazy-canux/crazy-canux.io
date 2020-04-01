@@ -6,18 +6,36 @@
     <description>Recent content in Container on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jan 2020 20:58:01 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 20:55:52 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/categories/container/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>K8S_Kubectl</title>
+      <title>Network</title>
+      <link>http://canuxcheng.com/post/k8s_network/</link>
+      <pubDate>Thu, 26 Mar 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_network/</guid>
+      <description> Network </description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>http://canuxcheng.com/post/k8s_storage/</link>
+      <pubDate>Wed, 25 Mar 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_storage/</guid>
+      <description>Storage kubernetes 存储. Pod Volumes 应用: * 一个pod中的某个容器异常退出，被kubelet拉起来之前保证之前的数据部丢失. * 同一个pod的多个容器共享数据. pod v</description>
+    </item>
+    
+    <item>
+      <title>Kubectl</title>
       <link>http://canuxcheng.com/post/k8s_kubectl/</link>
       <pubDate>Fri, 10 Jan 2020 20:58:01 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_kubectl/</guid>
-      <description>kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. 1 kubectl options # 查看所有命令可用选项 配置: 1</description>
+      <description>kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: 1 2 3 4 5 6 kubectl options # 查看所有命令可用</description>
     </item>
     
     <item>
@@ -26,7 +44,7 @@
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_api/</guid>
-      <description>API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml 部署k8</description>
+      <description>API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文</description>
     </item>
     
     <item>
@@ -84,14 +102,12 @@
     </item>
     
     <item>
-      <title>Alpine</title>
-      <link>http://canuxcheng.com/post/alpine/</link>
+      <title>Image</title>
+      <link>http://canuxcheng.com/post/image/</link>
       <pubDate>Tue, 03 Dec 2019 21:50:47 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/alpine/</guid>
-      <description> alpine https://www.alpinelinux.org/
-issue command not found:
-1 2  # mkdir /lib64 # ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2  </description>
+      <guid>http://canuxcheng.com/post/image/</guid>
+      <description>image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps https://github.com/docker-library/buildpack-deps busybox https://github.com/docker-library/busybox a</description>
     </item>
     
     <item>

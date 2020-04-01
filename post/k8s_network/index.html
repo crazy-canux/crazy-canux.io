@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>DevOps - Morgoth</title>
+  <title>Network - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容． DevOps涉" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content=" Network " /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/devops/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_network/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="DevOps" />
-<meta property="og:description" content="DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容． DevOps涉" />
+<meta property="og:title" content="Network" />
+<meta property="og:description" content=" Network " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/devops/" />
-<meta property="article:published_time" content="2016-04-15T09:41:39&#43;00:00"/>
-<meta property="article:modified_time" content="2016-04-15T09:41:39&#43;00:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_network/" />
+<meta property="article:published_time" content="2020-03-26T20:55:52&#43;08:00"/>
+<meta property="article:modified_time" content="2020-03-26T20:55:52&#43;08:00"/>
 
-<meta itemprop="name" content="DevOps">
-<meta itemprop="description" content="DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容． DevOps涉">
-
-
-<meta itemprop="datePublished" content="2016-04-15T09:41:39&#43;00:00" />
-<meta itemprop="dateModified" content="2016-04-15T09:41:39&#43;00:00" />
-<meta itemprop="wordCount" content="496">
+<meta itemprop="name" content="Network">
+<meta itemprop="description" content=" Network ">
 
 
+<meta itemprop="datePublished" content="2020-03-26T20:55:52&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-26T20:55:52&#43;08:00" />
+<meta itemprop="wordCount" content="1">
 
-<meta itemprop="keywords" content="devops," />
+
+
+<meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="DevOps"/>
-<meta name="twitter:description" content="DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容． DevOps涉"/>
+<meta name="twitter:title" content="Network"/>
+<meta name="twitter:description" content=" Network "/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">DevOps</h1>
+      <h1 class="post-title">Network</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2016-04-15 </span>
+        <span class="post-time"> 2020-03-26 </span>
         <div class="post-category">
-            <a href="/categories/devops/"> DevOps </a>
+            <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 496 words </span>
+          <span class="more-meta"> 1 word </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,219 +147,15 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#devops">DevOps</a></li>
-<li><a href="#ci">CI</a></li>
-<li><a href="#cd">CD</a></li>
-<li><a href="#continuous-release-deploy">Continuous Release/Deploy</a></li>
-<li><a href="#ci-cd的工具">CI/CD的工具</a>
-<ul>
-<li><a href="#jenkins">Jenkins</a></li>
-<li><a href="#travis-ci">travis CI</a></li>
-<li><a href="#circleci">circleci</a></li>
-</ul></li>
-<li><a href="#coverage的工具">coverage的工具</a>
-<ul>
-<li><a href="#coveralls">coveralls</a></li>
-<li><a href="#codecov">codecov</a></li>
-</ul></li>
-<li><a href="#stackstorm">stackstorm</a></li>
-<li><a href="#drone">Drone</a></li>
-<li><a href="#supervisor">supervisor</a></li>
-<li><a href="#redmine">redmine</a></li>
-<li><a href="#dokuwiki">dokuwiki</a></li>
-<li><a href="#atlassian">Atlassian</a></li>
-<li><a href="#bugzilla">bugzilla</a></li>
-<li><a href="#errbot">errbot</a></li>
-<li><a href="#zulip">zulip</a></li>
+<li><a href="#network">Network</a></li>
 </ul>
 </nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="2016-04-15T09:41:39" title="April 15, 2016">April 15, 2016</span>. This article may have outdated content or subject matter.</p>
-    </div>
-  </div>
     <div class="post-content">
       
 
-<h1 id="devops">DevOps</h1>
-
-<p>DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容．</p>
-
-<p>DevOps涉及到三个部门：</p>
-
-<ul>
-<li>Development</li>
-<li>Operations</li>
-<li>Quality Assurance</li>
-</ul>
-
-<hr />
-
-<h1 id="ci">CI</h1>
-
-<p>Continuous Integration.</p>
-
-<p>持续集成包括：</p>
-
-<ul>
-<li>编译代码.</li>
-<li>静态代码分析.</li>
-<li>自动化测试，例如selenium.</li>
-<li>代码覆盖率分析.</li>
-<li>构建，例如docker.</li>
-</ul>
-
-<h1 id="cd">CD</h1>
-
-<p>Continuous Delivery.</p>
-
-<p>持续交付包括：</p>
-
-<ul>
-<li>将通过测试的代码部署到Staging.</li>
-</ul>
-
-<h1 id="continuous-release-deploy">Continuous Release/Deploy</h1>
-
-<p>持续部署/发布包括：</p>
-
-<ul>
-<li>将通过评审的交付代码部署到Production.</li>
-</ul>
-
-<hr />
-
-<h1 id="ci-cd的工具">CI/CD的工具</h1>
-
-<p>持续集成和部署</p>
-
-<h2 id="jenkins">Jenkins</h2>
-
-<h2 id="travis-ci">travis CI</h2>
-
-<p><a href="https://travis-ci.org/">https://travis-ci.org/</a></p>
-
-<p>travis CI是基于github的CI工具, 部署代码然后运行测试代码.</p>
-
-<p>在github项目添加.travis.yml文件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">language: python
-python:
-  - &#34;2.7&#34;
-install:
-  - pip install -r requirements.txt
-  - pip install coveralls
-script:
-  - coverage run --source=pymonitoringplugins setup.py test
-after_success:
-  - coveralls</pre></td></tr></table>
-</div>
-</div>
-<h2 id="circleci">circleci</h2>
-
-<p><a href="https://circleci.com/">https://circleci.com/</a></p>
-
-<hr />
-
-<h1 id="coverage的工具">coverage的工具</h1>
-
-<p>统计单元测试的覆盖率</p>
-
-<h2 id="coveralls">coveralls</h2>
-
-<p><a href="https://coveralls.io/">https://coveralls.io/</a></p>
-
-<h2 id="codecov">codecov</h2>
-
-<p><a href="https://codecov.io/">https://codecov.io/</a></p>
-
-<hr />
-
-<h1 id="stackstorm">stackstorm</h1>
-
-<p>StackStorm is a platform for integration and automation across services and tools, taking actions in response to events.</p>
-
-<p>For DevOps and ChatOps.</p>
-
-<p><a href="https://github.com/StackStorm/st2">https://github.com/StackStorm/st2</a></p>
-
-<h1 id="drone">Drone</h1>
-
-<p>Drone is a Continuous Delivery platform built on Docker, written in Go</p>
-
-<p><a href="https://github.com/drone/drone">https://github.com/drone/drone</a></p>
-
-<h1 id="supervisor">supervisor</h1>
-
-<p>Supervisor process control system for UNIX/Linux.</p>
-
-<p><a href="https://github.com/Supervisor/supervisor">https://github.com/Supervisor/supervisor</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ pip install supervisor</pre></td></tr></table>
-</div>
-</div>
-<hr />
-
-<h1 id="redmine">redmine</h1>
-
-<p>ruby开发的项目管理工具,集成bug和wiki工具．</p>
-
-<hr />
-
-<h1 id="dokuwiki">dokuwiki</h1>
-
-<p>php开发的wiki管理工具</p>
-
-<hr />
-
-<h1 id="atlassian">Atlassian</h1>
-
-<p>Jira for Porject Management.</p>
-
-<p>Bitbucket for Source code management.</p>
-
-<p>Bamboo for CI/CD.</p>
-
-<hr />
-
-<h1 id="bugzilla">bugzilla</h1>
-
-<p>perl开发的bug追踪系统．</p>
-
-<hr />
-
-<h1 id="errbot">errbot</h1>
-
-<p>python开发的ChatOps工具．</p>
-
-<p><a href="https://github.com/errbotio/errbot">https://github.com/errbotio/errbot</a></p>
-
-<hr />
-
-<h1 id="zulip">zulip</h1>
-
-<p>团队聊天工具介绍</p>
-
-<p><a href="https://github.com/zulip/zulip">https://github.com/zulip/zulip</a></p>
+<h1 id="network">Network</h1>
 
     </div>
 
@@ -371,7 +167,7 @@ after_success:
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2016-04-15
+        2020-03-26
         
     </span>
   </p>
@@ -394,16 +190,12 @@ after_success:
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/devops/">devops</a>
+          <a href="/tags/k8s/">k8s</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/shell_grep/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Grep</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/development/">
-            <span class="next-text nav-default">Development</span>
+        
+        <a class="next" href="/post/k8s_storage/">
+            <span class="next-text nav-default">Storage</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -416,8 +208,8 @@ after_success:
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2016-04-15 09:41:39 \x2b0000 UTC',
-        title: 'DevOps',
+        id: '2020-03-26 20:55:52 \x2b0800 CST',
+        title: 'Network',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',
