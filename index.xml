@@ -107,7 +107,7 @@
       <pubDate>Tue, 03 Dec 2019 21:50:47 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/image/</guid>
-      <description>image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps https://github.com/docker-library/buildpack-deps busybox https://github.com/docker-library/busybox a</description>
+      <description>image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps 在ubu</description>
     </item>
     
     <item>
@@ -500,6 +500,24 @@ Deploy pre-install:
     </item>
     
     <item>
+      <title>AlertManager</title>
+      <link>http://canuxcheng.com/post/metrics_alertmanager/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_alertmanager/</guid>
+      <description>alert-manager https://github.com/prometheus/alertmanager</description>
+    </item>
+    
+    <item>
+      <title>Exporter</title>
+      <link>http://canuxcheng.com/post/metrics_exporter/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_exporter/</guid>
+      <description>exporter 广义上讲所有可以向Prometheus提供监控样本数据的程序都可以被称为一个Exporter。而Exporter的一个实例称为target</description>
+    </item>
+    
+    <item>
       <title>Influxdb</title>
       <link>http://canuxcheng.com/post/metrics_influxdb/</link>
       <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
@@ -523,7 +541,7 @@ Deploy pre-install:
       <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/metrics_prometheus/</guid>
-      <description> Prometheus </description>
+      <description>Prometheus swarm部署: https://github.com/vegasbrianc/prometheus k8s部署: https://github.com/coreos/prometheus-operator https://github.com/coreos/kube-prometheus https://github.com/helm/charts/tree/master/stable/prometheus-operator 高可用: https://github.com/thanos-io/thanos</description>
     </item>
     
     <item>

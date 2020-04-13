@@ -381,6 +381,20 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/metrics_alertmanager/</loc>
+    <lastmod>2018-01-18T19:23:25+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/metrics_exporter/</loc>
+    <lastmod>2018-01-18T19:23:25+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/metrics_influxdb/</loc>
     <lastmod>2018-01-18T19:23:25+00:00</lastmod>
     <changefreq>weekly</changefreq>
