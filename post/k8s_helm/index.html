@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-09-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="296">
+<meta itemprop="wordCount" content="305">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 296 words </span>
+          <span class="more-meta"> 305 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -192,7 +192,7 @@
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">// 下载helm二进制文件
-mv linux-amd64/helm /usr/local/bin/helm &amp;&amp; chmod +x /usr/local/bin/helm</pre></td></tr></table>
+$ mv linux-amd64/helm /usr/local/bin/helm &amp;&amp; chmod +x /usr/local/bin/helm</pre></td></tr></table>
 </div>
 </div>
 <p>helm2需要安装tiller到k8s上:</p>
@@ -203,13 +203,15 @@ mv linux-amd64/helm /usr/local/bin/helm &amp;&amp; chmod +x /usr/local/bin/helm<
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">kubectl --kubeconfig=kube_configxxx.yml -n kube-system create serviceaccount tiller
-kubectl --kubeconfig=kube_configxxx.yml create clusterrolebinding tiller \
+<pre class="chroma">$ docker pull registry.aliyuncs.com/google_containers/tiller:v2.16.1
+$ kubectl --kubeconfig=kube_configxxx.yml -n kube-system create serviceaccount tiller
+$ kubectl --kubeconfig=kube_configxxx.yml create clusterrolebinding tiller \
 --clusterrole cluster-admin --serviceaccount=kube-system:tiller
 
-helm init --kubeconfig=$kubeconfig --service-account tiller --skip-refresh </pre></td></tr></table>
+$ helm init --kubeconfig=$kubeconfig --service-account tiller --skip-refresh </pre></td></tr></table>
 </div>
 </div>
 <p>helm3+不再需要安装tiller,也不需要helm init.</p>

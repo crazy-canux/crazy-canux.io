@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-12-30T21:47:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T21:47:17&#43;08:00" />
-<meta itemprop="wordCount" content="791">
+<meta itemprop="wordCount" content="776">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 791 words </span>
+          <span class="more-meta"> 776 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -150,7 +150,9 @@
 <li><a href="#kubeadm">kubeadm</a></li>
 <li><a href="#install">Install</a></li>
 <li><a href="#kubeadm-1">Kubeadm</a></li>
-<li><a href="#cluster">Cluster</a></li>
+<li><a href="#部署cluster">部署Cluster</a></li>
+<li><a href="#删除cluster">删除cluster</a></li>
+<li><a href="#flannel">flannel</a></li>
 <li><a href="#ingress-nginx">ingress-nginx</a></li>
 <li><a href="#dashboard">dashboard</a></li>
 <li><a href="#metrics-server">metrics-server</a></li>
@@ -204,7 +206,7 @@ $ apt-mark hold kubelet kubeadm kubect</pre></td></tr></table>
 <td class="lntd">
 <pre class="chroma">$ kubeadm init 
 --config &lt;config&gt;
---apiserver-advertise-address &lt;master&gt; // 多网卡指定网卡
+--apiserver-advertise-address &lt;master&gt; // 多网卡指定网卡IP
 --image-repository &lt;registry&gt; // default k8s.gcr.io
 --kubernetes-version &lt;version&gt;
 --pod-network-cidr &lt;cidr&gt; // 指定pod的cidr</pre></td></tr></table>
@@ -239,9 +241,9 @@ $ apt-mark hold kubelet kubeadm kubect</pre></td></tr></table>
 </div>
 <hr />
 
-<h1 id="cluster">Cluster</h1>
+<h1 id="部署cluster">部署Cluster</h1>
 
-<p>需要先在所有node上部署image</p>
+<p>初始化master:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -256,92 +258,23 @@ $ apt-mark hold kubelet kubeadm kubect</pre></td></tr></table>
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"><span class="cp">#!/usr/bin/env bash
-</span><span class="cp"></span><span class="nv">IMAGES</span><span class="o">=</span><span class="s2">&#34;
-</span><span class="s2">kube-apiserver:v1.17.0
-</span><span class="s2">kube-controller-manager:v1.17.0
-</span><span class="s2">kube-scheduler:v1.17.0
-</span><span class="s2">etcd:3.4.3-0
-</span><span class="s2">kube-proxy:v1.17.0
-</span><span class="s2">pause:3.1
-</span><span class="s2">coredns:1.6.5
-</span><span class="s2">metrics-server-amd64:v0.3.6
-</span><span class="s2">&#34;</span>
-<span class="k">for</span> IMAGE in <span class="si">${</span><span class="nv">IMAGES</span><span class="si">}</span>
-<span class="k">do</span>
-    <span class="nb">echo</span> <span class="s2">&#34;Processing </span><span class="si">${</span><span class="nv">IMAGE</span><span class="si">}</span><span class="s2">&#34;</span>
-    docker pull <span class="s2">&#34;gcr.azk8s.cn/google_containers/</span><span class="si">${</span><span class="nv">IMAGE</span><span class="si">}</span><span class="s2">&#34;</span>
-    docker tag  gcr.azk8s.cn/google_containers/<span class="si">${</span><span class="nv">IMAGE</span><span class="si">}</span> k8s.gcr.io/<span class="si">${</span><span class="nv">IMAGE</span><span class="si">}</span>
-    docker rmi gcr.azk8s.cn/google_containers/<span class="si">${</span><span class="nv">IMAGE</span><span class="si">}</span>
-<span class="k">done</span></pre></td></tr></table>
-</div>
-</div>
-<p>然后在所有node上部署cni-plugin:</p>
-
-<p><a href="https://github.com/containernetworking/plugins/releases">https://github.com/containernetworking/plugins/releases</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ sudo mkdir -p /opt/cni/bin
-// 下载并解压所有插件命令到该目录.</pre></td></tr></table>
-</div>
-</div>
-<p>master:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ sudo swapoff -a
 
 $ sudo kubeadm init \
---config=/var/lib/kubelet/config.yaml \
+// --config=/var/lib/kubelet/config.yaml \
 --pod-network-cidr=10.244.0.0/16 \
---apiserver-advertise-address=192.168.1.1 \
+--apiserver-advertise-address=&lt;IP&gt; \
 --kubernetes-version=v1.17.0 \
---image-repository=registry.aliyuncs.com/google_containers 
+--image-repository=registry.aliyuncs.com/google_containers \
 -v=6
 // --config 一般使用默认即可.
 // --pod-network-cidr=10.244.0.0/16 是固定用法，表示选择flannel为网络插件。
-
-// 此时状态是notReady, 需要网络插件
-$ kubectl get nodes (notReady)</pre></td></tr></table>
+// --image-repository 指定registry, 默认是gcr</pre></td></tr></table>
 </div>
 </div>
-<p>network-addon(master上操作即可):</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</pre></td></tr></table>
-</div>
-</div>
-<p>node:</p>
+<p>部署node:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -358,17 +291,6 @@ $ sudo kubeadm join 192.168.1.1:6443 \
 --discovery-token-ca-cert-hash sha256:21d8365e336d5218637ddf26e2ec5d91c7dd2de518dbe47973e089837b13265b</pre></td></tr></table>
 </div>
 </div>
-<p>reset:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">// 重新init/join之前先reset
-$ sudo kubeadm reset</pre></td></tr></table>
-</div>
-</div>
 <p>允许将pod部署在master节点(默认不会):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -376,6 +298,65 @@ $ sudo kubeadm reset</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ kubectl taint nodes --all node-role.kubernetes.io/master-</pre></td></tr></table>
+</div>
+</div>
+<h1 id="删除cluster">删除cluster</h1>
+
+<p>所有node运行:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo kubectl reset -f</pre></td></tr></table>
+</div>
+</div>
+<p>所有node上删除flannel的网络配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo ifconfig cni0 down
+$ sudo brctl delbr cni0
+$ sudo ifconfig flannel.1 down</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="flannel">flannel</h1>
+
+<p>此时状态是notReady, 需要网络插件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get nodes (notReady)</pre></td></tr></table>
+</div>
+</div>
+<p>在所有node上部署cni-plugin:</p>
+
+<p><a href="https://github.com/containernetworking/plugins/releases">https://github.com/containernetworking/plugins/releases</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo mkdir -p /opt/cni/bin
+// 下载并解压所有插件命令到该目录.</pre></td></tr></table>
+</div>
+</div>
+<p>network-addon(master上操作即可):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</pre></td></tr></table>
 </div>
 </div>
 <p>veryfy:</p>
@@ -533,23 +514,11 @@ $ kubectl delete ns kubernetes-dashboard</pre></td></tr></table>
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git clone https://github.com/kubernetes-sigs/metrics-server.git
-$ cd metrics-server/deploy
-
-// 修改imagePullPolicy
-$ vim ./1.8+/metrics-server-deployment.yaml
-&gt; imagePullPolicy: IfNotPresent
-
-// 部署
-$ kubectl create -f ./1.8+/</pre></td></tr></table>
+<pre class="chroma"># deploy 0.3.6
+# 修改image为  registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6
+$ kubectl apply -f ./components.yaml</pre></td></tr></table>
 </div>
 </div>
     </div>

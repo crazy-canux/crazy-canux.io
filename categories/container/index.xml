@@ -71,7 +71,7 @@
       <pubDate>Mon, 30 Dec 2019 22:06:48 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_flannel/</guid>
-      <description>Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 部署: 1 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 重新部署网络插件: 1 2 3 4 5 6 7 8 9 10 11 12 $ kubectl delete -f X.yml // 第二步，在node节点清</description>
+      <description>Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到该目录. ne</description>
     </item>
     
     <item>

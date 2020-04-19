@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 部署: 1 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 重新部署网络插件: 1 2 3 4 5 6 7 8 9 10 11 12 $ kubectl delete -f X.yml // 第二步，在node节点清" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到该目录. ne" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Flannel" />
-<meta property="og:description" content="Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 部署: 1 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 重新部署网络插件: 1 2 3 4 5 6 7 8 9 10 11 12 $ kubectl delete -f X.yml // 第二步，在node节点清" />
+<meta property="og:description" content="Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到该目录. ne" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_flannel/" />
 <meta property="article:published_time" content="2019-12-30T22:06:48&#43;08:00"/>
 <meta property="article:modified_time" content="2019-12-30T22:06:48&#43;08:00"/>
 
 <meta itemprop="name" content="Flannel">
-<meta itemprop="description" content="Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 部署: 1 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 重新部署网络插件: 1 2 3 4 5 6 7 8 9 10 11 12 $ kubectl delete -f X.yml // 第二步，在node节点清">
+<meta itemprop="description" content="Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到该目录. ne">
 
 
 <meta itemprop="datePublished" content="2019-12-30T22:06:48&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T22:06:48&#43;08:00" />
-<meta itemprop="wordCount" content="120">
+<meta itemprop="wordCount" content="202">
 
 
 
 <meta itemprop="keywords" content="network," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flannel"/>
-<meta name="twitter:description" content="Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 部署: 1 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 重新部署网络插件: 1 2 3 4 5 6 7 8 9 10 11 12 $ kubectl delete -f X.yml // 第二步，在node节点清"/>
+<meta name="twitter:description" content="Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到该目录. ne"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 120 words </span>
+          <span class="more-meta"> 202 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -166,13 +166,37 @@
 
 <p><a href="https://github.com/coreos/flannel">https://github.com/coreos/flannel</a></p>
 
-<p>部署:</p>
+<p>在所有node上部署cni-plugin:</p>
+
+<p><a href="https://github.com/containernetworking/plugins/releases">https://github.com/containernetworking/plugins/releases</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo mkdir -p /opt/cni/bin
+// 下载并解压所有插件命令到该目录.</pre></td></tr></table>
+</div>
+</div>
+<p>network-addon(master上操作即可):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</pre></td></tr></table>
+</div>
+</div>
+<p>veryfy:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get nodes
+$ kubectl get pod --all-namespaces</pre></td></tr></table>
 </div>
 </div>
 <p>重新部署网络插件:</p>

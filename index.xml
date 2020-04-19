@@ -71,7 +71,7 @@
       <pubDate>Mon, 30 Dec 2019 22:06:48 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_flannel/</guid>
-      <description>Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 部署: 1 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 重新部署网络插件: 1 2 3 4 5 6 7 8 9 10 11 12 $ kubectl delete -f X.yml // 第二步，在node节点清</description>
+      <description>Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到该目录. ne</description>
     </item>
     
     <item>
@@ -505,7 +505,7 @@ Deploy pre-install:
       <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/metrics_alertmanager/</guid>
-      <description>alert-manager https://github.com/prometheus/alertmanager</description>
+      <description>alert-manager 在Prometheus中支持基于PromQL创建告警规则, prometheus通过push触发alertmanager. https://github.com/prometheus/alertmanager</description>
     </item>
     
     <item>
@@ -541,7 +541,7 @@ Deploy pre-install:
       <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/metrics_prometheus/</guid>
-      <description>Prometheus swarm部署: https://github.com/vegasbrianc/prometheus k8s部署: https://github.com/coreos/prometheus-operator https://github.com/coreos/kube-prometheus https://github.com/helm/charts/tree/master/stable/prometheus-operator 高可用: https://github.com/thanos-io/thanos</description>
+      <description>Prometheus Prometheus Server是Prometheus组件中的核心部分，负责实现对监控数据的获取，存储以及查询 swarm部署: https://github.com/vegasbrianc/prometheus k8s部署: https://github.com/coreos/prometheus-operator https://github.com/coreos/kube-prometheus https://github.com/helm/charts/tree/master/stable/prometheus-operator 高可用: https://github.com/thanos-io/thanos</description>
     </item>
     
     <item>
@@ -1496,7 +1496,7 @@ debug </description>
       <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/tracing_jaeger/</guid>
-      <description>Jaeger 一款uber贡献给cncf的微服务tracing监控工具. https://www.jaegertracing.io/ https://github.com/jaegertracing/jaeger Deploy Jaeger on K8S https://github.com/jaegertracing/jaeger-kubernetes</description>
+      <description>Jaeger 一款uber贡献给cncf的微服务tracing监控工具. https://www.jaegertracing.io/ https://github.com/jaegertracing/jaeger Deploy Jaeger on K8S https://github.com/jaegertracing/jaeger-operator</description>
     </item>
     
     <item>

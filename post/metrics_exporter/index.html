@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-18T19:23:25&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-18T19:23:25&#43;00:00" />
-<meta itemprop="wordCount" content="134">
+<meta itemprop="wordCount" content="481">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 134 words </span>
+          <span class="more-meta"> 481 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -159,6 +159,7 @@
 <li><a href="#redis">redis</a></li>
 <li><a href="#haproxy">haproxy</a></li>
 <li><a href="#consul">consul</a></li>
+<li><a href="#pushgateway">pushgateway</a></li>
 </ul>
 </nav>
   </div>
@@ -174,6 +175,12 @@
 <h1 id="exporter">exporter</h1>
 
 <p>广义上讲所有可以向Prometheus提供监控样本数据的程序都可以被称为一个Exporter。而Exporter的一个实例称为target，如下所示，Prometheus通过轮询的方式定期从这些target中获取样本数据:</p>
+
+<p>prometheus通过pull从exporter拉取数据.</p>
+
+<p>直接采集:cAdvisor, kubernetes, etcd, gokit等直接内置了用于向prometheus暴露监控数据的端点.</p>
+
+<p>间接采集: 通过promethesu的client api编写exporter，例如mysql-exporter, consul-exporter.</p>
 
 <h1 id="host">host</h1>
 
@@ -218,6 +225,14 @@
 <h1 id="consul">consul</h1>
 
 <p><a href="https://github.com/prometheus/consul_exporter">https://github.com/prometheus/consul_exporter</a></p>
+
+<hr />
+
+<h1 id="pushgateway">pushgateway</h1>
+
+<p><a href="https://github.com/prometheus/pushgateway">https://github.com/prometheus/pushgateway</a></p>
+
+<p>由于Prometheus数据采集基于Pull模型进行设计，因此在网络环境的配置上必须要让Prometheus Server能够直接与Exporter进行通信。 当这种网络需求无法直接满足时，就可以利用PushGateway来进行中转。可以通过PushGateway将内部网络的监控数据主动Push到Gateway当中。而Prometheus Server则可以采用同样Pull的方式从PushGateway中获取到监控数据.</p>
 
     </div>
 
