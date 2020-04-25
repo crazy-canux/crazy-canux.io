@@ -17,7 +17,7 @@
       <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/storage_command/</guid>
-      <description>sysstat: 1 2 3 4 5 6 # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat # 查看diskio信息 $ sudo iostat iotop 1 2 3 # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使</description>
+      <description>sysstat: 1 2 3 4 5 6 7 # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat iostat -d -x -k 1 10 pidstat -d -p pid iotop 1 2 3 # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使用: 1</description>
     </item>
     
     <item>

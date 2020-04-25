@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2292">
+<meta itemprop="wordCount" content="2364">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2292 words </span>
+          <span class="more-meta"> 2364 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -592,6 +592,8 @@ $ docker push</pre></td></tr></table>
 
 <h1 id="dockerfile">Dockerfile</h1>
 
+<p>每个命令都会创建一个layer,尽可能合并相同的命令。</p>
+
 <p>ADD</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -613,12 +615,18 @@ ADD [--chown=&lt;user&gt;:&lt;group&gt;] [&#34;&lt;src&gt;&#34;,... &#34;&lt;des
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 只能操作本地文件
 COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;
 COPY [--chown=&lt;user&gt;:&lt;group&gt;] [&#34;&lt;src&gt;&#34;,... &#34;&lt;dest&gt;&#34;]
-COPY file /path/to/file
+COPY file /path/to/file  相当于 COPY file /path
+# 不会创建目录
+COPY folder /path 相当于 COPY folder/* /path/
+# 需要手动指定
 COPY folder  /path/to/folder </pre></td></tr></table>
 </div>
 </div>
@@ -716,11 +724,19 @@ WORKDIR /path/to/workdir</pre></td></tr></table>
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 在容器构建过程中运行
 RUN &lt;command&gt;  # shell 格式
-RUN [&#34;executable&#34;, &#34;param1&#34;, &#34;param2&#34;]   # exec 格式</pre></td></tr></table>
+RUN [&#34;executable&#34;, &#34;param1&#34;, &#34;param2&#34;]   # exec 格式
+
+RUN set -ex \
+&amp;&amp; cmd1 \
+&amp;&amp; cmd2......</pre></td></tr></table>
 </div>
 </div>
 <p>CMD</p>

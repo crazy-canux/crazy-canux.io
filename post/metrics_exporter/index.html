@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-18T19:23:25&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-18T19:23:25&#43;00:00" />
-<meta itemprop="wordCount" content="481">
+<meta itemprop="wordCount" content="710">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 481 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 710 words </span>
+          <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -149,10 +149,16 @@
 <ul>
 <li><a href="#exporter">exporter</a></li>
 <li><a href="#host">host</a></li>
+<li><a href="#k8s">k8s</a>
+<ul>
+<li><a href="#metrics-server">metrics-server </a></li>
+<li><a href="#cadvisor">cAdvisor</a></li>
+<li><a href="#kube-state-metrics">kube-state-metrics </a></li>
+<li><a href="#adapter">adapter</a></li>
+</ul></li>
 <li><a href="#blackbox">blackbox</a></li>
 <li><a href="#wmi">wmi</a></li>
 <li><a href="#snmp">snmp</a></li>
-<li><a href="#container">container</a></li>
 <li><a href="#mysql">mysql</a></li>
 <li><a href="#rabbitmq">rabbitmq</a></li>
 <li><a href="#mongo">mongo</a></li>
@@ -182,9 +188,49 @@
 
 <p>间接采集: 通过promethesu的client api编写exporter，例如mysql-exporter, consul-exporter.</p>
 
+<hr />
+
 <h1 id="host">host</h1>
 
 <p><a href="https://github.com/prometheus/node_exporter">https://github.com/prometheus/node_exporter</a></p>
+
+<hr />
+
+<h1 id="k8s">k8s</h1>
+
+<p>k8s metrics api包括 resource metrics api 和 customer metrics api.</p>
+
+<p>cadvisor, metrics-server, kube-state-metrics 等实现了 核心api.</p>
+
+<p>一些adapter实现了自定义api.</p>
+
+<p>k8s-prometheus-adapter实现了metrics-server的核心api，同时实现了自定义api.</p>
+
+<h2 id="metrics-server">metrics-server </h2>
+
+<p>提供了整个集群的资源监控数据</p>
+
+<p><a href="https://github.com/kubernetes-sigs/metrics-server">https://github.com/kubernetes-sigs/metrics-server</a></p>
+
+<h2 id="cadvisor">cAdvisor</h2>
+
+<p>负责单节点内部的容器和节点资源使用统计，会自动收集本机容器 CPU、内存、网络和文件系统的资源占用情况</p>
+
+<p><a href="https://github.com/google/cadvisor">https://github.com/google/cadvisor</a></p>
+
+<h2 id="kube-state-metrics">kube-state-metrics </h2>
+
+<p>提供了 Kubernetes 资源对象（如 DaemonSet、Deployments 等）的度量。</p>
+
+<p><a href="https://github.com/kubernetes/kube-state-metrics">https://github.com/kubernetes/kube-state-metrics</a></p>
+
+<h2 id="adapter">adapter</h2>
+
+<p>同时支持核心api和自定义api.</p>
+
+<p><a href="https://github.com/DirectXMan12/k8s-prometheus-adapter">https://github.com/DirectXMan12/k8s-prometheus-adapter</a></p>
+
+<hr />
 
 <h1 id="blackbox">blackbox</h1>
 
@@ -197,10 +243,6 @@
 <h1 id="snmp">snmp</h1>
 
 <p><a href="https://github.com/prometheus/snmp_exporter">https://github.com/prometheus/snmp_exporter</a></p>
-
-<h1 id="container">container</h1>
-
-<p><a href="https://github.com/google/cadvisor">https://github.com/google/cadvisor</a></p>
 
 <h1 id="mysql">mysql</h1>
 

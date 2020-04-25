@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="2062">
+<meta itemprop="wordCount" content="2137">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 2062 words </span>
+          <span class="more-meta"> 2137 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -149,7 +149,7 @@
 <ul>
 <li><a href="#linux的外部命令">Linux的外部命令</a></li>
 <li><a href="#系统管理">系统管理</a></li>
-<li><a href="#linux管理">Linux管理</a></li>
+<li><a href="#kernel管理">kernel管理</a></li>
 <li><a href="#用户和权限管理">用户和权限管理</a></li>
 <li><a href="#文件和目录管理">文件和目录管理</a></li>
 <li><a href="#压缩备份">压缩备份</a></li>
@@ -239,6 +239,49 @@ info [command]</pre></td></tr></table>
 <hr />
 
 <h1 id="系统管理">系统管理</h1>
+
+<p>cpu/mem/load</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 查看cpu/mem/swap/system信息
+vmstat
+vmstat 1
+
+# 查看进程消耗的cpu/mem/swap/system等系统信息
+top
+top -H  # 查看线程
+%cpu = cputime/realtime * 100%
+cpu_usage = %cpu/cpu-number
+%mem = RES/physicalMem * 100%
+
+htop
+$ sudo apt-get install htop
+
+$ sudo apt-get install sysstat (包括pidstat)
+pidstat -u -p pid // cpu
+pidstat -r -p pid //mem</pre></td></tr></table>
+</div>
+</div>
+<p>cpu/load:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -263,70 +306,15 @@ info [command]</pre></td></tr></table>
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># 查看cpu/mem/swap/system信息
-vmstat
-
-# 查看进程消耗的cpu/mem/swap/system等系统信息
-top
-top -H  # 查看线程
-%cpu = cputime/realtime * 100%
-cpu_usage = %cpu/cpu-number
-%mem = RES/physicalMem * 100%
-
-htop
-$ sudo apt-get install htop
-
-uname # 打印linux系统信息
-$ uname -a
-cat /etc/issue
-cat /proc/version
+<pre class="chroma">$ sudo apt-get install sysstat (包括mpstat)
+mpstat -P ALL 1 5 // cpu
 
 uptime
 
-lsb_release # 查看发行版本信息
-$ lsb_release -a
-
-getconf # 查询系统配置的变量，LONG_BIT表示系统位数
-
 lscpu # 显示cpu架构的信息
+
 cat /proc/cpuinfo # 查看cpu信息
 cat /proc/cpuinfo | grep &#34;processor&#34; | wc -l # 逻辑cpu总数
 cat /proc/cpuinfo | grep &#34;physical id&#34; | sort | uniq | wc -l # 物理cpu个数
@@ -337,12 +325,82 @@ physical id :物理cpu个数(每个socket/插槽可以放一个物理cpu).
 cpu cores: 物理cpu有几个核(如果是超线程技术的cpu,每个核可以运行两个线程，或者说每个核对应两个逻辑cpu）。
 siblings： 每个物理cpu单个核心上的逻辑cpu个数
 
-free # 显示空闲和使用的系统内存
+strace
+strace -c -p pid
+strace -T -e epoll_wait -p pid
+
+dmesg</pre></td></tr></table>
+</div>
+</div>
+<p>mem:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">free
+free -m
+
 cat /proc/meminfo # 查看内存信息
 
-clear
+pmap
+pmap -d pid</pre></td></tr></table>
+</div>
+</div>
+<p>system:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">uname # 打印linux系统信息
+$ uname -a
+cat /etc/issue
+cat /proc/version
 
-ps
+lsb_release # 查看发行版本信息
+$ lsb_release -a
+
+getconf # 查询系统配置的变量，LONG_BIT表示系统位数</pre></td></tr></table>
+</div>
+</div>
+<p>process:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ps
 # 格式化输出，逗号后面不能有空格
 ps -eo/-Ao %cpu/pcpu,%mem/pmem,stat,start/start_time/lstart,pid,ppid,cmd/args/command
 ps --ppid 1 -o pid,command | grep -v grep | grep daemon # 获取多进程程序主进程的pid
@@ -421,7 +479,7 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1 // 设
 update-alternatives --remove python /usr/bin/python3.5 // 删除候选项的link</pre></td></tr></table>
 </div>
 </div>
-<h1 id="linux管理">Linux管理</h1>
+<h1 id="kernel管理">kernel管理</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1

@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-04-02T21:11:33&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-02T21:11:33&#43;00:00" />
-<meta itemprop="wordCount" content="2534">
+<meta itemprop="wordCount" content="2443">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 2534 words </span>
-          <span class="more-meta"> 6 mins read </span>
+          <span class="more-meta"> 2443 words </span>
+          <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -150,11 +150,8 @@
 <li><a href="#git">Git</a></li>
 <li><a href="#git-config-git配置">git config (Git配置)</a></li>
 <li><a href="#git-remote-git-协议">git remote (git 协议)</a></li>
-<li><a href="#github">github</a>
-<ul>
 <li><a href="#projcet-gitignore">projcet/.gitignore</a></li>
 <li><a href="#project-gitattributes">project/.gitattributes</a></li>
-</ul></li>
 <li><a href="#git相关项目">git相关项目</a>
 <ul>
 <li><a href="#gui">GUI</a></li>
@@ -436,61 +433,13 @@ git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;</pre></td></tr></t
 </div>
 <hr />
 
-<h1 id="github">github</h1>
-
-<p>github的windows版本包含windows的git和对powershell的支持</p>
-
-<p><a href="https://desktop.github.com/">https://desktop.github.com/</a></p>
-
-<ol>
-<li><p>注册github帐号</p></li>
-
-<li><p>本地创建sshkey</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">ssh-keygen -t rsa -b 4096 -C &#34;your-email&#34;
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa</pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>复制key</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">sudo apt-get install xclip
-xclip -sel clip &lt; ~/.ssh/id_rsa.pub</pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>添加public-key到github的settings的SSH keys。</p></li>
-
-<li><p>测试SSH的无密码连接</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">ssh -T git@github.com</pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-
-<h2 id="projcet-gitignore">projcet/.gitignore</h2>
+<h1 id="projcet-gitignore">projcet/.gitignore</h1>
 
 <p>忽略文件</p>
 
 <p><a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
 
-<h2 id="project-gitattributes">project/.gitattributes</h2>
+<h1 id="project-gitattributes">project/.gitattributes</h1>
 
 <p>github显示编程语言</p>
 <div class="highlight"><div class="chroma">
@@ -942,17 +891,29 @@ git rebase --edit-todo</pre></td></tr></table>
 <p>Reset current HEAD to the specified state</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">git reset --hard [commit] # 全部回退
+<pre class="chroma">// 硬重置, 之后的commit和 修改的文件都没了
+git reset --hard [commit] # 全部回退
+
+// 软重置, 之后commit没了，修改的文件还在
 git reset --soft [commit]
+
 git reset --mixed [commit]
+
 git reset --merge [commit]
+
 git reset --keep [commit]</pre></td></tr></table>
 </div>
 </div>
@@ -990,10 +951,16 @@ git rm -r --cached &lt;file&gt;</pre></td></tr></table>
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">git reflog show # 查看所有git操作日
+<pre class="chroma">// 查看所有执行过的动作的日志
+git reflog show 
+
 git reflog expire
+
 git reflog delete</pre></td></tr></table>
 </div>
 </div>

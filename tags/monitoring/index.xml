@@ -62,7 +62,7 @@
       <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/metrics_prometheus/</guid>
-      <description>Prometheus Prometheus Server是Prometheus组件中的核心部分，负责实现对监控数据的获取，存储以及查询 swarm部署: https://github.com/vegasbrianc/prometheus k8s部署: https://github.com/coreos/prometheus-operator https://github.com/coreos/kube-prometheus https://github.com/helm/charts/tree/master/stable/prometheus-operator 高可用: https://github.com/thanos-io/thanos</description>
+      <description>Prometheus Prometheus Server是Prometheus组件中的核心部分，负责实现对监控数据的获取，存储以及查询 swarm部署: https://github.com/vegasbrianc/prometheus k8s部署: https://github.com/coreos/kube-prometheus https://github.com/coreos/prometheus-operator https://github.com/helm/charts/tree/master/stable/prometheus-operator 高可用: https://github.com/thanos-io/thanos</description>
     </item>
     
     <item>
