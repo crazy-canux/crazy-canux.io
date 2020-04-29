@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2364">
+<meta itemprop="wordCount" content="2585">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2364 words </span>
-          <span class="more-meta"> 5 mins read </span>
+          <span class="more-meta"> 2585 words </span>
+          <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -148,6 +148,7 @@
     <nav id="TableOfContents">
 <ul>
 <li><a href="#docker">Docker</a></li>
+<li><a href="#配置">配置</a></li>
 <li><a href="#docker命令">docker命令</a></li>
 <li><a href="#dockerfile">Dockerfile</a></li>
 <li><a href="#docker-machine">docker-machine</a>
@@ -193,38 +194,6 @@
 <li>容器container, 容器是镜像的运行的实例．</li>
 </ul>
 
-<p>修改默认register:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># https://z4yd270h.mirror.aliyuncs.com
-# http://f1361db2.m.daocloud.io
-# https://docker.mirrors.ustc.edu.cn
-$ sudo vim /etc/docker/daemon.json
-{
-    &#34;registry-mirrors&#34;: [&#34;https://registry.docker-cn.com&#34;]
-}</pre></td></tr></table>
-</div>
-</div>
-<p>禁止docker修改iptables:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ sudo vim /lib/systemd/system/docker.service
-&gt; ExecStart=/usr/bin/dockerd -H fd:// --iptables=false</pre></td></tr></table>
-</div>
-</div>
 <p>修改docker存储路径:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -255,6 +224,121 @@ $ service docker start</pre></td></tr></table>
 
 linux:
 &lt;https://docs.docker.com/install/linux/docker-ce/&gt;</pre></td></tr></table>
+</div>
+</div>
+<h1 id="配置">配置</h1>
+
+<p><a href="https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file">https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file</a></p>
+
+<p>docker配置文件:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/etc/docker/daemon.json
+/lib/systemd/system/docker.service
+
+{
+    // debug
+    &#34;debug&#34;: true
+
+    //容器访问外网:
+    ip-forward=true 会设置 net.ipv4.ip_forward=1, 才能访问外网
+    // 容器之间访问:
+    icc=true, 
+    iptables=true  会修改iptables的forward策略为accept,
+
+    // 修改默认docker0
+    &#34;bridge&#34;:
+    &#34;bip&#34;:
+    &#34;fixed-cidr&#34;:
+    &#34;fixed-cidr-v6&#34;: &#34;&#34;,
+    &#34;mtu&#34;:
+    &#34;default-gateway&#34;:
+    &#34;default-gateway-v6&#34;: &#34;&#34;,
+
+    // ipv6
+    &#34;ipv6&#34;: true
+
+    // private registry
+    &#34;insecure-registries&#34;: [],
+
+    // 修改registry
+    &#34;registry-mirrors&#34;: [
+        &#34;https://registry.docker-cn.com&#34;,
+        &#34;https://z4yd270h.mirror.aliyuncs.com&#34;,
+        &#34;http://f1361db2.m.daocloud.io&#34;,
+        &#34;https://docker.mirrors.ustc.edu.cn&#34;
+    ]
+
+    // 修改默认dns
+    &#34;dns-opts&#34;: [],
+    &#34;dns-search&#34;: [],
+    &#34;dns&#34; : [
+        &#34;114.114.114.114&#34;,
+        &#34;8.8.8.8&#34;
+    ]
+
+    &#34;hosts&#34;: [],
+    &#34;log-level&#34;: &#34;&#34;,
+    &#34;tls&#34;: true,
+    &#34;tlsverify&#34;: true,
+    &#34;tlscacert&#34;: &#34;&#34;,
+    &#34;tlscert&#34;: &#34;&#34;,
+    &#34;tlskey&#34;: &#34;&#34;,
+}</pre></td></tr></table>
 </div>
 </div>
 <hr />
@@ -489,6 +573,10 @@ docker tag &lt;old&gt; &lt;new&gt;</pre></td></tr></table>
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 创建一个新的container并运行命令
@@ -517,20 +605,26 @@ docker run -p [host:port]:[containerPort] // 指定映射端口
 # 在运行的container中执行命令
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 docker exec -d CONTAINER ... // 在后台运行
-docker exec -it CONTAINER /bin/bash ... // 进入命令行</pre></td></tr></table>
+docker exec -it CONTAINER /bin/bash ... // 进入命令行
+
+
+# metrics
+docker stats</pre></td></tr></table>
 </div>
 </div>
 <p>其它命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 在container和host之前拷贝文件和目录
@@ -540,7 +634,9 @@ docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
 # 查看容器的日志
 docker logs [OPTIONS] CONTAINER
 docker diff CONTAINER
-docker history [OPTIONS] IMAGE</pre></td></tr></table>
+docker history [OPTIONS] IMAGE
+
+docker system prune</pre></td></tr></table>
 </div>
 </div>
 <p>register使用</p>
@@ -588,6 +684,28 @@ $ docker pull registry.docker-cn.com/library/ubuntu:16.04
 $ docker push</pre></td></tr></table>
 </div>
 </div>
+<p>secret</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 保存敏感数据
+$ docker secret</pre></td></tr></table>
+</div>
+</div>
+<p>config</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 保存非敏感数据
+$ docker config</pre></td></tr></table>
+</div>
+</div>
 <hr />
 
 <h1 id="dockerfile">Dockerfile</h1>
@@ -620,7 +738,7 @@ ADD [--chown=&lt;user&gt;:&lt;group&gt;] [&#34;&lt;src&gt;&#34;,... &#34;&lt;des
 </span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># 只能操作本地文件
+<pre class="chroma"># 只能操作本地文件, 目标路径不需要创建，不存在会自动创建.
 COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;
 COPY [--chown=&lt;user&gt;:&lt;group&gt;] [&#34;&lt;src&gt;&#34;,... &#34;&lt;dest&gt;&#34;]
 COPY file /path/to/file  相当于 COPY file /path
@@ -714,7 +832,7 @@ VOLUME [&#34;/data&#34;]</pre></td></tr></table>
 </span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># 对run/cmd/entrypoint有效的工作目录
+<pre class="chroma"># 指定后的操作都以该目录为当前目录，目录不存在会自动创建
 WORKDIR /path/to/workdir</pre></td></tr></table>
 </div>
 </div>
@@ -773,9 +891,11 @@ ENTRYPOINT command param1 param2</pre></td></tr></table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">ARG &lt;name&gt;[=&lt;default value&gt;]</pre></td></tr></table>
+<pre class="chroma"># 指定构建环境的变量
+ARG &lt;name&gt;[=&lt;default value&gt;]</pre></td></tr></table>
 </div>
 </div>
 <p>ONBUILD</p>

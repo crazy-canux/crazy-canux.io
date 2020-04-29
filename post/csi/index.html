@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="624">
+<meta itemprop="wordCount" content="674">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 624 words </span>
+          <span class="more-meta"> 674 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -183,13 +183,13 @@
 
 <h2 id="数据存储原理">数据存储原理</h2>
 
-<p>如果host上目录不存在，docker会自动创建</p>
-
 <p>如果container上目录不存在，docker会自动创建</p>
 
 <p>如果container目录存在且有内容，会被host上的目录覆盖掉，但不会被删除.</p>
 
 <h2 id="volumes">Volumes</h2>
+
+<p>如果host上目录不存在，docker会自动创建</p>
 
 <p>volumes是被设计用来持久化数据的，它的生命周期独立于容器.数据卷通过docker volume命令管理的，位于/var/lib/docker/volumes/下面.</p>
 
@@ -219,7 +219,11 @@ $ docker run --mount source=myvolume,target=/var/lib/app ...</pre></td></tr></ta
 </div>
 <h2 id="bind-mount">Bind mount</h2>
 
+<p>如果host上目录不存在会报错，需要提前创建.</p>
+
 <p>bind mount就是直接将host路径挂在到docker．</p>
+
+<p>source和target都是文件，即可挂载单个文件.</p>
 
 <p>使用:</p>
 <div class="highlight"><div class="chroma">

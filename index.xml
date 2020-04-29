@@ -107,7 +107,7 @@
       <pubDate>Tue, 03 Dec 2019 21:50:47 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/image/</guid>
-      <description>image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps 在ubu</description>
+      <description>image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. ubuntu/debian Hash Sum mismatch: 1</description>
     </item>
     
     <item>

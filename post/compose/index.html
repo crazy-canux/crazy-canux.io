@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-01-04T21:53:40&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-04T21:53:40&#43;08:00" />
-<meta itemprop="wordCount" content="807">
+<meta itemprop="wordCount" content="816">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 807 words </span>
+          <span class="more-meta"> 816 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -359,6 +359,8 @@ $ docker-compose logs -f</pre></td></tr></table>
 </span><span class="lnt">127
 </span><span class="lnt">128
 </span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">version: &#34;3.6&#34;
@@ -387,6 +389,8 @@ services:
       volume:
       tmpfs:
       consistency:
+    volumes:
+    - &#34;/path/to/file:/path/to/file 挂载文件
 
     ports:  // long syntax
     - target: 80

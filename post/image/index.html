@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps 在ubu" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. ubuntu/debian Hash Sum mismatch: 1" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Image" />
-<meta property="og:description" content="image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps 在ubu" />
+<meta property="og:description" content="image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. ubuntu/debian Hash Sum mismatch: 1" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/image/" />
 <meta property="article:published_time" content="2019-12-03T21:50:47&#43;08:00"/>
 <meta property="article:modified_time" content="2019-12-03T21:50:47&#43;08:00"/>
 
 <meta itemprop="name" content="Image">
-<meta itemprop="description" content="image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps 在ubu">
+<meta itemprop="description" content="image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. ubuntu/debian Hash Sum mismatch: 1">
 
 
 <meta itemprop="datePublished" content="2019-12-03T21:50:47&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-03T21:50:47&#43;08:00" />
-<meta itemprop="wordCount" content="328">
+<meta itemprop="wordCount" content="371">
 
 
 
 <meta itemprop="keywords" content="docker," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Image"/>
-<meta name="twitter:description" content="image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. buildpack-deps 在ubu"/>
+<meta name="twitter:description" content="image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. ubuntu/debian Hash Sum mismatch: 1"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 328 words </span>
+          <span class="more-meta"> 371 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -149,13 +149,13 @@
 <ul>
 <li><a href="#image">image</a></li>
 <li><a href="#scratch">scratch</a></li>
+<li><a href="#ubuntu-debian">ubuntu/debian</a></li>
+<li><a href="#centos-fedora">centos/fedora</a></li>
 <li><a href="#buildpack-deps">buildpack-deps</a></li>
 <li><a href="#busybox">busybox</a></li>
 <li><a href="#alpine-推荐">alpine(推荐)</a></li>
-<li><a href="#distroless">distroless</a>
-<ul>
+<li><a href="#distroless">distroless</a></li>
 <li><a href="#slim">slim</a></li>
-</ul></li>
 </ul>
 </nav>
   </div>
@@ -175,6 +175,31 @@
 <h1 id="scratch">scratch</h1>
 
 <p>scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像.</p>
+
+<h1 id="ubuntu-debian">ubuntu/debian</h1>
+
+<p>Hash Sum mismatch:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">RUN set -ex \
+&amp;&amp; apt-get clean \
+&amp;&amp; apt-get update -o Acquire::CompressionTypes::Order::=gz \
+&amp;&amp; apt-get update \
+&amp;&amp; apt-get install -y --allow-unauthenticated --no-install-recommends \
+build-essential \
+&amp;&amp; rm -rf /var/lib/apt/lists/*</pre></td></tr></table>
+</div>
+</div>
+<h1 id="centos-fedora">centos/fedora</h1>
 
 <h1 id="buildpack-deps">buildpack-deps</h1>
 
@@ -217,7 +242,7 @@
 
 <p><a href="https://github.com/GoogleContainerTools/distroless">https://github.com/GoogleContainerTools/distroless</a></p>
 
-<h2 id="slim">slim</h2>
+<h1 id="slim">slim</h1>
 
 <p>减小image大小,适用于web程序.</p>
 

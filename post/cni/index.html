@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="1072">
+<meta itemprop="wordCount" content="1092">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1072 words </span>
+          <span class="more-meta"> 1092 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -347,12 +347,22 @@ docker_gwbridge</pre></td></tr></table>
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">// dockerd 自动的默认bridge网络，不推荐用于production.
 
 1. 删除docker0:
+
+$ ip link set dev docker0 down
+$ ifconfig docker0 down 
+
 $ ip link delete docker0
+$ brctl delbr docker0   
 
 2. 修改默认网络:
 $ vim /etc/docker/daemon.json
