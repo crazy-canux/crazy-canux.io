@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2087">
+<meta itemprop="wordCount" content="2217">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2087 words </span>
+          <span class="more-meta"> 2217 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -179,6 +179,7 @@
 <ul>
 <li><a href="#secrets">secrets</a></li>
 <li><a href="#configmaps-cm">configmaps/cm</a></li>
+<li><a href="#persistentvolume-pv">persistentvolume/pv</a></li>
 <li><a href="#persistentvolumeclaims-pvc">persistentvolumeclaims/pvc</a></li>
 <li><a href="#csidrivers">csidrivers</a></li>
 <li><a href="#csinodes">csinodes</a></li>
@@ -196,7 +197,6 @@
 <li><a href="#componentstatuses-cs">componentstatuses/cs</a></li>
 <li><a href="#namespaces-ns">namespaces/ns</a></li>
 <li><a href="#nodes-no">nodes/no</a></li>
-<li><a href="#persistentvolume-pv">persistentvolume/pv</a></li>
 <li><a href="#serviceaccount-sa">serviceaccount/sa</a></li>
 </ul></li>
 </ul></li>
@@ -320,7 +320,7 @@
 
 <p>pod共享存储:</p>
 
-<p>通过volumes, 使不同的pod看到的内容是一样的。</p>
+<p>通过pod volumes, 使pod中的container共享存储。</p>
 
 <p>pod服务质量配置:</p>
 
@@ -446,7 +446,17 @@
 
 <p>ConigMap 大小不超过1M; pod只能引用相同namespace中的configmap, pod引用的configmap不存在时，pod无法创建;使用envFrom从ConfigMap配置环境变量时，如果ConfigMap中的某些key被认为无效，该环境变量不会注入容器，但是pod可以创建; 只有通过k8s api创建的pod才能使用ConfigMap, 其它方式创建的pod不能使用ConfigMap.</p>
 
+<h3 id="persistentvolume-pv">persistentvolume/pv</h3>
+
+<p>static volume provisioning:</p>
+
+<p>dynamic volume provisioning:</p>
+
 <h3 id="persistentvolumeclaims-pvc">persistentvolumeclaims/pvc</h3>
+
+<p>pvc中只需要申明需要的存储size, access mode等业务需求.</p>
+
+<p>pvc简化了用户对存储的需求，pv才是存储的实际信息载体，通过kube-controller-manager中的PersistentVolumeController将PVC与合适的PV 绑定.</p>
 
 <h3 id="csidrivers">csidrivers</h3>
 
@@ -477,8 +487,6 @@
 <p>一个集群内部的逻辑隔离机制，每个资源都属于一个namespace，同一个namespace中的资源命名唯一，不同namespace中的资源可重名.</p>
 
 <h3 id="nodes-no">nodes/no</h3>
-
-<h3 id="persistentvolume-pv">persistentvolume/pv</h3>
 
 <h3 id="serviceaccount-sa">serviceaccount/sa</h3>
 

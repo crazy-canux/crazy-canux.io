@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-01-04T21:53:40&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-04T21:53:40&#43;08:00" />
-<meta itemprop="wordCount" content="816">
+<meta itemprop="wordCount" content="826">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 816 words </span>
+          <span class="more-meta"> 826 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -361,6 +361,10 @@ $ docker-compose logs -f</pre></td></tr></table>
 </span><span class="lnt">129
 </span><span class="lnt">130
 </span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">version: &#34;3.6&#34;
@@ -368,8 +372,6 @@ services:
   mongo:
     image: mongo:latest
     hostname: hostname
-
-    deploy: // for swarm
 
     networks:
     - mynetwork
@@ -392,6 +394,11 @@ services:
     volumes:
     - &#34;/path/to/file:/path/to/file 挂载文件
 
+    logging:
+      driver: syslog
+      options:
+        syslog-address: &#34;tcp://192.168.0.42:123&#34;
+
     ports:  // long syntax
     - target: 80
       published: 8080
@@ -413,6 +420,16 @@ services:
 
     command: [&#34;./wait-for-it.sh&#34;, &#34;db:5432&#34;, &#34;--&#34;, &#34;python&#34;, &#34;app.py&#34;]
 
+    // 解析为: &#34;line1 line2\n&#34;,  会自动加换行符.
+    command: &gt;
+    line1
+    line2
+
+    // 解析为: &#34;line1 line2&#34;, 没有换行符.
+    command: &gt;-
+    line1
+    line2
+
     // 在compose v3 中针对非swarm模式的container做资源限制等操作.
     // --compatibility If set, Compose will attempt to convert keys in v3 files to their non-Swarm equivalent
     $ docker-compose --compatibility up -d
@@ -429,6 +446,7 @@ services:
         cpus: &#39;0.25&#39;
         memory: 20M
 
+    deploy: // for swarm
     # 下列选项不能用于swarm stack部署.
     build
     cgroup_parent
@@ -474,16 +492,6 @@ networks:
       driver: default
       config:
       - subnet: 172.12.0.0/16
-
-// 解析为: &#34;line1 line2\n&#34;,  会自动加换行符.
-command: &gt;
-  line1
-  line2
-
-// 解析为: &#34;line1 line2&#34;, 没有换行符.
-command: &gt;-
-  line1
-  line2
 
 # compose文件中用到的变量
 .Service.ID Service ID 

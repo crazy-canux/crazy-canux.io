@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-01-10T20:55:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:55:52&#43;08:00" />
-<meta itemprop="wordCount" content="1017">
+<meta itemprop="wordCount" content="1227">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1017 words </span>
+          <span class="more-meta"> 1227 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -157,6 +157,7 @@
 <li><a href="#configmap">ConfigMap</a></li>
 <li><a href="#secret">Secret</a></li>
 <li><a href="#serviceaccont">ServiceAccont</a></li>
+<li><a href="#pv-pvc">PV/PVC</a></li>
 </ul>
 </nav>
   </div>
@@ -300,9 +301,11 @@ status: 观测到的状态</pre></td></tr></table>
 </span><span class="lnt">40
 </span><span class="lnt">41
 </span><span class="lnt">42
+</span><span class="lnt">43
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">apiVersion: v1
+kind: Pod
 metadata:
   name: test
 spec:
@@ -346,7 +349,7 @@ spec:
   - name: regcred</pre></td></tr></table>
 </div>
 </div>
-<p>pod中的container共享存储:</p>
+<p>pod中的container共享存储(pod volume):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -368,27 +371,47 @@ spec:
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">apiVersion: v1
 Kind: Pod
 medadata:
 spec:
+
+  # 两种pod volume
   volumes:
-  - name: shared-data
+  # emptyDir： pod删除之后该目录也会被删除
+  - name: cache-volume
+    emptyDir: {}
+  # hostPath: pod删除之后该目录还在host上. 
+  - name: hostpath-volume
     hostPath:
       path: /path/on/host
+
   containers:
   - name: container1
     image: test
     volumeMounts:
-    - name: shared-data
+    - name: cache-volume
       mountpath: /path/on/container
+      # subPath会在emptyDir或hostPath目录下创建子目录
+      subPath: cache1
   - name: container2
     image: test
     volumeMounts:
-    - name: shared-data
-      mountpath: /path/on/container</pre></td></tr></table>
+    - name: hostpath-volume
+      mountpath: /path/on/container
+      readOnly: true</pre></td></tr></table>
 </div>
 </div>
 <hr />
@@ -714,6 +737,96 @@ secrets: // 指定secret
 
 imagePullSecrets: // 使用该sa的都会自动授权registry.
 - name: myregistrykey</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="pv-pvc">PV/PVC</h1>
+
+<p>static volume provisioning</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nas-csi-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: ...</pre></td></tr></table>
+</div>
+</div>
+<p>pvc:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nsa-pvc
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi 
+
+
+apiVersion: v1
+kind: Pod
+spec:
+  volumes:
+  - name: nas-pvc
+    persistentVolumeClaim:
+    claimName: nas-pvc 
+  containers:
+  - name: c1
+    volumeMounts:
+    - name: nas-pvc
+      mountPath: /data  </pre></td></tr></table>
 </div>
 </div>
     </div>

@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2139">
+<meta itemprop="wordCount" content="2277">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2139 words </span>
+          <span class="more-meta"> 2277 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -533,6 +533,15 @@ eth1: docker_gwbridge(swarm define bridge)</pre></td></tr></table>
 </div>
 <p>overlay: 通过4789/udp跨主机访问其他container, host不能访问overlay的ip，只有container之间通过container-servicename或者container-overlay的ip相互访问.</p>
 
+<p>overlay 问题: 通过overlay连接，默认15分钟timeout, 所以数据库建议用dnsrr模式; 如果用vip模式，需要修改内核网络参数:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo sysctl -w net.ipv4.tcp_keepalive_time=600 net.ipv4.tcp_keepalive_intvl=60 net.ipv4.tcp_keepalive_probes=3</pre></td></tr></table>
+</div>
+</div>
 <p>vip模式就是访问的虚拟ip,replicated的service如果有多个container,通过servicename访问的就是同一个vip,通过vip解析到背后container的真实overlay-ip(自动负载均衡).</p>
 
 <p>dnsrr模式就是直接解析container的overlay-ip来访问,如果是replicated的service有多个container,每次访问的就是从dns列表中根据负载均衡算法拿到其中一个overlay-ip.</p>
@@ -544,18 +553,32 @@ eth1: docker_gwbridge(swarm define bridge)</pre></td></tr></table>
 <p>修改默认的docker_gwbridge:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ docker network create --subnet &#34;172.18.0.0/16&#34;  --ip-range “172.18.1.0/16” \
+<pre class="chroma">// 对于已存在的，要先删除
+$ service docker stop
+$ sudo ip link set docker_gwbridge down
+$ sudo ip link del dev docker_gwbridge
+// 创建swarm之前创建好网络
+$ docker network create --subnet &#34;172.18.0.0/16&#34;  --ip-range “172.18.1.0/16” \
 --opt com.docker.network.bridge.name=docker_gwbridge \
 --opt com.docker.network.bridge.enable_icc=false \
 --opt com.docker.network.bridge.enable_ip_masquerade=true \
-docker_gwbridge</pre></td></tr></table>
+docker_gwbridge
+// 创建swarm
+$ docker swarm init</pre></td></tr></table>
 </div>
 </div>
 <p>endpoint_mode:</p>
