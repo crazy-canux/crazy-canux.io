@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2713">
+<meta itemprop="wordCount" content="2786">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2713 words </span>
+          <span class="more-meta"> 2786 words </span>
           <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -302,12 +302,20 @@ linux:
 
     // 修改默认docker0
     &#34;bridge&#34;:
-    &#34;bip&#34;:
-    &#34;fixed-cidr&#34;:
+    &#34;bip&#34;: &#34;10.0.0.1/16&#34;  // subnet + gateway
+    &#34;fixed-cidr&#34;: &#34;10.41.0.0/24&#34; // iprange
     &#34;fixed-cidr-v6&#34;: &#34;&#34;,
-    &#34;mtu&#34;:
+    &#34;mtu&#34;: 1500
     &#34;default-gateway&#34;:
     &#34;default-gateway-v6&#34;: &#34;&#34;,
+
+    // 修改默认dns
+    &#34;dns&#34; : [
+        &#34;114.114.114.114&#34;,
+        &#34;8.8.8.8&#34;
+    ]
+    &#34;dns-opts&#34;: [],
+    &#34;dns-search&#34;: [],
 
     // ipv6
     &#34;ipv6&#34;: true
@@ -321,14 +329,6 @@ linux:
         &#34;https://z4yd270h.mirror.aliyuncs.com&#34;,
         &#34;http://f1361db2.m.daocloud.io&#34;,
         &#34;https://docker.mirrors.ustc.edu.cn&#34;
-    ]
-
-    // 修改默认dns
-    &#34;dns-opts&#34;: [],
-    &#34;dns-search&#34;: [],
-    &#34;dns&#34; : [
-        &#34;114.114.114.114&#34;,
-        &#34;8.8.8.8&#34;
     ]
 
     &#34;hosts&#34;: [],
@@ -577,6 +577,35 @@ docker tag &lt;old&gt; &lt;new&gt;</pre></td></tr></table>
 </span><span class="lnt">29
 </span><span class="lnt">30
 </span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 创建一个新的container并运行命令
@@ -588,12 +617,16 @@ docker run -P IMAGE // 默认将容器的8０端口映射到主机的随机端�
 docker run -p [host:port]:[containerPort] // 指定映射端口
 --add-host # 相当于修改容器的/etc/hosts,但是容器重启后不会消失
 -h/--hostname # 修改容器的/etc/hostname
+
+// cpu
 --cpus decimal                   Number of CPUs
 -c, --cpu-shares int             CPU shares (relative weight)
 --cpuset-cpus string             CPUs in which to allow execution (0-3, 0,1)
 --cpuset-mems string             MEMs in which to allow execution (0-3, 0,1)
 --cpu-period
 --cpu-quota
+
+// memory
 -m, --memory bytes               Memory limit
 --memory-reservation bytes       Memory soft limit
 --memory-swap bytes              Swap limit equal to memory plus swap: &#39;-1&#39; to enable unlimited swap
@@ -602,14 +635,39 @@ docker run -p [host:port]:[containerPort] // 指定映射端口
 --oom-score-adj
 --kernel-memory
 
+// io
+--blkio-weight
+--blkio-weight-device
+--device-read-bps
+--device-write-bps
+--device-read-iops
+--device-write-iops
+
+// security
+// https://docs.docker.com/engine/security/apparmor/
+// https://docs.docker.com/engine/security/seccomp/
+// https://docs.docker.com/engine/security/userns-remap/
+// https://docs.docker.com/engine/security/rootless/
+privileged
+sysctl
+ulimit
+user
+userns
+security_ops
+cgroup_parent
+cap_add
+cap_drop
+
 # 在运行的container中执行命令
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 docker exec -d CONTAINER ... // 在后台运行
 docker exec -it CONTAINER /bin/bash ... // 进入命令行
 
-
 # metrics
-docker stats</pre></td></tr></table>
+docker stats
+
+# resource
+docker top</pre></td></tr></table>
 </div>
 </div>
 <p>log:</p>

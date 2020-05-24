@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-03-31T21:48:59&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-31T21:48:59&#43;00:00" />
-<meta itemprop="wordCount" content="572">
+<meta itemprop="wordCount" content="550">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 572 words </span>
+          <span class="more-meta"> 550 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -150,7 +150,6 @@
 <li><a href="#linux">Linux</a></li>
 <li><a href="#linux桌面环境">Linux桌面环境</a></li>
 <li><a href="#linux桌面管理器">Linux桌面管理器：</a></li>
-<li><a href="#linux的shell">Linux的shell</a></li>
 <li><a href="#linux编程">Linux编程</a>
 <ul>
 <li><a href="#linux程序调用结构">Linux程序调用结构：</a></li>
@@ -229,57 +228,6 @@
 
 <p>lightDM</p>
 
-<h1 id="linux的shell">Linux的shell</h1>
-
-<p>查看shell内置命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">help [command]</pre></td></tr></table>
-</div>
-</div>
-<p>查看shell的外部命令(包括应用程序的命令行)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">man [command]
-man 1 [command]
-info [command]</pre></td></tr></table>
-</div>
-</div>
-<p>查到包括宏，包，惯用法等</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">man 7 &lt;name&gt;</pre></td></tr></table>
-</div>
-</div>
-<p>查到系统管理员命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">man 8 &lt;name&gt;</pre></td></tr></table>
-</div>
-</div>
-<p>查到内核的惯用法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">man 9 &lt;name&gt;</pre></td></tr></table>
-</div>
-</div>
 <h1 id="linux编程">Linux编程</h1>
 
 <h2 id="linux程序调用结构">Linux程序调用结构：</h2>
@@ -293,15 +241,55 @@ info [command]</pre></td></tr></table>
 
 <h2 id="查看手册">查看手册：</h2>
 
-<p>通过CONFORMING TO可以看到函数遵循什么标准。</p>
-
-<p>查到的是系统调用（实际上也是POSIX封装的同名函数）</p>
+<p>查看man帮助:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">man 2 &lt;name&gt;</pre></td></tr></table>
+<pre class="chroma">$ man man</pre></td></tr></table>
+</div>
+</div>
+<p>手册章节:</p>
+
+<ol>
+<li>Executable programs or shell commands</li>
+<li>System calls (functions provided by the kernel)</li>
+<li>Library calls (functions within program libraries)</li>
+<li>Special files (usually found in /dev)</li>
+<li>File formats and conventions eg /etc/passwd</li>
+<li>Games</li>
+<li>Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)</li>
+<li>System administration commands (usually only for root)</li>
+<li>Kernel routines [Non standard]</li>
+</ol>
+
+<p>查看shell命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">man 1 &lt;cmd&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>查到的是系统调用（实际上也是POSIX封装的同名函数）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">man 2 &lt;name&gt;
+
+// 查看系统调用所有函数宏
+man 2 syscalls
+// 查看未实现的系统调用
+man 2 unimplemented</pre></td></tr></table>
 </div>
 </div>
 <p>查到的glibc（包括ISO C，POSIX的部分函数，其它库）</p>
@@ -313,40 +301,23 @@ info [command]</pre></td></tr></table>
 <pre class="chroma">man 3 &lt;name&gt;</pre></td></tr></table>
 </div>
 </div>
-<p>查看系统调用所有函数宏</p>
+<p>查看标准：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">man syscalls</pre></td></tr></table>
-</div>
-</div>
-<p>查看未实现的系统调用</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">man unimplemented</pre></td></tr></table>
-</div>
-</div>
-<p>查看glibc</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">man libc</pre></td></tr></table>
-</div>
-</div>
-<p>查看C和Linux的标准</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">man standards</pre></td></tr></table>
+<pre class="chroma">man 7 &lt;name&gt;
+
+// 查看glibc标准
+man 7 libc
+// 查看C和Linux的标准
+man 7 standards</pre></td></tr></table>
 </div>
 </div>
 <h1 id="grub">Grub</h1>

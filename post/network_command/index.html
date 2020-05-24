@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="929">
+<meta itemprop="wordCount" content="991">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/network/"> Network </a>
             </div>
-          <span class="more-meta"> 929 words </span>
+          <span class="more-meta"> 991 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -152,8 +152,8 @@
 <li><a href="#ping">ping</a></li>
 <li><a href="#ifconfig">ifconfig</a></li>
 <li><a href="#brctl">brctl</a></li>
-<li><a href="#ip">ip</a></li>
 <li><a href="#route">route</a></li>
+<li><a href="#ip">ip</a></li>
 <li><a href="#arp">arp</a></li>
 <li><a href="#dig">dig</a></li>
 <li><a href="#nslookup">nslookup</a></li>
@@ -257,7 +257,27 @@ brctl addif &lt;bridge&gt; &lt;interface&gt; # 绑定interface到bridge
 brctl delif &lt;bridge&gt; &lt;interface&gt; # 删除bridge上的interface</pre></td></tr></table>
 </div>
 </div>
+<h1 id="route">route</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">route # 操作路由表的命令
+route -n</pre></td></tr></table>
+</div>
+</div>
 <h1 id="ip">ip</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install iproute2</pre></td></tr></table>
+</div>
+</div>
+<p>link:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -272,13 +292,9 @@ brctl delif &lt;bridge&gt; &lt;interface&gt; # 删除bridge上的interface</pre>
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo apt-get install iproute2
-
-ip link
+<pre class="chroma">ip link show
 
 # 创建vlan
 ip link add link eth1 name eth1.10 type vlan id 10
@@ -292,15 +308,31 @@ ip link set dev eth1.10 down
 ip link delete eth1.10</pre></td></tr></table>
 </div>
 </div>
-<h1 id="route">route</h1>
+<p>addr/address</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">route # 操作路由表的命令
-route -n</pre></td></tr></table>
+<pre class="chroma">ip addr show</pre></td></tr></table>
+</div>
+</div>
+<p>route</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ip route show</pre></td></tr></table>
+</div>
+</div>
+<p>rule</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ip rule show</pre></td></tr></table>
 </div>
 </div>
 <h1 id="arp">arp</h1>
@@ -483,19 +515,29 @@ $ wget -q -c -O /path/to/file.ext url</pre></td></tr></table>
 <h1 id="curl">curl</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">curl
 -X/--request post/patch/delte/get/...
 -H/--header &#39;content-type: application/json&#39;
 -d/--data &#39;{&#34;key&#34;: &#34;value&#34;}&#39;
+--data-raw DATA  HTTP POST data, &#39;@&#39; allowed (H)
+--data-ascii DATA  HTTP POST ASCII data (H)
+--data-binary DATA  HTTP POST binary data (H)
+--data-urlencode DATA  HTTP POST data url encoded (H)
+-G, --get           Send the -d data with a HTTP GET (H)
 -k/--insecure    ignore ssl check.
 -u/--user &lt;user:password&gt;
 -s/--silent        Silent mode</pre></td></tr></table>

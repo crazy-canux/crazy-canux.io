@@ -6,10 +6,21 @@
     <description>Recent content on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Mar 2020 20:55:52 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 15:30:42 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Security</title>
+      <link>http://canuxcheng.com/post/linux_security/</link>
+      <pubDate>Sun, 24 May 2020 15:30:42 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_security/</guid>
+      <description>SeLinux Security-Enhanced Linux
+SecComp Secure computing mode (seccomp) is a Linux kernel feature.
+AppArmor AppArmor (Application Armor) is a Linux security module that protects an operating system and its applications from security threats.</description>
+    </item>
     
     <item>
       <title>Network</title>
@@ -2114,7 +2125,7 @@ SAAS: Software as a service</description>
       <pubDate>Mon, 01 Apr 2013 12:49:49 +0800</pubDate>
       
       <guid>http://canuxcheng.com/about/</guid>
-      <description>作者简介(Synopsis) 程 伟 Canux CHENG Born: 1989 Gender: Male Interested in：DevOps, Cloud Computing, Big Data. 技术交流(Contact) 了解项目情况，欢迎追踪我的Github Welcome</description>
+      <description>作者简介(Synopsis) 程 伟 Canux CHENG Born: 1989 Gender: Male Interested in：DevSecOps, Cloud Computing, Big Data. 技术交流(Contact) 了解项目情况，欢迎追踪我的Gith</description>
     </item>
     
     <item>
@@ -2124,6 +2135,24 @@ SAAS: Software as a service</description>
       
       <guid>http://canuxcheng.com/contact/</guid>
       <description>移动电话(Phone): 1 +86-136-8198-4515 个人邮箱(E-mail): 技术邮箱(tech) canuxcheng@gmail.com 职位邮箱(position) canuxcheng@163.com 商务邮箱(business) canuxcheng@outlook.com 微信</description>
+    </item>
+    
+    <item>
+      <title>Media</title>
+      <link>http://canuxcheng.com/media/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/media/</guid>
+      <description>gangs of london https://www.meijutt.tv/content/meiju25362.html
+condor https://www.meijutt.tv/content/meiju23649.html
+bodyguard https://www.meijutt.tv/content/meiju23903.html
+yellowwstone https://www.meijutt.tv/content/meiju25366.html
+homeland https://www.meijutt.tv/content/meiju24703.html
+love, death &amp;amp; robots https://www.meijutt.tv/content/meiju24330.html
+# the mandolorian
+https://www.meijutt.tv/content/meiju24901.html
+# kingdom
+https://www.meijutt.tv/content/meiju24216.html</description>
     </item>
     
     <item>

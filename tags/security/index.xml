@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>security on Morgoth</title>
+    <link>http://canuxcheng.com/tags/security/</link>
+    <description>Recent content in security on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 24 May 2020 15:30:42 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Security</title>
+      <link>http://canuxcheng.com/post/linux_security/</link>
+      <pubDate>Sun, 24 May 2020 15:30:42 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_security/</guid>
+      <description>SeLinux Security-Enhanced Linux
+SecComp Secure computing mode (seccomp) is a Linux kernel feature.
+AppArmor AppArmor (Application Armor) is a Linux security module that protects an operating system and its applications from security threats.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://canuxcheng.com/post/linux_security/</loc>
+    <lastmod>2020-05-24T15:30:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/k8s_network/</loc>
     <lastmod>2020-03-26T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1641,6 +1648,13 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/media/</loc>
+    <lastmod>2013-04-01T12:49:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/todo/</loc>
     <lastmod>2013-04-01T12:49:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1739,7 +1753,7 @@
   
   <url>
     <loc>http://canuxcheng.com/categories/linux/</loc>
-    <lastmod>2019-02-03T14:04:05+00:00</lastmod>
+    <lastmod>2020-05-24T15:30:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1752,7 +1766,7 @@
   
   <url>
     <loc>http://canuxcheng.com/</loc>
-    <lastmod>2020-03-26T20:55:52+08:00</lastmod>
+    <lastmod>2020-05-24T15:30:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1766,7 +1780,7 @@
   
   <url>
     <loc>http://canuxcheng.com/post/</loc>
-    <lastmod>2020-03-26T20:55:52+08:00</lastmod>
+    <lastmod>2020-05-24T15:30:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2544,6 +2558,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/samba/</loc>
     <lastmod>2016-04-03T14:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/security/</loc>
+    <lastmod>2020-05-24T15:30:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
