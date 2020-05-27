@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kernel on Morgoth</title>
+    <link>http://canuxcheng.com/tags/kernel/</link>
+    <description>Recent content in kernel on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 27 May 2020 22:29:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>kernel</title>
+      <link>http://canuxcheng.com/post/linux_kernel/</link>
+      <pubDate>Wed, 27 May 2020 22:29:00 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_kernel/</guid>
+      <description>Kernel command 1 2 3 4 5 lsmod 查看已加载的模块 # /proc/modules modprobe -c 查看已编译可加载的内核模块 modprobe &amp;lt;name&amp;gt; 加载模块 # /etc/modules modprobe -r &amp;lt;name&amp;gt; 删除模块 rmmod &amp;lt;name&amp;gt; 删除模块</description>
+    </item>
+    
+  </channel>
+</rss>

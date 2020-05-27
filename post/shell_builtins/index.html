@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-03-31T21:51:03&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-31T21:51:03&#43;00:00" />
-<meta itemprop="wordCount" content="284">
+<meta itemprop="wordCount" content="343">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 284 words </span>
+          <span class="more-meta"> 343 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -254,41 +254,49 @@ enable -a</pre></td></tr></table>
 </span><span class="lnt">50
 </span><span class="lnt">51
 </span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">type
 enable
 help
 
+caller
 alias
 bg
 bind
 break
 builtin
-caller
-cd
 command
 compgen
 complete
 compopt
 continue
 declare
-dirs
 disown
-
-echo
-echo &#34;_${VAR}_&#34; // 查看变量前后是否有空格.
-
+let
+local
+logout
+mapfile
+popd
+printf
+pushd
+read
+readarray
+readonly
+return
+shift
+shopt
+source
+suspend
+times
+trap
+true
+typeset
+ulimit
+umask
+unalias
+unset
+wait
 eval
 exec
 exit
@@ -299,35 +307,64 @@ fg
 getopts
 hash
 history
-jobs
-kill
-let
-local
-logout
-mapfile
-popd
-printf
-pushd
-pwd
-read
-readarray
-readonly
-return
-set
-shift
-shopt
-source
-suspend
-test
-times
-trap
-true
-typeset
-ulimit
-umask
-unalias
-unset
-wait</pre></td></tr></table>
+jobs</pre></td></tr></table>
+</div>
+</div>
+<p>路径相关:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd
+dirs
+pwd</pre></td></tr></table>
+</div>
+</div>
+<p>test:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">test</pre></td></tr></table>
+</div>
+</div>
+<p>set:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">set
+set -e 命令失败立即退出
+set -o pipefail 对于有管道的操作，返回最后一个非零返回值的命令的返回码.</pre></td></tr></table>
+</div>
+</div>
+<p>echo:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">echo
+echo &#39;origin&#39;  # 不打印变量
+echo &#34;_${VAR}_&#34; # 查看变量前后是否有空格.</pre></td></tr></table>
+</div>
+</div>
+<p>kill:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kill</pre></td></tr></table>
 </div>
 </div>
     </div>

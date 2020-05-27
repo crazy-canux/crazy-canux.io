@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-06-07T16:57:45&#43;00:00" />
 <meta itemprop="dateModified" content="2016-06-07T16:57:45&#43;00:00" />
-<meta itemprop="wordCount" content="819">
+<meta itemprop="wordCount" content="871">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 819 words </span>
+          <span class="more-meta"> 871 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -149,11 +149,17 @@
 <ul>
 <li><a href="#dpkg">DPKG</a>
 <ul>
-<li><a href="#dpkg-1">dpkg</a></li>
+<li><a href="#dpkg-1">dpkg</a>
+<ul>
+<li><a href="#deb-debian-binary-package-format">deb - Debian binary package format</a></li>
+<li><a href="#dpkg-package-manager-for-debian">dpkg - package manager for Debian</a></li>
+<li><a href="#dpkg-reconfigure-reconfigure-an-already-installed-package">dpkg-reconfigure - reconfigure an already installed package</a></li>
+<li><a href="#dpkg-deb-debian-package-archive-deb-manipulation-tool">dpkg-deb - Debian package archive (.deb) manipulation tool</a></li>
+<li><a href="#dpkg-query-a-tool-to-query-the-dpkg-database">dpkg-query - a tool to query the dpkg database</a></li>
+</ul></li>
 <li><a href="#gdebi-simple-tool-to-install-deb-files">gdebi - Simple tool to install deb files</a></li>
 <li><a href="#apt-command-line-interface">apt - command-line interface</a></li>
 </ul></li>
-<li><a href="#install">install</a></li>
 <li><a href="#rpm">RPM</a>
 <ul>
 <li><a href="#rpm-1">rpm</a></li>
@@ -180,13 +186,15 @@
 
 <p>debian的包管理机制。</p>
 
+<hr />
+
 <h2 id="dpkg-1">dpkg</h2>
 
 <p>dpkg的本地前端工具。</p>
 
-<p>deb - Debian binary package format</p>
+<h3 id="deb-debian-binary-package-format">deb - Debian binary package format</h3>
 
-<p>dpkg - package manager for Debian</p>
+<h3 id="dpkg-package-manager-for-debian">dpkg - package manager for Debian</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -201,7 +209,7 @@ dpkg -e  ./xxx.deb  xxx/DEBIAN # 将control信息解压
 dpkg -l | grep pkg # 查看安装的包</pre></td></tr></table>
 </div>
 </div>
-<p>dpkg-reconfigure - reconfigure an already installed package</p>
+<h3 id="dpkg-reconfigure-reconfigure-an-already-installed-package">dpkg-reconfigure - reconfigure an already installed package</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -210,7 +218,85 @@ dpkg -l | grep pkg # 查看安装的包</pre></td></tr></table>
 <pre class="chroma">dpkg-reconfigure</pre></td></tr></table>
 </div>
 </div>
-<p>dpkg-deb - Debian package archive (.deb) manipulation tool</p>
+<h3 id="dpkg-deb-debian-package-archive-deb-manipulation-tool">dpkg-deb - Debian package archive (.deb) manipulation tool</h3>
+
+<p>目录结构, DEBIAN/control是必需的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">|- debian_root
+   |- DEBIAN
+      |- control
+      |- preinst/preinstallation # 解压deb包之前执行
+      |- prerm/preremove
+      |- postinst/postinstallation # 解压完成之后执行，通常用来配置
+      |- postrm/postremove
+      |- copyright
+      |- changelog
+      |- conffiles
+   |- etc
+      |- init.d/systemd
+         |- &lt;service&gt;
+      |- logrotate.d
+         |- &lt;service&gt;
+   |- user/local/...
+   |- opt/...</pre></td></tr></table>
+</div>
+</div>
+<p>control:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Package
+Version
+Description
+Maintain:
+Section: utils/net/mail/text/x11/...
+Priority: required/standard/optional/extra/...
+Essential: yes/no
+Architecture: i386/amd64/...
+Source:
+Depends:    # 运行该process需要的依萊, 只能安装之前安装好，或者用gdebi安装
+Pre-Depends:
+Recommends:
+Suggests:
+...</pre></td></tr></table>
+</div>
+</div>
+<p>postrm:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -237,67 +323,53 @@ dpkg -l | grep pkg # 查看安装的包</pre></td></tr></table>
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma"># 创建debian包
-dpkg-deb -b|--build &lt;directory&gt; [&lt;deb&gt;]
+<pre class="chroma">case &#34;$1&#34; in
+    remove)
+        remove
+        echo &#34;Remove complete&#34;
+    ;;
 
-# &lt;directory&gt; 结构, DEBIAN/control　是必需的
-|- debian_root
-   |- DEBIAN
-      |- preinst/preinstallation # 解压deb包之前执行
-      |- prerm/preremove
-      |- control
-      |- postinst/postinstallation # 解压完成之后执行，通常用来配置
-      |- postrm/postremove
-      |- copyright
-      |- changelog
-      |- conffiles
-   |- etc
-      |- init.d
-         |- &lt;service&gt;
-      |- logrotate.d
-         |- &lt;service&gt;
-   |- user/local/...
-   |- opt/...
+    purge)
+        purge
+        echo &#34;Purge complete&#34;
+    ;;
 
-# control文件
-Package
-Version
-Description
-Section: utils/net/mail/text/x11/...
-Priority: required/standard/optional/extra/...
-Essential: yes/no
-Architecture: i386/amd64/...
-Source:
-Depends:    # 运行该process需要的依萊, 只能安装之前安装好，或者用gdebi安装
-Pre-Depends:
-Recommends:
-Suggests:
-...
-最后一行需要空行
+    upgrade|failed-upgrade|disappear)
+        echo &#34;Do nothing&#34;
+    ;;
 
-# 查看包信息
-dpkg-deb -I XXX.deb</pre></td></tr></table>
+    abort-install|abort-upgrade)
+        echo &#34;Do nothing&#34;
+    ;;
+
+    *)
+        echo &#34;$0 called with unknown argument \`$1&#39;&#34; 1&gt;&amp;2
+        exit 1
+    ;;
+esac</pre></td></tr></table>
 </div>
 </div>
-<p>dpkg-query - a tool to query the dpkg database</p>
+<p>创建debian包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ dpkg-deb -b|--build &lt;directory&gt; [&lt;deb&gt;]</pre></td></tr></table>
+</div>
+</div>
+<p>查看包信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ dpkg-deb -I XXX.deb</pre></td></tr></table>
+</div>
+</div>
+<h3 id="dpkg-query-a-tool-to-query-the-dpkg-database">dpkg-query - a tool to query the dpkg database</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -306,6 +378,8 @@ dpkg-deb -I XXX.deb</pre></td></tr></table>
 <pre class="chroma">dpkg-query</pre></td></tr></table>
 </div>
 </div>
+<hr />
+
 <h2 id="gdebi-simple-tool-to-install-deb-files">gdebi - Simple tool to install deb files</h2>
 
 <p>dpkg的本地前端工具。</p>
@@ -336,6 +410,8 @@ $ sudo aptitude install gdebi-gtk # install gdebi GUI</pre></td></tr></table>
 <pre class="chroma">sudo gdebi XXX.deb # install package</pre></td></tr></table>
 </div>
 </div>
+<hr />
+
 <h2 id="apt-command-line-interface">apt - command-line interface</h2>
 
 <p>dpkg的远程前端工具。</p>
@@ -446,8 +522,6 @@ $ apt-cache depends &lt;pkg&gt;
 $ apt-cache --recurse depends &lt;pkg&gt;</pre></td></tr></table>
 </div>
 </div>
-<h1 id="install">install</h1>
-
 <hr />
 
 <h1 id="rpm">RPM</h1>

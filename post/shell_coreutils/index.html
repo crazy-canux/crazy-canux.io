@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="2164">
+<meta itemprop="wordCount" content="2120">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 2164 words </span>
+          <span class="more-meta"> 2120 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -149,7 +149,6 @@
 <ul>
 <li><a href="#linux的外部命令">Linux的外部命令</a></li>
 <li><a href="#系统管理">系统管理</a></li>
-<li><a href="#kernel管理">kernel管理</a></li>
 <li><a href="#用户和权限管理">用户和权限管理</a></li>
 <li><a href="#文件和目录管理">文件和目录管理</a></li>
 <li><a href="#压缩备份">压缩备份</a></li>
@@ -479,23 +478,6 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1 // 设
 update-alternatives --remove python /usr/bin/python3.5 // 删除候选项的link</pre></td></tr></table>
 </div>
 </div>
-<h1 id="kernel管理">kernel管理</h1>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">lsmod 查看已加载的模块    # /proc/modules
-modprobe -c 查看已编译可加载的内核模块
-modprobe &lt;name&gt; 加载模块 # /etc/modules
-modprobe -r &lt;name&gt; 删除模块
-rmmod &lt;name&gt; 删除模块</pre></td></tr></table>
-</div>
-</div>
 <h1 id="用户和权限管理">用户和权限管理</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -546,6 +528,17 @@ chmod 1777 &lt;dir&gt;
 chown
 chgrp
 chattr</pre></td></tr></table>
+</div>
+</div>
+<p>usermod</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 禁止root登录
+usermod --shell /sbin/nologin root</pre></td></tr></table>
 </div>
 </div>
 <p>adduser:</p>
