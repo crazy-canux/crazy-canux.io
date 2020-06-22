@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Kernel command 1 2 3 4 5 lsmod 查看已加载的模块 # /proc/modules modprobe -c 查看已编译可加载的内核模块 modprobe &amp;lt;name&amp;gt; 加载模块 # /etc/modules modprobe -r &amp;lt;name&amp;gt; 删除模块 rmmod &amp;lt;name&amp;gt; 删除模块" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &amp;lt;name&amp;gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &amp;lt;name&amp;gt; 加载模块 # /etc/modules modprobe -r &amp;lt;name&amp;gt; 删除模块 // modprobe 重启就没了 echo &amp;#34;ipmi_devintf&amp;#34; &amp;gt;&amp;gt; /etc/modules" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="kernel" />
-<meta property="og:description" content="Kernel command 1 2 3 4 5 lsmod 查看已加载的模块 # /proc/modules modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 rmmod &lt;name&gt; 删除模块" />
+<meta property="og:description" content="Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &lt;name&gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 // modprobe 重启就没了 echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/linux_kernel/" />
 <meta property="article:published_time" content="2020-05-27T22:29:00&#43;08:00"/>
 <meta property="article:modified_time" content="2020-05-27T22:29:00&#43;08:00"/>
 
 <meta itemprop="name" content="kernel">
-<meta itemprop="description" content="Kernel command 1 2 3 4 5 lsmod 查看已加载的模块 # /proc/modules modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 rmmod &lt;name&gt; 删除模块">
+<meta itemprop="description" content="Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &lt;name&gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 // modprobe 重启就没了 echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules">
 
 
 <meta itemprop="datePublished" content="2020-05-27T22:29:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-27T22:29:00&#43;08:00" />
-<meta itemprop="wordCount" content="54">
+<meta itemprop="wordCount" content="69">
 
 
 
 <meta itemprop="keywords" content="kernel," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="kernel"/>
-<meta name="twitter:description" content="Kernel command 1 2 3 4 5 lsmod 查看已加载的模块 # /proc/modules modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 rmmod &lt;name&gt; 删除模块"/>
+<meta name="twitter:description" content="Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &lt;name&gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 // modprobe 重启就没了 echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 54 words </span>
+          <span class="more-meta"> 69 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -166,13 +166,21 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">lsmod 查看已加载的模块    # /proc/modules
+rmmod &lt;name&gt; 删除模块
+
 modprobe -c 查看已编译可加载的内核模块
 modprobe &lt;name&gt; 加载模块 # /etc/modules
 modprobe -r &lt;name&gt; 删除模块
-rmmod &lt;name&gt; 删除模块</pre></td></tr></table>
+
+// modprobe 重启就没了
+echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules</pre></td></tr></table>
 </div>
 </div>
     </div>

@@ -17,7 +17,7 @@
       <pubDate>Wed, 27 May 2020 22:29:00 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/linux_kernel/</guid>
-      <description>Kernel command 1 2 3 4 5 lsmod 查看已加载的模块 # /proc/modules modprobe -c 查看已编译可加载的内核模块 modprobe &amp;lt;name&amp;gt; 加载模块 # /etc/modules modprobe -r &amp;lt;name&amp;gt; 删除模块 rmmod &amp;lt;name&amp;gt; 删除模块</description>
+      <description>Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &amp;lt;name&amp;gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &amp;lt;name&amp;gt; 加载模块 # /etc/modules modprobe -r &amp;lt;name&amp;gt; 删除模块 // modprobe 重启就没了 echo &amp;#34;ipmi_devintf&amp;#34; &amp;gt;&amp;gt; /etc/modules</description>
     </item>
     
     <item>
