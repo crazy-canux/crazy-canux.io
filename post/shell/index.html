@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-04-01T20:42:59&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-01T20:42:59&#43;00:00" />
-<meta itemprop="wordCount" content="2090">
+<meta itemprop="wordCount" content="2151">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 2090 words </span>
+          <span class="more-meta"> 2151 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -610,7 +610,22 @@ string=&#34;this is string&#34;
 <p>数组:</p>
 
 <h2 id="shell控制流">shell控制流</h2>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># [[ 里面不能用 -o/-a ]]
+if [[ $status1 -eq 0 ]] || [[  $status2 -eq 0 ]]
+if [[ $status1 -eq 0 ]] &amp;&amp; [[  $status2 -eq 0 ]]
+# [ 单层可以用-o/-a ]
+if [ $status1 -eq 0 -o $status2 -eq 0 ]</pre></td></tr></table>
+</div>
+</div>
 <p>if</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
