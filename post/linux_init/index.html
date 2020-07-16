@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-02-03T14:04:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-02-03T14:04:05&#43;00:00" />
-<meta itemprop="wordCount" content="567">
+<meta itemprop="wordCount" content="584">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 567 words </span>
+          <span class="more-meta"> 584 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -259,6 +259,7 @@ StartLimitBurst=5</pre></td></tr></table>
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">[Service]
@@ -273,6 +274,7 @@ KillMode=node/mixed/process/control-group
 Restart=no/on-success/on-failure/on-abnormal/on-abort/on-watchdog/always # always总是开机启动，即使systemctl enable.
 RestartSec=3s # 重启之前等待的时间.
 TimeoutSec=  # TimeoutStartSec+TimeoutStopSec
+LimitNOFILE=49152 # 限制单个service的fd
 
 [Install]
 WantedBy=multi-user.target</pre></td></tr></table>

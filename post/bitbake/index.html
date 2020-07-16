@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>kernel - Morgoth</title>
+  <title>BitBake - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &amp;lt;name&amp;gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &amp;lt;name&amp;gt; 加载模块 # /etc/modules modprobe -r &amp;lt;name&amp;gt; 删除模块 // modprobe 重启就没了 echo &amp;#34;ipmi_devintf&amp;#34; &amp;gt;&amp;gt; /etc/modules" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最" /><meta name="keywords" content="yocto, openembedded" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/linux_kernel/" />
+<link rel="canonical" href="http://canuxcheng.com/post/bitbake/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="kernel" />
-<meta property="og:description" content="Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &lt;name&gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 // modprobe 重启就没了 echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules" />
+<meta property="og:title" content="BitBake" />
+<meta property="og:description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/linux_kernel/" />
-<meta property="article:published_time" content="2020-05-27T22:29:00&#43;08:00"/>
-<meta property="article:modified_time" content="2020-05-27T22:29:00&#43;08:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/bitbake/" />
+<meta property="article:published_time" content="2020-07-12T21:18:33&#43;00:00"/>
+<meta property="article:modified_time" content="2020-07-12T21:18:33&#43;00:00"/>
 
-<meta itemprop="name" content="kernel">
-<meta itemprop="description" content="Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &lt;name&gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 // modprobe 重启就没了 echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules">
-
-
-<meta itemprop="datePublished" content="2020-05-27T22:29:00&#43;08:00" />
-<meta itemprop="dateModified" content="2020-05-27T22:29:00&#43;08:00" />
-<meta itemprop="wordCount" content="69">
+<meta itemprop="name" content="BitBake">
+<meta itemprop="description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最">
 
 
+<meta itemprop="datePublished" content="2020-07-12T21:18:33&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-12T21:18:33&#43;00:00" />
+<meta itemprop="wordCount" content="95">
 
-<meta itemprop="keywords" content="kernel," />
+
+
+<meta itemprop="keywords" content="bitbake," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="kernel"/>
-<meta name="twitter:description" content="Kernel command 1 2 3 4 5 6 7 8 9 lsmod 查看已加载的模块 # /proc/modules rmmod &lt;name&gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &lt;name&gt; 加载模块 # /etc/modules modprobe -r &lt;name&gt; 删除模块 // modprobe 重启就没了 echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules"/>
+<meta name="twitter:title" content="BitBake"/>
+<meta name="twitter:description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">kernel</h1>
+      <h1 class="post-title">BitBake</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-05-27 </span>
+        <span class="post-time"> 2020-07-12 </span>
         <div class="post-category">
-            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 69 words </span>
+          <span class="more-meta"> 95 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,47 +147,36 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#kernel">Kernel</a></li>
-<li><a href="#command">command</a></li>
+<li><a href="#bitbake">BitBake</a></li>
+<li><a href="#openembedded">openembedded</a></li>
+<li><a href="#yocto-poky">yocto(poky)</a></li>
 </ul>
 </nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="hint">
-      <p>[NOTE] Updated <span class="timeago" datetime="2020-05-27T22:29:00" title="May 27, 2020">May 27, 2020</span>. This article may have outdated content or subject matter.</p>
-    </div>
-  </div>
     <div class="post-content">
       
 
-<h1 id="kernel">Kernel</h1>
+<h1 id="bitbake">BitBake</h1>
 
-<h1 id="command">command</h1>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">lsmod 查看已加载的模块    # /proc/modules
-rmmod &lt;name&gt; 删除模块
+<p>bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版.</p>
 
-modprobe -c 查看已编译可加载的内核模块
-modprobe &lt;name&gt; 加载模块 # /etc/modules
-modprobe -r &lt;name&gt; 删除模块
+<p><a href="https://github.com/openembedded/bitbake">https://github.com/openembedded/bitbake</a></p>
 
-// modprobe 重启就没了
-echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules</pre></td></tr></table>
-</div>
-</div>
+<h1 id="openembedded">openembedded</h1>
+
+<p><a href="https://github.com/openembedded/openembedded-core">https://github.com/openembedded/openembedded-core</a></p>
+
+<h1 id="yocto-poky">yocto(poky)</h1>
+
+<p>poky是一个开源的最小构建示例，内置bitbake，可直接编译.</p>
+
+<p><a href="http://git.yoctoproject.org/cgit/cgit.cgi/poky/log/">http://git.yoctoproject.org/cgit/cgit.cgi/poky/log/</a></p>
+
+<p><a href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-virtualization/tree/recipes-containers">http://git.yoctoproject.org/cgit/cgit.cgi/meta-virtualization/tree/recipes-containers</a></p>
+
+<p><a href="https://github.com/crazy-canux/poky">https://github.com/crazy-canux/poky</a></p>
+
     </div>
 
     <div class="post-copyright">
@@ -198,7 +187,7 @@ echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2020-05-27
+        2020-07-12
         
     </span>
   </p>
@@ -221,16 +210,12 @@ echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules</pre></td></tr></table>
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/kernel/">kernel</a>
+          <a href="/tags/bitbake/">bitbake</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/bitbake/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">BitBake</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/linux_security/">
-            <span class="next-text nav-default">Security</span>
+        
+        <a class="next" href="/post/linux_kernel/">
+            <span class="next-text nav-default">kernel</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -243,8 +228,8 @@ echo &#34;ipmi_devintf&#34; &gt;&gt; /etc/modules</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2020-05-27 22:29:00 \x2b0800 CST',
-        title: 'kernel',
+        id: '2020-07-12 21:18:33 \x2b0000 UTC',
+        title: 'BitBake',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

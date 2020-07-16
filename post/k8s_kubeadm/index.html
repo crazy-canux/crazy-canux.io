@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-12-30T21:47:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T21:47:17&#43;08:00" />
-<meta itemprop="wordCount" content="776">
+<meta itemprop="wordCount" content="887">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 776 words </span>
+          <span class="more-meta"> 887 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -150,12 +150,16 @@
 <li><a href="#kubeadm">kubeadm</a></li>
 <li><a href="#install">Install</a></li>
 <li><a href="#kubeadm-1">Kubeadm</a></li>
-<li><a href="#部署cluster">部署Cluster</a></li>
+<li><a href="#部署cluster">部署Cluster</a>
+<ul>
+<li><a href="#部署master">部署master</a></li>
+<li><a href="#部署node">部署node</a></li>
+<li><a href="#验证">验证</a></li>
 <li><a href="#删除cluster">删除cluster</a></li>
-<li><a href="#flannel">flannel</a></li>
+</ul></li>
+<li><a href="#metrics-server">metrics-server</a></li>
 <li><a href="#ingress-nginx">ingress-nginx</a></li>
 <li><a href="#dashboard">dashboard</a></li>
-<li><a href="#metrics-server">metrics-server</a></li>
 </ul>
 </nav>
   </div>
@@ -243,7 +247,18 @@ $ apt-mark hold kubelet kubeadm kubect</pre></td></tr></table>
 
 <h1 id="部署cluster">部署Cluster</h1>
 
-<p>初始化master:</p>
+<h2 id="部署master">部署master</h2>
+
+<p>关闭swap</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo swapoff -a</pre></td></tr></table>
+</div>
+</div>
+<p>初始化</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -256,13 +271,9 @@ $ apt-mark hold kubelet kubeadm kubect</pre></td></tr></table>
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo swapoff -a
-
-$ sudo kubeadm init \
+<pre class="chroma">$ sudo kubeadm init \
 // --config=/var/lib/kubelet/config.yaml \
 --pod-network-cidr=10.244.0.0/16 \
 --apiserver-advertise-address=&lt;IP&gt; \
@@ -274,7 +285,39 @@ $ sudo kubeadm init \
 // --image-repository 指定registry, 默认是gcr</pre></td></tr></table>
 </div>
 </div>
-<p>部署node:</p>
+<p>配置当前帐号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config</pre></td></tr></table>
+</div>
+</div>
+<p>部署网络插件flannel</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 在所有node上部署cni-plugin:
+// &lt;https://github.com/containernetworking/plugins/releases&gt;
+$ sudo mkdir -p /opt/cni/bin
+// 下载并解压所有插件命令到该目录.
+
+$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</pre></td></tr></table>
+</div>
+</div>
+<p>配置master是否部署pod</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -284,23 +327,52 @@ $ sudo kubeadm init \
 </span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
+<pre class="chroma"># enable master deploy pod (默认不部署pod到master)
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+# disable master deploy pod
+kubectl taint nodes &lt;node&gt; node-role.kubernetes.io/master=true:NoSchedule</pre></td></tr></table>
+</div>
+</div>
+<h2 id="部署node">部署node</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
 <pre class="chroma">$ sudo swapoff -a
+
+// 在所有node上部署cni-plugin:
+// &lt;https://github.com/containernetworking/plugins/releases&gt;
+$ sudo mkdir -p /opt/cni/bin
+// 下载并解压所有插件命令到该目录.
 
 $ sudo kubeadm join 192.168.1.1:6443 \
 --token 8po0v5.m1qlbc7w0btq15of \
 --discovery-token-ca-cert-hash sha256:21d8365e336d5218637ddf26e2ec5d91c7dd2de518dbe47973e089837b13265b</pre></td></tr></table>
 </div>
 </div>
-<p>允许将pod部署在master节点(默认不会):</p>
+<h2 id="验证">验证</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ kubectl taint nodes --all node-role.kubernetes.io/master-</pre></td></tr></table>
+<pre class="chroma">$ kubectl get pods -n kube-system
+$ kubectl get nodes</pre></td></tr></table>
 </div>
 </div>
-<h1 id="删除cluster">删除cluster</h1>
+<h2 id="删除cluster">删除cluster</h2>
 
 <p>所有node运行:</p>
 <div class="highlight"><div class="chroma">
@@ -308,7 +380,7 @@ $ sudo kubeadm join 192.168.1.1:6443 \
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo kubectl reset -f</pre></td></tr></table>
+<pre class="chroma">$ sudo kubeadm reset -f</pre></td></tr></table>
 </div>
 </div>
 <p>所有node上删除flannel的网络配置</p>
@@ -324,50 +396,36 @@ $ sudo brctl delbr cni0
 $ sudo ifconfig flannel.1 down</pre></td></tr></table>
 </div>
 </div>
+<p>所有node清空iptables</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo iptables -F
+$ sudo iptables -X
+$ sudo iptables -t nat -F
+$ sudo iptables -t nat -X</pre></td></tr></table>
+</div>
+</div>
 <hr />
 
-<h1 id="flannel">flannel</h1>
+<h1 id="metrics-server">metrics-server</h1>
 
-<p>此时状态是notReady, 需要网络插件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl get nodes (notReady)</pre></td></tr></table>
-</div>
-</div>
-<p>在所有node上部署cni-plugin:</p>
-
-<p><a href="https://github.com/containernetworking/plugins/releases">https://github.com/containernetworking/plugins/releases</a></p>
+<p><a href="https://github.com/kubernetes-sigs/metrics-server">https://github.com/kubernetes-sigs/metrics-server</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo mkdir -p /opt/cni/bin
-// 下载并解压所有插件命令到该目录.</pre></td></tr></table>
-</div>
-</div>
-<p>network-addon(master上操作即可):</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</pre></td></tr></table>
-</div>
-</div>
-<p>veryfy:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl get nodes
-$ kubectl get pod --all-namespaces</pre></td></tr></table>
+<pre class="chroma"># deploy 0.3.6
+# 修改image为  registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6
+$ kubectl apply -f ./components.yaml</pre></td></tr></table>
 </div>
 </div>
 <hr />
@@ -504,21 +562,6 @@ $ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashbo
 
 // 删除已安装的dashboard
 $ kubectl delete ns kubernetes-dashboard</pre></td></tr></table>
-</div>
-</div>
-<h1 id="metrics-server">metrics-server</h1>
-
-<p><a href="https://github.com/kubernetes-sigs/metrics-server">https://github.com/kubernetes-sigs/metrics-server</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># deploy 0.3.6
-# 修改image为  registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6
-$ kubectl apply -f ./components.yaml</pre></td></tr></table>
 </div>
 </div>
     </div>

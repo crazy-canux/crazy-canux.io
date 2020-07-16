@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://canuxcheng.com/post/bitbake/</loc>
+    <lastmod>2020-07-12T21:18:33+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/linux_kernel/</loc>
     <lastmod>2020-05-27T22:29:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1732,7 +1739,7 @@
   
   <url>
     <loc>http://canuxcheng.com/categories/devops/</loc>
-    <lastmod>2018-06-08T09:46:47+00:00</lastmod>
+    <lastmod>2020-07-12T21:18:33+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1773,7 +1780,7 @@
   
   <url>
     <loc>http://canuxcheng.com/</loc>
-    <lastmod>2020-05-27T22:29:00+08:00</lastmod>
+    <lastmod>2020-07-12T21:18:33+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1787,7 +1794,7 @@
   
   <url>
     <loc>http://canuxcheng.com/post/</loc>
-    <lastmod>2020-05-27T22:29:00+08:00</lastmod>
+    <lastmod>2020-07-12T21:18:33+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1886,6 +1893,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/bigdata/</loc>
     <lastmod>2016-04-11T22:57:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/bitbake/</loc>
+    <lastmod>2020-07-12T21:18:33+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
