@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最" /><meta name="keywords" content="yocto, openembedded" />
+<meta name="author" content="Canux" /><meta name="description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake bitbake: 1 2 3 4 5 6 7 8 9 10 11 12 13" /><meta name="keywords" content="yocto, openembedded" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="BitBake" />
-<meta property="og:description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最" />
+<meta property="og:description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake bitbake: 1 2 3 4 5 6 7 8 9 10 11 12 13" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/bitbake/" />
 <meta property="article:published_time" content="2020-07-12T21:18:33&#43;00:00"/>
 <meta property="article:modified_time" content="2020-07-12T21:18:33&#43;00:00"/>
 
 <meta itemprop="name" content="BitBake">
-<meta itemprop="description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最">
+<meta itemprop="description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake bitbake: 1 2 3 4 5 6 7 8 9 10 11 12 13">
 
 
 <meta itemprop="datePublished" content="2020-07-12T21:18:33&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-12T21:18:33&#43;00:00" />
-<meta itemprop="wordCount" content="95">
+<meta itemprop="wordCount" content="172">
 
 
 
 <meta itemprop="keywords" content="bitbake," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="BitBake"/>
-<meta name="twitter:description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最"/>
+<meta name="twitter:description" content="BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake bitbake: 1 2 3 4 5 6 7 8 9 10 11 12 13"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 95 words </span>
+          <span class="more-meta"> 172 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -150,6 +150,7 @@
 <li><a href="#bitbake">BitBake</a></li>
 <li><a href="#openembedded">openembedded</a></li>
 <li><a href="#yocto-poky">yocto(poky)</a></li>
+<li><a href="#toaster">toaster</a></li>
 </ul>
 </nav>
   </div>
@@ -163,6 +164,39 @@
 
 <p><a href="https://github.com/openembedded/bitbake">https://github.com/openembedded/bitbake</a></p>
 
+<p>bitbake:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ bitbake python -c devshell/devpyshell
+$ bitbake python -c clean/cleanall/cleanstate
+$ bitbake python -c compile
+$ bitbake python -c fetch/fetchall
+
+# 查找下载地址
+$ bitbake -e python | grep ^SRC_URI
+
+# 根据文件查找包名
+bitbake&gt; oe-pkgdata-util find-path /usr/bin/python3
+
+# 包名查找recipe
+bitbake&gt; oe-pkgdata-util lookup-recipe python3-core</pre></td></tr></table>
+</div>
+</div>
 <h1 id="openembedded">openembedded</h1>
 
 <p><a href="https://github.com/openembedded/openembedded-core">https://github.com/openembedded/openembedded-core</a></p>
@@ -176,6 +210,8 @@
 <p><a href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-virtualization/tree/recipes-containers">http://git.yoctoproject.org/cgit/cgit.cgi/meta-virtualization/tree/recipes-containers</a></p>
 
 <p><a href="https://github.com/crazy-canux/poky">https://github.com/crazy-canux/poky</a></p>
+
+<h1 id="toaster">toaster</h1>
 
     </div>
 

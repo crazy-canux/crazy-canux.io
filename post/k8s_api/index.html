@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-01-10T20:55:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:55:52&#43;08:00" />
-<meta itemprop="wordCount" content="1227">
+<meta itemprop="wordCount" content="1418">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1227 words </span>
+          <span class="more-meta"> 1418 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -157,7 +157,13 @@
 <li><a href="#configmap">ConfigMap</a></li>
 <li><a href="#secret">Secret</a></li>
 <li><a href="#serviceaccont">ServiceAccont</a></li>
-<li><a href="#pv-pvc">PV/PVC</a></li>
+<li><a href="#pv">PV</a>
+<ul>
+<li><a href="#static-volume-provisioning">static volume provisioning</a></li>
+<li><a href="#dynamic-volume-provisioning">dynamic volume provisioning</a></li>
+</ul></li>
+<li><a href="#pvc">pvc</a></li>
+<li><a href="#statefulset">StatefulSet</a></li>
 </ul>
 </nav>
   </div>
@@ -302,6 +308,13 @@ status: 观测到的状态</pre></td></tr></table>
 </span><span class="lnt">41
 </span><span class="lnt">42
 </span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">apiVersion: v1
@@ -313,11 +326,13 @@ spec:
     runAsuser: 1000
     runAsGroup: 3000
     fsGroup: 2000
+
   initContainers: // 
   - name: init
     image: my-image
     command: ...
     args: ...
+
   containers:
   - name: test
     image: image
@@ -341,12 +356,17 @@ spec:
     - name: foo
       mountPath: &#34;/etc/foo&#34;
       readOnly: true
+
   volumes:
   - name: foo // 指定要挂载的secret
     secret:
       secretName: mysecret
+
   imagePullSecrets:  // 私有镜像授权
-  - name: regcred</pre></td></tr></table>
+  - name: regcred
+
+  nodeSelector: // 将pod部署到指定node
+    key: value</pre></td></tr></table>
 </div>
 </div>
 <p>pod中的container共享存储(pod volume):</p>
@@ -698,6 +718,23 @@ data:
   password: pw</pre></td></tr></table>
 </div>
 </div>
+<p>创建私有镜像账号</p>
+
+<p><a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/pull-image-private-registry/">https://kubernetes.io/zh/docs/tasks/configure-pod-container/pull-image-private-registry/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl create secret docker-registry regcred --docker-server=&lt;your-registry-server&gt; --docker-username=&lt;your-name&gt; --docker-password=&lt;your-pword&gt; --docker-email=&lt;your-email&gt;
+
+$ docker login https://harbor.domain.com
+$ kubectl create secret docker-registry regcred --docker-server=https://harbor.domain.com --docker-username=user --docker-password=pw --docker-email=canuxcheng@gmail.com</pre></td></tr></table>
+</div>
+</div>
 <hr />
 
 <h1 id="serviceaccont">ServiceAccont</h1>
@@ -741,9 +778,11 @@ imagePullSecrets: // 使用该sa的都会自动授权registry.
 </div>
 <hr />
 
-<h1 id="pv-pvc">PV/PVC</h1>
+<h1 id="pv">PV</h1>
 
-<p>static volume provisioning</p>
+<p>pv没有namespace</p>
+
+<h2 id="static-volume-provisioning">static volume provisioning</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -774,7 +813,11 @@ spec:
     driver: ...</pre></td></tr></table>
 </div>
 </div>
-<p>pvc:</p>
+<h2 id="dynamic-volume-provisioning">dynamic volume provisioning</h2>
+
+<hr />
+
+<h1 id="pvc">pvc</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -807,13 +850,13 @@ spec:
 kind: PersistentVolumeClaim
 metadata:
   name: nsa-pvc
+  namespace: test
 spec:
   accessModes:
   - ReadWriteMany
   resources:
     requests:
       storage: 5Gi 
-
 
 apiVersion: v1
 kind: Pod
@@ -827,6 +870,81 @@ spec:
     volumeMounts:
     - name: nas-pvc
       mountPath: /data  </pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="statefulset">StatefulSet</h1>
+
+<p>StatefulSet 中的 Pod 拥有一个唯一的顺序索引和稳定的网络身份标识。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  serviceName: &#34;nginx&#34;
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: k8s.gcr.io/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ &#34;ReadWriteOnce&#34; ]
+      resources:
+        requests:
+          storage: 1Gi</pre></td></tr></table>
 </div>
 </div>
     </div>

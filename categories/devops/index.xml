@@ -17,7 +17,7 @@
       <pubDate>Sun, 12 Jul 2020 21:18:33 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/bitbake/</guid>
-      <description>BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake openembedded https://github.com/openembedded/openembedded-core yocto(poky) poky是一个开源的最</description>
+      <description>BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake bitbake: 1 2 3 4 5 6 7 8 9 10 11 12 13</description>
     </item>
     
     <item>

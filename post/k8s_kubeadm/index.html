@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 $ echo &amp;#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $ apt-mark hold kubelet kubeadm kubect Kubeadm" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 5 $ curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &amp;#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Kubeadm" />
-<meta property="og:description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 $ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $ apt-mark hold kubelet kubeadm kubect Kubeadm" />
+<meta property="og:description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 5 $ curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_kubeadm/" />
 <meta property="article:published_time" content="2019-12-30T21:47:17&#43;08:00"/>
 <meta property="article:modified_time" content="2019-12-30T21:47:17&#43;08:00"/>
 
 <meta itemprop="name" content="Kubeadm">
-<meta itemprop="description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 $ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $ apt-mark hold kubelet kubeadm kubect Kubeadm">
+<meta itemprop="description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 5 $ curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install">
 
 
 <meta itemprop="datePublished" content="2019-12-30T21:47:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T21:47:17&#43;08:00" />
-<meta itemprop="wordCount" content="887">
+<meta itemprop="wordCount" content="876">
 
 
 
 <meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubeadm"/>
-<meta name="twitter:description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 $ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $ apt-mark hold kubelet kubeadm kubect Kubeadm"/>
+<meta name="twitter:description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 5 $ curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 887 words </span>
+          <span class="more-meta"> 876 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -158,7 +158,6 @@
 <li><a href="#删除cluster">删除cluster</a></li>
 </ul></li>
 <li><a href="#metrics-server">metrics-server</a></li>
-<li><a href="#ingress-nginx">ingress-nginx</a></li>
 <li><a href="#dashboard">dashboard</a></li>
 </ul>
 </nav>
@@ -187,12 +186,14 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list
+<pre class="chroma">$ curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - 
+$ echo &#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list
 $ sudo apt-get update
 $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl
-$ apt-mark hold kubelet kubeadm kubect</pre></td></tr></table>
+$ sudo apt-mark hold kubelet kubeadm kubect</pre></td></tr></table>
 </div>
 </div>
 <h1 id="kubeadm-1">Kubeadm</h1>
@@ -430,29 +431,6 @@ $ kubectl apply -f ./components.yaml</pre></td></tr></table>
 </div>
 <hr />
 
-<h1 id="ingress-nginx">ingress-nginx</h1>
-
-<p><a href="https://github.com/kubernetes/ingress-nginx">https://github.com/kubernetes/ingress-nginx</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">// 部署
-$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
-$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml
-
-// 验证部署
-$ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch</pre></td></tr></table>
-</div>
-</div>
-<hr />
-
 <h1 id="dashboard">dashboard</h1>
 
 <p><a href="https://github.com/kubernetes/dashboard">https://github.com/kubernetes/dashboard</a></p>
@@ -509,6 +487,9 @@ $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --wa
 </span><span class="lnt">49
 </span><span class="lnt">50
 </span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">// https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml 修改服务类型为NodePort
@@ -553,6 +534,9 @@ subjects:
     namespace: kubernetes-dashboard
 // 创建admin账号
 $ kubectl apply -f auth.yaml
+
+// check
+$ kubectl -n kubernetes-dashboard get pods --watch
 
 // 获取token
 $ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)

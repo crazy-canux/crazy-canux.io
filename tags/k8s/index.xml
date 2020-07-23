@@ -44,7 +44,7 @@
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
-      <description>Ingress-Nginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 7 8 9 10 11 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&amp;#39;{.items[0].metadata.name}&amp;#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik</description>
+      <description>Ingress-Nginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 7 8 9 10 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&amp;#39;{.items[0].metadata.name}&amp;#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_kubeadm/</guid>
-      <description>kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 $ echo &amp;#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $ apt-mark hold kubelet kubeadm kubect Kubeadm</description>
+      <description>kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: 1 2 3 4 5 $ curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &amp;#34;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install</description>
     </item>
     
     <item>
