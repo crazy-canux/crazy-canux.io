@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Libvirt - Morgoth</title>
+  <title>Dashboard - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 10 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="metrics-server https://github.com/kubernetes-sigs/metrics-server 1 2 3 # deploy 0.3.6 # 修改image为 registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6 $ kubectl apply -f ./components.yaml dashboard https://github.com/kubernetes/dashboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/libvirt/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_dashboard/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Libvirt" />
-<meta property="og:description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 10 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container" />
+<meta property="og:title" content="Dashboard" />
+<meta property="og:description" content="metrics-server https://github.com/kubernetes-sigs/metrics-server 1 2 3 # deploy 0.3.6 # 修改image为 registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6 $ kubectl apply -f ./components.yaml dashboard https://github.com/kubernetes/dashboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/libvirt/" />
-<meta property="article:published_time" content="2017-04-05T21:47:54&#43;00:00"/>
-<meta property="article:modified_time" content="2017-04-05T21:47:54&#43;00:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_dashboard/" />
+<meta property="article:published_time" content="2020-01-04T20:03:39&#43;08:00"/>
+<meta property="article:modified_time" content="2020-01-04T20:03:39&#43;08:00"/>
 
-<meta itemprop="name" content="Libvirt">
-<meta itemprop="description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 10 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container">
-
-
-<meta itemprop="datePublished" content="2017-04-05T21:47:54&#43;00:00" />
-<meta itemprop="dateModified" content="2017-04-05T21:47:54&#43;00:00" />
-<meta itemprop="wordCount" content="829">
+<meta itemprop="name" content="Dashboard">
+<meta itemprop="description" content="metrics-server https://github.com/kubernetes-sigs/metrics-server 1 2 3 # deploy 0.3.6 # 修改image为 registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6 $ kubectl apply -f ./components.yaml dashboard https://github.com/kubernetes/dashboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45">
 
 
+<meta itemprop="datePublished" content="2020-01-04T20:03:39&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-04T20:03:39&#43;08:00" />
+<meta itemprop="wordCount" content="272">
 
-<meta itemprop="keywords" content="libvirt," />
+
+
+<meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Libvirt"/>
-<meta name="twitter:description" content="Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: 1 2 3 4 5 6 7 8 9 10 $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container"/>
+<meta name="twitter:title" content="Dashboard"/>
+<meta name="twitter:description" content="metrics-server https://github.com/kubernetes-sigs/metrics-server 1 2 3 # deploy 0.3.6 # 修改image为 registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6 $ kubectl apply -f ./components.yaml dashboard https://github.com/kubernetes/dashboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,15 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Libvirt</h1>
+      <h1 class="post-title">Dashboard</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2017-04-05 </span>
+        <span class="post-time"> 2020-01-04 </span>
         <div class="post-category">
-            <a href="/categories/virtualization/"> Virtualization </a>
+            <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 829 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 272 words </span>
+          <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -147,59 +147,40 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#libvirt">Libvirt</a></li>
-<li><a href="#virsh">virsh</a></li>
-<li><a href="#qemu-img">qemu-img</a></li>
-<li><a href="#libvirt-qemu">libvirt-qemu</a></li>
-<li><a href="#libvirtd配置">libvirtd配置</a></li>
+<li><a href="#metrics-server">metrics-server</a></li>
+<li><a href="#dashboard">dashboard</a></li>
 </ul>
 </nav>
   </div>
 </div>
   <div class="post-outdated">
     <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="2017-04-05T21:47:54" title="April 5, 2017">April 5, 2017</span>. This article may have outdated content or subject matter.</p>
+      <p>[NOTE] Updated <span class="timeago" datetime="2020-01-04T20:03:39" title="January 4, 2020">January 4, 2020</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
 
-<h1 id="libvirt">Libvirt</h1>
+<h1 id="metrics-server">metrics-server</h1>
 
-<p>支持多种虚拟化平台的库</p>
-
-<p><a href="https://libvirt.org/">https://libvirt.org/</a></p>
-
-<p>安装:</p>
+<p><a href="https://github.com/kubernetes-sigs/metrics-server">https://github.com/kubernetes-sigs/metrics-server</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon)
-// libvirtd在container中无法运行；在container中安装libvirt-bin可以获取virsh命令远程访问libvirt-bin server.
-
-$ sudo apt-get install libvirt-dev # 库, python/go client依赖该库
-
-$ sudo apt-get install virt-manager # windows管理工具
-
-$ sudo apt-get install virt-view # ...
-
-$ sudo service libvirt-bin restart</pre></td></tr></table>
+<pre class="chroma"># deploy 0.3.6
+# 修改image为  registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6
+$ kubectl apply -f ./components.yaml</pre></td></tr></table>
 </div>
 </div>
-<h1 id="virsh">virsh</h1>
+<hr />
 
-<p>libvirt的命令行工具</p>
+<h1 id="dashboard">dashboard</h1>
+
+<p><a href="https://github.com/kubernetes/dashboard">https://github.com/kubernetes/dashboard</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -222,151 +203,96 @@ $ sudo service libvirt-bin restart</pre></td></tr></table>
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ virsh list --all    # 查看所有虚拟机
-$ virsh list --all --name # 只看domain name.
+<pre class="chroma">// https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml 修改服务类型为NodePort
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kubernetes-dashboard
+spec:
+  # use nodeport
+  type: NodePort
+  ports:
+    - port: 443
+    targetPort: 8443
+    # specify nodeport
+    nodePort: 30001
+selector:
+  k8s-app: kubernetes-dashboard
+// 部署dashboard
+$ kubectl apply -f dashboard.yaml
 
-$ virsh define /path/to/X.xml    # 从xml配置文件定义一个domain
-$ virsh start     # 启动虚拟机
-$ virsh reboot    # 重启虚拟机
-$ virsh shutdown   # 关闭虚拟机
-$ virsh destroy    # 强制关闭虚拟机
-$ virsh undefine   # 移除虚拟机
-$ virsh vncdisplay # 查看虚拟机的vnc信息，可以通过vnc访问.
+// ServiceAccount 和 ClusterRoleBinding
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: admin-user
+    namespace: kubernetes-dashboard
+// 创建admin账号
+$ kubectl apply -f auth.yaml
 
-$ virsh net-list --all # 查看所有网络
-$ virsh net-define default.xml
-$ virsh net-autostart default
-$ virsh net-start default
-$ virsh net-undefine default
-$ virsh net-destroy default
+// check
+$ kubectl -n kubernetes-dashboard get pods --watch
 
-# 批量操作vm
-$ for vm in `virsh list --all --name`; do virsh undefine/destroy ${vm}; done</pre></td></tr></table>
-</div>
-</div>
-<h1 id="qemu-img">qemu-img</h1>
+// 获取token
+$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)
 
-<p>创建虚拟机的镜像文件:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ qemu-img create -f qcow2 /path/to/name.qcow2 100G</pre></td></tr></table>
-</div>
-</div>
-<hr />
+// 使用admin帐号的token登录
+&gt; https://&lt;IP&gt;:30001
 
-<h1 id="libvirt-qemu">libvirt-qemu</h1>
-
-<p>libvirt操作qemu/kvm.</p>
-
-<p>本地:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">qemu:///system
-qemu:///session
-qemu+unix:///system
-qemu+unix:///session</pre></td></tr></table>
-</div>
-</div>
-<p>ssh远程:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># libvirt-bin server上需要安装nc和libvirt-bin
-$ sudo apt-get install netcat-openbsd
-$ sudo update-alternatives --config nc // netcat-traditional避免使用默认安装
-
-# ssh用户需要在libvirt和kvm组里
-$ adduser username libvirtd
-$ adduser username kvm
-
-$ sudo apt-get install sshpass // 免密码访问
-
-# client上需要安装openssh-clients
-$ sshpass -p password virsh -c qemu+ssh://user@127.0.0.1/system list</pre></td></tr></table>
-</div>
-</div>
-<p>tcp远程:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ vim /etc/libvirt/libvirtd.conf:
-listen_tls = 0　　　　　　　　　 #禁用tls登录
-listen_tcp = 1　　　　　　　　　 #启用tcp方式登录
-tcp_port = &#34;16509&#34;　　　　　　　 #tcp端口16509
-listen_addr = &#34;0.0.0.0&#34;         # 允许任意ip访问
-auth_tcp = &#34;none&#34;　　　　　　    #TCP不使用认证
-
-$ vim /etc/default/libvirt-bin
-start_libvirtd=&#34;yes&#34;
-libvirtd_opts=&#34;-l --config /etc/libvirt/libvirtd.conf&#34;
-
-$ sudo service libvirt-bin restart
-
-$ virsh -c qemu+tcp://127.0.0.1:16509/system list</pre></td></tr></table>
-</div>
-</div>
-<h1 id="libvirtd配置">libvirtd配置</h1>
-
-<p>配置libvirtd：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ vim /etc/libvirt/libvirtd.conf
-
-max_clients = 1024　　　　　　   #最大总的连接客户数1024
-min_workers = 50　　　　　　    #libvirtd启动时，初始的工作线程数目
-max_workers = 200　　　　　　 #同上，最大数目
-max_requests = 1000　　　　　
-#最大同时支持的RPC调用，必须大于等于max_workers
-max_client_requests = 200　　 #每个客户端支持的最大连接数</pre></td></tr></table>
+// 删除已安装的dashboard
+$ kubectl delete ns kubernetes-dashboard</pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -379,7 +305,7 @@ max_client_requests = 200　　 #每个客户端支持的最大连接数</pre></
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2017-04-05
+        2020-01-04
         
     </span>
   </p>
@@ -402,16 +328,16 @@ max_client_requests = 200　　 #每个客户端支持的最大连接数</pre></
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/libvirt/">libvirt</a>
+          <a href="/tags/k8s/">k8s</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/kvm/">
+        <a class="prev" href="/post/compose/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Kvm</span>
+            <span class="prev-text nav-default">Compose</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/ide/">
-            <span class="next-text nav-default">IDE</span>
+        <a class="next" href="/post/k8s_ingress/">
+            <span class="next-text nav-default">Ingress</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -424,8 +350,8 @@ max_client_requests = 200　　 #每个客户端支持的最大连接数</pre></
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2017-04-05 21:47:54 \x2b0000 UTC',
-        title: 'Libvirt',
+        id: '2020-01-04 20:03:39 \x2b0800 CST',
+        title: 'Dashboard',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

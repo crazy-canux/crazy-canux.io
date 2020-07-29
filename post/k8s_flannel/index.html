@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-12-30T22:06:48&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T22:06:48&#43;08:00" />
-<meta itemprop="wordCount" content="202">
+<meta itemprop="wordCount" content="294">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 202 words </span>
+          <span class="more-meta"> 294 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -148,6 +148,8 @@
     <nav id="TableOfContents">
 <ul>
 <li><a href="#flannel">Flannel</a></li>
+<li><a href="#kubeadm">kubeadm</a></li>
+<li><a href="#configuration">configuration</a></li>
 </ul>
 </nav>
   </div>
@@ -199,7 +201,9 @@
 $ kubectl get pod --all-namespaces</pre></td></tr></table>
 </div>
 </div>
-<p>重新部署网络插件:</p>
+<p>删除插件:</p>
+
+<p>删除插件会影响已经部署的pod.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -214,20 +218,62 @@ $ kubectl get pod --all-namespaces</pre></td></tr></table>
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ kubectl delete -f X.yml  
+<pre class="chroma">// 删除flannel 
+$ kubectl delete -f X.yml  
+$ sudo systemctl stop kubelet docker
 
 // 第二步，在node节点清理flannel网络留下的文件
 ifconfig cni0 down
-ip link delete cni0
+ip link delete cni0 
 ifconfig flannel.1 down
-ip link delete flannel.1
-rm -rf /var/lib/cni/
-rm -f /etc/cni/net.d/*
+ip link delete flannel.1 
+rm -rf /var/lib/cni /etc/cni /run/flannel
+$ sudo rm -rf /var/lib/kubelet /var/lib/etcd
 
 // 重启kubelet
-$ sudo systemctl restart kubelet</pre></td></tr></table>
+$ sudo systemctl start kubelet docker</pre></td></tr></table>
+</div>
+</div>
+<h1 id="kubeadm">kubeadm</h1>
+
+<p>kubeadm init必须指定flannel的Network参数:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">--pod-network-cidr=10.244.0.0/16</pre></td></tr></table>
+</div>
+</div>
+<h1 id="configuration">configuration</h1>
+
+<p>/etc/kube-flannel/net-conf.json</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">{
+  &#34;Network&#34;: &#34;10.244.0.0/16&#34;,
+  &#34;SubnetLen&#34;: 24,
+  &#34;SubnetMin&#34;: &#34;10.244.0.0&#34;,
+  &#34;SubnetMax&#34;: &#34;10.244.255.0&#34;,
+  &#34;Backend&#34;: {
+    &#34;Type&#34;: &#34;vxlan&#34;
+  }
+}</pre></td></tr></table>
 </div>
 </div>
     </div>
