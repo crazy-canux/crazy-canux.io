@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-12-30T21:47:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T21:47:17&#43;08:00" />
-<meta itemprop="wordCount" content="654">
+<meta itemprop="wordCount" content="875">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 654 words </span>
+          <span class="more-meta"> 875 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -157,6 +157,7 @@
 <li><a href="#验证">验证</a></li>
 <li><a href="#删除cluster">删除cluster</a></li>
 </ul></li>
+<li><a href="#配置">配置</a></li>
 </ul>
 </nav>
   </div>
@@ -210,7 +211,7 @@ $ sudo systemctl enable kubelet</pre></td></tr></table>
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ kubeadm init 
---config &lt;config&gt;
+--config &lt;config&gt; 
 --apiserver-advertise-address &lt;master&gt; // 多网卡指定网卡IP
 --image-repository &lt;registry&gt; // default k8s.gcr.io
 --kubernetes-version &lt;version&gt; // kubelet --version
@@ -262,20 +263,18 @@ $ sudo systemctl enable kubelet</pre></td></tr></table>
 <p>初始化</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ sudo kubeadm init \
-// --config=/var/lib/kubelet/config.yaml \
 --pod-network-cidr=10.244.0.0/16 \
 --apiserver-advertise-address=&lt;IP&gt; \
 --kubernetes-version=v1.17.0 \
@@ -431,6 +430,142 @@ $ sudo rm -rf /etc/kubernetes /etc/cni /run/flannel</pre></td></tr></table>
 </div>
 <hr />
 
+<h1 id="配置">配置</h1>
+
+<p><a href="https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/control-plane-flags/">https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/control-plane-flags/</a></p>
+
+<p>使用自定义配置:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo kubeadm init --config ./config.yaml -v=6</pre></td></tr></table>
+</div>
+</div>
+<p>查看默认配置:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubeadm config print init-defaults</pre></td></tr></table>
+</div>
+</div>
+<p>配置kubeadm：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: kubeadm.k8s.io/v1beta2
+kind: InitConfiguration
+bootstrapTokens:
+- groups:
+  - system:bootstrappers:kubeadm:default-node-token
+  token: abcdef.0123456789abcdef
+  ttl: 24h0m0s
+  usages:
+  - signing
+  - authentication
+localAPIEndpoint:
+  advertiseAddress: 10.103.239.41 // master IP
+  bindPort: 6443
+nodeRegistration:
+  criSocket: /var/run/dockershim.sock
+  name: debug // master hostname
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master</pre></td></tr></table>
+</div>
+</div>
+<p>配置kubernetes:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+certificatesDir: /etc/kubernetes/pki
+clusterName: kubernetes
+dns:
+  type: CoreDNS
+etcd:
+  local:
+    dataDir: /var/lib/etcd
+networking:
+  dnsDomain: cluster.local
+  serviceSubnet: 10.96.0.0/12
+imageRepository: k8s.gcr.io
+kubernetesVersion: v1.18.6
+controllerManager:
+  extraArgs:
+    &lt;https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/&gt;
+    allocate-node-cidrs: &#39;true&#39;
+    node-cidr-mask-size: &#39;16&#39; // flannel的SubNetLen
+    cluster-cidr: &#39;10.0.0.0/8&#39; // flannel的Network
+apiServer:
+  timeoutForControlPlane: 4m0s
+  &lt;https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/&gt;
+  extraArgs:
+    ...
+#scheduler: {}
+scheduler:
+  ...
+  &lt;https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/&gt;
+  extraArgs:
+    ...</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
