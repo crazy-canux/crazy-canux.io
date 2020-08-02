@@ -12,21 +12,21 @@
     
     
     <item>
-      <title>Network</title>
-      <link>http://canuxcheng.com/post/k8s_network/</link>
+      <title>K8S CNI</title>
+      <link>http://canuxcheng.com/post/k8s_cni/</link>
       <pubDate>Thu, 26 Mar 2020 20:55:52 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/k8s_network/</guid>
-      <description> Network </description>
+      <guid>http://canuxcheng.com/post/k8s_cni/</guid>
+      <description>CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命</description>
     </item>
     
     <item>
-      <title>Storage</title>
-      <link>http://canuxcheng.com/post/k8s_storage/</link>
+      <title>K8S CSI</title>
+      <link>http://canuxcheng.com/post/k8s_csi/</link>
       <pubDate>Wed, 25 Mar 2020 20:55:52 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/k8s_storage/</guid>
-      <description>Storage kubernetes 存储. Pod Volumes 应用: * 一个pod中的某个容器异常退出，被kubelet拉起来之前保证之前的数据部丢失. * 同一个pod的多个容器共享数据. pod v</description>
+      <guid>http://canuxcheng.com/post/k8s_csi/</guid>
+      <description>CSI https://github.com/container-storage-interface/spec</description>
     </item>
     
     <item>
@@ -45,6 +45,15 @@
       
       <guid>http://canuxcheng.com/post/k8s_argo/</guid>
       <description>Argo https://github.com/argoproj/argo</description>
+    </item>
+    
+    <item>
+      <title>etcd</title>
+      <link>http://canuxcheng.com/post/k8s_etcd/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_etcd/</guid>
+      <description>etcd https://github.com/etcd-io/etcd etcdctl 使用证书访问: 1 2 3 4 5 6 $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &amp;lt;command&amp;gt; 查看所有key 1 $ etcdctl get / --prefix --keys-only</description>
     </item>
     
     <item>
@@ -92,6 +101,15 @@
       <description>OpenShift readhat kubernetes.
 Deploy pre-install:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  &amp;gt; check &amp;#34;sysctl net.ipv4.ip_forward&amp;#34; is set to 1 /etc/containers/registries.conf [registries.insecure] registries = [&amp;#39;172.30.0.0/16&amp;#39;] /etc/docker/daemon.json { &amp;#34;insecure-registries&amp;#34;: [ &amp;#34;172.30.0.0/16&amp;#34; ] } $ sudo systemctl daemon-reload $ sudo systemctl restart docker docker network inspect -f &amp;#34;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&amp;#34; bridge # firewall-cmd --permanent --new-zone dockerc # firewall-cmd --permanent --zone dockerc --add-source 172.</description>
+    </item>
+    
+    <item>
+      <title>k8S CRI</title>
+      <link>http://canuxcheng.com/post/k8s_cri/</link>
+      <pubDate>Wed, 05 Jun 2019 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_cri/</guid>
+      <description>CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt</description>
     </item>
     
     <item>

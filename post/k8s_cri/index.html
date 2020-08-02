@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Monitoring - Morgoth</title>
+  <title>k8S CRI - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &amp;#34;read&amp;#34; FROM &amp;#34;diskio&amp;#34; SELECT non_negative_derivative(mean(writes),1s) as &amp;#34;write&amp;#34; FROM &amp;#34;diskio&amp;#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &amp;#34;read&amp;#34; FROM &amp;#34;diskio&amp;#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &amp;#34;write&amp;#34; FROM &amp;#34;diskio&amp;#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&amp;#34;io_time&amp;#34;),1ms) FROM &amp;#34;diskio&amp;#34; WHERE &amp;#34;name&amp;#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &amp;#34;host&amp;#34;,&amp;#34;name&amp;#34;,time(_interval) Queue length: 1 2 3" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/storage_monitoring/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_cri/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Monitoring" />
-<meta property="og:description" content="Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(writes),1s) as &#34;write&#34; FROM &#34;diskio&#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &#34;write&#34; FROM &#34;diskio&#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&#34;io_time&#34;),1ms) FROM &#34;diskio&#34; WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval) Queue length: 1 2 3" />
+<meta property="og:title" content="k8S CRI" />
+<meta property="og:description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/storage_monitoring/" />
-<meta property="article:published_time" content="2018-04-05T21:47:54&#43;00:00"/>
-<meta property="article:modified_time" content="2018-04-05T21:47:54&#43;00:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_cri/" />
+<meta property="article:published_time" content="2019-06-05T22:02:31&#43;00:00"/>
+<meta property="article:modified_time" content="2019-06-05T22:02:31&#43;00:00"/>
 
-<meta itemprop="name" content="Monitoring">
-<meta itemprop="description" content="Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(writes),1s) as &#34;write&#34; FROM &#34;diskio&#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &#34;write&#34; FROM &#34;diskio&#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&#34;io_time&#34;),1ms) FROM &#34;diskio&#34; WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval) Queue length: 1 2 3">
-
-
-<meta itemprop="datePublished" content="2018-04-05T21:47:54&#43;00:00" />
-<meta itemprop="dateModified" content="2018-04-05T21:47:54&#43;00:00" />
-<meta itemprop="wordCount" content="82">
+<meta itemprop="name" content="k8S CRI">
+<meta itemprop="description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt">
 
 
+<meta itemprop="datePublished" content="2019-06-05T22:02:31&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-05T22:02:31&#43;00:00" />
+<meta itemprop="wordCount" content="68">
 
-<meta itemprop="keywords" content="monitoring," />
+
+
+<meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Monitoring"/>
-<meta name="twitter:description" content="Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(writes),1s) as &#34;write&#34; FROM &#34;diskio&#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &#34;write&#34; FROM &#34;diskio&#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&#34;io_time&#34;),1ms) FROM &#34;diskio&#34; WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval) Queue length: 1 2 3"/>
+<meta name="twitter:title" content="k8S CRI"/>
+<meta name="twitter:description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Monitoring</h1>
+      <h1 class="post-title">k8S CRI</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-04-05 </span>
+        <span class="post-time"> 2019-06-05 </span>
         <div class="post-category">
-            <a href="/categories/storage/"> Storage </a>
+            <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 82 words </span>
+          <span class="more-meta"> 68 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,78 +147,58 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#monitoring">Monitoring</a>
-<ul>
-<li><a href="#diskio">diskio</a></li>
-</ul></li>
+<li><a href="#cri">CRI</a></li>
+<li><a href="#docker">docker</a></li>
+<li><a href="#containerd">containerd</a></li>
+<li><a href="#cri-o">CRI-O</a></li>
+<li><a href="#kata">kata</a></li>
+<li><a href="#rkt">rkt</a></li>
 </ul>
 </nav>
   </div>
 </div>
   <div class="post-outdated">
     <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="2018-04-05T21:47:54" title="April 5, 2018">April 5, 2018</span>. This article may have outdated content or subject matter.</p>
+      <p>[NOTE] Updated <span class="timeago" datetime="2019-06-05T22:02:31" title="June 5, 2019">June 5, 2019</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
 
-<h1 id="monitoring">Monitoring</h1>
+<h1 id="cri">CRI</h1>
 
-<h2 id="diskio">diskio</h2>
+<p>CRI: Container Runtime Intarface</p>
 
-<p>IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">SELECT non_negative_derivative(mean(reads),1s) as &#34;read&#34; FROM &#34;diskio&#34;
-SELECT non_negative_derivative(mean(writes),1s) as &#34;write&#34; FROM &#34;diskio&#34;</pre></td></tr></table>
-</div>
-</div>
-<p>throughput:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">SELECT non_negative_derivative(mean(read_bytes),1s) as &#34;read&#34; FROM &#34;diskio&#34;
-SELECT non_negative_derivative(mean(write_bytes),1s) as &#34;write&#34; FROM &#34;diskio&#34;</pre></td></tr></table>
-</div>
-</div>
-<p>Utilization:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">SELECT non_negative_derivative(last(&#34;io_time&#34;),1ms)
-FROM &#34;diskio&#34;
-WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/
-GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
-</div>
-</div>
-<p>Queue length:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">SELECT non_negative_derivative(last(&#34;weighted_io_time&#34;,1ms))
-FROM &#34;diskio&#34;
-WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/
-GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
-</div>
-</div>
+<p>定义了k8s和container runtime进行交互的接口.</p>
+
+<p>是k8s与container交互的标准.</p>
+
+<h1 id="docker">docker</h1>
+
+<h1 id="containerd">containerd</h1>
+
+<p>docker.</p>
+
+<p><a href="https://github.com/containerd/containerd">https://github.com/containerd/containerd</a></p>
+
+<h1 id="cri-o">CRI-O</h1>
+
+<p>redhat.</p>
+
+<p><a href="https://github.com/cri-o/cri-o">https://github.com/cri-o/cri-o</a></p>
+
+<h1 id="kata">kata</h1>
+
+<p><a href="https://github.com/kata-containers/runtime">https://github.com/kata-containers/runtime</a></p>
+
+<h1 id="rkt">rkt</h1>
+
+<p>redhat(coreos)</p>
+
+<p><a href="https://github.com/rkt/rkt">https://github.com/rkt/rkt</a></p>
+
+<hr />
+
     </div>
 
     <div class="post-copyright">
@@ -229,7 +209,7 @@ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2018-04-05
+        2019-06-05
         
     </span>
   </p>
@@ -252,16 +232,16 @@ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/monitoring/">monitoring</a>
+          <a href="/tags/k8s/">k8s</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/swarm_csi/">
+        <a class="prev" href="/post/k8s_helm/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Swarm CSI</span>
+            <span class="prev-text nav-default">Helm</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/storage/">
-            <span class="next-text nav-default">Storage</span>
+        <a class="next" href="/post/virtualbox/">
+            <span class="next-text nav-default">Virtualbox</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -274,8 +254,8 @@ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-04-05 21:47:54 \x2b0000 UTC',
-        title: 'Monitoring',
+        id: '2019-06-05 22:02:31 \x2b0000 UTC',
+        title: 'k8S CRI',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

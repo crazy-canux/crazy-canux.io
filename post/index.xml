@@ -41,21 +41,21 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
     </item>
     
     <item>
-      <title>Network</title>
-      <link>http://canuxcheng.com/post/k8s_network/</link>
+      <title>K8S CNI</title>
+      <link>http://canuxcheng.com/post/k8s_cni/</link>
       <pubDate>Thu, 26 Mar 2020 20:55:52 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/k8s_network/</guid>
-      <description> Network </description>
+      <guid>http://canuxcheng.com/post/k8s_cni/</guid>
+      <description>CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命</description>
     </item>
     
     <item>
-      <title>Storage</title>
-      <link>http://canuxcheng.com/post/k8s_storage/</link>
+      <title>K8S CSI</title>
+      <link>http://canuxcheng.com/post/k8s_csi/</link>
       <pubDate>Wed, 25 Mar 2020 20:55:52 +0800</pubDate>
       
-      <guid>http://canuxcheng.com/post/k8s_storage/</guid>
-      <description>Storage kubernetes 存储. Pod Volumes 应用: * 一个pod中的某个容器异常退出，被kubelet拉起来之前保证之前的数据部丢失. * 同一个pod的多个容器共享数据. pod v</description>
+      <guid>http://canuxcheng.com/post/k8s_csi/</guid>
+      <description>CSI https://github.com/container-storage-interface/spec</description>
     </item>
     
     <item>
@@ -86,6 +86,15 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
     </item>
     
     <item>
+      <title>etcd</title>
+      <link>http://canuxcheng.com/post/k8s_etcd/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_etcd/</guid>
+      <description>etcd https://github.com/etcd-io/etcd etcdctl 使用证书访问: 1 2 3 4 5 6 $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &amp;lt;command&amp;gt; 查看所有key 1 $ etcdctl get / --prefix --keys-only</description>
+    </item>
+    
+    <item>
       <title>Compose</title>
       <link>http://canuxcheng.com/post/compose/</link>
       <pubDate>Sat, 04 Jan 2020 21:53:40 +0800</pubDate>
@@ -110,15 +119,6 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
       
       <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
       <description>Nginx https://github.com/kubernetes/ingress-nginx 1 2 3 4 5 6 7 8 9 10 // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&amp;#39;{.items[0].metadata.name}&amp;#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik https://github.com/containous/traefik</description>
-    </item>
-    
-    <item>
-      <title>Flannel</title>
-      <link>http://canuxcheng.com/post/k8s_flannel/</link>
-      <pubDate>Mon, 30 Dec 2019 22:06:48 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/post/k8s_flannel/</guid>
-      <description>Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到该目录. ne</description>
     </item>
     
     <item>
@@ -178,12 +178,12 @@ Deploy pre-install:
     </item>
     
     <item>
-      <title>CRI</title>
-      <link>http://canuxcheng.com/post/cri/</link>
+      <title>k8S CRI</title>
+      <link>http://canuxcheng.com/post/k8s_cri/</link>
       <pubDate>Wed, 05 Jun 2019 22:02:31 +0000</pubDate>
       
-      <guid>http://canuxcheng.com/post/cri/</guid>
-      <description>CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt</description>
+      <guid>http://canuxcheng.com/post/k8s_cri/</guid>
+      <description>CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt</description>
     </item>
     
     <item>
@@ -439,24 +439,6 @@ Deploy pre-install:
     </item>
     
     <item>
-      <title>CNI</title>
-      <link>http://canuxcheng.com/post/cni/</link>
-      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/cni/</guid>
-      <description>CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服</description>
-    </item>
-    
-    <item>
-      <title>CSI</title>
-      <link>http://canuxcheng.com/post/csi/</link>
-      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/csi/</guid>
-      <description>CSI CSI: Container Storage Interface CSI提供容器的数据持久化服务. 容器管理数据的两种方式： 数据卷(Volumes) 挂载主机目录(bind mounts) 临时文件系统(tmpfs)</description>
-    </item>
-    
-    <item>
       <title>Container</title>
       <link>http://canuxcheng.com/post/container/</link>
       <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
@@ -499,6 +481,24 @@ Deploy pre-install:
       
       <guid>http://canuxcheng.com/post/swarm/</guid>
       <description>Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均</description>
+    </item>
+    
+    <item>
+      <title>Swarm CNI</title>
+      <link>http://canuxcheng.com/post/swarm_cni/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm_cni/</guid>
+      <description>CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服</description>
+    </item>
+    
+    <item>
+      <title>Swarm CSI</title>
+      <link>http://canuxcheng.com/post/swarm_csi/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm_csi/</guid>
+      <description>CSI CSI: Container Storage Interface CSI提供容器的数据持久化服务. 容器管理数据的两种方式： 数据卷(Volumes) 挂载主机目录(bind mounts) 临时文件系统(tmpfs)</description>
     </item>
     
     <item>

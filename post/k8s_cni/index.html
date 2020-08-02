@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Monitoring - Morgoth</title>
+  <title>K8S CNI - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &amp;#34;read&amp;#34; FROM &amp;#34;diskio&amp;#34; SELECT non_negative_derivative(mean(writes),1s) as &amp;#34;write&amp;#34; FROM &amp;#34;diskio&amp;#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &amp;#34;read&amp;#34; FROM &amp;#34;diskio&amp;#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &amp;#34;write&amp;#34; FROM &amp;#34;diskio&amp;#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&amp;#34;io_time&amp;#34;),1ms) FROM &amp;#34;diskio&amp;#34; WHERE &amp;#34;name&amp;#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &amp;#34;host&amp;#34;,&amp;#34;name&amp;#34;,time(_interval) Queue length: 1 2 3" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/storage_monitoring/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_cni/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Monitoring" />
-<meta property="og:description" content="Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(writes),1s) as &#34;write&#34; FROM &#34;diskio&#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &#34;write&#34; FROM &#34;diskio&#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&#34;io_time&#34;),1ms) FROM &#34;diskio&#34; WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval) Queue length: 1 2 3" />
+<meta property="og:title" content="K8S CNI" />
+<meta property="og:description" content="CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/storage_monitoring/" />
-<meta property="article:published_time" content="2018-04-05T21:47:54&#43;00:00"/>
-<meta property="article:modified_time" content="2018-04-05T21:47:54&#43;00:00"/>
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_cni/" />
+<meta property="article:published_time" content="2020-03-26T20:55:52&#43;08:00"/>
+<meta property="article:modified_time" content="2020-03-26T20:55:52&#43;08:00"/>
 
-<meta itemprop="name" content="Monitoring">
-<meta itemprop="description" content="Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(writes),1s) as &#34;write&#34; FROM &#34;diskio&#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &#34;write&#34; FROM &#34;diskio&#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&#34;io_time&#34;),1ms) FROM &#34;diskio&#34; WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval) Queue length: 1 2 3">
-
-
-<meta itemprop="datePublished" content="2018-04-05T21:47:54&#43;00:00" />
-<meta itemprop="dateModified" content="2018-04-05T21:47:54&#43;00:00" />
-<meta itemprop="wordCount" content="82">
+<meta itemprop="name" content="K8S CNI">
+<meta itemprop="description" content="CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命">
 
 
+<meta itemprop="datePublished" content="2020-03-26T20:55:52&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-26T20:55:52&#43;08:00" />
+<meta itemprop="wordCount" content="348">
 
-<meta itemprop="keywords" content="monitoring," />
+
+
+<meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Monitoring"/>
-<meta name="twitter:description" content="Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. 1 2 SELECT non_negative_derivative(mean(reads),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(writes),1s) as &#34;write&#34; FROM &#34;diskio&#34; throughput: 1 2 SELECT non_negative_derivative(mean(read_bytes),1s) as &#34;read&#34; FROM &#34;diskio&#34; SELECT non_negative_derivative(mean(write_bytes),1s) as &#34;write&#34; FROM &#34;diskio&#34; Utilization: 1 2 3 4 SELECT non_negative_derivative(last(&#34;io_time&#34;),1ms) FROM &#34;diskio&#34; WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval) Queue length: 1 2 3"/>
+<meta name="twitter:title" content="K8S CNI"/>
+<meta name="twitter:description" content="CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases 1 2 $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Monitoring</h1>
+      <h1 class="post-title">K8S CNI</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-04-05 </span>
+        <span class="post-time"> 2020-03-26 </span>
         <div class="post-category">
-            <a href="/categories/storage/"> Storage </a>
+            <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 82 words </span>
+          <span class="more-meta"> 348 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,78 +147,172 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#monitoring">Monitoring</a>
-<ul>
-<li><a href="#diskio">diskio</a></li>
-</ul></li>
+<li><a href="#cni">CNI</a></li>
+<li><a href="#flannel">Flannel</a></li>
+<li><a href="#calico">calico</a></li>
+<li><a href="#cilium">cilium</a></li>
+<li><a href="#weave">weave</a></li>
 </ul>
 </nav>
   </div>
 </div>
   <div class="post-outdated">
-    <div class="warn">
-      <p>[NOTE] Updated <span class="timeago" datetime="2018-04-05T21:47:54" title="April 5, 2018">April 5, 2018</span>. This article may have outdated content or subject matter.</p>
+    <div class="hint">
+      <p>[NOTE] Updated <span class="timeago" datetime="2020-03-26T20:55:52" title="March 26, 2020">March 26, 2020</span>. This article may have outdated content or subject matter.</p>
     </div>
   </div>
     <div class="post-content">
       
 
-<h1 id="monitoring">Monitoring</h1>
+<h1 id="cni">CNI</h1>
 
-<h2 id="diskio">diskio</h2>
+<p><a href="https://github.com/containernetworking">https://github.com/containernetworking</a></p>
 
-<p>IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS.</p>
+<ul>
+<li>kube-router</li>
+<li>romana</li>
+<li>cilium</li>
+<li>weavenet</li>
+<li>calico</li>
+<li>flannel</li>
+</ul>
+
+<hr />
+
+<h1 id="flannel">Flannel</h1>
+
+<p>flannel是k8s最常用的网络插件.</p>
+
+<p><a href="https://github.com/coreos/flannel">https://github.com/coreos/flannel</a></p>
+
+<p>在所有node上部署cni-plugin:</p>
+
+<p><a href="https://github.com/containernetworking/plugins/releases">https://github.com/containernetworking/plugins/releases</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">SELECT non_negative_derivative(mean(reads),1s) as &#34;read&#34; FROM &#34;diskio&#34;
-SELECT non_negative_derivative(mean(writes),1s) as &#34;write&#34; FROM &#34;diskio&#34;</pre></td></tr></table>
+<pre class="chroma">$ sudo mkdir -p /opt/cni/bin
+// 下载并解压所有插件命令到该目录.</pre></td></tr></table>
 </div>
 </div>
-<p>throughput:</p>
+<p>network-addon(master上操作即可):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</pre></td></tr></table>
+</div>
+</div>
+<p>veryfy:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">SELECT non_negative_derivative(mean(read_bytes),1s) as &#34;read&#34; FROM &#34;diskio&#34;
-SELECT non_negative_derivative(mean(write_bytes),1s) as &#34;write&#34; FROM &#34;diskio&#34;</pre></td></tr></table>
+<pre class="chroma">$ kubectl get nodes
+$ kubectl get pod --all-namespaces</pre></td></tr></table>
 </div>
 </div>
-<p>Utilization:</p>
+<p>删除插件:</p>
+
+<p>删除插件会影响已经部署的pod.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// 删除flannel 
+$ kubectl delete -f X.yml  
+$ sudo systemctl stop kubelet docker
+
+// 第二步，在node节点清理flannel网络留下的文件
+ifconfig cni0 down
+ip link delete cni0 
+ifconfig flannel.1 down
+ip link delete flannel.1 
+rm -rf /var/lib/cni /etc/cni /run/flannel
+$ sudo rm -rf /var/lib/kubelet /var/lib/etcd
+
+// 重启kubelet
+$ sudo systemctl start kubelet docker</pre></td></tr></table>
+</div>
+</div>
+<p>修改配置:</p>
+
+<p>/etc/kube-flannel/net-conf.json</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">SELECT non_negative_derivative(last(&#34;io_time&#34;),1ms)
-FROM &#34;diskio&#34;
-WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/
-GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
+<pre class="chroma">{
+  &#34;Network&#34;: &#34;10.244.0.0/16&#34;,
+  &#34;SubnetLen&#34;: 24,
+  &#34;SubnetMin&#34;: &#34;10.244.0.0&#34;,
+  &#34;SubnetMax&#34;: &#34;10.244.255.0&#34;,
+  &#34;Backend&#34;: {
+    &#34;Type&#34;: &#34;vxlan&#34;
+  }
+}</pre></td></tr></table>
 </div>
 </div>
-<p>Queue length:</p>
+<p>使用kubeadm：</p>
+
+<p>kubeadm init必须指定flannel的Network参数:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">SELECT non_negative_derivative(last(&#34;weighted_io_time&#34;,1ms))
-FROM &#34;diskio&#34;
-WHERE &#34;name&#34; =~ /^(v|s|)d(a|b|c|d)$/
-GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
+<pre class="chroma">--pod-network-cidr=10.244.0.0/16</pre></td></tr></table>
 </div>
 </div>
+<p>如果需要修改其它参数，同时需要修改kubeadm的配置</p>
+
+<hr />
+
+<h1 id="calico">calico</h1>
+
+<p><a href="https://github.com/projectcalico/calico">https://github.com/projectcalico/calico</a></p>
+
+<hr />
+
+<h1 id="cilium">cilium</h1>
+
+<p><a href="https://github.com/cilium/cilium">https://github.com/cilium/cilium</a></p>
+
+<hr />
+
+<h1 id="weave">weave</h1>
+
+<p><a href="https://github.com/weaveworks/weave">https://github.com/weaveworks/weave</a></p>
+
     </div>
 
     <div class="post-copyright">
@@ -229,7 +323,7 @@ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2018-04-05
+        2020-03-26
         
     </span>
   </p>
@@ -252,16 +346,16 @@ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/monitoring/">monitoring</a>
+          <a href="/tags/k8s/">k8s</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/swarm_csi/">
+        <a class="prev" href="/post/linux_security/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Swarm CSI</span>
+            <span class="prev-text nav-default">Security</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/storage/">
-            <span class="next-text nav-default">Storage</span>
+        <a class="next" href="/post/k8s_csi/">
+            <span class="next-text nav-default">K8S CSI</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -274,8 +368,8 @@ GROUP BY &#34;host&#34;,&#34;name&#34;,time(_interval)</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-04-05 21:47:54 \x2b0000 UTC',
-        title: 'Monitoring',
+        id: '2020-03-26 20:55:52 \x2b0800 CST',
+        title: 'K8S CNI',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

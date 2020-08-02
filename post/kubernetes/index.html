@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2217">
+<meta itemprop="wordCount" content="2342">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2217 words </span>
+          <span class="more-meta"> 2342 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -154,10 +154,8 @@
 <li><a href="#node">node</a></li>
 <li><a href="#addons">addons</a></li>
 </ul></li>
-<li><a href="#概念">概念</a>
-<ul>
+<li><a href="#概念">概念</a></li>
 <li><a href="#pod">pod</a></li>
-</ul></li>
 <li><a href="#resources">resources</a>
 <ul>
 <li><a href="#workloads">Workloads</a>
@@ -308,7 +306,9 @@
 <li>LoadBalance</li>
 </ul>
 
-<h2 id="pod">pod</h2>
+<hr />
+
+<h1 id="pod">pod</h1>
 
 <p>一个pod包含一个或多个容器，这些容器通过infra container共享同一个network namespace。</p>
 
@@ -321,6 +321,29 @@
 <p>pod共享存储:</p>
 
 <p>通过pod volumes, 使pod中的container共享存储。</p>
+
+<p>应用:
+* 一个pod中的某个容器异常退出，被kubelet拉起来之前保证之前的数据部丢失.
+* 同一个pod的多个容器共享数据.</p>
+
+<p>pod volume类型:
+1. 本地存储: emptydir/hostpath&hellip;
+2. 网络存储:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">in-tree(ks8内置支持): awsElasticBlockStore/gcePresistentDisk/nfs...
+
+out-of-tree(插件): flexvolume/csi...</pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li>projected volume: secret/configmap/downwardAPI/serviceAccountToken</li>
+</ol>
 
 <p>pod服务质量配置:</p>
 
