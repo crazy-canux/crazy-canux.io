@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-01-10T20:58:01&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:58:01&#43;08:00" />
-<meta itemprop="wordCount" content="1121">
+<meta itemprop="wordCount" content="1207">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1121 words </span>
+          <span class="more-meta"> 1207 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -260,12 +260,14 @@ $ kubectl delete pod &lt;name&gt;</pre></td></tr></table>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 创建serivce:
 $ kubectl expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol=TCP|UDP|SCTP] [--target-port=...] [--name=...] [--external-ip=...] [--type=type] [options]
 
 # 创建service，并且使用NodePort
+# nodeport可以使用任意节点的IP访问.
 $ kubectl expose deployment hello-world --type=NodePort --name=example-service</pre></td></tr></table>
 </div>
 </div>
@@ -385,6 +387,19 @@ kubectl explain deploy.spec</pre></td></tr></table>
 <p>apply:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl apply
+
+$ kubectl diff</pre></td></tr></table>
+</div>
+</div>
+<p>patch</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -397,14 +412,12 @@ kubectl explain deploy.spec</pre></td></tr></table>
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ kubectl apply
+<pre class="chroma">$ kubectl patch
 
-$ kubectl diff
-
-$ kubectl patch
+// 删除terminating状态的resource
+$ kubectl patch  persistentvolumeclaim/storage -p &#39;{&#34;metadata&#34;:{&#34;finalizers&#34;:null}}&#39; -n &lt;ns&gt;
 
 $ kubectl replace
 
@@ -548,19 +561,25 @@ $ kubectl exec -it &lt;pod&gt; -n &lt;ns&gt; -- /bin/bash</pre></td></tr></table
 </div>
 <p>port-forward:</p>
 
-<p>由于已知的限制，目前的端口转发仅适用于 TCP 协议</p>
+<p>由于已知的限制，目前的端口转发仅适用于 TCP 协议.</p>
+
+<p>只能通过master IP 访问。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ kubectl port-forward
 
 // 转发本地端口到deploy/rs/svc/pod
-$ kubectl port-forward svc/redis-service 6379:6379 -n redis</pre></td></tr></table>
+$ kubectl port-forward svc/redis-service 6379:6379 -n redis
+
+$ kubectl port-forward --address 0.0.0.0 -n kubernetes-dashboard service/kubernetes-dashboard 8080:443</pre></td></tr></table>
 </div>
 </div>
 <p>proxy:</p>

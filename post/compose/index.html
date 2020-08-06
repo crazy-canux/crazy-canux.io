@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-01-04T21:53:40&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-04T21:53:40&#43;08:00" />
-<meta itemprop="wordCount" content="832">
+<meta itemprop="wordCount" content="888">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 832 words </span>
+          <span class="more-meta"> 888 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -368,6 +368,15 @@ $ docker-compose logs -f</pre></td></tr></table>
 </span><span class="lnt">136
 </span><span class="lnt">137
 </span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">version: &#34;3.6&#34;
@@ -417,6 +426,15 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=sandbox
       - RABBITMQ_DEFAULT_PASS=password
+
+    &lt;https://docs.docker.com/compose/compose-file/#env_file&gt;
+    # When you set the same environment variable in multiple files, here’s the priority used by Compose to choose which value to use:
+    # Compose file
+    # Shell environment variables
+    # Environment file
+    # Dockerfile
+    # Variable is not defined
+    env_file:
 
     depends_on:
       - service-name

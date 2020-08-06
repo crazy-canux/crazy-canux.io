@@ -1361,6 +1361,20 @@
   </url>
   
   <url>
+    <loc>http://canuxcheng.com/post/consul/</loc>
+    <lastmod>2016-04-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/vault/</loc>
+    <lastmod>2016-04-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/psl_test/</loc>
     <lastmod>2016-04-11T22:58:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1977,6 +1991,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/concurrency/</loc>
     <lastmod>2018-01-01T10:49:21+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/consul/</loc>
+    <lastmod>2016-04-15T09:41:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -2754,6 +2775,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/vagrant/</loc>
     <lastmod>2017-01-12T21:00:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/vault/</loc>
+    <lastmod>2016-04-15T09:41:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
