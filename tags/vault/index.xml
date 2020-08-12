@@ -17,7 +17,7 @@
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/vault/</guid>
-      <description> Vault </description>
+      <description>Vault https://github.com/hashicorp/vault CLI server: 1 2 // 启动vault $ vault server -config=/etc/vault/config.hcl init: 1 2 3 4 5 6 7 8 // init生成keys和token. $ vault operator init // 通过keys unseal $ vault operator unseal // 通过token seal</description>
     </item>
     
   </channel>

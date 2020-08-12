@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
-<meta itemprop="wordCount" content="992">
+<meta itemprop="wordCount" content="1060">
 
 
 
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/golang/"> Golang </a>
             </div>
-          <span class="more-meta"> 992 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 1060 words </span>
+          <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -573,7 +573,34 @@ GONOSUMDB</pre></td></tr></table>
 <hr />
 
 <h1 id="项目结构">项目结构</h1>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cmd: 可执行文件入口
+pkg: 核心代码库
+api: api的spec, openapi/swagger/json/protocol/grpc
+hack: 构建/测试相关脚本
+plugin: 插件
+staging: wip
+third_party: 第三方工具/代码
+vendor: 项目依赖
+build
+test
+docs</pre></td></tr></table>
+</div>
+</div>
 <p>没有子目录包结构：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

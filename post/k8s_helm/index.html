@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-09-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="305">
+<meta itemprop="wordCount" content="331">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 305 words </span>
+          <span class="more-meta"> 331 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -223,10 +223,16 @@ $ helm init --kubeconfig=$kubeconfig --service-account tiller --skip-refresh </p
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">helm install [name] [chart] [flags]
-helm install redis ./redis</pre></td></tr></table>
+helm install redis ./redis
+
+// 需提前创建namespace
+helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard -f value.yaml -n kubernetes-dashboard</pre></td></tr></table>
 </div>
 </div>
 <p>查看release:</p>

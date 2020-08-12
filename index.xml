@@ -86,6 +86,24 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
     </item>
     
     <item>
+      <title>CoreDNS</title>
+      <link>http://canuxcheng.com/post/k8s_coredns/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_coredns/</guid>
+      <description> CoreDNS </description>
+    </item>
+    
+    <item>
+      <title>Operator</title>
+      <link>http://canuxcheng.com/post/k8s_operator/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_operator/</guid>
+      <description> Operator </description>
+    </item>
+    
+    <item>
       <title>etcd</title>
       <link>http://canuxcheng.com/post/k8s_etcd/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
@@ -1778,7 +1796,7 @@ Deploy Sentry on K8S https://github.com/getsentry/onpremise</description>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/vault/</guid>
-      <description> Vault </description>
+      <description>Vault https://github.com/hashicorp/vault CLI server: 1 2 // 启动vault $ vault server -config=/etc/vault/config.hcl init: 1 2 3 4 5 6 7 8 // init生成keys和token. $ vault operator init // 通过keys unseal $ vault operator unseal // 通过token seal</description>
     </item>
     
     <item>
