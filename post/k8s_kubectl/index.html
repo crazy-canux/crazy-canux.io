@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-01-10T20:58:01&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:58:01&#43;08:00" />
-<meta itemprop="wordCount" content="1207">
+<meta itemprop="wordCount" content="1237">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1207 words </span>
+          <span class="more-meta"> 1237 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -516,13 +516,16 @@ $ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashbo
 <p>logs:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># like docker logs
@@ -531,7 +534,10 @@ $ kubectl logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER] [options]
 options:
 --all-containers
 -f/--follow
--p/--previous</pre></td></tr></table>
+-p/--previous
+
+// 查看pod中指定container log
+kubectl logs -f &lt;pod&gt; -c &lt;container&gt; -n &lt;ns&gt;</pre></td></tr></table>
 </div>
 </div>
 <p>exec:</p>

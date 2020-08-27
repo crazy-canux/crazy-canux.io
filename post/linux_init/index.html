@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-02-03T14:04:05&#43;00:00" />
 <meta itemprop="dateModified" content="2019-02-03T14:04:05&#43;00:00" />
-<meta itemprop="wordCount" content="584">
+<meta itemprop="wordCount" content="636">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 584 words </span>
+          <span class="more-meta"> 636 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -294,6 +294,7 @@ WantedBy=multi-user.target</pre></td></tr></table>
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 修改后需要重新加载.service文件
@@ -304,6 +305,7 @@ $ systemctl list-unit-files
 $ systemctl show docker
 
 # 设置开机自动启动
+//在/etc/systemd/system/multi-user.target.wants下创建链接
 $ systemctl enable ***
 $ systemctl disable ***
 $ systemctl is-enabled ***</pre></td></tr></table>

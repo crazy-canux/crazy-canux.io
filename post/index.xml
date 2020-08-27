@@ -95,21 +95,21 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
     </item>
     
     <item>
+      <title>Etcd</title>
+      <link>http://canuxcheng.com/post/k8s_etcd/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_etcd/</guid>
+      <description>Etcd https://github.com/etcd-io/etcd 类似的有consul和zoomkeeper. etcdctl 使用证书访问: 1 2 3 4 5 6 $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &amp;lt;command&amp;gt; 查看所有key 1 $ etcdctl get / --prefix --keys-only</description>
+    </item>
+    
+    <item>
       <title>Operator</title>
       <link>http://canuxcheng.com/post/k8s_operator/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_operator/</guid>
       <description> Operator </description>
-    </item>
-    
-    <item>
-      <title>etcd</title>
-      <link>http://canuxcheng.com/post/k8s_etcd/</link>
-      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/post/k8s_etcd/</guid>
-      <description>etcd https://github.com/etcd-io/etcd 类似的有consul和zoomkeeper. etcdctl 使用证书访问: 1 2 3 4 5 6 $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &amp;lt;command&amp;gt; 查看所有key 1 $ etcdctl get / --prefix --keys-only</description>
     </item>
     
     <item>
@@ -127,7 +127,7 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_dashboard/</guid>
-      <description>metrics-server https://github.com/kubernetes-sigs/metrics-server 1 2 3 # deploy 0.3.6 # 修改image为 registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6 $ kubectl apply -f ./components.yaml dashboard https://github.com/kubernetes/dashboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 // 部署das</description>
+      <description>dashboard kubernetes-dashboard lens octant kubernetes-dashboard https://github.com/kubernetes/dashboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods</description>
     </item>
     
     <item>

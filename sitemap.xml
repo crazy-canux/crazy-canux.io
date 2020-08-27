@@ -66,14 +66,14 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/k8s_operator/</loc>
+    <loc>http://canuxcheng.com/post/k8s_etcd/</loc>
     <lastmod>2020-01-10T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/k8s_etcd/</loc>
+    <loc>http://canuxcheng.com/post/k8s_operator/</loc>
     <lastmod>2020-01-10T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
