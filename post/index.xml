@@ -77,15 +77,6 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
     </item>
     
     <item>
-      <title>Argo</title>
-      <link>http://canuxcheng.com/post/k8s_argo/</link>
-      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/post/k8s_argo/</guid>
-      <description>Argo https://github.com/argoproj/argo</description>
-    </item>
-    
-    <item>
       <title>CoreDNS</title>
       <link>http://canuxcheng.com/post/k8s_coredns/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
@@ -104,12 +95,22 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
     </item>
     
     <item>
+      <title>GitOps</title>
+      <link>http://canuxcheng.com/post/k8s_gitops/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_gitops/</guid>
+      <description>argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux</description>
+    </item>
+    
+    <item>
       <title>Operator</title>
       <link>http://canuxcheng.com/post/k8s_operator/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_operator/</guid>
-      <description> Operator </description>
+      <description>Operator operator-framework https://github.com/operator-framework</description>
     </item>
     
     <item>
@@ -172,7 +173,7 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
       <pubDate>Tue, 03 Dec 2019 21:50:47 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/image/</guid>
-      <description>image 容器镜像 scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜像. ubuntu/debian Hash Sum mismatch: 1</description>
+      <description>image 容器镜像 docker image driver: aufs, btrfs, devicemapper, overlay. scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜</description>
     </item>
     
     <item>
@@ -535,6 +536,15 @@ Deploy pre-install:
       
       <guid>http://canuxcheng.com/post/storage/</guid>
       <description>Storage RAID RAID: redundant array of independent disks, 独立磁盘冗余数组． 存储方式 DAS: direct attached storage, 直连式存储，通过SCSI或FC连接服务器． NAS: network attached storage，网络接入存储，通过IP(N</description>
+    </item>
+    
+    <item>
+      <title>overlay</title>
+      <link>http://canuxcheng.com/post/storage_overlay/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_overlay/</guid>
+      <description>overlay 最下层是一个 lower 层，也就是镜像层，它是一个只读层； 右上层是一个 upper 层，upper 是容器的读写层，upper 层采用了写实复制的机制，也就是说只有</description>
     </item>
     
     <item>

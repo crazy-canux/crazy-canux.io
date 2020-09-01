@@ -52,13 +52,6 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/k8s_argo/</loc>
-    <lastmod>2020-01-10T20:55:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/post/k8s_coredns/</loc>
     <lastmod>2020-01-10T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -67,6 +60,13 @@
   
   <url>
     <loc>http://canuxcheng.com/post/k8s_etcd/</loc>
+    <lastmod>2020-01-10T20:55:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/k8s_gitops/</loc>
     <lastmod>2020-01-10T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -403,6 +403,13 @@
   
   <url>
     <loc>http://canuxcheng.com/post/storage/</loc>
+    <lastmod>2018-04-05T21:47:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/storage_overlay/</loc>
     <lastmod>2018-04-05T21:47:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2509,6 +2516,13 @@
   <url>
     <loc>http://canuxcheng.com/tags/oracle/</loc>
     <lastmod>2016-06-01T22:40:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/overlay/</loc>
+    <lastmod>2018-04-05T21:47:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

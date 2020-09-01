@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Etcd - Morgoth</title>
+  <title>GitOps - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Etcd https://github.com/etcd-io/etcd 类似的有consul和zoomkeeper. etcdctl 使用证书访问: 1 2 3 4 5 6 $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &amp;lt;command&amp;gt; 查看所有key 1 $ etcdctl get / --prefix --keys-only" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +27,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/k8s_etcd/" />
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_gitops/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +39,30 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Etcd" />
-<meta property="og:description" content="Etcd https://github.com/etcd-io/etcd 类似的有consul和zoomkeeper. etcdctl 使用证书访问: 1 2 3 4 5 6 $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &lt;command&gt; 查看所有key 1 $ etcdctl get / --prefix --keys-only" />
+<meta property="og:title" content="GitOps" />
+<meta property="og:description" content="argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/k8s_etcd/" />
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_gitops/" />
 <meta property="article:published_time" content="2020-01-10T20:55:52&#43;08:00"/>
 <meta property="article:modified_time" content="2020-01-10T20:55:52&#43;08:00"/>
 
-<meta itemprop="name" content="Etcd">
-<meta itemprop="description" content="Etcd https://github.com/etcd-io/etcd 类似的有consul和zoomkeeper. etcdctl 使用证书访问: 1 2 3 4 5 6 $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &lt;command&gt; 查看所有key 1 $ etcdctl get / --prefix --keys-only">
+<meta itemprop="name" content="GitOps">
+<meta itemprop="description" content="argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux">
 
 
 <meta itemprop="datePublished" content="2020-01-10T20:55:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:55:52&#43;08:00" />
-<meta itemprop="wordCount" content="64">
+<meta itemprop="wordCount" content="4">
 
 
 
 <meta itemprop="keywords" content="k8s," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Etcd"/>
-<meta name="twitter:description" content="Etcd https://github.com/etcd-io/etcd 类似的有consul和zoomkeeper. etcdctl 使用证书访问: 1 2 3 4 5 6 $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &lt;command&gt; 查看所有key 1 $ etcdctl get / --prefix --keys-only"/>
+<meta name="twitter:title" content="GitOps"/>
+<meta name="twitter:description" content="argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +133,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Etcd</h1>
+      <h1 class="post-title">GitOps</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-01-10 </span>
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 64 words </span>
+          <span class="more-meta"> 4 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,8 +151,8 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#etcd">Etcd</a></li>
-<li><a href="#etcdctl">etcdctl</a></li>
+<li><a href="#argo-cd">argo-cd</a></li>
+<li><a href="#flux-cd">flux-cd</a></li>
 </ul>
 </nav>
   </div>
@@ -161,42 +165,14 @@
     <div class="post-content">
       
 
-<h1 id="etcd">Etcd</h1>
+<h1 id="argo-cd">argo-cd</h1>
 
-<p><a href="https://github.com/etcd-io/etcd">https://github.com/etcd-io/etcd</a></p>
+<p><a href="https://github.com/argoproj/argo-cd">https://github.com/argoproj/argo-cd</a></p>
 
-<p>类似的有consul和zoomkeeper.</p>
+<h1 id="flux-cd">flux-cd</h1>
 
-<h1 id="etcdctl">etcdctl</h1>
+<p><a href="https://github.com/fluxcd/flux">https://github.com/fluxcd/flux</a></p>
 
-<p>使用证书访问:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ etcdctl \
---cacert=/etc/kubernetes/pki/etcd/ca.crt \
---cert=/etc/kubernetes/pki/etcd/server.crt  \
---key=/etc/kubernetes/pki/etcd/server.key \
---insecure-skip-tls-verify=true \
-&lt;command&gt;</pre></td></tr></table>
-</div>
-</div>
-<p>查看所有key</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ etcdctl get / --prefix --keys-only</pre></td></tr></table>
-</div>
-</div>
     </div>
 
     <div class="post-copyright">
@@ -233,13 +209,13 @@
           <a href="/tags/k8s/">k8s</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/k8s_coredns/">
+        <a class="prev" href="/post/k8s_etcd/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">CoreDNS</span>
+            <span class="prev-text nav-default">Etcd</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/k8s_gitops/">
-            <span class="next-text nav-default">GitOps</span>
+        <a class="next" href="/post/k8s_operator/">
+            <span class="next-text nav-default">Operator</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -253,7 +229,7 @@
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2020-01-10 20:55:52 \x2b0800 CST',
-        title: 'Etcd',
+        title: 'GitOps',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',
