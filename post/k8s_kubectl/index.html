@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2020-01-10T20:58:01&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:58:01&#43;08:00" />
-<meta itemprop="wordCount" content="1237">
+<meta itemprop="wordCount" content="1250">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1237 words </span>
+          <span class="more-meta"> 1250 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -214,13 +214,17 @@ kubectl --kubeconfig=$HOME/.kube.config (default)
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma"># 通过yaml或json文件创建资源
 $ kubectl create -f FILENAME [options]
 
 options:
--f/--filename</pre></td></tr></table>
+-f/--filename
+
+kubectl create secret tls kubernetes-dashboard-tls --key ca.key --cert ca.crt -n kubernetes-dashboard</pre></td></tr></table>
 </div>
 </div>
 <p>delete:</p>

@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2017-01-12T21:00:01&#43;00:00" />
 <meta itemprop="dateModified" content="2017-01-12T21:00:01&#43;00:00" />
-<meta itemprop="wordCount" content="1022">
+<meta itemprop="wordCount" content="1073">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/virtualization/"> Virtualization </a>
             </div>
-          <span class="more-meta"> 1022 words </span>
+          <span class="more-meta"> 1073 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -153,6 +153,7 @@
 <li><a href="#使用box">使用box</a></li>
 <li><a href="#结束使用">结束使用</a></li>
 <li><a href="#管理box">管理box</a></li>
+<li><a href="#其它">其它</a></li>
 <li><a href="#配置vagrantfile">配置Vagrantfile</a></li>
 <li><a href="#打包">打包</a></li>
 <li><a href="#windows">windows</a></li>
@@ -198,14 +199,16 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ mkdir -p /home/user/vagrant
 $ cd /vagrant
 
-$ vagrant init # 生成一个Vagrantfile文件．
+# 在当前目录生成一个Vagrantfile文件, 需手动添加vm.box
+$ vagrant init 
 
-# 相当于直接配置了Vagrantfile.
+# 相当于直接添加了vm.box到Vagrantfile.
 $ vagrant init [box-name]</pre></td></tr></table>
 </div>
 </div>
@@ -236,7 +239,7 @@ $ vagrant box add [[--name ]box-name] /path/to/your.box
 # 也可以使用自己的服务器上的box
 $ vagrant box add [[--name ]box-name] URL
 
-# 修改Vagrantfile:
+# 添加box之后修改Vagrantfile,添加vm.box:
 Vagrant.configure(&#34;2&#34;) do |config|
   config.vm.box = &#34;[box-name]&#34;
 end</pre></td></tr></table>
@@ -295,6 +298,17 @@ $ vagrant destroy</pre></td></tr></table>
 <td class="lntd">
 <pre class="chroma">$ vagrant box list
 $ vagrant box remove</pre></td></tr></table>
+</div>
+</div>
+<h1 id="其它">其它</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ vagrant global-status
+$ vagrant global-status --prune</pre></td></tr></table>
 </div>
 </div>
 <hr />

@@ -77,6 +77,17 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
     </item>
     
     <item>
+      <title>ArgoCD</title>
+      <link>http://canuxcheng.com/post/k8s_argo/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_argo/</guid>
+      <description> argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux
+jenkins-X </description>
+    </item>
+    
+    <item>
       <title>CoreDNS</title>
       <link>http://canuxcheng.com/post/k8s_coredns/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
@@ -95,22 +106,13 @@ AppArmor AppArmor (Application Armor) is a Linux security module that protects a
     </item>
     
     <item>
-      <title>GitOps</title>
-      <link>http://canuxcheng.com/post/k8s_gitops/</link>
-      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/post/k8s_gitops/</guid>
-      <description>argo-cd https://github.com/argoproj/argo-cd
-flux-cd https://github.com/fluxcd/flux</description>
-    </item>
-    
-    <item>
       <title>Operator</title>
       <link>http://canuxcheng.com/post/k8s_operator/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_operator/</guid>
-      <description>Operator operator-framework https://github.com/operator-framework</description>
+      <description>Operator operator-framework https://operatorhub.io/
+https://github.com/operator-framework</description>
     </item>
     
     <item>
@@ -310,7 +312,7 @@ Deploy pre-install:
       <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/sec_ca/</guid>
-      <description>CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&amp;#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout &amp;lt;domain&amp;gt;.key -out &amp;lt;domain&amp;gt;.csr -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=&amp;lt;domain&amp;gt;&amp;#34; $ openssl x509 -req -days 365 -in &amp;lt;domain&amp;gt;.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out &amp;lt;domain&amp;gt;.crt</description>
+      <description>CA Certificate Authority. 创建自签名证书 创建x509证书: 1 $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ca.key -out ca.crt -subj &amp;#34;/CN=k8s.devops.com/O=k8s.devops.com&amp;#34; 查看证书有效期: 1 $ openssl x509 -in /etc/ssl/ca.domain.com.crt -noout -dates</description>
     </item>
     
     <item>
@@ -1743,7 +1745,7 @@ Deploy Sentry on K8S https://github.com/getsentry/onpremise</description>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/gitlab/</guid>
-      <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: 1 2 3 4 sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;#34;http://gitlab.example.com&amp;#34; apt-get install gitlab-ee 配置: 1 /etc/gitlab/gitlab.rb CLI 备份：</description>
+      <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: 1 2 3 4 sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;#34;http://gitlab.example.com&amp;#34; apt-get install gitlab-ee 配置: 1 /etc/gitlab/gitlab.rb 升级gi</description>
     </item>
     
     <item>

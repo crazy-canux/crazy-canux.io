@@ -39,6 +39,17 @@
     </item>
     
     <item>
+      <title>ArgoCD</title>
+      <link>http://canuxcheng.com/post/k8s_argo/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_argo/</guid>
+      <description> argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux
+jenkins-X </description>
+    </item>
+    
+    <item>
       <title>CoreDNS</title>
       <link>http://canuxcheng.com/post/k8s_coredns/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
@@ -57,22 +68,13 @@
     </item>
     
     <item>
-      <title>GitOps</title>
-      <link>http://canuxcheng.com/post/k8s_gitops/</link>
-      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
-      
-      <guid>http://canuxcheng.com/post/k8s_gitops/</guid>
-      <description>argo-cd https://github.com/argoproj/argo-cd
-flux-cd https://github.com/fluxcd/flux</description>
-    </item>
-    
-    <item>
       <title>Operator</title>
       <link>http://canuxcheng.com/post/k8s_operator/</link>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_operator/</guid>
-      <description>Operator operator-framework https://github.com/operator-framework</description>
+      <description>Operator operator-framework https://operatorhub.io/
+https://github.com/operator-framework</description>
     </item>
     
     <item>

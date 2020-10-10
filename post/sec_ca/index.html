@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&amp;#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout &amp;lt;domain&amp;gt;.key -out &amp;lt;domain&amp;gt;.csr -subj &amp;#34;/C=CN/L=shanghai/O=lisea/CN=&amp;lt;domain&amp;gt;&amp;#34; $ openssl x509 -req -days 365 -in &amp;lt;domain&amp;gt;.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out &amp;lt;domain&amp;gt;.crt" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="CA Certificate Authority. 创建自签名证书 创建x509证书: 1 $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ca.key -out ca.crt -subj &amp;#34;/CN=k8s.devops.com/O=k8s.devops.com&amp;#34; 查看证书有效期: 1 $ openssl x509 -in /etc/ssl/ca.domain.com.crt -noout -dates" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="CA" />
-<meta property="og:description" content="CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout &lt;domain&gt;.key -out &lt;domain&gt;.csr -subj &#34;/C=CN/L=shanghai/O=lisea/CN=&lt;domain&gt;&#34; $ openssl x509 -req -days 365 -in &lt;domain&gt;.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out &lt;domain&gt;.crt" />
+<meta property="og:description" content="CA Certificate Authority. 创建自签名证书 创建x509证书: 1 $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ca.key -out ca.crt -subj &#34;/CN=k8s.devops.com/O=k8s.devops.com&#34; 查看证书有效期: 1 $ openssl x509 -in /etc/ssl/ca.domain.com.crt -noout -dates" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/sec_ca/" />
 <meta property="article:published_time" content="2018-07-28T16:08:54&#43;00:00"/>
 <meta property="article:modified_time" content="2018-07-28T16:08:54&#43;00:00"/>
 
 <meta itemprop="name" content="CA">
-<meta itemprop="description" content="CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout &lt;domain&gt;.key -out &lt;domain&gt;.csr -subj &#34;/C=CN/L=shanghai/O=lisea/CN=&lt;domain&gt;&#34; $ openssl x509 -req -days 365 -in &lt;domain&gt;.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out &lt;domain&gt;.crt">
+<meta itemprop="description" content="CA Certificate Authority. 创建自签名证书 创建x509证书: 1 $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ca.key -out ca.crt -subj &#34;/CN=k8s.devops.com/O=k8s.devops.com&#34; 查看证书有效期: 1 $ openssl x509 -in /etc/ssl/ca.domain.com.crt -noout -dates">
 
 
 <meta itemprop="datePublished" content="2018-07-28T16:08:54&#43;00:00" />
 <meta itemprop="dateModified" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="wordCount" content="59">
+<meta itemprop="wordCount" content="51">
 
 
 
 <meta itemprop="keywords" content="CA," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CA"/>
-<meta name="twitter:description" content="CA Certificate Authority. 创建自签名证书 1 2 3 4 5 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&#34; $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout &lt;domain&gt;.key -out &lt;domain&gt;.csr -subj &#34;/C=CN/L=shanghai/O=lisea/CN=&lt;domain&gt;&#34; $ openssl x509 -req -days 365 -in &lt;domain&gt;.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out &lt;domain&gt;.crt"/>
+<meta name="twitter:description" content="CA Certificate Authority. 创建自签名证书 创建x509证书: 1 $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ca.key -out ca.crt -subj &#34;/CN=k8s.devops.com/O=k8s.devops.com&#34; 查看证书有效期: 1 $ openssl x509 -in /etc/ssl/ca.domain.com.crt -noout -dates"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/security/"> Security </a>
             </div>
-          <span class="more-meta"> 59 words </span>
+          <span class="more-meta"> 51 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -168,20 +168,23 @@
 <hr />
 
 <h1 id="创建自签名证书">创建自签名证书</h1>
+
+<p>创建x509证书:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt -subj &#34;/C=CN/L=shanghai/O=lisea/CN=harbor-registry&#34;
-
-$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout &lt;domain&gt;.key -out &lt;domain&gt;.csr -subj &#34;/C=CN/L=shanghai/O=lisea/CN=&lt;domain&gt;&#34;
-
-$ openssl x509 -req -days 365 -in &lt;domain&gt;.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out &lt;domain&gt;.crt</pre></td></tr></table>
+<pre class="chroma">$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ca.key -out ca.crt -subj &#34;/CN=k8s.devops.com/O=k8s.devops.com&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>查看证书有效期:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ openssl x509 -in /etc/ssl/ca.domain.com.crt -noout -dates</pre></td></tr></table>
 </div>
 </div>
     </div>

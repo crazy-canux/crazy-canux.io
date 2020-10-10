@@ -252,7 +252,7 @@ Deploy Sentry on K8S https://github.com/getsentry/onpremise</description>
       <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/gitlab/</guid>
-      <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: 1 2 3 4 sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;#34;http://gitlab.example.com&amp;#34; apt-get install gitlab-ee 配置: 1 /etc/gitlab/gitlab.rb CLI 备份：</description>
+      <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: 1 2 3 4 sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;#34;http://gitlab.example.com&amp;#34; apt-get install gitlab-ee 配置: 1 /etc/gitlab/gitlab.rb 升级gi</description>
     </item>
     
     <item>
