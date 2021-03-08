@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PSL_Test - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/psl_test/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PSL_Test" />
+<meta property="og:description" content="Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/psl_test/" />
+<meta property="article:published_time" content="2016-04-11T22:58:13+00:00" />
+<meta property="article:modified_time" content="2016-04-11T22:58:13+00:00" />
+<meta itemprop="name" content="PSL_Test">
+<meta itemprop="description" content="Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni">
+<meta itemprop="datePublished" content="2016-04-11T22:58:13&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-11T22:58:13&#43;00:00" />
+<meta itemprop="wordCount" content="1572">
+
+
+
+<meta itemprop="keywords" content="test," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PSL_Test"/>
+<meta name="twitter:description" content="Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PSL_Test</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-04-11 </span>
+        <div class="post-category">
+            <a href="/categories/python/"> Python </a>
+            </div>
+          <span class="more-meta"> 1572 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2to3">2to3</a></li>
+    <li><a href="#pydoc">pydoc</a></li>
+    <li><a href="#test-1">test</a></li>
+    <li><a href="#doctest">doctest</a></li>
+    <li><a href="#unittest">unittest</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#unittest2">unittest2</a></li>
+    <li><a href="#mock">mock</a></li>
+    <li><a href="#nose2">nose2</a></li>
+    <li><a href="#pytest">pytest</a></li>
+    <li><a href="#coverage">coverage</a></li>
+    <li><a href="#tox">tox</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-04-11T22:58:13" title="April 11, 2016">April 11, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="test">Test</h1>
+<p>python的单元测试库．</p>
+<h2 id="2to3">2to3</h2>
+<pre><code>$2to3
+</code></pre>
+<h2 id="pydoc">pydoc</h2>
+<pre><code>import pydoc
+</code></pre>
+<h2 id="test-1">test</h2>
+<pre><code>import test
+</code></pre>
+<h2 id="doctest">doctest</h2>
+<p>python内置的文档测试库．</p>
+<pre><code>import doctest
+</code></pre>
+<h2 id="unittest">unittest</h2>
+<p>python内置的单元测试库．</p>
+<pre><code>import unittest
+</code></pre>
+<hr>
+<h1 id="tpl">TPL</h1>
+<p>相关的第三方库</p>
+<h2 id="unittest2">unittest2</h2>
+<p>unittest2是unittest的升级版．</p>
+<p>python3集成了unittest2到unittest,像使用unittest一样使用即可．</p>
+<pre><code># python2.7
+$pip install unittest2
+import unittest2
+
+# python3
+import unittest
+</code></pre>
+<p>unittest也叫pyunit，类似于Junit(java)都是基于Kent Beck和Erich Gamma的XUnit框架．</p>
+<p>测试结果：</p>
+<p>OK 表示测试通过</p>
+<p>FAIL 表示测试没有通过，并引发一个AssertionError异常．</p>
+<p>ERROR 表示测试过程引发一个不是AssertionError的异常．</p>
+<pre><code># Python2.7 此处用的是标准库的unittest.
+import unittest
+import MyClass
+</code></pre>
+<p>classes:</p>
+<pre><code>unittest.TestCase: 每个实例就是一个test case. 使用TestCase.assert* 系列方法进行测试．
+unittest.TestSuite: 每个实例就是一个test suite. 多个test case放在一起就是一个test suite.
+unittest.TestLoader/unittest.defaultTestLoader: 用来加载TestCase到TestSuite.
+unittest.TestResult: 用来保存测试的结果．
+
+unittest.TestProgram/unittest.main(): 搜索该模块下所有test开头的测试用例方法并执行．
+fixtures对一个测试用例的环境的搭建和销毁，通过重载TestCase的setUp()和teaeDown()方法．
+
+unittest.TextTestRunner: 用来执行测试用例．
+unittest.TextTestResult: 用来打印格式化的测试结果．
+
+# unittest.TestCase
+# methods:
+assertXXX　系列方法．
+failXXX 系列方法
+fail(self, msg=None) # test立即失败
+addCleanup(self, function, *args, **kwargs)
+addTypeEqualityFunc(self, typeobj, function)
+countTestCases(self)
+debug(self)
+defaultTestResult() # return unittest.TestResult()
+doCleanups(self)
+id(self)
+run(self, result=None) # 可以在子类覆盖该方法．
+shortDescription(self)
+skipTest(self, reason)
+setUp(self) # 重写之后，每个case运行之前都会调用一次．
+tearDown(self) # 同上
+
+# classmethods:
+setUpClass(cls) # 通过@classmethod重写，这样所有的case运行之前只调用一次，而不是每个case运行之前都调用．
+tearDownClass(cls) # 同上
+
+# data:
+failureException = AssertionError
+longMessage = False
+maxDiff = 640
+</code></pre>
+<p>functions:</p>
+<pre><code>findTestCases(module, prefix='test', sortUsing=&lt;built-in function cmp&gt;, suiteClass=&lt;class 'unittest.suite.TestSuite'&gt;)
+getTestCaseNames(testCaseClass, prefix, sortUsing=&lt;built-in function cmp&gt;)
+installHandler()
+makeSuite(testCaseClass, prefix='test', sortUsing=&lt;built-in function cmp&gt;, suiteClass=&lt;class 'unittest.suite.TestSuite'&gt;)
+registerResult(result)
+removeHandler(method=None)
+removeResult(result)
+
+# unittest.case实现了几个函数用来增强unittest.TestCase的方法, 一般当装饰器用．
+expectedFailure(func) # 如果这个case失败了，不计入失败的数目．
+# @unittest.expectedFailure
+skip(reason) # 无条件跳过一个test case.
+skipIf(condition, reason) # condition为true就跳过一个test case.
+skipUnless(condition, reason) # 和上面相反
+</code></pre>
+<p>examples:</p>
+<pre><code>class MyClassTestCase(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        print 'Just execute before the first test case start.'
+
+    @classmethod
+    def tearDownClass(cls):
+        print 'Just execute after all test case end.'
+
+    def setUp(self):
+        &quot;&quot;&quot;重载setUp进行测试之前的初始化工作.运行每个test_func之前都会运行该方法&quot;&quot;&quot;
+        print &quot;start&quot;
+
+    def tearDown(self):
+        &quot;&quot;&quot;重载tearDown进行测试结束后的清理工作.结束运行每个test_func之后都会运行该方法&quot;&quot;&quot;
+        print &quot;end&quot;
+
+    def test_func(self):
+        &quot;&quot;&quot;具体的测试用例，需要用test开头,多个test_func会根据func名字中的数字或字母的顺序来执行，和位置无关.
+        不是用test开头的方法默认不会被执行&quot;&quot;&quot;
+        self.assertEqual(MyClass.method(args), value, &quot;message&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    unittest.main()
+
+# 自动发现和批量执行testcase/testsuite:
+def discover_test_case():
+    test_cases = []
+    _module = ...
+    tests.append(unittest.defaultTestLoader.loadTestsFromModule(_module))
+    unittest.defaultTestLoader.discover()
+    return tests
+
+def get_test_suite():
+    &quot;&quot;&quot;打包一个testsuite.&quot;&quot;&quot;
+    return unittest.TestSuite(discover_test_case())
+
+unittest.TextTestRunner
+if __name__ == &quot;__main__&quot;:
+    runner = unittest.TextTestRunner()
+    result = runner.run(get_test_suite())
+</code></pre>
+<h2 id="mock">mock</h2>
+<p><a href="https://github.com/testing-cabal/mock">https://github.com/testing-cabal/mock</a></p>
+<p>python3集成了mock到unittest模块，导入unittest.mock即可．</p>
+<pre><code># Python2.7
+$pip install mock
+import mock
+
+# Python3
+import unittest.mock
+</code></pre>
+<p>mock就是在测试中对于不容易构造或获取的对象，用一个虚拟的对象来代替以便测试的方法．</p>
+<pre><code># Python2.7 此处用的是第三方库mock
+from mock import Mock, patch, PropertyMock, MagicMock
+</code></pre>
+<h2 id="nose2">nose2</h2>
+<p><a href="https://github.com/nose-devs/nose2">https://github.com/nose-devs/nose2</a></p>
+<p>nose是unittest/unittest2的升级版．</p>
+<p>nose2是nose的升级版．</p>
+<p>nose2用于单元测试．</p>
+<pre><code>$ pip install nose
+
+import nose
+</code></pre>
+<h2 id="pytest">pytest</h2>
+<p><a href="https://github.com/pytest-dev/pytest/">https://github.com/pytest-dev/pytest/</a></p>
+<p>pytest用于单元测试．推荐使用．</p>
+<pre><code>$ pip install -U pytest
+
+import pytest
+</code></pre>
+<hr>
+<h2 id="coverage">coverage</h2>
+<p>分析单元测试的代码覆盖率</p>
+<p><a href="https://github.com/nedbat/coveragepy">https://github.com/nedbat/coveragepy</a></p>
+<pre><code>$ pip install coverage
+
+# 通过命令进行测试，可以集成到其它工具．
+$ coverage run --source=&lt;package-name&gt; setup.py test
+</code></pre>
+<hr>
+<h2 id="tox">tox</h2>
+<p>virtualenv management and test command line tool.</p>
+<p><a href="https://github.com/tox-dev/tox">https://github.com/tox-dev/tox</a></p>
+<pre><code>$ pip install tox
+
+# 通过命令进行测试，可以集成unittest, nose2, pytest等工具．
+$ tox
+</code></pre>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-04-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/test/">test</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/vault/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Vault</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/c_devops/">
+            <span class="next-text nav-default">DevOps</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-04-11 22:58:13 \x2b0000 UTC',
+        title: 'PSL_Test',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shell - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Shell Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。 查看当前使用的shell： echo $SHELL echo $0 查看安装了哪些sh" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/shell/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Shell" />
+<meta property="og:description" content="Shell Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。 查看当前使用的shell： echo $SHELL echo $0 查看安装了哪些sh" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/shell/" />
+<meta property="article:published_time" content="2016-04-01T20:42:59+00:00" />
+<meta property="article:modified_time" content="2016-04-01T20:42:59+00:00" />
+<meta itemprop="name" content="Shell">
+<meta itemprop="description" content="Shell Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。 查看当前使用的shell： echo $SHELL echo $0 查看安装了哪些sh">
+<meta itemprop="datePublished" content="2016-04-01T20:42:59&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-01T20:42:59&#43;00:00" />
+<meta itemprop="wordCount" content="1948">
+
+
+
+<meta itemprop="keywords" content="shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell"/>
+<meta name="twitter:description" content="Shell Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。 查看当前使用的shell： echo $SHELL echo $0 查看安装了哪些sh"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Shell</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-04-01 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+          <span class="more-meta"> 1948 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#bash-it">bash-it</a></li>
+    <li><a href="#zsh">zsh</a></li>
+    <li><a href="#oh-my-zsh">oh-my-zsh</a></li>
+    <li><a href="#fish-shell">fish-shell</a></li>
+    <li><a href="#oh-my-fish">oh-my-fish</a></li>
+    <li><a href="#thefuck">thefuck</a></li>
+    <li><a href="#shellcheck">shellcheck</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#shell注释">shell注释</a></li>
+    <li><a href="#shell关键字和特殊符号">shell关键字和特殊符号</a></li>
+    <li><a href="#shell运算符和优先级">shell运算符和优先级</a></li>
+    <li><a href="#shell数据结构和变量">shell数据结构和变量</a></li>
+    <li><a href="#shell控制流">shell控制流</a></li>
+    <li><a href="#shell函数">shell函数</a></li>
+    <li><a href="#输入输出和重定向">输入输出和重定向</a></li>
+    <li><a href="#文件包含">文件包含</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-04-01T20:42:59" title="April 1, 2016">April 1, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="shell">Shell</h1>
+<p>Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。</p>
+<p>查看当前使用的shell：</p>
+<pre><code>echo $SHELL
+echo $0
+</code></pre>
+<p>查看安装了哪些shell：</p>
+<pre><code>cat /etc/shells
+</code></pre>
+<p>设置登陆shell:</p>
+<pre><code>$chsh -s $(which shellname)
+</code></pre>
+<p>shell分为登陆shell和交互式shell:</p>
+<pre><code># 输出有i的就是交互shell
+$echo $-
+</code></pre>
+<p>非交互登陆shell:</p>
+<ul>
+<li>先运行系统配置文件/etc/profile(调用/etc/bash.bashrc和/etc/profile.d/*.sh)</li>
+<li>然后运行用户配置文件~/.profile(调用~/.bashrc和~/bin)</li>
+<li>最后退出用户登陆~/.bash_logout</li>
+</ul>
+<p>交互非登陆shell:</p>
+<ul>
+<li>先运行/etc/bash.bashrc(调用/etc/bash_completion(调用/etc/bash_completion.d/*.sh))</li>
+<li>然后运行~/.bashrc(调用~/.bash_aliases和~/bash.d和~/bin)</li>
+</ul>
+<hr>
+<h1 id="shell相关项目">shell相关项目</h1>
+<h2 id="bash-it">bash-it</h2>
+<p>大部分发行版默认使用bash,无需额外安装。</p>
+<p>bash的优化项目bash-it：</p>
+<p><a href="https://github.com/Bash-it/bash-it">https://github.com/Bash-it/bash-it</a></p>
+<h2 id="zsh">zsh</h2>
+<p><a href="http://www.zsh.org/">http://www.zsh.org/</a></p>
+<h2 id="oh-my-zsh">oh-my-zsh</h2>
+<p><a href="https://github.com/robbyrussell/oh-my-zsh">https://github.com/robbyrussell/oh-my-zsh</a></p>
+<h2 id="fish-shell">fish-shell</h2>
+<p><a href="https://github.com/fish-shell/fish-shell">https://github.com/fish-shell/fish-shell</a></p>
+<h2 id="oh-my-fish">oh-my-fish</h2>
+<p><a href="https://github.com/oh-my-fish/oh-my-fish">https://github.com/oh-my-fish/oh-my-fish</a></p>
+<h2 id="thefuck">thefuck</h2>
+<p>一个纠正shell命令输错的命令</p>
+<p><a href="https://github.com/nvbn/thefuck">https://github.com/nvbn/thefuck</a></p>
+<h2 id="shellcheck">shellcheck</h2>
+<p>一个debug脚本的工具．</p>
+<p><a href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a></p>
+<hr>
+<h1 id="shell-script">shell script</h1>
+<p>基本语法</p>
+<pre><code>#!/usr/bin/env bash
+
+command1 &amp;&amp; command2    # 当command1执行成功（返回0)才会执行command2
+command1 || command2    # 当command1执行失败（返回非0)才会执行command2
+</code></pre>
+<h2 id="shell注释">shell注释</h2>
+<p>单行注释：</p>
+<pre><code># comment
+</code></pre>
+<p>多行注释：</p>
+<pre><code>:&lt;&lt;!EOF!
+comment
+!EOF! can be any symbol and character.
+!EOF!
+</code></pre>
+<h2 id="shell关键字和特殊符号">shell关键字和特殊符号</h2>
+<p>三个特殊命令</p>
+<pre><code>echo
+printf
+test
+</code></pre>
+<p>关键字</p>
+<pre><code>function
+</code></pre>
+<h2 id="shell运算符和优先级">shell运算符和优先级</h2>
+<p>原生shell不支持数学运算，可以通过expr来实现．</p>
+<pre><code># expr表达式内部运算符前后要空格.
+val=`expr 2 + 2`
+</code></pre>
+<p>算术运算符</p>
+<pre><code>+
+-
+*    # `expr $a \* $b`, 不要转义
+/
+%
+=     # a=$b
+==    # [ $a == $b ] , 需要中括号，需要空格
+!=    # [ $a != $b ], 同上
+</code></pre>
+<p>关系运算符</p>
+<pre><code># 只支持数字，不支持字符串．需要中括号和空格
+-eq
+-ne
+-gt
+-lt
+-ge
+-le
+</code></pre>
+<p>布尔运算符</p>
+<pre><code># 符合短路和斷路原则
+!     # [ !false ]
+-o    # [ exp1 -o exp2 ], 有一个为true就返回true
+-a    # [ exp1 -a exp2], 两个都是true才返回true
+</code></pre>
+<p>逻辑运算</p>
+<pre><code>||
+&amp;&amp;
+</code></pre>
+<p>字符串运算符</p>
+<pre><code>=
+!=
+-Z    # 字符串长度为0返回true
+-n    # 字符串长度为0返回false
+str    # [ $a ], 字符串不为空返回true
+</code></pre>
+<p>文件测试运算符</p>
+<pre><code>-b
+-c
+-d
+-f
+-g
+-k
+-p
+-u
+-r
+-w
+-x
+-s
+-e
+</code></pre>
+<h2 id="shell数据结构和变量">shell数据结构和变量</h2>
+<p>变量类型：</p>
+<pre><code>局部变量
+环境变量
+shell变量
+</code></pre>
+<p>定义变量:</p>
+<pre><code>等号前后不能有空格
+不能用数字开头命名变量
+不能用标点符号和关键字
+
+var=`ls /etc`  # 返回的是stdout+stderr
+var=$(ls /etc) # 返回的是stdou+stderr
+</code></pre>
+<p>使用变量：</p>
+<pre><code>$var
+${var}
+
+# 使用双引号
+var1=&quot;pre${var}suf
+var2=&quot;$var&quot;
+</code></pre>
+<p>只读变量:</p>
+<pre><code>使用readonly定义只读变量，不能再重新赋值
+
+var=value
+readonly var
+</code></pre>
+<p>删除变量:</p>
+<pre><code>使用unset删除变量，被删除的变量不能使用.
+
+var=value
+unset var
+</code></pre>
+<p>变量操作：</p>
+<pre><code>${var/old/new} # 将变量中的old替换成new.
+${var:start:end} # 获取变量的start到end个字符，相当于var[start:end],下标从0开始.
+</code></pre>
+<p>字符串类型：</p>
+<pre><code>单引号的字符串是原样输出，其中的变量是无效的，里面不能有单引号.
+var='this is string'
+
+双引号的字符串里面可以有变量，可以出现转义字符.
+var=&quot;this is string&quot;
+&quot;outer \&quot;inner string\&quot; string&quot;
+
+获取字符串长度
+var=&quot;this is tring&quot;
+echo ${#var}
+
+字符串切片
+var=&quot;this is string&quot;
+${var:start:end}    # 相当于var[start:end], 下标从0开始
+
+获取pattern在string中的起始下标
+string=&quot;this is string&quot;
+`expr index &quot;$string&quot; pattern`
+</code></pre>
+<p>数字类型：</p>
+<p>数组:</p>
+<h2 id="shell控制流">shell控制流</h2>
+<pre><code># [[ 里面不能用 -o/-a ]]
+if [[ $status1 -eq 0 ]] || [[  $status2 -eq 0 ]]
+if [[ $status1 -eq 0 ]] &amp;&amp; [[  $status2 -eq 0 ]]
+# [ 单层可以用-o/-a ]
+if [ $status1 -eq 0 -o $status2 -eq 0 ]
+</code></pre>
+<p>if</p>
+<pre><code>if []; then command; ...; fi
+
+if condition
+then
+    command
+fi
+
+[]/test 中必须为执行的命令的stdout+stderr.
+if [ ! `cat file | grep pattern | wc -l` ]
+if [ ! 0 ] 此时0为真, [ ! 0 ]为假
+
+if command 看返回码$?, 0表示真,其它表示假.
+</code></pre>
+<p>if-else</p>
+<pre><code>if condition; then command; ...; else command; fi
+
+if condition
+then
+    command
+else
+    command
+fi
+</code></pre>
+<p>if-elif-else</p>
+<pre><code>if condition; then command; ...; elif condition; then command; ...; else command; fi
+
+if condition
+then
+    command
+elif condition
+then
+    command
+else
+    command
+fi
+</code></pre>
+<p>while</p>
+<pre><code>while condition; do command;...; done
+
+while condition
+do
+    command
+done
+
+# 无限循环
+while :
+do
+    command
+done
+
+# 无限循环
+while true
+do
+    command
+done
+</code></pre>
+<p>for</p>
+<pre><code>for ((i=1; i&lt;=100; i++))
+for i in {1..100}
+for i in `seq 1 100`
+
+for VAR in ${1,2,3,...}; do command; ...; done
+
+for var in item1 item2 ... itemN
+do
+    command
+done
+
+# 无限循环
+for (( ; ; ))
+</code></pre>
+<p>until</p>
+<pre><code>until condition; do command; ...; done
+
+until condition
+do
+    command
+done
+</code></pre>
+<p>case</p>
+<pre><code>case $VAR in
+val1)
+    command
+    ...
+    ;;
+val2)
+    command
+    ...
+    ;;
+esac
+</code></pre>
+<p>break</p>
+<p>continue</p>
+<h2 id="shell函数">shell函数</h2>
+<p>return只是返回当前函数，不退出主程序</p>
+<p>exit直接退出主程序</p>
+<p>通过关键字function定义函数:</p>
+<pre><code>function Name {    // ()可省略
+function Name() {
+    ...
+    # 如果不显示调用return返回，则函数返回最后一条命令的结果
+    return $?
+}
+</code></pre>
+<p>也可以直接定义函数:</p>
+<pre><code>Name() {
+    ...
+}
+</code></pre>
+<p>函数返回码:</p>
+<pre><code>$?
+</code></pre>
+<p>函数参数：</p>
+<pre><code>$1 - $9 可以在函数内部获取调用函数时候传递进来的９个参数
+${10} - ${100} 获取第十个参数和后面的参数
+</code></pre>
+<p>特殊字符：</p>
+<pre><code>$# 表示传递到脚本的参数个数,不包括程序本身
+$* 传入所有参数
+$@ 传入所有参数
+$$
+$!
+$-
+</code></pre>
+<h2 id="输入输出和重定向">输入输出和重定向</h2>
+<p>stdout和stdin重定向到一个地方:</p>
+<pre><code>1&gt; 只重定向stdout
+2&gt; 只重定向stderr
+2&gt;&amp;1 同时重定向stdout+stderr
+
+main &gt; 2&gt;&amp;1 log1.log | tee log2.log # 同时重定向到两个文件
+main 2&gt;&amp;1 | tee ${LOG} # 同时将stdout和stderr输出到终端和日志文件.
+</code></pre>
+<h2 id="文件包含">文件包含</h2>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-04-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/shell/">shell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/c_iso/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ISO</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/shell_coreutils/">
+            <span class="next-text nav-default">Coreutils</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-04-01 20:42:59 \x2b0000 UTC',
+        title: 'Shell',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

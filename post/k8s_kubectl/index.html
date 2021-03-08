@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Kubectl - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: kubectl options # 查看所有命令可用选项 --kubeconfig kubectl --kubeconfig=$HOME/.kube.config (default)" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_kubectl/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Kubectl" />
+<meta property="og:description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: kubectl options # 查看所有命令可用选项 --kubeconfig kubectl --kubeconfig=$HOME/.kube.config (default)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_kubectl/" />
+<meta property="article:published_time" content="2020-01-10T20:58:01+08:00" />
+<meta property="article:modified_time" content="2020-01-10T20:58:01+08:00" />
+<meta itemprop="name" content="Kubectl">
+<meta itemprop="description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: kubectl options # 查看所有命令可用选项 --kubeconfig kubectl --kubeconfig=$HOME/.kube.config (default)">
+<meta itemprop="datePublished" content="2020-01-10T20:58:01&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-10T20:58:01&#43;08:00" />
+<meta itemprop="wordCount" content="1070">
+
+
+
+<meta itemprop="keywords" content="tag," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kubectl"/>
+<meta name="twitter:description" content="kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: kubectl options # 查看所有命令可用选项 --kubeconfig kubectl --kubeconfig=$HOME/.kube.config (default)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Kubectl</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-01-10 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 1070 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#others">others</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2020-01-10T20:58:01" title="January 10, 2020">January 10, 2020</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="kubectl">kubectl</h1>
+<p>kubectl是kubernetes的管理工具.</p>
+<p><a href="https://github.com/cloudnativelabs/kube-shell">https://github.com/cloudnativelabs/kube-shell</a></p>
+<p><a href="https://github.com/jonmosco/kube-ps1">https://github.com/jonmosco/kube-ps1</a></p>
+<p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
+<p>在master上通过kubectl命令管理集群.</p>
+<h1 id="options">options:</h1>
+<pre><code>kubectl options # 查看所有命令可用选项
+
+--kubeconfig
+kubectl --kubeconfig=$HOME/.kube.config (default)
+
+-n/--namespace
+</code></pre>
+<h1 id="basic-command">basic command</h1>
+<p>create:</p>
+<pre><code># 通过yaml或json文件创建资源
+$ kubectl create -f FILENAME [options]
+
+options:
+-f/--filename
+
+kubectl create secret tls kubernetes-dashboard-tls --key ca.key --cert ca.crt -n kubernetes-dashboard
+</code></pre>
+<p>delete:</p>
+<pre><code>// 删除资源
+$ kubectl delete (-f FILENAME | -k DICT | TYPE [(NAME|-l label|--all)]) [optiions]
+
+options:
+-f/--filename
+--all  
+--all-namespaces
+--force
+
+$ kubectl delete pods --all
+$ kubectl delete pod &lt;name&gt;
+</code></pre>
+<p>expose:</p>
+<pre><code># 创建serivce:
+$ kubectl expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol=TCP|UDP|SCTP] [--target-port=...] [--name=...] [--external-ip=...] [--type=type] [options]
+
+# 创建service，并且使用NodePort
+# nodeport可以使用任意节点的IP访问.
+$ kubectl expose deployment hello-world --type=NodePort --name=example-service
+</code></pre>
+<p>run:</p>
+<pre><code># 创建pod/container(docker run):
+$ kubectl run NAME --image=image [--env=&quot;key=value&quot;] [--port=port] [--replicas=replicas] [--dry-run=bool] [--overrides=inline-json] [--command] -- [COMMAND] [args...] [options]
+</code></pre>
+<p>set:</p>
+<pre><code>$ kubectl set SUBCOMMAND [options]
+
+// 更新镜像
+$ kubectl set image deployment.v1.apps/&lt;deploy-name&gt; &lt;container-name&gt;=&lt;image:tag&gt;
+</code></pre>
+<p>get:</p>
+<pre><code>// 获取resource信息(docker ps)
+$ kubectl [-n &lt;namespace&gt;] get [resource] [flags] [options]
+
+options:
+-A/--all-namespaces
+-f/--filename
+-o--output json/yaml/json/wide/name/...
+-w/--watch
+--watch-only
+
+kubectl get nodes --show-labels
+
+kubectl get nodes/no # 获取node节点信息
+kubectl get namespace/ns # 获取namespace信息
+kubectl get componentstatuses/cs
+
+kubectl get all --all-namespaces
+kubectl -n kube-system get all 
+
+kubectl get pod/pods/po 
+kubectl get po -w/--watch
+kubectl get po -o wide
+
+kubectl get deployment/deployments/deploy
+
+kubectl get service/services/svc
+</code></pre>
+<p>explain:</p>
+<p><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/</a></p>
+<pre><code>// 查看资源解析
+$ kubectl explain RESOURCE [options]
+
+kubectl explain deploy.spec
+</code></pre>
+<p>edit:</p>
+<pre><code>$ kubectl edit
+</code></pre>
+<h1 id="advanced-commands">advanced commands</h1>
+<p>apply:</p>
+<pre><code>$ kubectl apply
+
+$ kubectl diff
+</code></pre>
+<p>patch</p>
+<pre><code>$ kubectl patch
+
+// 删除terminating状态的resource
+$ kubectl patch  persistentvolumeclaim/storage -p '{&quot;metadata&quot;:{&quot;finalizers&quot;:null}}' -n &lt;ns&gt;
+
+$ kubectl replace
+
+$ kubectl wait
+
+$ kubectl convert
+
+$ kubectl kustomize
+</code></pre>
+<h1 id="deploy-command">deploy command</h1>
+<p>scale:</p>
+<pre><code>$ kubectl scale
+</code></pre>
+<p>autoscale:</p>
+<pre><code>$ kubectl autoscale
+</code></pre>
+<p>rollout:</p>
+<pre><code>// 回滚
+$ kubectl rollout
+
+// 暂停/恢复/重启 deployment.
+kubectl rollout pause/resume/restart  deploy/katib-mysql -n kubeflow
+</code></pre>
+<p>rolling-update:</p>
+<pre><code>$ kubectl rolling-update
+</code></pre>
+<h1 id="debugtroubleshoot">debug&amp;troubleshoot</h1>
+<p>describe:</p>
+<pre><code>// like docker inspect
+$ kubectl describe (-f FILENAME | TYPE ... | TYPE/NAME) [options]
+
+options:
+-A/--all-namespaces
+-f/--filename
+
+// 查看node信息
+$ kubectl describe nodes &lt;name&gt;
+
+//查看pod详细信息
+$ kubectl describe pods &lt;name&gt; 
+
+// 获取k8s-dashboard的token
+$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
+</code></pre>
+<p>logs:</p>
+<pre><code># like docker logs
+$ kubectl logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER] [options]
+
+options:
+--all-containers
+-f/--follow
+-p/--previous
+
+// 查看pod中指定container log
+kubectl logs -f &lt;pod&gt; -c &lt;container&gt; -n &lt;ns&gt;
+</code></pre>
+<p>exec:</p>
+<pre><code># like docker exec
+$ kubectl exec (POD | TYPE/NAME) [-c CONTAINER] [flags] -- COMMAND [args...] [options]
+
+options:
+-c/--container
+-i/--stdin
+-t/--tty
+
+$ kubectl exec -it &lt;pod&gt; -n &lt;ns&gt; -- /bin/bash
+</code></pre>
+<p>port-forward:</p>
+<p>由于已知的限制，目前的端口转发仅适用于 TCP 协议.</p>
+<p>只能通过master IP 访问。</p>
+<pre><code>$ kubectl port-forward
+
+// 转发本地端口到deploy/rs/svc/pod
+$ kubectl port-forward svc/redis-service 6379:6379 -n redis
+
+$ kubectl port-forward --address 0.0.0.0 -n kubernetes-dashboard service/kubernetes-dashboard 8080:443
+</code></pre>
+<p>proxy:</p>
+<pre><code>$ kubectl proxy
+</code></pre>
+<p>attach:</p>
+<pre><code>$ kubectl attach
+</code></pre>
+<p>cp:</p>
+<pre><code>$ kubectl cp
+</code></pre>
+<p>auth:</p>
+<pre><code>$ kubectl auth
+</code></pre>
+<h1 id="cluster-management">cluster management</h1>
+<p>top:</p>
+<pre><code>$ kubectl top
+
+$ kubectl cluster-info
+
+$ kubectl certificate
+
+$ kubectl cordon
+
+$ kubectl uncordon
+
+$ kubectl drain
+
+$ kubectl taint
+</code></pre>
+<h1 id="settings-commands">Settings Commands</h1>
+<p>label</p>
+<pre><code>label          Update the labels on a resource
+
+kubectl label nodes &lt;your-node-name&gt; disktype=ssd
+</code></pre>
+<p>annotate:</p>
+<pre><code>annotate       Update the annotations on a resource
+</code></pre>
+<p>completion:</p>
+<pre><code>completion     Output shell completion code for the specified shell (bash or zsh)
+</code></pre>
+<h2 id="others">others</h2>
+<pre><code>api-resources  Print the supported API resources on the server.
+
+api-versions   Print the supported API versions on the server, in the form of &quot;group/version&quot;.
+</code></pre>
+<p>config:</p>
+<pre><code>// 参考kubectx
+config         Modify kubeconfig files.
+</code></pre>
+<p>plugin:</p>
+<pre><code>// 参考krew
+plugin         Provides utilities for interacting with plugins.
+
+// 查看安装的plugin
+$ kubectl plugin list
+</code></pre>
+<p>version:</p>
+<pre><code>version        Print the client and server version information.
+</code></pre>
+<hr>
+<h1 id="shell-auotcompletion">shell-auotcompletion</h1>
+<p>bash/zsh 自动补全工具.</p>
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion">https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion</a></p>
+<pre><code>$ kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl
+</code></pre>
+<h1 id="krew">krew</h1>
+<p>安装kubectl plugin的工具</p>
+<p><a href="https://github.com/kubernetes-sigs/krew">https://github.com/kubernetes-sigs/krew</a></p>
+<pre><code>// 下载插件列表
+$ kubectl krew update
+
+// 查找插件
+$ kubectl krew search
+
+// 安装插件
+$ kubectl krew install &lt;name&gt;
+
+// 升级插件
+$ kubectl krew upgrade
+
+// 卸载插件
+$ kubectl krew uninstall &lt;name&gt;
+</code></pre>
+<h1 id="kubectx">kubectx</h1>
+<p>在cluster和namespace之间切换的命令行工具.</p>
+<p>包括kubectx 和 kubedns</p>
+<p><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
+<p>通过krew安装，作为kubectl的plugin:</p>
+<pre><code>$ kubectl krew install ctx
+$ kubectl krew install ns
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-01-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tag/">tag</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/k8s_csi/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">K8S CSI</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/k8s_api/">
+            <span class="next-text nav-default">API</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2020-01-10 20:58:01 \x2b0800 \x2b0800',
+        title: 'Kubectl',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

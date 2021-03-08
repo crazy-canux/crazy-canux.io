@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JS - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="JavaScript概述 Javascript包括三部分: ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/js/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="JS" />
+<meta property="og:description" content="JavaScript概述 Javascript包括三部分: ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/js/" />
+<meta property="article:published_time" content="2017-03-13T09:36:32+00:00" />
+<meta property="article:modified_time" content="2017-03-13T09:36:32+00:00" />
+<meta itemprop="name" content="JS">
+<meta itemprop="description" content="JavaScript概述 Javascript包括三部分: ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内">
+<meta itemprop="datePublished" content="2017-03-13T09:36:32&#43;00:00" />
+<meta itemprop="dateModified" content="2017-03-13T09:36:32&#43;00:00" />
+<meta itemprop="wordCount" content="1825">
+
+
+
+<meta itemprop="keywords" content="javascript," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS"/>
+<meta name="twitter:description" content="JavaScript概述 Javascript包括三部分: ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">JS</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-03-13 </span>
+        <div class="post-category">
+            <a href="/categories/web/"> Web </a>
+            </div>
+          <span class="more-meta"> 1825 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#算数运算符">算数运算符</a></li>
+    <li><a href="#赋值运算符">赋值运算符</a></li>
+    <li><a href="#比较运算符">比较运算符</a></li>
+    <li><a href="#逻辑运算符">逻辑运算符</a></li>
+    <li><a href="#类型运算符">类型运算符</a></li>
+    <li><a href="#位运算符">位运算符</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#var申明变量">var申明变量</a></li>
+    <li><a href="#let申明变量">let申明变量</a></li>
+    <li><a href="#const申明常量">const申明常量</a></li>
+    <li><a href="#布尔boolean">布尔/Boolean</a></li>
+    <li><a href="#数字number">数字/Number</a></li>
+    <li><a href="#字符串string">字符串/String</a></li>
+    <li><a href="#null">Null</a></li>
+    <li><a href="#undefined">Undefined</a></li>
+    <li><a href="#对象object">对象/Object</a></li>
+    <li><a href="#typeof">typeof</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#if">if</a></li>
+    <li><a href="#switch">switch</a></li>
+    <li><a href="#for">for</a></li>
+    <li><a href="#while">while</a></li>
+    <li><a href="#with">with</a></li>
+    <li><a href="#break和continue">break和continue</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#输出">输出</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#严格模式">严格模式</a></li>
+    <li><a href="#debugger调试">debugger调试</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2017-03-13T09:36:32" title="March 13, 2017">March 13, 2017</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="javascript概述">JavaScript概述</h1>
+<p>Javascript包括三部分:</p>
+<ol>
+<li>ECMAScript核心,提供核心语言功能．</li>
+<li>DOM文档对象模型, 提供访问和操作网页内容的方法和接口．</li>
+<li>BOM浏览器对象模型, 提供与浏览器交互的方法和接口．</li>
+</ol>
+<hr>
+<h1 id="javascript基本语法">javascript基本语法</h1>
+<p>javascript源程序叫xxx.js.</p>
+<p>javascript大小写敏感．</p>
+<p>javascript使用驼峰命名法．</p>
+<p>javascript的标识符以字母，下划线或美元符号开头，还可以包含数字．不能是关键字．</p>
+<p>JvaScript代码块以大括号{}包围,开括号写在第一行结尾处，前面空格，闭括号单独一行。</p>
+<p>javascript中所有事物都是对象，都有属性和方法.</p>
+<p>JavaScript使用分号;表示一个语句结束, 一般一行写多个语句才需要显示添加分号．</p>
+<p>javascript中运算符周围要有空格。</p>
+<p>javascript中使用四个空格来缩进。</p>
+<hr>
+<h1 id="注释">注释</h1>
+<p>单行注释：</p>
+<pre><code>// comment
+</code></pre>
+<p>多行注释：</p>
+<pre><code>/*
+ * comment1
+ * comment2
+ */
+</code></pre>
+<hr>
+<h1 id="关键字">关键字</h1>
+<pre><code># 数据类型
+var function return typeof new delete
+
+# 流程控制
+if else for in do while switch case default with break continue
+
+# 修饰符
+void
+
+# 动作相关
+instanceof this
+
+# 异常处理
+try catch throw
+
+# 调试
+debugger
+
+# ECMAScript2015
+let const
+</code></pre>
+<hr>
+<h1 id="运算符和优先级">运算符和优先级</h1>
+<h2 id="算数运算符">算数运算符</h2>
+<h2 id="赋值运算符">赋值运算符</h2>
+<h2 id="比较运算符">比较运算符</h2>
+<pre><code>// 在比较值钱进行类型转换.
+==
+
+// 强制对值和类型进行比较.
+===
+</code></pre>
+<h2 id="逻辑运算符">逻辑运算符</h2>
+<h2 id="类型运算符">类型运算符</h2>
+<h2 id="位运算符">位运算符</h2>
+<hr>
+<h1 id="数据类型">数据类型</h1>
+<h2 id="var申明变量">var申明变量</h2>
+<p>通过var申明的变量没有块作用域，在块之外也能访问.</p>
+<p>申明变量:</p>
+<p>重复申明同名变量不会改变变量的值．</p>
+<pre><code>var varName;
+// 一次申明多个变量
+var varName1, varName2, ...;
+</code></pre>
+<p>赋值:</p>
+<pre><code>varName = varValue;
+</code></pre>
+<p>申明并赋值:</p>
+<p>动态类型语言，变量可以赋予不同类型值.</p>
+<pre><code>var varName = varValue;
+// 一次定义多个变量
+var varName1 = varValue1, varName2=varValue2, ...;
+</code></pre>
+<p>申明变量类型:</p>
+<pre><code>var varName = new Boolean/Number/String/Array/Object;
+</code></pre>
+<h2 id="let申明变量">let申明变量</h2>
+<p>通过let申明有块作用域的变量.</p>
+<pre><code>{
+    let varName = varValue;
+}
+</code></pre>
+<h2 id="const申明常量">const申明常量</h2>
+<p>const定义的变量与let相似， 但不能重新赋值.</p>
+<p>它没有定义常量值。它定义了对值的常量引用。</p>
+<pre><code>{
+    const varName = varValue;
+}
+</code></pre>
+<p>常量对象的属性可以修改：</p>
+<pre><code>const car = {type:&quot;porsche&quot;, model:&quot;911&quot;, color:&quot;black&quot;};
+car.color = &quot;white&quot;;
+</code></pre>
+<p>常量数组元素可以修改：</p>
+<pre><code>const cars = [&quot;audi&quot;, &quot;bmw&quot;];
+cars[0] = &quot;honda&quot;;
+</code></pre>
+<h2 id="布尔boolean">布尔/Boolean</h2>
+<p>布尔类型只有true和false两个值．</p>
+<pre><code>var x = true
+var y = false
+</code></pre>
+<h2 id="数字number">数字/Number</h2>
+<pre><code>var name = 1.3
+</code></pre>
+<h2 id="字符串string">字符串/String</h2>
+<p>字符串可以用单引号或双引号表示.</p>
+<pre><code>var name = &quot;string&quot;
+</code></pre>
+<h2 id="null">Null</h2>
+<p>Null类型只有一个特殊值null.表示一个空对象指针.</p>
+<p>通过null清空变量的值．</p>
+<pre><code>varName = null
+</code></pre>
+<h2 id="undefined">Undefined</h2>
+<p>没有赋值的变量值为undefined.</p>
+<p>Undefined类型只有一个特殊值undefined.</p>
+<h2 id="对象object">对象/Object</h2>
+<p>对象由大括号包围的键值对表示，中间用逗号隔开.</p>
+<p>定义对象：</p>
+<pre><code>var obj = new Object;
+
+var obj = {key: &quot;val&quot;, key1: &quot;val1&quot;};
+
+var obj = {
+    firstName: &quot;bill&quot;, // 冒号后空格.
+    lastName: &quot;gates&quot; // 最后一个不要都好.
+};  
+</code></pre>
+<p>访问对象属性:</p>
+<pre><code>val = obj.key
+val = obj[&quot;key&quot;]
+</code></pre>
+<p>访问对象方法:</p>
+<pre><code>obj.method()
+</code></pre>
+<h2 id="typeof">typeof</h2>
+<p>该操作符可以返回数据类型:</p>
+<pre><code>undefined
+boolean
+number
+string
+object
+function
+</code></pre>
+<hr>
+<h1 id="控制流">控制流</h1>
+<h2 id="if">if</h2>
+<pre><code>if (condition) {
+    expression;
+}
+
+if (condition) {
+    expression;
+} else {
+    expression;
+}
+
+if (condition) {
+    expression;
+} else if (condition) {
+    expression;
+} else {
+    expression;
+}
+</code></pre>
+<h2 id="switch">switch</h2>
+<pre><code>switch(expression) {
+    case value:
+        statement;
+        break;
+    case value:
+        statement;
+        break;
+    ...
+    default:
+        statement;
+}
+</code></pre>
+<h2 id="for">for</h2>
+<p>for:</p>
+<pre><code>for (initialization; expression; post-loop-expression) {
+    statement;
+}
+</code></pre>
+<p>for-in:</p>
+<p>循环遍历对象的属性</p>
+<pre><code>for (property in object) {
+    statement;
+}
+</code></pre>
+<h2 id="while">while</h2>
+<p>do-while:</p>
+<pre><code>do {
+    statement;
+} while (condition);
+</code></pre>
+<p>while:</p>
+<pre><code>while (condition) {
+    statement;
+}
+</code></pre>
+<h2 id="with">with</h2>
+<p>将代码作用于设定到一个特定对象.</p>
+<pre><code>with (expression) {
+    statement;
+}
+</code></pre>
+<h2 id="break和continue">break和continue</h2>
+<p>label:</p>
+<p>break和continue都可以和label配合使用.</p>
+<pre><code>labelName: statement
+</code></pre>
+<p>break:</p>
+<p>跳出循环(for, while).</p>
+<pre><code>labelName:
+for () {
+    for () {
+        if () {
+            break labelName; # 跳出最外层循环
+        }
+    }
+}
+</code></pre>
+<p>continue:</p>
+<p>继续下一次循环.</p>
+<pre><code>labelName:
+for () {
+    for () {
+        if () {
+            continue labelName; # 从外层循环继续循环
+        }
+    }
+}
+</code></pre>
+<hr>
+<h1 id="文件和输入输出">文件和输入输出</h1>
+<h2 id="输出">输出</h2>
+<p>alert写入警告框：</p>
+<pre><code>window.alert(10);
+</code></pre>
+<p>write写入html：</p>
+<pre><code>document.write(10);
+</code></pre>
+<p>innerHTML写入html:</p>
+<pre><code>document.getElementById(&quot;demo&quot;).innerHTML = 10;
+</code></pre>
+<p>console.log写入浏览器控制台:</p>
+<pre><code>// 可以在js代码或调试窗口打印变量值：
+console.log(10);
+</code></pre>
+<hr>
+<h1 id="函数">函数</h1>
+<p>定义函数：</p>
+<pre><code>// 没参数
+function funcName() {
+}
+
+// 带参数
+function funcName(args) {
+}
+
+// 使用变量
+var name = function(args) {};
+
+// 使用构造方法
+var name = new Function(args, return value);
+</code></pre>
+<p>函数返回值:</p>
+<pre><code>function funcName() {
+    return ...
+}
+
+// 函数返回值赋值给变量
+var value = funcName()
+</code></pre>
+<p>js的函数形式参数和实际参数可以是任意个数和任意类型．</p>
+<p>函数内部定义的变量是局部变量,局部变量在函数运行后被删除．</p>
+<p>如果把值赋给未申明的变量，该变量被自动作为全局变量．</p>
+<pre><code>name = &quot;value&quot; 相当于全局变量
+</code></pre>
+<p>函数内部属性:</p>
+<p>函数内部两个特殊对象arguments和this.</p>
+<pre><code>arguments // 用来存储该函数的所有参数
+arguments.callee // 指针，指向该函数本身.
+
+this // 表示函数调用语句所处的作用域
+window // 当在全局调用this，引用的就是window对象.
+
+// 调用函数
+apply()
+call()
+</code></pre>
+<hr>
+<h1 id="错误和异常">错误和异常</h1>
+<p>try-catch:</p>
+<pre><code>try {
+    statement;
+} catch(err) {
+    statement;
+}
+</code></pre>
+<p>throw:</p>
+<pre><code>throw exception
+</code></pre>
+<h2 id="严格模式">严格模式</h2>
+<p>通过在脚本或函数开头添加严格模式：</p>
+<p>严格模式在不声明变量的情况下使用变量，是不允许的</p>
+<pre><code>&quot;use strict&quot;;
+......
+</code></pre>
+<h2 id="debugger调试">debugger调试</h2>
+<p>debugger关键字会停止js的执行，如果有调试函数就调用。</p>
+<p>如果调试器打开，会在debugger停止执行，如果没有打开调试器，会继续运行。</p>
+<pre><code>var x = 10;
+debugger;
+document.getElementbyId(&quot;demo&quot;).innerHTML = x;
+</code></pre>
+<hr>
+<h1 id="模块和包">模块和包</h1>
+<hr>
+<h1 id="文档">文档</h1>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2017-03-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/javascript/">javascript</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/js_angular/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Angular</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/js_test/">
+            <span class="next-text nav-default">JS Test</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2017-03-13 09:36:32 \x2b0000 UTC',
+        title: 'JS',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

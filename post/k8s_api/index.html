@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>API - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/k8s_api/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="API" />
+<meta property="og:description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/k8s_api/" />
+<meta property="article:published_time" content="2020-01-10T20:55:52+08:00" />
+<meta property="article:modified_time" content="2020-01-10T20:55:52+08:00" />
+<meta itemprop="name" content="API">
+<meta itemprop="description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文">
+<meta itemprop="datePublished" content="2020-01-10T20:55:52&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-10T20:55:52&#43;08:00" />
+<meta itemprop="wordCount" content="1964">
+
+
+
+<meta itemprop="keywords" content="k8s," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="API"/>
+<meta name="twitter:description" content="API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">API</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-01-10 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 1964 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#static-volume-provisioning">static volume provisioning</a></li>
+    <li><a href="#dynamic-volume-provisioning">dynamic volume provisioning</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#externalname-service">ExternalName Service</a></li>
+    <li><a href="#endpoint">Endpoint</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2020-01-10T20:55:52" title="January 10, 2020">January 10, 2020</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="api">API</h1>
+<p>api-server统一的操作入口.</p>
+<p>kubectl, UI, 等都是通过api-server操作资源.</p>
+<p>payload可以是json，也可以是yaml.</p>
+<p>yaml文件中#表示行注释。</p>
+<hr>
+<h1 id="yaml">yaml</h1>
+<p>部署k8s可以通过yaml文件来配置资源.</p>
+<p>资源对象组成部分:</p>
+<pre><code>apiVersion: 
+kind: 
+metadata: 元数据
+spec: 期望的状态
+status: 观测到的状态
+</code></pre>
+<p>查看apiVersion:</p>
+<pre><code>kubectl api-versions
+</code></pre>
+<p>查看Kind:</p>
+<pre><code>kubectl api-resources
+</code></pre>
+<p>metadata:</p>
+<pre><code>metadata:
+
+  name:
+  namespace:
+
+  labels/标签: 用户筛选资源，唯一的资源组合方法, 可以使用selector来查询.
+
+  annotations/注解: 存储资源的非标识性信息，扩展资源的spec/status.
+
+  ownerReference/关系: 方便反向查找创建资源的对象，方便进行级联删除。
+</code></pre>
+<p>spec:</p>
+<p>status:</p>
+<hr>
+<h1 id="pod">Pod</h1>
+<p>pod</p>
+<pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+  namespace: test
+spec:
+  securityContext: // pod级别security context定义
+    runAsuser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000
+
+  initContainers: // 
+  - name: init
+    image: my-image
+    command: ...
+    args: ...
+
+  imagePullSecrets:  // 私有镜像授权
+  - name: my-harbor
+  
+  containers:
+  - name: test
+    image: image
+    imagePullPolicy: Always/IfNotPresent/Never
+
+    resources:
+      requests:  // 申明需要的资源
+        memory: &quot;64Mi&quot;  // byte
+        cpu: &quot;250m&quot;     // millicore (1 core = 1000 millicore)
+        ephemeral-storage: &quot;2Gi&quot; // byte
+      limits:
+        memory: &quot;128Mi&quot;
+        cpu: &quot;500m&quot;
+        ephemeral-storage: &quot;4Gi&quot;
+
+    env:
+    - name: special_level_key
+      valueFrom: // 挂载ConfigMap
+        configMapKeyRef:
+          name: cm-name
+          key: cm-key
+    - name: key
+      value: value
+
+    // 如果没有subpath，整个目录会被覆盖，目录下只有secret/configmap挂载的文件.
+    volumeMounts: // secret以文件形式挂载到/etc/foo
+    - name: my-secret
+      mountPath: &quot;/etc/foo&quot;
+      readOnly: true
+    - mountPath: &quot;/etc/bar&quot; // 挂载之后覆盖整个目录
+      name: my-configmap
+    // 如果有subpath, secret/configmap里的data文件名需要和subpath/mountpath指定的文件名一致.
+    - mountPath: /etc/app/app.conf 
+      name: config
+      subPath: app.conf // 挂载之后只覆盖同名文件,其它文件不影响.
+
+  volumes:
+  - name: my-secret // 指定要挂载的secret
+    secret:
+      secretName: mysecret
+  - name: my-configmap
+    configMap:
+      name: myconfigmap
+
+  nodeSelector: // 将pod部署到指定node
+    key: value
+</code></pre>
+<p>pod中的container共享存储(pod volume):</p>
+<pre><code>apiVersion: v1
+Kind: Pod
+medadata:
+spec:
+
+  # 两种pod volume
+  volumes:
+  # emptyDir： pod删除之后该目录也会被删除
+  - name: cache-volume
+    emptyDir: {}
+  # hostPath: pod删除之后该目录还在host上. 
+  - name: hostpath-volume
+    hostPath:
+      path: /path/on/host
+
+  containers:
+  - name: container1
+    image: test
+    volumeMounts:
+    - name: cache-volume
+      mountpath: /path/on/container
+      # subPath会在emptyDir或hostPath目录下创建子目录
+      subPath: cache1
+  - name: container2
+    image: test
+    volumeMounts:
+    - name: hostpath-volume
+      mountpath: /path/on/container
+      readOnly: true
+</code></pre>
+<hr>
+<h1 id="deployment">Deployment</h1>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deploy
+  namespace: my-ns
+  lables:
+    app: my-app
+spec:
+  replicas: 3
+  # 选择器
+  selector: 
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: image:latest
+        imagePullPolicy: IfNotPresent/Always
+        ports:
+        - containerPort: 443
+        volumeMounts:
+        - name: my-hostpath
+          mountPath: /path/on/cpod
+        - name: my-pvc
+          mountPath: /data 
+      volumes:
+      - name: my-hostpath
+        hostPath: 
+          path: /path/on/host
+      - name: my-pvc
+        persistentVolumeClaim:
+          claimName: nfs-pvc
+</code></pre>
+<hr>
+<h1 id="daemonset">DaemonSet</h1>
+<p>每个node上部署一个pod</p>
+<p>DaemonSet</p>
+<pre><code>apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-ds
+  namespace: my-ns
+  labels:
+    k8s-app: my-app
+  spec:
+    selector:
+      matchLabels:
+        name: my-app
+    template:
+      metadata:
+        labels:
+          name: my-app
+      spec:
+        containers:
+        - name: my-container
+          image: my-img
+</code></pre>
+<hr>
+<h1 id="statefulset">StatefulSet</h1>
+<p>StatefulSet 中的 Pod 拥有一个唯一的顺序索引和稳定的网络身份标识。</p>
+<pre><code>apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  serviceName: &quot;nginx&quot;
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: k8s.gcr.io/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ &quot;ReadWriteOnce&quot; ]
+      resources:
+        requests:
+          storage: 1Gi
+</code></pre>
+<hr>
+<h1 id="job">Job</h1>
+<p>Job</p>
+<pre><code>appVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+spec:
+  # 代表本pod队列执行此次数(被执行8次)
+  completions: 8
+  # 代表并行执行个数(同时有两个在运行)
+  parallelism: 2
+  backoffLimit: 4
+  template:
+    spec:
+      containers:
+      - name: my-job
+        image: my-image
+        conmand: ['test']
+      restartPolicy: Never
+</code></pre>
+<hr>
+<h1 id="cronjob">CronJob</h1>
+<p>CronJob</p>
+<pre><code>apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: my-cj
+spec:
+  schedule: &quot;*/1 * * * *&quot;
+  startingDeadlineSeconds: 10
+  concurrencyPolicy: Allow
+  successfulJobsHistoryLimit: 3
+  suspend: false
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          nodeSelector:
+            ...
+          imagePullSecrets:
+            ...
+          restartPolicy: OnFailure
+          containers:
+          - name: image
+            image: image
+            args:
+            - /bin/sh
+            - -c
+            - date
+</code></pre>
+<hr>
+<h1 id="configmap">ConfigMap</h1>
+<p>configmap只能在当前namespace使用.</p>
+<p>configmap的配置在pod中无法修改绑定的文件.</p>
+<p>data里面的文件名就是挂载之后的文件名。</p>
+<p>ConfigMap</p>
+<pre><code>apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: flanel
+    tier: node
+  name: flannel-cfg
+  namespace: kube-system
+data:
+  cni-conf.json: |
+    {
+      &quot;name&quot;: &quot;n1&quot;
+    }
+</code></pre>
+<p>创建配置文件的configmap</p>
+<pre><code>$ kubectl -n app create cm my-conf --from-file ./config.ini -o yaml &gt; myconf-configmap.yaml
+$ kubectl -n influxdata create cm dashboard-docker --from-file Docker.json -o yaml &gt; grafana-dashboard-docker-configmap.yaml
+</code></pre>
+<hr>
+<h1 id="secret">Secret</h1>
+<p>secret只能在当前namespace使用.</p>
+<p>data里的文件名就是挂载之后的文件名。</p>
+<p>secret</p>
+<pre><code>apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+  namespace: kube-system
+type: Opaque
+data:
+  username: name 
+  password: pw
+</code></pre>
+<p>创建generic账号:</p>
+<pre><code>$ kubectl -n influxdata create secret generic \
+datasource --from-file=datasource.yaml 
+</code></pre>
+<p>创建tls账号:</p>
+<pre><code>kubectl -n kubernetes-dashboard create secret tls \
+kubernetes-dashboard-tls --key ca.key --cert ca.crt 
+</code></pre>
+<p>创建docker-registry账号:</p>
+<p><a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/pull-image-private-registry/">https://kubernetes.io/zh/docs/tasks/configure-pod-container/pull-image-private-registry/</a></p>
+<pre><code>$ kubectl -n app create secret docker-registry \
+my-harbor --docker-server=https://harbor.domain.com --docker-username=user --docker-password=pw --docker-email=canuxcheng@gmail.com -o yaml &gt; myharbor-secret.yaml
+</code></pre>
+<hr>
+<h1 id="serviceaccont">ServiceAccont</h1>
+<pre><code>apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: default
+  namespace: default
+data:
+  namespace: ...
+  ca.crt: ...
+  token: ...
+type: kubernetes.io/service-account-token
+</code></pre>
+<hr>
+<h1 id="pvc">pvc</h1>
+<pre><code>apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nsa-pvc
+  namespace: test
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi 
+</code></pre>
+<hr>
+<h1 id="pv">PV</h1>
+<p>pv没有namespace</p>
+<h2 id="static-volume-provisioning">static volume provisioning</h2>
+<pre><code>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nas-csi-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: ...
+</code></pre>
+<h2 id="dynamic-volume-provisioning">dynamic volume provisioning</h2>
+<p>动态pv需要storageclass.</p>
+<hr>
+<h1 id="service">Service</h1>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grafana
+  name: grafana-service
+  namespace: influxdata
+spec:
+  type: NodePort
+  ports:
+  - name: https
+    port: 3000 // 集群内部访问的port.
+    targetPort: 3000 // pod指定的port.
+    nodePort: 32000 // 集群外部访问内部service的port.
+  selector:
+    app: grafana
+</code></pre>
+<h2 id="externalname-service">ExternalName Service</h2>
+<p>ExternalName Service 是 Service 的特例，它没有选择算符，但是使用 DNS 名称, 将服务映射到 DNS 名称，而不是selector.</p>
+<p>访问其它namespace的service.</p>
+<p>当查找主机 my-service.my-ns.svc.cluster.local 时，集群 DNS 服务返回 CNAME 记录， 其值为 out-service.out-ns.svc.cluster.local。
+访问 my-service 的方式与其他服务的方式相同，但主要区别在于重定向发生在 DNS 级别，而不是通过代理或转发</p>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  namespace: my-ns
+spec:
+  type: ExternalName
+  externalName: out-service.out-ns.svc.cluster.local // 指向其它namespace的service.
+</code></pre>
+<h2 id="endpoint">Endpoint</h2>
+<p>下面场景可以使用Endpoint.</p>
+<ol>
+<li>希望在生产环境中使用外部的数据库集群，但测试环境使用自己的数据库。</li>
+<li>希望服务指向另一个 命名空间 中或其它集群中的服务。</li>
+<li>您正在将工作负载迁移到 Kubernetes。 在评估该方法时，您仅在 Kubernetes 中运行一部分后端。</li>
+</ol>
+<p>先创建service:</p>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+  namespace: influxdata
+spec:
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+</code></pre>
+<p>再创建endpoint：</p>
+<pre><code>apiVersion: v1
+kind: Endpoints
+metadata:
+  name: mysql-service
+  namespace: influxdata
+subsets:
+  - addresses:
+      - ip: 10.103.X.X // 指向外部服务的IP
+    ports:
+      - port: 3306
+</code></pre>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-01-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/k8s/">k8s</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/k8s_kubectl/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Kubectl</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/k8s_argo/">
+            <span class="next-text nav-default">ArgoCD</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2020-01-10 20:55:52 \x2b0800 \x2b0800',
+        title: 'API',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

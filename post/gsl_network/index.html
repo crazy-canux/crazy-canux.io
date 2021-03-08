@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GSL_network - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="net 网络IO接口，包括TCP/IP, UDP, SOCKET, DNS import &amp;quot;net&amp;quot; constants const ( IPv4len = 4 IPv6len = 16 ) variables functions Addr 代表一个网络终端地址． TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口 type Addr interface { Network() string String() string } TCPAddr function: func ResolveTCPAddr(net," /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/gsl_network/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GSL_network" />
+<meta property="og:description" content="net 网络IO接口，包括TCP/IP, UDP, SOCKET, DNS import &quot;net&quot; constants const ( IPv4len = 4 IPv6len = 16 ) variables functions Addr 代表一个网络终端地址． TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口 type Addr interface { Network() string String() string } TCPAddr function: func ResolveTCPAddr(net," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/gsl_network/" />
+<meta property="article:published_time" content="2018-01-01T10:49:21+00:00" />
+<meta property="article:modified_time" content="2018-01-01T10:49:21+00:00" />
+<meta itemprop="name" content="GSL_network">
+<meta itemprop="description" content="net 网络IO接口，包括TCP/IP, UDP, SOCKET, DNS import &quot;net&quot; constants const ( IPv4len = 4 IPv6len = 16 ) variables functions Addr 代表一个网络终端地址． TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口 type Addr interface { Network() string String() string } TCPAddr function: func ResolveTCPAddr(net,">
+<meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="wordCount" content="2207">
+
+
+
+<meta itemprop="keywords" content="network," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GSL_network"/>
+<meta name="twitter:description" content="net 网络IO接口，包括TCP/IP, UDP, SOCKET, DNS import &quot;net&quot; constants const ( IPv4len = 4 IPv6len = 16 ) variables functions Addr 代表一个网络终端地址． TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口 type Addr interface { Network() string String() string } TCPAddr function: func ResolveTCPAddr(net,"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GSL_network</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+          <span class="more-meta"> 2207 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#constants">constants</a></li>
+    <li><a href="#variables">variables</a></li>
+    <li><a href="#functions">functions</a></li>
+    <li><a href="#addr">Addr</a></li>
+    <li><a href="#tcpaddr">TCPAddr</a></li>
+    <li><a href="#udpaddr">UDPAddr</a></li>
+    <li><a href="#ipaddr">IPAddr</a></li>
+    <li><a href="#unixaddr">UnixAddr</a></li>
+    <li><a href="#conn">Conn</a></li>
+    <li><a href="#packetconn">PacketConn</a></li>
+    <li><a href="#listener">Listener</a></li>
+    <li><a href="#ipconn">IPConn</a></li>
+    <li><a href="#udpconn">UDPConn</a></li>
+    <li><a href="#tcpconn">TCPConn</a></li>
+    <li><a href="#tcplistener">TCPListener</a></li>
+    <li><a href="#unixconn">UnixConn</a></li>
+    <li><a href="#unixlistener">UnixListener</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#constants-1">constants</a></li>
+    <li><a href="#variables-1">variables</a></li>
+    <li><a href="#functions-1">functions</a></li>
+    <li><a href="#file">File</a></li>
+    <li><a href="#filesystem">FileSystem</a></li>
+    <li><a href="#dir">Dir</a></li>
+    <li><a href="#handler">Handler</a></li>
+    <li><a href="#handlerfunc">HandlerFunc</a></li>
+    <li><a href="#servemux">ServeMux</a></li>
+    <li><a href="#server">Server</a></li>
+    <li><a href="#client">Client</a></li>
+    <li><a href="#header">Header</a></li>
+    <li><a href="#cookie">Cookie</a></li>
+    <li><a href="#request">Request</a></li>
+    <li><a href="#response">Response</a></li>
+    <li><a href="#responsewriter">ResponseWriter</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#call">Call</a></li>
+    <li><a href="#client-1">Client</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#url">URL</a></li>
+    <li><a href="#userinfo">Userinfo</a></li>
+    <li><a href="#values">VAlues</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-01T10:49:21" title="January 1, 2018">January 1, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="net">net</h1>
+<p>网络IO接口，包括TCP/IP, UDP, SOCKET, DNS</p>
+<pre><code>import &quot;net&quot;
+</code></pre>
+<h2 id="constants">constants</h2>
+<pre><code>const (
+    IPv4len = 4
+    IPv6len = 16
+)
+</code></pre>
+<h2 id="variables">variables</h2>
+<h2 id="functions">functions</h2>
+<h2 id="addr">Addr</h2>
+<p>代表一个网络终端地址．</p>
+<p>TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口</p>
+<pre><code>type Addr interface {
+    Network() string
+    String() string
+}
+</code></pre>
+<h2 id="tcpaddr">TCPAddr</h2>
+<p>function:</p>
+<pre><code>func ResolveTCPAddr(net, addr string) (*TCPAddr, error)
+</code></pre>
+<h2 id="udpaddr">UDPAddr</h2>
+<p>function:</p>
+<pre><code>func ResolveUDPAddr(net, addr string) (*UDPAddr, error)
+</code></pre>
+<h2 id="ipaddr">IPAddr</h2>
+<p>function:</p>
+<pre><code>func ResolveIPAddr(net, addr string) (*IPAddr, error)
+</code></pre>
+<h2 id="unixaddr">UnixAddr</h2>
+<p>function:</p>
+<pre><code>func ResolveUnixAddr(net, addr string) (*UnixAddr, error)
+</code></pre>
+<h2 id="conn">Conn</h2>
+<p>该接口代表通用的面向流的网络连接．</p>
+<pre><code>type Conn interface {
+    Read()
+    Write()
+    Close()
+    LocalAddr()
+    RemoteAddr()
+    SetDeadline()
+    SetReadDeadline()
+    setWriteDeadline()
+}
+</code></pre>
+<p>function:</p>
+<pre><code>// tcp: &quot;tcp&quot;、&quot;tcp4&quot;、&quot;tcp6&quot;、
+// unix: &quot;unix&quot;, &quot;unixpacket&quot;
+// unix: &quot;unixgramh&quot;
+// udp: &quot;udp&quot;、&quot;udp4&quot;、&quot;udp6&quot;、
+// ip: &quot;ip&quot;、&quot;ip4&quot;、&quot;ip6&quot;、
+func Dail(network, address string) (Conn, error)
+
+func DialTimeout(network, address string, timeout time.Duration) (Conn, error)
+
+func Pipe() (Conn, Conn)
+</code></pre>
+<h2 id="packetconn">PacketConn</h2>
+<p>该接口代表通用的面向数据包的网络连接．</p>
+<pre><code>type PacketConn interface {
+    ReadDrom()
+    WriteTo()
+    Close()
+    LocalAddr()
+    SetDeadline()
+    SetReadDeadline()
+    SetWriteDeadline()
+}
+</code></pre>
+<p>function:</p>
+<pre><code>// ip: &quot;ip&quot;、&quot;ip4&quot;、&quot;ip6&quot;、
+// udp: &quot;udp&quot;、&quot;udp4&quot;、&quot;udp6&quot;、
+// unix: &quot;unixgram&quot;
+func ListenPacket(net, laddr string) (PacketConn, error)
+</code></pre>
+<h2 id="listener">Listener</h2>
+<p>通用的面向流的网络协议的公用的网络监听接口．</p>
+<pre><code>type Listener interface {
+    Addr() addr
+    Accept() (c Conn, err error)
+    Close() error
+}
+</code></pre>
+<p>function:</p>
+<pre><code>// tcp: &quot;tcp&quot;、&quot;tcp4&quot;、&quot;tcp6&quot;、
+// unix: &quot;unix&quot;, &quot;unixpacket&quot;
+func Listen(net, laddr string) (Listener, error)
+</code></pre>
+<h2 id="ipconn">IPConn</h2>
+<p>实现了Conn和PacketConn接口．</p>
+<p>function:</p>
+<pre><code>func DilIP(netProto string, laddr, raddr *IPAddr) (*IPConn, error)
+func ListenIP(netProto string, laddr *IPAddr) (*IPConn, error)
+</code></pre>
+<p>method:</p>
+<h2 id="udpconn">UDPConn</h2>
+<p>实现了Conn和PacketConn接口.</p>
+<p>function:</p>
+<pre><code>func DialUDP(net string, laddr, raddr *UDPAddr) (*UDPConn, error)
+func ListenDUP(net string, laddr *UDPAddr) (*UDPConn, error)
+</code></pre>
+<p>method:</p>
+<h2 id="tcpconn">TCPConn</h2>
+<p>实现了Conn接口.</p>
+<p>function:</p>
+<pre><code>func DialTCP(net string, laddr, raddr *TCPAddr) (*TCPConn, error)
+</code></pre>
+<p>method:</p>
+<h2 id="tcplistener">TCPListener</h2>
+<p>function:</p>
+<pre><code>func ListenTCP(net string, laddr *TCPAddr) (*TCPListener, error)
+</code></pre>
+<p>method:</p>
+<pre><code>func (l *TCPListener) Accept() (Conn, error)
+</code></pre>
+<h2 id="unixconn">UnixConn</h2>
+<p>实现了Conn和PacketConn接口.</p>
+<p>function:</p>
+<pre><code>func DialUnix(net string, laddr, raddr *UnixAddr) (*UnixConn, error)
+func ListenUnixgram(net string, laddr *UnixAddr) (*UnixConn, error)
+</code></pre>
+<p>method:</p>
+<h2 id="unixlistener">UnixListener</h2>
+<p>function:</p>
+<pre><code>func ListenUnix(net string, laddr *UnixAddr) (*UnixListener, error)
+</code></pre>
+<p>method:</p>
+<pre><code>func (l *UnixListener) Accept() (c Conn, err error)
+func (l *UnixListener) AcceptUnix() (*UnixConn, error)
+</code></pre>
+<hr>
+<h1 id="nethttp">net/http</h1>
+<p>http协议客户端和服务器的实现</p>
+<pre><code>import &quot;net/http&quot;
+</code></pre>
+<h2 id="constants-1">constants</h2>
+<pre><code>const (
+    MethodGet = &quot;GET&quot;
+    MethodHead = &quot;HEAD&quot;
+    MethodPost = &quot;POST&quot;
+    MethodPut = &quot;PUT&quot;
+    MethodPatch = &quot;PATCH&quot;
+    MethodDelete = &quot;DELETE&quot;
+    MethodConnect = &quot;CONNECT&quot;
+    MethodOptions = &quot;OPTIONS&quot;
+    MethodTrace = &quot;TRACE&quot;
+)
+</code></pre>
+<h2 id="variables-1">variables</h2>
+<h2 id="functions-1">functions</h2>
+<pre><code>// 在w的header中添加Set-Cookie头．
+func SetCookie(w ResponseWriter, cookie *Cookie)
+
+func Handle(pattern string, handler Handler)
+
+// 注册一个handler和对应的pattern 到DefaultServeMux.
+func HandlerFunc(pattern string, handler func(ResponseWriter, *Request))
+
+// 为监听器收到的每个连接创建一个新的goroutine．
+// goroutine 会读取请求并调用handler回复该请求．
+func Serve(l net.Listener, handler Handler) error
+
+// 监听tcp地址addr, 使用handler参数调用Serve函数处理连接．
+// handler = nil 相当于DefaultServeMux
+func ListenAndServe(addr string, handler Handler) error
+</code></pre>
+<h2 id="file">File</h2>
+<pre><code>type File interface {
+    io.Closer
+    io.Reader
+    Readdir(count int) ([]os.FileInfo, error)
+    Seek(offset int64, whence int) (int64, error)
+    Stat() (os.FileInfo, error)
+}
+</code></pre>
+<h2 id="filesystem">FileSystem</h2>
+<pre><code>type FileSystem interface {
+    Open(name string) (File, error)
+}
+</code></pre>
+<h2 id="dir">Dir</h2>
+<pre><code>type Dir string
+</code></pre>
+<p>method:</p>
+<pre><code>func (d Dir) Open(name string) (File, error)
+</code></pre>
+<h2 id="handler">Handler</h2>
+<p>实现Handler接口的对象可以被注册为http的服务函数</p>
+<pre><code>type Handler interface {
+    ServeHTTP(ResponseWriter, *Request)
+}
+</code></pre>
+<p>function:</p>
+<pre><code>// 对每个请求回复&quot;404 page not found&quot;
+func NotFoundHandler() Handler
+
+// 对每个请求使用状态码code重定向到url.
+func RedirectHandler(url string, code int) Handler
+
+func TimeoutHandler(h Handler, dt time.Duration, msg string) Handler
+
+// 将请求的URL.Path中的前缀prefix去除后再给h.
+func StripPrefix(prefix string, h Handler) Handler
+
+func FileServer(root FileSystem) Handler
+</code></pre>
+<h2 id="handlerfunc">HandlerFunc</h2>
+<p>将普通函数转换成http的服务函数</p>
+<pre><code>type HandlerFunc func(ResponseWriter, *Request)
+</code></pre>
+<p>method:</p>
+<pre><code>// ServeHTTP会调用f(w, r)
+func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)
+</code></pre>
+<h2 id="servemux">ServeMux</h2>
+<p>ServeMux是http请求的多路转接器．</p>
+<pre><code>type ServeMux struct {}
+</code></pre>
+<p>function:</p>
+<pre><code>// 创建并返回一个新的*ServeMux
+func NewServeMux() *ServeMux
+</code></pre>
+<p>method:</p>
+<pre><code>//
+func (mux *ServeMux) Handle(pattern string, handler Handler)
+
+func (mux *ServeMux) HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+
+func (mux *ServeMux) Handler(r *Request) (h Handler, pattern string)
+
+func (mux *ServeMux) ServeHTTP(w ResponseWriter, r *Request)
+</code></pre>
+<h2 id="server">Server</h2>
+<p>定义了运行http服务端的参数．</p>
+<pre><code>type Server struct {
+    Addr string
+    Handler Handler
+    ReadTimeout time.Duration
+    WriteTimeout time.Duration
+    MaxHeaderBytes int
+    TLSConfig *tls.Config
+    TLSNextProto map[string]func(*Server, *tls.Conn, Handler)
+    ConnState func(net.Conn, ConnState)
+    ErrorLog *log.Logger
+}
+</code></pre>
+<p>method:</p>
+<pre><code>func (s *Server) SetKeepAlivesEnabled(v bool)
+
+func (s *Server) Serve(l net.Listener) error
+
+func (s *Server) ListenAndServe() error
+
+func (s *Server) ListenAndServeTLS(certFile, keyFile string) error
+</code></pre>
+<h2 id="client">Client</h2>
+<p>代表一个http客户端.</p>
+<pre><code>type Client struct {
+    Transport RoundTripper
+    CheckRedirect func(req *Request, via []*Request) error
+    Jar CookieJar
+    Timeout time.Duration
+}
+</code></pre>
+<h2 id="header">Header</h2>
+<p>代表http的头部.</p>
+<pre><code>type Header map[string][]string
+</code></pre>
+<p>method:</p>
+<pre><code>func (h Header) Get(key string) string
+func (h Header) Set(key, value string)
+...
+</code></pre>
+<h2 id="cookie">Cookie</h2>
+<p>代表一个http回复的头部中SetCookie头的值，或http请求的头部里面的cookie值．</p>
+<pre><code>type Cookie struct {
+    Name string
+    Value string
+    Path string
+    Domain string
+    Expires time.Time
+    RawExpires string
+    MaxAge int
+    Secure bool
+    HttpOnly bool
+    Raw string
+    Unparsed []string
+}
+</code></pre>
+<p>method:</p>
+<pre><code>// 返回cookie序列化的结果
+func (c *Cookie) String() string
+</code></pre>
+<h2 id="request">Request</h2>
+<p>代表一个服务端接收的或客户端发送的http请求.</p>
+<pre><code>type Request struct {
+    Method string
+    URL *url.URL
+    Proto string // &quot;HTTP/1.0&quot;
+    ProtoMajor int // 1
+    ProtoMinor int // 0
+    Header Header
+    Body io.ReadCloser
+    ContentLength int64
+    TransferEncoding []string
+    Close bool
+    Host string
+    Form url.Values
+    PostForm url.Values
+    MultipartForm *multipart.Form
+    Trailer Header
+    RemoteAddr string
+    RequestURI string
+    TSL *tls.ConnectionState
+}
+</code></pre>
+<p>function:</p>
+<pre><code>func NewRequest(method, urlStr string, body io.Reader) (*Request, error)
+
+func ReadRequest(b *bufio.Reader) (req *Request, err error)
+</code></pre>
+<p>method:</p>
+<pre><code>// 解析并返回该请求r的header设置的cookie
+func (r *Request) Cookies() []*Cookie
+
+// 返回请求r中命名为name的cookie,如果未找到返回nil, ErrNoCookie.
+func (r *Request) Cookie(name string) (*cookie, error)
+
+//解析r.URL中的查询字符串，并将解析结果更新到r.Form字段.
+// post和put的body会同时更新到r.PostForm和r.Form.
+func (r *Request) ParseForm() error
+
+// 将请求的主体作为multipart/form-data解析.
+func (r *Request) ParseMultipartForm(maxMemory int64) error
+</code></pre>
+<h2 id="response">Response</h2>
+<p>代表一个http请求的回复r</p>
+<pre><code>type Response struct {
+    Status string
+    StatusCode int
+    Proto string
+    ProtoMajor int
+    ProtoMinor int
+    Header Header
+    Body io.ReadCloser
+    ContentLength int64
+    TransferEncoding []string
+    Close bool
+    Trailer Header
+    Request *Request
+    TLS *tls.ConnectionState
+}
+</code></pre>
+<p>functions:</p>
+<pre><code>func ReadResponse(r *bufio.Reader, req *Request) (*Response, error)
+
+func Head(url string) (resp *Response, err error)
+func Get(url string) (resp *Response, err error)
+func Post(url string, bodyType string, boyd io.Reader) (resp *Response, err error)
+func PostForm(url string, data url.Values) (resp *Response, err error)
+</code></pre>
+<p>methods:</p>
+<pre><code>func (r *Response) ProtoAtLeast(major, minor int) bool
+
+// 获取相应中的Set-Cookie设置的cookie
+func (r *Response) Cookies() []*Cookie
+</code></pre>
+<h2 id="responsewriter">ResponseWriter</h2>
+<p>用于构造http回复.</p>
+<pre><code>type ResponseWriter interface {
+    Header() Header
+    WriteHeader(int)
+    Write([]byte) (int, error)
+}
+</code></pre>
+<hr>
+<h1 id="netmail">net/mail</h1>
+<hr>
+<h1 id="netsmtp">net/smtp</h1>
+<hr>
+<h1 id="netrpc">net/rpc</h1>
+<p>function:</p>
+<pre><code>// 在DefaultServer注册并公布rcvr方法.
+func Register(rcvr interface{}) error
+
+// 接收连接，将每个连接交给DefaultServer服务.会阻塞.
+func Accept(lis net.Listener)
+
+// 在单个连接执行DefaultServer,会阻塞.
+func ServceConn(conn io.ReadWriteCloser)
+
+func HandleHTTP()
+</code></pre>
+<h2 id="call">Call</h2>
+<p>代表一个执行中或执行完毕的会话．</p>
+<pre><code>type Call struct {
+    ServiceMethod string
+    Args interface{}
+    Reply interface{}
+    Error error
+    Done chan *Call
+}
+</code></pre>
+<h2 id="client-1">Client</h2>
+<p>rpc客户端</p>
+<pre><code>type client struct {}
+</code></pre>
+<p>function:</p>
+<pre><code>func NewClient(conn io.ReadWriteCloser) *Client
+
+func Dial(network, address string) (*Client, error)
+
+func DialHTTP(network, address string) (*Client, error)
+</code></pre>
+<p>method:</p>
+<pre><code>// 调用指定的方法，等待返回，将结果写入reply.
+func (client *Client) Call(serviceMethod string, args interface{}, reply interface{}) error
+
+func (client *Client) Go(serviceMethod string, args interface{}, reply interface{}, done chan *Call) *Call
+
+func (client *Client) Close() error
+</code></pre>
+<hr>
+<h1 id="nettextproto">net/textproto</h1>
+<hr>
+<h1 id="neturl">net/url</h1>
+<pre><code>scheme://[userinfo@]host/path[?query][#fragment]
+</code></pre>
+<h2 id="url">URL</h2>
+<pre><code>type URL struct {
+    Scheme string
+    Opaque string
+    User *Userinfo
+    Host string // host or host:port
+    Path string
+    RawQuery string
+    Fragment string
+}
+</code></pre>
+<p>function:</p>
+<pre><code>func Parse(rawurl string) (url *URL, err error)
+func ParseRequestURI(rawurl string) (url *URL, err error)
+</code></pre>
+<p>methods:</p>
+<h2 id="userinfo">Userinfo</h2>
+<h2 id="values">VAlues</h2>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/network/">network</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/gsl_multimedia/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GSL_multimedia</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/gsl_oop/">
+            <span class="next-text nav-default">GSL_oop</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2018-01-01 10:49:21 \x2b0000 UTC',
+        title: 'GSL_network',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

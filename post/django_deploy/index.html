@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Deploy - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="发布django项目 django内置一个轻量级web开发服务器。 如果要发布django项目需要另外的操作。 也可以发布到其它的云平台。 一般通过" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/django_deploy/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Deploy" />
+<meta property="og:description" content="发布django项目 django内置一个轻量级web开发服务器。 如果要发布django项目需要另外的操作。 也可以发布到其它的云平台。 一般通过" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/django_deploy/" />
+<meta property="article:published_time" content="2016-09-27T10:23:22+00:00" />
+<meta property="article:modified_time" content="2016-09-27T10:23:22+00:00" />
+<meta itemprop="name" content="Deploy">
+<meta itemprop="description" content="发布django项目 django内置一个轻量级web开发服务器。 如果要发布django项目需要另外的操作。 也可以发布到其它的云平台。 一般通过">
+<meta itemprop="datePublished" content="2016-09-27T10:23:22&#43;00:00" />
+<meta itemprop="dateModified" content="2016-09-27T10:23:22&#43;00:00" />
+<meta itemprop="wordCount" content="913">
+
+
+
+<meta itemprop="keywords" content="deploy," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deploy"/>
+<meta name="twitter:description" content="发布django项目 django内置一个轻量级web开发服务器。 如果要发布django项目需要另外的操作。 也可以发布到其它的云平台。 一般通过"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Deploy</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-09-27 </span>
+        <div class="post-category">
+            <a href="/categories/django/"> Django </a>
+            </div>
+          <span class="more-meta"> 913 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#deploy时django的设置">deploy时django的设置</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#apache2--mod_wsgi">apache2 + mod_wsgi</a></li>
+    <li><a href="#uwsgi">uWSGI</a></li>
+    <li><a href="#gunicorn">Gunicorn</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#uvicorn">Uvicorn</a></li>
+    <li><a href="#hypercorn">Hypercorn</a></li>
+    <li><a href="#daphne">Daphne</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-09-27T10:23:22" title="September 27, 2016">September 27, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="发布django项目">发布django项目</h1>
+<p>django内置一个轻量级web开发服务器。</p>
+<p>如果要发布django项目需要另外的操作。</p>
+<p>也可以发布到其它的云平台。</p>
+<p>一般通过wsgi或者asgi来部署.</p>
+<h2 id="deploy时django的设置">deploy时django的设置</h2>
+<p>settings.py中的设置：</p>
+<pre><code>ALLOWED_HOSTS = ['*']
+DEBUG = False
+</code></pre>
+<hr>
+<h1 id="wsgi-部署">WSGI 部署</h1>
+<h2 id="apache2--mod_wsgi">apache2 + mod_wsgi</h2>
+<p><a href="https://github.com/GrahamDumpleton/mod_wsgi">https://github.com/GrahamDumpleton/mod_wsgi</a></p>
+<p>mod_wsgi是C写的apache的模块，实现了兼容WSGI接口，用来部署python的web应用。</p>
+<p>作为apache2的模块安装</p>
+<pre><code># ubuntu/debian
+sudo aptitude install apache2 # 安装apache2
+sudo aptitude install libapache2-mod-wsgi # for python2
+sudo aptitude install libapache2-mod-wsgi-py3 # for python3
+
+# redhat/centos/fedora
+sudo yum install httpd2
+sudo yum install httpd-devel
+sudo yum install mod_wsgi
+</code></pre>
+<p>Ubuntu创建网站的配置文件/etc/apache2/sites-available/mysite.conf:</p>
+<p>Fedora创建网站的配置文件/etc/httpd/conf.d/mysite.conf:</p>
+<p>一般部署到web服务器，/home/user/修改为/var/www/<!-- raw HTML omitted -->/</p>
+<pre><code># Include the project dir, can not inside VirtualHost section.
+WSGIPythonPath /home/user/mysite
+# If use virtualenv and named .venv
+# WSGIPythonPath /home/user/mysite:/home/user/mysite/.venv/lib/python2.7/site-packages
+
+&lt;VirtualHost *:80&gt;
+    ServerName localhost
+    # ServerName yoursite.domain
+    ServerAdmin canuxcheng@gmail.com
+
+    Alias /robots.txt /home/user/mysite/static/robots.txt
+    Alias /favicon.ico /home/user/mysite/static/favicon.ico
+
+    Alias /media/ /home/user/mysite/media/
+    Alias /static/ /home/user/mysite/static/
+
+    &lt;Directory /home/user/mysite/media&gt;
+    Required all granted
+    &lt;/Directory&gt;
+
+    &lt;Directory /home/user/mysite/static&gt;
+    Required all granted
+    &lt;/Directory&gt;
+
+    # If use daemon mode to run WSGI process.
+    WSGIDaemonProcess mysite python-path=/home/user/mysite
+    # If use virtualenv and named .venv
+    # WSGIDaemonProcess mysite python-path=/home/user/mysite:/home/user/mysite/.venv/lib/python2.7/site-packages
+    # WSGIProcessGroup mysite
+
+    WSGIScriptAlias / /home/user/mysite/mysite/wsgi.py
+
+    &lt;Directory /home/user/mysite/mysite&gt;
+    &lt;Files wsgi.py&gt;
+    Required all granted
+    &lt;/Files&gt;
+    &lt;/Directory&gt;
+
+    # check the log in /var/log/apache2/error_mysite.log or access_mysite.log
+    ErrorLog ${APACHE_LOG_DIR}/error_mysite.log
+    CustomLog ${APACHE_LOG_DIR}/access_mysite.log combined
+&lt;/VirtualHost&gt;
+</code></pre>
+<p>修改项目的wsgi.py:</p>
+<p>因为环境变量是进程范围的，在同一个进程运行多个站点会出问题，所以推荐多站点使用mod_wsgi的守护进程模式,也可以在单进程中覆盖DJANGO_SETTINGS_MODULE这个变量。</p>
+<pre><code>import os
+
+from django.core.wsgi import get_wsgi_application
+
+# If you have more than 1 django project you need to change this.
+# Or you can use daemon mode for WSGI process.
+# os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;mysite.settings&quot;)
+os.environ[&quot;DIANGO_SETTINGS_MODULE&quot;] = &quot;mysite.settings&quot;
+application = get_wsgi_application()
+</code></pre>
+<p>修改项目的settings.py:</p>
+<p>ROOT表示存放位置，URL表示对应网址。</p>
+<pre><code>DEBUG = False
+
+ALLOWED_HOSTS = ['*']
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Media files (upload files)
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+</code></pre>
+<p>收集静态文件和迁移：</p>
+<pre><code>$python manage.py makemigration
+$python mamage.py migrate
+$python manage.py collectstatic
+</code></pre>
+<p>设置权限：</p>
+<p>Ubuntu默认用户和组是www-data,Fedora默认用户和组是apache。</p>
+<pre><code>$cd /home/user
+$sudo chgrp www-data mysite
+$sudo chmod g+w mysite
+$sudo chgrp www-data mysite/db.sqlite3
+$sudo chmod g+w mysite/db.sqlite3
+$sudo chgrp -R www-data mysite/media/uploads
+$sudo chmod -R g+w mysite/media/uploads
+</code></pre>
+<p>Ubuntu激活网站：</p>
+<pre><code>$sudo a2ensite &lt;newsite&gt;
+$sudo service apache2 restart
+</code></pre>
+<p>Fedora激活网站：</p>
+<pre><code>$sudo systemctl restart  httpd
+</code></pre>
+<h2 id="uwsgi">uWSGI</h2>
+<p><a href="https://github.com/unbit/uwsgi">https://github.com/unbit/uwsgi</a></p>
+<p>C写的wsgi应用服务器。</p>
+<pre><code>$ python3 -m pip install uwsgi
+$ uwsgi --http :8000 --chdir /path/to/project --module mysite.wsgi
+</code></pre>
+<h2 id="gunicorn">Gunicorn</h2>
+<p><a href="https://github.com/benoitc/gunicorn">https://github.com/benoitc/gunicorn</a></p>
+<p>纯python写的WSGI服务器。</p>
+<pre><code>$ python3 -m pip install gunicorn
+$ gunicorn mysite.wsgi
+</code></pre>
+<hr>
+<h1 id="asgi">ASGI</h1>
+<h2 id="uvicorn">Uvicorn</h2>
+<pre><code>$ python -m pip install uvicorn gunicorn
+$ gunicorn myproject.asgi:application -k uvicorn.workers.UvicornWorker
+</code></pre>
+<h2 id="hypercorn">Hypercorn</h2>
+<pre><code>$ python -m pip install hypercorn
+$ hypercorn myproject.asgi:application
+</code></pre>
+<h2 id="daphne">Daphne</h2>
+<pre><code>$ python -m pip install daphne
+$ daphne myproject.asgi:application
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-09-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/deploy/">deploy</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/django_template/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Template</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/js_node/">
+            <span class="next-text nav-default">Nodejs</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-09-27 10:23:22 \x2b0000 UTC',
+        title: 'Deploy',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Swarm - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/swarm/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Swarm" />
+<meta property="og:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/swarm/" />
+<meta property="article:published_time" content="2018-04-05T22:02:31+00:00" />
+<meta property="article:modified_time" content="2018-04-05T22:02:31+00:00" />
+<meta itemprop="name" content="Swarm">
+<meta itemprop="description" content="Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均">
+<meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="wordCount" content="2281">
+
+
+
+<meta itemprop="keywords" content="swarm," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Swarm"/>
+<meta name="twitter:description" content="Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Swarm</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-04-05 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 2281 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-04-05T22:02:31" title="April 5, 2018">April 5, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="swarm">Swarm</h1>
+<p>docker swarm 是 docker内置的容器编排工具。</p>
+<p>从docker1.12开始swarm内置于docker engine.</p>
+<p>swarm mode具有内置kv存储，服务发现，负载均衡，路由网格，动态伸缩，滚动更新，安全传输等功能。</p>
+<p>swarm: 老版本的swarm, 需要kv store, 可以作为独立的container运行, 已废弃, 已经被docker swarm mode 代替.</p>
+<p><a href="https://github.com/docker/swarm">https://github.com/docker/swarm</a></p>
+<p>swarmkit:</p>
+<p><a href="https://github.com/docker/swarmkit">https://github.com/docker/swarmkit</a></p>
+<h1 id="swarm命令">swarm命令</h1>
+<p>创建集群</p>
+<pre><code>docker swarm init
+--advertise-addr &lt;ip&gt; 多网卡情况下指定manager的ip
+
+docker swarm join --token &lt;token&gt; &lt;host:port&gt;
+
+# 查看token
+docker swarm join-token manager   获取添加manager命令
+docker swarm join-token worker   获取添加worker命令
+docker swarm join-token -q worker
+
+docker swarm leave -f/--force
+
+docker swarm update
+</code></pre>
+<p>管理节点</p>
+<pre><code>docker node ls
+docker node ls --format &quot;{{.Hostname}}&quot;
+​
+docker node rm
+​
+docker node inspect
+​
+# 查看node上运行的tasks/container
+docker node ps -f/--filter NODE
+​
+# 添加label, node.labels.role=api
+docker node update --label-add role=api node1
+# 删除label
+docker node update --label-rm role node1
+​
+# 活跃节点
+docker node update --availability active node1
+# 指定该节点满载,不再分派任务,关闭已有任务并重新分派.
+docker node update --availability drain node1
+# 已有任务继续运行,不分配新任务.
+docker node update --availability pause node1
+</code></pre>
+<p>service</p>
+<pre><code># 相当于docker-compose.yml里面的service.
+docker service ls # 列出所有service
+​
+docker service rm SERVICE
+​
+docker service inspect SERVICE
+​
+# 查看service的log
+docker service logs -f SERVICE
+​
+# 查看service的状态,在哪些node上运行,运行状态等
+docker service ps SERVICE
+​
+docker service update
+docker service update --image &lt;url:tag&gt; # 根据镜像更新服务
+​
+docker service scale
+​
+docker service rollback
+​
+docker service create
+--constraint node.id/node.hostname/node.role/node.labels/engine.labels
+--env/-e
+--label
+--limit-cpu
+--limit-memory
+--replicas
+--restart-condition
+--user/--group
+--mode global/replicated
+--endpoint-mode vip/dnsrr
+</code></pre>
+<p>stack</p>
+<pre><code># stack = n*service
+# service = n*task(container)
+docker stack ls # 列出所有stack
+
+# 查看stack的service
+docker stack services &lt;stack&gt;
+
+# 查看stack的task/container
+docker stack ps &lt;stack&gt;
+
+docker stack rm STACK
+
+# 根据docker-compose.yml部署应用
+docker stack deploy -c/--compose-file &lt;docker-compose.yml&gt; STACK
+docker stack deploy --bundle-file &lt;DAB&gt; STACK
+
+# 默认所有node从docker hub pull, 如果是私有镜像，需要加参数
+# 需要在manager上docker login private-registry
+docker stack deploy --with-registry-auth -c test.yml test
+
+docker stack deploy --resolve-image (always|changed|never) ...
+
+docker stack deploy --orchestrator (swarm|kubernetes|all) ...
+</code></pre>
+<hr>
+<h1 id="swarm-compose">swarm compose</h1>
+<p>通过compose文件部署服务.</p>
+<pre><code>deploy:
+  // 给service打标签(不作用于container) 
+  labels:
+    com.examples.key: value
+
+  // 默认mode=replicated, replicas=1.
+  mode: replicated
+  replicas: 1
+
+  // 部署到匹配的全部node.
+  mode: global 
+​
+  # global和replicated都可以用placement.
+  placement:
+     
+    preferences: // 只支持spreed.
+      - spreed: node.labels.datacenter
+    constraints:
+      # 多个约束是and关系
+      - node.id==...
+      - node.hostname==...
+      - node.role==...
+      - node.role==manager/worker
+      - node.platform.os!=windows
+      - node.platform.arch==x86
+      - engine.labels.&lt;key&gt;==&lt;value&gt;
+      # 用户自定义标签
+      - node.labels.&lt;key&gt;==&lt;value&gt;
+​
+  resources:
+    limits:
+      cpus: '0.5'
+      memory: 1G
+    reservations:
+      cpus: '0.25'
+      memory: 20M
+​
+  restart_policy:
+    condition: any(default)/on-failure/none
+    delay: 0(default)/5s
+    max_attempts: never give up(default)/3
+    window: decide immediately(default)/10s
+​
+  update_config/rollback_config:
+    parallelism: 0 (default 0 means all)
+    delay: 10s (容器升级间隔时间)
+    failure_action: pause(default)/continue/rollback
+    monitor: 0s (更新完成后确认成功的时间)
+    max_failure_ratio: 更新期间允许的失败率
+    order: stop-first(default)/start-first
+
+deploy:
+  // 默认endpoint_mode=vip, 支持route mesh, 自动负载均衡和服务发现.
+  endpoint_mode: vip
+ports:
+- target: 80
+  published: 8080
+  // 默认mode=ingress, 也可以改为host.
+  mode: ingress
+  protocol: tcp/udp
+- 8080:80/tcp
+
+deploy:
+  // dnsrr 模式
+  endpoint_mode: dnsrr
+  update_config:
+    // 如果expose端口，不能start-first, 否则报错no suitable node (host-mode port already in use on 1 node
+    order: stop-first 
+// 设置iptables规则，外部访问8080通过prerouting做dnat指定目的ip，通过forward转发给container的80.
+// iptables-&gt;nat-&gt;prerouting: 
+// DNAT tcp -- !docker_gwbridge * 0.0.0.0/0 0.0.0.0/0 tcp dpt:8080 to:172.18.0.16:80
+// iptables-&gt;filter-&gt;forward:
+// ACCEPT tcp -- enp5s0 * 0.0.0.0/0 0.0.0.0/0 multiport dports 80
+ports:
+- target: 80
+  published: 8080
+  // dnsrr只能用port-&gt;mode=host.
+  mode: host
+  protocol: tcp/udp
+</code></pre>
+<hr>
+<h1 id="swarm-network">swarm network</h1>
+<p>global模式container:</p>
+<pre><code>eth0: overlay(user define overlay)
+eth1: ingress(swarm define ingress)
+eth2: docker_gwbridge(swarm define bridge)
+</code></pre>
+<p>replicate模式container:</p>
+<pre><code>eth0: overlay(user define overlay)
+eth1: docker_gwbridge(swarm define bridge)
+</code></pre>
+<p>overlay: 通过4789/udp跨主机访问其他container, host不能访问overlay的ip，只有container之间通过container-servicename或者container-overlay的ip相互访问.</p>
+<p>overlay 问题: 通过overlay连接，默认15分钟timeout, 所以数据库建议用dnsrr模式; 如果用vip模式，需要修改内核网络参数:</p>
+<pre><code>$ sudo sysctl -w net.ipv4.tcp_keepalive_time=600 net.ipv4.tcp_keepalive_intvl=60 net.ipv4.tcp_keepalive_probes=3
+</code></pre>
+<p>vip模式就是访问的虚拟ip,replicated的service如果有多个container,通过servicename访问的就是同一个vip,通过vip解析到背后container的真实overlay-ip(自动负载均衡).</p>
+<p>dnsrr模式就是直接解析container的overlay-ip来访问,如果是replicated的service有多个container,每次访问的就是从dns列表中根据负载均衡算法拿到其中一个overlay-ip.</p>
+<p>ingress network: 是一个特殊的 overlay 网络，用于服务节点间的负载均衡。当任何 Swarm 节点在发布的端口上接收到请求时，它将该请求交给一个名为 IPVS 的模块。IPVS 跟踪参与该服务的所有IP地址，选择其中的一个，并通过 ingress 网络将请求路由到它。</p>
+<p>docker_gwbridge: host和container之间通过ip访问, container能访问host的物理网卡的ip和docker_gwbridge的ip, host也能访问container的docker_gwbridge的ip, 但是container之间不能访问bridge的ip.</p>
+<p>修改默认的docker_gwbridge:</p>
+<pre><code>// 对于已存在的，要先删除
+$ service docker stop
+$ sudo ip link set docker_gwbridge down
+$ sudo ip link del dev docker_gwbridge
+// 创建swarm之前创建好网络
+$ docker network create --subnet &quot;172.18.0.0/16&quot;  --ip-range “172.18.1.0/16” \
+--opt com.docker.network.bridge.name=docker_gwbridge \
+--opt com.docker.network.bridge.enable_icc=false \
+--opt com.docker.network.bridge.enable_ip_masquerade=true \
+docker_gwbridge
+// 创建swarm
+$ docker swarm init
+</code></pre>
+<p>endpoint_mode:</p>
+<ul>
+<li>vip: 通过vip这个虚拟ip对外访问，提供负载均衡，不暴露具体的container的ip.</li>
+<li>dnssr: DNS round-robin, 为每个服务设置dns,连接到其中一个具体的contaier的ip.</li>
+</ul>
+<hr>
+<h1 id="swarm-scheduler">swarm scheduler</h1>
+<p>filter过滤器可以实现特定的容器运行在特定的node上, swarm支持３种策略和6个过滤器.</p>
+<p>swarm strategy:</p>
+<ul>
+<li>spread： 默认策略,配置相同的情况下选择容器数量最少的node</li>
+<li>binpack： 尽可能将容器放到一台node上运行。</li>
+<li>random： 直接随机分配</li>
+</ul>
+<p>swarm node filters:</p>
+<ul>
+<li>constraint</li>
+<li>health</li>
+<li>containerslots</li>
+</ul>
+<p>swarm container-configuration filters:</p>
+<ul>
+<li>affinity</li>
+<li>dependency</li>
+<li>port</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-04-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/swarm/">swarm</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/kubernetes/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Kubernetes</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/swarm_cni/">
+            <span class="next-text nav-default">Swarm CNI</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2018-04-05 22:02:31 \x2b0000 UTC',
+        title: 'Swarm',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

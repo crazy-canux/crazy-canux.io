@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Kubernetes - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode," /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/kubernetes/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Kubernetes" />
+<meta property="og:description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/kubernetes/" />
+<meta property="article:published_time" content="2018-04-05T22:02:31+00:00" />
+<meta property="article:modified_time" content="2018-04-05T22:02:31+00:00" />
+<meta itemprop="name" content="Kubernetes">
+<meta itemprop="description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode,">
+<meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
+<meta itemprop="wordCount" content="2338">
+
+
+
+<meta itemprop="keywords" content="k8s," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kubernetes"/>
+<meta name="twitter:description" content="Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode,"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Kubernetes</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-04-05 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 2338 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#master">master</a></li>
+    <li><a href="#node">node</a></li>
+    <li><a href="#addons">addons</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#workloads">Workloads</a>
+      <ul>
+        <li><a href="#replicasetsrs">replicasets/rs</a></li>
+        <li><a href="#deploymentsdeploy">deployments/deploy</a></li>
+        <li><a href="#daemonsetsds">daemonsets/ds</a></li>
+        <li><a href="#jobs">jobs</a></li>
+        <li><a href="#cronjobscj">cronJobs/cj</a></li>
+        <li><a href="#statefulsetssts">statefulsets/sts</a></li>
+      </ul>
+    </li>
+    <li><a href="#service-discovery--load-balancing">service discovery &amp; load balancing</a>
+      <ul>
+        <li><a href="#servicessvc">services/svc</a></li>
+        <li><a href="#ingresses">ingresses</a></li>
+        <li><a href="#endpointslices">endpointslices</a></li>
+      </ul>
+    </li>
+    <li><a href="#config--storage">Config &amp; Storage</a>
+      <ul>
+        <li><a href="#secrets">secrets</a></li>
+        <li><a href="#configmapscm">configmaps/cm</a></li>
+        <li><a href="#persistentvolumepv">persistentvolume/pv</a></li>
+        <li><a href="#persistentvolumeclaimspvc">persistentvolumeclaims/pvc</a></li>
+        <li><a href="#csidrivers">csidrivers</a></li>
+        <li><a href="#csinodes">csinodes</a></li>
+        <li><a href="#storageclassessc">storageclasses/sc</a></li>
+        <li><a href="#volumeattachments">volumeattachments</a></li>
+      </ul>
+    </li>
+    <li><a href="#metadata">metadata</a>
+      <ul>
+        <li><a href="#events">events</a></li>
+        <li><a href="#horizontalpodautoscaler">horizontalpodautoscaler</a></li>
+        <li><a href="#podtemplate">podtemplate</a></li>
+      </ul>
+    </li>
+    <li><a href="#cluster">cluster</a>
+      <ul>
+        <li><a href="#componentstatusescs">componentstatuses/cs</a></li>
+        <li><a href="#namespacesns">namespaces/ns</a></li>
+        <li><a href="#nodesno">nodes/no</a></li>
+        <li><a href="#serviceaccountsa">serviceaccount/sa</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-04-05T22:02:31" title="April 5, 2018">April 5, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="kubernetes">Kubernetes</h1>
+<p><a href="https://github.com/kubernetes/kubernetes">https://github.com/kubernetes/kubernetes</a></p>
+<p><a href="https://github.com/kubernetes/kubeadm">https://github.com/kubernetes/kubeadm</a></p>
+<p><a href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a></p>
+<p><a href="https://github.com/kubernetes-sigs/kubespray">https://github.com/kubernetes-sigs/kubespray</a></p>
+<p>kubernetes简称k8s, 是开源的容器编排工具。</p>
+<p>安装单机版k8s:</p>
+<ul>
+<li>minikube</li>
+</ul>
+<p>安装k8s集群:</p>
+<ul>
+<li>kubeadm (k8s内置的，类似于docker swarm mode, 没有HA)</li>
+<li>kops (目前主要支持aws等云平台, 国内不友好)</li>
+<li>kubespray (通过ansible部署, 国内不友好)</li>
+</ul>
+<p>k8s发行版：</p>
+<ul>
+<li>openshift-okd(redhat)</li>
+<li>rancher</li>
+</ul>
+<h1 id="k8s集群组成">k8s集群组成</h1>
+<h2 id="master">master</h2>
+<ul>
+<li>aip-server, 提供资源操作唯一入口</li>
+<li>scheduler, 负责资源调度</li>
+<li>controller-manager, 负责维护集群状态</li>
+<li>etcd(可以部署单独集群), 保存整个集群的状态</li>
+</ul>
+<h2 id="node">node</h2>
+<ul>
+<li>kubelet, 负责维护容器生命周期, 还包括CNI CVI</li>
+<li>kube-proxy, 为service提供cluster内部的服务发现和负载均衡</li>
+<li>CRI(containerd), 创建pod</li>
+</ul>
+<h2 id="addons">addons</h2>
+<ul>
+<li>coredns</li>
+<li>fannel</li>
+<li>dashboard, web-gui</li>
+<li>metrics-server, 取代heapster，用于cpu/memory监控</li>
+<li>ingress-nginx, 为服务提供外网入口</li>
+<li>federation, 提供跨可用区的集群</li>
+</ul>
+<hr>
+<h1 id="概念">概念</h1>
+<p>k8s包含的重要概念:</p>
+<p>-: nodes, 运行pod的物理机或虚拟机.
+-: namespace, 对资源和对象的抽象集合．pods/deployments/services都属于某个ns.
+-: pods,一组紧密关联的容器集合，共享pid,ipc,network,uts,namespace.</p>
+<p>k8s业务类型:</p>
+<p>-: long-running 长期伺服型 -&gt; RC, RS, Deployment
+-: batch 批处理型-&gt; Job
+-: node-daemon 节点后台支撑型-&gt; DaemonSet
+-: stateful application 有状态应用型-&gt; StatefulSet</p>
+<p>api对象三大类属性:</p>
+<ul>
+<li>metadata 元数据(至少包含namespace, name, uid).</li>
+<li>spec 规范</li>
+<li>status 状态</li>
+</ul>
+<p>kubernetes对外暴露服务的三种方式:</p>
+<ul>
+<li>NodePort: dev/qa. (30000-32767)</li>
+<li>IngressNginx: production.</li>
+<li>LoadBalance: cloud provider.</li>
+</ul>
+<hr>
+<h1 id="pod">pod</h1>
+<p>一个pod包含一个或多个容器，这些容器通过infra container共享同一个network namespace。</p>
+<p>infra container: k8s.gcr.io/pause, 汇编写的，永远处于暂停状态。</p>
+<p>pod共享网络:</p>
+<p>同一个pod里面看到的网络跟infra容器看到的是一样的，一个pod只有一个ip,也就是这个Pod的network namespace对应的IP; 整个pod的生命周期跟infra容易是一样的。</p>
+<p>pod共享存储:</p>
+<p>通过pod volumes, 使pod中的container共享存储。</p>
+<p>应用:</p>
+<ul>
+<li>一个pod中的某个容器异常退出，被kubelet拉起来之前保证之前的数据部丢失.</li>
+<li>同一个pod的多个容器共享数据.</li>
+</ul>
+<p>pod volume类型:</p>
+<ol>
+<li>
+<p>本地存储: emptydir/hostpath&hellip;</p>
+</li>
+<li>
+<p>网络存储:</p>
+<p>in-tree(ks8内置支持): awsElasticBlockStore/gcePresistentDisk/nfs&hellip;</p>
+<p>out-of-tree(插件): flexvolume/csi&hellip;</p>
+</li>
+<li>
+<p>projected volume: secret/configmap/downwardAPI/serviceAccountToken</p>
+</li>
+</ol>
+<p>pod服务质量配置:</p>
+<p>依据容器对cpu,memory资源的request/limit需求，pod服务质量分类:</p>
+<ul>
+<li>Guaranteed</li>
+<li>Burstable</li>
+<li>BestEffort</li>
+</ul>
+<p>initContainer:</p>
+<p>initContainer用于普通Container启动前的初始化（如配置文件准备) 和 前置条件校验 (如网络)。</p>
+<ol>
+<li>initContainer会先于普通container启动执行，直到所有initcontainer执行成功后，普通container 才会执行。</li>
+<li>pod中多个initcontainer之间是按次序依次启动执行，而pod中多个普通container是并行启动。</li>
+<li>initcontainer 执行成功后就结束退出，而普通container会一直执行或重启。</li>
+</ol>
+<hr>
+<h1 id="resources">resources</h1>
+<p>查看所有对象:</p>
+<pre><code>$ kubectl api-resources
+</code></pre>
+<p><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#statefulsetcondition-v1beta2-apps">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#statefulsetcondition-v1beta2-apps</a></p>
+<h2 id="workloads">Workloads</h2>
+<h3 id="replicasetsrs">replicasets/rs</h3>
+<p>控制无状态的pod数量,增删Pods.</p>
+<h3 id="deploymentsdeploy">deployments/deploy</h3>
+<p>定义pod的数目和版本，通过Controller自动恢复失败的pod，滚动升级，重新生成，回滚等。</p>
+<p>DeploymentStatus: complete, processing, failed</p>
+<p>Deployment只负责管理不同版本的ReplicaSet, 由ReplicaSet管理Pod副本个数; 每个版本的ReplicaSet对应了Deployment template的一个版本; 一个ReplicaSet下的Pod都是相同的版本.</p>
+<h3 id="daemonsetsds">daemonsets/ds</h3>
+<p>ds作用:</p>
+<ul>
+<li>保证集群内每个节点运行一组相同的pod</li>
+<li>跟踪集群节点状态，保证新加入的节点自动创建对应的pod</li>
+<li>跟踪集群节点状态，保证移除的节点删除对应的pod</li>
+<li>跟踪pod状态，保证每个节点pod处于运行状态</li>
+</ul>
+<h3 id="jobs">jobs</h3>
+<p>job的作用:</p>
+<ul>
+<li>创建一个或多个pod确保指定数量的Pod可以成功运行和终止.</li>
+<li>跟踪pod状态，根据配置及时重试失败的pod.</li>
+<li>确定依赖关系，保证上一个任务运行完毕后再运行下一个任务.</li>
+<li>控制任务并行度，并根据配置确保pod队列大小。</li>
+</ul>
+<h3 id="cronjobscj">cronJobs/cj</h3>
+<h3 id="statefulsetssts">statefulsets/sts</h3>
+<p>控制有状态的pod数量.</p>
+<hr>
+<h2 id="service-discovery--load-balancing">service discovery &amp; load balancing</h2>
+<h3 id="servicessvc">services/svc</h3>
+<p>提供访问一个或多个pod的稳定的访问地址.支持ClusterIP, NodePort, LoadBalancer等访问方式.</p>
+<h3 id="ingresses">ingresses</h3>
+<h3 id="endpointslices">endpointslices</h3>
+<hr>
+<h2 id="config--storage">Config &amp; Storage</h2>
+<h3 id="secrets">secrets</h3>
+<p>secret用于在集群中存储密码，token等敏感信息用的资源对象.</p>
+<p>其中敏感数据采用base-64编码保存.</p>
+<p>四种类型:</p>
+<ul>
+<li>Opaque</li>
+<li>kubernetes.io/service-account-token</li>
+<li>kubernetes.io/dockerconfigjson</li>
+<li>bootstrap.kubernetes.io/token</li>
+</ul>
+<p>secret主要被pod使用，一般通过volume挂载到指定容器目录，供容器中业务使用.</p>
+<p>访问私有镜像仓库也可以通过secret实现.</p>
+<p>secret大小限制1M; secret不适合机密信息，推荐用vault.</p>
+<h3 id="configmapscm">configmaps/cm</h3>
+<p>主要管理容器运行所需的配置文件，环境变量，命令行参数等可变配置。</p>
+<p>可用于解耦容器镜像和可变配置，从而保障工作负载的可移植性.</p>
+<p>主要被pod使用，一般用于挂载pod用的配置文件，环境变量，命令行参数.</p>
+<p>ConigMap 大小不超过1M; pod只能引用相同namespace中的configmap, pod引用的configmap不存在时，pod无法创建;使用envFrom从ConfigMap配置环境变量时，如果ConfigMap中的某些key被认为无效，该环境变量不会注入容器，但是pod可以创建; 只有通过k8s api创建的pod才能使用ConfigMap, 其它方式创建的pod不能使用ConfigMap.</p>
+<h3 id="persistentvolumepv">persistentvolume/pv</h3>
+<p>static volume provisioning:</p>
+<p>dynamic volume provisioning:</p>
+<h3 id="persistentvolumeclaimspvc">persistentvolumeclaims/pvc</h3>
+<p>pvc中只需要申明需要的存储size, access mode等业务需求.</p>
+<p>pvc简化了用户对存储的需求，pv才是存储的实际信息载体，通过kube-controller-manager中的PersistentVolumeController将PVC与合适的PV 绑定.</p>
+<h3 id="csidrivers">csidrivers</h3>
+<h3 id="csinodes">csinodes</h3>
+<h3 id="storageclassessc">storageclasses/sc</h3>
+<h3 id="volumeattachments">volumeattachments</h3>
+<hr>
+<h2 id="metadata">metadata</h2>
+<h3 id="events">events</h3>
+<h3 id="horizontalpodautoscaler">horizontalpodautoscaler</h3>
+<h3 id="podtemplate">podtemplate</h3>
+<hr>
+<h2 id="cluster">cluster</h2>
+<h3 id="componentstatusescs">componentstatuses/cs</h3>
+<h3 id="namespacesns">namespaces/ns</h3>
+<p>一个集群内部的逻辑隔离机制，每个资源都属于一个namespace，同一个namespace中的资源命名唯一，不同namespace中的资源可重名.</p>
+<h3 id="nodesno">nodes/no</h3>
+<h3 id="serviceaccountsa">serviceaccount/sa</h3>
+<p>解决pod在集群中的身份认证问题.</p>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-04-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/k8s/">k8s</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/harbor/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Harbor</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/swarm/">
+            <span class="next-text nav-default">Swarm</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2018-04-05 22:02:31 \x2b0000 UTC',
+        title: 'Kubernetes',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

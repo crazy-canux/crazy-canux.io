@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Rabbitmq - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="AMQP AMQP: Advanced Message Queuing Protocol,高级消息队列协议 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq MQTT MQTT: Message Queuing Telemetry Transport,消息队列遥测传输协议 Rabbitmq https://github.com/rabbitmq Rabbit" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/rabbitmq/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Rabbitmq" />
+<meta property="og:description" content="AMQP AMQP: Advanced Message Queuing Protocol,高级消息队列协议 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq MQTT MQTT: Message Queuing Telemetry Transport,消息队列遥测传输协议 Rabbitmq https://github.com/rabbitmq Rabbit" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/rabbitmq/" />
+<meta property="article:published_time" content="2017-09-25T09:41:39+00:00" />
+<meta property="article:modified_time" content="2017-09-25T09:41:39+00:00" />
+<meta itemprop="name" content="Rabbitmq">
+<meta itemprop="description" content="AMQP AMQP: Advanced Message Queuing Protocol,高级消息队列协议 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq MQTT MQTT: Message Queuing Telemetry Transport,消息队列遥测传输协议 Rabbitmq https://github.com/rabbitmq Rabbit">
+<meta itemprop="datePublished" content="2017-09-25T09:41:39&#43;00:00" />
+<meta itemprop="dateModified" content="2017-09-25T09:41:39&#43;00:00" />
+<meta itemprop="wordCount" content="1552">
+
+
+
+<meta itemprop="keywords" content="rabbitmq," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rabbitmq"/>
+<meta name="twitter:description" content="AMQP AMQP: Advanced Message Queuing Protocol,高级消息队列协议 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq MQTT MQTT: Message Queuing Telemetry Transport,消息队列遥测传输协议 Rabbitmq https://github.com/rabbitmq Rabbit"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Rabbitmq</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-09-25 </span>
+        <div class="post-category">
+            <a href="/categories/network/"> Network </a>
+            </div>
+          <span class="more-meta"> 1552 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#rabbitmqctl-命令">rabbitmqctl 命令</a></li>
+    <li><a href="#rabbitmq-plugins-插件管理">rabbitmq-plugins 插件管理</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2017-09-25T09:41:39" title="September 25, 2017">September 25, 2017</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="amqp">AMQP</h1>
+<p>AMQP: Advanced Message Queuing Protocol,高级消息队列协议</p>
+<p>常用的开源AMQP框架：</p>
+<p><a href="https://github.com/rabbitmq">https://github.com/rabbitmq</a></p>
+<p><a href="https://github.com/apache/kafka">https://github.com/apache/kafka</a></p>
+<p><a href="https://github.com/apache/activemq">https://github.com/apache/activemq</a></p>
+<h1 id="mqtt">MQTT</h1>
+<p>MQTT: Message Queuing Telemetry Transport,消息队列遥测传输协议</p>
+<hr>
+<h1 id="rabbitmq">Rabbitmq</h1>
+<p><a href="https://github.com/rabbitmq">https://github.com/rabbitmq</a></p>
+<p>RabbitMQ是一个erlang开发的符合AMQP和MQTT的开源项目．</p>
+<p>rabbitmq-server也叫broker server</p>
+<p>rabbitmq的三个组件：</p>
+<ul>
+<li>exchange,　交换器，发送消息的实体</li>
+<li>binding, 绑定器，连接交换器和队列，并且封装消息的路由信息</li>
+<li>queue,　队列，接受消息的实体</li>
+</ul>
+<p>workflow:</p>
+<pre><code>producer(publish-message) =&gt;
+
+rabbitmq-server =&gt; exchange -&gt; binding -&gt; queue =&gt;
+
+=&gt; comsumer
+</code></pre>
+<p>producer: 生产message并且publish到rabbitmq-server.</p>
+<p>consumer: 连接到rabbitmq-server并且subscribe一些queue.</p>
+<p>connection: producer和consumer都是通过tcp连接到rabbitmq-server.</p>
+<p>channels: 建立在tcp连接中的虚拟连接，用于处理数据流动.</p>
+<p>queue:　生产者和消费者都应该创建queue.(只能通过exchange接收message)</p>
+<p>exchanges类型:</p>
+<ul>
+<li>fanout: 所有绑定到此exchange的queue都可以接收消息</li>
+<li>direct: 通过routingKey和exchange决定的那个唯一的queue可以接收消息</li>
+<li>topic：所有符合routingKey(此时可以是一个表达式)的routingKey所bind的queue可以接收消息</li>
+</ul>
+<p>message类型:</p>
+<ul>
+<li>messages: 生产者产生的总消息数．</li>
+<li>messages_ready: 等待deliver给消费者的消息．</li>
+<li>messages_unack: 已经被consumer处理，但是没有被ack的消息．</li>
+</ul>
+<p>virtual hosts: 本质就是一个rabbitmq server,拥有独立的exchange,queue.默认是/(%2F).</p>
+<p>round-robin dispatch: 循环分发，按顺序分发message到consumer,如果message被consumer正确接收，就会从queue中移除．</p>
+<p>no-ack: 每次consumer接收数据后，不管是否处理完成，就标记为ack,然后从queue中删除．但是如果处理过程异常，数据就会丢失．</p>
+<p>ack: ack方式就是数据处理完成后发送ack,保证数据被处理再从queue删除，如果异常，会dispatch到别的consumer.</p>
+<p>durable: 消息持久化，如果rabbitmq-server异常退出或服务器重启，为了保证数据还在，需要做数据持久化.</p>
+<p>消息的状态信息：</p>
+<ul>
+<li>deliver: 消息投递给消费着．
+redeliver:　消息重新投递给消费者．</li>
+<li>publish/subscribe: 将同一个消息deliver到多个consumer叫publish或subscribe.</li>
+<li>ack: 已经处理完成的消息</li>
+</ul>
+<p>安装</p>
+<pre><code>$ sudo apt-get install rabbitmq-server
+</code></pre>
+<p>配置</p>
+<p>rabbitmq-3.7 开始配置文件格式为sysctl，同时也兼容旧的erlang格式。</p>
+<p>erlang格式：</p>
+<pre><code>[
+    {rabbit,
+        [
+            {heartbeat, 8000}
+        ]
+    }
+].
+</code></pre>
+<p>sysctl格式:</p>
+<pre><code>key = value
+</code></pre>
+<h2 id="rabbitmqctl-命令">rabbitmqctl 命令</h2>
+<pre><code>$ sudo rabbitmqctl [-n node] [-t timeout] [-q] &lt;commands&gt; [command options]
+</code></pre>
+<p>添加用户并授权：</p>
+<pre><code># 默认的guest/guest只能用于localhost.
+$ add_user [username] [password]
+$ delete_user &lt;username&gt;
+$ change_password &lt;username&gt; &lt;newpassword&gt;
+$ clear_password &lt;username&gt;
+$ set_user_tags [username] administrator
+$ list_users
+</code></pre>
+<p>权限管理:</p>
+<pre><code>add_vhost &lt;vhostpath&gt;
+delete_vhost &lt;vhostpath&gt;
+list_vhosts [&lt;vhostinfoitem&gt; ...]
+set_permissions [-p &lt;vhostpath&gt;] &lt;user&gt; &lt;conf&gt; &lt;write&gt; &lt;read&gt;
+clear_permissions [-p &lt;vhostpath&gt;] &lt;username&gt;
+list_permissions [-p &lt;vhostpath&gt;]
+list_user_permissions &lt;username&gt;
+
+list_queues [-p &lt;vhostpath&gt;] [&lt;queueinfoitem&gt; ...]
+list_exchanges [-p &lt;vhostpath&gt;] [&lt;exchangeinfoitem&gt; ...]
+list_bindings [-p &lt;vhostpath&gt;] [&lt;bindinginfoitem&gt; ...]
+list_connections [&lt;connectioninfoitem&gt; ...]
+list_channels [&lt;channelinfoitem&gt; ...]
+list_consumers [-p &lt;vhostpath&gt;]
+status
+environment
+report
+eval &lt;expr&gt;
+</code></pre>
+<h2 id="rabbitmq-plugins-插件管理">rabbitmq-plugins 插件管理</h2>
+<p>启动web-gui:</p>
+<pre><code>$ rabbitmq-plugins enable rabbitmq_management
+# http://localhost:15672 guest/guest
+</code></pre>
+<hr>
+<h1 id="haproxy">HAProxy</h1>
+<p>rabbitmq-cluster部署：</p>
+<ol>
+<li>
+<p>在所有node上安装rabbitmq-server.</p>
+</li>
+<li>
+<p>修改所有node的/etc/hosts，配置ip和hostname.</p>
+</li>
+<li>
+<p>同步所有node的cookie(/var/lib/rabbitmq/.erlang.cookie).</p>
+</li>
+<li>
+<p>启动所有node上的rabbitmq-server.</p>
+<pre><code> # rabbitmq-server -detached
+</code></pre>
+</li>
+<li>
+<p>将所有slave node添加manager组成cluster.</p>
+<pre><code> # rabbitmqctl stop_app
+ # rabbitmqctl reset
+ # rabbitmqctl join_cluster rabbit@manager
+ # rabbitmqctl start_app
+</code></pre>
+</li>
+<li>
+<p>检查cluster状态</p>
+<pre><code> # rabbitmqctl cluster_status
+</code></pre>
+</li>
+<li>
+<p>设置policy</p>
+<pre><code> # rabbitmqctl set_policy ha-all &quot;&quot; '{&quot;ha-mode&quot;:&quot;all&quot;,&quot;ha-sync-mode&quot;:&quot;automatic&quot;}'
+</code></pre>
+</li>
+</ol>
+<p>haproxy-server部署:</p>
+<ol>
+<li>
+<p>在haproxy server安装haproxy</p>
+</li>
+<li>
+<p>配置haproxy</p>
+<pre><code> # sudo vim /etc/haproxy/haproxy.cfg
+ global
+     log /dev/log    local0
+     log /dev/log    local1 notice
+     chroot /var/lib/haproxy
+     user haproxy
+     group haproxy
+     daemon
+ defaults
+     log     global
+     mode    tcp
+     maxconn 10000
+     timeout connect 3000
+     timeout client 1000s
+     timeout server 1000s
+ frontend rabbitmq_front
+     bind &lt;haproxy-ip&gt;:5672
+     reqadd X-Forwarded-Proto:\ amqp
+     default_backend rabbitmq_backend
+ backend rabbitmq_backend
+     balance roundrobin
+     server rabbitmq-master &lt;master-ip&gt;:5672 check
+     server rabbitmq-slave &lt;slave-ip&gt;:5672 check
+ bind 0.0.0.0:15672
+     server &lt;master-hostname&gt; &lt;master-ip&gt;:15672 check
+     server &lt;slave-hostname&gt; &lt;slave-ip&gt;:15672 check
+</code></pre>
+</li>
+<li>
+<p>重启haproxy service.</p>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2017-09-25
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/rabbitmq/">rabbitmq</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/go_oop/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">OOP</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/rpc/">
+            <span class="next-text nav-default">Rpc</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2017-09-25 09:41:39 \x2b0000 UTC',
+        title: 'Rabbitmq',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

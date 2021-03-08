@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Compose - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 docker-compose [-f &amp;lt;arg&amp;gt;...] [options] [COMMAND] [ARGS...]" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/compose/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Compose" />
+<meta property="og:description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/compose/" />
+<meta property="article:published_time" content="2020-01-04T21:53:40+08:00" />
+<meta property="article:modified_time" content="2020-01-04T21:53:40+08:00" />
+<meta itemprop="name" content="Compose">
+<meta itemprop="description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]">
+<meta itemprop="datePublished" content="2020-01-04T21:53:40&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-04T21:53:40&#43;08:00" />
+<meta itemprop="wordCount" content="995">
+
+
+
+<meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Compose"/>
+<meta name="twitter:description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Compose</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-01-04 </span>
+        <div class="post-category">
+            <a href="/categories/container/"> Container </a>
+            </div>
+          <span class="more-meta"> 995 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2020-01-04T21:53:40" title="January 4, 2020">January 4, 2020</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="docker-compose">docker-compose</h1>
+<p><a href="https://github.com/docker/compose">https://github.com/docker/compose</a></p>
+<p>通过一个yaml文件来管理容器中的服务，包括网络和存储。</p>
+<p>安装:</p>
+<pre><code>https://docs.docker.com/compose/install/
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+</code></pre>
+<h1 id="docker-compose命令">docker-compose命令</h1>
+<pre><code>docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]
+-f/--file
+-p/--project-name # 默认目录名
+-H/--host
+
+# 拉取compose文件中指定的镜像
+$ docker-compose -f service.yml pull
+
+# 根据docker-compose.yml把stack打包成一个Distributed Application Bundles文件.
+$ docker-compose bundle -o &lt;project name&gt;.dab
+
+$ docker-compose start [servoce...]
+$ docker-compose stop [service...]
+$ docker-compose restart [service...]
+$ docker-compose up -d [service...]
+$ docker-compose down -v
+
+$ docker-compose logs -f
+</code></pre>
+<h1 id="docker-composeyml">docker-compose.yml</h1>
+<p>compose中的变量：</p>
+<p>&ldquo;x-&ldquo;开头的会被compose忽略，但是会被yaml解析.</p>
+<pre><code>x-var-name: &amp;default-label
+  key1: val1
+  key2: val2
+  
+services:
+  mysql:
+    &lt;&lt;: *default-label
+    image: mysql
+</code></pre>
+<p>compose文件</p>
+<pre><code>version: &quot;3.6&quot;
+services:
+  mongo:
+    image: mongo:latest
+    hostname: hostname
+    
+    // 给container打标签
+    labels:
+      com.example.key: value
+
+    networks:
+    - mynetwork
+    // 只有自定义网络可以指定静态IP
+    networks:
+      mynetwork:
+        ipv4_address: 172.19.0.100
+
+    volumes: // short syntax
+    - /container/dir // 自动创建volume
+    - myvolume:/container/dir 
+    - /host/dir:/container/dir
+    volumes: // long syntax
+    - type: valume/bind/tmpfs
+      source: 
+      target:
+      read_only:
+      bind:
+      volume:
+      tmpfs:
+      consistency:
+    volumes:
+    - &quot;/path/to/file:/path/to/file 挂载文件
+    
+    configs:
+    - my-conf
+    configs:
+    - source: config-name
+      target: file-name
+     
+    secrets:
+    - my-sec
+    secrets:
+    - source: secret-name
+      target: file-name in /run/secrets/
+    
+    logging:
+      driver: syslog
+      options:
+        syslog-address: &quot;tcp://192.168.0.42:123&quot;
+
+    ports:  // long syntax
+    - target: 80
+      published: 8080
+      mode: host
+      protocol: tcp/udp
+    ports: // short syntax
+      - 80  // host上的port没有指定就是一个随机的port
+      - 80:80
+      - 1234:1234/udp
+
+    environment:
+      RABBITMQ_DEFAULT_USER: sandbox
+      RABBITMQ_DEFAULT_PASS: password
+    environment:
+      - RABBITMQ_DEFAULT_USER=sandbox
+      - RABBITMQ_DEFAULT_PASS=password
+      - TZ=UTC   // 设置时区
+
+    &lt;https://docs.docker.com/compose/compose-file/#env_file&gt;
+    # When you set the same environment variable in multiple files, 
+    # here’s the priority used by Compose to choose which value to use:
+    # 1. Compose file (environment)
+    # 2. Shell environment variables(export key=value)
+    # 3. Environment file (env_file)
+    # 4. Dockerfile
+    # 5. Variable is not defined
+    env_file:
+
+    depends_on:
+      - service-name
+
+    command: [&quot;./wait-for-it.sh&quot;, &quot;db:5432&quot;, &quot;--&quot;, &quot;python&quot;, &quot;app.py&quot;]
+
+    // 解析为: &quot;line1 line2\n&quot;,  会自动加换行符.
+    command: &gt;
+    line1
+    line2
+
+    // 解析为: &quot;line1 line2&quot;, 没有换行符.
+    command: &gt;-
+    line1
+    line2
+
+    // 在compose v3 中针对非swarm模式的container做资源限制等操作.
+    // --compatibility If set, Compose will attempt to convert keys in v3 files to their non-Swarm equivalent
+    $ docker-compose --compatibility up -d
+    // --compatibility 支持下面三种key:
+    replicas:
+    restart_policy:
+      condition:
+      max_attempts:
+    resources:
+      limits:
+        cpus: '0.5'
+        memory: 1G
+      reservations:
+        cpus: '0.25'
+        memory: 20M
+
+    privileged: true
+    devices:
+      - /dev/vboxdrv:/dev/vboxdrv
+      
+    healthcheck
+    
+    init
+    
+    stop_grrace_period
+
+    deploy: // for swarm
+    # 下列选项不能用于swarm stack部署.
+    sysctls(19.03+)
+    build
+    cgroup_parent
+    container_name
+    devices
+    tmpfs
+    external_links
+    links
+    network_mode
+    restart
+    security_opt
+    userns_mode
+    ulimits
+    cap_add
+    cap_drop
+    
+# 定义资源
+
+configs:
+  c-name:
+    // 根据文件创建
+    file: ./httpd.conf
+    // 使用已经创建好的
+    external: true
+    
+secrets:
+  s-name:
+    // 根据文件创建
+    file: ./server.cert
+    // 使用已经创建好的
+    external: true
+  
+volumes:
+  data-volume:
+// 以定义好的volume
+volumes:
+  data:
+    external: true
+
+// (推荐)使用已经创建好的网络
+// 通过命令行或者api 创建网络
+networks:
+  mynetwork:
+    external: true
+    name: lan0 // 通过docker network ls 查看名字
+    
+// 创建bridge网络
+// 会在网络名字自动加namespace
+networks:
+  mynetwork:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: lan0
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.1.0/24
+
+// 创建overlay网络
+// 会在网络名字自动加namespace
+networks:
+  ol0:
+    driver: overlay
+    attachable: true
+    driver_opts:
+      com.docker.network.bridge.name: ol0
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.12.0.0/16
+</code></pre>
+<p>compose文件中用到的变量</p>
+<pre><code>.Service.ID Service ID 
+.Service.Name Service name 
+.Service.Labels Service labels 
+.Node.ID Node ID 
+.Node.Hostname Node Hostname 
+.Task.ID Task ID 
+.Task.Name Task name 
+.Task.Slot Task slot 
+</code></pre>
+<p>yaml变量：</p>
+<pre><code>key: &amp;varhash    value
+key1: *varhash
+
+# 定义变量
+list: 
+  &amp;varlist
+  key1: value1
+  key2: value2
+# 将list的元素赋值给list1
+list1: 
+  &lt;&lt;: *varlist   
+  key3: value2
+</code></pre>
+<hr>
+<h1 id="kompose">Kompose</h1>
+<p><a href="https://github.com/kubernetes/kompose">https://github.com/kubernetes/kompose</a></p>
+<p>install:</p>
+<pre><code>$ curl -L https://github.com/kubernetes/kompose/releases/download/v1.19.0/kompose-linux-amd64 -o kompose
+
+$ chmod +x kompose
+$ sudo mv ./kompose /usr/local/bin/kompose</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-01-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/docker/">docker</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/k8s_operator/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Operator</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/k8s_dashboard/">
+            <span class="next-text nav-default">Dashboard</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2020-01-04 21:53:40 \x2b0800 \x2b0800',
+        title: 'Compose',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

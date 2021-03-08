@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PSL_Concurrency - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。 线程：线程（有时被称为轻量级进程）" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/psl_concurrency/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PSL_Concurrency" />
+<meta property="og:description" content="Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。 线程：线程（有时被称为轻量级进程）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/psl_concurrency/" />
+<meta property="article:published_time" content="2016-08-15T11:04:12+00:00" />
+<meta property="article:modified_time" content="2016-08-15T11:04:12+00:00" />
+<meta itemprop="name" content="PSL_Concurrency">
+<meta itemprop="description" content="Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。 线程：线程（有时被称为轻量级进程）">
+<meta itemprop="datePublished" content="2016-08-15T11:04:12&#43;00:00" />
+<meta itemprop="dateModified" content="2016-08-15T11:04:12&#43;00:00" />
+<meta itemprop="wordCount" content="2258">
+
+
+
+<meta itemprop="keywords" content="concurrency," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PSL_Concurrency"/>
+<meta name="twitter:description" content="Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。 线程：线程（有时被称为轻量级进程）"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PSL_Concurrency</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-08-15 </span>
+        <div class="post-category">
+            <a href="/categories/python/"> Python </a>
+            </div>
+          <span class="more-meta"> 2258 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#multiprocessing">multiprocessing</a></li>
+    <li><a href="#threading">threading</a></li>
+    <li><a href="#subprocess">subprocess</a></li>
+    <li><a href="#socket">socket</a></li>
+    <li><a href="#asynchat">asynchat</a></li>
+    <li><a href="#asyncore">asyncore</a></li>
+    <li><a href="#ssl">ssl</a></li>
+    <li><a href="#signal">signal</a></li>
+    <li><a href="#select">select</a></li>
+    <li><a href="#mmap">mmap</a></li>
+    <li><a href="#dummy_thread">dummy_thread</a></li>
+    <li><a href="#dummy_threading">dummy_threading</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-08-15T11:04:12" title="August 15, 2016">August 15, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="concurrent-execution">Concurrent Execution</h1>
+<p>进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。</p>
+<p>线程：线程（有时被称为轻量级进程）跟进程有些相似，不同的是，所有的线程运行在同一个进程中，共享相同的运行环境，同一个进程的线程之间共享全局变量。</p>
+<p>IPC: 进程/线程之间交换信息叫进程间通信．</p>
+<p>python的多线程由于GIL只有并发没有并行，无论有多少cpu,一次只能有一个python解释器(线程)执行.一次只能执行一个线程.一次只能用到一个逻辑cpu.</p>
+<p>IO密集型任务消耗IO,但是不消耗CPU,cpu切换消耗少,适合用多线程.</p>
+<p>python的多进程可以并行,每个进程启动一个解释器进程.</p>
+<p>多进程开销大，消耗内存.</p>
+<p>计算密集型消耗cpu,任务个数不超过cpu个数．适合用多进程，把每个cpu跑满.</p>
+<h2 id="multiprocessing">multiprocessing</h2>
+<p>多进程就是同时执行多个任务.</p>
+<p>python可以通过多进程取代多线程，从而绕过多线程的GIL.</p>
+<p>python是静态语言，</p>
+<pre><code>import multiprocessing
+</code></pre>
+<p>classes:</p>
+<pre><code># multiprocessing.Process
+proc = Process(group=None, target=None, name=None, args=(), kwargs={})
+# methods:
+run(self)
+start(self) # 启动一个进程
+join(self, timeout=None) # 父进程等待子进程结束
+is_alive()
+terminate(self)
+# data descriptor:
+authkey
+daemon # proc.daemon = True 后台运行
+exitcode
+ident
+name
+pid
+</code></pre>
+<p>functions:</p>
+<pre><code># 普通函数
+active_children()
+allow_connection_pickling()
+cpu_count() # 获取cpu个数
+current_process()
+freeze_support()
+get_logger()
+log_to_stderr(level=None)
+
+Pool(processes=None, initializer=None, initargs=(), maxtasksperchild=None)
+pool = Pool()
+# func只能是顶层函数，不能是方法和内部函数.
+# 进程池，可以控制进程数量,processes 默认是cpu个数(cpu_count())
+# 非阻塞，维持进程总数，当一个进程结束会添加新的进程到pool,主进程不阻塞，同步运行，pool中的进程并发执行.
+apply_async(func, args=(), kwargs={}, callback=None) # 非阻塞,
+map_async(func, iterable, chunksize=None, callback=None) # 非阻塞
+# 阻塞，维持进程总数，当一个进程结束会添加新的进程到pool，主进程阻塞，pool中的进程一个一个执行.
+apply(func, args=(), kwargs={}) # 阻塞
+map(func, itreable, chunksize=None) # 阻塞
+terminate() # 终止所有任务
+close() # 关闭pool,不接受新任务
+join() # 等待pool中子进程结束，要在close/terminate之后调用.
+
+# IPC: 管道
+Pipe(duplex=True) # duplex=True表示默认是双向pipe.
+receiver, sender = Pipe()
+sender.send(obj)
+receiver.recv()
+close()
+
+# IPC: 消息队列
+# 来自于Queue.Queue, 具体方法参考Queue.Queue
+Queue(maxsize=0) # return a queue object
+q = Queue()
+
+# IPC: 共享内存
+Manager()
+list, dict, Namespace, Lock, RLock, Semaphore, BoundedSemaphore, Condition, Event, Queue, Value and Array
+
+Array(typecode_or_type, size_or_initializer, **kwds)
+
+RawArray(typecode_or_type, size_or_initializer)
+
+Value(typecode_or_type, *args, **kwds)
+
+RawValue(typecode_or_type, *args)
+
+Event()
+
+# 同步：　条件变量
+Condition(lock=None)
+
+# 同步：信号量
+Semaphore(value=1)
+
+# 同步：有界信号量
+BoundedSemaphore(value=1)
+
+# 同步： 锁
+Lock()
+
+# 同步: 锁
+RLock()
+</code></pre>
+<p>data:</p>
+<pre><code>SUBDEBUG = 5
+SUBWARNING = 25
+</code></pre>
+<h2 id="threading">threading</h2>
+<p>多线程就是把单个任务分成不同部分运行.</p>
+<p>threading支持守护线程(通过join方法实现)．</p>
+<pre><code>import threading
+</code></pre>
+<p>classes:</p>
+<pre><code># threading.Thread
+t = Thread(group=None, target=None, name=None, args=(), kwargs=None, verbose=None)
+threads.append(t)
+# methods:
+run(self) # 子类重写用来定义线程的功能的函数, 通常通过这种方式来创建线程
+start(self) # 开始执行线程
+join(self, timeout=None) # 主程序挂起，直到线程结束,再继续运行主程序
+is_alive(self) # 表示线程是否还在运行的boolean
+getName(self) # 返回线程名字
+setName(self, name) # 设置线程名字
+isDaemon(self) # 返回线程的daemon标志
+setDaemon(self, daemonic) # daemonic=True 使线程在后台运行
+</code></pre>
+<p>functions:</p>
+<pre><code>active_count() # 当前活动的线程对象的数量
+current_thread() # 返回当前线程对象
+enumerate() # 返回当前活动线程列表
+settrace(func) # 为所有的线程设置一个跟踪函数
+setprofile(func) # 为所有线程设置一个profile函数
+stack_size()
+
+Timer(*args, **kwargs)
+t = Timer(30.0, f, args=[], kwargs={})
+t.start() # 在一个子线程等待，timeout就执行f(*args, **kwaargs).
+t.cancel() # 如果还在等待就取消．
+
+Event(*args, **kwargs)
+
+# 同步：　条件变量
+Condition(*args, **kwargs)
+
+# 同步：　信号量
+Semaphore(value=1, *args, **kwargs)
+# 信号量，默认value=1, 内部计数器不能小于0,当计数器==0时，调用acquire会阻塞.
+
+# 同步：　有界信号量
+BoundedSemaphore(value=1, *args, **kwargs)
+# 有界信号量，默认value=1，内部计数器不能小于0，并且不能大于value。
+# 当计数器==0，调用acquire会阻塞，当&gt;value抛出VAlueError异常
+# 可用来控制并发运行的线程数量
+bs = BoundSemaphore(number) # bs是全局的.
+def thread_function(*args, **kwargs):
+    ...
+    bs.release() # 使计数器+1
+for t in threads:
+    bs.acquire() # 使计数器-1
+    thread.start()
+for t in threads:
+    t.join()
+
+# 同步：　锁
+Lock()
+# 使同一变量在多个线程间同步
+lock = Lock()
+variable = value
+def thread_function(*args, **kwargs):
+    global lock
+    global variable
+    lock.acquire() # 加锁，使线程进入同步阻塞状态
+    variable = new_value
+    lock.release() # 释放锁
+
+# 同步：　锁
+RLock(*args, **kwargs)
+</code></pre>
+<h2 id="subprocess">subprocess</h2>
+<p>开启一个子进程来执行外部命令.</p>
+<pre><code>import subprocess
+</code></pre>
+<p>classes:</p>
+<pre><code>Popen(args,
+bufsize=0, executable=None, stdin=None, stdout=None, stderr=None,
+preexec_fn=None, close_fds=False, shell=False,cwd=None,
+env=None, universal_newlines=False,startupinfo=None, creationflags=0)
+# p = Popen(shlex.split(command), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+# 如果命令和参数是字符串形式，需要参数shell=True
+# p = Popen(command_string, shell=True, ...)
+
+# 非交互执行sudo命令, 或者使用sh/pexpect等第三方库
+Popen(['sudo', '-S'] + shlex.split(command), stdin=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, ...)
+stdout, stderr = child.communicate(password+'\n')
+
+# methods:
+poll() # 检查子进程是否结束，返回returncode.
+wait() # 等待子进程结束，返回returncode.
+communicate(input=None) # 返回(stdout, stderr).
+kill() # 发送SIGKILL信号
+pipe_cloexec()
+send_signal(sig)
+terminate()
+
+# Data:
+stdin
+stdout
+stderr
+pid
+returncode
+</code></pre>
+<p>functions:</p>
+<pre><code>call(*popenargs, **kwargs)
+# retcode = call([&quot;ls&quot;, &quot;-l&quot;])
+
+check_call(*popenargs, **kwargs)
+# check_call([&quot;ls&quot;, &quot;-l&quot;]) -&gt; 如果返回码为０就返回，否则抛出CalledProcessError.
+
+check_output(*popenargs, **kwargs) # 返回一个字符串
+# output = check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;]) -&gt; 如果返回码为０返回命令结果，否则抛出CalledProcessError.
+</code></pre>
+<p>data:</p>
+<pre><code>PIPE = -1
+STDOUT = -2
+</code></pre>
+<h2 id="socket">socket</h2>
+<p>socket协议的标准库</p>
+<pre><code>import socket
+</code></pre>
+<p>classes:</p>
+<pre><code># socket = class _socketobject(__builtin__.object)
+# socket.socket([family[, type[, proto]]])
+close() # 关闭socket
+shutdown(flag) # 0 关闭读，１关闭写，２全部关闭
+# eg: socket.socket(AF_INET, SOCK_STREAM, 0) ipv4+tcp
+# eg: socket.socket(AF_INET, SOCK_DGRAM, 0) ipv4+udp
+
+# methods:
+bind(address) # 服务器绑定(host, port)到socket
+listen(backlog) # 服务器开始监听tcp
+accept() # 服务器阻塞等待客户的tcp连接, 返回(socket object, address info)
+
+connect(address) # 客户端主动初始化tcp连接,连接失败抛出异常
+connect_ex(address) # 同上，连接失败返回errno
+
+send(data[, flags]) # 发送tcp数据
+sendall(data[, flags]) # 发送完整tcp数据
+recv(buflen[, flags]) # 接收tcp数据
+recv_into(buffer[, nbytes[, flags]])
+
+sendto(data[, flags], addr) # 发送udp数据
+recvfrom(buflen[, flags]) # 接收udp数据
+recvfrom_into(buffer[, nbytes, [, flags])])
+
+getpeername() # 获取当前socket的远端地址
+getsockname() # 获取当前socket的地址
+getsockopt(level, option[, buffersize]) # 获取socket参数
+setsockopt(level, option, value) # 设置socket参数
+
+setblocking(flag)
+gettimeout()
+settimeout(timeout)
+
+makefile([mode[, bufsize]])
+fileno()
+
+dup()
+
+# data descriptor:
+family/type/proto　参考man 2 socket
+recv
+recv_into
+recvfrom
+recvfrom_into
+send
+sendto
+</code></pre>
+<p>class SocketIO:</p>
+<pre><code>class SocketIO(io.RawIOBase)
+sio = SocketIO(sock, mode)
+
+methods:
+close()
+readinto(b)
+write(b)
+</code></pre>
+<p>functions:</p>
+<pre><code>create_connection(address, timeout=&lt;object object&gt;, source_address=None)
+fromfd(fd, family, type[, proto]) # 用一个已经打开的文件描述符创建一个socket对象
+getaddrinfo(host, port [, family, socktype, proto, flags])
+getdefaulttimeout()
+getfqdn(name='') # FQDN, 获取完整域的信息
+gethostbyaddr(host) -&gt; (name, aliaslist, addresslist)
+gethostbyname(host)
+gethostbyname_ex(host) -&gt; (name, aliaslist, addresslist)
+gethostname()
+getnameinfo(sockaddr, flags) --&gt; (host, port)
+getprotobyname(name)
+getservbyname(servicename[, protocolname])
+getservbyport(port[, protocolname])
+htonl(integer)
+htons(integer)
+inet_aton(string)
+inet_ntoa(packed_ip)
+inet_ntop(af, packed_ip)
+inet_pton(af, ip)
+ntohl(integer)
+ntohs(integer)
+setdefaulttimeout(timeout)
+socketpair([family[, type[, proto]]]) -&gt; (socket object, socket object)
+</code></pre>
+<h2 id="asynchat">asynchat</h2>
+<h2 id="asyncore">asyncore</h2>
+<h2 id="ssl">ssl</h2>
+<h2 id="signal">signal</h2>
+<h2 id="select">select</h2>
+<h2 id="mmap">mmap</h2>
+<h2 id="dummy_thread">dummy_thread</h2>
+<h2 id="dummy_threading">dummy_threading</h2>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-08-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/concurrency/">concurrency</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/psl_builtins/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">PSL_builtins</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/psl_python/">
+            <span class="next-text nav-default">PSL_Python</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-08-15 11:04:12 \x2b0000 UTC',
+        title: 'PSL_Concurrency',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

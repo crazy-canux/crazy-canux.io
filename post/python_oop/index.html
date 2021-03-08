@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OOP - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="面向对象/OOP OOD: Object Oriented Design. 面向过程的设计支持任何语言，但是如果语言本身内置面向过程的结构，就会更容易编程． OOP: Object Oriented Programming. python内置OOP的结构" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/python_oop/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="OOP" />
+<meta property="og:description" content="面向对象/OOP OOD: Object Oriented Design. 面向过程的设计支持任何语言，但是如果语言本身内置面向过程的结构，就会更容易编程． OOP: Object Oriented Programming. python内置OOP的结构" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/python_oop/" />
+<meta property="article:published_time" content="2016-06-21T21:18:09+00:00" />
+<meta property="article:modified_time" content="2016-06-21T21:18:09+00:00" />
+<meta itemprop="name" content="OOP">
+<meta itemprop="description" content="面向对象/OOP OOD: Object Oriented Design. 面向过程的设计支持任何语言，但是如果语言本身内置面向过程的结构，就会更容易编程． OOP: Object Oriented Programming. python内置OOP的结构">
+<meta itemprop="datePublished" content="2016-06-21T21:18:09&#43;00:00" />
+<meta itemprop="dateModified" content="2016-06-21T21:18:09&#43;00:00" />
+<meta itemprop="wordCount" content="6225">
+
+
+
+<meta itemprop="keywords" content="oop," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OOP"/>
+<meta name="twitter:description" content="面向对象/OOP OOD: Object Oriented Design. 面向过程的设计支持任何语言，但是如果语言本身内置面向过程的结构，就会更容易编程． OOP: Object Oriented Programming. python内置OOP的结构"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">OOP</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-21 </span>
+        <div class="post-category">
+            <a href="/categories/python/"> Python </a>
+            </div>
+          <span class="more-meta"> 6225 words </span>
+          <span class="more-meta"> 13 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#类属性">类属性</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#实例属性">实例属性</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#composition">Composition</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#子类和派生">子类和派生</a></li>
+    <li><a href="#继承">继承</a></li>
+    <li><a href="#从内置类继承">从内置类继承</a></li>
+    <li><a href="#multiple-inheritance多重继承">Multiple inheritance多重继承</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#magicmethod">magicmethod</a></li>
+    <li><a href="#delegation--wrapping">Delegation &amp; Wrapping</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#abstractmethod">abstractmethod</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#property">property</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-06-21T21:18:09" title="June 21, 2016">June 21, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="面向对象oop">面向对象/OOP</h1>
+<p>OOD: Object Oriented Design.</p>
+<p>面向过程的设计支持任何语言，但是如果语言本身内置面向过程的结构，就会更容易编程．</p>
+<p>OOP: Object Oriented Programming.</p>
+<p>python内置OOP的结构，但是不必一定要使用类和OOP.</p>
+<p>面向对象的两个主题就是类和类实例．</p>
+<p>创建实例的过程叫实例化．</p>
+<p>属性就是属于另一个对象的数据或函数元素．属性分为数据属性和函数属性．</p>
+<hr>
+<h1 id="类class">类/Class</h1>
+<p>类是现实世界的抽象的实体以编程的形式出现，实例是这些对象的具体化．</p>
+<p>类是一种数据结构的定义，实例是申明了一个这种类型的变量．</p>
+<p>类的定义：</p>
+<p>新式类都必须继承一个父类，所有类的基类是object.</p>
+<pre><code>class ClassName(object):
+    &quot;&quot;&quot;Doc string.&quot;&quot;&quot;
+    class_suite
+</code></pre>
+<p>类的初始化方法init(相当于构造器):</p>
+<p>如果定义了__init__方法在实例化的时候会首先调用该方法，进行一些初始化的工作.</p>
+<p>init方法的第一个参数必须是实例self,　而且不能有return语句．</p>
+<p>init方法一般用来设置实例属性(也就是数据属性).</p>
+<pre><code>class ClassName(object):
+    def __init__(self, *args, **kwargs):
+        pass
+</code></pre>
+<p>特殊方法new:</p>
+<p>如果定义了__new__方法，会在init方法之前运行，并且返回一个实例，也就是__init__的self.</p>
+<p>new方法的第一个参数必须是类cls. 并且需要返回一个实例．</p>
+<p>new方法在object中被定义为staticmethod．</p>
+<p>相当于析构器的特殊方法del:</p>
+<p>__del__特殊方法要在实例对象的所有引用都被清除后才会执行．</p>
+<p>不要在del中做与实例没有关系的事情，一般不建议实现该方法．</p>
+<pre><code>class ClassName(object):
+
+    def __new__(cls, *args, **kwargs):
+        ...
+        return ...
+
+    def __del__(self, *args, **kwargs):
+        ...
+</code></pre>
+<h2 id="类属性">类属性</h2>
+<p>类属性分为数据属性和方法属性.</p>
+<p>类的数据属性仅仅是定义的类的变量．</p>
+<p>数据属性通常是静态变量, 也就是和类对象绑定, 与类的实例无关．</p>
+<p>直接通过类名来访问类的数据属性．不建议通过实例来访问类的数据属性．</p>
+<pre><code>class ClassName(object):
+    CONST_VARIABLE = 'value'
+
+    def __init__(self, *args, **kwargs):
+        ClassName.CONST_VARIABLE = 'new'
+
+ClassName.CONST_VARIABLE = 'new value'
+</code></pre>
+<p>类的方法属性仅仅是一个作为类定义的一部分定义的函数, 与类的实例无关．</p>
+<p>类中定义的方法的第一个参数是一个实例self．</p>
+<p>方法属性必须绑定到一个实例才能被直接调用, 非绑定方法没有给出实例对象一般不能直接调用．</p>
+<pre><code>class ClassName(object):
+    def func(self, *args, **kwargs):
+        pass
+
+ClassName.func() # TypeError: unbound method func() must be called with MyClass instance as first argument (got nothing instead)
+
+# 调用非绑定方法：
+ClassName.func(ClassName()) # 除非传入实例作为第一个参数self的值
+# 常用场景： 调用父类中的非绑定方法
+class ClassNmae(BaseClass):
+    def __init__(self, *args, **kwargs):
+        BaseClass.__init__(self, *args, **kwargs)
+        ...
+
+# 调用绑定方法： 自动把实例作为self传入，不用显式传入．
+ClassName().func()
+</code></pre>
+<p>查看类的属性：</p>
+<pre><code>dir(class) # 内建函数
+class.__dict__ # 通过类的特殊属性
+</code></pre>
+<p>类的特殊属性：</p>
+<pre><code>class.__doc__ # 文档的特殊属性, 不会被继承.
+class.__name__ # class name
+class.__bases__ # 类的父类构成的元组
+class.__dict__ # 以字典的形式存储对象的属性
+# 新式类新增的三个特殊属性:
+class.__mro__ # 返回方法解析顺序的元组
+class.__subclasses__() # 返回子类的列表
+class.mro()
+</code></pre>
+<p>内置类的方法(BIM)的特殊属性:</p>
+<pre><code>bim.__doc__
+bim.__name__
+bim.__module__ # __builtin__
+bim.__self__ # bim
+</code></pre>
+<p>自定义的方法的特殊属性(UDM):</p>
+<pre><code>'__doc__',
+'__name__',
+'__module__',
+'__self__',
+'im_class',
+'im_func',
+'im_self'
+</code></pre>
+<h1 id="实例instances">实例/Instances</h1>
+<p>实例化：</p>
+<pre><code>ins = ClassName()
+</code></pre>
+<h2 id="实例属性">实例属性</h2>
+<p>实例属性：</p>
+<p>实例严格来说只有数据属性(方法属性应该属于类属性)，数据属性就是和某个实例相关联的数据值，这些值独立于其它实例或类，当一个实例被释放，相应的数据属性也被释放．通常通过init方法来设置实例的数据属性．</p>
+<pre><code>class ClassName(object):
+    DATA = &quot;in class&quot; # 类的数据属性
+
+    def __init__(self, default=&quot;default&quot;, *args, **kwargs):
+        self.default = default # 当前实例的数据属性
+</code></pre>
+<p>区别类的数据属性和实例的数据属性.</p>
+<pre><code>obj1 = ClassName()
+print obj1.DATA # &quot;in class&quot;, 当实例没有同名的数据属性，会访问类的数据属性．
+obj1.DATA = &quot;in obj1&quot; # 相当于给实例新建了一个数据属性，会覆盖类的数据属性．
+print obj1.DATA # &quot;in obj1&quot; 访问的是实例的数据属性，覆盖了类的数据属性．
+ClassName.DATA # &quot;in class&quot; 访问类的数据属性．
+</code></pre>
+<p>查看实例属性:</p>
+<pre><code>dict(instance)
+instance.__dict__
+</code></pre>
+<p>实例的特殊属性：</p>
+<pre><code>instance.__dict__ # 以字典的形式存储对象的属性
+instance.__class__ # 实例对应的类
+# instance没有__name__属性
+</code></pre>
+<hr>
+<h1 id="封装encapsulation"><strong>封装/Encapsulation</strong></h1>
+<p>封装描述了对数据／信息进行隐藏的观念，对数据属性提供接口和访问函数．</p>
+<p>默认情况下，数据属性和类属性都是public的．类所在的模块和导入了类的其它模块都可以使用．</p>
+<pre><code>var # public
+def method_name(self):
+</code></pre>
+<p>一个下划线开头的属性是protected,能在类本身和子类使用，类的实例可以直接访问，不可以用from module import *导入．</p>
+<p>用于把属性限制在一个模块中．</p>
+<pre><code>_xxx # protected
+def _xxx(self):
+</code></pre>
+<p>双下划线开头的属性是private, 只能类本身使用，类的实例不能直接访问，子类和其它类都不能使用,子类也不能覆盖．</p>
+<p>用于把属性限制在一个类中.</p>
+<pre><code>__xxx # private
+def __xxx(self):
+</code></pre>
+<p>系统已经定义的特殊方法，也称魔法方法．</p>
+<pre><code>def __xxx__(self): # 系统定义的名字
+</code></pre>
+<h2 id="composition">Composition</h2>
+<p>类之间的关系只有两种继承和包含.</p>
+<p>创建复合对象时可以通过composition组合来增加功能和代码的重用性．</p>
+<p>当类之间有显著不同，并且较小的类是较大的类所需的组件时一般使用组合．</p>
+<pre><code>from .company import Company
+from .home import Home
+class Emp(object):
+    def __init__(self, *args, **kwargs):
+        self.comp = Company(args)
+        self.home = Home(kwargs)
+</code></pre>
+<hr>
+<h1 id="继承inheritance"><strong>继承/Inheritance</strong></h1>
+<p>利用类的两种方式就是包装和继承．</p>
+<h2 id="子类和派生">子类和派生</h2>
+<p>对于相同的类但是有不同的功能，可以通过derivation派生来实现．</p>
+<p>通过使用一个已经定义好的类，扩展它或者修改，而不会影响系统中使用现存类的其它代码片段．</p>
+<pre><code>class Father(object):
+    def woman(self):
+        ...
+
+class Mother(object);
+    def man(self):
+        ...
+
+class Child(Father, Mother):
+    def child(self):
+        ...
+</code></pre>
+<h2 id="继承">继承</h2>
+<p>继承描述了基类的属性如何遗传给派生类．</p>
+<p>派生类（子类）继承自基类（父类）</p>
+<p>python中的类需要继承一个或多个父类．</p>
+<p>object类是所有类的父类．</p>
+<p>子类继承了基类的属性和方法．</p>
+<p>文档字符串__doc__是唯一的，不能继承．</p>
+<p>一个类的__bases__属性可以查看它的父类组成的元组．不包括父类的父类．</p>
+<pre><code>class.__bases__ # 类的父类构成的元组
+</code></pre>
+<p>实例调用方法时，默认调用的该对象的类的本身的方法，如果该类没有实现该方法才会调用父类的方法．</p>
+<pre><code>class Parent(object):
+    def foo(self):
+        print &quot;in parent.&quot;
+
+class Child(Parent):
+    def foo(self):
+        print &quot;in child.&quot;
+</code></pre>
+<h2 id="从内置类继承">从内置类继承</h2>
+<p>可以从内置类型继承子类，修改一些属性．</p>
+<pre><code>class RoundFloat(float):
+    def __new__(cls, val):
+       return super(RoundFloat, cls).__new__(cls, round(val, 2))
+
+class SortedKeyDict(dict):
+    def keys(self):
+        return sorted(super(SortedKeyDict, self).keys())
+</code></pre>
+<h2 id="multiple-inheritance多重继承">Multiple inheritance多重继承</h2>
+<p>python2.2之前的版本多重继承采用深度优先，从左至右，来获取在子类中使用的属性．</p>
+<p>由于类，类型，内建类型的子类都重新架构，新的类采用MRO算法来查找子类中使用的属性．</p>
+<p>MRO: Method Resolution Order, 方法解释顺序．采用广度优先，从左至右边，来获取在子类中的属性．</p>
+<p>可以通过新式类的特殊属性查看子类的属性的查找顺序：</p>
+<pre><code>class.__mro__ # 返回方法解析顺序的元组
+</code></pre>
+<p>多继承，mro和super的用法：</p>
+<p>super每次只调用MRO中的第一个父类，和getattr的顺序一样．并且相同的父类只调用一次．</p>
+<p>数据属性，普通方法属性，特殊方法属性都是按照MRO顺序来查找．</p>
+<p><a href="https://github.com/crazy-canux/python/tree/master/python/multiple_inheritance">https://github.com/crazy-canux/python/tree/master/python/multiple_inheritance</a></p>
+<hr>
+<h1 id="多态polymorphism"><strong>多态/Polymorphism</strong></h1>
+<p>python不支持方法重载，但是可以通过对参数的判断，对不同的参数进行不同的处理．以此来实现重载的功能．</p>
+<p>python可以重载魔法方法．</p>
+<h2 id="magicmethod">magicmethod</h2>
+<p>python类有一些可自定义的特殊方法集，它们中的一些有预定义的默认行为，一些没有，留到需要的时候去实现．</p>
+<p>这些特殊方法是python中用来扩充类的方法．可以用来模拟标准类型或者重载操作符.</p>
+<p>这些特殊方法都是用双下划线开头和结尾的．也被称为魔法方法．</p>
+<p>基本特殊方法：</p>
+<pre><code>__init__(self, *args, **kwargs) # 构造器，带一些可选的参数
+__new__(cls, *args, **kwargs) # 构造器，带一些可选的参数，通常用来设置不可变数据类型的子类．
+__del__(self) # 解构器
+
+__str__(self) # 可打印的字符输出，str(), print
+obj = ClassName()
+print obj # 默认的类的__str__会调用__repr__, &lt;test.RoundFloat object at 0x7f32a151be90&gt;
+# 可以通过重写__str__或__expr__来改变打印的内容
+
+__repr__(self) # 运行时的字符串输出，　repr(), ``
+obj = ClassName()
+obj # 默认的打印对象的运行时的字符串，　&lt;test.RoundFloat at 0x7fb715253e90&gt;
+# 可以通过重写__repr__()改变打印的内容
+
+__unicode__(self) # unicode字符串输出，　unicode()
+__nonzero__(self) # 为object定义False值，　bool()
+__hash__(self)  # 返回对象hash值，　hash()
+</code></pre>
+<p>可调用对象的特殊方法：</p>
+<pre><code>__call__(self, *args) # 表示可调用的实例, callable(object) 会返回true.
+
+class TestClass(object):
+    def __call__(self, *args):
+        print &quot;Instance is callable after implement call method in class.&quot;
+        print &quot;Args come from instance invoke is: {}&quot;.format(args)
+
+tc = TestClass()
+callable(tc) # True
+tc()
+tc('arg1')
+</code></pre>
+<p>实例和类的检查相关特殊方法：</p>
+<p>可以控制内置方法的反射(自省)行为．</p>
+<pre><code>__instancecheck__(self, instance) # isinstance(instance, class)
+__subclasscheck__(self, subclass) # issubclass(subclass, class)
+</code></pre>
+<p>属性相关特殊方法：</p>
+<pre><code>__getattr__(self, name) # getattr(), 仅当属性没有在实例／类／父类的__dict__中找到才会调用．
+__setattr__(self, name, value)
+__delattr__(self, name)
+</code></pre>
+<p>新式类的特殊方法：</p>
+<pre><code># 属性相关
+__getattribute__(self, name) # 总是被调用, 会覆盖__getattr__()
+
+# 描述符相关
+__get__(self, instance, owner)
+__set__(self, instance, value)
+__delete__(self, instance)
+
+__slots__
+
+__metaclass__
+</code></pre>
+<p>with上下文管理特殊方法：</p>
+<pre><code>__enter__(self) # return self, 需要返回self
+__exit__(self, exc_type, exc_value, traceback)
+</code></pre>
+<p>对象比较特殊方法：</p>
+<pre><code>__cmp__(self, other) # cmp()
+__lt__(self, other)
+__le__(self, other)
+__eq__(self, other)
+__ne__(self, other)
+__gt__(self, other)
+__ge__(self, other)
+</code></pre>
+<p>容器类型相关特殊方法:</p>
+<pre><code>__len__(self) #　len()
+__getitem__(self, key) #
+__setitem__(self, key, value) #
+__delitem__(self, key) # del
+__reversed__(self) # reversed()
+__iter__(self) # iter()
+__contains__(self, item)
+__missing__(self, key)
+</code></pre>
+<p><a href="https://github.com/crazy-canux/python/blob/master/python/magicmethod/container.py">https://github.com/crazy-canux/python/blob/master/python/magicmethod/container.py</a></p>
+<p>数值类型相关特殊方法：</p>
+<pre><code>__add__(self, other)
+__sub__(self, other)
+__mul__(self, other)
+__div__(self, other)
+__truediv__(self, other)
+__floordiv__(self, other)
+__mod__(self, other)
+__divmod__(self, other)
+__pow__(self, other[, module])
+__lshift__(self, other)
+__rshift__(self, other)
+__and__(self, other)
+__xor__(self, other)
+__or__(self, other)
+
+__rxxx__(self, other)
+
+# 原位运算必须返回self.
+__ixxx__(self, other) # self += other -&gt; self = self + other
+
+__neg__(self)
+__pos__(self)
+__abs__(self)
+__invert__(self)
+
+__complex__(self)
+__int__(self)
+__long__(self)
+__float__(self)
+
+__oct__(self)
+__hex__(self)
+
+__index__(self)
+__coerce__(self, other)
+</code></pre>
+<h2 id="delegation--wrapping">Delegation &amp; Wrapping</h2>
+<p>Wrapping包装就是对一个已经存在的对象增加，删除或修改已经存在的功能．</p>
+<p>Delegation授权(代理)是Wrapping包装的一个特性,用于简化处理相关命令性功能，最大化重用代码．</p>
+<p>实现delegation的关键在于覆盖__getattr__()特殊方法．通过调用内置函数getattr()得到一个对象的默认行为．</p>
+<pre><code>class Wrapper(object):
+    def __init__(self, obj):
+        self.__data = obj
+
+    def __getattr__(self, attr):
+        return getattr(self.__data, attr)
+</code></pre>
+<hr>
+<h1 id="新式类的特性">新式类的特性</h1>
+<p>随着类和类型的合并，所有类对应的内置函数都是工厂函数，调用工厂函数实际上就是类型实例化．</p>
+<p>属性相关的可定制特殊属性：</p>
+<p>旧式类和新式类都有__dict__属性用字典的方式存储属性，但是字典占用大量内存．</p>
+<p>新式类定义了一个新的属性__slots__用于取代__dict__属性, 是一个类的特殊变量属性．</p>
+<pre><code>__slots__
+</code></pre>
+<p>属性相关的特殊方法：</p>
+<pre><code>__getattribute__(self, name) # 新式类新增，总是被调用, 会覆盖__getattr__()
+</code></pre>
+<h1 id="metaclass">metaclass</h1>
+<p>元类用来定义某些类是如何被创建的．改变类的默认行为和创建方式．</p>
+<p>大多数情况下不需要创建元类，一般使用系统的元类的默认方式．</p>
+<p>在执行类定义的时候，解释器必须知道这个类的元类；</p>
+<p>先查找类属性__metaclass__，如果存在就以此作为元类；</p>
+<p>如果没有定义，就向上查找父类中的__metaclass__;</p>
+<p>如果父类也没有就查找__metaclass__全局变量．</p>
+<p>如果都没有这个类就是一个传统类．就以types.ClassType作为元类．</p>
+<p>在执行类定义时候检查元类，元类传递三个参数到构造器：</p>
+<pre><code>类名
+从基类继承数据的元组, __bases__
+类的属性字典, __dict__
+</code></pre>
+<p>元类相关的可定制属性：</p>
+<pre><code>__metaclass__
+</code></pre>
+<p>定义一个元类：</p>
+<pre><code>class MetaClassName(type):
+    def __new__(cls, name, bases, dicts):
+        super(MetaClassName, cls).__init__(name, bases, dicts)
+        # 在这里做一些你希望使用该元类的类在定义时做的操作
+
+class ClassName(object):
+    __metaclass__ = MetaClassName # 指定元类
+    ...
+</code></pre>
+<p><a href="https://github.com/crazy-canux/python/tree/master/python/metaclass">https://github.com/crazy-canux/python/tree/master/python/metaclass</a></p>
+<h2 id="abstractmethod">abstractmethod</h2>
+<p>抽象方法，类似于java的interface.</p>
+<p>最简单的抽象方法：</p>
+<pre><code># 如果子类没有实现同名的该方法，就会抛出异常．
+def base_method(self):
+    raise NotImplementedError
+</code></pre>
+<p>或者使用abc标准库来实现：</p>
+<p><a href="https://github.com/crazy-canux/python/tree/master/python/psl/myabc.py">https://github.com/crazy-canux/python/tree/master/python/psl/myabc.py</a></p>
+<h1 id="descriptors">descriptors</h1>
+<p>研究描述符之前先搞清楚普通对象访问属性的优先级．</p>
+<p>普通对象访问(set/get/delete)属性的优先级：</p>
+<pre><code>obj.__dict__['attr'] # 先访问实例对象
+obj.__class__.__dict__['attr'] # 再访问类对象
+obj.__class__.__base__.__dict__['attr'] # 接着访问基类的对象,不包括metaclass.
+__getattr__ # 如果实现了的话，优先级最低
+</code></pre>
+<p>descriptors描述符是python新式类的最关键的新特性．</p>
+<p>描述符是具有绑定行为的对象属性，属性访问被描述符协议中的方法覆盖．</p>
+<p>任何实现了下面三个描述符协议方法中的一个的新式类都是描述符.这三个特殊方法充当描述符协议．</p>
+<p>描述符相关的特殊方法：</p>
+<pre><code>__get__(self, obj, type=None) # 返回一个属性的值
+__set__(self, obj, value) # 设置一个属性的值，返回None
+__delete__(self, obj) # 属性的引用递减，返回None
+</code></pre>
+<p>描述符是数据property，class，staticmethod，classmethod, 以及super的机制．</p>
+<p>data descriptor:定义了__get__和__set__的对象是数据描述符, 主要用于数据属性．</p>
+<p>non data descriptor:仅仅定义了__get__的对象是非数据描述符，主要用于方法属性．</p>
+<p>如果实例的字典(obj.<strong>dict</strong>)具有与数据描述符相同名称的条目，则数据描述符优先。</p>
+<p>如果实例的字典(obj.<strong>dict</strong>)具有与非数据描述符相同名称的条目，则字典条目优先。</p>
+<pre><code>class DescriptorName(object):
+    def __init__(self, name):
+        self.name = name
+
+    def __get__(self, instance, typ):
+        print '__get__', instance, typ
+        return self.name
+
+    def __set__(self, instance, value):
+        print '__set__', instance, value
+        self.name = value
+
+class TestClass(object):
+    name = DescriptorName('canux')
+
+tc = TestClass()
+print tc.name # __get__(tc, type(tc))被调用
+print TestClass.name # __get__(None, TestClass)被调用
+tc.__dict__['name'] = 'test' # 无效
+tc.name = 'test' # __set__被调用
+TestClass.name = 'test' # 仅仅是重新定义类的属性，覆盖了描述符
+# 此时tc.__dict__有同名属性，如果定义了__set__
+print tc.name # __get__被调用，属性已经修改
+print TestClass.name # __get__被调用,属性已经修改
+# 如果没有定义__set__，就是调用的tc.__dict__里面的．
+</code></pre>
+<p>描述符访问属性的优先级：</p>
+<pre><code>数据描述符(__set__, __get__)
+# 对于访问实例属性obj.__getattribute__调用方式：type(obj).__dict__['attr'].__get__(obj, type(obj))
+# 对于访问类属性class.__getattribute__调用方式：ClassName.__dict__['attr'].__get__(None, ClassName)
+instance.__dict__
+非数据描述符(__get__)
+__getattr__ # 如果实现了的话，在描述符中优先级最低
+</code></pre>
+<p>描述符是由__getattribute__特殊方法调用，覆盖该方法可以防止描述符自动调用.</p>
+<p>obj.__getattribute__和class.__getattribute__的调用方式不同．</p>
+<p>描述符的三个特殊方法一般是通过属性访问自动调用．</p>
+<p>函数和方法的描述符：</p>
+<p>在属性访问期间函数包括了__get__方法用于绑定方法．因此函数和方法是非数据描述符．</p>
+<pre><code>class TClass(object):
+    def __get__(self, obj, typ=None):
+        return types.MethodType(self, obj, typ)
+
+
+    def tmethod(self, args):
+        return args
+
+class Foo(object):
+    @Tclass
+    def bar(self):
+        print 'in bar'
+
+obj = TClass()
+TClass.__dict__['tmethod'] # function __main__.f
+TClass.tmethod # unbound method TClass.tmethod
+obj.tmethod # bound method TClass.tmethod of &lt;__main__.TClass object at 0x7f8a4f084c10&gt;
+
+obj.function(*args) -&gt; function(obj, *args)
+Class.function(*args) -&gt; function(*args)
+</code></pre>
+<h2 id="property">property</h2>
+<p>property属性是一种有用的特殊类型的描述符． 也是descriptor的主要用途．</p>
+<pre><code>property(fget=None, fset=None, fdel=None, doc=None) # 返回一个property类型的对象
+</code></pre>
+<p>通过上面的descriptor的普通方式实现纯pytho写的property:</p>
+<pre><code>class Property(object):
+    def __init__(self, fget, fset, fdelete):
+        self.fget = fget
+        self.fset = fset
+        self.fdelete = fdelete
+
+    def __get__(self, obj, typ=None):
+        return self.fget(obj)
+
+    def __set__(self, obj, val):
+        self.fset(obj, val)
+
+    def __delete__(self, obj):
+        self.fdelete(obj)
+
+class Foo(object):
+    def fget(self):
+        print 'fget called'
+
+    def fset(self, val):
+        print 'fset called'
+
+    def fdelete(self):
+        print 'fdelete called'
+
+    bar = Property(fget, fset, fdelete)
+</code></pre>
+<p>通过装饰器@property来实现：</p>
+<pre><code>class Person(object):
+    def __init__(self):
+        self._email = None
+
+    @property
+    def email(self):
+        return self._email
+
+    @email.setter
+    def email(self, value):
+        m = re.match('\W+@\W+\.\W+', value)
+        if not m:
+            raise Exception('email not valid')
+        self._email = value
+
+    @email.deleter
+    def email(self):
+        del self._email
+</code></pre>
+<p><a href="https://github.com/crazy-canux/python/tree/master/python/descriptor">https://github.com/crazy-canux/python/tree/master/python/descriptor</a></p>
+<hr>
+<h1 id="super">super</h1>
+<p>super只能用于新式类．</p>
+<p>因为同名的方法子类会覆盖父类，在子类中调用父类的同名方法可以通过super内置函数．</p>
+<p>super()方法实际是一个构造器．自动找到基类方法，同时传入self参数．</p>
+<pre><code>super(type, obj) -&gt; bound super object; requires isinstance(obj, type), obj是实例
+super(type, type2) -&gt; bound super object; requires issubclass(type2, type), type2是类．
+super(type) -&gt; unbound super object
+</code></pre>
+<p>对于单继承, super用来调用父类同名方法．</p>
+<pre><code>class Child(Parent):
+    def foo(self):
+        Parent.foo(self) # 可以手动调用父类同名的方法，调用非绑定方法，传入self参数．
+
+class Child(Parent):
+    def __init__(self, *args, *kwargs):
+        super(Child, self).__init__(*args, **kwargs) # init方法也会被覆盖．
+        ...
+
+    def foo(self, *args, **kwargs):
+        super(Child, self).foo(*args, **kwargs) # super(type, obj)返回type类的基类的对象．
+        ...
+</code></pre>
+<p>对于多继承，super用法参考上面的多继承．</p>
+<p>super()返回的对象有一个用于调用Descriptor的定制__getattribute__()方法．</p>
+<pre><code>super(B, obj).method() -&gt;
+obj.__class__.__mro__ -&gt;
+A.__dict__['method'].__get__(obj, B)
+</code></pre>
+<p><a href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">https://rhettinger.wordpress.com/2011/05/26/super-considered-super/</a></p>
+<h1 id="classmethod">classmethod</h1>
+<p>要写一个只在类中运行，而不在实例中运行的方法,可以使用类方法．</p>
+<p>通过classmethod装饰器来装饰该方法，并且方法的第一个参数是一个类cls.</p>
+<p>类方法通常用于替代类构造函数．</p>
+<pre><code>class ClassName(object):
+    @classmethod
+    def demo_cm(cls, *args, **kwargs):
+        ...
+
+# 可以通过类来调用, 也就是可以直接调用非绑定方法．自动传入类作为第一个参数．
+ClassName.demo_cm(args, kwargs)
+# 也可以通过实例来调用, 自动传入类作为第一个参数
+ClassName().demo_cm(args, kwargs)
+</code></pre>
+<p>描述符相关：</p>
+<pre><code>obj.function(*args) -&gt; function(type(obj), *args)
+Class.function(*args) -&gt; function(Class, *args)
+</code></pre>
+<h1 id="staticmethod">staticmethod</h1>
+<p>有一些跟类有关的功能，但在运行时又不需要类和实例参与的情况需要用到静态方法．</p>
+<p>通过staticmethod装饰器来装饰该方法，并且第一个参数不需要是类cls或实例self.</p>
+<p>比如修改环境变量或修改其它类的属性，相当于是在类中定义的一个普通函数．</p>
+<pre><code>class ClassName(object):
+    @staticmethod
+    def demo_sm():
+        ...
+
+# 可以直接调用非绑定方法,但是不会自动传入类．
+ClassName.demo_sm()
+# 也可以通过实例调用．但是不会自动传入实例．
+ClassName().demo_sm()
+</code></pre>
+<p>描述符相关：</p>
+<pre><code>obj.function(*args) -&gt; function(*args)
+Class.function(*args) -&gt; function(*args)
+</code></pre>
+<hr>
+<h1 id="class-decorators">Class Decorators</h1>
+<p>类装饰器比函数装饰器更灵活，高内聚，封装性等优点．</p>
+<p>类装饰器用于装饰一个类.</p>
+<pre><code>def deco_name(cls):
+    class WrapperName(cls, ...):
+        def __init__(self, *args, **kwargs):
+            cls.__init__()
+            ....__init__()
+            ...
+    return WrapperName
+
+@deco_name
+class ClassName(object):
+    def __init__(self, *args, **kwargs):
+        ...
+    ...
+</code></pre>
+<p><a href="https://github.com/crazy-canux/python/blob/master/python/decorator/class_decorator.py">https://github.com/crazy-canux/python/blob/master/python/decorator/class_decorator.py</a></p>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-06-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/oop/">oop</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/python_summary/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Summary</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/python/">
+            <span class="next-text nav-default">Python</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-06-21 21:18:09 \x2b0000 UTC',
+        title: 'OOP',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

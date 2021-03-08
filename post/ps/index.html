@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PowerShell - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="PowerShell Console: command line interface ISE: script editor and console combination Version: 2.0,3.0,4.0,5.0 C:\Windows\System32\powershell 存放64位powershell C:\Windows\SysWOW64\powershell 存放32位powershell &amp;gt;$PSVersionTable &amp;gt;$HOST Install/Update: https://www.microsoft.com/zh-CN/download/details.aspx?id=40855 安装Windows Management Framework4." /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/ps/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PowerShell" />
+<meta property="og:description" content="PowerShell Console: command line interface ISE: script editor and console combination Version: 2.0,3.0,4.0,5.0 C:\Windows\System32\powershell 存放64位powershell C:\Windows\SysWOW64\powershell 存放32位powershell &gt;$PSVersionTable &gt;$HOST Install/Update: https://www.microsoft.com/zh-CN/download/details.aspx?id=40855 安装Windows Management Framework4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/ps/" />
+<meta property="article:published_time" content="2016-04-26T09:52:02+00:00" />
+<meta property="article:modified_time" content="2016-04-26T09:52:02+00:00" />
+<meta itemprop="name" content="PowerShell">
+<meta itemprop="description" content="PowerShell Console: command line interface ISE: script editor and console combination Version: 2.0,3.0,4.0,5.0 C:\Windows\System32\powershell 存放64位powershell C:\Windows\SysWOW64\powershell 存放32位powershell &gt;$PSVersionTable &gt;$HOST Install/Update: https://www.microsoft.com/zh-CN/download/details.aspx?id=40855 安装Windows Management Framework4.">
+<meta itemprop="datePublished" content="2016-04-26T09:52:02&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-26T09:52:02&#43;00:00" />
+<meta itemprop="wordCount" content="1224">
+
+
+
+<meta itemprop="keywords" content="powershell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PowerShell"/>
+<meta name="twitter:description" content="PowerShell Console: command line interface ISE: script editor and console combination Version: 2.0,3.0,4.0,5.0 C:\Windows\System32\powershell 存放64位powershell C:\Windows\SysWOW64\powershell 存放32位powershell &gt;$PSVersionTable &gt;$HOST Install/Update: https://www.microsoft.com/zh-CN/download/details.aspx?id=40855 安装Windows Management Framework4."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PowerShell</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-04-26 </span>
+        <div class="post-category">
+            <a href="/categories/windows/"> Windows </a>
+            </div>
+          <span class="more-meta"> 1224 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#win32-openssh">win32-openssh</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#变量">变量</a></li>
+    <li><a href="#数组">数组</a></li>
+    <li><a href="#字典">字典：</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-04-26T09:52:02" title="April 26, 2016">April 26, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="powershell">PowerShell</h1>
+<p>Console: command line interface</p>
+<p>ISE: script editor and console combination</p>
+<p>Version:</p>
+<p>2.0,3.0,4.0,5.0</p>
+<p>C:\Windows\System32\powershell 存放64位powershell</p>
+<p>C:\Windows\SysWOW64\powershell 存放32位powershell</p>
+<pre><code>&gt;$PSVersionTable
+&gt;$HOST
+</code></pre>
+<p>Install/Update:</p>
+<p><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=40855">https://www.microsoft.com/zh-CN/download/details.aspx?id=40855</a></p>
+<p>安装Windows Management Framework4.0即可。</p>
+<pre><code>&gt;$PSHOME
+</code></pre>
+<p>多版本时切换版本:</p>
+<pre><code>&gt;powershell -version 2
+</code></pre>
+<hr>
+<h1 id="powershell相关项目">powershell相关项目</h1>
+<p><a href="https://github.com/Microsoft">https://github.com/Microsoft</a></p>
+<p><a href="https://github.com/PowerShell">https://github.com/PowerShell</a></p>
+<p><a href="https://github.com/PowerShellOrg">https://github.com/PowerShellOrg</a></p>
+<h2 id="win32-openssh">win32-openssh</h2>
+<p>windows的SSH。</p>
+<p><a href="https://github.com/PowerShell/Win32-OpenSSH">https://github.com/PowerShell/Win32-OpenSSH</a></p>
+<hr>
+<h1 id="powershell命令">powershell命令</h1>
+<pre><code>&gt;powershell -?
+&gt;powershell /?
+&gt;powershell -help
+</code></pre>
+<hr>
+<h1 id="powershell-script">powershell script</h1>
+<p>powershell是默认大小写不敏感的。</p>
+<p>同一行多个命令需要用分号;隔开。</p>
+<p>powershell的安全策略：</p>
+<ol>
+<li>restricted(default)</li>
+<li>allsigned</li>
+<li>remotesigned</li>
+<li>unrestricted</li>
+<li>bypass</li>
+</ol>
+<h1 id="注释">注释</h1>
+<p>单行注释：</p>
+<pre><code># comment
+</code></pre>
+<p>多行注释(文档注释)：</p>
+<pre><code>&lt;#
+comment1
+comment2
+...
+#&gt;
+</code></pre>
+<p>帮助文档:</p>
+<p>在脚本开头的注释中用下面关键字插入文档。</p>
+<pre><code>&lt;#
+.SYNOPSIS
+Write your synopsis here.
+
+.DESCRIPTION
+Write your description here.
+
+.PARAMETER param1
+Write your param1 information here.
+
+.EXAMPLE
+Write your example1 here.
+
+.NOTES
+Write your notes here.
+
+.LINK
+http://test.com
+#&gt;
+</code></pre>
+<h1 id="数据类型">数据类型</h1>
+<h2 id="变量">变量</h2>
+<p>所有的变量都存储在Variable驱动器中,可以用Variable驱动器对变量操作。</p>
+<pre><code>ls Variable: # 查看所有变量
+</code></pre>
+<p>系统变量：</p>
+<pre><code>$_    # 表示管道中的当前对象
+?    # True表示上一个命令成功执行,False失败
+</code></pre>
+<p>自定义变量：</p>
+<p>变量以$开头定义,但是$不是变量名的一部分。</p>
+<p>变量包含数字，字母和小划线。</p>
+<pre><code>$var1=&quot;test&quot;
+$var1
+
+# 交换两个变量的值
+$var1,$var2=$var2,$var1
+</code></pre>
+<p>变量类型：</p>
+<p>可以不用指定变量类型。</p>
+<pre><code>[string]$str=&quot;123&quot;
+[int]$num=123
+[boolean]bool=&quot;True&quot;
+</code></pre>
+<p>判断变量类型：</p>
+<pre><code>$str -is [string]
+$num -as [int]
+</code></pre>
+<h2 id="数组">数组</h2>
+<p>包含多个变量就是一个数组。</p>
+<pre><code>$var2=1,2,3
+$var2[index]
+$var2[0] # 数组第一个元素
+$var2[-1] # 数组最后一个元素
+</code></pre>
+<h2 id="字典">字典：</h2>
+<p>hash类型。</p>
+<pre><code>@{L=&lt;key&gt;;
+E={$_.&lt;value&gt;};
+formatstring=&lt;format&gt;}
+
+@{N=&lt;key&gt;;E={$_.&lt;value&gt;}}
+@{Label=&lt;key&gt;;E={$_.&lt;value&gt;}}
+@{Name=&lt;key&gt;;E={$_.&lt;value&gt;}}
+</code></pre>
+<h1 id="运算符">运算符</h1>
+<p>基本运算符：</p>
+<pre><code>= # 赋值运算符，可以把任何数据类型包括对象赋值给变量
++ # 加法和字符串拼接
+- # 减法
+* # 乘法
+/ # 除法
+() # 优先运算符
+</code></pre>
+<p>特殊运算符：</p>
+<pre><code>$($procs[0].name) # 子变量
+'$var' # 单引号中的变量原样输出
+&quot;$var&quot; # 双引号中的变量被替换
+&quot;`$var&quot; # `重音符可以用在双引号中转义
+`t    # 制表符
+`n    # 换行符
+kb/mb/gt/tb/pb # 单位可以运算
+</code></pre>
+<p>比较运算符：</p>
+<pre><code>-eq
+-ne
+-gt
+-ge
+-lt
+-le
+-contains 包含
+-notcontains
+</code></pre>
+<p>布尔运算符：</p>
+<pre><code>-not 求反
+-and
+-or
+-xor
+</code></pre>
+<hr>
+<h1 id="控制流">控制流</h1>
+<p>powershell支持foreach循环。</p>
+<p>if条件语句：</p>
+<pre><code>if ($this -eq $that) {
+    expression
+} elseif ($those -gt $these) {
+    expression2
+} else {
+    expression3
+}
+</code></pre>
+<p>switch条件语句：</p>
+<pre><code>switch ($condition) {
+    val1 {
+        expression
+        break
+    }
+    val2 {
+        expression2; break
+    }
+    default {
+        default_expression
+    }
+}
+</code></pre>
+<p>foreach循环语句：</p>
+<pre><code>foreach ($name in $names) {
+    expression
+}
+</code></pre>
+<p>for循环语句：</p>
+<pre><code>for ($loop=1; condition; $loop++)
+{
+    expression
+}
+</code></pre>
+<p>while循环语句:</p>
+<pre><code>while (condition)
+{
+    expression
+}
+</code></pre>
+<p>do-while循环语句：</p>
+<pre><code>do {
+    expression
+} while (condition)
+</code></pre>
+<p>break语句：</p>
+<p>break用于循环和switch语句。</p>
+<p>continue语句：</p>
+<p>continue用于循环语句。</p>
+<hr>
+<h1 id="函数">函数</h1>
+<p>函数：</p>
+<pre><code>function name {
+    ...
+}
+</code></pre>
+<p>调用函数:</p>
+<pre><code>.\file.ps1
+name
+</code></pre>
+<p>选项：</p>
+<pre><code>[CmdletBinding()]
+Param(
+    [Parameter(Mandatory=$True)]
+    [String]$ComputerName, # ComputerName强制为通过命令行输入参数
+
+    [int]$EventID=1234, # EventID有默认参数
+
+    [Parameter(Mandatory=$True)][ValidateRange(0,23)]
+    [int]$Number # 给出参数的范围
+)
+
+[CmdletBinding(SupportsShouldProcess$True)] # 支持-whatif和-confirm
+[ValidateSet(1,3,8)] # 给出参数的可选值
+[alias(&quot;id&quot;, &quot;nunber&quot;)] # 给参数指定别名
+</code></pre>
+<hr>
+<h1 id="模块">模块</h1>
+<p>系统模块路径：</p>
+<pre><code>c:\Windows\System32\WindowsPowershell\v1.0\Modules\
+</code></pre>
+<p>函数可以打包成模块放在系统模块路径或用户自己的模块路径。</p>
+<p>模块放到同名的目录mytools下，取名mytools.psm1</p>
+<p>导入用户自己路径下的模块：</p>
+<pre><code>Import-Module -name C:\Modules\mytools
+</code></pre>
+<hr>
+<h1 id="异常和错误处理">异常和错误处理</h1>
+<p>调试语句：</p>
+<pre><code>Write-Verbose &quot;print verbose information.&quot; # 打印调试信息
+
+Write-Debug &quot;print debug information.&quot; # 使用-Debug进入debug模式，exit退出。
+</code></pre>
+<p>调试相关系统变量：</p>
+<pre><code>$ErrorActionPreference='Continue' # 调试的系统变量，默认报错继续执行
+
+$DebugPreference='SilentlyContinue'
+
+$ErrorView='NormalView'
+
+$Error 存储整个shell的错误。
+</code></pre>
+<p>异常捕获：</p>
+<pre><code>Try {
+    expressions
+}
+Catch {
+    &quot;execute when catch the error.&quot;
+}
+Finally {
+    &quot;execute anyway.&quot;
+}
+</code></pre>
+<p>断点调试：</p>
+<pre><code>$Condition = {if ($a -is [int] -and $a -gt 100) {Write-Host &quot;`$a was modified&quot;}}
+$Breakpoint = Set-PSBreakpoint -Variable a -Mode Write -Script $psise.CurrentFile.FullPath -Action $Condition
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-04-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/powershell/">powershell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/win_admin/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Admin</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/ps_utils/">
+            <span class="next-text nav-default">Utils</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-04-26 09:52:02 \x2b0000 UTC',
+        title: 'PowerShell',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

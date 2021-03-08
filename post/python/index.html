@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Python - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Python概述 https://docs.python.org/2.7/index.html http://python.usyiyi.cn/translate/python_278/index.html https://docs.python.org/3.5/index.html http://python.usyiyi.cn/translate/python_352/index.html python是一门优雅而健壮的语言. 继承了编译语言(静态语言)的强大性和通用性. 同时也借鉴了脚本语言(动态语言)的易" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/python/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Python" />
+<meta property="og:description" content="Python概述 https://docs.python.org/2.7/index.html http://python.usyiyi.cn/translate/python_278/index.html https://docs.python.org/3.5/index.html http://python.usyiyi.cn/translate/python_352/index.html python是一门优雅而健壮的语言. 继承了编译语言(静态语言)的强大性和通用性. 同时也借鉴了脚本语言(动态语言)的易" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/python/" />
+<meta property="article:published_time" content="2016-06-21T21:18:09+00:00" />
+<meta property="article:modified_time" content="2016-06-21T21:18:09+00:00" />
+<meta itemprop="name" content="Python">
+<meta itemprop="description" content="Python概述 https://docs.python.org/2.7/index.html http://python.usyiyi.cn/translate/python_278/index.html https://docs.python.org/3.5/index.html http://python.usyiyi.cn/translate/python_352/index.html python是一门优雅而健壮的语言. 继承了编译语言(静态语言)的强大性和通用性. 同时也借鉴了脚本语言(动态语言)的易">
+<meta itemprop="datePublished" content="2016-06-21T21:18:09&#43;00:00" />
+<meta itemprop="dateModified" content="2016-06-21T21:18:09&#43;00:00" />
+<meta itemprop="wordCount" content="12712">
+
+
+
+<meta itemprop="keywords" content="python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python"/>
+<meta name="twitter:description" content="Python概述 https://docs.python.org/2.7/index.html http://python.usyiyi.cn/translate/python_278/index.html https://docs.python.org/3.5/index.html http://python.usyiyi.cn/translate/python_352/index.html python是一门优雅而健壮的语言. 继承了编译语言(静态语言)的强大性和通用性. 同时也借鉴了脚本语言(动态语言)的易"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Python</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-21 </span>
+        <div class="post-category">
+            <a href="/categories/python/"> Python </a>
+            </div>
+          <span class="more-meta"> 12712 words </span>
+          <span class="more-meta"> 26 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lexical-analysis">lexical analysis</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#垃圾回收"><em>垃圾回收</em></a></li>
+    <li><a href="#变量和常量"><em>变量和常量</em></a></li>
+    <li><a href="#类型总结"><em>类型总结</em></a></li>
+    <li><a href="#数据拷贝">数据拷贝</a></li>
+    <li><a href="#sequences序列类型"><em>Sequences序列类型</em></a></li>
+    <li><a href="#数字类型"><em>数字类型</em></a></li>
+    <li><a href="#str"><em>str</em></a></li>
+    <li><a href="#tuple"><em>tuple</em></a></li>
+    <li><a href="#list"><em>list</em></a></li>
+    <li><a href="#dict"><em>dict</em></a></li>
+    <li><a href="#sets集合"><em>Sets集合</em></a>
+      <ul>
+        <li><a href="#frozenset">frozenset</a></li>
+        <li><a href="#set">set</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#if条件语句"><em>if条件语句</em></a></li>
+    <li><a href="#while循环语句"><em>while循环语句</em></a></li>
+    <li><a href="#for循环语句"><em>for循环语句</em></a></li>
+    <li><a href="#iterators迭代器"><em>iterators迭代器</em></a></li>
+    <li><a href="#list-comprehensions列表解析"><em>list comprehensions列表解析</em></a></li>
+    <li><a href="#generator-expressions生成器表达式"><em>generator expressions生成器表达式</em></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#raise触发异常"><em>raise触发异常</em></a></li>
+    <li><a href="#自定义异常和错误"><em>自定义异常和错误</em></a></li>
+    <li><a href="#assert断言"><em>assert断言</em></a></li>
+    <li><a href="#with上下文管理"><em>with上下文管理</em></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#functional-programming函数式编程"><em>Functional Programming函数式编程</em></a></li>
+    <li><a href="#lambda匿名函数"><em>lambda匿名函数</em></a></li>
+    <li><a href="#内嵌函数"><em>内嵌函数</em></a></li>
+    <li><a href="#closure闭包"><em>closure闭包</em></a></li>
+    <li><a href="#decorator装饰器"><em>decorator装饰器</em></a></li>
+    <li><a href="#yield生成器"><em>yield生成器</em></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#module模块"><em>module模块</em></a></li>
+    <li><a href="#package"><em>package</em></a></li>
+    <li><a href="#import导入模块和包"><em>import导入模块和包</em></a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-06-21T21:18:09" title="June 21, 2016">June 21, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="python概述"><strong>Python概述</strong></h1>
+<p><a href="https://docs.python.org/2.7/index.html">https://docs.python.org/2.7/index.html</a></p>
+<p><a href="http://python.usyiyi.cn/translate/python_278/index.html">http://python.usyiyi.cn/translate/python_278/index.html</a></p>
+<p><a href="https://docs.python.org/3.5/index.html">https://docs.python.org/3.5/index.html</a></p>
+<p><a href="http://python.usyiyi.cn/translate/python_352/index.html">http://python.usyiyi.cn/translate/python_352/index.html</a></p>
+<p>python是一门优雅而健壮的语言.</p>
+<p>继承了编译语言(静态语言)的强大性和通用性.</p>
+<p>同时也借鉴了脚本语言(动态语言)的易用性．</p>
+<p>python特点：</p>
+<ul>
+<li>高级</li>
+<li>面向对象</li>
+<li>可升级</li>
+<li>可扩展</li>
+<li>可移植性</li>
+<li>易学</li>
+<li>易读</li>
+<li>易维护</li>
+<li>健壮性</li>
+<li>高效的快速原型开发工具</li>
+<li>内存管理器</li>
+<li>解释性和编译性</li>
+</ul>
+<hr>
+<h1 id="python基本语法"><strong>python基本语法</strong></h1>
+<p>python源程序叫xxx.py</p>
+<p>python中一切皆对象．</p>
+<p>python大小写敏感．</p>
+<p>python通过缩进和冒号:区分语法块，而不是大括号{}.</p>
+<p>python中的表达式(条件/循环表达式等)不需要用小括号()括起来．</p>
+<p>python标识符(变量，函数，参数，类等)由字母和下划线开头，还可以包含数字．不能是关键字．</p>
+<p>python不支持方法或函数重载．</p>
+<p>python不支持char和type类型．</p>
+<p>python没有switch语句．</p>
+<p>python支持多继承．</p>
+<p>python不支持++/&ndash;自增和自减运算符．</p>
+<p>python支持连续比较，a&lt;b&lt;c.</p>
+<h2 id="lexical-analysis">lexical analysis</h2>
+<p><a href="https://docs.python.org/2/reference/lexical_analysis.html">https://docs.python.org/2/reference/lexical_analysis.html</a></p>
+<p>Logical lines and physical lines：</p>
+<pre><code># python通过行尾的令牌NEWLINE表示逻辑行
+expression
+# 以操作系统的换行符表示物理行．
+\n
+</code></pre>
+<p>encoding declarations:</p>
+<pre><code># python脚本中的第一行或第二行的
+coding[=:]\s*([-\w.]+)
+# 注释与正则表达式匹配将被作为编码申明处理．
+</code></pre>
+<p>[Deprecated] explicit line joining:</p>
+<pre><code># 多个物理行通过反斜线backslash续行进行显示换行
+# 推荐用隐式换行．
+if a == b \
+       and c ==d: # 只有续行的最后一行可以有注释．反斜线的行不能注释.
+    print 'more than one physical line.'
+</code></pre>
+<p>implicit line joining：</p>
+<pre><code># 在括号(parentheses),方括号(square brackets)，大括号(curly braces)中的表达式可以分割多个物理行而不需要显示换行．
+test_list = [
+    'a', # 每一行都可以注释
+    'b'
+]
+</code></pre>
+<p>indentation:</p>
+<pre><code># 逻辑行的开头的空格和跳格用于缩进，python根据行的缩进级别区分语法块．
+# 缩进级别用于生成INDENT和DEDENT两个令牌
+pep8建议用四个空格表示一个缩进级别．
+</code></pre>
+<p>python2.7源代码格式:</p>
+<pre><code>#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
+</code></pre>
+<p>执行python代码：</p>
+<pre><code>$ python mycode.py
+# OR
+$ chmod u+x mycode.py
+$ ./mycode.py
+</code></pre>
+<hr>
+<h1 id="python注释"><strong>python注释</strong></h1>
+<p>单行注释：</p>
+<pre><code># comment
+</code></pre>
+<p>多行注释：</p>
+<pre><code>&quot;&quot;&quot;
+comment1
+
+comment2
+comment3
+&quot;&quot;&quot;
+</code></pre>
+<hr>
+<h1 id="python关键字"><strong>python关键字</strong></h1>
+<pre><code>def lambda class import from
+if elif else while for continue break try except finally return pass
+global raise assert del yield with as
+and or not is in
+
+[New in python3] False None True nonlocal
+
+[Deprecated in python3] print(改为了内置print函数) exec(改为了内置exec函数)
+</code></pre>
+<hr>
+<h1 id="python运算符和优先级"><strong>python运算符和优先级</strong></h1>
+<p>优先级从高到底：</p>
+<pre><code># 函数调用
+f(x)
+
+# 序列的切片
+seq[ind1:ind2:step]
+
+# 序列下标索引
+seq[index]
+
+# 属性运算.
+object.attribute
+
+# 算术运算符
+**   幂运算，乘方运算符, 等效内置函数pow(), 优先级高于单目运算符
+
+# 位运算(只能用于整数)
+~    按位取反
+# 单目运算符．
++expr    # 结果符号不变
+-expr    # 对结果符号取负
+
+# 算术运算符, 优先级一样
+*
+/    python2两个操作数都是整数时，结果是商舍去小数后的整数,也就是地板除; 只要有一个以上的浮点操作数,结果就是浮点数，也就是真正的除法．
+/    python3会自动转化成两个浮点数出发，结果永远是浮点数，永远是真正的除法．
+//   地板除，结果总是舍去小数部分．
+%
+
+# 算术运算符, 优先级一样
++
+-
+
+# 位运算(只能用于整数), 优先级一样．
+&lt;&lt;   左移位运算
+&gt;&gt;   右移位运算
+
+# 位运算(只能用于整数)
+&amp;    按位与
+
+# 位运算(只能用于整数), 优先级一样
+^    按位异或
+|    按位或
+
+# 关系运算, 优先级一样
+&lt;
+&gt;
+&lt;=
+&gt;=
+
+# 关系运算, 优先级一样
+==
+!=
+[Deprecated in python3] &lt;&gt;
+
+# 赋值运算符和增量赋值
+=
++=
+-=
+*=
+/=
+%=
+**=
+&lt;&lt;=
+&gt;&gt;=
+&amp;=
+|=
+^=
+
+# [New] 对象运算符, 优先级一样
+is
+is not
+
+# [New] 序列的元素/字典的键/集合的元素 成员运算符, 优先级一样
+in
+not in
+
+# boolean逻辑运算符
+not    逻辑非
+
+# boolean逻辑运算符, 优先级一样
+and    逻辑与
+or     逻辑或
+</code></pre>
+<hr>
+<h1 id="python数据类型"><strong>python数据类型</strong></h1>
+<p>python中一切皆对象，每个对象都有身份(id()), 类型(type()) 和 值三个属性．</p>
+<p>python中对象的类型和内存占用都是在运行时确定的．</p>
+<p>is和is not可以判断两个变量是否指向同一个对象：</p>
+<pre><code>a is b # 等价于 id(a) == id(b), 表示a和b是同一个对象
+a is not b # 等价于 id(a) != id(b), 表示a和b不是同一个对象
+</code></pre>
+<p>is和is not可以判断变量的类型:</p>
+<pre><code>import types
+type(a) is types.IntType
+</code></pre>
+<h2 id="垃圾回收"><em>垃圾回收</em></h2>
+<p>Garbage Collector垃圾回收机制是引用计数为主，标记清除和分代收集为辅．</p>
+<p>当对象被引用，包括对象在被创建，对象被作为参数传递给函数，对象成为容器对象的一个元素时，引用值增加．</p>
+<p>当对象的引用被销毁，包括一个本地引用离开其作用域，对象的别名被del显示销毁，对象的别名被赋值给其它对象，对象被从一个窗口对象中移除，窗口对象本身被del显示销毁，引用值减少．</p>
+<p>del语句会删除对象的一个引用．</p>
+<h2 id="变量和常量"><em>变量和常量</em></h2>
+<p>python是动态类型语言，变量不需要先申明，变量的类型和值在赋值的时候被初始化．</p>
+<p>用全部小写表示变量：</p>
+<pre><code>counter = 0
+miles = 100.03
+name = &quot;canux&quot;
+</code></pre>
+<p>用全部大写表示常量：</p>
+<pre><code>PIE = 3.14
+</code></pre>
+<h2 id="类型总结"><em>类型总结</em></h2>
+<p>更新模型：</p>
+<ul>
+<li>不可变类型:immutable不可变类型就是变量的值是固定的，再次赋值就是重新创建了新的对象: 数字类型，字符串str，元组tuple，不可变集合frozenset.</li>
+<li>可变类型:mutable可变类型就是变量的值是可以改变的: 列表list，字典dict，可变集合set.</li>
+</ul>
+<p>存储模型：</p>
+<ul>
+<li>scalar标量/原子类型:只能容纳单个对象：数字类型，字符串str</li>
+<li>container容器类型:可以容纳多个对象：元组tuple，列表list，字典dict,集合set/frozenset.</li>
+</ul>
+<p>访问模型：</p>
+<ul>
+<li>直接存取:数字类型</li>
+<li>索引访问:sequence序列是顺序访问：字符串str，元组tuple，列表list.</li>
+<li>映射访问:mapping映射类型是映射访问,元素无序存放，通过唯一的key来访问：字典dict.</li>
+</ul>
+<h2 id="数据拷贝">数据拷贝</h2>
+<p>浅拷贝:</p>
+<pre><code>只拷贝顶层数据.
+
+对不可变对象不开辟新空间,相当于赋值操作;修改原数据,相当于定义了一个新的数据.拷贝的数据不变.
+a=10
+b=copy.copy(a)
+old_id  = id(a) == id(b)
+a=5 # 修改a相当于定义了新变量
+id(a) != old_id
+id(b) == old_id # id(b) 不变
+id(b) == 10
+
+对可变对象会在内存开辟新空间保存拷贝的数据;只拷贝第一层中的引用,原数据被修改,拷贝的对象也被修改.
+a=[1,2,3]
+b=copy.copy(a)
+id(a) != id(b)
+a[0]=5 # 改变a的数据
+b == a # b的数据也改变
+
+copy.copy()
+</code></pre>
+<p>深拷贝:</p>
+<pre><code>逐层拷贝数据,直到拷贝的所有引用都是不可变引用.
+
+深拷贝,一份数据改变,不影响另一份数据.
+
+copy.deepcopy()
+</code></pre>
+<h2 id="sequences序列类型"><em>Sequences序列类型</em></h2>
+<p>sequence序列是指成员有序排列，可以通过下标偏移量访问，同时可以进行切片操作．序列是可迭代的．</p>
+<p>sequence索引操作：</p>
+<pre><code>seq[ind] # 获取下标为ind的元素，下标从0开始．
+seq[-1] # 取最后一个元素
+</code></pre>
+<p>sequence切片操作：</p>
+<pre><code>seq[ind1:ind2] # 获取下标从ind1到ind2间的元素的集合．不包括ind2.
+seq[:ind2] # ind1缺省默认为０.
+seq[ind1:] # ind2缺省表示从ind1到最后一个元素
+
+seq[ind1:ind2:step] # 以步长为step来切片
+seq[:ind2:step]
+seq[::step] # ind1缺省为０，ind2缺省为整个序列长度．
+seq[::-1]  # 翻转序列
+seq[::-step]  # 以步长为step翻转序列．
+</code></pre>
+<p>sequence算术运算：</p>
+<pre><code>seq * number # 序列重复number次
+sql1 + seq2 # 两个序列连接
+</code></pre>
+<p>sequence成员运算：</p>
+<pre><code>obj in seq # obj在包含在序列中,返回True
+obj not in seq # obj不包含在序列中返回True
+</code></pre>
+<h2 id="数字类型"><em>数字类型</em></h2>
+<p>数字类型是不可变类型(immutable),是标量(scalar),是直接存储的．</p>
+<p>0b开头表示二进制</p>
+<p>0开头表示八进制</p>
+<p>0x开头表示十六进制</p>
+<p>数字类型转换的关系是整数转换成浮点数，非复数转换成复数．</p>
+<ul>
+<li>
+<p>int</p>
+<p>python3的int其实就包括了short, int, long三种长度的整型．</p>
+<p>python3的int不再需要用l/L来表示长整型．</p>
+</li>
+<li>
+<p>bool(int)</p>
+<p>bool类继承自int.</p>
+<p>bool类型只有True和False两个值．</p>
+<pre><code>  bool类型取反: 
+  a = True
+  b = bool(1-a) # b=False
+</code></pre>
+</li>
+<li>
+<p>[Deprecated in python 3]long</p>
+<p>python2在整数值后面加l/L表示长整型．</p>
+</li>
+<li>
+<p>float</p>
+<p>python中的float其实就包括了单精度和双精度，相当于float和double都可以用．</p>
+</li>
+<li>
+<p>complex</p>
+<p>python中有复数类型．</p>
+</li>
+</ul>
+<h2 id="str"><em>str</em></h2>
+<p>python2中str和unicode继承自basestring, basestring继承自object.</p>
+<p>python3中unicode和basestring在python3中被废弃．str直接继承自object.</p>
+<p>python3中不再需要u/U来表示unicode字符串．</p>
+<p>str类型是不可变类型(immutable),是标量(scalar),是序列(sequence)通过索引访问．</p>
+<p>字符串表示方法：</p>
+<pre><code>'This is a string'
+&quot;This is a string&quot;
+&quot;&quot;&quot;This is a string&quot;&quot;&quot;
+</code></pre>
+<p>字符串的续行：</p>
+<p>下面都表示一个只有一行的字符串．</p>
+<pre><code># 一个引号的情况,需要在引号内部空格表示和下一行有空格，续行符前的空格可有可无．
+a = 'This is a ' \
+'string'
+
+b = 'This is a \
+string'
+
+c = &quot;This is a &quot; \
+&quot;string&quot;
+
+d = &quot;This is a \
+string&quot;
+
+# 三引号续行符前的空格就表示和下一行有空格．
+c = &quot;&quot;&quot;This is a \
+string&quot;&quot;&quot;
+&gt; This is a string
+
+c = &quot;&quot;&quot;line1
+line2&quot;&quot;&quot;
+&gt; line1\nline2   没有续行符会在行尾加换行符号.
+</code></pre>
+<p>编译时字符串连接：</p>
+<pre><code>foo = &quot;hello&quot; 'world'
+urllib.urlopen('http://' # protocol
+'localhost' # hostname
+':8000' # port
+'/') # path
+</code></pre>
+<p>原始字符串：</p>
+<pre><code># 正常情况下在字符串中的特殊字符串(\加一个字符)表示特殊含义．是不可打印的．
+print '\n'
+# 如果需要表示正常含义需要转译(\用来转意)．
+print '\\n' # 需要转译．
+# 也可以使用原始字符串来表示正常含义．r''和R''都可以．
+print r'\n'
+open(r'C:\windows\test.txt')
+</code></pre>
+<p>字符串编码解码:</p>
+<p>Unicode: Universal Multiple-Octet Coded Character Set. 使用十六进制表示．加上前缀U+</p>
+<p>ASCII: American Standard Code for Information</p>
+<p>UFT-8: Unicode Transformation Format</p>
+<p>python2因为比unicode出现要早，所以python2默认使用的是ASCII编码．</p>
+<p>python3 默认使用utf-8编码。</p>
+<pre><code># 获取默认编码
+import sys
+print(sys.getdefaultencoding())
+
+// python2
+a = u'测试'
+type(a) # unicode
+a # u'\u6d4b\u8bd5',　十六进制表示
+
+// python2
+# str类型
+b = '测试'
+type(b) # str
+b # \xe6\xb5\x8b\xe8\xaf\x95
+
+// python2
+# encode将unicode类型编码成str类型用于数据传输．
+encode([encoding[,errors]]) # 编码
+c = a.encode('uft-8')
+type(c) # str
+c # \xe6\xb5\x8b\xe8\xaf\x95
+
+// python2
+# decode将str类型根据原来的编码类型解码成unicode类型进行阅读．
+decode([encoding[,errors]]) # 解码
+d = c.decode('utf-8') # 参数必须是原来的编码的类型
+type(d) # unicode
+d # u'\u6d4b\u8bd5'
+
+// python2
+# python2默认ascii编码，所以encode和decode默认都是ascii. 不能处理中文
+u'测试'.encode() # UnicodeEncodeError
+
+// python2
+# str+unicode, str会隐式的转换成unicode.
+'测' + u'试' -&gt; '测'.decode() + u'试' # 因为decode默认是ascii不能解码中文,UnicodeDecodeError．
+'测'.decode('uft-8') + u'试'
+
+// python2
+# 对非unicode进行encode编码，会先隐式解码成unicode再编码
+'测试'.encode('utf-8') # UnicodeDecodeError, 因为'测试'.decode()默认用ascii解码
+'测试'.decode('utf-8').decode('utf-8')
+
+# python2程序中出现字符串一定加前缀u.表示成unicode格式
+u'hello world'
+# 不要用str(), 用unicode().
+# 只在写入文件／数据库／网络时才调用编码函数encode().
+# 只在读回数据时才调用解码函数decode().
+# 始终使用utf-8编码．否则容易出现乱码．
+
+// python3 默认类型非str，而是bytes。
+str.encode()  # str类型通过encode编码成types类型
+bytes.decode() # bytes类型通过decode解码成str类型
+</code></pre>
+<p>可迭代对象转换成字符串：</p>
+<pre><code>''.join(('a', 'b')) # 可迭代对象的元素需要是str类型.
+''.join(['a', 'b']) # 可迭代对象的元素需要是str类型.
+''.join({'a': 'b'}) # 字典迭代键，可迭代对象的元素需要是str类型.
+</code></pre>
+<h2 id="tuple"><em>tuple</em></h2>
+<p>tuple类型是不可变类型(immutable),是容器(container),是序列(sequence)通过索引访问．</p>
+<p>元组是不可变类型，不能对元组的元素进行增删操作．</p>
+<h2 id="list"><em>list</em></h2>
+<p>list类型是可变类型(immutable),是容器(container),是序列(sequence)通过索引访问．</p>
+<p>列表元素增删修改：</p>
+<pre><code># 除了使用内置方法还可以使用序列的索引．
+lst[index] = value
+del lst[index]
+</code></pre>
+<h2 id="dict"><em>dict</em></h2>
+<p>dict类型是可变类型(immutable),是容器(container),是映射(mapping)类型,是无序的,通过映射访问．</p>
+<p>字典迭代键，字典的键必须是可哈希的，字典的键必须是不可变类型．列表/字典/可变集合等不可哈希对象不能用作字典的键．</p>
+<p>所有不可变类型都是可哈希的，都可以作为字典的键．</p>
+<p>可用内置函数hash()获取或判断是否能用作字典的键．</p>
+<p>字典的键必须是唯一的，不能一个键对应多个值．有这种情况取最后一个赋值．</p>
+<p>字典的键操作符：</p>
+<pre><code># 字典通过键操作符来读取元素的值
+dic['key']
+</code></pre>
+<p>键成员操作符:</p>
+<pre><code># 取代has_key()和keys()内置方法
+'key' in dic # 不推荐用 dic.had_key('key') 和 'key' in dic.keys()
+'key' not in dic
+</code></pre>
+<p>字典元素增删修改：</p>
+<pre><code>dic['key'] = 'value'
+del dic['key']
+</code></pre>
+<h2 id="sets集合"><em>Sets集合</em></h2>
+<p>集合是一组无序排列的值，不能进行索引和切片操作，也不能进行键操作，只能通过for循环迭代集合元素．</p>
+<p>集合分为可变集合和不可变集合.</p>
+<p>集合运算符：</p>
+<pre><code>'element' in st 是成员
+'element' not in st 不是成员
+== 等于
+!= 不等于
+&lt;  严格子集
+&lt;= 非严格子集, 等效于issubset()
+&gt; 严格超集
+&gt;= 非严格超集, 等效于issuperset()
+| 联合, OR操作，等效于union()内置方法
+&amp; 交集, AND操作，等效于intersection()内置方法
+- 差补或相对补集, 等效于difference()内置方法
+^ 对称差分或异或, XOR操作，等效于symmetric_difference()内置方法
+
+仅用于可变集合的运算符：
+|= 等效于update()内置方法
+&amp;= 等效于intersection_update()内置方法
+-= 等效于difference_update()内置方法
+^= 等效于symmetric_difference_update()内置方法
+</code></pre>
+<p>集合运算返回结果的类型与左操作数的类型相同，左边是可变集合，结果就是可变集合，否则是不可变集合．</p>
+<h3 id="frozenset">frozenset</h3>
+<p>frozenset类型是不可变类型(immutable),是容器(container).</p>
+<h3 id="set">set</h3>
+<p>set类型是可变类型(mutable)，是容器(container).</p>
+<hr>
+<h1 id="python控制流"><strong>python控制流</strong></h1>
+<p>continue语句:表示立即终止本次循环，启动循环的下一次迭代．</p>
+<p>break语句：表示结束当前循环块，跳转到后面的语句．</p>
+<p>pass语句： 表示不做任何事情，NOP.</p>
+<h2 id="if条件语句"><em>if条件语句</em></h2>
+<pre><code>if condition:
+    expression
+elif condition:
+    expression
+else:
+    expression
+</code></pre>
+<p>python中的三目运算：</p>
+<pre><code>X if C else Y
+等效于
+if C:
+    X
+else:
+    Y
+
+# 三目运算符高于赋值运算符．
+a = b if c else d
+# 等效于
+a = (b if c else d)
+</code></pre>
+<h2 id="while循环语句"><em>while循环语句</em></h2>
+<pre><code>while condition:
+    expression
+
+# while执行完会执行else(包括while不执行)，break会跳过else．
+while condition:
+    expression
+else:
+    expression
+</code></pre>
+<h2 id="for循环语句"><em>for循环语句</em></h2>
+<p>for循环可以用于遍历序列，字典的键 和 文件的行，集合，列表解析，生成器表达式.</p>
+<p>for循环会自动调用迭代器的next()方法，捕获StopIteration异常结束循环．</p>
+<p>用for迭代可变对象的时候，不应该改变可变对象的元素的值．</p>
+<pre><code>for condition:
+    expression
+
+# for执行完成会执行else, break会跳过else.
+for condition:
+    expression
+else:
+    expression
+
+# 字典有两种写法
+for loop in dic.keys()
+等效于
+for loop in dic
+
+# 文件有两种写法
+for loop in open('file', 'r').readlines():
+等效于
+for loop in open('file','r'):
+</code></pre>
+<h2 id="iterators迭代器"><em>iterators迭代器</em></h2>
+<p>Iterable: 能直接用于for循环的对象为可迭代对象Iterable.</p>
+<p>Iterator: 能被next()内置函数调用并不断返回下一个值的对象为迭代器Iterator,迭代完成后抛出StopIteration异常．</p>
+<p>file，enumerate和reversed内置类类型的工厂函数返回的都是迭代器类型．</p>
+<p>创建迭代器的3种方法：</p>
+<pre><code># 通过内建函数iter()
+iter()
+
+# 通过工厂函数
+file()
+enumerate()
+reversed()
+
+# 自定义类，需要实现 __iter__() 和　next() 两个方法
+class TestIterator(object):
+    def __iter__(self):
+        return self
+
+    def next(self):
+        if condition:
+            ...
+        else:
+            raise StopIteration()
+</code></pre>
+<h2 id="list-comprehensions列表解析"><em>list comprehensions列表解析</em></h2>
+<p>List Comprehensions列表解析,来自函数式编程语言Haskell.</p>
+<p>列表解析使用中括号，列表解析返回一个列表。</p>
+<pre><code>lst = [expression for item in iterable]
+# 嵌套if
+lst = [expression for item in iterable if condition]
+# 嵌套for
+lst = [expression for item in iterable for item1 in iterable1]
+
+[x ** 2 for x in range(10)]
+等效于,python2的内置函数map(), filter()都是函数式编程的应用．
+map(lambda x: x**2, range(10))
+
+[(x+1, y+1) for x in range(10) for y in range(10)]
+</code></pre>
+<h2 id="generator-expressions生成器表达式"><em>generator expressions生成器表达式</em></h2>
+<p>Generator Expressions生成器表达式, 是列表解析的一个扩展．</p>
+<p>列表解析的缺点就是要迭代整个对象用来创建列表，对大的对象来说性能差.</p>
+<p>生成器表达式就是结合生成器和列表解析解决这个问题．</p>
+<p>生成器表达式不必创建完整的列表，而是一边循环一边计算，返回一个生成器对象。</p>
+<p>生成器就是一个迭代器对象，在每次调用next()方法时返回一个值．直到抛出StopIteration异常．</p>
+<p>创建生成器的两种方法：</p>
+<pre><code># 使用列表解析的变种
+generator = (expression for item1 in iterable1 if condition1)
+
+# 任何使用yield的函数都称为生成器。
+参考yield函数部分．
+</code></pre>
+<hr>
+<h1 id="python文件和输入输出"><strong>python文件和输入输出</strong></h1>
+<p>python2使用open()内置函数打开文件，返回file类类型的对象，出错返回IOError异常.</p>
+<p>file类类型对象是迭代器，同时也是上下文管理器．</p>
+<p>python3废弃了file类类型，open()内置函数返回IO流．</p>
+<pre><code># python2
+open(name[, mode='r'[, buffering=-1]])
+
+mode
+r: 读，文件必须存在
+w: 写，文件不存在则创建，否则先清空文件再写入．
+a: 追加，文件存在就追加到文件结尾,否则就创建．
+t: text模式，这个是默认模式．不用指定．
+rb/wb/ab: 二进制读写．
+r+/w+/a+: 以读写模式打开文本文件．
+rb+/wb+/ab+: 以读写模式打开二进制文件．
+U: 提供通用换行符支持，文件必须存在
+
+buffering
+0: 不缓冲
+1: 只缓冲一行数据
+&lt;0: 使用系统默认缓冲机制
+&gt;1: 使用给定值作为缓冲区大小
+</code></pre>
+<p>通用换行符UNS:</p>
+<p>Universal Newline Support.</p>
+<p>如果是二进制文件读写rb/wb/ab，不会有换行符的问题，如果是文本文件建议用rU/wU/aU来读写.</p>
+<pre><code># UNS会把
+\r\n
+\r
+\n
+# 都被替换为
+\n
+</code></pre>
+<p>文件可以使用with上下文管理器，并且迭代文件的行:</p>
+<pre><code>with open('file', 'rU') as f:
+    for line in f:
+        ...
+</code></pre>
+<p>标准文件:</p>
+<p>系统默认的三个标准文件: sys.stdin, sys.stdout, sys.stderr.</p>
+<pre><code># python2的关键字print会把语句打印到sys.stdout,并默认在语句结尾加换行符.
+print expression
+print expression, # 可以避免默认加换行符
+
+# 内置函数input()会从sys.stdin接受输入
+a = input()
+</code></pre>
+<hr>
+<h1 id="python错误和异常"><strong>python错误和异常</strong></h1>
+<p>参考内置的错误和异常.</p>
+<p>BaseException是所有异常的基类． Exception是常规错误的基类.</p>
+<p>错误和异常的检测和处理：</p>
+<pre><code>try:
+    try_suite
+except Exception0[ as reason]: # reason可以用于在except_suite中打印具体的异常信息，reason是一个Exception0类型的实例．
+    except_suite
+except Exception1[ as reason]: # 可以有多个except用来捕获不同的异常，但是只有一个except会被执行.
+    except_suite
+except (Exception2, Exception3)[ as reason]: # 也可以在一个except中同时检测多个异常．放入一个tuple中. reason是一个实例的元组．
+    except_suite
+except Exception[, reason]: # 可以用Exception来捕获所有异常，而不用区分具体的异常．不推荐用逗号，应该用as代替．
+    except_suite
+[Deprecated] except:    # 不推荐此用法，和上面一个等效
+    except_suite
+...
+else:    # 可选， 没有异常触发except时运行else,　except和else只能运行一个．
+    expression
+finally:    # 可选，无论是否捕捉到异常都会执行的．
+    expression
+
+# 也可以不对异常处理
+try:
+    try_suite
+finally:
+    finally_suite
+
+# 异常的参数
+reason.__clas__.__name__  # 就是异常类的名字
+print reason # 打印异常参数．
+</code></pre>
+<h2 id="raise触发异常"><em>raise触发异常</em></h2>
+<p>除了上面捕获解释器触发的异常，用户还可以用raise自己触发异常:</p>
+<pre><code>raise [SomeException [, args [, traceback]]]
+</code></pre>
+<p>SomeException可以是字符串，内置异常，第三方库异常类，自定义异常类, 或实例.</p>
+<pre><code>raise ExceptionClass[, args[, traceback]] # 类
+raise ExceptionClass(arguments)[, args[, traceback]] # 实例
+raise ExceptionClass, instance # [TODO]
+raise instance # 触发实例异常, raise reason 就是跑出一个ExceptionClass类型的instance.
+raise string # 触发字符串异常
+raise # 重新触发前一个异常，如果之前没有异常触发TypeError.
+</code></pre>
+<h2 id="自定义异常和错误"><em>自定义异常和错误</em></h2>
+<p>自定义异常需要继承一个标准异常或者第三方库的异常来实现一个类．</p>
+<p>通过raise来触发自定义的异常．</p>
+<pre><code>class MyError(Exception/StandardError/Warning):
+    def __init__(self, msg):
+        super(...).__init__(self, ...)
+        ...
+    ...
+
+raise MyError, args
+</code></pre>
+<h2 id="assert断言"><em>assert断言</em></h2>
+<p>断言语句等效assert表达式, 如果断言成功不采取任何措施，否则触发AssertionError异常．</p>
+<pre><code>assert expression[, arguments]
+</code></pre>
+<p>可以提供一个异常参数和捕获AssertionError异常:</p>
+<pre><code>try:
+    assert expression, &quot;If raise AssertionError, print this message.&quot;
+except AssertionError, e:
+    print '%s: %s' % (e.__class__.__name__, e)
+</code></pre>
+<h2 id="with上下文管理"><em>with上下文管理</em></h2>
+<p>CMP: context management protocol.</p>
+<p>with上下文管理仅用于支持上下文管理协议(CMP)的对象．</p>
+<pre><code>with context_expr [as var]:
+    with_suite
+</code></pre>
+<p>with语句执行时就执行上下文符号（with和as之间的内容）来获得一个上下文管理器．</p>
+<p>上下文管理器调用__context__()方法来返回一个上下文对象．</p>
+<p>上下文对象会调用__enter_()方法完成with语句块执行前的准备工作．返回值赋给as后面的var变量．</p>
+<p>with语句块执行完毕后调用__exit__()方法，__exit__()有三个参数，如果没有异常都是None,否则是sys.exc_info()的三个返回值．</p>
+<p>自定义上下文管理器:</p>
+<pre><code>class CMPTest(object):
+    def __init__(self):
+        pass
+
+    def __enter__(self):
+        ...
+        return self
+
+    def __exit__(self, type, value, traceback):
+        ...
+</code></pre>
+<p>父类实现了上下文管理协议，子类可以直接使用with.</p>
+<hr>
+<h1 id="python函数"><strong>python函数</strong></h1>
+<p>定义/申明一个函数:</p>
+<p>python对函数的申明和定义是一起的．</p>
+<p>函数必须先定义/申明才能引用/调用.</p>
+<p>通过关键字def来定义一个函数.</p>
+<p>def function_name(arguments)
+expression</p>
+<p>函数引用：</p>
+<p>引用一个函数名并不会执行函数内容．</p>
+<pre><code>function_copy = function_name
+
+# 可以将函数作为参数传给另外一个函数，然后在另外一个函数调用该函数
+def fun_name(arg):
+    print arg(10)
+fun_name(str)
+</code></pre>
+<p>函数调用:</p>
+<p>调用一个函数才会执行函数内容.</p>
+<pre><code>function_name(arguments)
+# 可以通过引用的副本来调用函数
+function_copy(args)
+</code></pre>
+<p>函数的返回值：</p>
+<p>省略return表示返回None. 单个return表示返回None.其它表示返回一个对象．</p>
+<pre><code>return
+return return_value
+</code></pre>
+<p>函数的实参：</p>
+<p>位置参数，调用的时候通过先后顺序传递的参数,函数定义时需要放在前面．</p>
+<p>默认参数，在函数定义时就已经初始化的参数，调用时可以不再赋值．</p>
+<p>默认参数在函数定义时需要放在位置参数的后面．否则抛出SytaxError.</p>
+<pre><code>def function_test(position_args, keyword_args, *args, **kwargs):
+    pass
+</code></pre>
+<p>函数的形参：</p>
+<p>位置参数，在函数调用时根据定义的参数的顺序来传递．</p>
+<p>默认参数，在函数调用时如果没有传值则使用定义的默认值．</p>
+<p>关键字参数，在函数调用时，根据定义时的参数名称来传值.</p>
+<p>非关键字参数的传值不能在关键字参数后面．</p>
+<pre><code>def func_test(arg1, arg2, arg3=&quot;val1&quot;, arg4=&quot;val2&quot;):
+    pass
+func_test(1, 2, 3, 4) # 位置参数
+func_test(1, 2) # 使用默认参数
+func_test(arg2=2, arg1=1) # 关键字传参
+</code></pre>
+<p>可变长度参数:</p>
+<p>当函数参数不确定时，可以使用可变长度参数．</p>
+<p>一个星号表示一个非关键字参数组成的元组(可以是其它序列，会自动转换成元组)．</p>
+<p>两个星号表示一个关键字参数组成的字典．</p>
+<p>函数定义时可变长度参数必须在位置参数和默认参数后面．而且关键字变长参数应该在最后.</p>
+<pre><code>def func_test(position, default='value', *args, **kwargs):
+    pass
+</code></pre>
+<p>调用可变长度参数时，可以把非关键字变长参数放到一个元组，把关键字变长参数放到一个字典．</p>
+<p>也可以在元组和字典中放部分参数，另外一部分直接传递, 非关键字参数的传值不能在关键字参数后面．</p>
+<pre><code># 注意，函数定义的时候星号是必须的，函数调用的时候也需要星号．
+args = ('val1', 'val2')
+kwargs = {key1: 'val1', key2: 'val2'}
+func_test('position', 'default', *args, **kwargs)
+# 部分传递，多出来的非关键字参数属于变长非关键字参数，多出来的关键字参数属于变长关键字参数．
+func_test('position', 'default', 'non-keyword', key='keyword', *(1,2), **{3: 'three'})
+</code></pre>
+<p>函数的属性：</p>
+<p>通过小数点来调用函数的属性．</p>
+<p>内置函数的特殊属性(BIF)：</p>
+<pre><code>function_test.__doc__
+function_test.__name__
+function_test.__module__ # __builtin__
+function_test.__self__ # None
+</code></pre>
+<p>自定义函数的属性(UDF)：</p>
+<pre><code>dir(function_test)
+'__doc__',
+'__name__',
+'func_closure',
+'func_code',
+'func_defaults',
+'func_dict',
+'func_doc',
+'func_globals',
+'func_name'
+</code></pre>
+<p>偏函数:</p>
+<pre><code>from functools import partial
+partial(func, *args, **keywords) # 一个偏函数的类
+</code></pre>
+<p>变量作用域:</p>
+<p>python搜索一个标识符先从局部作用域开始搜索，如果没有找到就在全局作用域找，否则抛出NameError异常．</p>
+<pre><code># 当在函数外部和内部都定义了同一个变量，局部变量会覆盖全局变量
+var = 'global'
+def func_test(*args, **kwargs):
+    var = 'local'
+    print var
+func_test() # local
+
+# 如果在函数内部使用一个不在函数内部定义的变量，就会在函数外部查找．
+var = 'global'
+def func_test(*args, **kwargs):
+    print var
+func_test() # global
+
+# 在函数内部不能修改外部变量,只能引用.
+var = 'global'
+def func_test(*args, **kwargs):
+    var += 'local'
+    print var
+func_test() # UnboundLocalError: local variable 'var' referenced before assignment
+
+# 如果需要在局部引用全局变量需要使用global关键字
+var = 'global'
+def func(*args, **kwargs):
+    global var
+    var = 'local'
+    print var
+func() # local
+print var # local # 全局变量在局部被修改．
+</code></pre>
+<h2 id="functional-programming函数式编程"><em>Functional Programming函数式编程</em></h2>
+<p>python涉及到函数式编程主要有几个内置函数和lambda匿名函数．</p>
+<pre><code>[Deprecated]apply() # function(*args, **keywords)
+reduce() # 推荐使用from functools import reduce, 而不是直接使用内置方法.
+filter() # 参考__builtins__
+map() # 参考__builtins__
+</code></pre>
+<h2 id="lambda匿名函数"><em>lambda匿名函数</em></h2>
+<p>lambda匿名函数就是一个只有一行表达式，不需要通过def来命名的函数.</p>
+<p>lambda匿名函数返回一个可调用的函数对象．</p>
+<p>lambda匿名函数支持通过def定义的函数的所有功能．</p>
+<p>lambda匿名函数中不能有return语句, expression的结果就是函数返回值．</p>
+<pre><code>lambda [arg1[, arg2, ...argN]]: expression
+lambda *args, **kwargs: expression
+lambda : expression
+</code></pre>
+<p>lambda不能是一个申明：</p>
+<pre><code># 因为在python2中print是一个关键字，所以下面的申明不是合法的lambda表达式．
+lambda : print 'not working'
+</code></pre>
+<h2 id="内嵌函数"><em>内嵌函数</em></h2>
+<p>可以在函数内部定义函数，内部函数不能在外部函数以外的地方调用．</p>
+<pre><code>def outer(*args, **kwargs):
+    expression
+    def inner(arg): # 内嵌函数的参数不能是外部函数的参数．内部函数必须完全独立．
+        expression
+    inner(args)
+
+def outer(*args, **kwargs):
+    filter(lambda arg: expression, sequence)
+    map(lambda arg: expression, sequence)
+    functools.reduce(lambda arg: expression, sequence)
+</code></pre>
+<p>可以在函数内部内嵌匿名函数，匿名函数可以使用外部函数的参数:</p>
+<pre><code>def foo(x, y):
+    bar = lambda :x + y
+    print bar()
+foo(4,3)
+</code></pre>
+<p>递归：</p>
+<pre><code>在函数中调用函数本身是一种递归方法
+def fib(n):
+    if n in[0, 1]:
+        val = 1
+    else:
+        val = fib(n-1) + fib(n-2)
+    return val
+</code></pre>
+<h2 id="closure闭包"><em>closure闭包</em></h2>
+<p>在一个内部函数里对在外部作用域的变量进行引用，内部函数被认为是closure.</p>
+<p>定义在外部函数内的但由内部函数引用的变量称为自由变量．</p>
+<p>当自由变量是一个函数时，闭包就是一个装饰器，decorator是closure最常见的应用．</p>
+<pre><code>def outer(free):
+    def clos(*args, **kwargs):
+        print free
+        print args, kwargs
+    return clos
+
+# 调用外部函数，返回一个内部函数的引用,　传入外部函数的就是自由变量,返回的内部函数就是闭包.
+first_clos = outer(1)
+
+# 调用closure
+first_clos(*args, **kwargs)
+</code></pre>
+<h2 id="decorator装饰器"><em>decorator装饰器</em></h2>
+<p>装饰器分为函数(方法)装饰器和类装器．函数中再定义函数是函数装饰器，函数中再定义类是类装饰器．</p>
+<p>函数装饰器修饰函数和类中的方法，类装饰器修饰类．类装饰器参考OOP．</p>
+<p>装饰器本质是一个函数，可以让其它函数在不做修改的情况下增加额外的功能．</p>
+<p>常用于插入日志，性能测试，事务处理，缓存，权限校验等场景．</p>
+<p>装饰器是用来装饰函数的包装，返回一个修改后的函数对象．将其重新赋值给原来的标识符，并永久失去对原始函数对象的访问．</p>
+<p>符号@是装饰器的语法糖.</p>
+<p>不带参数的装饰器：</p>
+<pre><code>def deco_name(func):
+    def wrapper_name(*args, **kwargs): # 抽象出相同的部分进行包装
+        &quot;&quot;&quot;Docs for wrapper_name.&quot;&quot;&quot;
+        print func.__name__ # 抽象出来的部分在这里实现
+        print args, kwargs # 可以引用func传入的参数
+        return func(*args, **kwargs) # 最后调用新增加的功能
+    return wrapper_name # 返回包装函数的引用.
+
+# 增加新功能,装饰后返回包装函数的一个引用,赋值给原来的foo．此时包装函数wrapper_name并不会执行
+@deco_name
+def foo(*args, **kwargs):
+    &quot;&quot;&quot;Docs for foo.&quot;&quot;&quot;
+    print 'call foo'
+# 等效于
+foo = deco_name(foo)
+
+# 调用装饰后的函数,　调用的是装饰后的新的函数．
+foo(*args, **kwargs)
+</code></pre>
+<p>带参数的装饰器:</p>
+<pre><code>def deco_name(arg):
+    def deco_inner(func):
+        def wrapper_name(*args, **kwargs):
+            &quot;&quot;&quot;Docs for wrapper_name.&quot;&quot;&quot;
+            print arg # 通过装饰器的参数arg来做一些判断
+            print func.__name__
+            print func.__doc__
+            print args, kwargs
+            return func(*args, **kwargs)
+        return wrapper_name
+    return deco_inner
+
+# deco_name(arg)(foo) -&gt; deco_inner(foo) -&gt; wrapper_name
+@deco_name(arg=&quot;value&quot;)
+def foo(*args, **kwargs):
+    &quot;&quot;&quot;Docs for foo.&quot;&quot;&quot;
+    pass
+
+# wrapper_name(*args, **kwargs)
+foo(*args, **kwargs)
+</code></pre>
+<p>装饰器的属性：</p>
+<pre><code>foo.__name__ #  wrapper_name, 并非foo
+foo.__doc__ # &quot;Docs for wrapper_name.&quot;, 并非foo的doc.
+# 可以通过import functools.wraps来修饰wrapper_name改变这一属性．
+</code></pre>
+<p><a href="https://github.com/crazy-canux/python/blob/master/python/psl/myfunctools.py">https://github.com/crazy-canux/python/blob/master/python/psl/myfunctools.py</a></p>
+<p>多层装饰器：</p>
+<pre><code>@foo
+@bar
+def func(*args, **kwargs):
+    ...
+
+func = foo(bar(func))
+</code></pre>
+<p><a href="https://github.com/crazy-canux/python/blob/master/python/decorator/function_decorator.py">https://github.com/crazy-canux/python/blob/master/python/decorator/function_decorator.py</a></p>
+<h2 id="yield生成器"><em>yield生成器</em></h2>
+<p>生成器generator的另一种实现就是yield函数．有yield的函数返回的就是一个生成器．</p>
+<p>yield函数能记住上一次返回时在函数体中的位置，迭代生成器会跳转至该函数中间，而且上次调用的所有局部变量保持不变．</p>
+<p>yield函数和普通函数执行顺序不一样，普通函数顺序执行，遇到return或最后一行语句返回．</p>
+<p>yield函数遇到yield语句返回，下次执行从上次返回的yield语句开始继续执行．遇到return语句抛出StopIteration异常．</p>
+<p>生成器通常用于迭代一个巨大的数据集．</p>
+<pre><code>def gena():
+    yield 'first'
+    yield 'second'
+g = gena()
+type(g) # generator
+g.next() # first
+g.next() # second
+g.next() # StopIteration
+</code></pre>
+<p>generator类类型,是一个迭代器，可以用for循环迭代:</p>
+<pre><code>__iter__()
+generator.next()
+generator.close() # 在生成器内部抛出GeneratorExit异常要求生成器退出．
+generator.send(arg) # 将值回送给生成器．
+generator.throw(typ[,val[,tb]]) # 在生成器抛出异常
+</code></pre>
+<hr>
+<h1 id="python模块和包"><strong>python模块和包</strong></h1>
+<p>名称空间：</p>
+<ul>
+<li>局部名称空间</li>
+<li>全局名称空间</li>
+<li>内建名称空间</li>
+</ul>
+<p>python解释器最先加载内建名称空间，也就是__builtins__模块．</p>
+<p>然后加载执行模块的全局名称空间，在模块执行时是活动名称空间．</p>
+<p>最后加载局部名称空间，在执行期间是不断变化的．</p>
+<p>名称空间和变量的作用域是有区别的．</p>
+<p>变量／函数／方法先从局部名称空间开始查找，在找全局名称空间，最后查找内建名称空间．</p>
+<p>如果都没找到就抛出NameError异常．</p>
+<p>无限制名称空间，可以通过属性运算小数点来指定名称空间．</p>
+<pre><code>module.var
+module.function()
+module.method()
+</code></pre>
+<p>搜索路径:</p>
+<p>搜索路径在不同的操作一同一般不同.</p>
+<p>搜索路径通过两个变量来设置</p>
+<ol>
+<li>shell的环境变量PYTHONPATH．</li>
+<li>python解释器的变量sys.path列表里.</li>
+</ol>
+<p>在代码里修改搜索路径sys.path</p>
+<ul>
+<li>sys.path.append(os.path.abspath(..))</li>
+<li>sys.path.insert(0, os.path.abspath(..)) # 插入到最前面，也就是在sys.path的第一个&rsquo;'(当前路径)的前面．</li>
+</ul>
+<p>所有导入并加载的模块会存放在sys.modules中，导入模块时的搜索顺序</p>
+<ol>
+<li>先搜索当前目录.(会覆盖同名的标准库), 其实是在运行过程中动态添加到sys.path中第一个'&lsquo;的位置．</li>
+<li>没有的话再搜索sys.path,按照这个列表的顺序搜索找到第一个，然后加载该模块.</li>
+<li>没搜到抛出ImportError异常．</li>
+</ol>
+<h2 id="module模块"><em>module模块</em></h2>
+<p>模块就是一个python程序的源文件．模块是用来组织python代码的方法．</p>
+<p>把其他模块中属性附加到你的模块中的操作叫做导入(import).</p>
+<p>那些自我包含并且有组织的代码片断就是模块( module ).</p>
+<h2 id="package"><em>package</em></h2>
+<p>包就是把多个模块放在一个目录中，然后必须加上__init__.py文件．包是用来组织模块的．</p>
+<pre><code># 包支持模糊导入.
+[Deprecated] from package.module import * # 会导入包里面所有的变量，函数，类．
+</code></pre>
+<p>在__init__.py导入属性，导入时可以省略模块名：</p>
+<pre><code>robot/__init__.py
+from robot.run import run, run_cli
+
+test.py
+from robot import run, run_cli # 可以省略属性所在的模块名
+run()
+run_cli()
+
+等效:
+test.py
+from robot.run import run, run_cli # 通过包名和模块名直接导入．
+run()
+run_cli()
+</code></pre>
+<p>在__init__.py定义__all__变量来决定导入哪些属性．</p>
+<pre><code>from robot.run import run, run_cli
+__all__ = [run, run_cli]
+
+from robot import * # 仅仅导入__all__指定的属性
+</code></pre>
+<h2 id="import导入模块和包"><em>import导入模块和包</em></h2>
+<p>如果模块第一次被导入，就会被加载并执行．也就是说模块被加载时顶层的代码会被执行，一般包括全局变量，类和函数的申明．</p>
+<p>一个模块无论被导入(import)多少次，只在第一次导入时被加载一次．除非用reload()函数．</p>
+<p>import导入顺序(中间空一格)：</p>
+<ul>
+<li>标准库模块</li>
+<li>第三方库模块</li>
+<li>自定义模块</li>
+</ul>
+<p>import关键字导入模块/包：</p>
+<pre><code>import module
+import package
+# 包可以多层嵌套
+import package.subpackage
+import package.subpackage.module
+</code></pre>
+<p>from-import关键字导入模块中的属性：</p>
+<pre><code>from module import function/method/variable
+from package.module import function/method/variable
+from package.subpackage.module import function/method/variable
+</code></pre>
+<p>from-import关键字导入包中的的包/模块到当前的名称空间：</p>
+<pre><code>from package import subpackage
+from package...subpackage import sub-subpackage
+from package import module
+</code></pre>
+<p>as关键字可以给模块/包/属性取别名：</p>
+<pre><code>import module/package/package.subpackage as alias
+from module/package.module/package.subpackage.module import function/method/variable as alias
+from package/package.subpackage import module/subpackage/sub-subpackage alias
+</code></pre>
+<p>相关的内置函数:</p>
+<pre><code>locals()
+global()
+[Deprecated] reload() # 推荐用from imp import reload(), 重新导入一个已经导入的模块．
+</code></pre>
+<p>模块的特殊属性：</p>
+<pre><code>__name__ # 模块的特殊属性
+# 如果模块直接运行，也就是作为top-level脚本运行．值为__main__.
+# 如果作为module,也就是(import/python -m)，值为模块名称.
+# 一般用来做单元测试.
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h1 id="pep0328"><em>PEP0328</em></h1>
+<p>多行导入：</p>
+<pre><code># 通过续行符
+from module import a, b, c, \
+    d, e, f
+
+# 通过分成两行导入
+from module import a, b, c
+from module import d, e, f
+
+# PEP328建议使用分组导入
+from module import (a, b, c,
+    d, e, f)
+
+# 不推荐使用模糊导入．
+[Deprecated] from module import *
+</code></pre>
+<p>绝对导入：</p>
+<p>默认采用绝对导入，也就是通过完整的包路径来导入，避免和标准库模块冲突．</p>
+<p>默认的包路径就是sys.path或PYTHONPATH.</p>
+<p>只有import没有from的一定是绝对导入．</p>
+<pre><code>import package/module
+</code></pre>
+<p>相对导入： [TODO]</p>
+<p>小数点开头表示相对导入，一个小数点表示当前的包，两个小数点表示上一层的包，以此类推．</p>
+<p>相对导入一定是import-from结构．</p>
+<p>相对导入的优先级低于绝对导入，也就是先去sys.path中查找，然后根据当前模块的相对位置查找．</p>
+<pre><code>from . import package/module
+from .foo import bar
+from ..foo import bar
+from ...foo import bar
+</code></pre>
+<hr>
+<h1 id="python文档"><strong>python文档</strong></h1>
+<p>文档注释:</p>
+<p>python的文档注释采用reST风格的注释.</p>
+<p>包/模块文档:</p>
+<p>包括作者,版权,模块的信息.</p>
+<pre><code>&quot;&quot;&quot;
+File Summary
+
+Copyright
+
+License
+
+:author:
+:version:
+:since:
+
+Description
+&quot;&quot;&quot;
+</code></pre>
+<p>类/函数/方法文档:</p>
+<p>包括作用,初始化方法参数和类型,函数和方法的参数和类型,返回类型和抛出异常,以及用法用例.</p>
+<pre><code>&quot;&quot;&quot;Summary
+
+:param param1: param1 used for what
+:type param1: param1 type
+:param param2: param2 used for what
+:type param2: param2 type
+...
+:returns param: return what
+:rtype param: return type
+...
+:raise exceptionname: raise what exception
+
+Usage/Description
+&quot;&quot;&quot;
+</code></pre>
+<p>文档的特殊属性:</p>
+<pre><code>__doc__ # 函数/类/方法的特殊属性，用来表示文档的属性
+# 文档字符串不能被子类继承．
+</code></pre>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-06-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/python/">python</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/python_oop/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">OOP</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/tmux/">
+            <span class="next-text nav-default">Tmux</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-06-21 21:18:09 \x2b0000 UTC',
+        title: 'Python',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

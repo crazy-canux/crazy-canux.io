@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Devops - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: GOROOT 就是go的安装目录 windows标准包安装go: msi指定安装路径，自动添加%GO" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/go_devops/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Devops" />
+<meta property="og:description" content="Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: GOROOT 就是go的安装目录 windows标准包安装go: msi指定安装路径，自动添加%GO" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/go_devops/" />
+<meta property="article:published_time" content="2018-01-01T10:49:21+00:00" />
+<meta property="article:modified_time" content="2018-01-01T10:49:21+00:00" />
+<meta itemprop="name" content="Devops">
+<meta itemprop="description" content="Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: GOROOT 就是go的安装目录 windows标准包安装go: msi指定安装路径，自动添加%GO">
+<meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
+<meta itemprop="wordCount" content="1002">
+
+
+
+<meta itemprop="keywords" content="devops," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Devops"/>
+<meta name="twitter:description" content="Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: GOROOT 就是go的安装目录 windows标准包安装go: msi指定安装路径，自动添加%GO"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Devops</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/golang/"> Golang </a>
+            </div>
+          <span class="more-meta"> 1002 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#depdeprecated">dep(deprecated)</a></li>
+    <li><a href="#module">module</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-01T10:49:21" title="January 1, 2018">January 1, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="go">Go</h1>
+<p>go有三种安装方式：</p>
+<ol>
+<li>源码安装</li>
+<li>标准包安装</li>
+<li>第三方工具安装</li>
+</ol>
+<p>GOROOT:</p>
+<pre><code>GOROOT 就是go的安装目录
+</code></pre>
+<p>windows标准包安装go:</p>
+<pre><code>msi指定安装路径，自动添加%GOROOT%/bin到环境变量
+</code></pre>
+<p>linux标准包安装go:</p>
+<pre><code>下载.tar.gz包解压到/usr/local/go
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+</code></pre>
+<p>验证安装：</p>
+<pre><code>$ go --help
+$ go version
+</code></pre>
+<p>第三方工具gvm安装go:</p>
+<p><a href="http://github.com/moovweb/gvm">http://github.com/moovweb/gvm</a></p>
+<pre><code>$ gvm install go1.9.2
+$ gvm use go1.9.2
+</code></pre>
+<hr>
+<h1 id="gopath">GOPATH</h1>
+<p>gopath用来存放go源码，go的可运行文件，以及相应的编译之后的包文件．</p>
+<p>GOPATH 从go1.1到1.7都需要设置，而且不能是go的安装目录, go1.8开始有默认值:</p>
+<pre><code>GOPATH=$USERPROFILE%go
+GOPATH=$HOME/go
+</code></pre>
+<p>gopath结构：</p>
+<pre><code>src    存放源码
+pkg    编译后的库文件
+bin    编译后生成的可执行文件
+</code></pre>
+<p>gopath有多个值时用冒号分开即可.</p>
+<h1 id="gobin">GOBIN</h1>
+<p>默认值</p>
+<pre><code>GOBIN=$GOPATH/bin
+</code></pre>
+<p>go get 和 go install 安装的二进制到GOBIN。</p>
+<hr>
+<h1 id="go命令">go命令</h1>
+<pre><code>$ go help [command]
+</code></pre>
+<p>get</p>
+<p>下载并安装包和依赖, 也就是安装第三方的库．</p>
+<pre><code>$ go get [...] [packages]
+
+&gt; go get安装第三方包如果出现依赖无法安装，可以通过github下载．
+$ cd golang.org/x
+$ git clone https://github.com/golang/crypto.git crypto
+$ go install golang.org/x/crypto/ssh
+
+go get -u (without any arguments) now only upgrades the direct and indirect dependencies of your current package, and no longer examines your entire module.
+
+go get -u ./... from your module root upgrades all the direct and indirect dependencies of your module, and now excludes test dependencies.
+
+go get -u -t ./... is similar, but also upgrades test dependencies.
+</code></pre>
+<p>build</p>
+<p>编译包和依赖</p>
+<pre><code>$ go build [-o output] [-i] [build flags] [packages]
+</code></pre>
+<p>install</p>
+<p>编译并安装包和依赖</p>
+<pre><code>$ go install [build flags] [packages]
+</code></pre>
+<p>run</p>
+<p>编译并运行程序</p>
+<pre><code>$ go run [...] gofiles... [...]
+</code></pre>
+<p>fmt</p>
+<p>格式化代码和文档：</p>
+<pre><code>$ go fmt [...] [packages]
+</code></pre>
+<p>vet</p>
+<p>检测代码常见错误:</p>
+<pre><code>$ go vet [-n] [-x] [build flags] [vet flags] [packages]
+</code></pre>
+<p>test</p>
+<p>测试包:</p>
+<pre><code>$ go test [...] [packages] [...]
+</code></pre>
+<p>doc</p>
+<p>查看文档：</p>
+<pre><code>$ go doc [package/symbol]
+</code></pre>
+<p>mod</p>
+<pre><code>go mod init &lt;name&gt;
+go mod tidy // 添加缺少的，删除多余的.
+go mod download // 下载包
+go mod verify 
+go mod edit
+go mod graph
+go mod why
+go mod vendor
+</code></pre>
+<p>env</p>
+<pre><code>// 通过env 设置golang的变量，取代系统环境变量
+go env
+go env -w GOROOT=&quot;/usr/local/go&quot;
+go env -w GOPATH=&quot;$HOME/Src/go&quot;
+go env -w GOBIN=&quot;$GOPATH/bin&quot;
+</code></pre>
+<p>clean</p>
+<pre><code>go clean -cache
+go clean -modcache
+</code></pre>
+<hr>
+<h1 id="安装第三方包">安装第三方包</h1>
+<p>go get的功能很有限．</p>
+<p>godep和golide都会被官方的dep取代．</p>
+<h2 id="depdeprecated">dep(deprecated)</h2>
+<p><a href="https://github.com/golang/dep">https://github.com/golang/dep</a></p>
+<p>无法解决GFW的问题.</p>
+<p>安装：</p>
+<pre><code>$ go get -u github.com/golang/dep/cmd/dep
+</code></pre>
+<p>go官方包管理器</p>
+<pre><code># 初始化一个使用dep管理包的项目，
+# 创建Gopkg.toml, Gopkg.lock, vendor/
+$ dep init
+
+$ dep status
+
+$ dep prune
+
+$ dep ensure
+$ dep ensure -update
+</code></pre>
+<h2 id="module">module</h2>
+<p>vgo已经集成到go1.11</p>
+<p>通过go mod init初始化两个文件.</p>
+<p>go.mod:</p>
+<pre><code>module
+go
+require
+exclude
+replace
+
+// 使用本地module,或使用指定repo里面的module
+replace github.com/crazy-canux/go-devops =&gt; /path/to/local/github.com/crazy-canux/go-devops
+</code></pre>
+<p>go.sum:</p>
+<pre><code>go env -w GOSUMDB=off
+</code></pre>
+<p>设置相关环境变量:</p>
+<pre><code>GO111MODULE:
+// auto/on/off
+go env -w GO111MODULE=on
+
+GOPROXY:
+go env -w GOPROXY=https://goproxy.cn,direct
+https://proxy.golang.org //默认值
+https://goproxy.cn
+https://goproxy.io
+https://mirrors.aliyun.com/goproxy/
+
+GOSUMDB:
+
+GOPRIVATE
+
+GONOPROXY
+
+GONOSUMDB
+</code></pre>
+<hr>
+<h1 id="项目结构">项目结构</h1>
+<pre><code>cmd: 可执行文件入口
+pkg: 核心代码库
+api: api的spec, openapi/swagger/json/protocol/grpc
+hack: 构建/测试相关脚本
+plugin: 插件
+staging: wip
+third_party: 第三方工具/代码
+vendor: 项目依赖
+build
+test
+docs
+</code></pre>
+<p>没有子目录包结构：</p>
+<pre><code>go-devops
+    |- README.md
+    |- doc.go
+    |- grafana.go
+    |- grafana_test.go
+    ...
+
+import &quot;go-devops&quot;
+</code></pre>
+<p>有子目录的包结构：</p>
+<pre><code>go-devops
+    |- README.md
+    |- doc.go // package go_devops
+    |- grafana
+       |- doc.go // package grafana
+       |- grafana.go
+       |- grafana_test.go
+
+import &quot;go-devops/grafana&quot;
+</code></pre>
+<hr>
+<h1 id="proxy">proxy</h1>
+<p>goproxy.io</p>
+<p><a href="https://github.com/goproxyio/goproxy">https://github.com/goproxyio/goproxy</a></p>
+<p>goproxy.cn</p>
+<p><a href="https://github.com/goproxy/goproxy.cn">https://github.com/goproxy/goproxy.cn</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/devops/">devops</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/go_debug/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Debug</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/go_document/">
+            <span class="next-text nav-default">Document</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2018-01-01 10:49:21 \x2b0000 UTC',
+        title: 'Devops',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

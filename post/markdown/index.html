@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Markdown - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Markdown Markdown简介 Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。 Markdown和html有很大区别，" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/markdown/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Markdown" />
+<meta property="og:description" content="Markdown Markdown简介 Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。 Markdown和html有很大区别，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/markdown/" />
+<meta property="article:published_time" content="2016-03-28T22:03:15+00:00" />
+<meta property="article:modified_time" content="2016-03-28T22:03:15+00:00" />
+<meta itemprop="name" content="Markdown">
+<meta itemprop="description" content="Markdown Markdown简介 Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。 Markdown和html有很大区别，">
+<meta itemprop="datePublished" content="2016-03-28T22:03:15&#43;00:00" />
+<meta itemprop="dateModified" content="2016-03-28T22:03:15&#43;00:00" />
+<meta itemprop="wordCount" content="732">
+
+
+
+<meta itemprop="keywords" content="markdown," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Markdown"/>
+<meta name="twitter:description" content="Markdown Markdown简介 Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。 Markdown和html有很大区别，"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Markdown</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-03-28 </span>
+        <div class="post-category">
+            <a href="/categories/web/"> Web </a>
+            </div>
+          <span class="more-meta"> 732 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#markdown简介">Markdown简介</a></li>
+    <li><a href="#两个需要特殊处理的字符">两个需要特殊处理的字符</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#段落和换行">段落和换行</a></li>
+    <li><a href="#标题">标题</a>
+      <ul>
+        <li><a href="#setext格式">setext格式</a></li>
+        <li><a href="#atx格式">atx格式</a></li>
+      </ul>
+    </li>
+    <li><a href="#区块引用">区块引用</a></li>
+    <li><a href="#列表">列表</a>
+      <ul>
+        <li><a href="#无序列表">无序列表</a></li>
+        <li><a href="#有序列表">有序列表</a></li>
+      </ul>
+    </li>
+    <li><a href="#代码区块">代码区块</a></li>
+    <li><a href="#分割线">分割线</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#链接">链接</a>
+      <ul>
+        <li><a href="#行内式链接">行内式链接</a></li>
+        <li><a href="#参考式链接">参考式链接</a></li>
+        <li><a href="#自动链接">自动链接</a></li>
+      </ul>
+    </li>
+    <li><a href="#强调">强调</a></li>
+    <li><a href="#代码">代码</a></li>
+    <li><a href="#图片">图片</a>
+      <ul>
+        <li><a href="#行内式图片">行内式图片</a></li>
+        <li><a href="#参考式图片">参考式图片</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2016-03-28T22:03:15" title="March 28, 2016">March 28, 2016</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="markdown">Markdown</h1>
+<h2 id="markdown简介">Markdown简介</h2>
+<p>Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。
+Markdown和html有很大区别，html是一种发布格式，markdown是一种书写格式。</p>
+<p>Markdown 中文手册：</p>
+<p><a href="http://wowubuntu.com/markdown/index.html">http://wowubuntu.com/markdown/index.html</a></p>
+<p>Markdown 英文手册：</p>
+<p><a href="http://daringfireball.net/projects/markdown/syntax">http://daringfireball.net/projects/markdown/syntax</a></p>
+<p>Markdown文件的扩展名是md。</p>
+<h2 id="两个需要特殊处理的字符">两个需要特殊处理的字符</h2>
+<p>&lt; 的表示方法：</p>
+<blockquote>
+<p>&amp; l t ;</p>
+</blockquote>
+<p>&amp; 的表示方法：</p>
+<blockquote>
+<p>&amp; a m p ;</p>
+</blockquote>
+<hr>
+<h1 id="区块元素">区块元素</h1>
+<h2 id="段落和换行">段落和换行</h2>
+<p>段落前后要有一个或以上的空行（空格或制表符都可以）。</p>
+<h2 id="标题">标题</h2>
+<p>markdown支持两个语法格式的标题</p>
+<h3 id="setext格式">setext格式</h3>
+<p>任意个数下等号=表示大标题:</p>
+<pre><code>Title
+======
+</code></pre>
+<p>任意个数下减号表示副标题：</p>
+<pre><code>Subtitle
+--------
+</code></pre>
+<h3 id="atx格式">atx格式</h3>
+<p>一到六个#表示一到六阶标题,#后面有空格</p>
+<pre><code># 一阶标题
+
+## 二阶标题
+
+### 三阶标题
+
+#### 四阶标题
+
+##### 五阶标题
+
+###### 六阶标题
+</code></pre>
+<h2 id="区块引用">区块引用</h2>
+<p>使用&gt;表示单层区块引用：</p>
+<p>&gt; block</p>
+<blockquote>
+<p>block</p>
+</blockquote>
+<p>使用多个&gt;嵌套使用：</p>
+<p>&gt;&gt; block</p>
+<blockquote>
+<blockquote>
+<p>block</p>
+</blockquote>
+</blockquote>
+<p>区块内也可以用标题，列表和代码区块等。</p>
+<h2 id="列表">列表</h2>
+<h3 id="无序列表">无序列表</h3>
+<p>无序列表使用星号、加号或是减号作为列表标记,符号和字符之间有空格：</p>
+<p>* shopping list</p>
+<blockquote>
+<ul>
+<li>shopping list</li>
+</ul>
+</blockquote>
+<p>+ shoppint list</p>
+<blockquote>
+<ul>
+<li>shopping list</li>
+</ul>
+</blockquote>
+<p>- shopping list</p>
+<blockquote>
+<ul>
+<li>shopping list</li>
+</ul>
+</blockquote>
+<h3 id="有序列表">有序列表</h3>
+<p>有序列表使用数字和一个英文句点,符号和字符之间有空格：</p>
+<ol>
+<li>numbered list</li>
+</ol>
+<blockquote>
+<ol>
+<li>numbered list</li>
+</ol>
+</blockquote>
+<h2 id="代码区块">代码区块</h2>
+<p>简单地缩进 4 个空格或是 1 个制表符,一个代码区块会一直持续到没有缩进的那一行或是文件结尾。</p>
+<p>这是一个普通段落：</p>
+<pre><code>这是一个代码区块。
+    缩进
+代码区块结束。
+</code></pre>
+<h2 id="分割线">分割线</h2>
+<p>三个以上的*-_都可以产生分割线:</p>
+<p>***</p>
+<blockquote>
+<hr>
+</blockquote>
+<p>---</p>
+<blockquote>
+<hr>
+</blockquote>
+<p>___</p>
+<blockquote>
+<hr>
+</blockquote>
+<hr>
+<h1 id="区段元素">区段元素</h1>
+<h2 id="链接">链接</h2>
+<h3 id="行内式链接">行内式链接</h3>
+<p>[Link](<a href="https://github.com/crazy-canux">https://github.com/crazy-canux</a>)</p>
+<blockquote>
+<p><a href="https://github.com/crazy-canux">Link</a></p>
+</blockquote>
+<h3 id="参考式链接">参考式链接</h3>
+<p>[Link][id]</p>
+<p>[id]:https://github.com/crazy-canux</p>
+<h3 id="自动链接">自动链接</h3>
+<p>网址:</p>
+<p>&lt;https://github.com/crazy-canux&gt;</p>
+<blockquote>
+<p><a href="https://github.com/crazy-canux">https://github.com/crazy-canux</a></p>
+</blockquote>
+<p>邮箱：</p>
+<p>&lt;canuxcheng@gmail.com&gt;</p>
+<blockquote>
+<p><a href="mailto:canuxcheng@gmail.com">canuxcheng@gmail.com</a></p>
+</blockquote>
+<h2 id="强调">强调</h2>
+<p>用一个*或_表示强调，符号和字符中间没有空格</p>
+<p>斜体：*italic*</p>
+<blockquote>
+<p><em>italic</em></p>
+</blockquote>
+<p>斜体： _italic_</p>
+<blockquote>
+<p><em>italic</em></p>
+</blockquote>
+<p>粗体： **bold**</p>
+<blockquote>
+<p><strong>bold</strong></p>
+</blockquote>
+<p>粗体： __bold__</p>
+<blockquote>
+<p><strong>bold</strong></p>
+</blockquote>
+<h2 id="代码">代码</h2>
+<p>用反引号标记一小段代码：</p>
+<p>`monospace`</p>
+<blockquote>
+<p><code>monospace</code></p>
+</blockquote>
+<h2 id="图片">图片</h2>
+<h3 id="行内式图片">行内式图片</h3>
+<p>![pic](/path/to/img.jpg)</p>
+<blockquote>
+<p><img src="/path/to/img.jpg" alt="Pic"></p>
+</blockquote>
+<h3 id="参考式图片">参考式图片</h3>
+<p>![pic][id]</p>
+<p>[id]: /path/to/img.jpg</p>
+<hr>
+<h1 id="反斜线">反斜线</h1>
+<p>用反斜线\来转移字符</p>
+<p>\   反斜线</p>
+<p>`   反引号</p>
+<p>*   星号</p>
+<p>_   底线</p>
+<p>{}  花括号</p>
+<p>[]  方括号</p>
+<p>()  括弧</p>
+<p>#   井字号</p>
+<p>+   加号</p>
+<p>-   减号</p>
+<p>.   英文句点</p>
+<p>!   惊叹号</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-03-28
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/markdown/">markdown</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/linux_monitoring/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Monitoring</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/metrics_nagios/">
+            <span class="next-text nav-default">Nagios</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2016-03-28 22:03:15 \x2b0000 UTC',
+        title: 'Markdown',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

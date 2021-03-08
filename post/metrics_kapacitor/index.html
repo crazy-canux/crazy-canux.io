@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Kapacitor - Morgoth</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Canux" /><meta name="description" content="Kapacitor https://github.com/influxdata/Kapacitor Open source framework for processing, monitoring, and alerting on time series data 可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor. 配" /><meta name="keywords" content="Hugo, theme, canux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://canuxcheng.com/post/metrics_kapacitor/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Kapacitor" />
+<meta property="og:description" content="Kapacitor https://github.com/influxdata/Kapacitor Open source framework for processing, monitoring, and alerting on time series data 可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor. 配" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://canuxcheng.com/post/metrics_kapacitor/" />
+<meta property="article:published_time" content="2018-01-18T19:23:25+00:00" />
+<meta property="article:modified_time" content="2018-01-18T19:23:25+00:00" />
+<meta itemprop="name" content="Kapacitor">
+<meta itemprop="description" content="Kapacitor https://github.com/influxdata/Kapacitor Open source framework for processing, monitoring, and alerting on time series data 可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor. 配">
+<meta itemprop="datePublished" content="2018-01-18T19:23:25&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-18T19:23:25&#43;00:00" />
+<meta itemprop="wordCount" content="1521">
+
+
+
+<meta itemprop="keywords" content="monitoring," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kapacitor"/>
+<meta name="twitter:description" content="Kapacitor https://github.com/influxdata/Kapacitor Open source framework for processing, monitoring, and alerting on time series data 可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor. 配"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Morgoth</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a><a href="/todo/">
+        <li class="mobile-menu-item">Todo</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Morgoth</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/todo/">Todo</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Kapacitor</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-18 </span>
+        <div class="post-category">
+            <a href="/categories/devops/"> DevOps </a>
+            </div>
+          <span class="more-meta"> 1521 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#configuration">configuration</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#stream">stream</a></li>
+    <li><a href="#batch">batch</a></li>
+    <li><a href="#alert">alert</a></li>
+    <li><a href="#query">query</a></li>
+    <li><a href="#from">from</a></li>
+    <li><a href="#window">window</a></li>
+    <li><a href="#log">Log</a></li>
+    <li><a href="#influxdbout">influxDBOut</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#email">email</a></li>
+    <li><a href="#log-1">log</a></li>
+    <li><a href="#slack">slack</a></li>
+    <li><a href="#post">post</a></li>
+    <li><a href="#tcp">tcp</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="2018-01-18T19:23:25" title="January 18, 2018">January 18, 2018</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="kapacitor">Kapacitor</h1>
+<p><a href="https://github.com/influxdata/Kapacitor">https://github.com/influxdata/Kapacitor</a></p>
+<p>Open source framework for processing, monitoring, and alerting on time series data</p>
+<p>可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor.</p>
+<p>配置:</p>
+<pre><code>hostname = &quot;kapcitor-service&quot;
+
+# 如果从influxdb读取数据需要配置该选项．
+[[influxdb]]
+enabled = true
+
+# 如果从该路径加载tickscript
+[[load]]
+enabled = true
+dir=&quot;/etc/kapacitor/load&quot;
+# tasks, 放到/etc/kapacitor/load/tasks/*.tick,重启kapacitor会自动加载task,并默认enable.
+## 要求，ID和tick文件同名，tickscript开头需要指定dbrp, tickscript里面需要指定batch/stream.
+# templates...
+# handlers...
+</code></pre>
+<hr>
+<h1 id="cli">CLI</h1>
+<pre><code>$ kapacitor help
+
+# 创建template(也就是变量可以单独赋值的tickscript)
+$ kapacitor define-template &lt;name&gt; -tick /path/template.tick
+$ kapacitor show-template &lt;name&gt;
+
+# 创建/更新 task, 创建的默认是disable状态.
+# 从tickscript创建task
+$ kapacitor define &lt;name&gt; -tick task.tick -type [stream|batch] -dbrp [database.retentionPolicy]
+# 从template创建task(如果yaml/json中没有指定template需要用-template指定)
+$ kapacitor define &lt;name&gt; -file task.yaml
+$ kapacitor define &lt;name&gt; -file task.json
+
+# 删除task
+$ kapacitor delete [task id/name]
+
+$ kapacitor list tasks/templates
+$ kapacitor reload [task id/name] # 相当于disable &amp; enable.
+$ kapacitor enable [task id/name]
+$ kapaciror disable [task id/name]
+$ kapacitor show [id/name]
+$ kapacitor watch [task id/name]
+
+$ kapacitor list topics
+$ kapacitor delete topics [topic id]
+</code></pre>
+<hr>
+<h1 id="http-api">Http API</h1>
+<pre><code>port = 9092
+</code></pre>
+<h2 id="configuration">configuration</h2>
+<p>获取所有可以overwrite的参数</p>
+<pre><code>GET /kapacitor/v1/config
+</code></pre>
+<p>获取section/option参数</p>
+<pre><code>GET /kapacitor/v1/config/smtp
+GET /kapacitor/v1/config/smtp/
+GET /kapacitor/v1/config/influxdb
+GET /kapacitor/v1/config/influxdb/localhost
+
+POST /kapacitor/v1/config/smtp/
+{
+    &quot;set&quot;:{
+        &quot;enabled&quot;: true
+    }
+}
+</code></pre>
+<p>操作task:</p>
+<pre><code>// 修改已存在的task的参数:
+$ curl -H 'content-type: application/json' -X PATCH -d '{&quot;vars&quot;: {&quot;warn&quot;:{&quot;value&quot;:90, &quot;type&quot;:&quot;int&quot;}}}' http://kapacitor-service:9092/kapacitor/v1/tasks/cpu
+</code></pre>
+<p>操作alert:</p>
+<pre><code>// 列出所有topic:
+$ curl -H 'content-type: application/json' -X GET http://kapacitor-service:9092/kapacitor/v1/alerts/topics
+// 列出指定topic的所有events:
+$ curl -H 'content-type: application/json' -X GET http://kapacitor-service:9092/kapacitor/v1/alerts/topics/&lt;topic&gt;/events
+// 列出指定events
+$ curl -H 'content-type: application/json' -X GET http://kapacitor-service:9092/kapacitor/v1/alerts/topics/&lt;topic&gt;/events/&lt;event&gt;?min-level=CRITICAL
+</code></pre>
+<hr>
+<h1 id="tickscript">TICKscript</h1>
+<p>注释:</p>
+<pre><code>// comment
+</code></pre>
+<p>tickscript字符串用单引号和三单引号表示.</p>
+<pre><code>var a = 'test'
+var b = '''test1
+test2'''
+</code></pre>
+<p>Keywords:</p>
+<pre><code>TRUE
+FALSE
+AND
+OR
+lambda
+var
+dbrp
+</code></pre>
+<p>operator:</p>
+<pre><code>+ - * /    算数运算
+== != &lt; &lt;= &gt; &gt;=    比较运算
+=~ !~    正则表达式匹配和不匹配
+! AND OR    逻辑运算
+</code></pre>
+<p>chaining operators:</p>
+<pre><code>|    chaining method (constructor)
+.    property method (property methods &amp; event handlers)
+@    User Define Function
+</code></pre>
+<p>status:</p>
+<pre><code>0 -&gt; OK
+1 -&gt; INFO
+2 -&gt; WARN
+3 -&gt; CRIT
+</code></pre>
+<hr>
+<h1 id="node">node</h1>
+<p>node是tickscript中的复杂数据结构．</p>
+<p>两个顶级node类型是stream和batch</p>
+<p>batch是定时查询influxdb.</p>
+<p>stream是通过订阅influxdb,写入到influxdb的数据也会写入kapacitor.</p>
+<p>constructor调用相应的property methods.</p>
+<h2 id="stream">stream</h2>
+<pre><code>var data = stream
+    |from()...
+</code></pre>
+<p>property methods:</p>
+<pre><code>quiet()
+</code></pre>
+<p>chaining methods:</p>
+<pre><code>Deadman
+From
+Stats
+</code></pre>
+<h2 id="batch">batch</h2>
+<pre><code>var data = batch
+    |query()...
+</code></pre>
+<p>property methods:</p>
+<pre><code>quiet()
+</code></pre>
+<p>chaining methods:</p>
+<pre><code>Deadman
+Query
+Stats
+</code></pre>
+<h2 id="alert">alert</h2>
+<p>alert有三种类型: threshold, relative, deadman.</p>
+<pre><code>var alert = data
+    |eval()...
+    |alert()
+      .id('{{ index .Tags &quot;&lt;tag-key&gt;&quot; }}')
+      .message('{{ .ID }} {{ .Level }} {{ index .Fields &quot;&lt;field-key&gt;&quot; }} {{ .Time }}')
+      .details(...)
+      ...
+</code></pre>
+<p>constructor:</p>
+<pre><code>alert()
+</code></pre>
+<p>property methods:</p>
+<pre><code>id()    # 定义alert的ID
+message()    # 相当于email的subject.
+details()    # html格式的警告信息，相当于email的body.
+info()
+infoReset()
+warn()
+warnReset()
+crit()
+critReset()
+email()
+log()    # 将json格式的alert存放到文件．
+idTag
+idField
+levelTag()
+levelField()
+durationField()
+messageField()
+post()
+tcp()
+all()    # period里面所有值都满足条件才alert
+topic()
+flapping()
+history()
+inhibit(&lt;category&gt;, &lt;tags&gt;) // 忽略一类告警
+quiet()
+noRecoveries() # 不要发恢复(OK)的警告
+stateChangesOnly() # 状态改变才发警告,OK/INFO/WARNING/CRITICAL
+category()
+</code></pre>
+<p>message/details event data:</p>
+<pre><code># 通过property methods定义一些变量
+ID -&gt; {{ .ID }}
+Name -&gt; measurement
+TaskName -&gt; task name
+Group -&gt; groupBy
+Tags -&gt; {{.Tags}} {{index .Tags &quot;&lt;tag_key&gt;&quot;}}
+Fields -&gt; {{.Fields}} {{index .Fields &quot;&lt;field_key&gt;&quot;}}
+Message
+Details
+Time -&gt; {{ .Time }}
+Duration -&gt; {{ .Duration }}
+Level -&gt; {{ .Level }}
+Data
+Recoverable
+</code></pre>
+<h2 id="query">query</h2>
+<p>constructor:</p>
+<pre><code>query(q string)
+</code></pre>
+<p>property methods:</p>
+<pre><code>fill()
+align()
+alignGroup()
+groupBy()
+cron()
+every()
+period()
+quiet()
+</code></pre>
+<h2 id="from">from</h2>
+<p>constructor:</p>
+<pre><code>from()
+</code></pre>
+<p>property methods:</p>
+<pre><code>database()
+retentionPolicy()
+measurement()
+where()
+groupBy()
+round()
+truncate()
+quiet()
+</code></pre>
+<h2 id="window">window</h2>
+<p>constructor:</p>
+<pre><code>window()
+</code></pre>
+<p>property methods:</p>
+<pre><code>every()
+period()
+align()
+quiet()
+</code></pre>
+<h2 id="log">Log</h2>
+<p>constructor:</p>
+<pre><code>log()
+</code></pre>
+<p>property methods:</p>
+<pre><code>level()
+prefix()
+quiet()
+</code></pre>
+<h2 id="influxdbout">influxDBOut</h2>
+<p>constructor:</p>
+<pre><code>influxDBOut()
+</code></pre>
+<p>property methods:</p>
+<pre><code>create()
+...
+</code></pre>
+<hr>
+<h1 id="handler">handler</h1>
+<p>handler是用来处理alert的工具, 最常用的是email</p>
+<p>handler可以调用相应的options.</p>
+<h2 id="email">email</h2>
+<p>options:</p>
+<pre><code>to(&quot;&lt;email_address&gt;&quot;)
+</code></pre>
+<p>需要配置smtp</p>
+<pre><code>[smtp]
+    enabled = true
+    host = &quot;localhost&quot;  # 一般postfix/mailutils和kapacitor安装到同一台server
+    port = 25
+
+    from = &quot;canuxcheng@gmail.com&quot;  # 必须配置
+    to = [&quot;&quot;]  # 可以在tickscript中指定, tickscript不指定，就用该配置.
+
+    global = true # 开启后,tickscript中不用指定handler,默认都是发邮件.
+</code></pre>
+<h2 id="log-1">log</h2>
+<p>options:</p>
+<pre><code>path
+mode
+</code></pre>
+<p>写入到log.</p>
+<h2 id="slack">slack</h2>
+<h2 id="post">post</h2>
+<h2 id="tcp">tcp</h2>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Canux</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-01-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/monitoring/">monitoring</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/metrics_influxdb/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Influxdb</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/metrics_prometheus/">
+            <span class="next-text nav-default">Prometheus</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2018-01-18 19:23:25 \x2b0000 UTC',
+        title: 'Kapacitor',
+        clientID: '3d41a2a237fabe050cc0',
+        clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
+        repo: 'crazy-canux.github.io',
+        owner: 'crazy-canux',
+        admin: ['crazy-canux'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:canuxcheng@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/crazy-canux" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/canux-cheng-4b5b23ab/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://stackoverflow.com/users/4344009/canux" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="http://canuxcheng.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/crazy-canux/hugo-theme-canux">Canux</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Canux CHENG</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
