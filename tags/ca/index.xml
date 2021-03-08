@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CA on Morgoth</title>
+    <link>http://canuxcheng.com/tags/ca/</link>
+    <description>Recent content in CA on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 28 Jul 2018 16:08:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/ca/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CA</title>
+      <link>http://canuxcheng.com/post/sec_ca/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_ca/</guid>
+      <description>CA SSL: secure sockets layer TLS: transport layer security CA: Certificate Authority. SNI: server name indication 证书类型 x509: 只有公钥没有私钥匙 编码方式 pem: base64编码 der: 二进制 证书文件: crt: 证书文件（可以是pem或der编码</description>
+    </item>
+    
+  </channel>
+</rss>

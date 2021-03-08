@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>summary on Morgoth</title>
+    <link>http://canuxcheng.com/tags/summary/</link>
+    <description>Recent content in summary on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 21 Jun 2016 21:18:20 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/summary/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Summary</title>
+      <link>http://canuxcheng.com/post/python_summary/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:20 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_summary/</guid>
+      <description>python难点总结 多线程 GIL GIL: Global Interpretror Lock. 全局解释器锁． python不建议使用多线程，用多进程代替． 协程 coroutine 协程就是同时开启两个任务，但一次只顺序执</description>
+    </item>
+    
+    <item>
+      <title>Summary</title>
+      <link>http://canuxcheng.com/post/c_summary/</link>
+      <pubDate>Sat, 02 Apr 2016 16:06:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/c_summary/</guid>
+      <description>C标准 ISO C89(ANSI C89) -&amp;gt; ISO C99 -&amp;gt; ISO C11 ANSI C 和 ISO C是对通用C语言的接口的定义。 符合这种标准的实现为C语言标准库,也叫libc。 Unix/Linux的POSI</description>
+    </item>
+    
+  </channel>
+</rss>

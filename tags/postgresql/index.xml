@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postgresql on Morgoth</title>
+    <link>http://canuxcheng.com/tags/postgresql/</link>
+    <description>Recent content in postgresql on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Apr 2016 14:46:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postgresql</title>
+      <link>http://canuxcheng.com/post/postgre/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/postgre/</guid>
+      <description>PostgreSQL 安装postgresql： $ sudo apt-get install postgresql 安装第三方库： $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． post</description>
+    </item>
+    
+  </channel>
+</rss>

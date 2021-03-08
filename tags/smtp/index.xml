@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>smtp on Morgoth</title>
+    <link>http://canuxcheng.com/tags/smtp/</link>
+    <description>Recent content in smtp on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 26 Apr 2017 09:56:04 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Smtp</title>
+      <link>http://canuxcheng.com/post/smtp/</link>
+      <pubDate>Wed, 26 Apr 2017 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/smtp/</guid>
+      <description>Email MTA: Mail Transfer Agent MUA: Mail User Agent python邮件服务器MTA：smtp协议 python客户端MUA：本地协议pop3, 远程协议imap mailutils: mailutils</description>
+    </item>
+    
+  </channel>
+</rss>

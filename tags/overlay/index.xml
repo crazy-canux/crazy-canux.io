@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>overlay on Morgoth</title>
+    <link>http://canuxcheng.com/tags/overlay/</link>
+    <description>Recent content in overlay on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Apr 2018 21:47:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/overlay/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>overlay</title>
+      <link>http://canuxcheng.com/post/storage_overlay/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_overlay/</guid>
+      <description>overlay 最下层是一个 lower 层，也就是镜像层，它是一个只读层； 右上层是一个 upper 层，upper 是容器的读写层，upper 层采用了写实复制的机制，也就是说只有</description>
+    </item>
+    
+  </channel>
+</rss>

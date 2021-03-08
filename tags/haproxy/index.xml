@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>haproxy on Morgoth</title>
+    <link>http://canuxcheng.com/tags/haproxy/</link>
+    <description>Recent content in haproxy on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 28 Jul 2018 16:08:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/haproxy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HAProxy</title>
+      <link>http://canuxcheng.com/post/haproxy/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/haproxy/</guid>
+      <description>HAProxy https://www.haproxy.com/ 安装: $ sudo apt-get install haproxy 配置: $ sudo vim /etc/haproxy/haproxy.cfg global: mode: http | tcp | health defaults: frontend: backend: listen:</description>
+    </item>
+    
+  </channel>
+</rss>

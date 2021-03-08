@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on Morgoth</title>
+    <link>http://canuxcheng.com/categories/network/</link>
+    <description>Recent content in Network on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Mar 2019 21:51:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Command</title>
+      <link>http://canuxcheng.com/post/network_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network_command/</guid>
+      <description>telnet telnet nc/netcat // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设置默认值 $ sudo update-alternatives --config nc $ sudo</description>
+    </item>
+    
+    <item>
+      <title>HAProxy</title>
+      <link>http://canuxcheng.com/post/haproxy/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/haproxy/</guid>
+      <description>HAProxy https://www.haproxy.com/ 安装: $ sudo apt-get install haproxy 配置: $ sudo vim /etc/haproxy/haproxy.cfg global: mode: http | tcp | health defaults: frontend: backend: listen:</description>
+    </item>
+    
+    <item>
+      <title>Restful</title>
+      <link>http://canuxcheng.com/post/rest/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rest/</guid>
+      <description>REST REST: REpresentational State Transfer． restclient 一个是firefox的插件． https://github.com/chao/RESTClient 另一个是java开发的application. https://github.com/wiztools/rest-client postman postman是一个applic</description>
+    </item>
+    
+    <item>
+      <title>Webhook</title>
+      <link>http://canuxcheng.com/post/webhook/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/webhook/</guid>
+      <description>WebHook 用于server和server之间通讯．</description>
+    </item>
+    
+    <item>
+      <title>WebService</title>
+      <link>http://canuxcheng.com/post/webservice/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/webservice/</guid>
+      <description>webservice webservice用于server和browser之间通讯． webservice是基于http的，无状态的． webservice一般分为</description>
+    </item>
+    
+    <item>
+      <title>Dns</title>
+      <link>http://canuxcheng.com/post/dns/</link>
+      <pubDate>Thu, 03 May 2018 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/dns/</guid>
+      <description>DNS Domain Name System: 域名系统</description>
+    </item>
+    
+    <item>
+      <title>Websocket</title>
+      <link>http://canuxcheng.com/post/websocket/</link>
+      <pubDate>Tue, 03 Apr 2018 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/websocket/</guid>
+      <description>WebSocket websocket用于server和browser之间通讯． websocket采用特殊报头，使得浏览器和服务器只需要做一个握手的动作． 通讯</description>
+    </item>
+    
+    <item>
+      <title>Rabbitmq</title>
+      <link>http://canuxcheng.com/post/rabbitmq/</link>
+      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rabbitmq/</guid>
+      <description>AMQP AMQP: Advanced Message Queuing Protocol,高级消息队列协议 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq MQTT MQTT: Message Queuing Telemetry Transport,消息队列遥测传输协议 Rabbitmq https://github.com/rabbitmq Rabbit</description>
+    </item>
+    
+    <item>
+      <title>Rpc</title>
+      <link>http://canuxcheng.com/post/rpc/</link>
+      <pubDate>Sun, 03 Sep 2017 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rpc/</guid>
+      <description>RPC Remote Procedure Call Protocol: 远程过程调用. google的rpc框架，支持多语言: https://github.com/grpc/grpc facebook的rpc框架，贡献给了apache, 支持多语言: https://github.com/apache/thrift</description>
+    </item>
+    
+    <item>
+      <title>Smtp</title>
+      <link>http://canuxcheng.com/post/smtp/</link>
+      <pubDate>Wed, 26 Apr 2017 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/smtp/</guid>
+      <description>Email MTA: Mail Transfer Agent MUA: Mail User Agent python邮件服务器MTA：smtp协议 python客户端MUA：本地协议pop3, 远程协议imap mailutils: mailutils</description>
+    </item>
+    
+    <item>
+      <title>Apache</title>
+      <link>http://canuxcheng.com/post/apache/</link>
+      <pubDate>Tue, 27 Sep 2016 03:25:26 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/apache/</guid>
+      <description>Apache https://github.com/apache/httpd http://httpd.apache.org/ ubuntu/debian： sudo aptitude install apache2 redhat/centos/fedora: $ sudo yum install httpd2 启动服务器： service apache2 start 启动浏览器查看： http://localhost:80 apache命令 apache2ctl: // 检查配置 $ apache2ctl configtest a2ensite // 启用一个站点</description>
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>http://canuxcheng.com/post/http/</link>
+      <pubDate>Tue, 13 Sep 2016 01:39:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/http/</guid>
+      <description>HTTP/HTTPS http port: 80 https port: 443 http/https的请求方式： get # 从服务器取出资源 post # 在服务器新建资源 put # 在服务器更新资源，客户端提供改变后的完整资源 delete # 从</description>
+    </item>
+    
+    <item>
+      <title>Ftp</title>
+      <link>http://canuxcheng.com/post/ftp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ftp/</guid>
+      <description>FTP ftp服务器有很多： vsftpd proftpd pyftpdlib vsftpd 安装vsftpd: $ sudo apt-get install vsftpd windows开启ftp服务和建立IIS站点即可。 linux配置： $ vim /etc/vsftpd.conf local_root=/home/canux/FTP anon_root=/home/canux/FTP local_enable=YES anonymous_enable=YES chroot_local_user=YES</description>
+    </item>
+    
+    <item>
+      <title>Ldap</title>
+      <link>http://canuxcheng.com/post/ldap/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ldap/</guid>
+      <description>LDAP LDAP占用tcp和udp的389端口。 使用SSL的LDAP占用tcp和udp的636端口。 Lightweight Directory Access Protocol. http://www.openldap.org/ LDAP的windows工具：LDA</description>
+    </item>
+    
+    <item>
+      <title>Nfs</title>
+      <link>http://canuxcheng.com/post/nfs/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/nfs/</guid>
+      <description>NFS NFS: Network File System 安装： # 在nfs服务器安装nfs服务 $ sudo apt-get install nfs-kernel-server # 添加共享目录并授权 $ sudo vim /etc/exports /home/user/share *(rw,no_root_squash) $ sudo service nfs-kernel-server restart # 在nfs客户端安装nfs客户端 $ sudo apt-get install nfs-common</description>
+    </item>
+    
+    <item>
+      <title>Ntp</title>
+      <link>http://canuxcheng.com/post/ntp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ntp/</guid>
+      <description>NTP NFS: Network Time Protocol UTC: Coordinated Universal Time, 世界统一时间 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC CET: Central European Time, 欧洲中部时间, = UTC+1, 下令时=UTC+2 CST: Chinese Standard Time, 中国标准时间, = UTC+8 时区管理 $</description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>http://canuxcheng.com/post/ssh/</link>
+      <pubDate>Thu, 28 Jul 2016 15:53:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ssh/</guid>
+      <description>OpenSSH http://www.openssh.com/ windows上支持ssh协议的客户端： putty xshell MobaXterm secureCRT 安装： $ sudo apt-get install openssh-server $ sudo apt-get install openssh-client SSH命令 ssh是openssh协议的客户端． 远程操作的命令包</description>
+    </item>
+    
+    <item>
+      <title>Snmp</title>
+      <link>http://canuxcheng.com/post/snmp/</link>
+      <pubDate>Tue, 26 Apr 2016 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/snmp/</guid>
+      <description>SNMP Simple Network Management Protocol, 简单网络管理协议 MIB SMI 安装和配置snmp: $sudo apt-get install snmp snmpd snmp-mibs-downloader snmp命令</description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://canuxcheng.com/post/network/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network/</guid>
+      <description>网络基础 小端： 低字节在起始地址，高字节在高地址 大端： 高字节在起始地址，低字节在高地址 linux一般是小端，unix一般是大端 网络模型 OSI七</description>
+    </item>
+    
+    <item>
+      <title>Samba</title>
+      <link>http://canuxcheng.com/post/samba/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/samba/</guid>
+      <description>SMB/CIFS SMB/CIFS占用TCP和UDP的139和445端口。 SMB: server message block. CIFS: common internet file system, 是SMB的升级版本。 Samba Samba: Linux/Unix上的SBM/CIFS</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/network_monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network_monitoring/</guid>
+      <description>Monitoring network usage:
+bytes_sent(out) bytes_recv(in)  packets:
+packets_sent(out) packets_recv(in)  error_in/out:
+SELECT non_negative_derivative(mean(&amp;quot;err_in&amp;quot;), 1s) AS &amp;quot;recv&amp;quot;, non_negative_derivative(mean(&amp;quot;err_out&amp;quot;), 1s) AS &amp;quot;send&amp;quot; FROM &amp;quot;net&amp;quot; WHERE &amp;quot;interface&amp;quot; =~ /^(vlan|eth|ens|bond).*/ AND $timeFilter GROUP BY time($__interval), &amp;quot;host&amp;quot;, &amp;quot;interface&amp;quot; fill(none)  drop_in/out:
+SELECT non_negative_derivative(mean(&amp;quot;drop_in&amp;quot;), 1s) AS &amp;quot;recv&amp;quot;, non_negative_derivative(mean(&amp;quot;drop_out&amp;quot;), 1s) AS &amp;quot;send&amp;quot; FROM &amp;quot;net&amp;quot; WHERE &amp;quot;interface&amp;quot; =~ /^(vlan|eth|ens|bond).*/ AND $timeFilter GROUP BY time($__interval), &amp;quot;host&amp;quot;, &amp;quot;interface&amp;quot; fill(none)  </description>
+    </item>
+    
+  </channel>
+</rss>

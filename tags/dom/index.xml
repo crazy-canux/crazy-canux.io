@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dom on Morgoth</title>
+    <link>http://canuxcheng.com/tags/dom/</link>
+    <description>Recent content in dom on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 Mar 2017 09:36:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/dom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JS DOM</title>
+      <link>http://canuxcheng.com/post/js_dom/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_dom/</guid>
+      <description>DOM DOM: document object model. 当网页被加载时，浏览器会创建页面的文档对象模型(DOM). DOM操作需要在html加载完成后进程. js可以通过DOM访问html文</description>
+    </item>
+    
+  </channel>
+</rss>

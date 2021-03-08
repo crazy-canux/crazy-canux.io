@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on Morgoth</title>
+    <link>http://canuxcheng.com/categories/devops/</link>
+    <description>Recent content in DevOps on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 Jul 2020 21:18:33 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BitBake</title>
+      <link>http://canuxcheng.com/post/bitbake/</link>
+      <pubDate>Sun, 12 Jul 2020 21:18:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/bitbake/</guid>
+      <description>BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake bitbake: $ bitbake python -c devshell/devpyshell $ bitbake python -c clean/cleanall/cleanstate $ bitbake python</description>
+    </item>
+    
+    <item>
+      <title>ELK</title>
+      <link>http://canuxcheng.com/post/logging_elk/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_elk/</guid>
+      <description>ELK kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可扩展的插件． beats(agent): 轻量型数据采集平台，从边缘机器向l</description>
+    </item>
+    
+    <item>
+      <title>Grok</title>
+      <link>http://canuxcheng.com/post/logging_grok/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_grok/</guid>
+      <description>grok logstash和telegraf都是用grok来解析log 在线检测 http://grokdebug.herokuapp.com/ grok的正则表达式 https://github.com/kkos/oniguruma/blob/master/doc/RE 可用的pattern(logstash &amp;amp; telegraf-logparser/tail) https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns https://github.com/influxdata/telegraf/blob/master/plugins/inputs/logparser/grok/patterns/influx-patterns</description>
+    </item>
+    
+    <item>
+      <title>Logging</title>
+      <link>http://canuxcheng.com/post/logging/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging/</guid>
+      <description>Logging 日志采集，存储，可视化. 主要有Elastic stack, splunk, loki.</description>
+    </item>
+    
+    <item>
+      <title>Loki</title>
+      <link>http://canuxcheng.com/post/logging_loki/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_loki/</guid>
+      <description>ELK kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可扩展的插件． beats(agent): 轻量型数据采集平台，从边缘机器向l</description>
+    </item>
+    
+    <item>
+      <title>AlertManager</title>
+      <link>http://canuxcheng.com/post/metrics_alertmanager/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_alertmanager/</guid>
+      <description>alert-manager 在Prometheus中支持基于PromQL创建告警规则, prometheus通过push触发alertmanager. https://github.com/prometheus/alertmanager</description>
+    </item>
+    
+    <item>
+      <title>Exporter</title>
+      <link>http://canuxcheng.com/post/metrics_exporter/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_exporter/</guid>
+      <description>exporter 广义上讲所有可以向Prometheus提供监控样本数据的程序都可以被称为一个Exporter。而Exporter的一个实例称为target</description>
+    </item>
+    
+    <item>
+      <title>Influxdb</title>
+      <link>http://canuxcheng.com/post/metrics_influxdb/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_influxdb/</guid>
+      <description>Influxdb https://github.com/influxdata/influxdb Scalable datastore for metrics, events, and real-time analytics. 支持从opentsdb, graphite, collectd等获取数据 默认数据库_internal 用于存储内部运行数据 安装配置参考官方文档</description>
+    </item>
+    
+    <item>
+      <title>Kapacitor</title>
+      <link>http://canuxcheng.com/post/metrics_kapacitor/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_kapacitor/</guid>
+      <description>Kapacitor https://github.com/influxdata/Kapacitor Open source framework for processing, monitoring, and alerting on time series data 可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor. 配</description>
+    </item>
+    
+    <item>
+      <title>Prometheus</title>
+      <link>http://canuxcheng.com/post/metrics_prometheus/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_prometheus/</guid>
+      <description>Prometheus Prometheus Server是Prometheus组件中的核心部分，负责实现对监控数据的获取，存储以及查询 swarm部署: https://github.com/vegasbrianc/prometheus k8s部署: https://github.com/coreos/kube-prometheus https://github.com/coreos/prometheus-operator https://github.com/helm/charts/tree/master/stable/prometheus-operator 高可用: https://github.com/thanos-io/thanos</description>
+    </item>
+    
+    <item>
+      <title>Telegraf</title>
+      <link>http://canuxcheng.com/post/metrics_telegraf/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_telegraf/</guid>
+      <description>Telegraf https://github.com/influxdata/telegraf The plugin-driven server agent for collecting &amp;amp; reporting metrics. Configuartion agent configuration: interval 所有inputs的默认运行间隔 round_interval collection_jitter precision ns/us/ms/s flush_interval flush_jitter input configuration: interval name_override # 默认measurements是插件名,修改默认measur</description>
+    </item>
+    
+    <item>
+      <title>IDE</title>
+      <link>http://canuxcheng.com/post/ide/</link>
+      <pubDate>Sun, 02 Apr 2017 21:11:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ide/</guid>
+      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial pycharm https://plugins.jetbrains.com/plugin/631-python pycharm plugin for intellij. database https://plugins.jetbrains.com/plugin/1800-database-navigator https://confluence.jetbrains.com/display/CONTEST/Database+Navigator oracle/mysql/postgresql/sqlite plugin. vim</description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>http://canuxcheng.com/post/testing/</link>
+      <pubDate>Wed, 01 Mar 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing/</guid>
+      <description>QA Quality Assurance QA主要就是进行软件测试相关的工作. 软件测试就是使用人工或自动的手段来运行或测量软件系统的过程，以检验软件系统是否满足规定的要求，并找</description>
+    </item>
+    
+    <item>
+      <title>RobotFramework</title>
+      <link>http://canuxcheng.com/post/testing_robotframework/</link>
+      <pubDate>Sat, 25 Feb 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing_robotframework/</guid>
+      <description>Robot Framework https://github.com/robotframework/robotframework https://github.com/robotframework/QuickStartGuide 支持python和java的API. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). Install: $ pip install robotframework Modular: Test Data Robot Framework(test data syntax) Test Libraries(test library API) + Test Tools System under Test(system interface) Use: $ robot --version $ robot [options] data_sources 会</description>
+    </item>
+    
+    <item>
+      <title>Selenium</title>
+      <link>http://canuxcheng.com/post/testing_selenium/</link>
+      <pubDate>Sat, 25 Feb 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing_selenium/</guid>
+      <description>Selenium https://github.com/SeleniumHQ/selenium 用于基于浏览器的web应用的自动化测试工具集． selenium1: deprecated. selenium2: 默认支持firefox&amp;lt;=46. 支持python2.6+, python3.2+ selenium3: 支持firefo</description>
+    </item>
+    
+    <item>
+      <title>Makefile</title>
+      <link>http://canuxcheng.com/post/makefile/</link>
+      <pubDate>Thu, 12 Jan 2017 21:18:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/makefile/</guid>
+      <description>Make make的作用： 控制源代码的编译 手册页的编写 将应用程序安装到目标目录 make的使用规则： 如果工程没有编译过，需要编译所有源文件和链接所有目</description>
+    </item>
+    
+    <item>
+      <title>Grafana</title>
+      <link>http://canuxcheng.com/post/metrics_grafana/</link>
+      <pubDate>Thu, 12 Jan 2017 21:05:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_grafana/</guid>
+      <description>Grafana The tool for beautiful monitoring and metric analytics &amp;amp; dashboards for Graphite, InfluxDB &amp;amp; Prometheus &amp;amp; More. https://github.com/grafana/grafana 支持多种data source: graphite/influxdb/opentsdb/premetheus/elasticsearch/mysql/postgresql 安装配置参考官方文档 grafana配置文件是grafana.ini. HTTP API port = 3000 dashboard create/update</description>
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>http://canuxcheng.com/post/tmux/</link>
+      <pubDate>Sun, 19 Jun 2016 11:17:53 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tmux/</guid>
+      <description>tmux tmux是终端复用工具，类似于gnu screen。 tmux三个基本概念： 会话（session） 窗口（window） 面板（pane） tmux</description>
+    </item>
+    
+    <item>
+      <title>Jaeger</title>
+      <link>http://canuxcheng.com/post/tracing_jaeger/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing_jaeger/</guid>
+      <description>Jaeger 一款uber贡献给cncf的微服务tracing监控工具. https://www.jaegertracing.io/ https://github.com/jaegertracing/jaeger Deploy Jaeger on K8S https://github.com/jaegertracing/jaeger-operator</description>
+    </item>
+    
+    <item>
+      <title>Metrics</title>
+      <link>http://canuxcheng.com/post/metrics/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics/</guid>
+      <description>Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix. Modern monitoring is for Cloud and Container. Modern monitoring based on metrics, logs and tracing. TICK stack influxdb: tsdb. kapacitor: alerting. chronograf: GUI. telegraf(agent): metrics collector. Prometheus Graphing 最流行的监控绘图软件是grafana, 支持influxdb,ela</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/monitoring/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring/</guid>
+      <description>Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix. Modern monitoring is for Cloud and Container. Modern monitoring based on metrics, logs and tracing. 现代的监控系统在DevOps的基础上，除了传统的metrics和logging的采集，还需要</description>
+    </item>
+    
+    <item>
+      <title>Sentry</title>
+      <link>http://canuxcheng.com/post/tracing_sentry/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing_sentry/</guid>
+      <description>Sentry https://github.com/getsentry/sentry
+Deploy Sentry on K8S https://github.com/getsentry/onpremise</description>
+    </item>
+    
+    <item>
+      <title>Tracing</title>
+      <link>http://canuxcheng.com/post/tracing/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing/</guid>
+      <description>Tracing APM 监控，也叫全链路监控。 sentry https://github.com/getsentry/sentry zipkin https://github.com/openzipkin/zipkin open-telemetry opentracing和opencensus 合并成open-telemetry. https://github.com/opentracing https://github.com/census-instrumentation https://github.com/open-telemetry jaeger https://github.com/jaegertracing/jaeger</description>
+    </item>
+    
+    <item>
+      <title>Tivoli</title>
+      <link>http://canuxcheng.com/post/metrics_tivoli/</link>
+      <pubDate>Wed, 20 Apr 2016 13:57:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_tivoli/</guid>
+      <description>ITM ITM: IBM Tivoli Monitoring 是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。 Architecture Overview: ITM主要由管理组件和可选组件组成。 Tivoli Management Services: TEMS TEPS TEP client Historical data collection(warehouse agent) warehouse</description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>http://canuxcheng.com/post/development/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/development/</guid>
+      <description>Development 开发相关的工具 传统的软件开发采用的是瀑布式开发流程． 现代的软件开发采用的是敏捷开发流程(Agile development). Alpha: inner test version. Beta: outer test version. RC: release candidate. 最终版本之前的最</description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/post/devops/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/devops/</guid>
+      <description>DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容． DevOps涉</description>
+    </item>
+    
+    <item>
+      <title>Gitlab</title>
+      <link>http://canuxcheng.com/post/gitlab/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gitlab/</guid>
+      <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;quot;http://gitlab.example.com&amp;quot; apt-get install gitlab-ce 配置: /etc/gitlab/gitlab.rb 升级gitlab:</description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>http://canuxcheng.com/post/jenkins/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/jenkins/</guid>
+      <description>Jenkins Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks such as building, testing, and deploying software. https://github.com/jenkinsci/jenkins 安装好Jenkins后安装需要的插件． 安装jenkins: # download jenkins.war and install java8. $ java -jar jenkins.war --httpPort=8080 $ firefox http://localhost:8080</description>
+    </item>
+    
+    <item>
+      <title>Operations</title>
+      <link>http://canuxcheng.com/post/operations/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/operations/</guid>
+      <description>Operations 运维相关的工具． 批量配置管理 puppet chef salt ansible 密码管理工具 keepass http://keepass.info/ KeePassX https://www.keepassx.org/ https://github.com/keepassx/keepassx</description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>http://canuxcheng.com/post/agile/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/agile/</guid>
+      <description>Agile methodologies Agile的具体方法有Scrum, XP和kanban. ThoughtWorks公司的Martin Fowler提出的敏捷方法． Scrum Scrum</description>
+    </item>
+    
+    <item>
+      <title>Ansible</title>
+      <link>http://canuxcheng.com/post/ansible/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ansible/</guid>
+      <description>Ansible https://github.com/ansible/ansible http://www.ansible.com.cn/index.html ansible通过SSH来远程管理Linux/Unix机器． ansible通过winrm+powershell来远程管理Windows</description>
+    </item>
+    
+    <item>
+      <title>HashiCorp</title>
+      <link>http://canuxcheng.com/post/hashicorp/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hashicorp/</guid>
+      <description>Consul Terraform Nomad Packer </description>
+    </item>
+    
+    <item>
+      <title>Vault</title>
+      <link>http://canuxcheng.com/post/vault/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vault/</guid>
+      <description>Vault https://github.com/hashicorp/vault CLI server: // 启动vault $ vault server -config=/etc/vault/config.hcl init: // init生成keys和token. $ vault operator init // 通过keys unseal $ vault operator unseal // 通过token seal $ vault operator seal auth: // 查看au</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://canuxcheng.com/post/git/</link>
+      <pubDate>Sat, 02 Apr 2016 21:11:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/git/</guid>
+      <description>Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： github bitbucket sourceForge gitlab Git安装： $ sudo apt-get install git $</description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>http://canuxcheng.com/post/vim/</link>
+      <pubDate>Sat, 02 Apr 2016 21:11:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vim/</guid>
+      <description>vim http://www.vim.org https://github.com/vim/vim 类似编辑器: emacs Atom(github的开源跨平台编辑器，支持插件。) VSCode(微软的开源跨平台的编辑器，支持插件。) Vim安装和配</description>
+    </item>
+    
+    <item>
+      <title>Nagios</title>
+      <link>http://canuxcheng.com/post/metrics_nagios/</link>
+      <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_nagios/</guid>
+      <description>Nagios Nagios is the industry standard in IT infrastructure monitoring Nagios offers complete monitoring and alerting for servers, switches, applications, and services. Nagios官方宣称nagios是IT基础监控的工业标准。 Nagios提供对服务器，交换机，应用</description>
+    </item>
+    
+    <item>
+      <title>Zabbix</title>
+      <link>http://canuxcheng.com/post/metrics_zabbix/</link>
+      <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_zabbix/</guid>
+      <description>Zabbix </description>
+    </item>
+    
+  </channel>
+</rss>

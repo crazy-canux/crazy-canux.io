@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>helm on Morgoth</title>
+    <link>http://canuxcheng.com/tags/helm/</link>
+    <description>Recent content in helm on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Sep 2019 22:02:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/helm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Helm</title>
+      <link>http://canuxcheng.com/post/k8s_helm/</link>
+      <pubDate>Thu, 05 Sep 2019 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_helm/</guid>
+      <description>Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运</description>
+    </item>
+    
+  </channel>
+</rss>

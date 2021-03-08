@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>esxi on Morgoth</title>
+    <link>http://canuxcheng.com/tags/esxi/</link>
+    <description>Recent content in esxi on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Apr 2016 21:47:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Esxi</title>
+      <link>http://canuxcheng.com/post/esxi/</link>
+      <pubDate>Tue, 05 Apr 2016 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/esxi/</guid>
+      <description>VMware vSphere是vmware的虚拟化平台,包括ESXi和vSphere Client. vSphere Hypervisor(也叫ESXi)是vSphere的免费裸机h</description>
+    </item>
+    
+  </channel>
+</rss>

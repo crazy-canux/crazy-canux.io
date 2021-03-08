@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gitlab on Morgoth</title>
+    <link>http://canuxcheng.com/tags/gitlab/</link>
+    <description>Recent content in gitlab on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 15 Apr 2016 09:41:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gitlab</title>
+      <link>http://canuxcheng.com/post/gitlab/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gitlab/</guid>
+      <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;quot;http://gitlab.example.com&amp;quot; apt-get install gitlab-ce 配置: /etc/gitlab/gitlab.rb 升级gitlab:</description>
+    </item>
+    
+  </channel>
+</rss>

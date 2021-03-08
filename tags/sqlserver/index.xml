@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sqlserver on Morgoth</title>
+    <link>http://canuxcheng.com/tags/sqlserver/</link>
+    <description>Recent content in sqlserver on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 06 Apr 2016 15:33:42 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/sqlserver/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MSSql</title>
+      <link>http://canuxcheng.com/post/mssql/</link>
+      <pubDate>Wed, 06 Apr 2016 15:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/mssql/</guid>
+      <description>MSSQL 商业版： 企业版 商业智能版 标准版 免费版： Express Developer Compact Web SQL Azure system databases: master 主数据库 model 模板数据库 msdb 自动机数据库 tempdb 零时交换数据库,不需要备份,挂载到独立的子系统</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tmux on Morgoth</title>
+    <link>http://canuxcheng.com/tags/tmux/</link>
+    <description>Recent content in tmux on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Jun 2016 11:17:53 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tmux</title>
+      <link>http://canuxcheng.com/post/tmux/</link>
+      <pubDate>Sun, 19 Jun 2016 11:17:53 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tmux/</guid>
+      <description>tmux tmux是终端复用工具，类似于gnu screen。 tmux三个基本概念： 会话（session） 窗口（window） 面板（pane） tmux</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>test on Morgoth</title>
+    <link>http://canuxcheng.com/tags/test/</link>
+    <description>Recent content in test on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_test</title>
+      <link>http://canuxcheng.com/post/gsl_test/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_test/</guid>
+      <description>testing go的测试由go test命令和testing包组成． 测试程序命名： XXX.go # 测试文件和源码放在一个包中 XXX_test.go 测试程序结构： import &amp;quot;testing&amp;quot; # 单元测试 # go test 会自动</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>http://canuxcheng.com/post/django_test/</link>
+      <pubDate>Tue, 04 Oct 2016 04:51:30 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_test/</guid>
+      <description>tests.py https://docs.djangoproject.com/zh-hans/3.1/topics/testing/tools/ https://docs.djangoproject.com/zh-hans/3.1/topics/testing/advanced/ 单个测试文件 vim app/tests.py from django.test import TestCase 多个测试文件 mkdir -p app/tests vi test_case1.py vi test_case2.py 配置和运行 默认情况下运行 manage.py test 会创建测试数据库运行testcase，完成后自动销毁测试</description>
+    </item>
+    
+    <item>
+      <title>PSL_Test</title>
+      <link>http://canuxcheng.com/post/psl_test/</link>
+      <pubDate>Mon, 11 Apr 2016 22:58:13 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_test/</guid>
+      <description>Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni</description>
+    </item>
+    
+  </channel>
+</rss>

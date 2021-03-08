@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>misc on Morgoth</title>
+    <link>http://canuxcheng.com/tags/misc/</link>
+    <description>Recent content in misc on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 04 Jan 2017 01:13:36 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Misc</title>
+      <link>http://canuxcheng.com/post/django_misc/</link>
+      <pubDate>Wed, 04 Jan 2017 01:13:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_misc/</guid>
+      <description>Django的国际化和本地化 settings.py里面和国际化和本地化相关的设置: USE_I18N = True USE_L10N = True TIME_ZONE = &#39;UTC&#39; USE_TZ = True 国际化(i18N) 由开发者完成,本</description>
+    </item>
+    
+    <item>
+      <title>PSL_Misc</title>
+      <link>http://canuxcheng.com/post/psl_misc/</link>
+      <pubDate>Mon, 15 Aug 2016 10:28:46 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_misc/</guid>
+      <description>PSL Python Standard Library: Python标准库 Internationalization gettext locale Program Frameworks cmd shlex 类shell的词法分析． classes: shlex functions: split(s, comments=False, posix=True) # split(&amp;quot;command **kwargs&amp;quot;) -&amp;gt; [&#39;command&#39;, &#39;arg1&#39;, ...] data: Custom Python Interpreters code codeop Python Language Services keyword import keyword functions: keyword.iskeyword(keyword) # x.__contains__(y) &amp;lt;==&amp;gt; y in x data: keyword.kwlist # 返回</description>
+    </item>
+    
+  </channel>
+</rss>

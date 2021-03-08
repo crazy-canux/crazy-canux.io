@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>harbor on Morgoth</title>
+    <link>http://canuxcheng.com/tags/harbor/</link>
+    <description>Recent content in harbor on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Apr 2018 22:02:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/harbor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Harbor</title>
+      <link>http://canuxcheng.com/post/harbor/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/harbor/</guid>
+      <description>Harbor https://github.com/goharbor/harbor Habor是由VMWare中国团队开源的容器镜像仓库, 用于存储和分发docker镜像的registry服务器. 安装步骤: 下载并解压安装包</description>
+    </item>
+    
+  </channel>
+</rss>

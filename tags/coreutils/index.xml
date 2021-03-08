@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>coreutils on Morgoth</title>
+    <link>http://canuxcheng.com/tags/coreutils/</link>
+    <description>Recent content in coreutils on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Jul 2016 17:24:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/coreutils/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coreutils</title>
+      <link>http://canuxcheng.com/post/ps_coreutils/</link>
+      <pubDate>Tue, 12 Jul 2016 17:24:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_coreutils/</guid>
+      <description>外部命令 powershell可以执行外部命令. C:\Windows\System32\*.exe cmd ping netstat ipconfig route arp nslookup ftp mstsc RDP client. taskmgr 任务管理器． tskill tree whoami 需要下载，然后放入环境变量的第三方命令. WinDump Wind</description>
+    </item>
+    
+  </channel>
+</rss>

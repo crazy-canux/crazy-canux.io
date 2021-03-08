@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oop on Morgoth</title>
+    <link>http://canuxcheng.com/tags/oop/</link>
+    <description>Recent content in oop on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_oop</title>
+      <link>http://canuxcheng.com/post/gsl_oop/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_oop/</guid>
+      <description>reflect constants const: const ( SelectSend SelectRecv SelectDefault ) functions // 将src拷贝到dst, 直到src被耗尽或dst被装满. func Copy(dst, src Value) int // 判断两个值是否深度一致 func DeepEqual(a1, a2 interface{}) bool Kind 表示Type类型值</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>http://canuxcheng.com/post/go_oop/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_oop/</guid>
+      <description>Go面向对象 golang通过方法和接口实现面向对象. 方法/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参</description>
+    </item>
+    
+    <item>
+      <title>JS OOP</title>
+      <link>http://canuxcheng.com/post/js_oop/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_oop/</guid>
+      <description>OOP javascript中一切都是对象. javacript内置了Bull/Number/String/Object/Function/Arra</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>http://canuxcheng.com/post/python_oop/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:09 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_oop/</guid>
+      <description>面向对象/OOP OOD: Object Oriented Design. 面向过程的设计支持任何语言，但是如果语言本身内置面向过程的结构，就会更容易编程． OOP: Object Oriented Programming. python内置OOP的结构</description>
+    </item>
+    
+  </channel>
+</rss>

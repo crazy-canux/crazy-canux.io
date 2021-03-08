@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pelican on Morgoth</title>
+    <link>http://canuxcheng.com/tags/pelican/</link>
+    <description>Recent content in pelican on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Apr 2013 12:49:49 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pelican</title>
+      <link>http://canuxcheng.com/post/pelican/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/pelican/</guid>
+      <description>Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: $pelican-quickstart 生成下列文件和目录: publishconf.py #</description>
+    </item>
+    
+  </channel>
+</rss>

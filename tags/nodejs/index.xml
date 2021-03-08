@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nodejs on Morgoth</title>
+    <link>http://canuxcheng.com/tags/nodejs/</link>
+    <description>Recent content in nodejs on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Sep 2016 03:31:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nodejs</title>
+      <link>http://canuxcheng.com/post/js_node/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_node/</guid>
+      <description>Nodejs https://github.com/nodejs/node Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 Node.js 的包管理器npm，是全球最大的开源库生态系统</description>
+    </item>
+    
+  </channel>
+</rss>

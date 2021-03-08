@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>builtins on Morgoth</title>
+    <link>http://canuxcheng.com/tags/builtins/</link>
+    <description>Recent content in builtins on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 May 2016 10:44:44 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/builtins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Builtins</title>
+      <link>http://canuxcheng.com/post/ps_builtins/</link>
+      <pubDate>Tue, 24 May 2016 10:44:44 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_builtins/</guid>
+      <description>Get-Help和Help: get-help查看帮助信息,help分页查看帮助信息，man是help的别名 命令说明： Get-Help Help 查看所有命令和概念：</description>
+    </item>
+    
+  </channel>
+</rss>

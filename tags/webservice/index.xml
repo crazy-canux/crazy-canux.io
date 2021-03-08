@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webservice on Morgoth</title>
+    <link>http://canuxcheng.com/tags/webservice/</link>
+    <description>Recent content in webservice on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Jul 2018 16:43:15 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/webservice/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WebService</title>
+      <link>http://canuxcheng.com/post/webservice/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/webservice/</guid>
+      <description>webservice webservice用于server和browser之间通讯． webservice是基于http的，无状态的． webservice一般分为</description>
+    </item>
+    
+  </channel>
+</rss>

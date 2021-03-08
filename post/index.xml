@@ -1,0 +1,2252 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Morgoth</title>
+    <link>http://canuxcheng.com/post/</link>
+    <description>Recent content in Posts on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 05 Mar 2021 09:36:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TypeScript</title>
+      <link>http://canuxcheng.com/post/js_ts/</link>
+      <pubDate>Fri, 05 Mar 2021 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_ts/</guid>
+      <description>TypeScript https://github.com/microsoft/TypeScript
+https://www.typescriptlang.org/zh/</description>
+    </item>
+    
+    <item>
+      <title>BitBake</title>
+      <link>http://canuxcheng.com/post/bitbake/</link>
+      <pubDate>Sun, 12 Jul 2020 21:18:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/bitbake/</guid>
+      <description>BitBake bitbake是类似于make的构建工具，主要用于OpenEmbedded和yocto构建linux发行版. https://github.com/openembedded/bitbake bitbake: $ bitbake python -c devshell/devpyshell $ bitbake python -c clean/cleanall/cleanstate $ bitbake python</description>
+    </item>
+    
+    <item>
+      <title>kernel</title>
+      <link>http://canuxcheng.com/post/linux_kernel/</link>
+      <pubDate>Wed, 27 May 2020 22:29:00 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_kernel/</guid>
+      <description>Kernel command lsmod 查看已加载的模块 # /proc/modules rmmod &amp;lt;name&amp;gt; 删除模块 modprobe -c 查看已编译可加载的内核模块 modprobe &amp;lt;name&amp;gt; 加载模块 # /etc/modules modprobe -r &amp;lt;name&amp;gt; 删除模块 // modprobe 重启就没了 echo &amp;quot;ipmi_devintf&amp;quot; &amp;gt;&amp;gt; /etc/modules</description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>http://canuxcheng.com/post/linux_security/</link>
+      <pubDate>Sun, 24 May 2020 15:30:42 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_security/</guid>
+      <description>SeLinux Security-Enhanced Linux
+SecComp Secure computing mode (seccomp) is a Linux kernel feature.
+AppArmor AppArmor (Application Armor) is a Linux security module that protects an operating system and its applications from security threats.</description>
+    </item>
+    
+    <item>
+      <title>K8S CNI</title>
+      <link>http://canuxcheng.com/post/k8s_cni/</link>
+      <pubDate>Thu, 26 Mar 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_cni/</guid>
+      <description>CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到</description>
+    </item>
+    
+    <item>
+      <title>K8S CSI</title>
+      <link>http://canuxcheng.com/post/k8s_csi/</link>
+      <pubDate>Wed, 25 Mar 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_csi/</guid>
+      <description>CSI https://github.com/container-storage-interface/spec
+ </description>
+    </item>
+    
+    <item>
+      <title>Kubectl</title>
+      <link>http://canuxcheng.com/post/k8s_kubectl/</link>
+      <pubDate>Fri, 10 Jan 2020 20:58:01 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_kubectl/</guid>
+      <description>kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: kubectl options # 查看所有命令可用选项 --kubeconfig kubectl --kubeconfig=$HOME/.kube.config (default)</description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>http://canuxcheng.com/post/k8s_api/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_api/</guid>
+      <description>API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文</description>
+    </item>
+    
+    <item>
+      <title>ArgoCD</title>
+      <link>http://canuxcheng.com/post/k8s_argo/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_argo/</guid>
+      <description>argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux
+jenkins-X </description>
+    </item>
+    
+    <item>
+      <title>CoreDNS</title>
+      <link>http://canuxcheng.com/post/k8s_coredns/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_coredns/</guid>
+      <description>CoreDNS </description>
+    </item>
+    
+    <item>
+      <title>Etcd</title>
+      <link>http://canuxcheng.com/post/k8s_etcd/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_etcd/</guid>
+      <description>Etcd https://github.com/etcd-io/etcd 类似的有consul和zoomkeeper. etcdctl 使用证书访问: $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &amp;lt;command&amp;gt; 查看所有key $ etcdctl get / --prefix --keys-only</description>
+    </item>
+    
+    <item>
+      <title>Operator</title>
+      <link>http://canuxcheng.com/post/k8s_operator/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_operator/</guid>
+      <description>Operator operator-framework https://operatorhub.io/
+https://github.com/operator-framework</description>
+    </item>
+    
+    <item>
+      <title>Compose</title>
+      <link>http://canuxcheng.com/post/compose/</link>
+      <pubDate>Sat, 04 Jan 2020 21:53:40 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/compose/</guid>
+      <description>docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod +x /usr/local/bin/docker-compose docker-compose命令 docker-compose [-f &amp;lt;arg&amp;gt;...] [options] [COMMAND] [ARGS...]</description>
+    </item>
+    
+    <item>
+      <title>Dashboard</title>
+      <link>http://canuxcheng.com/post/k8s_dashboard/</link>
+      <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_dashboard/</guid>
+      <description>dashboard kubernetes-dashboard lens octant kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: name: kubernetes-dashboard-admin namespace: kubernetes-dashboard roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount name: dashboard-admin namespace: kubernetes-dashboard // 创建</description>
+    </item>
+    
+    <item>
+      <title>Ingress</title>
+      <link>http://canuxcheng.com/post/k8s_ingress/</link>
+      <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
+      <description>Nginx https://github.com/kubernetes/ingress-nginx // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&#39;{.items[0].metadata.name}&#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik https://github.com/containous/traefik</description>
+    </item>
+    
+    <item>
+      <title>Kubeadm</title>
+      <link>http://canuxcheng.com/post/k8s_kubeadm/</link>
+      <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_kubeadm/</guid>
+      <description>kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: $ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &amp;quot;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $</description>
+    </item>
+    
+    <item>
+      <title>Minikube</title>
+      <link>http://canuxcheng.com/post/k8s_minikube/</link>
+      <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_minikube/</guid>
+      <description>minikube https://kubernetes.io/zh/docs/setup/learning-environment/minikube/ minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建. // 在裸机上创建： sudo minikube start --vm-driver=none</description>
+    </item>
+    
+    <item>
+      <title>Rancher</title>
+      <link>http://canuxcheng.com/post/rancher/</link>
+      <pubDate>Tue, 03 Dec 2019 21:54:05 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rancher/</guid>
+      <description>Rancher Deploy </description>
+    </item>
+    
+    <item>
+      <title>Image</title>
+      <link>http://canuxcheng.com/post/image/</link>
+      <pubDate>Tue, 03 Dec 2019 21:50:47 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/image/</guid>
+      <description>image 容器镜像 docker image driver: aufs, btrfs, devicemapper, overlay. scratch scratch是空白镜像，一般用于基础镜像构建.比如制作alpine/ubuntu/debian/busybox镜</description>
+    </item>
+    
+    <item>
+      <title>OpenShift</title>
+      <link>http://canuxcheng.com/post/openshift/</link>
+      <pubDate>Mon, 02 Dec 2019 21:43:24 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/openshift/</guid>
+      <description>OpenShift readhat kubernetes.
+Deploy pre-install:
+&amp;gt; check &amp;quot;sysctl net.ipv4.ip_forward&amp;quot; is set to 1 /etc/containers/registries.conf [registries.insecure] registries = [&#39;172.30.0.0/16&#39;] /etc/docker/daemon.json { &amp;quot;insecure-registries&amp;quot;: [ &amp;quot;172.30.0.0/16&amp;quot; ] } $ sudo systemctl daemon-reload $ sudo systemctl restart docker docker network inspect -f &amp;quot;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&amp;quot; bridge # firewall-cmd --permanent --new-zone dockerc # firewall-cmd --permanent --zone dockerc --add-source 172.17.0.0/16 # firewall-cmd --permanent --zone dockerc --add-port 8443/tcp # firewall-cmd --permanent --zone dockerc --add-port 53/udp # firewall-cmd --permanent --zone dockerc --add-port 8053/udp # firewall-cmd --reload  install:</description>
+    </item>
+    
+    <item>
+      <title>Helm</title>
+      <link>http://canuxcheng.com/post/k8s_helm/</link>
+      <pubDate>Thu, 05 Sep 2019 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_helm/</guid>
+      <description>Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运</description>
+    </item>
+    
+    <item>
+      <title>k8S CRI</title>
+      <link>http://canuxcheng.com/post/k8s_cri/</link>
+      <pubDate>Wed, 05 Jun 2019 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_cri/</guid>
+      <description>CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt</description>
+    </item>
+    
+    <item>
+      <title>Virtualbox</title>
+      <link>http://canuxcheng.com/post/virtualbox/</link>
+      <pubDate>Mon, 03 Jun 2019 22:53:23 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/virtualbox/</guid>
+      <description>Virtualbox 虚拟化工具virtualbox. vboxmanage vm // 导入ova $ vboxmanage import win7.ova // 添加host网络 $ vboxmanage modifyvm &amp;quot;win764&amp;quot; --nic1 hostonly --hostonlyadapter1 vboxnet0 // 添加bridge网络 $ vboxmanage modifyvm &amp;quot;Win732&amp;quot; --nic2 bridged --bridgeadapter2 docker_gwbridge // 重命名v</description>
+    </item>
+    
+    <item>
+      <title>Deploy</title>
+      <link>http://canuxcheng.com/post/beego_deploy/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_deploy/</guid>
+      <description>发布beego项目</description>
+    </item>
+    
+    <item>
+      <title>Model</title>
+      <link>http://canuxcheng.com/post/beego_model/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_model/</guid>
+      <description>Model </description>
+    </item>
+    
+    <item>
+      <title>View</title>
+      <link>http://canuxcheng.com/post/beego_view/</link>
+      <pubDate>Tue, 23 Apr 2019 21:47:16 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_view/</guid>
+      <description>View beego的view支持html和tpl两种格式．</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/go_package/</link>
+      <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Command</title>
+      <link>http://canuxcheng.com/post/network_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network_command/</guid>
+      <description>telnet telnet nc/netcat // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设置默认值 $ sudo update-alternatives --config nc $ sudo</description>
+    </item>
+    
+    <item>
+      <title>Command</title>
+      <link>http://canuxcheng.com/post/storage_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_command/</guid>
+      <description>sysstat: # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat iostat -d -x -k 1 10 pidstat -d -p pid iotop # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使用: df $ df -h # 查看目录信息</description>
+    </item>
+    
+    <item>
+      <title>Init</title>
+      <link>http://canuxcheng.com/post/linux_init/</link>
+      <pubDate>Sun, 03 Feb 2019 14:04:05 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_init/</guid>
+      <description>Linux Init linux系统启动的第一个进程,pid=1的进程. $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&amp;gt; upstart /sbin/init -&amp;gt; /lib/systemd/systemd /etc/init.d The directory containing System V init scripts. 通过service命令操作 /etc/init The directory containing upstart jobs. 通过</description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>http://canuxcheng.com/post/js_vue/</link>
+      <pubDate>Sun, 27 Jan 2019 22:19:20 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_vue/</guid>
+      <description>Vue https://github.com/vuejs/vue https://github.com/vuejs/vue-cli 安装 vue-cli: $ npm install -g @vue/cli 新建项目: $ vue create &amp;lt;my-app&amp;gt; 测试: 打包:</description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://canuxcheng.com/post/nginx/</link>
+      <pubDate>Thu, 27 Sep 2018 03:25:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/nginx/</guid>
+      <description>Nginx 安装 配置 命令： nginx -s stop/quit/reload/reopen nginx -V 详细信息 nginx -v 版本号 nginx -t 检查配置文件</description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>http://canuxcheng.com/post/beego_template/</link>
+      <pubDate>Thu, 27 Sep 2018 01:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_template/</guid>
+      <description>Golang 模板 beego的模板和text/template, html/template差不多． 注释 {{/* comment /*}} 变量 变量定义和使用 申明变量不会产生输出． {{$Var :=</description>
+    </item>
+    
+    <item>
+      <title>CA</title>
+      <link>http://canuxcheng.com/post/sec_ca/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_ca/</guid>
+      <description>CA SSL: secure sockets layer TLS: transport layer security CA: Certificate Authority. SNI: server name indication 证书类型 x509: 只有公钥没有私钥匙 编码方式 pem: base64编码 der: 二进制 证书文件: crt: 证书文件（可以是pem或der编码</description>
+    </item>
+    
+    <item>
+      <title>Capture</title>
+      <link>http://canuxcheng.com/post/sec_capture/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_capture/</guid>
+      <description>Packet Capture 网络抓包 Fiddler http://www.telerik.com/fiddler Wireshark https://www.wireshark.org/</description>
+    </item>
+    
+    <item>
+      <title>Csrf</title>
+      <link>http://canuxcheng.com/post/sec_csrf/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_csrf/</guid>
+      <description>CSRF Cross-site request forgery, 跨站请求伪造． 发生条件： 登陆受信任网站A, 并在本地生成cookie 在不退出A的情况下，访问危险网站B 预防方法: 正确使用get,pos</description>
+    </item>
+    
+    <item>
+      <title>HAProxy</title>
+      <link>http://canuxcheng.com/post/haproxy/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/haproxy/</guid>
+      <description>HAProxy https://www.haproxy.com/ 安装: $ sudo apt-get install haproxy 配置: $ sudo vim /etc/haproxy/haproxy.cfg global: mode: http | tcp | health defaults: frontend: backend: listen:</description>
+    </item>
+    
+    <item>
+      <title>Sql Injection</title>
+      <link>http://canuxcheng.com/post/sec_sqlinjection/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_sqlinjection/</guid>
+      <description>SQL Injection 什么是sql injection:从数据库获取敏感信息,或者利用数据库的特性执行添加用户,导出文件等一系列恶意操作,甚至有可能获取数据库乃</description>
+    </item>
+    
+    <item>
+      <title>Xss</title>
+      <link>http://canuxcheng.com/post/sec_xss/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_xss/</guid>
+      <description>XSS XSS: Cross Site Scripting, 跨站脚本攻击 XSS攻击涉及到攻击者，客户端，和web应用三者. XSS原理: Web应用未对用户提交请求的数据做充分的检查过滤,允许用</description>
+    </item>
+    
+    <item>
+      <title>Cfssl</title>
+      <link>http://canuxcheng.com/post/sec_cfssl/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_cfssl/</guid>
+      <description>cfssl https://github.com/cloudflare/cfssl</description>
+    </item>
+    
+    <item>
+      <title>Beego</title>
+      <link>http://canuxcheng.com/post/beego/</link>
+      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego/</guid>
+      <description>Beego Beego是golang的web框架. beego 是基于八大独立的模块构建的，是一个高度解耦的框架。 bee 工具是一个为了协助快速开发 beego 项目而创建的项目，</description>
+    </item>
+    
+    <item>
+      <title>Controller</title>
+      <link>http://canuxcheng.com/post/beego_controller/</link>
+      <pubDate>Fri, 20 Jul 2018 23:14:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/beego_controller/</guid>
+      <description>Controller </description>
+    </item>
+    
+    <item>
+      <title>Restful</title>
+      <link>http://canuxcheng.com/post/rest/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rest/</guid>
+      <description>REST REST: REpresentational State Transfer． restclient 一个是firefox的插件． https://github.com/chao/RESTClient 另一个是java开发的application. https://github.com/wiztools/rest-client postman postman是一个applic</description>
+    </item>
+    
+    <item>
+      <title>Webhook</title>
+      <link>http://canuxcheng.com/post/webhook/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/webhook/</guid>
+      <description>WebHook 用于server和server之间通讯．</description>
+    </item>
+    
+    <item>
+      <title>WebService</title>
+      <link>http://canuxcheng.com/post/webservice/</link>
+      <pubDate>Sat, 07 Jul 2018 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/webservice/</guid>
+      <description>webservice webservice用于server和browser之间通讯． webservice是基于http的，无状态的． webservice一般分为</description>
+    </item>
+    
+    <item>
+      <title>ELK</title>
+      <link>http://canuxcheng.com/post/logging_elk/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_elk/</guid>
+      <description>ELK kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可扩展的插件． beats(agent): 轻量型数据采集平台，从边缘机器向l</description>
+    </item>
+    
+    <item>
+      <title>Grok</title>
+      <link>http://canuxcheng.com/post/logging_grok/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_grok/</guid>
+      <description>grok logstash和telegraf都是用grok来解析log 在线检测 http://grokdebug.herokuapp.com/ grok的正则表达式 https://github.com/kkos/oniguruma/blob/master/doc/RE 可用的pattern(logstash &amp;amp; telegraf-logparser/tail) https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns https://github.com/influxdata/telegraf/blob/master/plugins/inputs/logparser/grok/patterns/influx-patterns</description>
+    </item>
+    
+    <item>
+      <title>Logging</title>
+      <link>http://canuxcheng.com/post/logging/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging/</guid>
+      <description>Logging 日志采集，存储，可视化. 主要有Elastic stack, splunk, loki.</description>
+    </item>
+    
+    <item>
+      <title>Loki</title>
+      <link>http://canuxcheng.com/post/logging_loki/</link>
+      <pubDate>Fri, 08 Jun 2018 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/logging_loki/</guid>
+      <description>ELK kibana: 数据可视化 elasticsearch: 搜索，分析，存储数据 x-pack: 具有监控和报警功能的工具包. logstash: 动态数据收集管道，支持可扩展的插件． beats(agent): 轻量型数据采集平台，从边缘机器向l</description>
+    </item>
+    
+    <item>
+      <title>Dns</title>
+      <link>http://canuxcheng.com/post/dns/</link>
+      <pubDate>Thu, 03 May 2018 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/dns/</guid>
+      <description>DNS Domain Name System: 域名系统</description>
+    </item>
+    
+    <item>
+      <title>Container</title>
+      <link>http://canuxcheng.com/post/container/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/container/</guid>
+      <description>Container OCI: Open Container Initiative. CRI: Container Runtime Interface. CNI: Container Network Interface. CSI: Container Storage Interface. OCI Open Container Initiative，也就是常说的OCI，是由多家公司共同成立的项目，并由linux基金会进行管理，</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>http://canuxcheng.com/post/docker/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/docker/</guid>
+      <description>Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&amp;gt; dockerd -&amp;gt; containerd -&amp;gt; shim -&amp;gt; runc conta</description>
+    </item>
+    
+    <item>
+      <title>Harbor</title>
+      <link>http://canuxcheng.com/post/harbor/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/harbor/</guid>
+      <description>Harbor https://github.com/goharbor/harbor Habor是由VMWare中国团队开源的容器镜像仓库, 用于存储和分发docker镜像的registry服务器. 安装步骤: 下载并解压安装包</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>http://canuxcheng.com/post/kubernetes/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/kubernetes/</guid>
+      <description>Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode,</description>
+    </item>
+    
+    <item>
+      <title>Swarm</title>
+      <link>http://canuxcheng.com/post/swarm/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm/</guid>
+      <description>Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均</description>
+    </item>
+    
+    <item>
+      <title>Swarm CNI</title>
+      <link>http://canuxcheng.com/post/swarm_cni/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm_cni/</guid>
+      <description>CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服</description>
+    </item>
+    
+    <item>
+      <title>Swarm CSI</title>
+      <link>http://canuxcheng.com/post/swarm_csi/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm_csi/</guid>
+      <description>CSI CSI: Container Storage Interface CSI提供容器的数据持久化服务. 容器管理数据的两种方式： 数据卷(Volumes) 挂载主机目录(bind mounts) 临时文件系统(tmpfs)</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/storage_monitoring/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_monitoring/</guid>
+      <description>Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. SELECT non_negative_derivative(mean(reads),1s) as &amp;quot;read&amp;quot; FROM &amp;quot;diskio&amp;quot; SELECT non_negative_derivative(mean(writes),1s) as &amp;quot;write&amp;quot; FROM &amp;quot;diskio&amp;quot; throughput: SELECT non_negative_derivative(mean(read_bytes),1s) as &amp;quot;read&amp;quot; FROM &amp;quot;diskio&amp;quot; SELECT non_negative_derivative(mean(write_bytes),1s) as &amp;quot;write&amp;quot; FROM &amp;quot;diskio&amp;quot; Utilization: SELECT non_negative_derivative(last(&amp;quot;io_time&amp;quot;),1ms) FROM &amp;quot;diskio&amp;quot; WHERE &amp;quot;name&amp;quot; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &amp;quot;host&amp;quot;,&amp;quot;name&amp;quot;,time(_interval) Queue length: SELECT non_negative_derivative(last(&amp;quot;weighted_io_time&amp;quot;,1ms)) FROM &amp;quot;diskio&amp;quot; WHERE &amp;quot;name&amp;quot; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &amp;quot;host&amp;quot;,&amp;quot;name&amp;quot;,time(_interval)</description>
+    </item>
+    
+    <item>
+      <title>overlay</title>
+      <link>http://canuxcheng.com/post/storage_overlay/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_overlay/</guid>
+      <description>overlay 最下层是一个 lower 层，也就是镜像层，它是一个只读层； 右上层是一个 upper 层，upper 是容器的读写层，upper 层采用了写实复制的机制，也就是说只有</description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>http://canuxcheng.com/post/storage/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage/</guid>
+      <description>Storage RAID RAID: redundant array of independent disks, 独立磁盘冗余数组． 存储方式 DAS: direct attached storage, 直连式存储，通过SCSI或FC连接服务器． NAS: network attached storage，网络接入存储，通过IP(N</description>
+    </item>
+    
+    <item>
+      <title>Websocket</title>
+      <link>http://canuxcheng.com/post/websocket/</link>
+      <pubDate>Tue, 03 Apr 2018 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/websocket/</guid>
+      <description>WebSocket websocket用于server和browser之间通讯． websocket采用特殊报头，使得浏览器和服务器只需要做一个握手的动作． 通讯</description>
+    </item>
+    
+    <item>
+      <title>JS BOM</title>
+      <link>http://canuxcheng.com/post/js_bom/</link>
+      <pubDate>Thu, 15 Mar 2018 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_bom/</guid>
+      <description>BOM Browser Object Model 介绍浏览器对象，不过缺乏规范. window window对象是最顶层对象，有6大属性,属性本身也是对象. window对象的document属性也</description>
+    </item>
+    
+    <item>
+      <title>Brazil</title>
+      <link>http://canuxcheng.com/post/travel_brazil/</link>
+      <pubDate>Thu, 08 Mar 2018 16:41:50 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/travel_brazil/</guid>
+      <description>巴西之旅 看照片： 库里提巴 库里提巴（Curitiba）</description>
+    </item>
+    
+    <item>
+      <title>AlertManager</title>
+      <link>http://canuxcheng.com/post/metrics_alertmanager/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_alertmanager/</guid>
+      <description>alert-manager 在Prometheus中支持基于PromQL创建告警规则, prometheus通过push触发alertmanager. https://github.com/prometheus/alertmanager</description>
+    </item>
+    
+    <item>
+      <title>Exporter</title>
+      <link>http://canuxcheng.com/post/metrics_exporter/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_exporter/</guid>
+      <description>exporter 广义上讲所有可以向Prometheus提供监控样本数据的程序都可以被称为一个Exporter。而Exporter的一个实例称为target</description>
+    </item>
+    
+    <item>
+      <title>Influxdb</title>
+      <link>http://canuxcheng.com/post/metrics_influxdb/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_influxdb/</guid>
+      <description>Influxdb https://github.com/influxdata/influxdb Scalable datastore for metrics, events, and real-time analytics. 支持从opentsdb, graphite, collectd等获取数据 默认数据库_internal 用于存储内部运行数据 安装配置参考官方文档</description>
+    </item>
+    
+    <item>
+      <title>Kapacitor</title>
+      <link>http://canuxcheng.com/post/metrics_kapacitor/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_kapacitor/</guid>
+      <description>Kapacitor https://github.com/influxdata/Kapacitor Open source framework for processing, monitoring, and alerting on time series data 可以通过chrongraf创建tickscript/task, 然后通过api/cli导入到kapacitor. 配</description>
+    </item>
+    
+    <item>
+      <title>Prometheus</title>
+      <link>http://canuxcheng.com/post/metrics_prometheus/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_prometheus/</guid>
+      <description>Prometheus Prometheus Server是Prometheus组件中的核心部分，负责实现对监控数据的获取，存储以及查询 swarm部署: https://github.com/vegasbrianc/prometheus k8s部署: https://github.com/coreos/kube-prometheus https://github.com/coreos/prometheus-operator https://github.com/helm/charts/tree/master/stable/prometheus-operator 高可用: https://github.com/thanos-io/thanos</description>
+    </item>
+    
+    <item>
+      <title>Telegraf</title>
+      <link>http://canuxcheng.com/post/metrics_telegraf/</link>
+      <pubDate>Thu, 18 Jan 2018 19:23:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_telegraf/</guid>
+      <description>Telegraf https://github.com/influxdata/telegraf The plugin-driven server agent for collecting &amp;amp; reporting metrics. Configuartion agent configuration: interval 所有inputs的默认运行间隔 round_interval collection_jitter precision ns/us/ms/s flush_interval flush_jitter input configuration: interval name_override # 默认measurements是插件名,修改默认measur</description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/post/go_debug/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_debug/</guid>
+      <description>gdb delve https://github.com/derekparker/delve
+ debug </description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>http://canuxcheng.com/post/go_devops/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_devops/</guid>
+      <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: GOROOT 就是go的安装目录 windows标准包安装go: msi指定安装路径，自动添加%GO</description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/go_document/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_document/</guid>
+      <description>Document go文档相关 https://godoc.org/ go文档的两种方式: go doc godoc go doc 直接在命令行查看文档 $ go doc [package/symbol] godoc go自带的文档命令行接口,在浏览器查看文档 godoc package [name ...] godoc -http=:6060 通过git</description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>http://canuxcheng.com/post/go/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go/</guid>
+      <description>Go概述 go语言表达能力强，简洁，清晰，高效． go是一个快速的，静态的，强类型的，编译型语言． go具有高并发和垃圾回收功能. Go基本语法 go</description>
+    </item>
+    
+    <item>
+      <title>Go_Concurrency</title>
+      <link>http://canuxcheng.com/post/go_concurrency/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_concurrency/</guid>
+      <description>并发/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c</description>
+    </item>
+    
+    <item>
+      <title>GSL_builtin</title>
+      <link>http://canuxcheng.com/post/gsl_builtin/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_builtin/</guid>
+      <description>builtin go的builtin package. constants true false iota variables pointer, slice, map, channel, func, interface的零值： nil functions # 分配并初始化各种类型的对象, 返回一个指针． new(Type) *Type # 分配并初始化一个</description>
+    </item>
+    
+    <item>
+      <title>GSL_concurrency</title>
+      <link>http://canuxcheng.com/post/gsl_concurrency/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_concurrency/</guid>
+      <description>sync sync用于goroutine同步. import &amp;quot;sync&amp;quot; constants variables functions Locker 一个可以加锁和解锁的接口 type Locker interface { Lock() Unlock() } Pool Pool是一个可以分别存取的临时对象的集合。 Once 只执</description>
+    </item>
+    
+    <item>
+      <title>GSL_cryptographic</title>
+      <link>http://canuxcheng.com/post/gsl_cryptographic/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_cryptographic/</guid>
+      <description>crypto 收集了常用的密码常量 functions RegisterHash(h Hash, f func() hash.Hash) PublicKey interface: type PublicKey interface{} PrivateKey interface: type PrivateKey interface{} Hash type Hash uint method: func (h Hash) Avaliable() bool func (h Hash) Size() int func (h Hash) New() hash.Hash crypto/cipher 用于包装底层块加密算法的实现. Block 代表一个使用</description>
+    </item>
+    
+    <item>
+      <title>GSL_data</title>
+      <link>http://canuxcheng.com/post/gsl_data/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_data/</guid>
+      <description>time constants const: const ( ANSIC = &amp;quot;Mon Jan _2 15:04:05 2006&amp;quot; Unixdate = &amp;quot;Mon Jan _2 15:04:05 MST 2006&amp;quot; RFC3339 = &amp;quot;2006-01-02T15:04:05Z07:00&amp;quot; ... ) functions // 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) &amp;lt;- chan Time func Tick(d Duration) &amp;lt;- chan Time Time 代表一个纳秒精度的时间点. 零值</description>
+    </item>
+    
+    <item>
+      <title>GSL_database</title>
+      <link>http://canuxcheng.com/post/gsl_database/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_database/</guid>
+      <description>database/sql 使用该包，必须提供一个数据库驱动 https://github.com/golang/go/wiki/SQLDrivers mssql driver: https://github.com/denisenkom/go-mssqldb mysql driver: https://github.com/go-sql-driver/mysql postgresql driver: https://github.com/lib/pq https://github.com/jackc/pgx variables // QueryRow 没有返回row时，调用返回值的Scan方法会返回该变量 var ErrNoRows = errors.New(&amp;quot;sql: no rows in result set&amp;quot;) functions // 注</description>
+    </item>
+    
+    <item>
+      <title>GSL_file</title>
+      <link>http://canuxcheng.com/post/gsl_file/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_file/</guid>
+      <description>path function func IsAbs(path string) bool func Join(elem ...string) string func Split(path string) (dir, file string) func Join(elem ...string) string func Dir(path string) string func Base(path string) string func Ext(path string) string ... path/filepath Constants const ( Separator = os.PathSeparator ListSeparator = os.PathListSeparator ) Variable var ErrBadPattern = errors.New(&amp;quot;Syntax error in pattern&amp;quot;) var SkipDir = errors.New(&amp;quot;skip this diractory&amp;quot;) function func IsAbs(path string) bool func Abs(path string) (string, error) // 返</description>
+    </item>
+    
+    <item>
+      <title>GSL_golang</title>
+      <link>http://canuxcheng.com/post/gsl_golang/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_golang/</guid>
+      <description>runtime constants // 指定编译器 const Compiler = &amp;quot;gc&amp;quot;/&amp;quot;gccgo&amp;quot; // 处理器架构: 386/amd64/arm const GOARCH string = theGoarch // 操作系统: linux/freebsd/darwin/win const GOOS string = theGoos variables var MemProfileRate int = 512 * 1024 functions func GOROOT() string func Version() string // 返回本地机器的逻辑cpu个数 func NumCPU() int</description>
+    </item>
+    
+    <item>
+      <title>GSL_math</title>
+      <link>http://canuxcheng.com/post/gsl_math/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_math/</guid>
+      <description>math constants variables functions math/big math/cmplx math/rand sort functions func Ints(a []int) func IntAreSorted(a []int) bool func SearchInts(a []int, x int) int func Float64s(a []float64) func Float64sArerSorted(a []float64) bool func SearchFloat64s(a []float64, x float64) int func Strings(a []string) func StringsAreSorted(a []string) bool func SearchStrings(a []string, x string) int func Sort(data Interface) func Stable(data Interface) func IsSorted(data Interface) bool func Reverse(data Interface) Interface // 二分查找 func Search(n int,</description>
+    </item>
+    
+    <item>
+      <title>GSL_multimedia</title>
+      <link>http://canuxcheng.com/post/gsl_multimedia/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_multimedia/</guid>
+      <description>image  mime </description>
+    </item>
+    
+    <item>
+      <title>GSL_network</title>
+      <link>http://canuxcheng.com/post/gsl_network/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_network/</guid>
+      <description>net 网络IO接口，包括TCP/IP, UDP, SOCKET, DNS import &amp;quot;net&amp;quot; constants const ( IPv4len = 4 IPv6len = 16 ) variables functions Addr 代表一个网络终端地址． TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口 type Addr interface { Network() string String() string } TCPAddr function: func ResolveTCPAddr(net,</description>
+    </item>
+    
+    <item>
+      <title>GSL_oop</title>
+      <link>http://canuxcheng.com/post/gsl_oop/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_oop/</guid>
+      <description>reflect constants const: const ( SelectSend SelectRecv SelectDefault ) functions // 将src拷贝到dst, 直到src被耗尽或dst被装满. func Copy(dst, src Value) int // 判断两个值是否深度一致 func DeepEqual(a1, a2 interface{}) bool Kind 表示Type类型值</description>
+    </item>
+    
+    <item>
+      <title>GSL_string</title>
+      <link>http://canuxcheng.com/post/gsl_string/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_string/</guid>
+      <description>strings 实现了用于操作字符的函数. functions func EqualFold(s, t string) bool func HasPrefix(s, prefix string) bool func HasSuffix(s, suffix string) bool func Count(s, sep string) int func Contains(s, substr string) bool ... func Index(s, sep string) int ... func LastIndex(s, sep string) int ... func title(s string) string func ToLower(s string) string ... // 返回count</description>
+    </item>
+    
+    <item>
+      <title>GSL_system</title>
+      <link>http://canuxcheng.com/post/gsl_system/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_system/</guid>
+      <description>os 提供了操作系统的不依赖平台的接口 import &amp;quot;os&amp;quot; constants # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE # 不存在就创建 O_APPEND int = syscall.O_APPEND # 追加写入 O_TRUNC int = syscall.O_TRUNC # 打开时清空文件</description>
+    </item>
+    
+    <item>
+      <title>GSL_test</title>
+      <link>http://canuxcheng.com/post/gsl_test/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_test/</guid>
+      <description>testing go的测试由go test命令和testing包组成． 测试程序命名： XXX.go # 测试文件和源码放在一个包中 XXX_test.go 测试程序结构： import &amp;quot;testing&amp;quot; # 单元测试 # go test 会自动</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>http://canuxcheng.com/post/go_oop/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_oop/</guid>
+      <description>Go面向对象 golang通过方法和接口实现面向对象. 方法/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参</description>
+    </item>
+    
+    <item>
+      <title>Rabbitmq</title>
+      <link>http://canuxcheng.com/post/rabbitmq/</link>
+      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rabbitmq/</guid>
+      <description>AMQP AMQP: Advanced Message Queuing Protocol,高级消息队列协议 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq MQTT MQTT: Message Queuing Telemetry Transport,消息队列遥测传输协议 Rabbitmq https://github.com/rabbitmq Rabbit</description>
+    </item>
+    
+    <item>
+      <title>Rpc</title>
+      <link>http://canuxcheng.com/post/rpc/</link>
+      <pubDate>Sun, 03 Sep 2017 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rpc/</guid>
+      <description>RPC Remote Procedure Call Protocol: 远程过程调用. google的rpc框架，支持多语言: https://github.com/grpc/grpc facebook的rpc框架，贡献给了apache, 支持多语言: https://github.com/apache/thrift</description>
+    </item>
+    
+    <item>
+      <title>Germany</title>
+      <link>http://canuxcheng.com/post/travel_germany/</link>
+      <pubDate>Mon, 08 May 2017 16:41:50 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/travel_germany/</guid>
+      <description>德国之旅 看照片： http://user.qzone.qq.com/1085694641/4 德国是汽车之都。 德国有16个州。 城市州 德国16个州中的三个城市州 柏林 德国首都。 德国第一大城市。 汉堡 德国第二大城市。 不来梅 巴</description>
+    </item>
+    
+    <item>
+      <title>Hadoop MapReduce</title>
+      <link>http://canuxcheng.com/post/hadoop_mapreduce/</link>
+      <pubDate>Wed, 03 May 2017 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hadoop_mapreduce/</guid>
+      <description>Map-Reduce 一种基于YARN的大型数据并行处理系统．主要处理离线数据． mapreduce commands mapred [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: $ mapred archive ... admin commands: $ mapred historyserver $ mapred hsadmin</description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>http://canuxcheng.com/post/redis/</link>
+      <pubDate>Wed, 03 May 2017 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/redis/</guid>
+      <description>Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: $ sudo apt-get install redis-tools redis</description>
+    </item>
+    
+    <item>
+      <title>Smtp</title>
+      <link>http://canuxcheng.com/post/smtp/</link>
+      <pubDate>Wed, 26 Apr 2017 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/smtp/</guid>
+      <description>Email MTA: Mail Transfer Agent MUA: Mail User Agent python邮件服务器MTA：smtp协议 python客户端MUA：本地协议pop3, 远程协议imap mailutils: mailutils</description>
+    </item>
+    
+    <item>
+      <title>HAWQ</title>
+      <link>http://canuxcheng.com/post/hawq/</link>
+      <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hawq/</guid>
+      <description>HAWQ http://hawq.incubator.apache.org/ https://github.com/apache/incubator-hawq HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来． HAWQ也就是Pivotal HDB. HAWQ和Pivota</description>
+    </item>
+    
+    <item>
+      <title>Hive</title>
+      <link>http://canuxcheng.com/post/hive/</link>
+      <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hive/</guid>
+      <description>Hive https://github.com/apache/hive http://hive.apache.org/ Hive2数据仓库用于读取，写入和管理使用SQL的大型分布式数据集． hive2的client: beeline(hive命令的升级版) hive/beeline</description>
+    </item>
+    
+    <item>
+      <title>Impala</title>
+      <link>http://canuxcheng.com/post/impala/</link>
+      <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/impala/</guid>
+      <description>Impala https://github.com/apache/incubator-impala https://impala.apache.org/ impala的client: impala-shell Cloudera公司的CDH集成了Impala. impala-shell/beeline impala-shell $ impala-shell beeline $ beeline --silent=true beeline&amp;gt; !connect jdbc:hive2://[ip]:21050[/database];auth=noSasl [username] [password] $ beeline -u &amp;quot;jdbc:hive2://[ip]:21050[/database];auth=noSasl&amp;quot; -n [username] -p [password] -e &amp;quot;USE [database]; ...&amp;quot; sql normal table:</description>
+    </item>
+    
+    <item>
+      <title>Presto</title>
+      <link>http://canuxcheng.com/post/presto/</link>
+      <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/presto/</guid>
+      <description>Presto https://github.com/prestodb https://prestodb.io/ presto的client: presto-cli(rename to presto) presto-cli $ presto --server localhost:8080 --catalog hive --schema default # jdbc for presto $ jdbc:presto://host:port/catalog/schema</description>
+    </item>
+    
+    <item>
+      <title>MongoDB</title>
+      <link>http://canuxcheng.com/post/mongodb/</link>
+      <pubDate>Sun, 16 Apr 2017 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/mongodb/</guid>
+      <description>MongoDB https://github.com/mongodb/mongo mongodb是一种开源的文档数据库，高性能，高可用性，自动裁剪． mongodb的database和关系数据库中的database一样．</description>
+    </item>
+    
+    <item>
+      <title>Xml</title>
+      <link>http://canuxcheng.com/post/xml/</link>
+      <pubDate>Fri, 07 Apr 2017 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/xml/</guid>
+      <description>XML  </description>
+    </item>
+    
+    <item>
+      <title>Xpath</title>
+      <link>http://canuxcheng.com/post/xpath/</link>
+      <pubDate>Fri, 07 Apr 2017 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/xpath/</guid>
+      <description>XPath XPath是一门在XML文档中查找信息的语言． xpath定位有绝对定位和相对定位，推荐使用相对定位． 绝对的XPath定位包含了从HTML根</description>
+    </item>
+    
+    <item>
+      <title>Kvm</title>
+      <link>http://canuxcheng.com/post/kvm/</link>
+      <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/kvm/</guid>
+      <description>KVM Kernel-based Virtual Machine. Qemu 安装: $ sudo apt-get install qemu-system qemu-kvm</description>
+    </item>
+    
+    <item>
+      <title>Libvirt</title>
+      <link>http://canuxcheng.com/post/libvirt/</link>
+      <pubDate>Wed, 05 Apr 2017 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/libvirt/</guid>
+      <description>Libvirt 支持多种虚拟化平台的库 https://libvirt.org/ 安装: $ sudo apt-get install libvirt-bin (包含virsh命令和libvirtd daemon) // libvirtd在container中无法运行；在con</description>
+    </item>
+    
+    <item>
+      <title>IDE</title>
+      <link>http://canuxcheng.com/post/ide/</link>
+      <pubDate>Sun, 02 Apr 2017 21:11:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ide/</guid>
+      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial pycharm https://plugins.jetbrains.com/plugin/631-python pycharm plugin for intellij. database https://plugins.jetbrains.com/plugin/1800-database-navigator https://confluence.jetbrains.com/display/CONTEST/Database+Navigator oracle/mysql/postgresql/sqlite plugin. vim</description>
+    </item>
+    
+    <item>
+      <title>Cryptographic</title>
+      <link>http://canuxcheng.com/post/sec_cryptographic/</link>
+      <pubDate>Mon, 27 Mar 2017 17:11:58 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_cryptographic/</guid>
+      <description>PGP PGP: Pretty Good Privacy, 是一款收费的加密软件． OpenPGP OpenPGP是一种加密的标准． http://openpgp.org/ GPG GPG: GnuPG, 是一款开源免费的加密软件． GPGME GPGME: GPG Made Easy, 是一个让应用程序使用GPG更容</description>
+    </item>
+    
+    <item>
+      <title>JS DOM</title>
+      <link>http://canuxcheng.com/post/js_dom/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_dom/</guid>
+      <description>DOM DOM: document object model. 当网页被加载时，浏览器会创建页面的文档对象模型(DOM). DOM操作需要在html加载完成后进程. js可以通过DOM访问html文</description>
+    </item>
+    
+    <item>
+      <title>JS OOP</title>
+      <link>http://canuxcheng.com/post/js_oop/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_oop/</guid>
+      <description>OOP javascript中一切都是对象. javacript内置了Bull/Number/String/Object/Function/Arra</description>
+    </item>
+    
+    <item>
+      <title>Angular</title>
+      <link>http://canuxcheng.com/post/js_angular/</link>
+      <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_angular/</guid>
+      <description>angularjs angularjs1.* https://github.com/angular/angular.js https://angularjs.org/ Angular angular.js 的升级版 https://github.com/angular/angular https://github.com/angular/angular-cli https://angular.io https://angular.cn 安装 angular-cli: $ npm install -g @angular/cli 查看版本: $ ng v 新建项目: $ ng new &amp;lt;my-app&amp;gt; # 严格模式 $ ng new &amp;lt;my-app&amp;gt; --strict 测试项目: $ cd &amp;lt;my-app&amp;gt; // --open会自动打开浏</description>
+    </item>
+    
+    <item>
+      <title>JS</title>
+      <link>http://canuxcheng.com/post/js/</link>
+      <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js/</guid>
+      <description>JavaScript概述 Javascript包括三部分: ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内</description>
+    </item>
+    
+    <item>
+      <title>JS Test</title>
+      <link>http://canuxcheng.com/post/js_test/</link>
+      <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_test/</guid>
+      <description>gulp Automation - gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow. https://github.com/gulpjs/gulp gulp command line $ npm install --global gulp-cli gulp for devDependencies $ npm install --save-dev gulp create gulpfile.js and test it. $ vim gulpfile.js $ gulp karma A simple tool that allows you to execute JavaScript code in multiple real browsers. angularjs 的 test runner. The main purpose of Karma</description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>http://canuxcheng.com/post/testing/</link>
+      <pubDate>Wed, 01 Mar 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing/</guid>
+      <description>QA Quality Assurance QA主要就是进行软件测试相关的工作. 软件测试就是使用人工或自动的手段来运行或测量软件系统的过程，以检验软件系统是否满足规定的要求，并找</description>
+    </item>
+    
+    <item>
+      <title>RobotFramework</title>
+      <link>http://canuxcheng.com/post/testing_robotframework/</link>
+      <pubDate>Sat, 25 Feb 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing_robotframework/</guid>
+      <description>Robot Framework https://github.com/robotframework/robotframework https://github.com/robotframework/QuickStartGuide 支持python和java的API. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). Install: $ pip install robotframework Modular: Test Data Robot Framework(test data syntax) Test Libraries(test library API) + Test Tools System under Test(system interface) Use: $ robot --version $ robot [options] data_sources 会</description>
+    </item>
+    
+    <item>
+      <title>Selenium</title>
+      <link>http://canuxcheng.com/post/testing_selenium/</link>
+      <pubDate>Sat, 25 Feb 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing_selenium/</guid>
+      <description>Selenium https://github.com/SeleniumHQ/selenium 用于基于浏览器的web应用的自动化测试工具集． selenium1: deprecated. selenium2: 默认支持firefox&amp;lt;=46. 支持python2.6+, python3.2+ selenium3: 支持firefo</description>
+    </item>
+    
+    <item>
+      <title>OpenStack</title>
+      <link>http://canuxcheng.com/post/openstack/</link>
+      <pubDate>Thu, 23 Feb 2017 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/openstack/</guid>
+      <description>OpenStack https://github.com/openstack https://github.com/openstack-dev openstack是一个云操作系统，通过数据中心可控制大型的计算，存储，网络等资源池． 所有的管理通过前端的界面管理员就可以完成，同样也</description>
+    </item>
+    
+    <item>
+      <title>Makefile</title>
+      <link>http://canuxcheng.com/post/makefile/</link>
+      <pubDate>Thu, 12 Jan 2017 21:18:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/makefile/</guid>
+      <description>Make make的作用： 控制源代码的编译 手册页的编写 将应用程序安装到目标目录 make的使用规则： 如果工程没有编译过，需要编译所有源文件和链接所有目</description>
+    </item>
+    
+    <item>
+      <title>Grafana</title>
+      <link>http://canuxcheng.com/post/metrics_grafana/</link>
+      <pubDate>Thu, 12 Jan 2017 21:05:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_grafana/</guid>
+      <description>Grafana The tool for beautiful monitoring and metric analytics &amp;amp; dashboards for Graphite, InfluxDB &amp;amp; Prometheus &amp;amp; More. https://github.com/grafana/grafana 支持多种data source: graphite/influxdb/opentsdb/premetheus/elasticsearch/mysql/postgresql 安装配置参考官方文档 grafana配置文件是grafana.ini. HTTP API port = 3000 dashboard create/update</description>
+    </item>
+    
+    <item>
+      <title>Vagrant</title>
+      <link>http://canuxcheng.com/post/vagrant/</link>
+      <pubDate>Thu, 12 Jan 2017 21:00:01 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vagrant/</guid>
+      <description>Vagrant 构建在虚拟化技术之上的虚拟机运行环境管理工具． 适合用来构建和分发开发环境．通过命令行可以批量自动化，不用一个一个安装配置图形界面的虚拟机．</description>
+    </item>
+    
+    <item>
+      <title>Misc</title>
+      <link>http://canuxcheng.com/post/django_misc/</link>
+      <pubDate>Wed, 04 Jan 2017 01:13:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_misc/</guid>
+      <description>Django的国际化和本地化 settings.py里面和国际化和本地化相关的设置: USE_I18N = True USE_L10N = True TIME_ZONE = &#39;UTC&#39; USE_TZ = True 国际化(i18N) 由开发者完成,本</description>
+    </item>
+    
+    <item>
+      <title>TSDB</title>
+      <link>http://canuxcheng.com/post/database/</link>
+      <pubDate>Tue, 03 Jan 2017 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/database/</guid>
+      <description>RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus</description>
+    </item>
+    
+    <item>
+      <title>Awk</title>
+      <link>http://canuxcheng.com/post/shell_awk/</link>
+      <pubDate>Wed, 14 Dec 2016 00:55:37 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_awk/</guid>
+      <description>awk awk 是一门编程语言 awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。 nawk</description>
+    </item>
+    
+    <item>
+      <title>Wordpress</title>
+      <link>http://canuxcheng.com/post/wordpress/</link>
+      <pubDate>Fri, 18 Nov 2016 00:06:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/wordpress/</guid>
+      <description>WordPress 安装 安装依赖： $sudo apt install apache2 $sudo apt install mysql-server $sudo apt install php5 下载wordpress： $cd /var/www/html $git clone https://github.com/WordPress/WordPress.git 配置 添加mysql数据库： $mysql -u root -p mysql&amp;gt; create user &#39;wordpress&#39;@&#39;localhost&#39; identified by &#39;******&#39;; mysql&amp;gt; create database &#39;wordpress&#39;; mysql&amp;gt; GRANT ALL PRIVILEGES ON</description>
+    </item>
+    
+    <item>
+      <title>Html Form</title>
+      <link>http://canuxcheng.com/post/html_form/</link>
+      <pubDate>Mon, 31 Oct 2016 04:00:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/html_form/</guid>
+      <description>html表单 html表单用于搜集不同类型的用户输入。 form form元素定义html表单。支持全局属性和事件属性。 &amp;lt;form action=&amp;quot;action_page.py&amp;quot;&amp;gt; &amp;lt;fieldset&amp;gt; &amp;lt;legend&amp;gt;Form information:&amp;lt;/legend&amp;gt; First name:&amp;lt;br&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;firstname&amp;quot;&amp;gt; &amp;lt;br&amp;gt; Last name:&amp;lt;br&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;lastname&amp;quot;&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap</title>
+      <link>http://canuxcheng.com/post/js_bootstrap/</link>
+      <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_bootstrap/</guid>
+      <description>Bootstrap https://github.com/twbs/bootstrap install: $ npm install bootstrap@next HTML,CSS,JavaScript的支持响应式和移动设备的WEB框架.</description>
+    </item>
+    
+    <item>
+      <title>jQuery</title>
+      <link>http://canuxcheng.com/post/js_jquery/</link>
+      <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_jquery/</guid>
+      <description>jQuery https://github.com/jquery/jquery
+install:
+$ npm install jqury  </description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>http://canuxcheng.com/post/django_test/</link>
+      <pubDate>Tue, 04 Oct 2016 04:51:30 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_test/</guid>
+      <description>tests.py https://docs.djangoproject.com/zh-hans/3.1/topics/testing/tools/ https://docs.djangoproject.com/zh-hans/3.1/topics/testing/advanced/ 单个测试文件 vim app/tests.py from django.test import TestCase 多个测试文件 mkdir -p app/tests vi test_case1.py vi test_case2.py 配置和运行 默认情况下运行 manage.py test 会创建测试数据库运行testcase，完成后自动销毁测试</description>
+    </item>
+    
+    <item>
+      <title>Form</title>
+      <link>http://canuxcheng.com/post/django_form/</link>
+      <pubDate>Tue, 04 Oct 2016 04:30:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_form/</guid>
+      <description>forms.py from django import forms 表单 用户在浏览器中输入数据提交，对数据验证以及输入框的生成等。 django的表单系统的核心类是django.forms.Form类</description>
+    </item>
+    
+    <item>
+      <title>Admin</title>
+      <link>http://canuxcheng.com/post/django_admin/</link>
+      <pubDate>Tue, 04 Oct 2016 04:29:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_admin/</guid>
+      <description>admin.py from django.contrib import admin 创建一个管理员用户： $ python manage.py createsuperuser 管理员登陆界面： http://localhost:8000/admin/ 在admin.py中注册模型，然后就可以在登陆界面管理模型了 from .models import Question admin.site.register(Question) 自定义管理表单</description>
+    </item>
+    
+    <item>
+      <title>URL</title>
+      <link>http://canuxcheng.com/post/django_url/</link>
+      <pubDate>Tue, 04 Oct 2016 04:20:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_url/</guid>
+      <description>urls.py from django.urls import path, include django请求站点的方法： ROOT_URLCONF，在settings.py中设置。 寻找urlpatterns，它是djang</description>
+    </item>
+    
+    <item>
+      <title>View</title>
+      <link>http://canuxcheng.com/post/django_view/</link>
+      <pubDate>Tue, 04 Oct 2016 04:20:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_view/</guid>
+      <description>views.py from django.shortcuts import render 定义自己的视图函数： from django.http import HttpResponse from django.template import RequestContext, loader # 导入模板中的类 from .models import Question def index(request): ... t = loader.get_template(&#39;application/index.html&#39;) c = RequestContext(request, {&#39;foo&#39;: &#39;bar&#39;}) return HttpResponse(t.render(c), content_type=&amp;quot;text/html&amp;quot;) 当请求一个页面时django会建立一个包</description>
+    </item>
+    
+    <item>
+      <title>Model</title>
+      <link>http://canuxcheng.com/post/django_model/</link>
+      <pubDate>Tue, 04 Oct 2016 04:20:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_model/</guid>
+      <description>models.py from django.db import models django模型是和数据库关联的，代码放在models.py，数据库信息在settings.py中统一配置即可。 每个模型对应数据库</description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>http://canuxcheng.com/post/django_template/</link>
+      <pubDate>Tue, 04 Oct 2016 04:12:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_template/</guid>
+      <description>模板设置 模板引擎在settings.py设置, django有两套模板引擎： TEMPLATES = [ # DjangoTemplates { &#39;BACKEND&#39;: &#39;django.template.backends.django.DjangoTemplates&#39;, # 定义项目的通用模板, mysite/templates &#39;DIRS&#39;: [os.path.join(BASE_DIR, &#39;templates&#39;)], # True 表示在所有安装应</description>
+    </item>
+    
+    <item>
+      <title>Deploy</title>
+      <link>http://canuxcheng.com/post/django_deploy/</link>
+      <pubDate>Tue, 27 Sep 2016 10:23:22 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_deploy/</guid>
+      <description>发布django项目 django内置一个轻量级web开发服务器。 如果要发布django项目需要另外的操作。 也可以发布到其它的云平台。 一般通过</description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>http://canuxcheng.com/post/js_node/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_node/</guid>
+      <description>Nodejs https://github.com/nodejs/node Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 Node.js 的包管理器npm，是全球最大的开源库生态系统</description>
+    </item>
+    
+    <item>
+      <title>NPM</title>
+      <link>http://canuxcheng.com/post/js_npm/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_npm/</guid>
+      <description>NPM npm: node package manager. npm 由三部分组成： website https://www.npmjs.com CLI registry https://registry.npmjs.org config: // 修改registry $ npm config set registry https://registry.npm.taobao.org $ npm config get registry // 修改默认全局安装路径 mkdir /path/npm_global npm config set prefix /path/npm_global echo &#39;export PATH=/path/npm_global/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.profile source ~/.profile // 查看配</description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://canuxcheng.com/post/web/</link>
+      <pubDate>Tue, 27 Sep 2016 03:25:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/web/</guid>
+      <description>WEB web一般包括web server, web service, load balancing. URL: Uniform Resource Locator, 统一资源定位符． scheme://host[:port#]/path/.../[?query-string][#anchor] DNS: Domain Name System, 域名系统. header: header中用来保存session，cookie等头部信息．</description>
+    </item>
+    
+    <item>
+      <title>TPL</title>
+      <link>http://canuxcheng.com/post/django_tpl/</link>
+      <pubDate>Tue, 27 Sep 2016 01:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_tpl/</guid>
+      <description>Django Third Party Library. https://github.com/rosarior/awesome-django Add this application to your django project in settings.py. INSTALLED_APPS = ( &#39;south&#39;, &#39;debug_toolbar&#39;, &#39;crispy_forms&#39;, ... ) django-rest-framework django的RESTful API的application。 https://github.com/tomchristie/django-rest-framework/tree/master https://github.com/django-json-api/django-rest-framework-json-api https://github.com/SimpleJWT/django-rest-framework-simplejwt admin interface https://github.com/geex-arts/django-jet https://github.com/sehmaschine/django-grappelli https://github.com/darklow/django-suit https://github.com/sshwsfc/xadmin authentication https://github.com/etianen/django-python3-ldap https://github.com/pennersr/django-allauth/ https://github.com/django-guardian/django-guardian database https://github.com/django-dbbackup/django-dbbackup debug https://github.com/jazzband/django-debug-toolbar</description>
+    </item>
+    
+    <item>
+      <title>Apache</title>
+      <link>http://canuxcheng.com/post/apache/</link>
+      <pubDate>Tue, 27 Sep 2016 03:25:26 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/apache/</guid>
+      <description>Apache https://github.com/apache/httpd http://httpd.apache.org/ ubuntu/debian： sudo aptitude install apache2 redhat/centos/fedora: $ sudo yum install httpd2 启动服务器： service apache2 start 启动浏览器查看： http://localhost:80 apache命令 apache2ctl: // 检查配置 $ apache2ctl configtest a2ensite // 启用一个站点</description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>http://canuxcheng.com/post/django/</link>
+      <pubDate>Tue, 20 Sep 2016 23:14:07 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django/</guid>
+      <description>Django django是python的web框架。 https://github.com/django/django https://www.djangoproject.com/ https://docs.djangoproject.com/zh-hans/3.1/contents/ django遵守MVC设计模式，采用MTV框架。 M: model,数据存取 T: template，如</description>
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>http://canuxcheng.com/post/http/</link>
+      <pubDate>Tue, 13 Sep 2016 01:39:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/http/</guid>
+      <description>HTTP/HTTPS http port: 80 https port: 443 http/https的请求方式： get # 从服务器取出资源 post # 在服务器新建资源 put # 在服务器更新资源，客户端提供改变后的完整资源 delete # 从</description>
+    </item>
+    
+    <item>
+      <title>PSL_builtins</title>
+      <link>http://canuxcheng.com/post/psl_builtins/</link>
+      <pubDate>Mon, 15 Aug 2016 11:16:29 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_builtins/</guid>
+      <description>_builtins_ python的内置模块，所有python的内置功能都在这个模块中，不需要import导入就可以使用。 包括内置类类型以及所属的内置方法，和内</description>
+    </item>
+    
+    <item>
+      <title>PSL_Concurrency</title>
+      <link>http://canuxcheng.com/post/psl_concurrency/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_concurrency/</guid>
+      <description>Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。 线程：线程（有时被称为轻量级进程）</description>
+    </item>
+    
+    <item>
+      <title>PSL_Python</title>
+      <link>http://canuxcheng.com/post/psl_python/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_python/</guid>
+      <description>Python Runtime Services _builtin_ builtin/builtins - Built-in functions, exceptions, and other objects. python2叫__builtin__ python3叫builtins _main_ main - Top-level script environment. if __name__ == &amp;quot;__main__&amp;quot;: main() 当作为顶层脚本运行时(m</description>
+    </item>
+    
+    <item>
+      <title>PSL_System</title>
+      <link>http://canuxcheng.com/post/psl_system/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_system/</guid>
+      <description>Generic Operating System Services os import os os.path # 参考PSL_File os.name os.curdir os.pardir # 表示上一级路径.., 需要用abspath解析 # os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) os.sep os.extsep os.altsep os.pathsep os.linesep os.defpath os.devnull classes: functions: WCOREDUMP(...) ... abort(...) fork() # 创建一个子进程，</description>
+    </item>
+    
+    <item>
+      <title>PSL_GUI</title>
+      <link>http://canuxcheng.com/post/psl_gui/</link>
+      <pubDate>Mon, 15 Aug 2016 10:28:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_gui/</guid>
+      <description>GUI Tkinter ttk Tix ScrolledText turtle TPL 相关的第三方库 wxWidgets python2的库叫wxPython. https://www.wxpython.org/ # Windows下载安装包安装即可． $ sudo apt-get install python-wxgtk2.8 python３启用新的项</description>
+    </item>
+    
+    <item>
+      <title>PSL_Misc</title>
+      <link>http://canuxcheng.com/post/psl_misc/</link>
+      <pubDate>Mon, 15 Aug 2016 10:28:46 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_misc/</guid>
+      <description>PSL Python Standard Library: Python标准库 Internationalization gettext locale Program Frameworks cmd shlex 类shell的词法分析． classes: shlex functions: split(s, comments=False, posix=True) # split(&amp;quot;command **kwargs&amp;quot;) -&amp;gt; [&#39;command&#39;, &#39;arg1&#39;, ...] data: Custom Python Interpreters code codeop Python Language Services keyword import keyword functions: keyword.iskeyword(keyword) # x.__contains__(y) &amp;lt;==&amp;gt; y in x data: keyword.kwlist # 返回</description>
+    </item>
+    
+    <item>
+      <title>PSL_Cryptographic</title>
+      <link>http://canuxcheng.com/post/psl_cryptographic/</link>
+      <pubDate>Sun, 14 Aug 2016 21:15:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_cryptographic/</guid>
+      <description>Cryptographic Services hashlib 哈希算法和摘要算法标准库，就是把任意长度的数据转换为一个长度固定的数据串． MD5: Message Digest Algorithm 5. SHA1: Secure Hash Algorithm. import hashlib classes: # methods: # 哈希对象有下列方法： update(arg) # 更新字</description>
+    </item>
+    
+    <item>
+      <title>PSL_Data</title>
+      <link>http://canuxcheng.com/post/psl_data/</link>
+      <pubDate>Sun, 14 Aug 2016 20:57:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_data/</guid>
+      <description>Data Types datetime import datetime classes: # datetime.date date(year, month, day) # methods: ctime(...) ... # data descriptors: day month year # datetime.datetime(datetime.date) datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]]) # methods: datetime.datetime.strptime(string, format) format_datetime = datetime.datetime.strptime(&#39;20160824161431&#39;, &#39;%Y%m%d%H%M%S&#39;) # return: datetime.datetime(2016, 8, 24, 16, 14, 31) format_datetime = datetime.datetime.strptime(&#39;24 August 2016 16:14:31&#39;, &#39;%Y%m%d%H%M%S&#39;) # return: datetime.datetime(2016, 8, 24, 16, 14, 31) datetime.datetime.strftime(format[, tuple]) string_datetime = format_datetime.strftime(&amp;quot;%d %B %Y %H:%M:%S&amp;quot;) #</description>
+    </item>
+    
+    <item>
+      <title>PSL_File</title>
+      <link>http://canuxcheng.com/post/psl_file/</link>
+      <pubDate>Sun, 14 Aug 2016 20:51:28 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_file/</guid>
+      <description>File and Directory Access os.path windows的路径要写成： C:\\test\\sub\\ import os function: os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&amp;quot;~/src&amp;quot;) -&amp;gt; /home/user/src os.path.expandvars(path) # 把path中的shell变量$var 或 ${var}</description>
+    </item>
+    
+    <item>
+      <title>PSL_Math</title>
+      <link>http://canuxcheng.com/post/psl_math/</link>
+      <pubDate>Fri, 12 Aug 2016 16:56:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_math/</guid>
+      <description>Numeric and Mathematical Modules random import random classes: # random.Random Random() # methods: seed([self,], a=None) randint(a, b) # 随机一个[a,b]中的整数． choice(self, seq) # 从seq中随机选择一个元素 uniform(self, a, b) sample(self, population, k) randint(self, a, b) randrange(self, start, stop=None, step=1, _int=&amp;lt;type &#39;int&#39;&amp;gt;, _maxwidth=9007199254740992L) # random.SystemRandom(Random) SystemRandom(Random) # random.WichmannHill(Random) WichmannHill(Random)</description>
+    </item>
+    
+    <item>
+      <title>PSL_String</title>
+      <link>http://canuxcheng.com/post/psl_string/</link>
+      <pubDate>Fri, 12 Aug 2016 16:49:07 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_string/</guid>
+      <description>String Services string import string classes: functions: data: ascii_letters ascii_lowercase ascii_uppercase digits ... re import re classes: functions: compile(pattern, flags=0) escape(pattern) findall(pattern, string, flags=0) finditer(pattern, string, flags=0) match(pattern, string, flags=0) # if not match, return None, else return object. search(pattern, string, flags=0) purge() split(pattern, string, maxsplit=0, flags=0) # 根据pattern分割string,返回分割</description>
+    </item>
+    
+    <item>
+      <title>PSL_Multimedia</title>
+      <link>http://canuxcheng.com/post/psl_multimedia/</link>
+      <pubDate>Fri, 12 Aug 2016 15:51:56 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_multimedia/</guid>
+      <description>Multimedia Services audioop aifc sunau wave chunk colorsys imghdr sndhdr ossaudiodev  </description>
+    </item>
+    
+    <item>
+      <title>PSL_Network</title>
+      <link>http://canuxcheng.com/post/psl_network/</link>
+      <pubDate>Fri, 12 Aug 2016 14:21:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_network/</guid>
+      <description>Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i</description>
+    </item>
+    
+    <item>
+      <title>ReStructuredText</title>
+      <link>http://canuxcheng.com/post/restructuredtext/</link>
+      <pubDate>Mon, 08 Aug 2016 13:39:38 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/restructuredtext/</guid>
+      <description>reStructuredText http://docutils.sourceforge.net/rst.html reST是易读所见即所得的文本标记语言，格式类似markdown。 python的reST参考pep12和pep287: https://www.python.org/dev/peps/pep-0012/ https://www.python.org/dev/peps/pep-0287/ 主标题： title ===== =====</description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/post/python_debug/</link>
+      <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_debug/</guid>
+      <description>IDE pycharm可以通过breakpoint和step调试. debug bdb pdb hotshot timeit trace cProfile profile</description>
+    </item>
+    
+    <item>
+      <title>PEP</title>
+      <link>http://canuxcheng.com/post/python_pep/</link>
+      <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_pep/</guid>
+      <description>PEP 8 &amp;ndash; Style Guide for Python Code https://www.python.org/dev/peps/pep-0008/ PEP 257 &amp;ndash; Docstring Conventions https://www.python.org/dev/peps/pep-0257/ PEP-20PEP 20 &amp;ndash; The Zen of Python https://www.python.org/dev/peps/pep-0020/ # 查看pep20 &amp;gt;import this</description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/python_document/</link>
+      <pubDate>Wed, 03 Aug 2016 21:57:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_document/</guid>
+      <description>Document python项目文档相关的工具． pydoc python自带的文档命令行接口 $ pydoc --help $ pydoc -p &amp;lt;port&amp;gt; TPL Sphinx https://github.com/sphinx-doc/sphinx https://zh-sphinx-doc.readthedocs.io/en/latest/contents.html Sphinx就是python处理reStructu</description>
+    </item>
+    
+    <item>
+      <title>Ftp</title>
+      <link>http://canuxcheng.com/post/ftp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ftp/</guid>
+      <description>FTP ftp服务器有很多： vsftpd proftpd pyftpdlib vsftpd 安装vsftpd: $ sudo apt-get install vsftpd windows开启ftp服务和建立IIS站点即可。 linux配置： $ vim /etc/vsftpd.conf local_root=/home/canux/FTP anon_root=/home/canux/FTP local_enable=YES anonymous_enable=YES chroot_local_user=YES</description>
+    </item>
+    
+    <item>
+      <title>Ldap</title>
+      <link>http://canuxcheng.com/post/ldap/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ldap/</guid>
+      <description>LDAP LDAP占用tcp和udp的389端口。 使用SSL的LDAP占用tcp和udp的636端口。 Lightweight Directory Access Protocol. http://www.openldap.org/ LDAP的windows工具：LDA</description>
+    </item>
+    
+    <item>
+      <title>Nfs</title>
+      <link>http://canuxcheng.com/post/nfs/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/nfs/</guid>
+      <description>NFS NFS: Network File System 安装： # 在nfs服务器安装nfs服务 $ sudo apt-get install nfs-kernel-server # 添加共享目录并授权 $ sudo vim /etc/exports /home/user/share *(rw,no_root_squash) $ sudo service nfs-kernel-server restart # 在nfs客户端安装nfs客户端 $ sudo apt-get install nfs-common</description>
+    </item>
+    
+    <item>
+      <title>Ntp</title>
+      <link>http://canuxcheng.com/post/ntp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ntp/</guid>
+      <description>NTP NFS: Network Time Protocol UTC: Coordinated Universal Time, 世界统一时间 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC CET: Central European Time, 欧洲中部时间, = UTC+1, 下令时=UTC+2 CST: Chinese Standard Time, 中国标准时间, = UTC+8 时区管理 $</description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>http://canuxcheng.com/post/ssh/</link>
+      <pubDate>Thu, 28 Jul 2016 15:53:34 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ssh/</guid>
+      <description>OpenSSH http://www.openssh.com/ windows上支持ssh协议的客户端： putty xshell MobaXterm secureCRT 安装： $ sudo apt-get install openssh-server $ sudo apt-get install openssh-client SSH命令 ssh是openssh协议的客户端． 远程操作的命令包</description>
+    </item>
+    
+    <item>
+      <title>Remote Management</title>
+      <link>http://canuxcheng.com/post/ps_remote/</link>
+      <pubDate>Mon, 18 Jul 2016 14:54:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_remote/</guid>
+      <description>Windows远程管理 WinRM, 远程处理,在远程机器上执行命令 WMI/CIM RPC, 远程连接,在发起远程连接的机器上执行命令 WinRM 一对一远程处理: 类似于linux的ssh</description>
+    </item>
+    
+    <item>
+      <title>WinRM</title>
+      <link>http://canuxcheng.com/post/win_winrm/</link>
+      <pubDate>Sun, 17 Jul 2016 08:36:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_winrm/</guid>
+      <description>WinRM Windows Remote Management WinRM是WSMAN(WS-Management Protocol)的增强版。 WinRM是基于SOAP的防火墙友好的远程协议。 https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx Wi</description>
+    </item>
+    
+    <item>
+      <title>Coreutils</title>
+      <link>http://canuxcheng.com/post/ps_coreutils/</link>
+      <pubDate>Tue, 12 Jul 2016 17:24:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_coreutils/</guid>
+      <description>外部命令 powershell可以执行外部命令. C:\Windows\System32\*.exe cmd ping netstat ipconfig route arp nslookup ftp mstsc RDP client. taskmgr 任务管理器． tskill tree whoami 需要下载，然后放入环境变量的第三方命令. WinDump Wind</description>
+    </item>
+    
+    <item>
+      <title>Json</title>
+      <link>http://canuxcheng.com/post/json/</link>
+      <pubDate>Thu, 07 Jul 2016 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/json/</guid>
+      <description>JSON http://www.json.org/ JSON: JavaScript Object Notation. json有两种数据结构. key-value/键值对 { key: value, key1: value1, ... } 列表/数组 [value, value1, ...] 数据类型 bool: python -&amp;gt; True/False go -&amp;gt; true/false string: &amp;gt; 只能用双引号. python -&amp;gt; str go</description>
+    </item>
+    
+    <item>
+      <title>Yaml</title>
+      <link>http://canuxcheng.com/post/yaml/</link>
+      <pubDate>Thu, 07 Jul 2016 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/yaml/</guid>
+      <description>YAML https://yaml.org
+Yaml Ain&amp;rsquo;t Markup Language.</description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>http://canuxcheng.com/post/css/</link>
+      <pubDate>Thu, 23 Jun 2016 09:40:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/css/</guid>
+      <description>CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元</description>
+    </item>
+    
+    <item>
+      <title>Html</title>
+      <link>http://canuxcheng.com/post/html/</link>
+      <pubDate>Thu, 23 Jun 2016 09:40:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/html/</guid>
+      <description>HTML HTML是超文本标记语言 XHTML XHTML是更严谨的更纯净的HTML HTML5 HTML5是下一代HTML html元素和属性 html元素指从开始标签到结束</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/python_package/</link>
+      <pubDate>Wed, 22 Jun 2016 05:17:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_package/</guid>
+      <description>Package PEP426是python最新的打包标准，定义了wheel为最新的python包。 https://www.python.org/dev/peps/pep-0426/ ensurepip 内置模块.提供使用pip从pypi安装模块。 distutils 内置的</description>
+    </item>
+    
+    <item>
+      <title>Summary</title>
+      <link>http://canuxcheng.com/post/python_summary/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:20 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_summary/</guid>
+      <description>python难点总结 多线程 GIL GIL: Global Interpretror Lock. 全局解释器锁． python不建议使用多线程，用多进程代替． 协程 coroutine 协程就是同时开启两个任务，但一次只顺序执</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>http://canuxcheng.com/post/python_oop/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:09 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_oop/</guid>
+      <description>面向对象/OOP OOD: Object Oriented Design. 面向过程的设计支持任何语言，但是如果语言本身内置面向过程的结构，就会更容易编程． OOP: Object Oriented Programming. python内置OOP的结构</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://canuxcheng.com/post/python/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:09 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python/</guid>
+      <description>Python概述 https://docs.python.org/2.7/index.html http://python.usyiyi.cn/translate/python_278/index.html https://docs.python.org/3.5/index.html http://python.usyiyi.cn/translate/python_352/index.html python是一门优雅而健壮的语言. 继承了编译语言(静态语言)的强大性和通用性. 同时也借鉴了脚本语言(动态语言)的易</description>
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>http://canuxcheng.com/post/tmux/</link>
+      <pubDate>Sun, 19 Jun 2016 11:17:53 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tmux/</guid>
+      <description>tmux tmux是终端复用工具，类似于gnu screen。 tmux三个基本概念： 会话（session） 窗口（window） 面板（pane） tmux</description>
+    </item>
+    
+    <item>
+      <title>Jaeger</title>
+      <link>http://canuxcheng.com/post/tracing_jaeger/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing_jaeger/</guid>
+      <description>Jaeger 一款uber贡献给cncf的微服务tracing监控工具. https://www.jaegertracing.io/ https://github.com/jaegertracing/jaeger Deploy Jaeger on K8S https://github.com/jaegertracing/jaeger-operator</description>
+    </item>
+    
+    <item>
+      <title>Metrics</title>
+      <link>http://canuxcheng.com/post/metrics/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics/</guid>
+      <description>Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix. Modern monitoring is for Cloud and Container. Modern monitoring based on metrics, logs and tracing. TICK stack influxdb: tsdb. kapacitor: alerting. chronograf: GUI. telegraf(agent): metrics collector. Prometheus Graphing 最流行的监控绘图软件是grafana, 支持influxdb,ela</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/monitoring/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/monitoring/</guid>
+      <description>Monitoring Tranditional monitoring is for Datacenter, like nagios, zabbix. Modern monitoring is for Cloud and Container. Modern monitoring based on metrics, logs and tracing. 现代的监控系统在DevOps的基础上，除了传统的metrics和logging的采集，还需要</description>
+    </item>
+    
+    <item>
+      <title>Sentry</title>
+      <link>http://canuxcheng.com/post/tracing_sentry/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing_sentry/</guid>
+      <description>Sentry https://github.com/getsentry/sentry
+Deploy Sentry on K8S https://github.com/getsentry/onpremise</description>
+    </item>
+    
+    <item>
+      <title>Tracing</title>
+      <link>http://canuxcheng.com/post/tracing/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing/</guid>
+      <description>Tracing APM 监控，也叫全链路监控。 sentry https://github.com/getsentry/sentry zipkin https://github.com/openzipkin/zipkin open-telemetry opentracing和opencensus 合并成open-telemetry. https://github.com/opentracing https://github.com/census-instrumentation https://github.com/open-telemetry jaeger https://github.com/jaegertracing/jaeger</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/linux_package/</link>
+      <pubDate>Tue, 07 Jun 2016 16:57:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_package/</guid>
+      <description>DPKG debian的包管理机制。 dpkg dpkg的本地前端工具。 deb - Debian binary package format dpkg - package manager for Debian dpkg dpkg -X ./xxx.deb xxx # 将deb包解压到xxx目录 dpkg -e ./xxx.deb xxx/DEBIAN # 将contro</description>
+    </item>
+    
+    <item>
+      <title>Oracle</title>
+      <link>http://canuxcheng.com/post/oracle/</link>
+      <pubDate>Wed, 01 Jun 2016 22:40:22 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/oracle/</guid>
+      <description>Oracle oracle的GUI： oracle sql developer(officer) pl/sql toad oracle的CLI： sqlplus Oracle命令 sys是oracle默认管理员权限 $ sqlplus / as sysdba system是orac</description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>http://canuxcheng.com/post/sql/</link>
+      <pubDate>Wed, 25 May 2016 22:06:13 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sql/</guid>
+      <description>SQL sql是结构化查询语言。 sql是一种标准，几乎所有关系型数据库都遵守。 但是不同的数据库又有自己的扩展。 SQL分为两部分，DML和DDL。 S</description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>http://canuxcheng.com/post/mysql/</link>
+      <pubDate>Wed, 25 May 2016 12:14:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/mysql/</guid>
+      <description>Mysql 安装mysql服务器 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-addr</description>
+    </item>
+    
+    <item>
+      <title>Builtins</title>
+      <link>http://canuxcheng.com/post/ps_builtins/</link>
+      <pubDate>Tue, 24 May 2016 10:44:44 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_builtins/</guid>
+      <description>Get-Help和Help: get-help查看帮助信息,help分页查看帮助信息，man是help的别名 命令说明： Get-Help Help 查看所有命令和概念：</description>
+    </item>
+    
+    <item>
+      <title>Snmp</title>
+      <link>http://canuxcheng.com/post/snmp/</link>
+      <pubDate>Tue, 26 Apr 2016 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/snmp/</guid>
+      <description>SNMP Simple Network Management Protocol, 简单网络管理协议 MIB SMI 安装和配置snmp: $sudo apt-get install snmp snmpd snmp-mibs-downloader snmp命令</description>
+    </item>
+    
+    <item>
+      <title>Admin</title>
+      <link>http://canuxcheng.com/post/win_admin/</link>
+      <pubDate>Tue, 26 Apr 2016 09:54:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>http://canuxcheng.com/post/ps/</link>
+      <pubDate>Tue, 26 Apr 2016 09:52:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps/</guid>
+      <description>PowerShell Console: command line interface ISE: script editor and console combination Version: 2.0,3.0,4.0,5.0 C:\Windows\System32\powershell 存放64位powershell C:\Windows\SysWOW64\powershell 存放32位powershell &amp;gt;$PSVersionTable &amp;gt;$HOST Install/Update: https://www.microsoft.com/zh-CN/download/details.aspx?id=40855 安装Windows Management Framework4.</description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>http://canuxcheng.com/post/ps_utils/</link>
+      <pubDate>Tue, 26 Apr 2016 09:52:02 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ps_utils/</guid>
+      <description>windows相关项目： choco https://github.com/chocolatey windows的apt/yum。 choco is replacement of chocolatey choco install openssh cmder cmd的升级版。 https://github.com/cmderdev/cmder babun a linux-shell like on windows. https://github.com/babun/babun flinux run unmodified linux applications inside windows https://github.com/wishstudio/flinux</description>
+    </item>
+    
+    <item>
+      <title>Tivoli</title>
+      <link>http://canuxcheng.com/post/metrics_tivoli/</link>
+      <pubDate>Wed, 20 Apr 2016 13:57:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_tivoli/</guid>
+      <description>ITM ITM: IBM Tivoli Monitoring 是IBM的Cloud &amp;amp; Smart Infrastructure监控解决方案。 Architecture Overview: ITM主要由管理组件和可选组件组成。 Tivoli Management Services: TEMS TEPS TEP client Historical data collection(warehouse agent) warehouse</description>
+    </item>
+    
+    <item>
+      <title>Find</title>
+      <link>http://canuxcheng.com/post/shell_find/</link>
+      <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_find/</guid>
+      <description>find Find 查找，用于在目录中查找。 find path options tests actions path 路径 options 选项 tests 测试 actions 动作 optioins选项: -follow -depth -maxdepth -mindepth find dir -mindepth n 指定最小的目录深度，至少从dir往下n级</description>
+    </item>
+    
+    <item>
+      <title>Grep</title>
+      <link>http://canuxcheng.com/post/shell_grep/</link>
+      <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_grep/</guid>
+      <description>grep grep相关的命令： grep egrep == grep -E fgrep == grep -F rgrep == grep -r grep: grep [OPTIONS] PATTERN [FILE/DIR...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE/DIR...] options: # Matcher Selection -G, --basic-regexp grep默认只支持BRE, 只能使用基本的RE -E, --extended-regexp 选择E</description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>http://canuxcheng.com/post/development/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/development/</guid>
+      <description>Development 开发相关的工具 传统的软件开发采用的是瀑布式开发流程． 现代的软件开发采用的是敏捷开发流程(Agile development). Alpha: inner test version. Beta: outer test version. RC: release candidate. 最终版本之前的最</description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/post/devops/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/devops/</guid>
+      <description>DevOps DevOps包括ChatOps, 敏捷开发，持续集成,持续交付,持续发布/部署，QA(自动化测试），智能监控和日志管理等内容． DevOps涉</description>
+    </item>
+    
+    <item>
+      <title>Gitlab</title>
+      <link>http://canuxcheng.com/post/gitlab/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gitlab/</guid>
+      <description>Gitlab gitlab是开源的有web界面的git服务器． https://about.gitlab.com/ 安装gitlab: sudo apt-get install -y curl openssh-server ca-certificates sudo apt-get install -y postfix curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash sudo EXTERNAL_URL=&amp;quot;http://gitlab.example.com&amp;quot; apt-get install gitlab-ce 配置: /etc/gitlab/gitlab.rb 升级gitlab:</description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>http://canuxcheng.com/post/jenkins/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/jenkins/</guid>
+      <description>Jenkins Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks such as building, testing, and deploying software. https://github.com/jenkinsci/jenkins 安装好Jenkins后安装需要的插件． 安装jenkins: # download jenkins.war and install java8. $ java -jar jenkins.war --httpPort=8080 $ firefox http://localhost:8080</description>
+    </item>
+    
+    <item>
+      <title>Operations</title>
+      <link>http://canuxcheng.com/post/operations/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/operations/</guid>
+      <description>Operations 运维相关的工具． 批量配置管理 puppet chef salt ansible 密码管理工具 keepass http://keepass.info/ KeePassX https://www.keepassx.org/ https://github.com/keepassx/keepassx</description>
+    </item>
+    
+    <item>
+      <title>Admin</title>
+      <link>http://canuxcheng.com/post/linux_admin/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_admin/</guid>
+      <description>Linux Admin dpkg: ubuntu, debian. rpm: fedora, centos, redhat. zypper: suse. Linux系统常用的安装和配置 virtualbox 开机自动挂载共享文件夹 # 手动挂在命令, 需要安装增强功能 $ mount -t vboxsf FolderNameOnWindows /path/on/linux # 实现开机自动挂载 $</description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>http://canuxcheng.com/post/agile/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/agile/</guid>
+      <description>Agile methodologies Agile的具体方法有Scrum, XP和kanban. ThoughtWorks公司的Martin Fowler提出的敏捷方法． Scrum Scrum</description>
+    </item>
+    
+    <item>
+      <title>Ansible</title>
+      <link>http://canuxcheng.com/post/ansible/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ansible/</guid>
+      <description>Ansible https://github.com/ansible/ansible http://www.ansible.com.cn/index.html ansible通过SSH来远程管理Linux/Unix机器． ansible通过winrm+powershell来远程管理Windows</description>
+    </item>
+    
+    <item>
+      <title>HashiCorp</title>
+      <link>http://canuxcheng.com/post/hashicorp/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hashicorp/</guid>
+      <description>Consul Terraform Nomad Packer </description>
+    </item>
+    
+    <item>
+      <title>Vault</title>
+      <link>http://canuxcheng.com/post/vault/</link>
+      <pubDate>Fri, 15 Apr 2016 09:41:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vault/</guid>
+      <description>Vault https://github.com/hashicorp/vault CLI server: // 启动vault $ vault server -config=/etc/vault/config.hcl init: // init生成keys和token. $ vault operator init // 通过keys unseal $ vault operator unseal // 通过token seal $ vault operator seal auth: // 查看au</description>
+    </item>
+    
+    <item>
+      <title>PSL_Test</title>
+      <link>http://canuxcheng.com/post/psl_test/</link>
+      <pubDate>Mon, 11 Apr 2016 22:58:13 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_test/</guid>
+      <description>Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni</description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/post/c_devops/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/c_devops/</guid>
+      <description>IDE Windows: DEV C++
+http://orwelldevcpp.blogspot.com/
+Linux: Vim + Gcc + Gdb
+ gcc/clang  gdb </description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/c_document/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/c_document/</guid>
+      <description>Document  Doxygen </description>
+    </item>
+    
+    <item>
+      <title>Hadoop</title>
+      <link>http://canuxcheng.com/post/hadoop/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hadoop/</guid>
+      <description>Hadoop https://github.com/apache/hadoop apache hadoop是一个框架，允许使用简单的编程模型在大量计算机上对大型数据集进行分布式处理． hadoop1只有HDFS和MapReduce</description>
+    </item>
+    
+    <item>
+      <title>Hadoop HDFS</title>
+      <link>http://canuxcheng.com/post/hadoop_hdfs/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hadoop_hdfs/</guid>
+      <description>HDFS Hadoop Distributed File System: hadoop分布式文件系统 hadoop hdfs分为三部分: NameNode -&amp;gt; JobTracker secondary NameNode DataNode -&amp;gt; TaskTracker hdfs commands hdfs [SHELL_OPTIONS] COMMAND [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: $ hdfs classpath $ hdfs dfs # 参考 hadoop fs命令 ... admin commands: $ hdfs balancer ... debug commands: $</description>
+    </item>
+    
+    <item>
+      <title>Hadoop YARN</title>
+      <link>http://canuxcheng.com/post/hadoop_yarn/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hadoop_yarn/</guid>
+      <description>YARN 作业调度和集群资源管理的框架． yarn的两个组件： resourcemanager nodemanager yarn commands yarn [--config confdir] COMMAND [--loglevel loglevel] [GENERIC_OPTIONS] [COMMAND_OPTIONS] user commands: $ yarn application ... admin commands: $ yarn daemonlog ... resource manager resource manager由两部分组成： scheduler applicationmanager R</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/c_package/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/c_package/</guid>
+      <description>Package </description>
+    </item>
+    
+    <item>
+      <title>BigData</title>
+      <link>http://canuxcheng.com/post/bigdata/</link>
+      <pubDate>Mon, 11 Apr 2016 22:57:37 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/bigdata/</guid>
+      <description>BigData 大数据最流行的框架是hadoop. 大部分工具都属于Apache基金会的项目． MPP Massive Parallel Process 大规模并行处理数据库包括impala, hawq 分布式存储 hadoop hdfs</description>
+    </item>
+    
+    <item>
+      <title>France</title>
+      <link>http://canuxcheng.com/post/travel_france/</link>
+      <pubDate>Sun, 10 Apr 2016 17:49:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/travel_france/</guid>
+      <description>法国之旅 看照片： http://user.qzone.qq.com/1085694641 戴高乐机场 雅高集团的宜必思酒店 SNCF的TVG火车 法国有22个大区。 法兰西岛 巴黎省(已去) 巴黎是法国首都，大区首府和该省省</description>
+    </item>
+    
+    <item>
+      <title>MSSql</title>
+      <link>http://canuxcheng.com/post/mssql/</link>
+      <pubDate>Wed, 06 Apr 2016 15:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/mssql/</guid>
+      <description>MSSQL 商业版： 企业版 商业智能版 标准版 免费版： Express Developer Compact Web SQL Azure system databases: master 主数据库 model 模板数据库 msdb 自动机数据库 tempdb 零时交换数据库,不需要备份,挂载到独立的子系统</description>
+    </item>
+    
+    <item>
+      <title>CloudComputing</title>
+      <link>http://canuxcheng.com/post/cloudcomputing/</link>
+      <pubDate>Tue, 05 Apr 2016 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/cloudcomputing/</guid>
+      <description>CloudComputing IAAS: Infrastructure as a service
+PAAS: Platform as a service
+SAAS: Software as a service</description>
+    </item>
+    
+    <item>
+      <title>Esxi</title>
+      <link>http://canuxcheng.com/post/esxi/</link>
+      <pubDate>Tue, 05 Apr 2016 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/esxi/</guid>
+      <description>VMware vSphere是vmware的虚拟化平台,包括ESXi和vSphere Client. vSphere Hypervisor(也叫ESXi)是vSphere的免费裸机h</description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>http://canuxcheng.com/post/virtualization/</link>
+      <pubDate>Tue, 05 Apr 2016 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/virtualization/</guid>
+      <description>Virtualization 虚拟化技术的发展： DataCenter, 最原始的数据中心 Virtualization, 虚拟化技术，包括Kvm, Xen(Citrix), HyperV(MicroSoft), ESXi(VMware)等</description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://canuxcheng.com/post/network/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network/</guid>
+      <description>网络基础 小端： 低字节在起始地址，高字节在高地址 大端： 高字节在起始地址，低字节在高地址 linux一般是小端，unix一般是大端 网络模型 OSI七</description>
+    </item>
+    
+    <item>
+      <title>Samba</title>
+      <link>http://canuxcheng.com/post/samba/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/samba/</guid>
+      <description>SMB/CIFS SMB/CIFS占用TCP和UDP的139和445端口。 SMB: server message block. CIFS: common internet file system, 是SMB的升级版本。 Samba Samba: Linux/Unix上的SBM/CIFS</description>
+    </item>
+    
+    <item>
+      <title>Postgresql</title>
+      <link>http://canuxcheng.com/post/postgre/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/postgre/</guid>
+      <description>PostgreSQL 安装postgresql： $ sudo apt-get install postgresql 安装第三方库： $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． post</description>
+    </item>
+    
+    <item>
+      <title>WMI</title>
+      <link>http://canuxcheng.com/post/win_wmi/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_wmi/</guid>
+      <description>WMI/CIM WMI: windows management instrumentation. https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx CIM: common information model. https://msdn.microsoft.com/en-us/library/aa389234(v=vs.85).aspx DCOM: distributed COM. wmi通过DCOM远程连接，但是DCOM不能绕过防火墙。 命名空间: root\cimv2 root\microsoftdns root\securitycenter WMI工具： windows自带wmi测试</description>
+    </item>
+    
+    <item>
+      <title>FileSystem</title>
+      <link>http://canuxcheng.com/post/win_filesystem/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_filesystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/win_monitoring/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_monitoring/</guid>
+      <description>windows的services和process services是windows的服务，有Name(Display Name)，Service</description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://canuxcheng.com/post/win/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win/</guid>
+      <description>windows的IDE VS Enterprise: 收费企业版 VS Professional: 收费个人版 VS Community: 免费社区版 windows的引导程序是ntloader。 DOS和NT是windows系统</description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://canuxcheng.com/post/python_devops/</link>
+      <pubDate>Sun, 03 Apr 2016 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_devops/</guid>
+      <description>Python python2的最后一个版本是python2.7, 2020年停止更新. Windows安装： Python2.7.9之后的版本直接下载msi安</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://canuxcheng.com/post/git/</link>
+      <pubDate>Sat, 02 Apr 2016 21:11:33 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/git/</guid>
+      <description>Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： github bitbucket sourceForge gitlab Git安装： $ sudo apt-get install git $</description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>http://canuxcheng.com/post/vim/</link>
+      <pubDate>Sat, 02 Apr 2016 21:11:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/vim/</guid>
+      <description>vim http://www.vim.org https://github.com/vim/vim 类似编辑器: emacs Atom(github的开源跨平台编辑器，支持插件。) VSCode(微软的开源跨平台的编辑器，支持插件。) Vim安装和配</description>
+    </item>
+    
+    <item>
+      <title>Summary</title>
+      <link>http://canuxcheng.com/post/c_summary/</link>
+      <pubDate>Sat, 02 Apr 2016 16:06:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/c_summary/</guid>
+      <description>C标准 ISO C89(ANSI C89) -&amp;gt; ISO C99 -&amp;gt; ISO C11 ANSI C 和 ISO C是对通用C语言的接口的定义。 符合这种标准的实现为C语言标准库,也叫libc。 Unix/Linux的POSI</description>
+    </item>
+    
+    <item>
+      <title>Posix</title>
+      <link>http://canuxcheng.com/post/c_posix/</link>
+      <pubDate>Sat, 02 Apr 2016 11:18:05 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/c_posix/</guid>
+      <description>POSIX标准 Portable Operating System Interface 可移植性操作系统接口, POSIX兼容ISO C。 所有Unix都遵循，几乎所有Linux都遵循，Windows部分支持。 POSIX.1/IEEE</description>
+    </item>
+    
+    <item>
+      <title>Regular Expression</title>
+      <link>http://canuxcheng.com/post/regularexpression/</link>
+      <pubDate>Sat, 02 Apr 2016 11:16:16 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/regularexpression/</guid>
+      <description>RE 在线检测： https://www.regexpal.com/ RE分为BRE(basic RE), ERE(extended RE), SRE(simpla RE). 在BRE中+?(){}|没有特殊含义，除非用\转义． 在ERE中+?(){}被保留有特殊含义</description>
+    </item>
+    
+    <item>
+      <title>Sed</title>
+      <link>http://canuxcheng.com/post/shell_sed/</link>
+      <pubDate>Sat, 02 Apr 2016 11:15:57 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_sed/</guid>
+      <description>sed sed：stream editor 流编辑器 ，主要用于文本处理。 sed命令格式： sed -options ’expression1;expression2’ file 执行多个命令 sed -options</description>
+    </item>
+    
+    <item>
+      <title>ISO</title>
+      <link>http://canuxcheng.com/post/c_iso/</link>
+      <pubDate>Fri, 01 Apr 2016 21:54:16 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/c_iso/</guid>
+      <description>C标准库 ISO C89(ANSI C89) -&amp;gt; ISO C99 -&amp;gt; ISO C11 ANSI C 和 ISO C是对通用C语言的接口的定义。 符合这种标准的实现为C语言标准库,也叫libc。 官方网站： http://www.open-std.org/jtc1/sc22/wg14/www/standards C89和C99支</description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>http://canuxcheng.com/post/shell/</link>
+      <pubDate>Fri, 01 Apr 2016 20:42:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell/</guid>
+      <description>Shell Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。 查看当前使用的shell： echo $SHELL echo $0 查看安装了哪些sh</description>
+    </item>
+    
+    <item>
+      <title>Coreutils</title>
+      <link>http://canuxcheng.com/post/shell_coreutils/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_coreutils/</guid>
+      <description>Linux的外部命令 Linux外部命令的项目是coreutils。 外部命令在coreutils目录中 查看外部命令所在目录： echo $PATH 外部命令在下列</description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>http://canuxcheng.com/post/shell_utils/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_utils/</guid>
+      <description>Linux的第三方命令 Linux外部命令的项目是coreutils. 外部命令在coreutils目录中. 第三方命令(相当于外部命令)． 文件和</description>
+    </item>
+    
+    <item>
+      <title>Builtins</title>
+      <link>http://canuxcheng.com/post/shell_builtins/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:03 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_builtins/</guid>
+      <description>Linux内置命令 内置命令在bash/builtins目录中 shell命令分为内置命令和外部命令. 查看一个命令是内置命令还是外部命令： type -a [command]</description>
+    </item>
+    
+    <item>
+      <title>FileSystem</title>
+      <link>http://canuxcheng.com/post/linux_filesystem/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_filesystem/</guid>
+      <description>VFS Linux采用虚拟文件系统，支持多个文件系统协议． ext/ext2/ext3/ext4 JFS2 ramfs linux的VM(虚拟内存)包括ramfs和swap. 对内存的支持 swap 交换分区，当内</description>
+    </item>
+    
+    <item>
+      <title>Firewall</title>
+      <link>http://canuxcheng.com/post/linux_firewall/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_firewall/</guid>
+      <description>Firewall UFW: linux防火墙配置工具，底层还是调用iptables. filewall: centos的防火墙命令, 底层还是调用iptables. SELinux Security-Enhanced-Linux 本地安全 Netfilter 网络安全</description>
+    </item>
+    
+    <item>
+      <title>Grub</title>
+      <link>http://canuxcheng.com/post/linux_grub/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_grub/</guid>
+      <description>Grub 引导程序。 linux/unix的引导程序有lilo和grub。 配置 修改grub: $ sudo vim /boot/grub/grub.cfg</description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://canuxcheng.com/post/linux/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux/</guid>
+      <description>Linux Linux严格讲指的是Linux这一类操作系统的内核。 Linux内核的github： https://github.com/torvalds/linux Linux内核的站点： https://www.kernel.org/ 商业化的linux系统： redhat enterprise</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/linux_monitoring/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_monitoring/</guid>
+      <description>inode </description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>http://canuxcheng.com/post/markdown/</link>
+      <pubDate>Mon, 28 Mar 2016 22:03:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/markdown/</guid>
+      <description>Markdown Markdown简介 Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。 Markdown和html有很大区别，</description>
+    </item>
+    
+    <item>
+      <title>Nagios</title>
+      <link>http://canuxcheng.com/post/metrics_nagios/</link>
+      <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_nagios/</guid>
+      <description>Nagios Nagios is the industry standard in IT infrastructure monitoring Nagios offers complete monitoring and alerting for servers, switches, applications, and services. Nagios官方宣称nagios是IT基础监控的工业标准。 Nagios提供对服务器，交换机，应用</description>
+    </item>
+    
+    <item>
+      <title>Zabbix</title>
+      <link>http://canuxcheng.com/post/metrics_zabbix/</link>
+      <pubDate>Fri, 25 Mar 2016 11:15:48 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/metrics_zabbix/</guid>
+      <description>Zabbix </description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>http://canuxcheng.com/post/hexo/</link>
+      <pubDate>Tue, 22 Mar 2016 12:59:10 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hexo/</guid>
+      <description>Hexo 什么是hexo Hexo是用nodejs开发的快速、简洁且高效的博客框架， Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://canuxcheng.com/post/hugo/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hugo/</guid>
+      <description>Hugo go开发的静态站点生成器. https://github.com/gohugoio/hugo https://gohugo.io/ 搭建博客 创建环境: # linux $ sudo apt-get install hugo # windows PATH: C:\Hugo\bin\hugo.exe 测试安装: $ hugo help 创建hugo项目: $ cd /home/canux/sites &amp;gt; cd C:\hugo\sites $ hugo new site canuxcheng.com 生成下列文件</description>
+    </item>
+    
+    <item>
+      <title>Pelican</title>
+      <link>http://canuxcheng.com/post/pelican/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/pelican/</guid>
+      <description>Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: $pelican-quickstart 生成下列文件和目录: publishconf.py #</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://canuxcheng.com/post/sec_security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_security/</guid>
+      <description>Title: Security Date: 2016-07-28 16:08:54 title: &amp;ldquo;Csrf&amp;rdquo; date: 2018-07-28T16:08:54 categories: [&amp;ldquo;Security&amp;rdquo;] tags: [&amp;ldquo;capture&amp;rdquo;] keywords: [] author: &amp;ldquo;Canux&amp;rdquo; draft: false Security https://nvd.nist.gov/ http://cve.scap.org.cn/ GFW NGFW UTM Unified Threat Management, 安全网关 BUV: Block Until Verdict WAF Web Application Firewall, web应用防火墙 IPS Intrusion Prevention System, 入侵防御系统 IDS Intrusion Detection System, 入侵检测系统 NSM Network</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/network_monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network_monitoring/</guid>
+      <description>Monitoring network usage:
+bytes_sent(out) bytes_recv(in)  packets:
+packets_sent(out) packets_recv(in)  error_in/out:
+SELECT non_negative_derivative(mean(&amp;quot;err_in&amp;quot;), 1s) AS &amp;quot;recv&amp;quot;, non_negative_derivative(mean(&amp;quot;err_out&amp;quot;), 1s) AS &amp;quot;send&amp;quot; FROM &amp;quot;net&amp;quot; WHERE &amp;quot;interface&amp;quot; =~ /^(vlan|eth|ens|bond).*/ AND $timeFilter GROUP BY time($__interval), &amp;quot;host&amp;quot;, &amp;quot;interface&amp;quot; fill(none)  drop_in/out:
+SELECT non_negative_derivative(mean(&amp;quot;drop_in&amp;quot;), 1s) AS &amp;quot;recv&amp;quot;, non_negative_derivative(mean(&amp;quot;drop_out&amp;quot;), 1s) AS &amp;quot;send&amp;quot; FROM &amp;quot;net&amp;quot; WHERE &amp;quot;interface&amp;quot; =~ /^(vlan|eth|ens|bond).*/ AND $timeFilter GROUP BY time($__interval), &amp;quot;host&amp;quot;, &amp;quot;interface&amp;quot; fill(none)  </description>
+    </item>
+    
+  </channel>
+</rss>

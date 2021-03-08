@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>virtualization on Morgoth</title>
+    <link>http://canuxcheng.com/tags/virtualization/</link>
+    <description>Recent content in virtualization on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Apr 2016 21:47:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Virtualization</title>
+      <link>http://canuxcheng.com/post/virtualization/</link>
+      <pubDate>Tue, 05 Apr 2016 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/virtualization/</guid>
+      <description>Virtualization 虚拟化技术的发展： DataCenter, 最原始的数据中心 Virtualization, 虚拟化技术，包括Kvm, Xen(Citrix), HyperV(MicroSoft), ESXi(VMware)等</description>
+    </item>
+    
+  </channel>
+</rss>

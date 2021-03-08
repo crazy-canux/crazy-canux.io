@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>debug on Morgoth</title>
+    <link>http://canuxcheng.com/tags/debug/</link>
+    <description>Recent content in debug on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/post/go_debug/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_debug/</guid>
+      <description>gdb delve https://github.com/derekparker/delve
+ debug </description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/post/python_debug/</link>
+      <pubDate>Sat, 06 Aug 2016 16:54:08 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python_debug/</guid>
+      <description>IDE pycharm可以通过breakpoint和step调试. debug bdb pdb hotshot timeit trace cProfile profile</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>testing on Morgoth</title>
+    <link>http://canuxcheng.com/tags/testing/</link>
+    <description>Recent content in testing on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Mar 2017 09:41:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing</title>
+      <link>http://canuxcheng.com/post/testing/</link>
+      <pubDate>Wed, 01 Mar 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing/</guid>
+      <description>QA Quality Assurance QA主要就是进行软件测试相关的工作. 软件测试就是使用人工或自动的手段来运行或测量软件系统的过程，以检验软件系统是否满足规定的要求，并找</description>
+    </item>
+    
+    <item>
+      <title>RobotFramework</title>
+      <link>http://canuxcheng.com/post/testing_robotframework/</link>
+      <pubDate>Sat, 25 Feb 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing_robotframework/</guid>
+      <description>Robot Framework https://github.com/robotframework/robotframework https://github.com/robotframework/QuickStartGuide 支持python和java的API. Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). Install: $ pip install robotframework Modular: Test Data Robot Framework(test data syntax) Test Libraries(test library API) + Test Tools System under Test(system interface) Use: $ robot --version $ robot [options] data_sources 会</description>
+    </item>
+    
+    <item>
+      <title>Selenium</title>
+      <link>http://canuxcheng.com/post/testing_selenium/</link>
+      <pubDate>Sat, 25 Feb 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/testing_selenium/</guid>
+      <description>Selenium https://github.com/SeleniumHQ/selenium 用于基于浏览器的web应用的自动化测试工具集． selenium1: deprecated. selenium2: 默认支持firefox&amp;lt;=46. 支持python2.6+, python3.2+ selenium3: 支持firefo</description>
+    </item>
+    
+  </channel>
+</rss>

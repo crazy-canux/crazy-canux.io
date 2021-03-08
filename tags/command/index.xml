@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>command on Morgoth</title>
+    <link>http://canuxcheng.com/tags/command/</link>
+    <description>Recent content in command on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Mar 2019 21:51:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/command/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Command</title>
+      <link>http://canuxcheng.com/post/network_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network_command/</guid>
+      <description>telnet telnet nc/netcat // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设置默认值 $ sudo update-alternatives --config nc $ sudo</description>
+    </item>
+    
+    <item>
+      <title>Command</title>
+      <link>http://canuxcheng.com/post/storage_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_command/</guid>
+      <description>sysstat: # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat iostat -d -x -k 1 10 pidstat -d -p pid iotop # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使用: df $ df -h # 查看目录信息</description>
+    </item>
+    
+  </channel>
+</rss>

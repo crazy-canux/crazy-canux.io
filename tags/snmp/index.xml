@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>snmp on Morgoth</title>
+    <link>http://canuxcheng.com/tags/snmp/</link>
+    <description>Recent content in snmp on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 26 Apr 2016 09:56:04 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/snmp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Snmp</title>
+      <link>http://canuxcheng.com/post/snmp/</link>
+      <pubDate>Tue, 26 Apr 2016 09:56:04 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/snmp/</guid>
+      <description>SNMP Simple Network Management Protocol, 简单网络管理协议 MIB SMI 安装和配置snmp: $sudo apt-get install snmp snmpd snmp-mibs-downloader snmp命令</description>
+    </item>
+    
+  </channel>
+</rss>

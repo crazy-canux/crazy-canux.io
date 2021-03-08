@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Morgoth</title>
+    <link>http://canuxcheng.com/categories/database/</link>
+    <description>Recent content in Database on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 May 2017 14:46:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis</title>
+      <link>http://canuxcheng.com/post/redis/</link>
+      <pubDate>Wed, 03 May 2017 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/redis/</guid>
+      <description>Redis http://redisdoc.com/ redis在key-value存储上性能比memcached更好． 安装： # redis-cli, redis-sentinel, redis-server $ sudo apt-get install redis-server 只安装redis-cli: $ sudo apt-get install redis-tools redis</description>
+    </item>
+    
+    <item>
+      <title>MongoDB</title>
+      <link>http://canuxcheng.com/post/mongodb/</link>
+      <pubDate>Sun, 16 Apr 2017 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/mongodb/</guid>
+      <description>MongoDB https://github.com/mongodb/mongo mongodb是一种开源的文档数据库，高性能，高可用性，自动裁剪． mongodb的database和关系数据库中的database一样．</description>
+    </item>
+    
+    <item>
+      <title>TSDB</title>
+      <link>http://canuxcheng.com/post/database/</link>
+      <pubDate>Tue, 03 Jan 2017 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/database/</guid>
+      <description>RDBMS 关系数据库管理系统。 SQLite Oracle MSSQL Mysql Postgre NoSQL NoSQL: Not only SQL. 非关系型数据库。 memcached(cache) redis(cache) mongodb hbase(hadoop) cassandra(hadoop) rethinkdb TSDB Time series database. 时序数据库 influxdb rrdtool graphite opentsdb premetheus</description>
+    </item>
+    
+    <item>
+      <title>Oracle</title>
+      <link>http://canuxcheng.com/post/oracle/</link>
+      <pubDate>Wed, 01 Jun 2016 22:40:22 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/oracle/</guid>
+      <description>Oracle oracle的GUI： oracle sql developer(officer) pl/sql toad oracle的CLI： sqlplus Oracle命令 sys是oracle默认管理员权限 $ sqlplus / as sysdba system是orac</description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>http://canuxcheng.com/post/sql/</link>
+      <pubDate>Wed, 25 May 2016 22:06:13 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sql/</guid>
+      <description>SQL sql是结构化查询语言。 sql是一种标准，几乎所有关系型数据库都遵守。 但是不同的数据库又有自己的扩展。 SQL分为两部分，DML和DDL。 S</description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>http://canuxcheng.com/post/mysql/</link>
+      <pubDate>Wed, 25 May 2016 12:14:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/mysql/</guid>
+      <description>Mysql 安装mysql服务器 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-addr</description>
+    </item>
+    
+    <item>
+      <title>MSSql</title>
+      <link>http://canuxcheng.com/post/mssql/</link>
+      <pubDate>Wed, 06 Apr 2016 15:33:42 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/mssql/</guid>
+      <description>MSSQL 商业版： 企业版 商业智能版 标准版 免费版： Express Developer Compact Web SQL Azure system databases: master 主数据库 model 模板数据库 msdb 自动机数据库 tempdb 零时交换数据库,不需要备份,挂载到独立的子系统</description>
+    </item>
+    
+    <item>
+      <title>Postgresql</title>
+      <link>http://canuxcheng.com/post/postgre/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/postgre/</guid>
+      <description>PostgreSQL 安装postgresql： $ sudo apt-get install postgresql 安装第三方库： $ sudo apt-get install postgresql-contrib-9.3 libpg-dev postgresql-server-dev-9.3 GUI工具： pgAdminIII CLI工具： psql postgresql的端口是5432． post</description>
+    </item>
+    
+  </channel>
+</rss>

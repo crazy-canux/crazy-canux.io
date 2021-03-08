@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tag on Morgoth</title>
+    <link>http://canuxcheng.com/tags/tag/</link>
+    <description>Recent content in tag on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Jan 2020 20:58:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/tag/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubectl</title>
+      <link>http://canuxcheng.com/post/k8s_kubectl/</link>
+      <pubDate>Fri, 10 Jan 2020 20:58:01 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_kubectl/</guid>
+      <description>kubectl kubectl是kubernetes的管理工具. https://github.com/cloudnativelabs/kube-shell https://github.com/jonmosco/kube-ps1 https://github.com/ahmetb/kubectx 在master上通过kubectl命令管理集群. options: kubectl options # 查看所有命令可用选项 --kubeconfig kubectl --kubeconfig=$HOME/.kube.config (default)</description>
+    </item>
+    
+  </channel>
+</rss>

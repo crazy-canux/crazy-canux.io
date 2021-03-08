@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hawq on Morgoth</title>
+    <link>http://canuxcheng.com/tags/hawq/</link>
+    <description>Recent content in hawq on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Apr 2017 22:57:37 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/hawq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HAWQ</title>
+      <link>http://canuxcheng.com/post/hawq/</link>
+      <pubDate>Mon, 24 Apr 2017 22:57:37 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hawq/</guid>
+      <description>HAWQ http://hawq.incubator.apache.org/ https://github.com/apache/incubator-hawq HAWQ是在Pivotal Greenplum和PostgreSQL基础上开发而来． HAWQ也就是Pivotal HDB. HAWQ和Pivota</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>swarm on Morgoth</title>
+    <link>http://canuxcheng.com/tags/swarm/</link>
+    <description>Recent content in swarm on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Apr 2018 22:02:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/swarm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swarm</title>
+      <link>http://canuxcheng.com/post/swarm/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm/</guid>
+      <description>Swarm docker swarm 是 docker内置的容器编排工具。 从docker1.12开始swarm内置于docker engine. swarm mode具有内置kv存储，服务发现，负载均</description>
+    </item>
+    
+    <item>
+      <title>Swarm CNI</title>
+      <link>http://canuxcheng.com/post/swarm_cni/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm_cni/</guid>
+      <description>CNI CNI: Container Network Intarface 单台host上的container通信 none host bridge 多台host之间的container通信 overlay macvlan 提供overlay/macvlan的网络服</description>
+    </item>
+    
+    <item>
+      <title>Swarm CSI</title>
+      <link>http://canuxcheng.com/post/swarm_csi/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/swarm_csi/</guid>
+      <description>CSI CSI: Container Storage Interface CSI提供容器的数据持久化服务. 容器管理数据的两种方式： 数据卷(Volumes) 挂载主机目录(bind mounts) 临时文件系统(tmpfs)</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>filesystem on Morgoth</title>
+    <link>http://canuxcheng.com/tags/filesystem/</link>
+    <description>Recent content in filesystem on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Apr 2016 14:15:40 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/filesystem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FileSystem</title>
+      <link>http://canuxcheng.com/post/win_filesystem/</link>
+      <pubDate>Sun, 03 Apr 2016 14:15:40 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/win_filesystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FileSystem</title>
+      <link>http://canuxcheng.com/post/linux_filesystem/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_filesystem/</guid>
+      <description>VFS Linux采用虚拟文件系统，支持多个文件系统协议． ext/ext2/ext3/ext4 JFS2 ramfs linux的VM(虚拟内存)包括ramfs和swap. 对内存的支持 swap 交换分区，当内</description>
+    </item>
+    
+  </channel>
+</rss>

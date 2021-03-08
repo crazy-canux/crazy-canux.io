@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>system on Morgoth</title>
+    <link>http://canuxcheng.com/tags/system/</link>
+    <description>Recent content in system on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_system</title>
+      <link>http://canuxcheng.com/post/gsl_system/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_system/</guid>
+      <description>os 提供了操作系统的不依赖平台的接口 import &amp;quot;os&amp;quot; constants # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE # 不存在就创建 O_APPEND int = syscall.O_APPEND # 追加写入 O_TRUNC int = syscall.O_TRUNC # 打开时清空文件</description>
+    </item>
+    
+    <item>
+      <title>PSL_System</title>
+      <link>http://canuxcheng.com/post/psl_system/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_system/</guid>
+      <description>Generic Operating System Services os import os os.path # 参考PSL_File os.name os.curdir os.pardir # 表示上一级路径.., 需要用abspath解析 # os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)) os.sep os.extsep os.altsep os.pathsep os.linesep os.defpath os.devnull classes: functions: WCOREDUMP(...) ... abort(...) fork() # 创建一个子进程，</description>
+    </item>
+    
+  </channel>
+</rss>

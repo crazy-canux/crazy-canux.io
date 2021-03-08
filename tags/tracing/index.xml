@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tracing on Morgoth</title>
+    <link>http://canuxcheng.com/tags/tracing/</link>
+    <description>Recent content in tracing on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 08 Jun 2016 09:46:47 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/tracing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jaeger</title>
+      <link>http://canuxcheng.com/post/tracing_jaeger/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing_jaeger/</guid>
+      <description>Jaeger 一款uber贡献给cncf的微服务tracing监控工具. https://www.jaegertracing.io/ https://github.com/jaegertracing/jaeger Deploy Jaeger on K8S https://github.com/jaegertracing/jaeger-operator</description>
+    </item>
+    
+    <item>
+      <title>Sentry</title>
+      <link>http://canuxcheng.com/post/tracing_sentry/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing_sentry/</guid>
+      <description>Sentry https://github.com/getsentry/sentry
+Deploy Sentry on K8S https://github.com/getsentry/onpremise</description>
+    </item>
+    
+    <item>
+      <title>Tracing</title>
+      <link>http://canuxcheng.com/post/tracing/</link>
+      <pubDate>Wed, 08 Jun 2016 09:46:47 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/tracing/</guid>
+      <description>Tracing APM 监控，也叫全链路监控。 sentry https://github.com/getsentry/sentry zipkin https://github.com/openzipkin/zipkin open-telemetry opentracing和opencensus 合并成open-telemetry. https://github.com/opentracing https://github.com/census-instrumentation https://github.com/open-telemetry jaeger https://github.com/jaegertracing/jaeger</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>init on Morgoth</title>
+    <link>http://canuxcheng.com/tags/init/</link>
+    <description>Recent content in init on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Feb 2019 14:04:05 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/init/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Init</title>
+      <link>http://canuxcheng.com/post/linux_init/</link>
+      <pubDate>Sun, 03 Feb 2019 14:04:05 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_init/</guid>
+      <description>Linux Init linux系统启动的第一个进程,pid=1的进程. $ ls -l /sbin/init $ sudo readlink /sbin/init /sbin/init -&amp;gt; upstart /sbin/init -&amp;gt; /lib/systemd/systemd /etc/init.d The directory containing System V init scripts. 通过service命令操作 /etc/init The directory containing upstart jobs. 通过</description>
+    </item>
+    
+  </channel>
+</rss>

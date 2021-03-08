@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on Morgoth</title>
+    <link>http://canuxcheng.com/tags/network/</link>
+    <description>Recent content in network on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_network</title>
+      <link>http://canuxcheng.com/post/gsl_network/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_network/</guid>
+      <description>net 网络IO接口，包括TCP/IP, UDP, SOCKET, DNS import &amp;quot;net&amp;quot; constants const ( IPv4len = 4 IPv6len = 16 ) variables functions Addr 代表一个网络终端地址． TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口 type Addr interface { Network() string String() string } TCPAddr function: func ResolveTCPAddr(net,</description>
+    </item>
+    
+    <item>
+      <title>PSL_Network</title>
+      <link>http://canuxcheng.com/post/psl_network/</link>
+      <pubDate>Fri, 12 Aug 2016 14:21:36 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_network/</guid>
+      <description>Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i</description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://canuxcheng.com/post/network/</link>
+      <pubDate>Sun, 03 Apr 2016 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/network/</guid>
+      <description>网络基础 小端： 低字节在起始地址，高字节在高地址 大端： 高字节在起始地址，低字节在高地址 linux一般是小端，unix一般是大端 网络模型 OSI七</description>
+    </item>
+    
+  </channel>
+</rss>

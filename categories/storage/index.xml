@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Storage on Morgoth</title>
+    <link>http://canuxcheng.com/categories/storage/</link>
+    <description>Recent content in Storage on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Mar 2019 21:51:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/storage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Command</title>
+      <link>http://canuxcheng.com/post/storage_command/</link>
+      <pubDate>Sun, 31 Mar 2019 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_command/</guid>
+      <description>sysstat: # &amp;lt;https://github.com/sysstat/sysstat&amp;gt; $ sudo apt-get install sysstat # 包括 iostat/mpstat/pidstat/tapestat/cifsiostat iostat -d -x -k 1 10 pidstat -d -p pid iotop # 查看进程的diskio $ sudo apt-get install iotop $ sudo iotop df df计算文件系统磁盘空间使用: df $ df -h # 查看目录信息</description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>http://canuxcheng.com/post/storage_monitoring/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_monitoring/</guid>
+      <description>Monitoring diskio IOPS: Input/Output Per Second. 每秒输入输出量，也叫TPS. SELECT non_negative_derivative(mean(reads),1s) as &amp;quot;read&amp;quot; FROM &amp;quot;diskio&amp;quot; SELECT non_negative_derivative(mean(writes),1s) as &amp;quot;write&amp;quot; FROM &amp;quot;diskio&amp;quot; throughput: SELECT non_negative_derivative(mean(read_bytes),1s) as &amp;quot;read&amp;quot; FROM &amp;quot;diskio&amp;quot; SELECT non_negative_derivative(mean(write_bytes),1s) as &amp;quot;write&amp;quot; FROM &amp;quot;diskio&amp;quot; Utilization: SELECT non_negative_derivative(last(&amp;quot;io_time&amp;quot;),1ms) FROM &amp;quot;diskio&amp;quot; WHERE &amp;quot;name&amp;quot; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &amp;quot;host&amp;quot;,&amp;quot;name&amp;quot;,time(_interval) Queue length: SELECT non_negative_derivative(last(&amp;quot;weighted_io_time&amp;quot;,1ms)) FROM &amp;quot;diskio&amp;quot; WHERE &amp;quot;name&amp;quot; =~ /^(v|s|)d(a|b|c|d)$/ GROUP BY &amp;quot;host&amp;quot;,&amp;quot;name&amp;quot;,time(_interval)</description>
+    </item>
+    
+    <item>
+      <title>overlay</title>
+      <link>http://canuxcheng.com/post/storage_overlay/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage_overlay/</guid>
+      <description>overlay 最下层是一个 lower 层，也就是镜像层，它是一个只读层； 右上层是一个 upper 层，upper 是容器的读写层，upper 层采用了写实复制的机制，也就是说只有</description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>http://canuxcheng.com/post/storage/</link>
+      <pubDate>Thu, 05 Apr 2018 21:47:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/storage/</guid>
+      <description>Storage RAID RAID: redundant array of independent disks, 独立磁盘冗余数组． 存储方式 DAS: direct attached storage, 直连式存储，通过SCSI或FC连接服务器． NAS: network attached storage，网络接入存储，通过IP(N</description>
+    </item>
+    
+  </channel>
+</rss>

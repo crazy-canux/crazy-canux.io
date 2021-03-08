@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cryptographic on Morgoth</title>
+    <link>http://canuxcheng.com/tags/cryptographic/</link>
+    <description>Recent content in cryptographic on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/cryptographic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_cryptographic</title>
+      <link>http://canuxcheng.com/post/gsl_cryptographic/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_cryptographic/</guid>
+      <description>crypto 收集了常用的密码常量 functions RegisterHash(h Hash, f func() hash.Hash) PublicKey interface: type PublicKey interface{} PrivateKey interface: type PrivateKey interface{} Hash type Hash uint method: func (h Hash) Avaliable() bool func (h Hash) Size() int func (h Hash) New() hash.Hash crypto/cipher 用于包装底层块加密算法的实现. Block 代表一个使用</description>
+    </item>
+    
+    <item>
+      <title>PSL_Cryptographic</title>
+      <link>http://canuxcheng.com/post/psl_cryptographic/</link>
+      <pubDate>Sun, 14 Aug 2016 21:15:14 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_cryptographic/</guid>
+      <description>Cryptographic Services hashlib 哈希算法和摘要算法标准库，就是把任意长度的数据转换为一个长度固定的数据串． MD5: Message Digest Algorithm 5. SHA1: Secure Hash Algorithm. import hashlib classes: # methods: # 哈希对象有下列方法： update(arg) # 更新字</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Morgoth</title>
+    <link>http://canuxcheng.com/tags/python/</link>
+    <description>Recent content in python on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Aug 2016 11:04:12 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PSL_Python</title>
+      <link>http://canuxcheng.com/post/psl_python/</link>
+      <pubDate>Mon, 15 Aug 2016 11:04:12 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_python/</guid>
+      <description>Python Runtime Services _builtin_ builtin/builtins - Built-in functions, exceptions, and other objects. python2叫__builtin__ python3叫builtins _main_ main - Top-level script environment. if __name__ == &amp;quot;__main__&amp;quot;: main() 当作为顶层脚本运行时(m</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://canuxcheng.com/post/python/</link>
+      <pubDate>Tue, 21 Jun 2016 21:18:09 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/python/</guid>
+      <description>Python概述 https://docs.python.org/2.7/index.html http://python.usyiyi.cn/translate/python_278/index.html https://docs.python.org/3.5/index.html http://python.usyiyi.cn/translate/python_352/index.html python是一门优雅而健壮的语言. 继承了编译语言(静态语言)的强大性和通用性. 同时也借鉴了脚本语言(动态语言)的易</description>
+    </item>
+    
+  </channel>
+</rss>

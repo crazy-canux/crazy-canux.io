@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rpc on Morgoth</title>
+    <link>http://canuxcheng.com/tags/rpc/</link>
+    <description>Recent content in rpc on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Sep 2017 14:46:19 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/rpc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rpc</title>
+      <link>http://canuxcheng.com/post/rpc/</link>
+      <pubDate>Sun, 03 Sep 2017 14:46:19 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rpc/</guid>
+      <description>RPC Remote Procedure Call Protocol: 远程过程调用. google的rpc框架，支持多语言: https://github.com/grpc/grpc facebook的rpc框架，贡献给了apache, 支持多语言: https://github.com/apache/thrift</description>
+    </item>
+    
+  </channel>
+</rss>

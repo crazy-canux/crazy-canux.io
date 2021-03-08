@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on Morgoth</title>
+    <link>http://canuxcheng.com/tags/golang/</link>
+    <description>Recent content in golang on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go</title>
+      <link>http://canuxcheng.com/post/go/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go/</guid>
+      <description>Go概述 go语言表达能力强，简洁，清晰，高效． go是一个快速的，静态的，强类型的，编译型语言． go具有高并发和垃圾回收功能. Go基本语法 go</description>
+    </item>
+    
+    <item>
+      <title>GSL_golang</title>
+      <link>http://canuxcheng.com/post/gsl_golang/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_golang/</guid>
+      <description>runtime constants // 指定编译器 const Compiler = &amp;quot;gc&amp;quot;/&amp;quot;gccgo&amp;quot; // 处理器架构: 386/amd64/arm const GOARCH string = theGoarch // 操作系统: linux/freebsd/darwin/win const GOOS string = theGoos variables var MemProfileRate int = 512 * 1024 functions func GOROOT() string func Version() string // 返回本地机器的逻辑cpu个数 func NumCPU() int</description>
+    </item>
+    
+  </channel>
+</rss>

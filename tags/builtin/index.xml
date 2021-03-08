@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>builtin on Morgoth</title>
+    <link>http://canuxcheng.com/tags/builtin/</link>
+    <description>Recent content in builtin on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/builtin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_builtin</title>
+      <link>http://canuxcheng.com/post/gsl_builtin/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_builtin/</guid>
+      <description>builtin go的builtin package. constants true false iota variables pointer, slice, map, channel, func, interface的零值： nil functions # 分配并初始化各种类型的对象, 返回一个指针． new(Type) *Type # 分配并初始化一个</description>
+    </item>
+    
+    <item>
+      <title>PSL_builtins</title>
+      <link>http://canuxcheng.com/post/psl_builtins/</link>
+      <pubDate>Mon, 15 Aug 2016 11:16:29 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_builtins/</guid>
+      <description>_builtins_ python的内置模块，所有python的内置功能都在这个模块中，不需要import导入就可以使用。 包括内置类类型以及所属的内置方法，和内</description>
+    </item>
+    
+  </channel>
+</rss>

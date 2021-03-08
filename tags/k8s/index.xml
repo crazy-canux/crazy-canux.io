@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>k8s on Morgoth</title>
+    <link>http://canuxcheng.com/tags/k8s/</link>
+    <description>Recent content in k8s on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 26 Mar 2020 20:55:52 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>K8S CNI</title>
+      <link>http://canuxcheng.com/post/k8s_cni/</link>
+      <pubDate>Thu, 26 Mar 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_cni/</guid>
+      <description>CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到</description>
+    </item>
+    
+    <item>
+      <title>K8S CSI</title>
+      <link>http://canuxcheng.com/post/k8s_csi/</link>
+      <pubDate>Wed, 25 Mar 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_csi/</guid>
+      <description>CSI https://github.com/container-storage-interface/spec
+ </description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>http://canuxcheng.com/post/k8s_api/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_api/</guid>
+      <description>API api-server统一的操作入口. kubectl, UI, 等都是通过api-server操作资源. payload可以是json，也可以是yaml. yaml文</description>
+    </item>
+    
+    <item>
+      <title>ArgoCD</title>
+      <link>http://canuxcheng.com/post/k8s_argo/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_argo/</guid>
+      <description>argo-cd https://github.com/argoproj/argo-cd
+flux-cd https://github.com/fluxcd/flux
+jenkins-X </description>
+    </item>
+    
+    <item>
+      <title>CoreDNS</title>
+      <link>http://canuxcheng.com/post/k8s_coredns/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_coredns/</guid>
+      <description>CoreDNS </description>
+    </item>
+    
+    <item>
+      <title>Etcd</title>
+      <link>http://canuxcheng.com/post/k8s_etcd/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_etcd/</guid>
+      <description>Etcd https://github.com/etcd-io/etcd 类似的有consul和zoomkeeper. etcdctl 使用证书访问: $ etcdctl \ --cacert=/etc/kubernetes/pki/etcd/ca.crt \ --cert=/etc/kubernetes/pki/etcd/server.crt \ --key=/etc/kubernetes/pki/etcd/server.key \ --insecure-skip-tls-verify=true \ &amp;lt;command&amp;gt; 查看所有key $ etcdctl get / --prefix --keys-only</description>
+    </item>
+    
+    <item>
+      <title>Operator</title>
+      <link>http://canuxcheng.com/post/k8s_operator/</link>
+      <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_operator/</guid>
+      <description>Operator operator-framework https://operatorhub.io/
+https://github.com/operator-framework</description>
+    </item>
+    
+    <item>
+      <title>Dashboard</title>
+      <link>http://canuxcheng.com/post/k8s_dashboard/</link>
+      <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_dashboard/</guid>
+      <description>dashboard kubernetes-dashboard lens octant kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: name: kubernetes-dashboard-admin namespace: kubernetes-dashboard roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount name: dashboard-admin namespace: kubernetes-dashboard // 创建</description>
+    </item>
+    
+    <item>
+      <title>Ingress</title>
+      <link>http://canuxcheng.com/post/k8s_ingress/</link>
+      <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
+      <description>Nginx https://github.com/kubernetes/ingress-nginx // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&#39;{.items[0].metadata.name}&#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik https://github.com/containous/traefik</description>
+    </item>
+    
+    <item>
+      <title>Kubeadm</title>
+      <link>http://canuxcheng.com/post/k8s_kubeadm/</link>
+      <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_kubeadm/</guid>
+      <description>kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: $ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &amp;quot;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $</description>
+    </item>
+    
+    <item>
+      <title>Minikube</title>
+      <link>http://canuxcheng.com/post/k8s_minikube/</link>
+      <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_minikube/</guid>
+      <description>minikube https://kubernetes.io/zh/docs/setup/learning-environment/minikube/ minikube 能快速创建k8s的开发集群，支持在虚拟机上创建，也支持裸机创建. // 在裸机上创建： sudo minikube start --vm-driver=none</description>
+    </item>
+    
+    <item>
+      <title>OpenShift</title>
+      <link>http://canuxcheng.com/post/openshift/</link>
+      <pubDate>Mon, 02 Dec 2019 21:43:24 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/openshift/</guid>
+      <description>OpenShift readhat kubernetes.
+Deploy pre-install:
+&amp;gt; check &amp;quot;sysctl net.ipv4.ip_forward&amp;quot; is set to 1 /etc/containers/registries.conf [registries.insecure] registries = [&#39;172.30.0.0/16&#39;] /etc/docker/daemon.json { &amp;quot;insecure-registries&amp;quot;: [ &amp;quot;172.30.0.0/16&amp;quot; ] } $ sudo systemctl daemon-reload $ sudo systemctl restart docker docker network inspect -f &amp;quot;{{range .IPAM.Config }}{{ .Subnet }}{{end}}&amp;quot; bridge # firewall-cmd --permanent --new-zone dockerc # firewall-cmd --permanent --zone dockerc --add-source 172.17.0.0/16 # firewall-cmd --permanent --zone dockerc --add-port 8443/tcp # firewall-cmd --permanent --zone dockerc --add-port 53/udp # firewall-cmd --permanent --zone dockerc --add-port 8053/udp # firewall-cmd --reload  install:</description>
+    </item>
+    
+    <item>
+      <title>k8S CRI</title>
+      <link>http://canuxcheng.com/post/k8s_cri/</link>
+      <pubDate>Wed, 05 Jun 2019 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_cri/</guid>
+      <description>CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>http://canuxcheng.com/post/kubernetes/</link>
+      <pubDate>Thu, 05 Apr 2018 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/kubernetes/</guid>
+      <description>Kubernetes https://github.com/kubernetes/kubernetes https://github.com/kubernetes/kubeadm https://github.com/kubernetes/kops https://github.com/kubernetes-sigs/kubespray kubernetes简称k8s, 是开源的容器编排工具。 安装单机版k8s: minikube 安装k8s集群: kubeadm (k8s内置的，类似于docker swarm mode,</description>
+    </item>
+    
+  </channel>
+</rss>

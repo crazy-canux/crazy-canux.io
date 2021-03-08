@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ntp on Morgoth</title>
+    <link>http://canuxcheng.com/tags/ntp/</link>
+    <description>Recent content in ntp on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Jul 2016 16:08:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/ntp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ntp</title>
+      <link>http://canuxcheng.com/post/ntp/</link>
+      <pubDate>Thu, 28 Jul 2016 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/ntp/</guid>
+      <description>NTP NFS: Network Time Protocol UTC: Coordinated Universal Time, 世界统一时间 GMT: Greenwich Mean Time, 格林尼治标准时间, = UTC CET: Central European Time, 欧洲中部时间, = UTC+1, 下令时=UTC+2 CST: Chinese Standard Time, 中国标准时间, = UTC+8 时区管理 $</description>
+    </item>
+    
+  </channel>
+</rss>

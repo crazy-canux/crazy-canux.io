@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openstack on Morgoth</title>
+    <link>http://canuxcheng.com/tags/openstack/</link>
+    <description>Recent content in openstack on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Feb 2017 22:02:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/openstack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenStack</title>
+      <link>http://canuxcheng.com/post/openstack/</link>
+      <pubDate>Thu, 23 Feb 2017 22:02:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/openstack/</guid>
+      <description>OpenStack https://github.com/openstack https://github.com/openstack-dev openstack是一个云操作系统，通过数据中心可控制大型的计算，存储，网络等资源池． 所有的管理通过前端的界面管理员就可以完成，同样也</description>
+    </item>
+    
+  </channel>
+</rss>

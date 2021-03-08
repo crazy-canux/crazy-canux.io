@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on Morgoth</title>
+    <link>http://canuxcheng.com/tags/shell/</link>
+    <description>Recent content in shell on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Dec 2016 00:55:37 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Awk</title>
+      <link>http://canuxcheng.com/post/shell_awk/</link>
+      <pubDate>Wed, 14 Dec 2016 00:55:37 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_awk/</guid>
+      <description>awk awk 是一门编程语言 awk/nawk/gawk/mawk：比sed更高级的流编辑工具，是sed和grep的升级版，主要用于数据流处理。 nawk</description>
+    </item>
+    
+    <item>
+      <title>Find</title>
+      <link>http://canuxcheng.com/post/shell_find/</link>
+      <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_find/</guid>
+      <description>find Find 查找，用于在目录中查找。 find path options tests actions path 路径 options 选项 tests 测试 actions 动作 optioins选项: -follow -depth -maxdepth -mindepth find dir -mindepth n 指定最小的目录深度，至少从dir往下n级</description>
+    </item>
+    
+    <item>
+      <title>Grep</title>
+      <link>http://canuxcheng.com/post/shell_grep/</link>
+      <pubDate>Wed, 20 Apr 2016 13:55:36 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_grep/</guid>
+      <description>grep grep相关的命令： grep egrep == grep -E fgrep == grep -F rgrep == grep -r grep: grep [OPTIONS] PATTERN [FILE/DIR...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE/DIR...] options: # Matcher Selection -G, --basic-regexp grep默认只支持BRE, 只能使用基本的RE -E, --extended-regexp 选择E</description>
+    </item>
+    
+    <item>
+      <title>Sed</title>
+      <link>http://canuxcheng.com/post/shell_sed/</link>
+      <pubDate>Sat, 02 Apr 2016 11:15:57 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_sed/</guid>
+      <description>sed sed：stream editor 流编辑器 ，主要用于文本处理。 sed命令格式： sed -options ’expression1;expression2’ file 执行多个命令 sed -options</description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>http://canuxcheng.com/post/shell/</link>
+      <pubDate>Fri, 01 Apr 2016 20:42:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell/</guid>
+      <description>Shell Linux的shell有很多种,大多数linux发行版的默认登录shell是BASH。 查看当前使用的shell： echo $SHELL echo $0 查看安装了哪些sh</description>
+    </item>
+    
+    <item>
+      <title>Coreutils</title>
+      <link>http://canuxcheng.com/post/shell_coreutils/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_coreutils/</guid>
+      <description>Linux的外部命令 Linux外部命令的项目是coreutils。 外部命令在coreutils目录中 查看外部命令所在目录： echo $PATH 外部命令在下列</description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>http://canuxcheng.com/post/shell_utils/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_utils/</guid>
+      <description>Linux的第三方命令 Linux外部命令的项目是coreutils. 外部命令在coreutils目录中. 第三方命令(相当于外部命令)． 文件和</description>
+    </item>
+    
+    <item>
+      <title>Builtins</title>
+      <link>http://canuxcheng.com/post/shell_builtins/</link>
+      <pubDate>Thu, 31 Mar 2016 21:51:03 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/shell_builtins/</guid>
+      <description>Linux内置命令 内置命令在bash/builtins目录中 shell命令分为内置命令和外部命令. 查看一个命令是内置命令还是外部命令： type -a [command]</description>
+    </item>
+    
+  </channel>
+</rss>

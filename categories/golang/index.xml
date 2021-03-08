@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Morgoth</title>
+    <link>http://canuxcheng.com/categories/golang/</link>
+    <description>Recent content in Golang on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Apr 2019 21:42:07 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Package</title>
+      <link>http://canuxcheng.com/post/go_package/</link>
+      <pubDate>Tue, 23 Apr 2019 21:42:07 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>http://canuxcheng.com/post/go_debug/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_debug/</guid>
+      <description>gdb delve https://github.com/derekparker/delve
+ debug </description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>http://canuxcheng.com/post/go_devops/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_devops/</guid>
+      <description>Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: GOROOT 就是go的安装目录 windows标准包安装go: msi指定安装路径，自动添加%GO</description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>http://canuxcheng.com/post/go_document/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_document/</guid>
+      <description>Document go文档相关 https://godoc.org/ go文档的两种方式: go doc godoc go doc 直接在命令行查看文档 $ go doc [package/symbol] godoc go自带的文档命令行接口,在浏览器查看文档 godoc package [name ...] godoc -http=:6060 通过git</description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>http://canuxcheng.com/post/go/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go/</guid>
+      <description>Go概述 go语言表达能力强，简洁，清晰，高效． go是一个快速的，静态的，强类型的，编译型语言． go具有高并发和垃圾回收功能. Go基本语法 go</description>
+    </item>
+    
+    <item>
+      <title>Go_Concurrency</title>
+      <link>http://canuxcheng.com/post/go_concurrency/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_concurrency/</guid>
+      <description>并发/concurrency go的并发同步模型来自CSP泛型。CSP是一种消息传递模型，用于在goroutine之间同步和传递数据的类型是c</description>
+    </item>
+    
+    <item>
+      <title>GSL_builtin</title>
+      <link>http://canuxcheng.com/post/gsl_builtin/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_builtin/</guid>
+      <description>builtin go的builtin package. constants true false iota variables pointer, slice, map, channel, func, interface的零值： nil functions # 分配并初始化各种类型的对象, 返回一个指针． new(Type) *Type # 分配并初始化一个</description>
+    </item>
+    
+    <item>
+      <title>GSL_concurrency</title>
+      <link>http://canuxcheng.com/post/gsl_concurrency/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_concurrency/</guid>
+      <description>sync sync用于goroutine同步. import &amp;quot;sync&amp;quot; constants variables functions Locker 一个可以加锁和解锁的接口 type Locker interface { Lock() Unlock() } Pool Pool是一个可以分别存取的临时对象的集合。 Once 只执</description>
+    </item>
+    
+    <item>
+      <title>GSL_cryptographic</title>
+      <link>http://canuxcheng.com/post/gsl_cryptographic/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_cryptographic/</guid>
+      <description>crypto 收集了常用的密码常量 functions RegisterHash(h Hash, f func() hash.Hash) PublicKey interface: type PublicKey interface{} PrivateKey interface: type PrivateKey interface{} Hash type Hash uint method: func (h Hash) Avaliable() bool func (h Hash) Size() int func (h Hash) New() hash.Hash crypto/cipher 用于包装底层块加密算法的实现. Block 代表一个使用</description>
+    </item>
+    
+    <item>
+      <title>GSL_data</title>
+      <link>http://canuxcheng.com/post/gsl_data/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_data/</guid>
+      <description>time constants const: const ( ANSIC = &amp;quot;Mon Jan _2 15:04:05 2006&amp;quot; Unixdate = &amp;quot;Mon Jan _2 15:04:05 MST 2006&amp;quot; RFC3339 = &amp;quot;2006-01-02T15:04:05Z07:00&amp;quot; ... ) functions // 阻塞go程d代表的时间段 func Sleep(d Duration) func After(d Duration) &amp;lt;- chan Time func Tick(d Duration) &amp;lt;- chan Time Time 代表一个纳秒精度的时间点. 零值</description>
+    </item>
+    
+    <item>
+      <title>GSL_database</title>
+      <link>http://canuxcheng.com/post/gsl_database/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_database/</guid>
+      <description>database/sql 使用该包，必须提供一个数据库驱动 https://github.com/golang/go/wiki/SQLDrivers mssql driver: https://github.com/denisenkom/go-mssqldb mysql driver: https://github.com/go-sql-driver/mysql postgresql driver: https://github.com/lib/pq https://github.com/jackc/pgx variables // QueryRow 没有返回row时，调用返回值的Scan方法会返回该变量 var ErrNoRows = errors.New(&amp;quot;sql: no rows in result set&amp;quot;) functions // 注</description>
+    </item>
+    
+    <item>
+      <title>GSL_file</title>
+      <link>http://canuxcheng.com/post/gsl_file/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_file/</guid>
+      <description>path function func IsAbs(path string) bool func Join(elem ...string) string func Split(path string) (dir, file string) func Join(elem ...string) string func Dir(path string) string func Base(path string) string func Ext(path string) string ... path/filepath Constants const ( Separator = os.PathSeparator ListSeparator = os.PathListSeparator ) Variable var ErrBadPattern = errors.New(&amp;quot;Syntax error in pattern&amp;quot;) var SkipDir = errors.New(&amp;quot;skip this diractory&amp;quot;) function func IsAbs(path string) bool func Abs(path string) (string, error) // 返</description>
+    </item>
+    
+    <item>
+      <title>GSL_golang</title>
+      <link>http://canuxcheng.com/post/gsl_golang/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_golang/</guid>
+      <description>runtime constants // 指定编译器 const Compiler = &amp;quot;gc&amp;quot;/&amp;quot;gccgo&amp;quot; // 处理器架构: 386/amd64/arm const GOARCH string = theGoarch // 操作系统: linux/freebsd/darwin/win const GOOS string = theGoos variables var MemProfileRate int = 512 * 1024 functions func GOROOT() string func Version() string // 返回本地机器的逻辑cpu个数 func NumCPU() int</description>
+    </item>
+    
+    <item>
+      <title>GSL_math</title>
+      <link>http://canuxcheng.com/post/gsl_math/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_math/</guid>
+      <description>math constants variables functions math/big math/cmplx math/rand sort functions func Ints(a []int) func IntAreSorted(a []int) bool func SearchInts(a []int, x int) int func Float64s(a []float64) func Float64sArerSorted(a []float64) bool func SearchFloat64s(a []float64, x float64) int func Strings(a []string) func StringsAreSorted(a []string) bool func SearchStrings(a []string, x string) int func Sort(data Interface) func Stable(data Interface) func IsSorted(data Interface) bool func Reverse(data Interface) Interface // 二分查找 func Search(n int,</description>
+    </item>
+    
+    <item>
+      <title>GSL_multimedia</title>
+      <link>http://canuxcheng.com/post/gsl_multimedia/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_multimedia/</guid>
+      <description>image  mime </description>
+    </item>
+    
+    <item>
+      <title>GSL_network</title>
+      <link>http://canuxcheng.com/post/gsl_network/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_network/</guid>
+      <description>net 网络IO接口，包括TCP/IP, UDP, SOCKET, DNS import &amp;quot;net&amp;quot; constants const ( IPv4len = 4 IPv6len = 16 ) variables functions Addr 代表一个网络终端地址． TCPAddr, UDPAddr, IPAddr, UnixAddr 都实现了该接口 type Addr interface { Network() string String() string } TCPAddr function: func ResolveTCPAddr(net,</description>
+    </item>
+    
+    <item>
+      <title>GSL_oop</title>
+      <link>http://canuxcheng.com/post/gsl_oop/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_oop/</guid>
+      <description>reflect constants const: const ( SelectSend SelectRecv SelectDefault ) functions // 将src拷贝到dst, 直到src被耗尽或dst被装满. func Copy(dst, src Value) int // 判断两个值是否深度一致 func DeepEqual(a1, a2 interface{}) bool Kind 表示Type类型值</description>
+    </item>
+    
+    <item>
+      <title>GSL_string</title>
+      <link>http://canuxcheng.com/post/gsl_string/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_string/</guid>
+      <description>strings 实现了用于操作字符的函数. functions func EqualFold(s, t string) bool func HasPrefix(s, prefix string) bool func HasSuffix(s, suffix string) bool func Count(s, sep string) int func Contains(s, substr string) bool ... func Index(s, sep string) int ... func LastIndex(s, sep string) int ... func title(s string) string func ToLower(s string) string ... // 返回count</description>
+    </item>
+    
+    <item>
+      <title>GSL_system</title>
+      <link>http://canuxcheng.com/post/gsl_system/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_system/</guid>
+      <description>os 提供了操作系统的不依赖平台的接口 import &amp;quot;os&amp;quot; constants # flag 参数 const ( O_RDONLY int = syscall.O_RDONLY O_WRONLY int = syscall.O_WRONLY O_RDWR int = syscall.O_RDWR O_CREATE int = syscall.O_CREATE # 不存在就创建 O_APPEND int = syscall.O_APPEND # 追加写入 O_TRUNC int = syscall.O_TRUNC # 打开时清空文件</description>
+    </item>
+    
+    <item>
+      <title>GSL_test</title>
+      <link>http://canuxcheng.com/post/gsl_test/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_test/</guid>
+      <description>testing go的测试由go test命令和testing包组成． 测试程序命名： XXX.go # 测试文件和源码放在一个包中 XXX_test.go 测试程序结构： import &amp;quot;testing&amp;quot; # 单元测试 # go test 会自动</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>http://canuxcheng.com/post/go_oop/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/go_oop/</guid>
+      <description>Go面向对象 golang通过方法和接口实现面向对象. 方法/method go中没有类，但是可以为结构体定义方法． 方法就是一类带有特殊的 接收者参</description>
+    </item>
+    
+  </channel>
+</rss>

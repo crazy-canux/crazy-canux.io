@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sqlinjection on Morgoth</title>
+    <link>http://canuxcheng.com/tags/sqlinjection/</link>
+    <description>Recent content in sqlinjection on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 28 Jul 2018 16:08:54 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/sqlinjection/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sql Injection</title>
+      <link>http://canuxcheng.com/post/sec_sqlinjection/</link>
+      <pubDate>Sat, 28 Jul 2018 16:08:54 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/sec_sqlinjection/</guid>
+      <description>SQL Injection 什么是sql injection:从数据库获取敏感信息,或者利用数据库的特性执行添加用户,导出文件等一系列恶意操作,甚至有可能获取数据库乃</description>
+    </item>
+    
+  </channel>
+</rss>

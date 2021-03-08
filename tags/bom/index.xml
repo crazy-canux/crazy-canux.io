@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bom on Morgoth</title>
+    <link>http://canuxcheng.com/tags/bom/</link>
+    <description>Recent content in bom on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 15 Mar 2018 09:36:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/bom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JS BOM</title>
+      <link>http://canuxcheng.com/post/js_bom/</link>
+      <pubDate>Thu, 15 Mar 2018 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_bom/</guid>
+      <description>BOM Browser Object Model 介绍浏览器对象，不过缺乏规范. window window对象是最顶层对象，有6大属性,属性本身也是对象. window对象的document属性也</description>
+    </item>
+    
+  </channel>
+</rss>

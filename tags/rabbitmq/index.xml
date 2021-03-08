@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rabbitmq on Morgoth</title>
+    <link>http://canuxcheng.com/tags/rabbitmq/</link>
+    <description>Recent content in rabbitmq on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 25 Sep 2017 09:41:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rabbitmq</title>
+      <link>http://canuxcheng.com/post/rabbitmq/</link>
+      <pubDate>Mon, 25 Sep 2017 09:41:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/rabbitmq/</guid>
+      <description>AMQP AMQP: Advanced Message Queuing Protocol,高级消息队列协议 常用的开源AMQP框架： https://github.com/rabbitmq https://github.com/apache/kafka https://github.com/apache/activemq MQTT MQTT: Message Queuing Telemetry Transport,消息队列遥测传输协议 Rabbitmq https://github.com/rabbitmq Rabbit</description>
+    </item>
+    
+  </channel>
+</rss>

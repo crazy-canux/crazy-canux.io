@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>npm on Morgoth</title>
+    <link>http://canuxcheng.com/tags/npm/</link>
+    <description>Recent content in npm on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Sep 2016 03:31:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NPM</title>
+      <link>http://canuxcheng.com/post/js_npm/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_npm/</guid>
+      <description>NPM npm: node package manager. npm 由三部分组成： website https://www.npmjs.com CLI registry https://registry.npmjs.org config: // 修改registry $ npm config set registry https://registry.npm.taobao.org $ npm config get registry // 修改默认全局安装路径 mkdir /path/npm_global npm config set prefix /path/npm_global echo &#39;export PATH=/path/npm_global/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.profile source ~/.profile // 查看配</description>
+    </item>
+    
+  </channel>
+</rss>

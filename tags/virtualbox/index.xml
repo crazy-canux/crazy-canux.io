@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>virtualbox on Morgoth</title>
+    <link>http://canuxcheng.com/tags/virtualbox/</link>
+    <description>Recent content in virtualbox on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 03 Jun 2019 22:53:23 +0800</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Virtualbox</title>
+      <link>http://canuxcheng.com/post/virtualbox/</link>
+      <pubDate>Mon, 03 Jun 2019 22:53:23 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/virtualbox/</guid>
+      <description>Virtualbox 虚拟化工具virtualbox. vboxmanage vm // 导入ova $ vboxmanage import win7.ova // 添加host网络 $ vboxmanage modifyvm &amp;quot;win764&amp;quot; --nic1 hostonly --hostonlyadapter1 vboxnet0 // 添加bridge网络 $ vboxmanage modifyvm &amp;quot;Win732&amp;quot; --nic2 bridged --bridgeadapter2 docker_gwbridge // 重命名v</description>
+    </item>
+    
+  </channel>
+</rss>

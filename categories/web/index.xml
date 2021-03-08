@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Morgoth</title>
+    <link>http://canuxcheng.com/categories/web/</link>
+    <description>Recent content in Web on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 05 Mar 2021 09:36:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TypeScript</title>
+      <link>http://canuxcheng.com/post/js_ts/</link>
+      <pubDate>Fri, 05 Mar 2021 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_ts/</guid>
+      <description>TypeScript https://github.com/microsoft/TypeScript
+https://www.typescriptlang.org/zh/</description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>http://canuxcheng.com/post/js_vue/</link>
+      <pubDate>Sun, 27 Jan 2019 22:19:20 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_vue/</guid>
+      <description>Vue https://github.com/vuejs/vue https://github.com/vuejs/vue-cli 安装 vue-cli: $ npm install -g @vue/cli 新建项目: $ vue create &amp;lt;my-app&amp;gt; 测试: 打包:</description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://canuxcheng.com/post/nginx/</link>
+      <pubDate>Thu, 27 Sep 2018 03:25:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/nginx/</guid>
+      <description>Nginx 安装 配置 命令： nginx -s stop/quit/reload/reopen nginx -V 详细信息 nginx -v 版本号 nginx -t 检查配置文件</description>
+    </item>
+    
+    <item>
+      <title>JS BOM</title>
+      <link>http://canuxcheng.com/post/js_bom/</link>
+      <pubDate>Thu, 15 Mar 2018 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_bom/</guid>
+      <description>BOM Browser Object Model 介绍浏览器对象，不过缺乏规范. window window对象是最顶层对象，有6大属性,属性本身也是对象. window对象的document属性也</description>
+    </item>
+    
+    <item>
+      <title>Xml</title>
+      <link>http://canuxcheng.com/post/xml/</link>
+      <pubDate>Fri, 07 Apr 2017 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/xml/</guid>
+      <description>XML  </description>
+    </item>
+    
+    <item>
+      <title>Xpath</title>
+      <link>http://canuxcheng.com/post/xpath/</link>
+      <pubDate>Fri, 07 Apr 2017 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/xpath/</guid>
+      <description>XPath XPath是一门在XML文档中查找信息的语言． xpath定位有绝对定位和相对定位，推荐使用相对定位． 绝对的XPath定位包含了从HTML根</description>
+    </item>
+    
+    <item>
+      <title>JS DOM</title>
+      <link>http://canuxcheng.com/post/js_dom/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_dom/</guid>
+      <description>DOM DOM: document object model. 当网页被加载时，浏览器会创建页面的文档对象模型(DOM). DOM操作需要在html加载完成后进程. js可以通过DOM访问html文</description>
+    </item>
+    
+    <item>
+      <title>JS OOP</title>
+      <link>http://canuxcheng.com/post/js_oop/</link>
+      <pubDate>Wed, 15 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_oop/</guid>
+      <description>OOP javascript中一切都是对象. javacript内置了Bull/Number/String/Object/Function/Arra</description>
+    </item>
+    
+    <item>
+      <title>Angular</title>
+      <link>http://canuxcheng.com/post/js_angular/</link>
+      <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_angular/</guid>
+      <description>angularjs angularjs1.* https://github.com/angular/angular.js https://angularjs.org/ Angular angular.js 的升级版 https://github.com/angular/angular https://github.com/angular/angular-cli https://angular.io https://angular.cn 安装 angular-cli: $ npm install -g @angular/cli 查看版本: $ ng v 新建项目: $ ng new &amp;lt;my-app&amp;gt; # 严格模式 $ ng new &amp;lt;my-app&amp;gt; --strict 测试项目: $ cd &amp;lt;my-app&amp;gt; // --open会自动打开浏</description>
+    </item>
+    
+    <item>
+      <title>JS</title>
+      <link>http://canuxcheng.com/post/js/</link>
+      <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js/</guid>
+      <description>JavaScript概述 Javascript包括三部分: ECMAScript核心,提供核心语言功能． DOM文档对象模型, 提供访问和操作网页内</description>
+    </item>
+    
+    <item>
+      <title>JS Test</title>
+      <link>http://canuxcheng.com/post/js_test/</link>
+      <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_test/</guid>
+      <description>gulp Automation - gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow. https://github.com/gulpjs/gulp gulp command line $ npm install --global gulp-cli gulp for devDependencies $ npm install --save-dev gulp create gulpfile.js and test it. $ vim gulpfile.js $ gulp karma A simple tool that allows you to execute JavaScript code in multiple real browsers. angularjs 的 test runner. The main purpose of Karma</description>
+    </item>
+    
+    <item>
+      <title>Wordpress</title>
+      <link>http://canuxcheng.com/post/wordpress/</link>
+      <pubDate>Fri, 18 Nov 2016 00:06:31 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/wordpress/</guid>
+      <description>WordPress 安装 安装依赖： $sudo apt install apache2 $sudo apt install mysql-server $sudo apt install php5 下载wordpress： $cd /var/www/html $git clone https://github.com/WordPress/WordPress.git 配置 添加mysql数据库： $mysql -u root -p mysql&amp;gt; create user &#39;wordpress&#39;@&#39;localhost&#39; identified by &#39;******&#39;; mysql&amp;gt; create database &#39;wordpress&#39;; mysql&amp;gt; GRANT ALL PRIVILEGES ON</description>
+    </item>
+    
+    <item>
+      <title>Html Form</title>
+      <link>http://canuxcheng.com/post/html_form/</link>
+      <pubDate>Mon, 31 Oct 2016 04:00:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/html_form/</guid>
+      <description>html表单 html表单用于搜集不同类型的用户输入。 form form元素定义html表单。支持全局属性和事件属性。 &amp;lt;form action=&amp;quot;action_page.py&amp;quot;&amp;gt; &amp;lt;fieldset&amp;gt; &amp;lt;legend&amp;gt;Form information:&amp;lt;/legend&amp;gt; First name:&amp;lt;br&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;firstname&amp;quot;&amp;gt; &amp;lt;br&amp;gt; Last name:&amp;lt;br&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;lastname&amp;quot;&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap</title>
+      <link>http://canuxcheng.com/post/js_bootstrap/</link>
+      <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_bootstrap/</guid>
+      <description>Bootstrap https://github.com/twbs/bootstrap install: $ npm install bootstrap@next HTML,CSS,JavaScript的支持响应式和移动设备的WEB框架.</description>
+    </item>
+    
+    <item>
+      <title>jQuery</title>
+      <link>http://canuxcheng.com/post/js_jquery/</link>
+      <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_jquery/</guid>
+      <description>jQuery https://github.com/jquery/jquery
+install:
+$ npm install jqury  </description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>http://canuxcheng.com/post/js_node/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_node/</guid>
+      <description>Nodejs https://github.com/nodejs/node Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 Node.js 的包管理器npm，是全球最大的开源库生态系统</description>
+    </item>
+    
+    <item>
+      <title>NPM</title>
+      <link>http://canuxcheng.com/post/js_npm/</link>
+      <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/js_npm/</guid>
+      <description>NPM npm: node package manager. npm 由三部分组成： website https://www.npmjs.com CLI registry https://registry.npmjs.org config: // 修改registry $ npm config set registry https://registry.npm.taobao.org $ npm config get registry // 修改默认全局安装路径 mkdir /path/npm_global npm config set prefix /path/npm_global echo &#39;export PATH=/path/npm_global/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.profile source ~/.profile // 查看配</description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://canuxcheng.com/post/web/</link>
+      <pubDate>Tue, 27 Sep 2016 03:25:26 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/web/</guid>
+      <description>WEB web一般包括web server, web service, load balancing. URL: Uniform Resource Locator, 统一资源定位符． scheme://host[:port#]/path/.../[?query-string][#anchor] DNS: Domain Name System, 域名系统. header: header中用来保存session，cookie等头部信息．</description>
+    </item>
+    
+    <item>
+      <title>ReStructuredText</title>
+      <link>http://canuxcheng.com/post/restructuredtext/</link>
+      <pubDate>Mon, 08 Aug 2016 13:39:38 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/restructuredtext/</guid>
+      <description>reStructuredText http://docutils.sourceforge.net/rst.html reST是易读所见即所得的文本标记语言，格式类似markdown。 python的reST参考pep12和pep287: https://www.python.org/dev/peps/pep-0012/ https://www.python.org/dev/peps/pep-0287/ 主标题： title ===== =====</description>
+    </item>
+    
+    <item>
+      <title>Json</title>
+      <link>http://canuxcheng.com/post/json/</link>
+      <pubDate>Thu, 07 Jul 2016 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/json/</guid>
+      <description>JSON http://www.json.org/ JSON: JavaScript Object Notation. json有两种数据结构. key-value/键值对 { key: value, key1: value1, ... } 列表/数组 [value, value1, ...] 数据类型 bool: python -&amp;gt; True/False go -&amp;gt; true/false string: &amp;gt; 只能用双引号. python -&amp;gt; str go</description>
+    </item>
+    
+    <item>
+      <title>Yaml</title>
+      <link>http://canuxcheng.com/post/yaml/</link>
+      <pubDate>Thu, 07 Jul 2016 16:43:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/yaml/</guid>
+      <description>YAML https://yaml.org
+Yaml Ain&amp;rsquo;t Markup Language.</description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>http://canuxcheng.com/post/css/</link>
+      <pubDate>Thu, 23 Jun 2016 09:40:45 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/css/</guid>
+      <description>CSS CSS是叠层样式表 CSS3 CSS3是最新的CSS标准 CSS创建 优先级从上往下。 内联样式， 在html中通过style属性定义，仅用于一个html元</description>
+    </item>
+    
+    <item>
+      <title>Html</title>
+      <link>http://canuxcheng.com/post/html/</link>
+      <pubDate>Thu, 23 Jun 2016 09:40:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/html/</guid>
+      <description>HTML HTML是超文本标记语言 XHTML XHTML是更严谨的更纯净的HTML HTML5 HTML5是下一代HTML html元素和属性 html元素指从开始标签到结束</description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>http://canuxcheng.com/post/markdown/</link>
+      <pubDate>Mon, 28 Mar 2016 22:03:15 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/markdown/</guid>
+      <description>Markdown Markdown简介 Markdown是一种轻量级文本标记语言, Markdown的目标是实现易读易写。 Markdown和html有很大区别，</description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>http://canuxcheng.com/post/hexo/</link>
+      <pubDate>Tue, 22 Mar 2016 12:59:10 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hexo/</guid>
+      <description>Hexo 什么是hexo Hexo是用nodejs开发的快速、简洁且高效的博客框架， Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://canuxcheng.com/post/hugo/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/hugo/</guid>
+      <description>Hugo go开发的静态站点生成器. https://github.com/gohugoio/hugo https://gohugo.io/ 搭建博客 创建环境: # linux $ sudo apt-get install hugo # windows PATH: C:\Hugo\bin\hugo.exe 测试安装: $ hugo help 创建hugo项目: $ cd /home/canux/sites &amp;gt; cd C:\hugo\sites $ hugo new site canuxcheng.com 生成下列文件</description>
+    </item>
+    
+    <item>
+      <title>Pelican</title>
+      <link>http://canuxcheng.com/post/pelican/</link>
+      <pubDate>Mon, 01 Apr 2013 12:49:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/pelican/</guid>
+      <description>Pelican python开发的静态站点生成器. http://blog.getpelican.com/ https://github.com/getpelican/pelican http://pelican-docs-zh-cn.readthedocs.io/en/latest/getting_started.html http://pelican-zh.readthedocs.io/en/latest/zh-cn/ 搭建博客 创建环境: $mkdir blog_pelican $cd blog_pelican $virtualenv .venv $source .venv/bin/activate $pip install pelican $pip install markdown 创建pelican项目: $pelican-quickstart 生成下列文件和目录: publishconf.py #</description>
+    </item>
+    
+  </channel>
+</rss>

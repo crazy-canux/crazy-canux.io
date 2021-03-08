@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>firewall on Morgoth</title>
+    <link>http://canuxcheng.com/tags/firewall/</link>
+    <description>Recent content in firewall on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 31 Mar 2016 21:48:59 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Firewall</title>
+      <link>http://canuxcheng.com/post/linux_firewall/</link>
+      <pubDate>Thu, 31 Mar 2016 21:48:59 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/linux_firewall/</guid>
+      <description>Firewall UFW: linux防火墙配置工具，底层还是调用iptables. filewall: centos的防火墙命令, 底层还是调用iptables. SELinux Security-Enhanced-Linux 本地安全 Netfilter 网络安全</description>
+    </item>
+    
+  </channel>
+</rss>

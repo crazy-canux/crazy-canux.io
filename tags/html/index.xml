@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>html on Morgoth</title>
+    <link>http://canuxcheng.com/tags/html/</link>
+    <description>Recent content in html on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 31 Oct 2016 04:00:49 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Html Form</title>
+      <link>http://canuxcheng.com/post/html_form/</link>
+      <pubDate>Mon, 31 Oct 2016 04:00:49 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/html_form/</guid>
+      <description>html表单 html表单用于搜集不同类型的用户输入。 form form元素定义html表单。支持全局属性和事件属性。 &amp;lt;form action=&amp;quot;action_page.py&amp;quot;&amp;gt; &amp;lt;fieldset&amp;gt; &amp;lt;legend&amp;gt;Form information:&amp;lt;/legend&amp;gt; First name:&amp;lt;br&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;firstname&amp;quot;&amp;gt; &amp;lt;br&amp;gt; Last name:&amp;lt;br&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;lastname&amp;quot;&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Html</title>
+      <link>http://canuxcheng.com/post/html/</link>
+      <pubDate>Thu, 23 Jun 2016 09:40:39 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/html/</guid>
+      <description>HTML HTML是超文本标记语言 XHTML XHTML是更严谨的更纯净的HTML HTML5 HTML5是下一代HTML html元素和属性 html元素指从开始标签到结束</description>
+    </item>
+    
+  </channel>
+</rss>

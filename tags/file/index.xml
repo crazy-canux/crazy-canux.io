@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>file on Morgoth</title>
+    <link>http://canuxcheng.com/tags/file/</link>
+    <description>Recent content in file on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 10:49:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://canuxcheng.com/tags/file/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSL_file</title>
+      <link>http://canuxcheng.com/post/gsl_file/</link>
+      <pubDate>Mon, 01 Jan 2018 10:49:21 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/gsl_file/</guid>
+      <description>path function func IsAbs(path string) bool func Join(elem ...string) string func Split(path string) (dir, file string) func Join(elem ...string) string func Dir(path string) string func Base(path string) string func Ext(path string) string ... path/filepath Constants const ( Separator = os.PathSeparator ListSeparator = os.PathListSeparator ) Variable var ErrBadPattern = errors.New(&amp;quot;Syntax error in pattern&amp;quot;) var SkipDir = errors.New(&amp;quot;skip this diractory&amp;quot;) function func IsAbs(path string) bool func Abs(path string) (string, error) // 返</description>
+    </item>
+    
+    <item>
+      <title>PSL_File</title>
+      <link>http://canuxcheng.com/post/psl_file/</link>
+      <pubDate>Sun, 14 Aug 2016 20:51:28 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/psl_file/</guid>
+      <description>File and Directory Access os.path windows的路径要写成： C:\\test\\sub\\ import os function: os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&amp;quot;~/src&amp;quot;) -&amp;gt; /home/user/src os.path.expandvars(path) # 把path中的shell变量$var 或 ${var}</description>
+    </item>
+    
+  </channel>
+</rss>
