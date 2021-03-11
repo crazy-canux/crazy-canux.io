@@ -48,7 +48,7 @@
 <meta itemprop="description" content="Git GIT: 分布式版本控制系统。 SVN: subversion并发式版本控制系统。 Mercurial: hg分布式版本控制。 和git相关的产品： github bitbucket sourceForge gitlab Git安装： $ sudo apt-get install git $">
 <meta itemprop="datePublished" content="2016-04-02T21:11:33&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-02T21:11:33&#43;00:00" />
-<meta itemprop="wordCount" content="2318">
+<meta itemprop="wordCount" content="2404">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 2318 words </span>
+          <span class="more-meta"> 2404 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -574,7 +574,20 @@ git tag -a v1.0.0 -m &quot;release 1.0.0.&quot; -f
 <h2 id="submodule">submodule</h2>
 <p>Initialize, update or inspect submodules</p>
 <p>会在项目产生.gitmodules文件，而且不被.gitignore忽略，所以不要在URL添加用户名和密码．</p>
-<pre><code>git submodule add &lt;repository&gt; [&lt;path&gt;]
+<p>添加子模块：</p>
+<pre><code>// push只会push创建的子模块空目录和.gitmodules文件.
+git submodule add &lt;repository&gt; [&lt;path&gt;]
+</code></pre>
+<p>克隆子模块：</p>
+<pre><code>// git clone 只会clone空目录
+git submodule init
+git submodule update 
+// 或者
+git clone --recurse-submodules &lt;sub-URL&gt;
+// 或者
+git clone &lt;URL&gt;
+git submodule update --init
+// 或者
 git submodule update --init --recursive
 </code></pre>
 <h2 id="mergetool">mergetool</h2>

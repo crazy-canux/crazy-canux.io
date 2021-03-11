@@ -17,7 +17,7 @@
       <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/js_angular/</guid>
-      <description>angularjs angularjs1.* https://github.com/angular/angular.js https://angularjs.org/ Angular angular.js 的升级版 https://github.com/angular/angular https://github.com/angular/angular-cli https://angular.io https://angular.cn 安装 angular-cli: $ npm install -g @angular/cli 查看版本: $ ng v 新建项目: $ ng new &amp;lt;my-app&amp;gt; # 严格模式 $ ng new &amp;lt;my-app&amp;gt; --strict 测试项目: $ cd &amp;lt;my-app&amp;gt; // --open会自动打开浏</description>
+      <description>angularjs angularjs1.* https://github.com/angular/angular.js https://angularjs.org/ Angular Angular 是一个用 HTML 和 TypeScript 构建客户端应用的平台与框架。 angular.js 的升级版 https://github.com/angular/angular https://github.com/angular/angular-cli https://angular.io https://angular.cn 安装 angular-cli: $ npm install -g @angular/cli 查看版本: $ ng v 新建项目: $ ng new &amp;lt;my-app&amp;gt; # 严格模式 $ ng new &amp;lt;my-app&amp;gt;</description>
     </item>
     
   </channel>
