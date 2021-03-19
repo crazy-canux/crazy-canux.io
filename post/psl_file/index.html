@@ -48,7 +48,7 @@
 <meta itemprop="description" content="File and Directory Access os.path windows的路径要写成： C:\\test\\sub\\ import os function: os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&quot;~/src&quot;) -&gt; /home/user/src os.path.expandvars(path) # 把path中的shell变量$var 或 ${var}">
 <meta itemprop="datePublished" content="2016-08-14T20:51:28&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-14T20:51:28&#43;00:00" />
-<meta itemprop="wordCount" content="926">
+<meta itemprop="wordCount" content="942">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/python/"> Python </a>
             </div>
-          <span class="more-meta"> 926 words </span>
+          <span class="more-meta"> 942 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -144,6 +144,7 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#ospath">os.path</a></li>
+    <li><a href="#pathlib">pathlib</a></li>
     <li><a href="#stat">stat</a></li>
     <li><a href="#fileinput">fileinput</a></li>
     <li><a href="#filecmp">filecmp</a></li>
@@ -205,6 +206,12 @@ os.path.basename(p) # 返回最后一个组件名，也就是文件名 /home/use
 os.path.getsize(filename) # 返回文件大小
 os.path.exists(path) # 判断path(文件或目录)是否存在
 os.path.isfile(path) # 判断path是否是常规文件
+</code></pre>
+<h2 id="pathlib">pathlib</h2>
+<p>new in python3.4</p>
+<pre><code>from pathlib import Path
+from pathlib import PurePosixPath
+from pathlib import PureWindowsPath
 </code></pre>
 <h2 id="stat">stat</h2>
 <h2 id="fileinput">fileinput</h2>
