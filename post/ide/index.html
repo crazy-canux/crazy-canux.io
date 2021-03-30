@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial pycharm https://plugins.jetbrains.com/plugin/631-python pycharm plugin for intellij. database https://plugins.jetbrains.com/plugin/1800-database-navigator https://confluence.jetbrains.com/display/CONTEST/Database&#43;Navigator oracle/mysql/postgresql/sqlite plugin. vim" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial VSCode live server 能通过remote" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="IDE" />
-<meta property="og:description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial pycharm https://plugins.jetbrains.com/plugin/631-python pycharm plugin for intellij. database https://plugins.jetbrains.com/plugin/1800-database-navigator https://confluence.jetbrains.com/display/CONTEST/Database&#43;Navigator oracle/mysql/postgresql/sqlite plugin. vim" />
+<meta property="og:description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial VSCode live server 能通过remote" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/ide/" />
 <meta property="article:published_time" content="2017-04-02T21:11:26+00:00" />
 <meta property="article:modified_time" content="2017-04-02T21:11:26+00:00" />
 <meta itemprop="name" content="IDE">
-<meta itemprop="description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial pycharm https://plugins.jetbrains.com/plugin/631-python pycharm plugin for intellij. database https://plugins.jetbrains.com/plugin/1800-database-navigator https://confluence.jetbrains.com/display/CONTEST/Database&#43;Navigator oracle/mysql/postgresql/sqlite plugin. vim">
+<meta itemprop="description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial VSCode live server 能通过remote">
 <meta itemprop="datePublished" content="2017-04-02T21:11:26&#43;00:00" />
 <meta itemprop="dateModified" content="2017-04-02T21:11:26&#43;00:00" />
-<meta itemprop="wordCount" content="121">
+<meta itemprop="wordCount" content="130">
 
 
 
 <meta itemprop="keywords" content="ide," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="IDE"/>
-<meta name="twitter:description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial pycharm https://plugins.jetbrains.com/plugin/631-python pycharm plugin for intellij. database https://plugins.jetbrains.com/plugin/1800-database-navigator https://confluence.jetbrains.com/display/CONTEST/Database&#43;Navigator oracle/mysql/postgresql/sqlite plugin. vim"/>
+<meta name="twitter:description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial VSCode live server 能通过remote"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 121 words </span>
+          <span class="more-meta"> 130 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -143,11 +143,8 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#pycharm">pycharm</a></li>
-    <li><a href="#database">database</a></li>
-    <li><a href="#vim">vim</a></li>
-    <li><a href="#solarized">solarized</a></li>
-    <li><a href="#terminal">terminal</a></li>
+    <li><a href="#live-server">live server</a></li>
+    <li><a href="#debugger-for-chrome">debugger for chrome</a></li>
   </ul>
 </nav>
   </div>
@@ -164,23 +161,18 @@
 <p>Goland: golang的IDE.</p>
 <p><a href="https://github.com/JetBrains/intellij-community">https://github.com/JetBrains/intellij-community</a></p>
 <p><a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial">https://github.com/judasn/IntelliJ-IDEA-Tutorial</a></p>
-<h2 id="pycharm">pycharm</h2>
-<p><a href="https://plugins.jetbrains.com/plugin/631-python">https://plugins.jetbrains.com/plugin/631-python</a></p>
-<p>pycharm plugin for intellij.</p>
-<h2 id="database">database</h2>
-<p><a href="https://plugins.jetbrains.com/plugin/1800-database-navigator">https://plugins.jetbrains.com/plugin/1800-database-navigator</a></p>
-<p><a href="https://confluence.jetbrains.com/display/CONTEST/Database+Navigator">https://confluence.jetbrains.com/display/CONTEST/Database+Navigator</a></p>
-<p>oracle/mysql/postgresql/sqlite plugin.</p>
-<h2 id="vim">vim</h2>
-<p><a href="https://github.com/JetBrains/ideavim">https://github.com/JetBrains/ideavim</a></p>
-<p>vim plugin.</p>
-<h2 id="solarized">solarized</h2>
-<p><a href="https://github.com/jkaving/intellij-colors-solarized">https://github.com/jkaving/intellij-colors-solarized</a></p>
-<p>solarized plugin.</p>
-<h2 id="terminal">terminal</h2>
-<p>默认的是bash和powershell, 使用zsh需要改成/usr/bin/zsh.</p>
 <hr>
 <h1 id="vscode">VSCode</h1>
+<h2 id="live-server">live server</h2>
+<p>能通过remote ssh调式html等.</p>
+<h2 id="debugger-for-chrome">debugger for chrome</h2>
+<p>attach需要先用remote debugging模式打开chrome:</p>
+<pre><code># windows
+&quot;/path/to/chrome.exe&quot; --remote-debugging-port=9222
+
+# macos
+ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
+</code></pre>
 
     </div>
 

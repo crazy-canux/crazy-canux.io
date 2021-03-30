@@ -963,7 +963,7 @@ Deploy pre-install:
       <pubDate>Sun, 02 Apr 2017 21:11:26 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/ide/</guid>
-      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial pycharm https://plugins.jetbrains.com/plugin/631-python pycharm plugin for intellij. database https://plugins.jetbrains.com/plugin/1800-database-navigator https://confluence.jetbrains.com/display/CONTEST/Database+Navigator oracle/mysql/postgresql/sqlite plugin. vim</description>
+      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial VSCode live server 能通过remote</description>
     </item>
     
     <item>
@@ -999,7 +999,7 @@ Deploy pre-install:
       <pubDate>Mon, 13 Mar 2017 09:36:32 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/js_angular/</guid>
-      <description>angularjs angularjs1.* https://github.com/angular/angular.js https://angularjs.org/ Angular Angular 是一个用 HTML 和 TypeScript 构建客户端应用的平台与框架。 angular.js 的升级版 https://github.com/angular/angular https://github.com/angular/angular-cli https://angular.io https://angular.cn 安装 angular-cli: $ npm install -g @angular/cli 查看版本: $ ng v 新建项目: $ ng new &amp;lt;my-app&amp;gt; # 严格模式 $ ng new &amp;lt;my-app&amp;gt;</description>
+      <description>angularjs angularjs 1.* https://github.com/angular/angular.js https://angularjs.org/ https://github.com/rev087/ng-inspector Angular Angular 是一个用 HTML 和 TypeScript 构建客户端应用的平台与框架。 angular.js 的升级版 https://github.com/angular/angular https://github.com/angular/angular-cli https://angular.io https://angular.cn 安装 angular-cli: $ npm install -g @angular/cli 查看版本: $ ng v 新建项目: $ ng new &amp;lt;my-app&amp;gt; # 严格模式 $ ng</description>
     </item>
     
     <item>
@@ -1152,9 +1152,7 @@ Deploy pre-install:
       <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/js_jquery/</guid>
-      <description>jQuery https://github.com/jquery/jquery
-install:
-$ npm install jqury  </description>
+      <description>jQuery https://github.com/jquery/jquery jquery是一个js库，简化了js编程。 install: $ npm install jqury jquery功能： HTML 元素选取 HTML 元素操作 HTML 事件函数 HTML DOM 遍历和修改 CSS 操作 JavaScript 特效和动画 AJAX Utilities</description>
     </item>
     
     <item>

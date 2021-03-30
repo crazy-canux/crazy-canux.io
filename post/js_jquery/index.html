@@ -16,9 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="jQuery https://github.com/jquery/jquery
-install:
-$ npm install jqury  " /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="jQuery https://github.com/jquery/jquery jquery是一个js库，简化了js编程。 install: $ npm install jqury jquery功能： HTML 元素选取 HTML 元素操作 HTML 事件函数 HTML DOM 遍历和修改 CSS 操作 JavaScript 特效和动画 AJAX Utilities" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -41,28 +39,22 @@ $ npm install jqury  " /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 <meta property="og:title" content="jQuery" />
-<meta property="og:description" content="jQuery https://github.com/jquery/jquery
-install:
-$ npm install jqury  " />
+<meta property="og:description" content="jQuery https://github.com/jquery/jquery jquery是一个js库，简化了js编程。 install: $ npm install jqury jquery功能： HTML 元素选取 HTML 元素操作 HTML 事件函数 HTML DOM 遍历和修改 CSS 操作 JavaScript 特效和动画 AJAX Utilities" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/js_jquery/" />
 <meta property="article:published_time" content="2016-10-27T22:19:20+08:00" />
 <meta property="article:modified_time" content="2016-10-27T22:19:20+08:00" />
 <meta itemprop="name" content="jQuery">
-<meta itemprop="description" content="jQuery https://github.com/jquery/jquery
-install:
-$ npm install jqury  ">
+<meta itemprop="description" content="jQuery https://github.com/jquery/jquery jquery是一个js库，简化了js编程。 install: $ npm install jqury jquery功能： HTML 元素选取 HTML 元素操作 HTML 事件函数 HTML DOM 遍历和修改 CSS 操作 JavaScript 特效和动画 AJAX Utilities">
 <meta itemprop="datePublished" content="2016-10-27T22:19:20&#43;08:00" />
 <meta itemprop="dateModified" content="2016-10-27T22:19:20&#43;08:00" />
-<meta itemprop="wordCount" content="7">
+<meta itemprop="wordCount" content="671">
 
 
 
 <meta itemprop="keywords" content="jquery," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="jQuery"/>
-<meta name="twitter:description" content="jQuery https://github.com/jquery/jquery
-install:
-$ npm install jqury  "/>
+<meta name="twitter:description" content="jQuery https://github.com/jquery/jquery jquery是一个js库，简化了js编程。 install: $ npm install jqury jquery功能： HTML 元素选取 HTML 元素操作 HTML 事件函数 HTML DOM 遍历和修改 CSS 操作 JavaScript 特效和动画 AJAX Utilities"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,8 +132,8 @@ $ npm install jqury  "/>
         <div class="post-category">
             <a href="/categories/web/"> Web </a>
             </div>
-          <span class="more-meta"> 7 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 671 words </span>
+          <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -149,7 +141,20 @@ $ npm install jqury  "/>
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic">basic</a></li>
+    <li><a href="#custom">custom</a></li>
+    <li><a href="#fading">fading</a></li>
+    <li><a href="#sliding">sliding</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#jquery-1">jQuery()</a></li>
+    <li><a href="#jquerynoconflict">jQuery.noConflict()</a></li>
+    <li><a href="#jqueryready">jQuery.ready</a></li>
+  </ul>
+</nav>
   </div>
 </div>
   <div class="post-outdated">
@@ -160,9 +165,148 @@ $ npm install jqury  "/>
     <div class="post-content">
       <h1 id="jquery">jQuery</h1>
 <p><a href="https://github.com/jquery/jquery">https://github.com/jquery/jquery</a></p>
+<p>jquery是一个js库，简化了js编程。</p>
 <p>install:</p>
 <pre><code>$ npm install jqury
 </code></pre>
+<p>jquery功能：</p>
+<ul>
+<li>HTML 元素选取</li>
+<li>HTML 元素操作</li>
+<li>HTML 事件函数</li>
+<li>HTML DOM 遍历和修改</li>
+<li>CSS 操作</li>
+<li>JavaScript 特效和动画</li>
+<li>AJAX</li>
+<li>Utilities</li>
+</ul>
+<h1 id="syntax">syntax</h1>
+<p>对元素操作语法：</p>
+<pre><code>$(selector).action()
+</code></pre>
+<p>文档就绪函数:</p>
+<pre><code>$(document).ready(function(){
+    ......
+})
+</code></pre>
+<p>head中:</p>
+<pre><code>&lt;head&gt;
+&lt;script type=&quot;text/javascript&gt;
+$(document).ready(function(){
+    $(&quot;button&quot;).click(function(){
+        $(&quot;p&quot;).hide();
+    })
+})
+&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<p>独立js文件</p>
+<pre><code>&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/path/to/my.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<h1 id="选择器">选择器</h1>
+<p><a href="https://api.jquery.com/category/selectors/">https://api.jquery.com/category/selectors/</a></p>
+<pre><code>$(this).hide()   this表示当前html元素
+$(&quot;p.test&quot;)    class=&quot;test&quot;的&lt;p&gt;&lt;/p&gt;元素
+$(&quot;p#test&quot;)    id=&quot;test&quot;的&lt;p&gt;&lt;/p&gt;元素
+$(&quot;div#test .demo&quot;)  id=&quot;test&quot;的&lt;div&gt;&lt;/div&gt;中class=demo的元素
+$(&quot;ul li:first&quot;)  每个&lt;ul&gt;&lt;/ul&gt;的第一个&lt;li&gt;&lt;/li&gt;
+</code></pre>
+<p>element选择器：</p>
+<pre><code>$(&quot;p&quot;).hide()   元素&lt;p&gt;&lt;/p&gt;
+</code></pre>
+<p>id选择器:</p>
+<pre><code>$(&quot;#test&quot;).hide()  id=&quot;test&quot;
+</code></pre>
+<p>class选择器:</p>
+<pre><code>$(&quot;.test&quot;).hide()  class=&quot;test&quot;
+</code></pre>
+<p>attribute选择器:</p>
+<pre><code>$(&quot;[href]&quot;)   所有带href属性的元素
+$(&quot;[href='value']&quot;)  带有href属性且值等于value的元素
+$(&quot;[href!='value']&quot;)  带有href元素且值不等于value的元素
+$(&quot;[href$='.jpg']&quot;) 带有href属性且值以.jpg结尾的元素
+</code></pre>
+<p>子元素选择器/child:</p>
+<p>后代选择器/descendant:</p>
+<h1 id="event事件">Event/事件</h1>
+<p><a href="https://api.jquery.com/category/events/">https://api.jquery.com/category/events/</a></p>
+<pre><code>$(selector).click(function) 单击事件
+$(selector).dblclick(function) 双击事件
+$(selector).focus(function) 焦点事件
+$(selector).mouseover(function) 鼠标悬停事件
+</code></pre>
+<hr>
+<h1 id="effects效果">Effects/效果</h1>
+<h2 id="basic">basic</h2>
+<pre><code>.hide()
+.show()
+.toggle()
+</code></pre>
+<h2 id="custom">custom</h2>
+<pre><code>.animate()
+.stop()
+</code></pre>
+<h2 id="fading">fading</h2>
+<pre><code>.fadeIn()
+.fadeOut()
+.fadeTo()
+.fadeToggle()
+</code></pre>
+<h2 id="sliding">sliding</h2>
+<pre><code>.slideDown()
+.slideToggle()
+.slideUp()
+</code></pre>
+<hr>
+<h1 id="core">core</h1>
+<p>核心功能</p>
+<h2 id="jquery-1">jQuery()</h2>
+<h2 id="jquerynoconflict">jQuery.noConflict()</h2>
+<p>使用其它代替$</p>
+<pre><code>&lt;script type=&quot;text/javascript&gt;
+$.noConflict(); // 兼容其它库也是用$
+my(document).ready(function(){
+    my(&quot;button&quot;).click(function(){
+        my(&quot;p&quot;).hide();
+    })
+})
+&lt;/script&gt;
+</code></pre>
+<h2 id="jqueryready">jQuery.ready</h2>
+<hr>
+<h1 id="文档操作">文档操作</h1>
+<h1 id="属性操作">属性操作</h1>
+<h1 id="css操作">CSS操作</h1>
+<p>jquey css选择器改变元素的css属性:</p>
+<pre><code>.css()
+// 修改&lt;p&gt;&lt;/p&gt;元素的背景色
+$(&quot;p&quot;).css(&quot;background-color&quot;,&quot;red&quot;); 
+
+.addClass()
+.hasClass()
+</code></pre>
+<hr>
+<h1 id="attributes">Attributes</h1>
+<pre><code>.attr()
+
+.addClass()
+.hasClass()
+.html()
+.val()
+</code></pre>
+<hr>
+<h1 id="data">Data</h1>
+<pre><code>.data()
+
+.clearQueue()
+.dequeue()
+.queue()
+.removeData()
+</code></pre>
+<hr>
+<h1 id="ajax">Ajax</h1>
 
     </div>
 
