@@ -963,7 +963,7 @@ Deploy pre-install:
       <pubDate>Sun, 02 Apr 2017 21:11:26 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/ide/</guid>
-      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm: Python的IDE. Goland: golang的IDE. https://github.com/JetBrains/intellij-community https://github.com/judasn/IntelliJ-IDEA-Tutorial VSCode live server 能通过remote</description>
+      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm PyCharm: Python的IDE. Goland Goland: golang的IDE. VSCode frontend vs-js-debug vscode内置了</description>
     </item>
     
     <item>
@@ -1143,7 +1143,7 @@ Deploy pre-install:
       <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/js_bootstrap/</guid>
-      <description>Bootstrap https://github.com/twbs/bootstrap install: $ npm install bootstrap@next HTML,CSS,JavaScript的支持响应式和移动设备的WEB框架.</description>
+      <description>Bootstrap https://github.com/twbs/bootstrap https://www.bootcss.com/ install: $ npm install bootstrap@next HTML,CSS,JavaScript的支持响应式和移动设备的WEB框架.</description>
     </item>
     
     <item>
@@ -1152,7 +1152,7 @@ Deploy pre-install:
       <pubDate>Thu, 27 Oct 2016 22:19:20 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/js_jquery/</guid>
-      <description>jQuery https://github.com/jquery/jquery jquery是一个js库，简化了js编程。 install: $ npm install jqury jquery功能： HTML 元素选取 HTML 元素操作 HTML 事件函数 HTML DOM 遍历和修改 CSS 操作 JavaScript 特效和动画 AJAX Utilities</description>
+      <description>jQuery https://github.com/jquery/jquery https://www.jquery123.com/ jquery是一个js库，简化了js编程。 install: $ npm install jqury jquery功能： HTML 元素选取 HTML 元素操作 HTML 事件函数 HTML DOM 遍历和修改 CSS 操作 JavaScript 特效和动画 AJAX</description>
     </item>
     
     <item>
@@ -1242,7 +1242,7 @@ Deploy pre-install:
       <pubDate>Tue, 27 Sep 2016 03:31:25 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/js_npm/</guid>
-      <description>NPM npm: node package manager. npm 由三部分组成： website https://www.npmjs.com CLI registry https://registry.npmjs.org config: // 修改registry $ npm config set registry https://registry.npm.taobao.org $ npm config get registry // 修改默认全局安装路径 mkdir /path/npm_global npm config set prefix /path/npm_global echo &#39;export PATH=/path/npm_global/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.profile source ~/.profile // 查看配</description>
+      <description>NPM https://www.npmjs.cn/ npm: node package manager. npm 由三部分组成： website https://www.npmjs.com CLI registry https://registry.npmjs.org config: // 修改registry $ npm config set registry https://registry.npm.taobao.org $ npm config get registry // 修改默认全局安装路径 mkdir /path/npm_global npm config set prefix /path/npm_global echo &#39;export PATH=/path/npm_global/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.profile source ~/.profile // 查看</description>
     </item>
     
     <item>
@@ -1386,7 +1386,7 @@ Deploy pre-install:
       <pubDate>Fri, 12 Aug 2016 16:49:07 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_string/</guid>
-      <description>String Services string import string classes: functions: data: ascii_letters ascii_lowercase ascii_uppercase digits ... re import re classes: functions: compile(pattern, flags=0) escape(pattern) findall(pattern, string, flags=0) finditer(pattern, string, flags=0) match(pattern, string, flags=0) # if not match, return None, else return object. search(pattern, string, flags=0) purge() split(pattern, string, maxsplit=0, flags=0) # 根据pattern分割string,返回分割</description>
+      <description>Text Processing Services string import string classes: functions: data: ascii_letters ascii_lowercase ascii_uppercase digits ... re import re classes: functions: compile(pattern, flags=0) escape(pattern) findall(pattern, string, flags=0) finditer(pattern, string, flags=0) match(pattern, string, flags=0) # if not match, return None, else return object. search(pattern, string, flags=0) purge() split(pattern, string, maxsplit=0, flags=0) # 根据pattern分割string,返回分</description>
     </item>
     
     <item>
@@ -1404,7 +1404,7 @@ Deploy pre-install:
       <pubDate>Fri, 12 Aug 2016 14:21:36 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_network/</guid>
-      <description>Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i</description>
+      <description>Internet Protocols and Support socketserver/http/ftp参考https://super-devops.readthedocs.io/en/late</description>
     </item>
     
     <item>
@@ -1847,7 +1847,7 @@ Deploy Sentry on K8S https://github.com/getsentry/onpremise</description>
       <pubDate>Mon, 11 Apr 2016 22:58:13 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_test/</guid>
-      <description>Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni</description>
+      <description>Development Tools typing 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 unittest2是unit</description>
     </item>
     
     <item>

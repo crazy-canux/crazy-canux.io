@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Internet Protocols and Support socketserver/http/ftp参考https://super-devops.readthedocs.io/en/late" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="PSL_Network" />
-<meta property="og:description" content="Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i" />
+<meta property="og:description" content="Internet Protocols and Support socketserver/http/ftp参考https://super-devops.readthedocs.io/en/late" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/psl_network/" />
 <meta property="article:published_time" content="2016-08-12T14:21:36+00:00" />
 <meta property="article:modified_time" content="2016-08-12T14:21:36+00:00" />
 <meta itemprop="name" content="PSL_Network">
-<meta itemprop="description" content="Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i">
+<meta itemprop="description" content="Internet Protocols and Support socketserver/http/ftp参考https://super-devops.readthedocs.io/en/late">
 <meta itemprop="datePublished" content="2016-08-12T14:21:36&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-12T14:21:36&#43;00:00" />
-<meta itemprop="wordCount" content="179">
+<meta itemprop="wordCount" content="445">
 
 
 
 <meta itemprop="keywords" content="network," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PSL_Network"/>
-<meta name="twitter:description" content="Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i"/>
+<meta name="twitter:description" content="Internet Protocols and Support socketserver/http/ftp参考https://super-devops.readthedocs.io/en/late"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/python/"> Python </a>
             </div>
-          <span class="more-meta"> 179 words </span>
+          <span class="more-meta"> 445 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -143,21 +143,33 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#urllib">urllib</a></li>
+    <li><a href="#ipaddress">ipaddress</a></li>
     <li><a href="#webbrowser">webbrowser</a></li>
     <li><a href="#cgi">cgi</a></li>
     <li><a href="#cgitb">cgitb</a></li>
     <li><a href="#wsgiref">wsgiref</a></li>
-    <li><a href="#xmlrpclib">xmlrpclib</a></li>
-    <li><a href="#simplexmlrpcserver">SimpleXMLRPCServer</a></li>
-    <li><a href="#docxmlrpcserver">DocXMLRPCServer</a></li>
-  </ul>
-
-  <ul>
+    <li><a href="#xmlrpc">xmlrpc</a></li>
+    <li><a href="#socketserver">socketserver</a></li>
     <li><a href="#nntplib">nntplib</a></li>
+    <li><a href="#telnet">telnet</a></li>
   </ul>
 
   <ul>
-    <li><a href="#telnet">telnet</a></li>
+    <li><a href="#html">html</a></li>
+    <li><a href="#xml">xml</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#json">json</a></li>
+    <li><a href="#base64">base64</a></li>
+    <li><a href="#mailcap">mailcap</a></li>
+    <li><a href="#mailbox">mailbox</a></li>
+    <li><a href="#minetypes">minetypes</a></li>
+    <li><a href="#binhex">binhex</a></li>
+    <li><a href="#binascii">binascii</a></li>
+    <li><a href="#quopri">quopri</a></li>
+    <li><a href="#uu">uu</a></li>
   </ul>
 </nav>
   </div>
@@ -169,29 +181,73 @@
   </div>
     <div class="post-content">
       <h1 id="internet-protocols-and-support">Internet Protocols and Support</h1>
-<p>socketserver/http/ftp,url,html参考<a href="https://super-devops.readthedocs.io/en/latest/">https://super-devops.readthedocs.io/en/latest/</a>.</p>
+<p>socketserver/http/ftp参考<a href="https://super-devops.readthedocs.io/en/latest/">https://super-devops.readthedocs.io/en/latest/</a>.</p>
 <p>pop,imap/smtp参考<a href="https://super-devops.readthedocs.io/en/latest/">https://super-devops.readthedocs.io/en/latest/</a>.</p>
+<h2 id="urllib">urllib</h2>
+<p>urllib.request</p>
+<p>urllib.respponse</p>
+<p>urllib.parse</p>
+<pre><code>from urllib.parse import urlparse
+from urllib.parse import urljoin
+</code></pre>
+<p>urllib.error</p>
+<p>urllib.robotparser</p>
+<h2 id="ipaddress">ipaddress</h2>
 <h2 id="webbrowser">webbrowser</h2>
 <h2 id="cgi">cgi</h2>
 <h2 id="cgitb">cgitb</h2>
 <h2 id="wsgiref">wsgiref</h2>
-<h2 id="xmlrpclib">xmlrpclib</h2>
-<h2 id="simplexmlrpcserver">SimpleXMLRPCServer</h2>
-<h2 id="docxmlrpcserver">DocXMLRPCServer</h2>
-<hr>
-<h1 id="socketserver">socketserver</h1>
-<hr>
-<h1 id="nntp标准库">nntp标准库</h1>
-<p>network news transfer protocol</p>
+<h2 id="xmlrpc">xmlrpc</h2>
+<h2 id="socketserver">socketserver</h2>
 <h2 id="nntplib">nntplib</h2>
+<p>network news transfer protocol</p>
 <pre><code>import nntplib
 </code></pre>
-<hr>
-<h1 id="telnet标准库">telnet标准库</h1>
 <h2 id="telnet">telnet</h2>
 <pre><code>import telnetlib
 </code></pre>
 <hr>
+<h1 id="structured-markup-processing-tools">Structured Markup Processing Tools</h1>
+<h2 id="html">html</h2>
+<h2 id="xml">xml</h2>
+<hr>
+<h1 id="internet-data-handling">Internet Data Handling</h1>
+<h2 id="json">json</h2>
+<p>http api(restful)一般使用json格式的数据．</p>
+<p>python和json数据类型对应关系参考WEB/JSON.</p>
+<p>complex和class/def不能被编码.</p>
+<pre><code>import json
+</code></pre>
+<p>classes:</p>
+<p>functions:</p>
+<pre><code># 将转换后的json格式写入文件
+dump(obj, fp, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding='utf-8', default=None, sort_keys=False, **kw)
+with open(file, 'w') as f:
+    json.dump(dict_data, f)
+
+# 将dict类型转换成json格式
+dumps(obj, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding='utf-8', default=None, sort_keys=False, **kw)
+json_data = json.dumps(dict_data)
+
+indent=4 # 写入自动缩进４个空格
+
+# 将读出的文件(json格式)转换成dict
+load(fp, encoding=None, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
+with open(file, 'r') as f:
+    dict_data = json.load(f)
+
+# json类型变成dict类型
+loads(s, encoding=None, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
+response_dict = json.loads(response.content) # 使用requests获取的json数据,转化为dict类型
+</code></pre>
+<h2 id="base64">base64</h2>
+<h2 id="mailcap">mailcap</h2>
+<h2 id="mailbox">mailbox</h2>
+<h2 id="minetypes">minetypes</h2>
+<h2 id="binhex">binhex</h2>
+<h2 id="binascii">binascii</h2>
+<h2 id="quopri">quopri</h2>
+<h2 id="uu">uu</h2>
 
     </div>
 

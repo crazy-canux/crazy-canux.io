@@ -107,7 +107,7 @@
       <pubDate>Fri, 12 Aug 2016 16:49:07 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_string/</guid>
-      <description>String Services string import string classes: functions: data: ascii_letters ascii_lowercase ascii_uppercase digits ... re import re classes: functions: compile(pattern, flags=0) escape(pattern) findall(pattern, string, flags=0) finditer(pattern, string, flags=0) match(pattern, string, flags=0) # if not match, return None, else return object. search(pattern, string, flags=0) purge() split(pattern, string, maxsplit=0, flags=0) # 根据pattern分割string,返回分割</description>
+      <description>Text Processing Services string import string classes: functions: data: ascii_letters ascii_lowercase ascii_uppercase digits ... re import re classes: functions: compile(pattern, flags=0) escape(pattern) findall(pattern, string, flags=0) finditer(pattern, string, flags=0) match(pattern, string, flags=0) # if not match, return None, else return object. search(pattern, string, flags=0) purge() split(pattern, string, maxsplit=0, flags=0) # 根据pattern分割string,返回分</description>
     </item>
     
     <item>
@@ -125,7 +125,7 @@
       <pubDate>Fri, 12 Aug 2016 14:21:36 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_network/</guid>
-      <description>Internet Protocols and Support socketserver/http/ftp,url,html参考https://super-devops.readthedocs.i</description>
+      <description>Internet Protocols and Support socketserver/http/ftp参考https://super-devops.readthedocs.io/en/late</description>
     </item>
     
     <item>
@@ -197,7 +197,7 @@
       <pubDate>Mon, 11 Apr 2016 22:58:13 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_test/</guid>
-      <description>Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni</description>
+      <description>Development Tools typing 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 unittest2是unit</description>
     </item>
     
     <item>

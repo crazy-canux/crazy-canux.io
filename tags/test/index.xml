@@ -35,7 +35,7 @@
       <pubDate>Mon, 11 Apr 2016 22:58:13 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/psl_test/</guid>
-      <description>Test python的单元测试库． 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 uni</description>
+      <description>Development Tools typing 2to3 $2to3 pydoc import pydoc test import test doctest python内置的文档测试库． import doctest unittest python内置的单元测试库． import unittest TPL 相关的第三方库 unittest2 unittest2是unit</description>
     </item>
     
   </channel>

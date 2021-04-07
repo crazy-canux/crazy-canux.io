@@ -48,7 +48,7 @@
 <meta itemprop="description" content="File and Directory Access os.path windows的路径要写成： C:\\test\\sub\\ import os function: os.path.expanduser(path) # 把path中~或~user扩展成绝对路径 expanduser(&quot;~/src&quot;) -&gt; /home/user/src os.path.expandvars(path) # 把path中的shell变量$var 或 ${var}">
 <meta itemprop="datePublished" content="2016-08-14T20:51:28&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-14T20:51:28&#43;00:00" />
-<meta itemprop="wordCount" content="942">
+<meta itemprop="wordCount" content="665">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/python/"> Python </a>
             </div>
-          <span class="more-meta"> 942 words </span>
+          <span class="more-meta"> 665 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -163,19 +163,6 @@
     <li><a href="#netrc">netrc</a></li>
     <li><a href="#xdrlib">xdrlib</a></li>
     <li><a href="#plistlib">plistlib</a></li>
-    <li><a href="#json">json</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#email">email</a></li>
-    <li><a href="#mailcap">mailcap</a></li>
-    <li><a href="#mailbox">mailbox</a></li>
-    <li><a href="#mimetypes">mimetypes</a></li>
-    <li><a href="#base64">base64</a></li>
-    <li><a href="#binhex">binhex</a></li>
-    <li><a href="#binascii">binascii</a></li>
-    <li><a href="#quopri">quopri</a></li>
-    <li><a href="#uu">uu</a></li>
   </ul>
 </nav>
   </div>
@@ -314,50 +301,7 @@ writer(fileobj, dialect='excel', **kwargs)
 <h2 id="netrc">netrc</h2>
 <h2 id="xdrlib">xdrlib</h2>
 <h2 id="plistlib">plistlib</h2>
-<h2 id="json">json</h2>
-<p>http api(restful)一般使用json格式的数据．</p>
-<p>python和json数据类型对应关系参考WEB/JSON.</p>
-<p>complex和class/def不能被编码.</p>
-<pre><code>import json
-</code></pre>
-<p>classes:</p>
-<p>functions:</p>
-<pre><code># 将转换后的json格式写入文件
-dump(obj, fp, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding='utf-8', default=None, sort_keys=False, **kw)
-with open(file, 'w') as f:
-    json.dump(dict_data, f)
-
-# 将dict类型转换成json格式
-dumps(obj, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding='utf-8', default=None, sort_keys=False, **kw)
-json_data = json.dumps(dict_data)
-
-indent=4 # 写入自动缩进４个空格
-
-# 将读出的文件(json格式)转换成dict
-load(fp, encoding=None, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
-with open(file, 'r') as f:
-    dict_data = json.load(f)
-
-# json类型变成dict类型
-loads(s, encoding=None, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
-response_dict = json.loads(response.content) # 使用requests获取的json数据,转化为dict类型
-</code></pre>
 <hr>
-<h1 id="yaml">yaml</h1>
-<p><a href="http://pyyaml.org/wiki/PyYAML">http://pyyaml.org/wiki/PyYAML</a></p>
-<hr>
-<h1 id="internet-data-handling">Internet Data Handling</h1>
-<h2 id="email">email</h2>
-<h2 id="mailcap">mailcap</h2>
-<h2 id="mailbox">mailbox</h2>
-<h2 id="mimetypes">mimetypes</h2>
-<h2 id="base64">base64</h2>
-<pre><code>import base64
-</code></pre>
-<h2 id="binhex">binhex</h2>
-<h2 id="binascii">binascii</h2>
-<h2 id="quopri">quopri</h2>
-<h2 id="uu">uu</h2>
 
     </div>
 

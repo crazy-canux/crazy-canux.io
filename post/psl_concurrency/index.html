@@ -48,7 +48,7 @@
 <meta itemprop="description" content="Concurrent Execution 进程：每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据，进程间不共享全局变量。 线程：线程（有时被称为轻量级进程）">
 <meta itemprop="datePublished" content="2016-08-15T11:04:12&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-15T11:04:12&#43;00:00" />
-<meta itemprop="wordCount" content="2258">
+<meta itemprop="wordCount" content="2265">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/python/"> Python </a>
             </div>
-          <span class="more-meta"> 2258 words </span>
+          <span class="more-meta"> 2265 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -146,15 +146,21 @@
     <li><a href="#multiprocessing">multiprocessing</a></li>
     <li><a href="#threading">threading</a></li>
     <li><a href="#subprocess">subprocess</a></li>
-    <li><a href="#socket">socket</a></li>
-    <li><a href="#asynchat">asynchat</a></li>
-    <li><a href="#asyncore">asyncore</a></li>
-    <li><a href="#ssl">ssl</a></li>
-    <li><a href="#signal">signal</a></li>
-    <li><a href="#select">select</a></li>
-    <li><a href="#mmap">mmap</a></li>
-    <li><a href="#dummy_thread">dummy_thread</a></li>
+    <li><a href="#sched">sched</a></li>
+    <li><a href="#queue">queue</a></li>
     <li><a href="#dummy_threading">dummy_threading</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#socket">socket</a></li>
+    <li><a href="#ssl">ssl</a></li>
+    <li><a href="#select">select</a></li>
+    <li><a href="#selectors">selectors</a></li>
+    <li><a href="#asyncio">asyncio</a></li>
+    <li><a href="#asyncore">asyncore</a></li>
+    <li><a href="#asynchat">asynchat</a></li>
+    <li><a href="#signal">signal</a></li>
+    <li><a href="#mmap">mmap</a></li>
   </ul>
 </nav>
   </div>
@@ -384,6 +390,11 @@ check_output(*popenargs, **kwargs) # 返回一个字符串
 <pre><code>PIPE = -1
 STDOUT = -2
 </code></pre>
+<h2 id="sched">sched</h2>
+<h2 id="queue">queue</h2>
+<h2 id="dummy_threading">dummy_threading</h2>
+<hr>
+<h1 id="interprocess-communication-and-networking">Interprocess Communication and Networking</h1>
 <h2 id="socket">socket</h2>
 <p>socket协议的标准库</p>
 <pre><code>import socket
@@ -470,15 +481,14 @@ ntohs(integer)
 setdefaulttimeout(timeout)
 socketpair([family[, type[, proto]]]) -&gt; (socket object, socket object)
 </code></pre>
-<h2 id="asynchat">asynchat</h2>
-<h2 id="asyncore">asyncore</h2>
 <h2 id="ssl">ssl</h2>
-<h2 id="signal">signal</h2>
 <h2 id="select">select</h2>
+<h2 id="selectors">selectors</h2>
+<h2 id="asyncio">asyncio</h2>
+<h2 id="asyncore">asyncore</h2>
+<h2 id="asynchat">asynchat</h2>
+<h2 id="signal">signal</h2>
 <h2 id="mmap">mmap</h2>
-<h2 id="dummy_thread">dummy_thread</h2>
-<h2 id="dummy_threading">dummy_threading</h2>
-<hr>
 
     </div>
 
