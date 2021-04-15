@@ -48,7 +48,7 @@
 <meta itemprop="description" content="Docker https://store.docker.com/ https://hub.docker.com/ https://github.com/docker https://github.com/moby/moby Docker是一个容器引擎, 分为社区版CE, 和企业版EE, Docker不是虚拟机, 也不依赖虚拟化技术． docker-cli -&gt; dockerd -&gt; containerd -&gt; shim -&gt; runc conta">
 <meta itemprop="datePublished" content="2018-04-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="2712">
+<meta itemprop="wordCount" content="2772">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 2712 words </span>
+          <span class="more-meta"> 2772 words </span>
           <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -590,6 +590,8 @@ docker-machine ls
 </code></pre>
 <hr>
 <h1 id="oom">OOM</h1>
+<p>kernel OOM 会导致kernel随机kill一些container释放内存。</p>
+<p>防止kernel OOM的方法就是设置resource limit.</p>
 <p><a href="https://docs.docker.com/config/containers/resource_constraints/">https://docs.docker.com/config/containers/resource_constraints/</a></p>
 <p><a href="https://github.com/docker/compose/issues/4513">https://github.com/docker/compose/issues/4513</a></p>
 <p>swarm mode:</p>
