@@ -963,7 +963,7 @@ Deploy pre-install:
       <pubDate>Sun, 02 Apr 2017 21:11:26 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/ide/</guid>
-      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm PyCharm: Python的IDE. Goland Goland: golang的IDE. VSCode frontend vs-js-debug vscode内置了</description>
+      <description>JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm PyCharm: Python的IDE. Goland Goland: golang的IDE. VSCode IntelliSense &amp;amp; Code Navigation Go to Definition: F12, 跳转到</description>
     </item>
     
     <item>
