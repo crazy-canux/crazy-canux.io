@@ -48,7 +48,7 @@
 <meta itemprop="description" content="Go go有三种安装方式： 源码安装 标准包安装 第三方工具安装 GOROOT: GOROOT 就是go的安装目录 windows标准包安装go: msi指定安装路径，自动添加%GO">
 <meta itemprop="datePublished" content="2018-01-01T10:49:21&#43;00:00" />
 <meta itemprop="dateModified" content="2018-01-01T10:49:21&#43;00:00" />
-<meta itemprop="wordCount" content="1002">
+<meta itemprop="wordCount" content="1043">
 
 
 
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/golang/"> Golang </a>
             </div>
-          <span class="more-meta"> 1002 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 1043 words </span>
+          <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -246,6 +246,35 @@ go get -u -t ./... is similar, but also upgrades test dependencies.
 <p>doc</p>
 <p>查看文档：</p>
 <pre><code>$ go doc [package/symbol]
+</code></pre>
+<p>tool</p>
+<p>运行工具:</p>
+<pre><code>$ go tool [-n] command [args...]
+
+addr2line
+
+asm
+
+buildid
+
+cgo
+
+// 查看汇编代码
+compile
+go tool compile -S pkg.go
+
+cover
+dist
+doc
+fix
+link
+nm
+objdump
+pack
+pprof
+test2json
+trace
+vet
 </code></pre>
 <p>mod</p>
 <pre><code>go mod init &lt;name&gt;

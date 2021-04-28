@@ -17,7 +17,7 @@
       <pubDate>Thu, 26 Mar 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_cni/</guid>
-      <description>CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到</description>
+      <description>Network add-ons https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令</description>
     </item>
     
     <item>
@@ -65,7 +65,7 @@ jenkins-X </description>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_coredns/</guid>
-      <description>CoreDNS </description>
+      <description>Service Discovery add-ons coreDNS CoreDNS 服务发现</description>
     </item>
     
     <item>
@@ -102,7 +102,7 @@ https://github.com/operator-framework</description>
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_dashboard/</guid>
-      <description>dashboard kubernetes-dashboard lens octant kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: name: kubernetes-dashboard-admin namespace: kubernetes-dashboard roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount name: dashboard-admin namespace: kubernetes-dashboard // 创建</description>
+      <description>dashboard add-ons kubernetes-dashboard lens octant weave scope kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: namespace: kubernetes-dashboard name: kubernetes-dashboard-admin roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount namespace: kubernetes-dashboard name: dashboard-admin</description>
     </item>
     
     <item>
@@ -120,7 +120,7 @@ https://github.com/operator-framework</description>
       <pubDate>Mon, 30 Dec 2019 21:47:17 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_kubeadm/</guid>
-      <description>kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: $ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &amp;quot;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $</description>
+      <description>kubeadm https://github.com/kubernetes/kubeadm kubeadm是k8s自带的部署集群的工具. Install 准备工作 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ 安装runtime https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ 默认的cgroup驱动时cgroupfs,如果系统是syst</description>
     </item>
     
     <item>
@@ -176,7 +176,7 @@ Deploy pre-install:
       <pubDate>Wed, 05 Jun 2019 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_cri/</guid>
-      <description>CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt</description>
+      <description>CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ docker k8s_1.20 开始警告不再支持doc</description>
     </item>
     
     <item>

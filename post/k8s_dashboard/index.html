@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="dashboard kubernetes-dashboard lens octant kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: name: kubernetes-dashboard-admin namespace: kubernetes-dashboard roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount name: dashboard-admin namespace: kubernetes-dashboard // 创建" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="dashboard add-ons kubernetes-dashboard lens octant weave scope kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: namespace: kubernetes-dashboard name: kubernetes-dashboard-admin roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount namespace: kubernetes-dashboard name: dashboard-admin" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="Dashboard" />
-<meta property="og:description" content="dashboard kubernetes-dashboard lens octant kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: name: kubernetes-dashboard-admin namespace: kubernetes-dashboard roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount name: dashboard-admin namespace: kubernetes-dashboard // 创建" />
+<meta property="og:description" content="dashboard add-ons kubernetes-dashboard lens octant weave scope kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: namespace: kubernetes-dashboard name: kubernetes-dashboard-admin roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount namespace: kubernetes-dashboard name: dashboard-admin" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_dashboard/" />
 <meta property="article:published_time" content="2020-01-04T20:03:39+08:00" />
 <meta property="article:modified_time" content="2020-01-04T20:03:39+08:00" />
 <meta itemprop="name" content="Dashboard">
-<meta itemprop="description" content="dashboard kubernetes-dashboard lens octant kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: name: kubernetes-dashboard-admin namespace: kubernetes-dashboard roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount name: dashboard-admin namespace: kubernetes-dashboard // 创建">
+<meta itemprop="description" content="dashboard add-ons kubernetes-dashboard lens octant weave scope kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: namespace: kubernetes-dashboard name: kubernetes-dashboard-admin roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount namespace: kubernetes-dashboard name: dashboard-admin">
 <meta itemprop="datePublished" content="2020-01-04T20:03:39&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-04T20:03:39&#43;08:00" />
-<meta itemprop="wordCount" content="233">
+<meta itemprop="wordCount" content="243">
 
 
 
 <meta itemprop="keywords" content="k8s," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dashboard"/>
-<meta name="twitter:description" content="dashboard kubernetes-dashboard lens octant kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: name: kubernetes-dashboard-admin namespace: kubernetes-dashboard roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount name: dashboard-admin namespace: kubernetes-dashboard // 创建"/>
+<meta name="twitter:description" content="dashboard add-ons kubernetes-dashboard lens octant weave scope kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: namespace: kubernetes-dashboard name: kubernetes-dashboard-admin roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount namespace: kubernetes-dashboard name: dashboard-admin"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 233 words </span>
+          <span class="more-meta"> 243 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -155,11 +155,12 @@
     </div>
   </div>
     <div class="post-content">
-      <h1 id="dashboard">dashboard</h1>
+      <h1 id="dashboard-add-ons">dashboard add-ons</h1>
 <ul>
 <li>kubernetes-dashboard</li>
 <li>lens</li>
 <li>octant</li>
+<li>weave scope</li>
 </ul>
 <hr>
 <h1 id="kubernetes-dashboard">kubernetes-dashboard</h1>
@@ -180,16 +181,16 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: kubernetes-dashboard-admin
   namespace: kubernetes-dashboard
+  name: kubernetes-dashboard-admin
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: cluster-admin
 subjects:
   - kind: ServiceAccount
-    name: dashboard-admin
     namespace: kubernetes-dashboard
+    name: dashboard-admin
 // 创建admin账号
 $ kubectl apply -f auth.yaml
 
@@ -214,7 +215,8 @@ $ kubectl delete ns kubernetes-dashboard
 #&gt; http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 </code></pre>
 <p>远程访问</p>
-<pre><code>$ kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard 8080:443
+<p>port-forward:</p>
+<pre><code>$ kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard 8080:443 --address 0.0.0.0
 </code></pre>
 <p>nodePort:</p>
 <pre><code>kind: Service
@@ -236,9 +238,11 @@ selector:
 #&gt; https://&lt;node-ip&gt;:30001
 </code></pre>
 <p>ingress:</p>
+<p>&hellip;</p>
 <hr>
 <h1 id="metrics-server">metrics-server</h1>
 <p><a href="https://github.com/kubernetes-sigs/metrics-server">https://github.com/kubernetes-sigs/metrics-server</a></p>
+<p>添加 &ndash;kubelet-insecure-tls</p>
 <pre><code># deploy 0.3.6
 # 修改image为  registry.aliyuncs.com/google_containers/metrics-server-amd64:v0.3.6
 $ kubectl apply -f ./components.yam

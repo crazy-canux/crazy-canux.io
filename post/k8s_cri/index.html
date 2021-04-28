@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ docker k8s_1.20 开始警告不再支持doc" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="k8S CRI" />
-<meta property="og:description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt" />
+<meta property="og:description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ docker k8s_1.20 开始警告不再支持doc" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_cri/" />
 <meta property="article:published_time" content="2019-06-05T22:02:31+00:00" />
 <meta property="article:modified_time" content="2019-06-05T22:02:31+00:00" />
 <meta itemprop="name" content="k8S CRI">
-<meta itemprop="description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt">
+<meta itemprop="description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ docker k8s_1.20 开始警告不再支持doc">
 <meta itemprop="datePublished" content="2019-06-05T22:02:31&#43;00:00" />
 <meta itemprop="dateModified" content="2019-06-05T22:02:31&#43;00:00" />
-<meta itemprop="wordCount" content="68">
+<meta itemprop="wordCount" content="109">
 
 
 
 <meta itemprop="keywords" content="k8s," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="k8S CRI"/>
-<meta name="twitter:description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. docker containerd docker. https://github.com/containerd/containerd CRI-O redhat. https://github.com/cri-o/cri-o kata https://github.com/kata-containers/runtime rkt redhat(coreos) https://github.com/rkt/rkt"/>
+<meta name="twitter:description" content="CRI CRI: Container Runtime Intarface 定义了k8s和container runtime进行交互的接口. 是k8s与container交互的标准. https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ docker k8s_1.20 开始警告不再支持doc"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 68 words </span>
+          <span class="more-meta"> 109 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -154,12 +154,19 @@
 <p>CRI: Container Runtime Intarface</p>
 <p>定义了k8s和container runtime进行交互的接口.</p>
 <p>是k8s与container交互的标准.</p>
+<p><a href="https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/">https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/</a></p>
 <h1 id="docker">docker</h1>
+<p>k8s_1.20 开始警告不再支持docker.</p>
+<p>k8s_1.23 开始移除dockershim.</p>
+<p>/var/run/dockerhsim.sock</p>
 <h1 id="containerd">containerd</h1>
-<p>docker.</p>
+<p>/run/container/containerd.sock</p>
 <p><a href="https://github.com/containerd/containerd">https://github.com/containerd/containerd</a></p>
+<p>安装配置:</p>
+<p><a href="https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/#containerd">https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/#containerd</a></p>
 <h1 id="cri-o">CRI-O</h1>
 <p>redhat.</p>
+<p>/var/run/crio/crio.sock</p>
 <p><a href="https://github.com/cri-o/cri-o">https://github.com/cri-o/cri-o</a></p>
 <h1 id="kata">kata</h1>
 <p><a href="https://github.com/kata-containers/runtime">https://github.com/kata-containers/runtime</a></p>

@@ -2,22 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://canuxcheng.com/post/aws/</loc>
+    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/aws/</loc>
+    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/categories/c/</loc>
+    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/categories/</loc>
-    <lastmod>2021-03-05T09:36:32+00:00</lastmod>
+    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/categories/cloud/</loc>
+    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://canuxcheng.com/post/</loc>
-    <lastmod>2021-03-05T09:36:32+00:00</lastmod>
+    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://canuxcheng.com/tags/</loc>
-    <lastmod>2021-03-05T09:36:32+00:00</lastmod>
+    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -95,13 +123,6 @@
   <url>
     <loc>http://canuxcheng.com/tags/security/</loc>
     <lastmod>2020-05-24T15:30:42+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/categories/c/</loc>
-    <lastmod>2020-03-26T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -492,7 +513,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/post/haproxy/</loc>
+    <loc>http://canuxcheng.com/post/ha/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -500,6 +521,13 @@
   
   <url>
     <loc>http://canuxcheng.com/tags/haproxy/</loc>
+    <lastmod>2018-07-28T16:08:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/keepalived/</loc>
     <lastmod>2018-07-28T16:08:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1495,13 +1523,6 @@
   <url>
     <loc>http://canuxcheng.com/post/testing_selenium/</loc>
     <lastmod>2017-02-25T09:41:39+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/categories/cloud/</loc>
-    <lastmod>2017-02-23T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

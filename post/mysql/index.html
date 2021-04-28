@@ -48,7 +48,7 @@
 <meta itemprop="description" content="Mysql 安装mysql服务器 $ sudo apt-get install mysql-server $ sudo yum install mysql-community-server $ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf # 注意mysql的/etc/mysql/my.cnf和相关文件如果设置了bind-addr">
 <meta itemprop="datePublished" content="2016-05-25T12:14:59&#43;00:00" />
 <meta itemprop="dateModified" content="2016-05-25T12:14:59&#43;00:00" />
-<meta itemprop="wordCount" content="1163">
+<meta itemprop="wordCount" content="1286">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/database/"> Database </a>
             </div>
-          <span class="more-meta"> 1163 words </span>
+          <span class="more-meta"> 1286 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -326,6 +326,10 @@ FLUSH PRIVILEGES;
 <pre><code>// 类似like，特殊字符要用双反斜杠转义.
 select * from tablename where colume REGEXP '...'
 </code></pre>
+<p>查看系统配置:</p>
+<pre><code>show variables like 'version';
+select @@version;
+</code></pre>
 <hr>
 <h1 id="issue">Issue</h1>
 <ol>
@@ -349,6 +353,28 @@ alter user 'sandbox'@'%' identified with mysql_native_password by 'password';
 <pre><code>show processlist;
 show variables like 'max_connections';
 set global max_connections = 2048;
+</code></pre>
+<ol start="3">
+<li>1153, &ldquo;Got a packet bigger than &lsquo;max_allowed_packet&rsquo; bytes&rdquo;</li>
+</ol>
+<p>issue:</p>
+<pre><code>请求数据超过限制，默认可能是4M
+</code></pre>
+<p>fix:</p>
+<pre><code>// 设置成最大值1G
+select @@max_allowed_packet;
+SET GLOBAL max_allowed_packet = 1024 * 1024 * 1024;
+</code></pre>
+<ol start="4">
+<li>1205, &lsquo;Lock wait timeout exceeded; try restarting transaction&rsquo;</li>
+</ol>
+<p>issue:</p>
+<pre><code>后提交的事务等待前面处理的事务释放锁，但是在等待的时候超过了mysql的锁等待时
+</code></pre>
+<p>fix:</p>
+<pre><code>// 首先优化表索引.
+select @@innodb_lock_wait_timeout
+set global innodb_lock_wait_timeout=100;
 </code></pre>
 <hr>
 <h1 id="monitoring">Monitoring</h1>

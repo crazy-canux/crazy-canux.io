@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Csrf - Morgoth</title>
+  <title>HA - Morgoth</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="CSRF Cross-site request forgery, 跨站请求伪造． 发生条件： 登陆受信任网站A, 并在本地生成cookie 在不退出A的情况下，访问危险网站B 预防方法: 正确使用get,pos" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="HAProxy https://www.haproxy.com/ 安装: $ sudo apt-get install haproxy 配置: $ sudo vim /etc/haproxy/haproxy.cfg global: log /dev/log local0 log /dev/log local1 notice chroot /var/lib/haproxy stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners stats timeout 30s user haproxy group haproxy daemon # Default SSL material locations ca-base /etc/ssl/certs crt-base /etc/ssl/private # Default ciphers to use on SSL-enabled listening sockets. # For more information, see ciphers(1SSL). This list" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.68.3 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://canuxcheng.com/post/sec_csrf/" />
+<link rel="canonical" href="http://canuxcheng.com/post/ha/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,23 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Csrf" />
-<meta property="og:description" content="CSRF Cross-site request forgery, 跨站请求伪造． 发生条件： 登陆受信任网站A, 并在本地生成cookie 在不退出A的情况下，访问危险网站B 预防方法: 正确使用get,pos" />
+<meta property="og:title" content="HA" />
+<meta property="og:description" content="HAProxy https://www.haproxy.com/ 安装: $ sudo apt-get install haproxy 配置: $ sudo vim /etc/haproxy/haproxy.cfg global: log /dev/log local0 log /dev/log local1 notice chroot /var/lib/haproxy stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners stats timeout 30s user haproxy group haproxy daemon # Default SSL material locations ca-base /etc/ssl/certs crt-base /etc/ssl/private # Default ciphers to use on SSL-enabled listening sockets. # For more information, see ciphers(1SSL). This list" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://canuxcheng.com/post/sec_csrf/" />
+<meta property="og:url" content="http://canuxcheng.com/post/ha/" />
 <meta property="article:published_time" content="2018-07-28T16:08:54+00:00" />
 <meta property="article:modified_time" content="2018-07-28T16:08:54+00:00" />
-<meta itemprop="name" content="Csrf">
-<meta itemprop="description" content="CSRF Cross-site request forgery, 跨站请求伪造． 发生条件： 登陆受信任网站A, 并在本地生成cookie 在不退出A的情况下，访问危险网站B 预防方法: 正确使用get,pos">
+<meta itemprop="name" content="HA">
+<meta itemprop="description" content="HAProxy https://www.haproxy.com/ 安装: $ sudo apt-get install haproxy 配置: $ sudo vim /etc/haproxy/haproxy.cfg global: log /dev/log local0 log /dev/log local1 notice chroot /var/lib/haproxy stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners stats timeout 30s user haproxy group haproxy daemon # Default SSL material locations ca-base /etc/ssl/certs crt-base /etc/ssl/private # Default ciphers to use on SSL-enabled listening sockets. # For more information, see ciphers(1SSL). This list">
 <meta itemprop="datePublished" content="2018-07-28T16:08:54&#43;00:00" />
 <meta itemprop="dateModified" content="2018-07-28T16:08:54&#43;00:00" />
-<meta itemprop="wordCount" content="92">
+<meta itemprop="wordCount" content="129">
 
 
 
-<meta itemprop="keywords" content="capture," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Csrf"/>
-<meta name="twitter:description" content="CSRF Cross-site request forgery, 跨站请求伪造． 发生条件： 登陆受信任网站A, 并在本地生成cookie 在不退出A的情况下，访问危险网站B 预防方法: 正确使用get,pos"/>
+<meta itemprop="keywords" content="haproxy,keepalived," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HA"/>
+<meta name="twitter:description" content="HAProxy https://www.haproxy.com/ 安装: $ sudo apt-get install haproxy 配置: $ sudo vim /etc/haproxy/haproxy.cfg global: log /dev/log local0 log /dev/log local1 notice chroot /var/lib/haproxy stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners stats timeout 30s user haproxy group haproxy daemon # Default SSL material locations ca-base /etc/ssl/certs crt-base /etc/ssl/private # Default ciphers to use on SSL-enabled listening sockets. # For more information, see ciphers(1SSL). This list"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -125,14 +125,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Csrf</h1>
+      <h1 class="post-title">HA</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2018-07-28 </span>
         <div class="post-category">
-            <a href="/categories/security/"> Security </a>
+            <a href="/categories/network/"> Network </a>
             </div>
-          <span class="more-meta"> 92 words </span>
+          <span class="more-meta"> 129 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -150,18 +150,56 @@
     </div>
   </div>
     <div class="post-content">
-      <h1 id="csrf">CSRF</h1>
-<p>Cross-site request forgery, 跨站请求伪造．</p>
-<p>发生条件：</p>
-<ul>
-<li>登陆受信任网站A, 并在本地生成cookie</li>
-<li>在不退出A的情况下，访问危险网站B</li>
-</ul>
-<p>预防方法:</p>
-<ul>
-<li>正确使用get,post和cookie</li>
-<li>在非get请求中增加伪随机数</li>
-</ul>
+      <h1 id="haproxy">HAProxy</h1>
+<p><a href="https://www.haproxy.com/">https://www.haproxy.com/</a></p>
+<p>安装:</p>
+<pre><code>$ sudo apt-get install haproxy
+</code></pre>
+<p>配置:</p>
+<pre><code>$ sudo vim /etc/haproxy/haproxy.cfg
+</code></pre>
+<p>global:</p>
+<pre><code>    log /dev/log    local0
+    log /dev/log    local1 notice
+    chroot /var/lib/haproxy
+    stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+    # Default SSL material locations
+    ca-base /etc/ssl/certs
+    crt-base /etc/ssl/private
+
+    # Default ciphers to use on SSL-enabled listening sockets.
+    # For more information, see ciphers(1SSL). This list is from:
+    #  https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
+    # An alternative list with additional directives can be obtained from
+    #  https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=haproxy
+    ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:RSA+AESGCM:RSA+AES:!aNULL:!MD5:!DSS
+    ssl-default-bind-options no-sslv3
+</code></pre>
+<p>defaults:</p>
+<pre><code>    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    timeout connect 5000
+    timeout client  50000
+    timeout server  50000
+</code></pre>
+<p>frontend:</p>
+<p>backend:</p>
+<p>listen:</p>
+<hr>
+<h1 id="keepalived">Keepalived</h1>
+<p><a href="https://www.keepalived.org/">https://www.keepalived.org/</a></p>
+<p>安装:</p>
+<pre><code>$ sudo apt-get install keepalived
+</code></pre>
+<p>配置:</p>
+<pre><code>$ sudo vim /etc/keepalived/keepalived.conf</code></pre>
 
     </div>
 
@@ -196,16 +234,17 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/capture/">capture</a>
+          <a href="/tags/haproxy/">haproxy</a>
+          <a href="/tags/keepalived/">keepalived</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sec_capture/">
+        <a class="prev" href="/post/sec_csrf/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Capture</span>
+            <span class="prev-text nav-default">Csrf</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/ha/">
-            <span class="next-text nav-default">HA</span>
+        <a class="next" href="/post/sec_sqlinjection/">
+            <span class="next-text nav-default">Sql Injection</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -219,7 +258,7 @@
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2018-07-28 16:08:54 \x2b0000 UTC',
-        title: 'Csrf',
+        title: 'HA',
         clientID: '3d41a2a237fabe050cc0',
         clientSecret: '868aa81b294f1463ddb6edc007576ecfed7d2075',
         repo: 'crazy-canux.github.io',

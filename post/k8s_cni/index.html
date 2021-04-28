@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Network add-ons https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="K8S CNI" />
-<meta property="og:description" content="CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到" />
+<meta property="og:description" content="Network add-ons https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_cni/" />
 <meta property="article:published_time" content="2020-03-26T20:55:52+08:00" />
 <meta property="article:modified_time" content="2020-03-26T20:55:52+08:00" />
 <meta itemprop="name" content="K8S CNI">
-<meta itemprop="description" content="CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到">
+<meta itemprop="description" content="Network add-ons https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令">
 <meta itemprop="datePublished" content="2020-03-26T20:55:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-26T20:55:52&#43;08:00" />
-<meta itemprop="wordCount" content="319">
+<meta itemprop="wordCount" content="320">
 
 
 
 <meta itemprop="keywords" content="k8s," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K8S CNI"/>
-<meta name="twitter:description" content="CNI https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令到"/>
+<meta name="twitter:description" content="Network add-ons https://github.com/containernetworking kube-router romana cilium weavenet calico flannel Flannel flannel是k8s最常用的网络插件. https://github.com/coreos/flannel 在所有node上部署cni-plugin: https://github.com/containernetworking/plugins/releases $ sudo mkdir -p /opt/cni/bin // 下载并解压所有插件命令"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 319 words </span>
+          <span class="more-meta"> 320 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -150,7 +150,7 @@
     </div>
   </div>
     <div class="post-content">
-      <h1 id="cni">CNI</h1>
+      <h1 id="network-add-ons">Network add-ons</h1>
 <p><a href="https://github.com/containernetworking">https://github.com/containernetworking</a></p>
 <ul>
 <li>kube-router</li>
@@ -170,7 +170,7 @@
 // 下载并解压所有插件命令到该目录.
 </code></pre>
 <p>network-addon(master上操作即可):</p>
-<pre><code>$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+<pre><code>$ kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 </code></pre>
 <p>veryfy:</p>
 <pre><code>$ kubectl get nodes

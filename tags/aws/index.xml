@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cloud on Morgoth</title>
-    <link>http://canuxcheng.com/categories/cloud/</link>
-    <description>Recent content in Cloud on Morgoth</description>
+    <title>aws on Morgoth</title>
+    <link>http://canuxcheng.com/tags/aws/</link>
+    <description>Recent content in aws on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 23 Apr 2021 22:02:31 +0000</lastBuildDate>
     
-	<atom:link href="http://canuxcheng.com/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://canuxcheng.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,26 +18,6 @@
       
       <guid>http://canuxcheng.com/post/aws/</guid>
       <description>AWS https://github.com/donnemartin/awesome-aws https://github.com/localstack/localstack use localstack on local: http://IP:4566/health?reload aws configure --profile default aws --endpoint-url=http://localhost:4566 kinesis list-streams SDK python https://github.com/boto/boto3 golang https://github.com/aws/aws-sdk-go javascript https://github.com/aws/aws-sdk-js Management/Governance CLI https://github.com/aws/aws-cli https://github.com/awslabs/aws-shell 安装: $ pip install awscli 使用: aws [options] &amp;lt;command&amp;gt; &amp;lt;subcommand&amp;gt; [parameters] option: --debug --endpoint-url --no-verify-ssl --output=json(default)/text/table --region https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions config: AWS_CONFIG_FILE=~/.aws/config AWS_CONFIG_FILE=%UserProfile%\.aws\config aws configure service: iam ec2 Security/Identity/Compliance IAM Compute Service EC2 Containers Networking Storage S3 Database DynamoDB</description>
-    </item>
-    
-    <item>
-      <title>OpenStack</title>
-      <link>http://canuxcheng.com/post/openstack/</link>
-      <pubDate>Thu, 23 Feb 2017 22:02:31 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/openstack/</guid>
-      <description>OpenStack https://github.com/openstack https://github.com/openstack-dev openstack是一个云操作系统，通过数据中心可控制大型的计算，存储，网络等资源池． 所有的管理通过前端的界面管理员就可以完成，同样也</description>
-    </item>
-    
-    <item>
-      <title>CloudComputing</title>
-      <link>http://canuxcheng.com/post/cloudcomputing/</link>
-      <pubDate>Tue, 05 Apr 2016 22:02:31 +0000</pubDate>
-      
-      <guid>http://canuxcheng.com/post/cloudcomputing/</guid>
-      <description>CloudComputing IAAS: Infrastructure as a service
-PAAS: Platform as a service
-SAAS: Software as a service</description>
     </item>
     
   </channel>

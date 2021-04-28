@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>haproxy on Morgoth</title>
-    <link>http://canuxcheng.com/tags/haproxy/</link>
-    <description>Recent content in haproxy on Morgoth</description>
+    <title>keepalived on Morgoth</title>
+    <link>http://canuxcheng.com/tags/keepalived/</link>
+    <description>Recent content in keepalived on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 28 Jul 2018 16:08:54 +0000</lastBuildDate>
     
-	<atom:link href="http://canuxcheng.com/tags/haproxy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://canuxcheng.com/tags/keepalived/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

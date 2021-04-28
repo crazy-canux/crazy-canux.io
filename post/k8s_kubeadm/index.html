@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: $ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &amp;quot;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&amp;quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="kubeadm https://github.com/kubernetes/kubeadm kubeadm是k8s自带的部署集群的工具. Install 准备工作 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ 安装runtime https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ 默认的cgroup驱动时cgroupfs,如果系统是syst" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="Kubeadm" />
-<meta property="og:description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: $ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &quot;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $" />
+<meta property="og:description" content="kubeadm https://github.com/kubernetes/kubeadm kubeadm是k8s自带的部署集群的工具. Install 准备工作 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ 安装runtime https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ 默认的cgroup驱动时cgroupfs,如果系统是syst" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_kubeadm/" />
 <meta property="article:published_time" content="2019-12-30T21:47:17+08:00" />
 <meta property="article:modified_time" content="2019-12-30T21:47:17+08:00" />
 <meta itemprop="name" content="Kubeadm">
-<meta itemprop="description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: $ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &quot;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $">
+<meta itemprop="description" content="kubeadm https://github.com/kubernetes/kubeadm kubeadm是k8s自带的部署集群的工具. Install 准备工作 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ 安装runtime https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ 默认的cgroup驱动时cgroupfs,如果系统是syst">
 <meta itemprop="datePublished" content="2019-12-30T21:47:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-30T21:47:17&#43;08:00" />
-<meta itemprop="wordCount" content="759">
+<meta itemprop="wordCount" content="1252">
 
 
 
 <meta itemprop="keywords" content="k8s," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubeadm"/>
-<meta name="twitter:description" content="kubeadm https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/ kubeadm是k8s自带的部署集群的工具. Install 在每台机器上安装 kubeadm, kubelet, kubectl: $ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - $ echo &quot;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list $ sudo apt-get update $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl $"/>
+<meta name="twitter:description" content="kubeadm https://github.com/kubernetes/kubeadm kubeadm是k8s自带的部署集群的工具. Install 准备工作 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ 安装runtime https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/ 默认的cgroup驱动时cgroupfs,如果系统是syst"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 759 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 1252 words </span>
+          <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -142,6 +142,12 @@
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
+  <ul>
+    <li><a href="#准备工作">准备工作</a></li>
+    <li><a href="#安装runtime">安装runtime</a></li>
+    <li><a href="#安装kubeadm-kubelet-kubectl">安装kubeadm, kubelet, kubectl</a></li>
+  </ul>
+
   <ul>
     <li><a href="#部署master">部署master</a></li>
     <li><a href="#部署node">部署node</a></li>
@@ -158,25 +164,52 @@
   </div>
     <div class="post-content">
       <h1 id="kubeadm">kubeadm</h1>
-<p><a href="https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/">https://kubernetes.io/zh/docs/setup/independent/create-cluster-kubeadm/</a></p>
+<p><a href="https://github.com/kubernetes/kubeadm">https://github.com/kubernetes/kubeadm</a></p>
 <p>kubeadm是k8s自带的部署集群的工具.</p>
 <h1 id="install">Install</h1>
+<h2 id="准备工作">准备工作</h2>
+<p><a href="https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a></p>
+<h2 id="安装runtime">安装runtime</h2>
+<p><a href="https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/">https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/</a></p>
+<p>默认的cgroup驱动时cgroupfs,如果系统是systemd，就会有两个cgroup driver，会出问题.</p>
+<p>如果修改cgroup driver需要同时修改CRI和kubelet.</p>
+<p>修改containerd的cgroup driver:</p>
+<pre><code>$ sudo vim /etc/containerd/config.toml
+[plugins.&quot;io.containerd.grpc.v1.cri&quot;.containerd.runtimes.runc.options]
+  SystemdCgroup = true
+$ sudo systemctl restart containerd
+</code></pre>
+<p>修改kubelet的cgroup driver:</p>
+<p>k8s 1.21.0 只有CRI=docker支持自动检测cgroup driver,其它CRI还不支持.</p>
+<pre><code>apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+cgroupDriver: systemd
+</code></pre>
+<h2 id="安装kubeadm-kubelet-kubectl">安装kubeadm, kubelet, kubectl</h2>
 <p>在每台机器上安装 kubeadm, kubelet, kubectl:</p>
-<pre><code>$ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - 
+<pre><code>$ sudo apt-get update
+$ sudo apt-get install -y apt-transport-https ca-certificates curl
+$ sudo curl -fsSL https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - 
 $ echo &quot;deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list
 $ sudo apt-get update
 $ sudo apt-get --yes --allow-unauthenticated install kubeadm kubelet kubectl
 $ sudo apt-mark hold kubelet kubeadm kubectl
 $ sudo systemctl enable kubelet
 </code></pre>
-<h1 id="kubeadm-1">Kubeadm</h1>
+<hr>
+<h1 id="kubeadm-cli">Kubeadm CLI</h1>
 <p>init:</p>
 <pre><code>$ kubeadm init 
 --config &lt;config&gt; 
---apiserver-advertise-address &lt;master&gt; // 多网卡指定网卡IP
---image-repository &lt;registry&gt; // default k8s.gcr.io
 --kubernetes-version &lt;version&gt; // kubelet --version
+--apiserver-advertise-address &lt;master&gt; // 多网卡指定网卡IP
+--image-repository &lt;registry&gt; // default: k8s.gcr.io
 --pod-network-cidr &lt;cidr&gt; // 指定pod的cidr
+--service-cidr &lt;cidr&gt; // default: 10.96.0.0/12
+--service-dns-domain // default: cluster.local
+--cri-socket // 如果安装了多个cri需要指定.
+--ignore-preflight-errors
+--upload-certs
 </code></pre>
 <p>join:</p>
 <pre><code>$ kubeadm join [apiserver-advertise-address] --token &lt;token&gt; --discovery-token-ca-cert-hash &lt;hash&gt;
@@ -199,6 +232,7 @@ $ sudo systemctl enable kubelet
 --apiserver-advertise-address=&lt;IP&gt; \
 --kubernetes-version=v1.17.0 \
 --image-repository=registry.aliyuncs.com/google_containers \
+--cri-socket=/run/containerd/containerd.sock \
 -v=6
 // --config 一般使用默认即可.
 // --pod-network-cidr=10.244.0.0/16 是固定用法，表示选择flannel为网络插件。
@@ -227,6 +261,7 @@ kubectl taint nodes &lt;node&gt; node-role.kubernetes.io/master=true:NoSchedule
 <h2 id="部署node">部署node</h2>
 <pre><code>$ sudo swapoff -a
 
+// 如果有vpn，kubeadm会自动下载安装
 // 在所有node上部署cni-plugin:
 // &lt;https://github.com/containernetworking/plugins/releases&gt;
 $ sudo mkdir -p /opt/cni/bin
@@ -243,13 +278,20 @@ $ kubectl get nodes
 <h2 id="删除cluster">删除cluster</h2>
 <p>所有node运行:</p>
 <pre><code>$ sudo kubeadm reset -f
-$ sudo systemctl stop kubelet docker
+// 自动停止kubelet并且删除下列文件和目录
+[/etc/kubernetes/manifests /etc/kubernetes/pki]
+[/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+[/var/lib/etcd /var/lib/kubelet /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+</code></pre>
+<p>需要手动删除:</p>
+<pre><code>$ sudo rm -rf /etc/cni/net.d
 </code></pre>
 <p>所有node上删除flannel的网络配置</p>
 <pre><code>$ sudo ifconfig cni0 down
 $ sudo ip link delete cni0
 $ sudo ifconfig flannel.1 down
 $ sudo ip link delete flannel.1
+$ sudo rm -rf /run/flannel
 </code></pre>
 <p>所有node清空iptables</p>
 <pre><code>$ sudo iptables -F
@@ -257,10 +299,24 @@ $ sudo iptables -X
 $ sudo iptables -t nat -F
 $ sudo iptables -t nat -X
 </code></pre>
+<p>如果使用了IPVS:</p>
+<pre><code>$ ipvsadm --clear
+</code></pre>
 <p>删除配置</p>
 <pre><code>$ rm -rf $HOME/.kube
-$ sudo rm -rf /var/lib/kubelet /var/lib/etcd /var/lib/cni
-$ sudo rm -rf /etc/kubernetes /etc/cni /run/flannel
+</code></pre>
+<h1 id="部署ha-cluster">部署HA Cluster</h1>
+<p>ha需要在所有master节点安装haproxy和keepalived.</p>
+<p><a href="https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/high-availability/">https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/high-availability/</a></p>
+<p><a href="https://github.com/kubernetes/kubeadm/blob/master/docs/ha-considerations.md#options-for-software-load-balancing">https://github.com/kubernetes/kubeadm/blob/master/docs/ha-considerations.md#options-for-software-load-balancing</a></p>
+<p>在master1上初始化：</p>
+<pre><code>$ sudo kubeadm init --config ./kubeadm.yaml -v=6 --upload-certs
+</code></pre>
+<p>加入其它master:</p>
+<pre><code>$ sudo kubeadm join 192.168.1.200:8443 --token &lt;token&gt; --discovery-token-ca-cert-hash &lt;hash&gt; --control-plane --certificate-key &lt;key&gt;
+</code></pre>
+<p>加入node:</p>
+<pre><code>$ sudo kubeadm join 192.168.1.200:8443 --token &lt;token&gt; --discovery-token-ca-cert-hash &lt;hash&gt;
 </code></pre>
 <hr>
 <h1 id="配置">配置</h1>
@@ -286,17 +342,20 @@ localAPIEndpoint:
   advertiseAddress: 10.103.1.1 // master IP
   bindPort: 6443
 nodeRegistration:
-  criSocket: /var/run/dockershim.sock
+  criSocket: /run/containerd/containerd.sock
   name: debug // master hostname
   taints:
   - effect: NoSchedule
     key: node-role.kubernetes.io/master
 </code></pre>
 <p>配置kubernetes:</p>
-<pre><code>apiVersion: kubeadm.k8s.io/v1beta2
+<pre><code>// 定制control plane
+&lt;https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/control-plane-flags/&gt;
+apiVersion: kubeadm.k8s.io/v1beta2
 kind: ClusterConfiguration
 certificatesDir: /etc/kubernetes/pki
 clusterName: kubernetes
+controlPlaneEndpoint: 10.58.203.200:8443 // HA中haproxy的VIP和port
 dns:
   type: CoreDNS
 etcd:
@@ -305,9 +364,11 @@ etcd:
 networking:
   dnsDomain: cluster.local
   serviceSubnet: 10.96.0.0/12
+  podSubnet: 10.244.0.0/16 // for flannel
 imageRepository: k8s.gcr.io
 kubernetesVersion: v1.18.6
 controllerManager:
+  ...
   extraArgs:
     &lt;https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/&gt;
     allocate-node-cidrs: 'true'
@@ -316,14 +377,19 @@ controllerManager:
 apiServer:
   timeoutForControlPlane: 4m0s
   &lt;https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/&gt;
-  extraArgs:
-    ...
-#scheduler: {}
+    extraArgs:
+      advertise-address: 192.168.0.103
+      ...
 scheduler:
   ...
   &lt;https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/&gt;
   extraArgs:
     ...
+</code></pre>
+<p>修改kubelet的cgroup driver:</p>
+<pre><code>apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+cgroupDriver: systemd
 </code></pre>
 
     </div>

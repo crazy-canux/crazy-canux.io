@@ -48,7 +48,7 @@
 <meta itemprop="description" content="telnet telnet nc/netcat // 有的系统默认安装netcat-traditional $ sudo apt-get install netcat-traditional // 安装netcat-openbsd $ sudo apt-get install netcat-openbsd // 设置默认值 $ sudo update-alternatives --config nc $ sudo">
 <meta itemprop="datePublished" content="2019-03-31T21:51:25&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-31T21:51:25&#43;00:00" />
-<meta itemprop="wordCount" content="877">
+<meta itemprop="wordCount" content="906">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/network/"> Network </a>
             </div>
-          <span class="more-meta"> 877 words </span>
+          <span class="more-meta"> 906 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -164,6 +164,12 @@ $ sudo update-alternatives --set nc /bin/nc.openbsd
 
 nc -z IP PORT # 查看指定tcp://ip:port是否监听
 nc -zu IP PORT # 查看udp://ip:port是否监听
+
+// 通过nc监听端口
+nc -l PORT
+
+// 通过nc发送请求.
+echo -e '{&quot;method&quot;:&quot;test&quot;,&quot;params&quot;:[&quot;test&quot;],&quot;id&quot;:1}' | nc IP PORT
 </code></pre>
 <h1 id="ping">ping</h1>
 <pre><code>$ sudo apt-get install iputils-ping
