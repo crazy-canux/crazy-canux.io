@@ -93,7 +93,7 @@ https://github.com/operator-framework</description>
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
-      <description>Nginx https://github.com/kubernetes/ingress-nginx // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&#39;{.items[0].metadata.name}&#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik https://github.com/containous/traefik</description>
+      <description>Nginx https://github.com/kubernetes/ingress-nginx // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&#39;{.items[0].metadata.name}&#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik traefik2.2+ https://github.com/traefik/traefik install with helm: helm repo add traefik https://helm.traefik.io/traefik helm repo update kubectl create ns traefik helm install -n traefik traefik</description>
     </item>
     
     <item>

@@ -48,7 +48,7 @@
 <meta itemprop="description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]">
 <meta itemprop="datePublished" content="2020-01-04T21:53:40&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-04T21:53:40&#43;08:00" />
-<meta itemprop="wordCount" content="995">
+<meta itemprop="wordCount" content="1059">
 
 
 
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 995 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 1059 words </span>
+          <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -196,10 +196,41 @@ services:
   mongo:
     image: mongo:latest
     hostname: hostname
-    
-    // 给container打标签
+    privileged: true
+    init
+    dns
+    dns_search
+    expose
+    extra_hosts
+    healthcheck
+    depends_on:
+      - service-name
+    stop_grrace_period
+    isolation
+    pid
+    profiles
+    stop_signal
     labels:
       com.example.key: value
+
+    // start: 下列选项不能用于swarm stack部署.
+    sysctls(19.03+)
+    build
+    cgroup_parent
+    container_name
+    devices:
+      - /dev/vboxdrv:/dev/vboxdrv
+    tmpfs
+    external_links
+    links
+    network_mode: bridge/host/none
+    restart: no(default)
+    security_opt
+    userns_mode
+    ulimits
+    cap_add
+    cap_drop
+    // end
 
     networks:
     - mynetwork
@@ -251,6 +282,7 @@ services:
       - 80:80
       - 1234:1234/udp
 
+    // 设置环境变量
     environment:
       RABBITMQ_DEFAULT_USER: sandbox
       RABBITMQ_DEFAULT_PASS: password
@@ -258,7 +290,6 @@ services:
       - RABBITMQ_DEFAULT_USER=sandbox
       - RABBITMQ_DEFAULT_PASS=password
       - TZ=UTC   // 设置时区
-
     &lt;https://docs.docker.com/compose/compose-file/#env_file&gt;
     # When you set the same environment variable in multiple files, 
     # here’s the priority used by Compose to choose which value to use:
@@ -269,8 +300,7 @@ services:
     # 5. Variable is not defined
     env_file:
 
-    depends_on:
-      - service-name
+    entrypoint:
 
     command: [&quot;./wait-for-it.sh&quot;, &quot;db:5432&quot;, &quot;--&quot;, &quot;python&quot;, &quot;app.py&quot;]
 
@@ -284,13 +314,14 @@ services:
     line1
     line2
 
+    // start:  下面三个deploy下面的字段，也能用于非swarm模式.
     // 在compose v3 中针对非swarm模式的container做资源限制等操作.
     // --compatibility If set, Compose will attempt to convert keys in v3 files to their non-Swarm equivalent
     $ docker-compose --compatibility up -d
     // --compatibility 支持下面三种key:
     replicas:
     restart_policy:
-      condition:
+      condition: any(default)
       max_attempts:
     resources:
       limits:
@@ -300,52 +331,25 @@ services:
         cpus: '0.25'
         memory: 20M
 
-    privileged: true
-    devices:
-      - /dev/vboxdrv:/dev/vboxdrv
-      
-    healthcheck
-    
-    init
-    
-    stop_grrace_period
 
-    deploy: // for swarm
-    # 下列选项不能用于swarm stack部署.
-    sysctls(19.03+)
-    build
-    cgroup_parent
-    container_name
-    devices
-    tmpfs
-    external_links
-    links
-    network_mode
-    restart
-    security_opt
-    userns_mode
-    ulimits
-    cap_add
-    cap_drop
-    
-# 定义资源
-
+// start: 定义config/secret/volume/netework资源
 configs:
   c-name:
     // 根据文件创建
     file: ./httpd.conf
     // 使用已经创建好的
     external: true
-    
+
 secrets:
   s-name:
     // 根据文件创建
     file: ./server.cert
     // 使用已经创建好的
     external: true
-  
+
 volumes:
   data-volume:
+
 // 以定义好的volume
 volumes:
   data:
@@ -357,7 +361,7 @@ networks:
   mynetwork:
     external: true
     name: lan0 // 通过docker network ls 查看名字
-    
+
 // 创建bridge网络
 // 会在网络名字自动加namespace
 networks:

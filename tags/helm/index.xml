@@ -17,7 +17,7 @@
       <pubDate>Thu, 05 Sep 2019 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_helm/</guid>
-      <description>Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运</description>
+      <description>Helm https://github.com/helm/helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: helm包，包含运行一个应用所需的镜像，依赖和资源. repository: 用于发布和存储ch</description>
     </item>
     
   </channel>

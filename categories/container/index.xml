@@ -111,7 +111,7 @@ https://github.com/operator-framework</description>
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
-      <description>Nginx https://github.com/kubernetes/ingress-nginx // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&#39;{.items[0].metadata.name}&#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik https://github.com/containous/traefik</description>
+      <description>Nginx https://github.com/kubernetes/ingress-nginx // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&#39;{.items[0].metadata.name}&#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik traefik2.2+ https://github.com/traefik/traefik install with helm: helm repo add traefik https://helm.traefik.io/traefik helm repo update kubectl create ns traefik helm install -n traefik traefik</description>
     </item>
     
     <item>
@@ -167,7 +167,7 @@ Deploy pre-install:
       <pubDate>Thu, 05 Sep 2019 22:02:31 +0000</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_helm/</guid>
-      <description>Helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: 一个helm包，包含运行一个应用所需的镜像，依赖和资源. release: 在k8s集群上运</description>
+      <description>Helm https://github.com/helm/helm helm有两个组件: helm: 客户端 tiller: 服务端(helm3被移除) 概念: chart: helm包，包含运行一个应用所需的镜像，依赖和资源. repository: 用于发布和存储ch</description>
     </item>
     
     <item>
