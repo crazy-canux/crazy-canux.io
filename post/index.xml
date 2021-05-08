@@ -150,7 +150,7 @@ https://github.com/operator-framework</description>
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_dashboard/</guid>
-      <description>dashboard add-ons kubernetes-dashboard lens octant weave scope kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch --- apiVersion: v1 kind: ServiceAccount metadata: name: dashboard-admin namespace: kubernetes-dashboard --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: namespace: kubernetes-dashboard name: kubernetes-dashboard-admin roleRef: apiGroup: rbac.authorization.k8s.io kind: ClusterRole name: cluster-admin subjects: - kind: ServiceAccount namespace: kubernetes-dashboard name: dashboard-admin</description>
+      <description>dashboard add-ons kubernetes-dashboard lens octant weave scope kubernetes-dashboard https://github.com/kubernetes/dashboard // 部署dashboard $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml // check $ kubectl -n kubernetes-dashboard get pods --watch 1 // 删除已安装的dashboard $ kubectl delete ns kubernetes-dashboard dashboard arguments 使用basic auth: --enable-skip-login --enable-insecure-login --system-banner=&amp;quot;Welcome</description>
     </item>
     
     <item>
