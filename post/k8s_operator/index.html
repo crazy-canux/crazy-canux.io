@@ -16,8 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Canux" /><meta name="description" content="Operator operator-framework https://operatorhub.io/
-https://github.com/operator-framework" /><meta name="keywords" content="Hugo, theme, canux" />
+<meta name="author" content="Canux" /><meta name="description" content="Operator TPR(Third Party Resource) 在k8s 1.7 被集成，并命名为CRD(Custom Resource Definition). 通过CRD，K8S可以动态的添加和管理资源，controller跟踪这些资源。 CRD&#43;custom Controller" /><meta name="keywords" content="Hugo, theme, canux" />
 
 
 
@@ -40,25 +39,22 @@ https://github.com/operator-framework" /><meta name="keywords" content="Hugo, th
 
 
 <meta property="og:title" content="Operator" />
-<meta property="og:description" content="Operator operator-framework https://operatorhub.io/
-https://github.com/operator-framework" />
+<meta property="og:description" content="Operator TPR(Third Party Resource) 在k8s 1.7 被集成，并命名为CRD(Custom Resource Definition). 通过CRD，K8S可以动态的添加和管理资源，controller跟踪这些资源。 CRD&#43;custom Controller" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://canuxcheng.com/post/k8s_operator/" />
 <meta property="article:published_time" content="2020-01-10T20:55:52+08:00" />
 <meta property="article:modified_time" content="2020-01-10T20:55:52+08:00" />
 <meta itemprop="name" content="Operator">
-<meta itemprop="description" content="Operator operator-framework https://operatorhub.io/
-https://github.com/operator-framework">
+<meta itemprop="description" content="Operator TPR(Third Party Resource) 在k8s 1.7 被集成，并命名为CRD(Custom Resource Definition). 通过CRD，K8S可以动态的添加和管理资源，controller跟踪这些资源。 CRD&#43;custom Controller">
 <meta itemprop="datePublished" content="2020-01-10T20:55:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T20:55:52&#43;08:00" />
-<meta itemprop="wordCount" content="4">
+<meta itemprop="wordCount" content="232">
 
 
 
 <meta itemprop="keywords" content="k8s," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Operator"/>
-<meta name="twitter:description" content="Operator operator-framework https://operatorhub.io/
-https://github.com/operator-framework"/>
+<meta name="twitter:description" content="Operator TPR(Third Party Resource) 在k8s 1.7 被集成，并命名为CRD(Custom Resource Definition). 通过CRD，K8S可以动态的添加和管理资源，controller跟踪这些资源。 CRD&#43;custom Controller"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +132,7 @@ https://github.com/operator-framework"/>
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 4 words </span>
+          <span class="more-meta"> 232 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -155,9 +151,21 @@ https://github.com/operator-framework"/>
   </div>
     <div class="post-content">
       <h1 id="operator">Operator</h1>
-<h1 id="operator-framework">operator-framework</h1>
+<p>TPR(Third Party Resource) 在k8s 1.7 被集成，并命名为CRD(Custom Resource Definition).</p>
+<p>通过CRD，K8S可以动态的添加和管理资源，controller跟踪这些资源。</p>
+<p>CRD+custom Controller = decalartive API(声明式API),一般分为通用性controller和operator.</p>
+<p>通用型controller一般用于平台需求，operator一般用于部署特定应用.</p>
+<p><a href="https://github.com/operator-framework/awesome-operators">https://github.com/operator-framework/awesome-operators</a></p>
 <p><a href="https://operatorhub.io/">https://operatorhub.io/</a></p>
-<p><a href="https://github.com/operator-framework">https://github.com/operator-framework</a></p>
+<p>开发示例:</p>
+<p><a href="https://github.com/kubernetes/sample-controller">https://github.com/kubernetes/sample-controller</a></p>
+<h1 id="operator-sdk">operator-sdk</h1>
+<p>redhat的operator-sdk可以方便的开发opeartor.</p>
+<p><a href="https://github.com/operator-framework/operator-sdk">https://github.com/operator-framework/operator-sdk</a></p>
+<hr>
+<h1 id="kubebuilder">kubebuilder</h1>
+<p>sig维护的kubebuilder也能方便的开发operator.</p>
+<p><a href="https://github.com/kubernetes-sigs/kubebuilder">https://github.com/kubernetes-sigs/kubebuilder</a></p>
 
     </div>
 

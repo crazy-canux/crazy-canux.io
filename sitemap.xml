@@ -2,6 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://canuxcheng.com/post/bsp/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/categories/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/fpga/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/fpga/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/hardware/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/categories/hw/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/hw/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/</loc>
+    <lastmod>2021-05-15T09:41:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/categories/c/</loc>
+    <lastmod>2021-05-10T20:55:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/categories/container/</loc>
+    <lastmod>2021-05-10T20:55:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/k8s/</loc>
+    <lastmod>2021-05-10T20:55:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/k8s_kubevirt/</loc>
+    <lastmod>2021-05-10T20:55:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://canuxcheng.com/post/aws/</loc>
     <lastmod>2021-04-23T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -16,35 +107,7 @@
   </url>
   
   <url>
-    <loc>http://canuxcheng.com/categories/c/</loc>
-    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/categories/</loc>
-    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://canuxcheng.com/categories/cloud/</loc>
-    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/post/</loc>
-    <lastmod>2021-04-23T22:02:31+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/tags/</loc>
     <lastmod>2021-04-23T22:02:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -123,20 +186,6 @@
   <url>
     <loc>http://canuxcheng.com/tags/security/</loc>
     <lastmod>2020-05-24T15:30:42+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/categories/container/</loc>
-    <lastmod>2020-03-26T20:55:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://canuxcheng.com/tags/k8s/</loc>
-    <lastmod>2020-03-26T20:55:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3013,6 +3062,18 @@
   
   <url>
     <loc>http://canuxcheng.com/post/sec_security/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/post/django_cache/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://canuxcheng.com/tags/cache/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

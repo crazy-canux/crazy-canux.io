@@ -110,5 +110,14 @@
       <description>Django django是python的web框架。 https://github.com/django/django https://www.djangoproject.com/ https://docs.djangoproject.com/zh-hans/3.1/contents/ django遵守MVC设计模式，采用MTV框架。 M: model,数据存取 T: template，如</description>
     </item>
     
+    <item>
+      <title>Cache</title>
+      <link>http://canuxcheng.com/post/django_cache/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_cache/</guid>
+      <description>cache 缓存的backend可以是django内置的，也可以是第三方的。 缓存整个站点 MIDDLEWARE = [ &amp;lsquo;django.middleware.cache.UpdateCacheMiddleware&amp;rsquo;, &amp;lsquo;django.middleware.common.CommonMiddleware&amp;rsquo;, &amp;lsquo;django.middleware.cache.FetchFromCacheMiddleware&amp;rsquo;, ] 视图缓存 from django.views.decorators.cache import cache_page @cache_page(60 * 2) def my_view(request): &amp;hellip; 或者在URLconf</description>
+    </item>
+    
   </channel>
 </rss>

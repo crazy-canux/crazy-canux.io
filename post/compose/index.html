@@ -48,7 +48,7 @@
 <meta itemprop="description" content="docker-compose https://github.com/docker/compose 通过一个yaml文件来管理容器中的服务，包括网络和存储。 安装: https://docs.docker.com/compose/install/ $ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose $ sudo chmod &#43;x /usr/local/bin/docker-compose docker-compose命令 docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]">
 <meta itemprop="datePublished" content="2020-01-04T21:53:40&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-04T21:53:40&#43;08:00" />
-<meta itemprop="wordCount" content="1059">
+<meta itemprop="wordCount" content="1070">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/container/"> Container </a>
             </div>
-          <span class="more-meta"> 1059 words </span>
+          <span class="more-meta"> 1070 words </span>
           <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -202,7 +202,14 @@ services:
     dns_search
     expose
     extra_hosts
-    healthcheck
+
+    healthcheck:
+      test: curl -f https://host/ping || exit 1
+      interval:
+      timeout:
+      retries:
+      stat_period:
+
     depends_on:
       - service-name
     stop_grrace_period

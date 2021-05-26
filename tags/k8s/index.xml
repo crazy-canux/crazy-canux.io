@@ -6,10 +6,19 @@
     <description>Recent content in k8s on Morgoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Mar 2020 20:55:52 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 May 2021 20:55:52 +0800</lastBuildDate>
     
 	<atom:link href="http://canuxcheng.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>KubeVirt</title>
+      <link>http://canuxcheng.com/post/k8s_kubevirt/</link>
+      <pubDate>Mon, 10 May 2021 20:55:52 +0800</pubDate>
+      
+      <guid>http://canuxcheng.com/post/k8s_kubevirt/</guid>
+      <description>Infrastructure add-ons  kubevirt   KubeVirt </description>
+    </item>
     
     <item>
       <title>K8S CNI</title>
@@ -74,8 +83,7 @@ jenkins-X </description>
       <pubDate>Fri, 10 Jan 2020 20:55:52 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_operator/</guid>
-      <description>Operator operator-framework https://operatorhub.io/
-https://github.com/operator-framework</description>
+      <description>Operator TPR(Third Party Resource) 在k8s 1.7 被集成，并命名为CRD(Custom Resource Definition). 通过CRD，K8S可以动态的添加和管理资源，controller跟踪这些资源。 CRD+custom Controller</description>
     </item>
     
     <item>
@@ -93,7 +101,7 @@ https://github.com/operator-framework</description>
       <pubDate>Sat, 04 Jan 2020 20:03:39 +0800</pubDate>
       
       <guid>http://canuxcheng.com/post/k8s_ingress/</guid>
-      <description>Nginx https://github.com/kubernetes/ingress-nginx // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&#39;{.items[0].metadata.name}&#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik traefik2.2+ https://github.com/traefik/traefik install with helm: helm repo add traefik https://helm.traefik.io/traefik helm repo update kubectl create ns traefik helm install -n traefik traefik</description>
+      <description>Ingress Nginx https://github.com/kubernetes/ingress-nginx // 部署 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/baremetal/deploy.yaml // 验证部署 $ kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch // Detect installed version POD_NAMESPACE=ingress-nginx POD_NAME=$(kubectl get pods -n $POD_NAMESPACE -l app.kubernetes.io/name=ingress-nginx -o jsonpath=&#39;{.items[0].metadata.name}&#39;) $ kubectl exec -it $POD_NAME -n $POD_NAMESPACE -- /nginx-ingress-controller --version traefik traefik2.2+ https://github.com/traefik/traefik install with helm: helm repo add traefik https://helm.traefik.io/traefik helm repo update kubectl create ns traefik helm install -n traefik</description>
     </item>
     
     <item>

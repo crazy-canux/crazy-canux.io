@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cache on Morgoth</title>
+    <link>http://canuxcheng.com/tags/cache/</link>
+    <description>Recent content in cache on Morgoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="http://canuxcheng.com/tags/cache/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cache</title>
+      <link>http://canuxcheng.com/post/django_cache/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://canuxcheng.com/post/django_cache/</guid>
+      <description>cache 缓存的backend可以是django内置的，也可以是第三方的。 缓存整个站点 MIDDLEWARE = [ &amp;lsquo;django.middleware.cache.UpdateCacheMiddleware&amp;rsquo;, &amp;lsquo;django.middleware.common.CommonMiddleware&amp;rsquo;, &amp;lsquo;django.middleware.cache.FetchFromCacheMiddleware&amp;rsquo;, ] 视图缓存 from django.views.decorators.cache import cache_page @cache_page(60 * 2) def my_view(request): &amp;hellip; 或者在URLconf</description>
+    </item>
+    
+  </channel>
+</rss>
