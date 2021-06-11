@@ -48,7 +48,7 @@
 <meta itemprop="description" content="JetBrains IntelliJ: Java的IDE, 安装Python的插件也支持python. PyCharm PyCharm: Python的IDE. Goland Goland: golang的IDE. VSCode IntelliSense &amp; Code Navigation Go to Definition: F12, 跳转到">
 <meta itemprop="datePublished" content="2017-04-02T21:11:26&#43;00:00" />
 <meta itemprop="dateModified" content="2017-04-02T21:11:26&#43;00:00" />
-<meta itemprop="wordCount" content="534">
+<meta itemprop="wordCount" content="643">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 534 words </span>
+          <span class="more-meta"> 643 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -159,6 +159,8 @@
     <li><a href="#python">python</a></li>
     <li><a href="#django">django</a></li>
     <li><a href="#golang">golang</a></li>
+    <li><a href="#rest-client">rest client</a></li>
+    <li><a href="#record">record</a></li>
   </ul>
 </nav>
   </div>
@@ -311,7 +313,34 @@ ssh -2 -L sourceport:localhost:5678 -i identifyfile user@remoteaddress
             &quot;program&quot;: &quot;${workspaceFolder}/backend/main.go&quot;
         },
     ]
-}</code></pre>
+}
+</code></pre>
+<h2 id="rest-client">rest client</h2>
+<p>调试rest API</p>
+<p><a href="https://github.com/Huachao/vscode-restclient">https://github.com/Huachao/vscode-restclient</a></p>
+<p>example.api:</p>
+<pre><code>@api = http://hostname:port/api/v0
+@Authorization = Basic a2FpemVuOkFybUFkbWluMSE=
+@Content-Type = application/json
+
+###
+GET {{api}}/users HTTP/1.1
+Authorization: {{Authorization}}
+Content-Type: {{Content-Type}}
+
+### 
+POST {{api}}/groupus HTTP/1.1
+Authorization: {{Authorization}}
+Content-Type: {{Content-Type}}
+{
+    key: value
+}
+</code></pre>
+<h2 id="record">record</h2>
+<p>vscode录制.</p>
+<p><a href="https://github.com/microsoft/codetour">https://github.com/microsoft/codetour</a></p>
+<p><a href="https://github.com/arciisine/vscode-chronicler">https://github.com/arciisine/vscode-chronicler</a></p>
+<p>支持远程debug的时候在本地录制，也就是本地是windows，只需要本地安装ffmpeg和chroicler。</p>
 
     </div>
 
